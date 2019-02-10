@@ -6,7 +6,7 @@ prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+Das kleinste React-Beispiel sieht wie folgt aus:
 
 ```js
 ReactDOM.render(
@@ -15,36 +15,44 @@ ReactDOM.render(
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+Es wird eine Überschrift mit dem Text "Hello, world!" auf der Seite dargestellt.
 
 [](codepen://hello-world)
 
-Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.
+Klicke auf den Link um das obrige Beispiel in einen Online-Editor zu öffnen.
+Mache soviele Änderungen du magst, spiel ein bisschen mit dem Code rum und schaue was es für Auswirkungen auf die Seite hat.
+Die meisten Seiten in diesem Leitfaden besitzen änderbare Beispiele wie dieses.
 
 
-## How to Read This Guide {#how-to-read-this-guide}
+## Wie man diesen Leitfaden liest {#how-to-read-this-guide}
 
-In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.
+In diesem Leitfaden werden wir die React-Bestandteile: Elemente und Komponenten, behandeln.
+Sobald du diese beherrschst ist es dir möglich Komplexe Anwendungen mit Hilfe aus kleinen wiederverwendbaren Teilen zu erstellen.
 
->Tip
+>Tipp
 >
->This guide is designed for people who prefer **learning concepts step by step**. If you prefer to learn by doing, check out our [practical tutorial](/tutorial/tutorial.html). You might find this guide and the tutorial complementary to each other.
+>Dieser Leitfaden richtet sich an Personen, die es bevorzugen Konzepte **Schritt für Schritt** zu erlernen, wenn du es lieber bevozugst
+>mit Übungen zu lernen, dann ist vielleicht unser [praktisches Tutorial](/tutorial/tutorial.html) das richtige für dich.
+>Vielleicht findest du auch, dass sich der Leitfaden und das Tutorial gegenseitig ergänzen.
 
-This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
+Dies ist das erste Kapitel im **Schritt für Schritt** Leitfaden. Du findest eine Liste aller vorhandenen Kapitel in der Navigationsleiste.
+Wenn du das hier auf der Mobilenansicht liest, findest du die Navigation durch das Klicken des Buttons in der unteren rechten Ecke deines Bildschirms.
 
-Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.** For example, [“Introducing JSX”](/docs/introducing-jsx.html) is the next chapter after this one.
+Die Kapitel bauen aufeinander auf und greifen ggf. auf das Wissen des vorherigen zurück. **Das meiste über React kannst du in den Kapiteln unter "Hauptkonzepte" in der Reihenfolge wie sie dort erscheinen, nachlesen.** [“Einführung in JSX”](/docs/introducing-jsx.html) ist beispielweise das folgende Kapitel.
 
-## Knowledge Level Assumptions {#knowledge-level-assumptions}
+## Annahme zu deinem Wissensstand {#knowledge-level-assumptions}
 
-React is a JavaScript library, and so we'll assume you have a basic understanding of the JavaScript language. **If you don't feel very confident, we recommend [going through a JavaScript tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level** and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won't have to feel like you're learning both React and JavaScript at the same time.
+Da React ist eine JavaScript-Bibliothek ist, gehen wir davon aus, dass du ein gewisses Grundverständnis von JavaScript hast.
+**Wenn du dich noch ein wenig unsicher fühlst können wir dir dieses [JavaScript Tutorial](https://developer.mozilla.org/de/docs/Web/JavaScript/Eine_Wiedereinfuehrung_in_JavaScript) sehr empfehlen.**
+Es dauert ca. zwischen 30 Minuten und einer Stunde, aber danach solltest du keine Probleme mehr haben dem Leitfaden zu folgen
+und nicht das Gefühl haben, React und JavaScript gleichzeitig zu lernen.
 
->Note
+>Notiz
 >
->This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>Dieser Leitfaden benutzt in den Beispielen gelegentlich neuere JavaScript Syntaxen. Solltest in den letzten Jahren nicht mit JavaSscript
+>gearbeitet haben, helfen dir diese [3 Punkte](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) wieder ein wenig auf die Sprünge zu kommen.
 
+## Auf geht's! {#lets-get-started}
 
-## Let's Get Started! {#lets-get-started}
-
-Keep scrolling down, and you'll find the link to the [next chapter of this guide](/docs/introducing-jsx.html) right before the website footer.
-
-
+Wenn du ein wenig hinuter scrollst findest du über dem Seitenende
+den Link [zum nächsten Kapitel](/docs/introducing-jsx.html) des Leitfadens.
