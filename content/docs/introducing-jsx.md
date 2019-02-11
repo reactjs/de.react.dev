@@ -9,7 +9,7 @@ next: rendering-elements.html
 Betrachte die folgende Variablendeklaration:
 
 ```js
-const element = <h1>Hello, world!</h1>;
+const element = <h1>Hallo Welt!</h1>;
 ```
 
 Diese seltsame Tag-Schreibweise ist weder ein String noch HTML.
@@ -33,8 +33,8 @@ Soviel zum Warum, lass uns starten!
 In dem folgenden Beispiel deklarieren wir eine Variable `name` und nutzen diese dann in JSX zwischen geschweiften Klammern.
 
 ```js{1,2}
-const name = 'Josh Perez';
-const element = <h1>Hello, {name}</h1>;
+const name = 'Thomas Schultz';
+const element = <h1>Hallo {name}</h1>;
 
 ReactDOM.render(
   element,
@@ -52,13 +52,13 @@ function formatName(user) {
 }
 
 const user = {
-  firstName: 'Harper',
-  lastName: 'Perez'
+  firstName: 'Thomas',
+  lastName: 'Schultz'
 };
 
 const element = (
   <h1>
-    Hello, {formatName(user)}!
+    Hallo {formatName(user)}!
   </h1>
 );
 
@@ -81,75 +81,75 @@ Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehen, 
 ```js{3,5}
 function getGreeting(user) {
   if (user) {
-    return <h1>Hello, {formatName(user)}!</h1>;
+    return <h1>Hallo {formatName(user)}!</h1>;
   }
-  return <h1>Hello, Stranger.</h1>;
+  return <h1>Hallo Fremder.</h1>;
 }
 ```
 
-### Specifying Attributes with JSX {#specifying-attributes-with-jsx}
+### Mit JSX Attribute spezifizieren {#specifying-attributes-with-jsx}
 
-You may use quotes to specify string literals as attributes:
+Benutze Anführungszeichen um string-Literale als Attribute zu verwenden:
 
 ```js
 const element = <div tabIndex="0"></div>;
 ```
 
-You may also use curly braces to embed a JavaScript expression in an attribute:
+Ebenfalls kannst du geschweifte Klammern verwenden um JavaScript-Ausdrücke in ein Attribut einzubinden:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.
+Setze keine Anführungszeichen um geschweifte Klammern um JavaScript-Ausdrücke in ein Attribut einzubinden. Benutze entweder Anführungszeichen (für Strings) oder geschweifte Klammern (für Ausdrücke) aber nicht beides zusammen im selben Attribut.
 
->**Warning:**
+>**Warnung:**
 >
->Since JSX is closer to JavaScript than to HTML, React DOM uses `camelCase` property naming convention instead of HTML attribute names.
+>Da JSX näher an JavaScript als an HTML ist, verwendet React DOM `camelCase` als Namenskonvention für Eigenschaften anstelle der für HTML typischen schreibweise.
 >
->For example, `class` becomes [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, and `tabindex` becomes [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+>`class` wird zum Beispiel zu [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, und `tabindex` wird zu [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
 
-### Specifying Children with JSX {#specifying-children-with-jsx}
+### Spezifizieren von Kind-Elementen mit JSX {#specifying-children-with-jsx}
 
-If a tag is empty, you may close it immediately with `/>`, like XML:
+Ist ein Element leer, kannst du es wie in der XML-Notation mit `/>` schließen:
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags may contain children:
+JSX-Tags können Kind-Elemente enthalten:
 
 ```js
 const element = (
   <div>
-    <h1>Hello!</h1>
-    <h2>Good to see you here.</h2>
+    <h1>Hallo!</h1>
+    <h2>Schön dich hier zu sehen.</h2>
   </div>
 );
 ```
 
-### JSX Prevents Injection Attacks {#jsx-prevents-injection-attacks}
+### JSX verhindert Injection-Angriffe {#jsx-prevents-injection-attacks}
 
-It is safe to embed user input in JSX:
+JSX kann sicher für Nutzereingaben verwendet werden:
 
 ```js
 const title = response.potentiallyMaliciousInput;
-// This is safe:
+// Das dagegen ist abgesichert:
 const element = <h1>{title}</h1>;
 ```
 
-By default, React DOM [escapes](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+Standardmäßig [escaped](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, dass nicht explizit so programmiert wurde. Alles wird zu einem String konvertiert und danach erst gerendered. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
 
-### JSX Represents Objects {#jsx-represents-objects}
+### JSX repräsentiert Objekte {#jsx-represents-objects}
 
-Babel compiles JSX down to `React.createElement()` calls.
+Babel kompiliert JSX zu `React.createElement()`-Aufrufe.
 
-These two examples are identical:
+Diese zwei Beispiele sind identisch:
 
 ```js
 const element = (
   <h1 className="greeting">
-    Hello, world!
+    Hallo Welt!
   </h1>
 );
 ```
@@ -158,27 +158,27 @@ const element = (
 const element = React.createElement(
   'h1',
   {className: 'greeting'},
-  'Hello, world!'
+  'Hallo Welt!'
 );
 ```
 
-`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
+`React.createElement()` prüft erst die Eingabeparameter, um dich dabei zu unterstützen Bug-Frei zu programmieren aber im Prinzip erstellt es ein Objekt wie dies:
 
 ```js
-// Note: this structure is simplified
+// Hinweis: Dies ist eine vereinfachte Struktur
 const element = {
   type: 'h1',
   props: {
     className: 'greeting',
-    children: 'Hello, world!'
+    children: 'Hallo Welt!'
   }
 };
 ```
 
-These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
+Diese Objekte nennen sich "React elements". Stell sie dir als Beschreibung, was du auf dem Bildschirm sehen willst, vor. React liest diese Objekte und verwendet sie um den DOM zu erstellen und aktuell zu halten.
 
-We will explore rendering React elements to the DOM in the next section.
+Im nächsten Abschnitt gehen wir auf das rendering von React-Elementen in den DOM.
 
->**Tip:**
+>**Tipp:**
 >
->We recommend using the ["Babel" language definition](http://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme which is compatible with it.
+>Wir empfehlen die Verwendung der ["Babel" Sprachdefinition](http://babeljs.io/docs/editors) für den Editor deiner Wahl, sodass sowohl ES6 als auch JSX-Code vernünftig dargestellt werden kann. Diese Webseite nutzt das [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/)-Farbschema, welched mit Babel kompatibel ist.
