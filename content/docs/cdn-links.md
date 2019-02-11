@@ -13,7 +13,7 @@ React und ReactDOM sind beide über CDNs verfügbar.
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 ```
 
-Diese beiden Versionen sind nur zu Entwicklung angedacht und nicht für den Live-Einsatz in Produktionsystemen.
+Diese beiden Versionen sind nur zu Entwicklung angedacht und nicht für den Live-Einsatz in Produktivsystemen.
 Für diesen Gebrauch haben wir extra verkleinerte und optimierte Versionen von React bereitgestellt:
 
 ```html
