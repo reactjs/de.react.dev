@@ -27,7 +27,7 @@ Die meisten Seiten in diesem Leitfaden besitzen änderbare Beispiele wie dieses.
 ## Wie man diesen Leitfaden liest {#how-to-read-this-guide}
 
 In diesem Leitfaden werden wir die React-Bestandteile: Elemente und Komponenten, behandeln.
-Sobald du diese beherrschst ist es dir möglich Komplexe Anwendungen mit Hilfe aus kleinen wiederverwendbaren Teilen zu erstellen.
+Sobald du diese beherrschst, ist es dir möglich, komplexe Anwendungen aus vielen kleinen wiederverwendbaren Teilen zu erstellen.
 
 >Tipp
 >
