@@ -13,7 +13,7 @@ Elemente sind die kleinsten Bestandteile von React-Apps.
 Ein Element beschreibt was du auf dem Bildschirm sehen möchtest:
 
 ```js
-const element = <h1>Hallo, Welt</h1>;
+const element = <h1>Hallo Welt</h1>;
 ```
 
 Anders als die DOM Elemente eines Browsers, sind React Elemente, schlichte Objekte und kostengünstiger zu erstellen.
