@@ -61,7 +61,7 @@
       forceInternal: true
       subitems:
         - id: lifting-state-up
-          title: Den State zurückbringen
+          title: Den State hoch holen
           href: /tutorial/tutorial.html#lifting-state-up
           forceInternal: true
         - id: why-immutability-is-important
