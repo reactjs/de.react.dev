@@ -98,7 +98,7 @@
           href: /tutorial/tutorial.html#showing-the-past-moves
           forceInternal: true
         - id: picking-a-key
-          title: Ein key auswählen
+          title: Einen Schlüssel (key) auswählen
           href: /tutorial/tutorial.html#picking-a-key
           forceInternal: true
         - id: implementing-time-travel
