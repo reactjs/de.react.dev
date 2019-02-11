@@ -29,7 +29,7 @@ Die meisten Seiten in diesem Leitfaden besitzen änderbare Beispiele wie dieses.
 In diesem Leitfaden werden wir die React-Bestandteile: Elemente und Komponenten, behandeln.
 Sobald du diese beherrschst, ist es dir möglich, komplexe Anwendungen aus vielen kleinen wiederverwendbaren Teilen zu erstellen.
 
->Tipp
+>**Tipp:**
 >
 >Dieser Leitfaden richtet sich an Personen, die es bevorzugen Konzepte **Schritt für Schritt** zu erlernen, wenn du es lieber bevozugst
 >mit Übungen zu lernen, dann ist vielleicht unser [praktisches Tutorial](/tutorial/tutorial.html) das Richtige für dich.
@@ -47,7 +47,7 @@ Da React eine JavaScript-Bibliothek ist, gehen wir davon aus, dass du ein gewiss
 Es dauert ca. zwischen 30 Minuten und einer Stunde, aber danach solltest du keine Probleme mehr haben dem Leitfaden zu folgen
 und nicht das Gefühl haben, React und JavaScript gleichzeitig zu lernen.
 
->Notiz
+>**Hinweis:**
 >
 >Dieser Leitfaden benutzt in den Beispielen gelegentlich neuere JavaScript Syntaxen. Solltest in den letzten Jahren nicht mit JavaSscript
 >gearbeitet haben, helfen dir diese [3 Punkte](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) wieder ein wenig auf die Sprünge zu kommen.
