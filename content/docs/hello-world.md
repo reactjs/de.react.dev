@@ -1,6 +1,6 @@
 ---
 id: hello-world
-title: Hello World
+title: Hallo Welt
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
@@ -10,12 +10,12 @@ Das wohl kleinste React-Beispiel sieht wie folgt aus:
 
 ```js
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <h1>Hallo, Welt!</h1>,
   document.getElementById('root')
 );
 ```
 
-Es wird eine Überschrift mit dem Text "Hello, world!" auf der Seite dargestellt.
+Es wird eine Überschrift mit dem Text "Hallo, Welt!" auf der Seite dargestellt.
 
 **[Auf CodePen ausprobieren](codepen://hello-world)**
 
