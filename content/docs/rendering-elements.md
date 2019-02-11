@@ -16,24 +16,24 @@ Ein Element beschreibt was du auf dem Bildschirm sehen möchtest:
 const element = <h1>Hallo, Welt</h1>;
 ```
 
-Anders als die DOM Elemente eines Browser, sind React Element schlichte Objekte und günstig zu erstellen.
+Anders als die DOM Elemente eines Browsers, sind React Elemente, schlichte Objekte und kostengünstiger zu erstellen.
 React DOM kümmert sich um das Aktualisieren des DOMs und den dazugehörigen React Elementen.
 
 >**Notiz:**
 >
 >Man könnte Elemente mit dem allgemein bekannterem Konzept der "Komponenten" verwechseln. Komponenten werden wir
 >im [nächsten Abschnitt](/docs/components-and-props.html) behandeln.
->Elemente sind das, woraus Komponenten "gemacht" werden und wir empfehlen dir ersten diesen Abschnitt zu lesen, bevor du weiter machst.
+>Elemente sind das, woraus Komponenten "gemacht" werden und wir empfehlen dir erst diesen Abschnitt zu lesen, bevor du weiter machst.
 
 ## Ein Element in das DOM rendern {#rendering-an-element-into-the-dom}
 
-Wir nehmen mal an, wir haben ein `<div>` Element irgendwo in deiner HTML-Datei:
+Nehmen wir mal an, wir haben ein `<div>` Element irgendwo in einer HTML-Datei:
 
 ```html
 <div id="root"></div>
 ```
 
-Wir nennen es "root" DOM Knoten, da alles innerhalb dieses Elements von React DOM verwaltet wird.
+Dieses Element nennen wir "root" DOM Knoten. Alles innerhalb dieses Elements wird von React DOM verwaltet.
 
 Anwendungen, die mit React gebaut worden, haben normalerweise nur einen root DOM Knoten. Wenn du React in eine bestehende Anwendung einfügst, kannst du aber soviele DOM Knoten haben, wie du möchtest.
 
@@ -48,7 +48,7 @@ Es wird "Hallo, Welt" auf der Seite angezeigt.
 ## Aktualisieren des gerenderten Elements {#updating-the-rendered-element}
 
 React Elemente sind [unveränderbar](https://en.wikipedia.org/wiki/Immutable_object). Wenn du einmal ein Element erstellt hast, kannst du dessen
-Kind-Elemente oder Attribute nicht mehr verändern. Eine Element ist wie ein einzelnes Bild eines Filmes: Es repräsentiert die Benutzeroberfläche (UI) zu einem bestimmten Zeitpunkt.
+Kind-Elemente oder Attribute nicht mehr verändern. Eine Element kannst du dir vorstellen, wie ein einzelnes Bild eines Filmes: Es repräsentiert die Benutzeroberfläche (UI) zu einem bestimmten Zeitpunkt.
 
 Mit dem was wir bis jetzt erfahren haben, wissen wir nur, dass der einzige Weg um die Benutzeroberfläche zu Aktualisieren und neue Elemente zu erstellen, das Aufrufen von `ReactDOM.render()` ist.
 
@@ -58,22 +58,25 @@ Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
 [Auf CodePen ausprobieren](codepen://rendering-elements/update-rendered-element)
 
-Es wird jede Sekunden wird `ReactDOM.render()` mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
+Jede Sekunden wird `ReactDOM.render()` mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
 
 >**Notiz:**
 >
->In der Praxis rufen die meisten React Anwendungen `ReactDOM.render()` nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt werden.
+>In der Praxis rufen die meisten React Anwendungen `ReactDOM.render()` nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt wird.
 >
 >Wir empfehlen dir, Abschnitte nicht zu überspringen, da sie aufeinander aufbauen.
 
-## React aktulisert nur das Nötigste {#react-only-updates-whats-necessary}
+## React aktualisiert nur das Nötigste {#react-only-updates-whats-necessary}
 
-React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+React DOM vergleicht das vorherige und jetztige Element und dessen Kindelemente miteinander.
+Um das DOM in den gwünschten Zustand zu bringen, werden nur die Elemente im DOM aktualisiert, die wirklich eine Änderung beinhalten.
 
-You can verify by inspecting the [last example](codepen://rendering-elements/update-rendered-element) with the browser tools:
+Du kannst es nachprüfen, indem du das [letzte Beispiel](codepen://rendering-elements/update-rendered-element) mit den Browser Tools aufrufst:
 
-![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
+![DOM-Inspektor mit detaillierten Updates](../images/docs/granular-dom-updates.gif)
 
-Even though we create an element describing the whole UI tree on every tick, only the text node whose contents has changed gets updated by React DOM.
+Obwohl wir jede Sekunde ein Element erstellen, das den kompletten UI Baum aktualisiert,
+wird nur der Text-Inhalt durch React DOM aktualisiert, dessen Inhalt sich wirklich geändert hat.
 
-In our experience, thinking about how the UI should look at any given moment rather than how to change it over time eliminates a whole class of bugs.
+Nach unserer Erfahrung macht es mehr Sinn darüber nachzudenken, wie die Benutzeroberfläche zu einem bestimmten Zeitpunkt aussieht, anstatt
+sich darüber Gedanken zu machen, wie sie sich im Laufe der Zeit verändert. Dieses Denken verhindert eine ganze Reihe von Fehlern.
