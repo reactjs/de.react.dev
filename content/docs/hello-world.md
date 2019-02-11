@@ -32,7 +32,7 @@ Sobald du diese beherrschst ist es dir möglich Komplexe Anwendungen mit Hilfe a
 >Tipp
 >
 >Dieser Leitfaden richtet sich an Personen, die es bevorzugen Konzepte **Schritt für Schritt** zu erlernen, wenn du es lieber bevozugst
->mit Übungen zu lernen, dann ist vielleicht unser [praktisches Tutorial](/tutorial/tutorial.html) das richtige für dich.
+>mit Übungen zu lernen, dann ist vielleicht unser [praktisches Tutorial](/tutorial/tutorial.html) das Richtige für dich.
 >Vielleicht findest du auch, dass sich der Leitfaden und das Tutorial gegenseitig ergänzen.
 
 Dies ist das erste Kapitel im **Schritt für Schritt** Leitfaden. Du findest eine Liste aller vorhandenen Kapitel in der Navigationsleiste.
