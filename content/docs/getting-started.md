@@ -115,11 +115,11 @@ The [glossary](/docs/glossary.html) contains an overview of the most common term
 
 ## Bleib aktuell {#staying-informed}
 
-The [React blog](/blog/) is the official source for the updates from the React team. Anything important, including release notes or deprecation notices, will be posted there first.
+Der [React Blog](/blog/) ist die offizielle Quelle für Neuigkeiten des React-Teams. Alle wichtigen Informationen, einschließlich Versionshinweise oder nicht mehr weitergeführte Funktionaltäten, werden dort zuerst veröffentlicht.
 
-You can also follow the [@reactjs account](https://twitter.com/reactjs) on Twitter, but you won't miss anything essential if you only read the blog.
+Du kannst auch unserem Account, [@reactjs](https://twitter.com/reactjs), auf Twitter folgen. Du würdest aber nichts wichtiges verpassen, wenn du nur den Blog liest.
 
-Not every React release deserves its own blog post, but you can find a detailed changelog for every release [in the `CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/master/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react) page.
+Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst aber eine detailierte Liste aller Änderung in der [CHANGELOG.md, im React Repository finden](https://github.com/facebook/react/blob/master/CHANGELOG.md), genauso wie auf der [Releases Seite](https://github.com/facebook/react).
 
 ## Versionierte Dokumentation {#versioned-documentation}
 
