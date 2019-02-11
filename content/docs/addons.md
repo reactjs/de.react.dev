@@ -6,9 +6,9 @@ permalink: docs/addons.html
 
 > Notiz:
 >
-> `React.addons` sind seit React v15.5 veraltet. Die Add-Ons sind in ein seperates Modul verschoben worden und einige von ihnen verlatet.
+> `React.addons` sind seit React v15.5 veraltet. Die Add-Ons sind in ein separates Modul verschoben worden und einige von ihnen veraltet.
 
-React Add-Ons sind eine Ansammlung von nützlichen Modulen für das Erstellen von React-Apps. **Sie sollten aber als "experimentell" betrachtet werden**, da es sein kann, dass sie sich häufiger und React-Core ändern.
+React Add-Ons sind eine Ansammlung von nützlichen Modulen für das Erstellen von React-Apps. **Sie sollten aber als "experimentell" betrachtet werden**, da es sein kann, dass sie sich häufiger als React-Core ändern.
 
 - [`createFragment`](/docs/create-fragment.html), um eine Menge von mit Schlüssel versehenden Kind-Elementen zu erstellen.
 
@@ -19,7 +19,7 @@ Die unten stehenden Add-Ons sind nur in der Entwicklungsversion (nicht minimiert
 
 ###  Add-on Altlasten {#legacy-add-ons}
 
-Die unten stehenden Add-Ons gilten als Altlasten aus vorherigen Versionen. Sie werden wahrscheinlich noch in zukünftigen React-Versionen funktioniere, aber nicht mehr aktiv weiterentwickelt.
+Die unten stehenden Add-Ons gelten als Altlasten aus vorherigen Versionen. Sie werden wahrscheinlich noch in zukünftigen React-Versionen funktionieren, aber nicht mehr aktiv weiterentwickelt.
 
 - [`PureRenderMixin`](/docs/pure-render-mixin.html). Benutze stattdessen [`React.PureComponent`](/docs/react-api.html#reactpurecomponent).
 - [`shallowCompare`](/docs/shallow-compare.html), a helper function that performs a shallow comparison for props and state in a component to decide if a component should update. We recommend using [`React.PureComponent`](/docs/react-api.html#reactpurecomponent) instead.
