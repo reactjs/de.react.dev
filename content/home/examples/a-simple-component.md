@@ -1,5 +1,5 @@
 ---
-title: Eine simple Komponente
+title: Eine einfache Komponente
 order: 0
 domid: hello-example
 ---
