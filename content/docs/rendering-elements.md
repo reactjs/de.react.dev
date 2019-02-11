@@ -43,7 +43,7 @@ Um ein Element in den root DOM Knoten zu rendern, muss du nur beides an `ReactDO
 
 [Auf CodePen ausprobieren](codepen://rendering-elements/render-an-element)
 
-Es wird "Hallo, Welt" auf der Seite angezeigt.
+Es wird "Hallo Welt" auf der Seite angezeigt.
 
 ## Aktualisieren des gerenderten Elements {#updating-the-rendered-element}
 
