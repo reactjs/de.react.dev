@@ -6,7 +6,7 @@ prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-Das kleinste React-Beispiel sieht wie folgt aus:
+Das wohl kleinste React-Beispiel sieht wie folgt aus:
 
 ```js
 ReactDOM.render(
@@ -17,7 +17,7 @@ ReactDOM.render(
 
 Es wird eine Überschrift mit dem Text "Hello, world!" auf der Seite dargestellt.
 
-[](codepen://hello-world)
+**[Auf CodePen ausprobieren](codepen://hello-world)**
 
 Klicke auf den Link um das obrige Beispiel in einen Online-Editor zu öffnen.
 Mache soviele Änderungen du magst, spiel ein bisschen mit dem Code rum und schaue was es für Auswirkungen auf die Seite hat.
@@ -36,13 +36,13 @@ Sobald du diese beherrschst ist es dir möglich Komplexe Anwendungen mit Hilfe a
 >Vielleicht findest du auch, dass sich der Leitfaden und das Tutorial gegenseitig ergänzen.
 
 Dies ist das erste Kapitel im **Schritt für Schritt** Leitfaden. Du findest eine Liste aller vorhandenen Kapitel in der Navigationsleiste.
-Wenn du das hier auf der Mobilenansicht liest, findest du die Navigation durch das Klicken des Buttons in der unteren rechten Ecke deines Bildschirms.
+Solltest du dies auf der Mobilansicht lesen, klicke auf den Button in der unteren rechten Ecke um die Navigation zu öffnen.
 
-Die Kapitel bauen aufeinander auf und greifen ggf. auf das Wissen des vorherigen zurück. **Das meiste über React kannst du in den Kapiteln unter "Hauptkonzepte" in der Reihenfolge wie sie dort erscheinen, nachlesen.** [“Einführung in JSX”](/docs/introducing-jsx.html) ist beispielweise das folgende Kapitel.
+Die Kapitel bauen aufeinander auf und greifen ggf. auf das Wissen des vorherigen zurück. **Das meiste über React kannst du in den Kapiteln unter "Hauptkonzepte" in der Reihenfolge wie sie dort aufgelistet sind, nachlesen.** [“Einführung in JSX”](/docs/introducing-jsx.html) ist beispielweise das folgende Kapitel.
 
 ## Annahme zu deinem Wissensstand {#knowledge-level-assumptions}
 
-Da React ist eine JavaScript-Bibliothek ist, gehen wir davon aus, dass du ein gewisses Grundverständnis von JavaScript hast.
+Da React eine JavaScript-Bibliothek ist, gehen wir davon aus, dass du ein gewisses Grundverständnis von JavaScript hast.
 **Wenn du dich noch ein wenig unsicher fühlst können wir dir dieses [JavaScript Tutorial](https://developer.mozilla.org/de/docs/Web/JavaScript/Eine_Wiedereinfuehrung_in_JavaScript) sehr empfehlen.**
 Es dauert ca. zwischen 30 Minuten und einer Stunde, aber danach solltest du keine Probleme mehr haben dem Leitfaden zu folgen
 und nicht das Gefühl haben, React und JavaScript gleichzeitig zu lernen.
