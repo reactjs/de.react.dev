@@ -1,36 +1,36 @@
 ---
 id: introducing-jsx
-title: Introducing JSX
+title: Einführung in JSX
 permalink: docs/introducing-jsx.html
 prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Consider this variable declaration:
+Betrachte die folgende Variablendeklaration:
 
 ```js
 const element = <h1>Hello, world!</h1>;
 ```
 
-This funny tag syntax is neither a string nor HTML.
+Diese seltsame Tag-Schreibweise ist weder ein String noch HTML.
 
-It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+Das ist eine syntaktische Erweiterung zu JavaScript und heißt JSX. Wir empfehlen dies zusammen mit React zu benutzen um zu beschreiben wie das UI aussehen soll. JSX mag vielleicht an eine Template-Sprache erinnern, hat jedoch den vollen Funktionsumfang von JavaScript. 
 
-JSX produces React "elements". We will explore rendering them to the DOM in the [next section](/docs/rendering-elements.html). Below, you can find the basics of JSX necessary to get you started.
+JSX erzeugt React-Elemente "elements". Wie diese im DOM gerendered werden, behandeln wir im nächsten Kapitel [next section](/docs/rendering-elements.html). Lies weiter, um die Grundlagen über JSX zu lernen, die du zum Starten benötigst.
 
-### Why JSX? {#why-jsx}
+### Warum JSX? {#why-jsx}
 
-React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
+React lebt den Fakt, dass die Logik des Renderings und andere UI-Logiken grundsätzlich miteinander verbunden sind: Wie Events behandelt werden, wie sich der State über die Zeit verändert und wie Daten für die Darstellung vorbereitet werden.
 
-Instead of artificially separating *technologies* by putting markup and logic in separate files, React [separates *concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) with loosely coupled units called "components" that contain both. We will come back to components in a [further section](/docs/components-and-props.html), but if you're not yet comfortable putting markup in JS, [this talk](https://www.youtube.com/watch?v=x7cQ3mrcKaY) might convince you otherwise.
+Anstelle das *Technologien* künstlich separiert werden, indem Markup und Logik in getrennten Datein liegen, trennt React die Dateien [nach *Zuständigkeit*](https://en.wikipedia.org/wiki/Separation_of_concerns) auf und bindet die daraus resultierenden Einheiten in sogenannten "components" lose zusammen. Diese Components enthalten sowohl Markup als auch Logik. Zu den Components werden wir noch [in einem anderen Kapitel](/docs/components-and-props.html) kommen. Wenn Du dich immernoch unwohl dabei fühlst, Markup in JavaScript zu schreiben, dann schaue Dir doch am Besten [diesen Talk](https://www.youtube.com/watch?v=x7cQ3mrcKaY) an.
 
-React [doesn't require](/docs/react-without-jsx.html) using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+React [benötigt kein](/docs/react-without-jsx.html) JSX, aber die Meisten empfinden es als hilfreiches Werkzeug, wenn sie in JavaScript-Code an der UI arbeiten. Zusätzlich bietet es React die Möglichkeit, bessere Fehlermeldungen und Warnungen anzuzeigen.
 
-With that out of the way, let's get started!
+Soviel zum Warum, lass uns starten!
 
-### Embedding Expressions in JSX {#embedding-expressions-in-jsx}
+### JavaScript-Ausdrücke in JSX {#embedding-expressions-in-jsx}
 
-In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
+In dem folgenden Beispiel deklarieren wir eine Variable `name` und nutzen diese dann in JSX zwischen geschweiften Klammern.
 
 ```js{1,2}
 const name = 'Josh Perez';
@@ -42,9 +42,9 @@ ReactDOM.render(
 );
 ```
 
-You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
+Jeder valide [JavaScript Ausdruck](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Ausdruecke_und_Operatoren#Expressions) ist zwischen den geschweiften Klammern in JSX erlaubt. Zum Beispiel, `2 + 2`, `user.firstName`, oder `formatName(user)` sind völlig valide JavaScript Ausdrücke.
 
-In the example below, we embed the result of calling a JavaScript function, `formatName(user)`, into an `<h1>` element.
+Im folgenden Beispiel geben wir das Ergebnis des JavaScript-Funktionsaufrufes `formatName(user)` direkt in das `<h1>` Element.
 
 ```js{12}
 function formatName(user) {
@@ -70,13 +70,13 @@ ReactDOM.render(
 
 [](codepen://introducing-jsx)
 
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](http://stackoverflow.com/q/2846283).
+Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist prinzipiell nicht notwendig und wenn man es macht, empfehlen wir, Klammern drumherum zu setzen, um etwaige Fehler durch das [automatische Einfügen von Semikolons](http://stackoverflow.com/q/2846283) zu vermeiden.
 
-### JSX is an Expression Too {#jsx-is-an-expression-too}
+### JSX ist auch ein Ausdruck {#jsx-is-an-expression-too}
 
-After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
+Nach der Kompilierung werden JSX Ausdrücke normale JavaScript-Funktionssaufrufe und werden zu Objekten evaluiert.
 
-This means that you can use JSX inside of `if` statements and `for` loops, assign it to variables, accept it as arguments, and return it from functions:
+Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehen, Variablen zugewiesen, als Argument übergeben oder Rückgabewert eine Funktion sein kann:
 
 ```js{3,5}
 function getGreeting(user) {
