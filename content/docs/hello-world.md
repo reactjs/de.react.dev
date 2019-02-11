@@ -20,7 +20,7 @@ Es wird eine Überschrift mit dem Text "Hello, world!" auf der Seite dargestellt
 **[Auf CodePen ausprobieren](codepen://hello-world)**
 
 Klicke auf den Link um das obrige Beispiel in einen Online-Editor zu öffnen.
-Mache soviele Änderungen du magst, spiel ein bisschen mit dem Code rum und schaue was es für Auswirkungen auf die Seite hat.
+Mache soviele Änderungen wie du magst, spiel ein bisschen mit dem Code rum und schaue was es für Auswirkungen auf die Seite hat.
 Die meisten Seiten in diesem Leitfaden besitzen änderbare Beispiele wie dieses.
 
 
