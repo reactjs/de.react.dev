@@ -34,12 +34,12 @@ Diese Seite bietet dir einen Gesamtüberblick über die React Dokumentation und 
 
 React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du kannst selbst entscheiden wie viel oder wie wenig du von React benutzen möchtest.** Die Links in diesem Abschnitt helfen dir beim Einstieg, dabei ist es ist egal ob du nur ein wenig Interaktivtät zu einer kleinen HTML-Seite hinzufügen, bestehende Anwendungen erweitern oder eine komplexere Anwendung bauen möchtest.
 
-### Online Playgrounds {#online-playgrounds}
+### Online Spielwiesen {#online-playgrounds}
 
 Wenn du ein bisschen mit React herum spielen möchtest, dann kannst du dafür online Code-Editoren benutzen.
-Probiere Hello World auf [CodePen](codepen://hello-world) oder [CodeSandbox](https://codesandbox.io/s/new) aus.
+Probiere "Hallo Welt" auf [CodePen](codepen://hello-world) oder [CodeSandbox](https://codesandbox.io/s/new) aus.
 
-Wenn du lieber deinen eigenen Editor verwenden möchtest, kannst du [diese HTML](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) Datei herunterladen, bearbeiten und mit deinem Browser anschauen. In dieser Datei wird eine langsame Codeumwandlung zur Laufzeit angewandt, daher empfehlen wir diese Datei nur für kleinere Demonstrationen zu verwenden.
+Wenn du lieber deinen eigenen Editor verwenden möchtest, kannst du [diese HTML](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) Datei herunterladen, bearbeiten und mit deinem Browser anschauen. In dieser Datei wird eine langsame Codeumwandlung zur Laufzeit angewandt, daher empfehlen wir diese Datei nur für kleinere Demonstrationen und Verprobungen zu verwenden.
 
 ### React zu einer Webseite hinzufügen {#add-react-to-a-website}
 
@@ -97,9 +97,10 @@ Wenn du es bevorzugst **Konzepte Schritt für Schritt** zu lernen, dann ist der 
 Viele Benutzer schreiben, dass es nach dem Lesen von [Thinking in React](/docs/thinking-in-react.html), bei ihnen "klick" gemacht hat.
 Dies ist wahrscheinlichst der älteste Leitfaden, aber er hat immer noch seine Da­seins­be­rech­ti­gung.
 
-### Recommended Courses {#recommended-courses}
+### Empfohlene Kurse {#recommended-courses}
 
-Sometimes people find third-party books and video courses more helpful than the official documentation. We maintain [a list of commonly recommended resources](/community/courses.html), some of which are free.
+Manchmal finden Personen Bücher und Videokurse von Drittanbietern hilfreicher als die offizielle Dokumentation, deshalb
+führen wir eine [Liste von empfehlenswerten Quellen](/community/courses.html), von denen einige kostenlos sind.
 
 ### Fortgeschrittene Konzepte {#advanced-concepts}
 
@@ -107,11 +108,13 @@ Once you're comfortable with the [main concepts](#main-concepts) and played with
 
 ### API Referenz {#api-reference}
 
-This documentation section is useful when you want to learn more details about a particular React API. For example, [`React.Component` API reference](/docs/react-component.html) can provide you with details on how `setState()` works, and what different lifecycle methods are useful for.
+Dieser Abschnitt der Dokumentation ist nützlich, wenn du mehr über die React API erfahren möchtest.
+Zum Beispiel die [API Referenz zu `React.Component`](/docs/react-component.html) beschreibt detailiert wie `setState()` funktioniert und für welchen Einsatz die unterschiedlichen Lifecycle-Methoden nützlich sind.
 
-### Glossary and FAQ {#glossary-and-faq}
+### Glossar and FAQ {#glossary-and-faq}
 
-The [glossary](/docs/glossary.html) contains an overview of the most common terms you'll see in the React documentation. There is also a FAQ section dedicated to short questions and answers about common topics, including [making AJAX requests](/docs/faq-ajax.html), [component state](/docs/faq-state.html), and [file structure](/docs/faq-structure.html).
+Das [Glossar](/docs/glossary.html) bietet dir einen Überblick über die Begriffe, die am häufigsten in der React Dokumentation vorkommen.
+Es gibt außerdem ein FAQ, in welchem wir kleine Fragen zu allgemeinen Themen wie: [AJAX Requests](/docs/faq-ajax.html), [States in Komponenten](/docs/faq-state.html) oder [Dateistrukturen](/docs/faq-structure.html) bearbeiten.
 
 ## Bleib aktuell {#staying-informed}
 
@@ -123,8 +126,12 @@ Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst abe
 
 ## Versionierte Dokumentation {#versioned-documentation}
 
-This documentation always reflects the latest stable version of React. Since React 16, you can find older versions of the documentation [on a separate page](/versions). Note that documentation for past versions is snapshotted at the time of the release, and isn't being continuously updated.
+Diese Dokumentation entspricht immer der neuesten "stable" Version von React.
+Seit React 16, können alle älteren Dokumentation [auf einer seperaten Seite](/versions) gefunden werden.
+Bitte beachte, dass die Dokumentation vergangener Versionen am Releasedatum zwischengespeichert wurde und nicht mehr kontinuierlich
+aktualsiert wird.
 
 ## Fehlt etwas? {#something-missing}
 
-If something is missing in the documentation or if you found some part confusing, please [file an issue for the documentation repository](https://github.com/reactjs/reactjs.org/issues/new) with your suggestions for improvement, or tweet at the [@reactjs account](https://twitter.com/reactjs). We love hearing from you!
+Wenn etwas in der Dokumentation fehlt oder du Dinge verwirrend findest, schreib uns deinen Vorschlag oder deine Verbesserung und mache ein [Issue in unserem Dokumentation Repository](https://github.com/reactjs/reactjs.org/issues/new) auf. Du kannst uns natürlich auch über unseren Twitteraccount [@reactjs](https://twitter.com/reactjs) erreichen.
+Wir freuen uns von dir zu hören!
