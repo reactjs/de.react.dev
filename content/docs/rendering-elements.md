@@ -19,7 +19,7 @@ const element = <h1>Hallo, Welt</h1>;
 Anders als die DOM Elemente eines Browsers, sind React Elemente, schlichte Objekte und kostengünstiger zu erstellen.
 React DOM kümmert sich um das Aktualisieren des DOMs und den dazugehörigen React Elementen.
 
->**Notiz:**
+>**Hinweis:**
 >
 >Man könnte Elemente mit dem allgemein bekannterem Konzept der "Komponenten" verwechseln. Komponenten werden wir
 >im [nächsten Abschnitt](/docs/components-and-props.html) behandeln.
@@ -60,7 +60,7 @@ Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
 Jede Sekunden wird `ReactDOM.render()` mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
 
->**Notiz:**
+>**Hinweis:**
 >
 >In der Praxis rufen die meisten React Anwendungen `ReactDOM.render()` nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt wird.
 >
