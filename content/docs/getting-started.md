@@ -18,7 +18,7 @@ redirect_from:
   - "docs/environments.html"
 ---
 
-Diese Seite bietet einen Gesamtüberblick über die React Dokumentation und allen damit zusammenhängenden Ressourcen.
+Diese Seite bietet dir einen Gesamtüberblick über die React Dokumentation und allen damit zusammenhängenden Ressourcen.
 
 **React** ist eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen. Erfahre mehr auf [unserer Homepage](/) oder im [Tutorial](/tutorial/tutorial.html) worum es bei React geht und was es ist.
 
@@ -43,8 +43,7 @@ Wenn du lieber deinen eigenen Editor verwenden möchtest, kannst du [diese HTML]
 
 ### React zu einer Webseite hinzufügen {#add-react-to-a-website}
 
-Du kannst React innerhalb einer Minute zu einer HTML-Seite hinzufügen. Danach kannst du entweder die Präsenz von React immer mehr erweitern oder es nur
-für ein paar Bestandteile wie Formulare o. ä. benutzen.
+Du kannst React innerhalb einer Minute zu einer HTML-Seite hinzufügen. Danach kannst du entweder die Präsenz von React immer mehr erweitern oder es nur für ein paar Bestandteile wie Formulare o. ä. benutzen.
 
 ### Erstelle eine neue React App {#create-a-new-react-app}
 
@@ -81,7 +80,7 @@ The React documentation assumes some familiarity with programming in the JavaScr
 
 We recommend going through [this JavaScript overview](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level. It will take you between 30 minutes and an hour but you will feel more confident learning React.
 
->Tip
+>**Tipp:**
 >
 >Whenever you get confused by something in JavaScript, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [javascript.info](http://javascript.info/) are great websites to check. There are also [community support forums](/community/support.html) where you can ask for help.
 
@@ -89,13 +88,14 @@ We recommend going through [this JavaScript overview](https://developer.mozilla.
 
 If you prefer to **learn by doing,** check out our [practical tutorial](/tutorial/tutorial.html). In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you're not building games -- but give it a chance. The techniques you'll learn in the tutorial are fundamental to building *any* React apps, and mastering it will give you a much deeper understanding.
 
-### Step-by-Step Guide {#step-by-step-guide}
+### Schritt für Schritt Leitfaden {#step-by-step-guide}
 
-If you prefer to **learn concepts step by step,** our [guide to main concepts](/docs/hello-world.html) is the best place to start. Every next chapter in it builds on the knowledge introduced in the previous chapters so you won't miss anything as you go along.
+Wenn du es bevorzugst **Konzepte Schritt für Schritt** zu lernen, dann ist der [Leitfaden zu den Hauptkonzepten](/docs/hello-world.html) genau das richtige für dich um anzufangen. Alle Kapitel bauen aufeinander auf, somit verpasst du nichts, wenn du alles nacheinander in der richtigen Reihenfolge liest.
 
-### Thinking in React {#thinking-in-react}
+### Denke in React {#thinking-in-react}
 
-Many React users credit reading [Thinking in React](/docs/thinking-in-react.html) as the moment React finally "clicked" for them. It's probably the oldest React walkthrough but it's still just as relevant.
+Viele Benutzer schreiben, dass es nach dem Lesen von [Thinking in React](/docs/thinking-in-react.html), bei ihnen "klick" gemacht hat.
+Dies ist wahrscheinlichst der älteste Leitfaden, aber er hat immer noch seine Da­seins­be­rech­ti­gung.
 
 ### Recommended Courses {#recommended-courses}
 
