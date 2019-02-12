@@ -74,7 +74,7 @@ Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist 
 
 ### JSX ist auch ein Ausdruck {#jsx-is-an-expression-too}
 
-Nach der Kompilierung werden JSX Ausdrücke normale JavaScript-Funktionssaufrufe und werden zu Objekten evaluiert.
+Nach dem Kompilieren werden JSX Ausdrücke normale JavaScript-Funktionssaufrufe und als JavaScript-Objekte ausgewertet.
 
 Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehen, Variablen zugewiesen, als Argument übergeben oder Rückgabewert einer Funktion sein kann:
 
