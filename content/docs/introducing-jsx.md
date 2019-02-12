@@ -111,7 +111,7 @@ Setze keine Anführungszeichen um geschweifte Klammern um JavaScript-Ausdrücke 
 
 ### Spezifizieren von Kind-Elementen mit JSX {#specifying-children-with-jsx}
 
-Ist ein Element leer, kannst du es wie in der XML-Notation mit `/>` schließen:
+Ist ein Element leer, kannst du es wie in XML mit `/>` schließen:
 
 ```js
 const element = <img src={user.avatarUrl} />;
