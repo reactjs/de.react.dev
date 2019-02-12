@@ -16,7 +16,7 @@ Diese seltsame Tag-Schreibweise ist weder ein String noch HTML.
 
 Dies ist eine syntaktische Erweiterung zu JavaScript und heißt JSX. Wir empfehlen sie zusammen mit React zu benutzen um zu beschreiben wie die Benutzeroberfläche (UI) aussehen soll. JSX mag vielleicht an eine Template-Sprache erinnern, besitzt jedoch den vollen Funktionsumfang von JavaScript.
 
-JSX erzeugt React-Elemente "elements". Wie diese im DOM gerendered werden, behandeln wir im nächsten Kapitel [next section](/docs/rendering-elements.html). Lies weiter, um die Grundlagen über JSX zu lernen, die du zum Starten benötigst.
+JSX erzeugt React-Elemente "elements". Wie diese im DOM gerendert werden, behandeln wir im [nächsten Kapitel](/docs/rendering-elements.html). Weiter unten findest du die Grundlagen von JSX, die du zum Starten benötigst.
 
 ### Warum JSX? {#why-jsx}
 
