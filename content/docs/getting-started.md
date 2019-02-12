@@ -63,7 +63,7 @@ Wie jede unbekannte Technologie, hat auch React eine gewisse Lernkurve. Mit etwa
 
 ### Erste Beispiele {#first-examples}
 
-Die [React homepage](/) beinhaltet ein paar React Beispiele mit einem Live-Editor.
+Die [React Homepage](/) beinhaltet ein paar React Beispiele mit einem Live-Editor.
 Auch wenn du vorher noch nichts mit React gemacht hast kannst du hiermit ein wenig rumprobieren und direkt sehen was für Auswirkungen
 deine Änderungen haben.
 
@@ -95,7 +95,7 @@ Du wirst diesen Teil vielleicht überspringen wollen, da du keine Spiele erstell
 
 ### Schritt für Schritt Leitfaden {#step-by-step-guide}
 
-Wenn du es bevorzugst **Konzepte Schritt für Schritt** zu lernen, dann ist der [Leitfaden zu den Hauptkonzepten](/docs/hello-world.html) genau das richtige für dich um anzufangen. Alle Kapitel bauen aufeinander auf, somit verpasst du nichts, wenn du alles nacheinander in der richtigen Reihenfolge liest.
+Wenn du es bevorzugst **Konzepte Schritt für Schritt** zu lernen, dann ist der [Leitfaden zu den Hauptkonzepten](/docs/hello-world.html) genau das Richtige für dich um anzufangen. Alle Kapitel bauen aufeinander auf, somit verpasst du nichts, wenn du alles nacheinander in der richtigen Reihenfolge liest.
 
 ### Denke in React {#thinking-in-react}
 
