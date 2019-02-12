@@ -107,7 +107,7 @@ Setze keine Anführungszeichen um geschweifte Klammern um JavaScript-Ausdrücke 
 >
 >Da JSX näher an JavaScript als an HTML ist, verwendet React DOM `camelCase` als Namenskonvention für Eigenschaften anstelle der für HTML typischen schreibweise.
 >
->`class` wird zum Beispiel zu [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, und `tabindex` wird zu [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+>`class` wird in JSX zum Beispiel zu [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className), und `tabindex` zu [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
 
 ### Spezifizieren von Kind-Elementen mit JSX {#specifying-children-with-jsx}
 
