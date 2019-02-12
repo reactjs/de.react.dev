@@ -138,7 +138,7 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-Standardmäßig [escaped](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, dass nicht explizit so programmiert wurde. Alles wird zu einem String konvertiert und danach erst gerendered. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
+Standardmäßig [escaped](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, dass nicht explizit so implementiert wurde. Alles wird zu einem String konvertiert und danach erst gerendert. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
 
 ### JSX repräsentiert Objekte {#jsx-represents-objects}
 
