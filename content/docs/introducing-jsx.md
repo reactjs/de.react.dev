@@ -76,7 +76,7 @@ Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist 
 
 Nach der Kompilierung werden JSX Ausdrücke normale JavaScript-Funktionssaufrufe und werden zu Objekten evaluiert.
 
-Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehen, Variablen zugewiesen, als Argument übergeben oder Rückgabewert eine Funktion sein kann:
+Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehen, Variablen zugewiesen, als Argument übergeben oder Rückgabewert einer Funktion sein kann:
 
 ```js{3,5}
 function getGreeting(user) {
