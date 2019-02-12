@@ -22,7 +22,7 @@ Die unten stehenden Add-Ons sind nur in der Entwicklungsversion (nicht minimiert
 Die unten stehenden Add-Ons gelten als Altlasten aus vorherigen Versionen. Sie werden wahrscheinlich noch in zukünftigen React-Versionen funktionieren, aber nicht mehr aktiv weiterentwickelt.
 
 - [`PureRenderMixin`](/docs/pure-render-mixin.html). Benutze stattdessen [`React.PureComponent`](/docs/react-api.html#reactpurecomponent).
-- [`shallowCompare`](/docs/shallow-compare.html), a helper function that performs a shallow comparison for props and state in a component to decide if a component should update. We recommend using [`React.PureComponent`](/docs/react-api.html#reactpurecomponent) instead.
+- [`shallowCompare`](/docs/shallow-compare.html), eine Hilfsfunktion, die dich durch das oberflächliche Vergleichen von props und states entscheiden lässt, ob eine Komponente aktualisiert werden soll oder nicht. Wir empfehlen dir aber stattdessen lieber  [`React.PureComponent`](/docs/react-api.html#reactpurecomponent) zu benutzen.
 - [`update`](/docs/update.html). Benutze stattdessen [`kolodny/immutability-helper`](https://github.com/kolodny/immutability-helper).
 - [`ReactDOMFactories`](https://www.npmjs.com/package/react-dom-factories), vorkonfigurierte DOM-Factories um es einfacher zu machen, React ohne JSX zu verwenden.
 
