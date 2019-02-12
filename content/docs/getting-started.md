@@ -47,18 +47,19 @@ Du kannst React innerhalb einer Minute zu einer HTML-Seite hinzufügen. Danach k
 
 ### Erstelle eine neue React App {#create-a-new-react-app}
 
-When starting a React project, [a simple HTML page with script tags](/docs/add-react-to-a-website.html) might still be the best option. It only takes a minute to set up!
+Am Besten fängst du ein neues React-Projekt mit [einer einfachen HTML Seite und ein paar Script-Tags an](/docs/add-react-to-a-website.html). Innerhalb einer Minute hast du alles fertig aufgsetzt!
 
-As your application grows, you might want to consider a more integrated setup. There are [several JavaScript toolchains](/docs/create-a-new-react-app.html) we recommend for larger applications. Each of them can work with little to no configuration and lets you take full advantage of the rich React ecosystem.
+Sobald jedoch deine Anwendung wächst, solltest du eine fertiges Setup verwenden. Es gibt eine Menge vorhandener [JavaScript Werzeuge](/docs/create-a-new-react-app.html) die wir für größere Anwendungen empfehlen.
+Jedes von ihnen kommt mit wenig bis garkeiner Vorkonfiguration aus und lässt dich trotzdem den vollen Funktionsumfang des React-Ökosystems genießen.
 
 ## Lerne React {#learn-react}
 
-People come to React from different backgrounds and with different learning styles. Whether you prefer a more theoretical or a practical approach, we hope you'll find this section helpful.
+Es kommen Personen mit unterschiedlichsten Hintergründen und Lernstylen zu React. Hoffentlich findest du diese Abschnitte hilfreich, es kommt nur darauf an ob du einen theoretischen oder eher praktischer Ansatz bevorzugst.
 
-* If you prefer to **learn by doing**, start with our [practical tutorial](/tutorial/tutorial.html).
-* If you prefer to **learn concepts step by step**, start with our [guide to main concepts](/docs/hello-world.html).
+* Wenn du eher bevorzugst durch Übungen zu lernen, dann starte mit unserem [praktischen Tutorial](/tutorial/tutorial.html).
+* Wenn du es aber eher bevorzugst, Konzepte Schritt für Schritt zu lernen, starte mit unserem [Leitfaden zu den Hauptkonzepten](/docs/hello-world.html).
 
-Like any unfamiliar technology, React does have a learning curve. With practice and some patience, you *will* get the hang of it.
+Wie jede unbekannte Technologie, hat auch React eine gewisse Lernkurve. Mit etwas Übung und Geduld wirst du aber *den Dreh* raus bekommen.
 
 ### Erste Beispiele {#first-examples}
 
@@ -68,7 +69,8 @@ deine Änderungen haben.
 
 ### React für Anfänger {#react-for-beginners}
 
-If you feel that the React documentation goes at a faster pace than you're comfortable with, check out [this overview of React by Tania Rascia](https://www.taniarascia.com/getting-started-with-react/). It introduces the most important React concepts in a detailed, beginner-friendly way. Once you're done, give the documentation another try!
+Wenn du das Gefühl bekommen solltest, die React-Dokumentation geht schneller voran als du es gewohnt bist, können wir dir den [React-Überblick von Tania Rascia](https://www.taniarascia.com/getting-started-with-react/) ans Herz legen.
+Dieser stellt die wichtigsten React-Konzepte detailliert und anfängerfreundlich vor. Wenn du fertig bist, versuche es einfach noch einmal mit der Dokumentation!
 
 ### React für Designer {#react-for-designers}
 
@@ -76,17 +78,20 @@ Wenn du einen Designhintergrund hast, könnte [diese Sammlung](http://reactforde
 
 ### JavaScript Resources {#javascript-resources}
 
-The React documentation assumes some familiarity with programming in the JavaScript language. You don't have to be an expert, but it's harder to learn both React and JavaScript at the same time.
+Die React Dokumentation setzt fundierte JavaScript Sprachkentnisse voraus. Du musst keine Experte sein, aber es wird dir viel schwerer fallen, React und JavaScript gleichzeitig zu lernen.
 
-We recommend going through [this JavaScript overview](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level. It will take you between 30 minutes and an hour but you will feel more confident learning React.
+Wir empfehlen dir diesen [JavaScript-Überblick](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) durchzugehen und deinen Wissensstand zu überprüfen. Es wird dich zwischen 30 Minuten und einer Stunde deiner Zeit
+kosten, aber danach solltest du dich sicherer fühlen, React zu lernen.
 
 >**Tipp:**
 >
->Whenever you get confused by something in JavaScript, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [javascript.info](http://javascript.info/) are great websites to check. There are also [community support forums](/community/support.html) where you can ask for help.
+> Wenn dich manche JavaScript Funktionweisen verwirren sollten, können wir dir zum nachschlagen, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) und [javascript.info](http://javascript.info/) empfehlen. Außerdem gibt es auch noch unser [Community Forum](/community/support.html), in dem du nach Hilfe fragen kannst.
 
-### Practical Tutorial {#practical-tutorial}
+### Praktisches Tutorial {#practical-tutorial}
 
-If you prefer to **learn by doing,** check out our [practical tutorial](/tutorial/tutorial.html). In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you're not building games -- but give it a chance. The techniques you'll learn in the tutorial are fundamental to building *any* React apps, and mastering it will give you a much deeper understanding.
+Wenn du es lieber bevorzugst durch Übungen zu lernen, dann guck dir unser [praktisches Tutorial](/tutorial/tutorial.html) an. Dort werden wir das Spiel "tic-tac-toe" in React erstellen.
+Du wirst diesen Teil vielleicht überspringen wollen, da du keine Spiele erstellen willst, aber gib ihm wenigstens eine Chance. In diesem Tutorial lernst du grundlegende Techniken, die bei
+*allen* React Anwendungen Verwendung finden und dir ein tieferes Verständnis geben.
 
 ### Schritt für Schritt Leitfaden {#step-by-step-guide}
 
@@ -100,7 +105,7 @@ Dies ist wahrscheinlichst der älteste Leitfaden, aber er hat immer noch seine D
 ### Empfohlene Kurse {#recommended-courses}
 
 Manchmal finden Personen Bücher und Videokurse von Drittanbietern hilfreicher als die offizielle Dokumentation, deshalb
-führen wir eine [Liste von empfehlenswerten Quellen](/community/courses.html), von denen einige kostenlos sind.
+führen wir eine [Liste von empfehlenswerten Quellen](/community/courses.html). Einige sind sogar kostenlos verfügbar.
 
 ### Fortgeschrittene Konzepte {#advanced-concepts}
 
