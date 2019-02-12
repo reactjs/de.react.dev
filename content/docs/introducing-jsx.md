@@ -162,7 +162,7 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` prüft erst die Eingabeparameter, um dich dabei zu unterstützen Bug-Frei zu programmieren aber im Prinzip erstellt es ein Objekt wie dies:
+`React.createElement()` prüft erst die Eingabeparameter, um dich dabei zu unterstützen bugfrei zu programmieren, aber im Prinzip erstellt es ein Objekt wie dieses:
 
 ```js
 // Hinweis: Dies ist eine vereinfachte Struktur
