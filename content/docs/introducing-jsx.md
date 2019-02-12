@@ -87,7 +87,7 @@ function getGreeting(user) {
 }
 ```
 
-### Mit JSX Attribute spezifizieren {#specifying-attributes-with-jsx}
+### Attribute mit JSX festlegen {#specifying-attributes-with-jsx}
 
 Benutze Anführungszeichen um string-Literale als Attribute zu verwenden:
 
