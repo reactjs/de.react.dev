@@ -6,8 +6,8 @@ category: Reference
 permalink: docs/javascript-environment-requirements.html
 ---
 
-React 16 ist von den Objekten [Map](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Map) und [Set](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Set) abhängig. Wenn du ältere Browser oder Geräte unterstützen möchtest,
-die diese Funktionaltät nicht implementiert haben (z. B. IE < 11) oder nicht Standardkonform sind (z. B. IE 11), dann solltest du einen globalen
+React 16 ist von den Objekten [Map](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Map) und [Set](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Set) abhängig.
+Wenn du ältere Browser oder Geräte unterstützen möchtest, die diese Funktionaltät nicht implementiert haben (z. B. IE < 11) oder nicht Standardkonform sind (z. B. IE 11), dann solltest du einen globalen
 Polyfill wie z. B. [core-js](https://github.com/zloirock/core-js) oder [babel-polyfill](https://babeljs.io/docs/usage/polyfill/), in deine gebaute Anwendung laden.
 
 Eine Anwendung für React 16 sollte wie folgt aussehen, wenn sie mit der Hilfe von
