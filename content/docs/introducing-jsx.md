@@ -109,7 +109,7 @@ Setze keine Anführungszeichen um geschweifte Klammern um JavaScript-Ausdrücke 
 >
 >`class` wird in JSX zum Beispiel zu [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className), und `tabindex` zu [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
 
-### Spezifizieren von Kind-Elementen mit JSX {#specifying-children-with-jsx}
+### Kind-Elemente mit JSX angeben {#specifying-children-with-jsx}
 
 Ist ein Element leer, kannst du es wie in XML mit `/>` schließen:
 
