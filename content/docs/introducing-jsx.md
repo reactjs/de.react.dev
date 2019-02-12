@@ -130,7 +130,7 @@ const element = (
 
 ### JSX verhindert Injection-Angriffe {#jsx-prevents-injection-attacks}
 
-JSX kann sicher für Nutzereingaben verwendet werden:
+Nutzereingaben können über JSX sicher getätigt werden:
 
 ```js
 const title = response.potentiallyMaliciousInput;
