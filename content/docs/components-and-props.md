@@ -1,6 +1,6 @@
 ---
 id: components-and-props
-title: Komponenten and Props
+title: Komponenten und Props
 permalink: docs/components-and-props.html
 redirect_from:
   - "docs/reusable-components.html"
@@ -122,11 +122,11 @@ ReactDOM.render(
 
 Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
 
-## Extracting Components {#extracting-components}
+## Komponenten auslagern {#extracting-components}
 
-Don't be afraid to split components into smaller components.
+Hab keine Angst vor dem Aufteilen von Komponenten in kleinere Komponenten.
 
-For example, consider this `Comment` component:
+Nehmen wir mal als Beispiel diese `Comment` Komponente:
 
 ```js
 function Comment(props) {
@@ -154,11 +154,11 @@ function Comment(props) {
 
 [Auf CodePen ausprobieren](codepen://components-and-props/extracting-components)
 
-It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
+Diese Komponente nimmt `author` (ein object), `text` (ein string), and `date` (ein date) als Props entgegen und beschreibt einen Kommentar auf einer Social Media Webseite.
 
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
+Aufgrund der Verschachtelung könnte diese Komponente schwer abänderbar sein, außerdem ist es auch schwierig einzelne Teile davon wiederzuverwenden. Lass uns doch mal ein paar Komponenten daraus ziehen.
 
-First, we will extract `Avatar`:
+Als erstes werden wir `Avatar` auslagern:
 
 ```js{3-6}
 function Avatar(props) {
@@ -171,11 +171,11 @@ function Avatar(props) {
 }
 ```
 
-The `Avatar` doesn't need to know that it is being rendered inside a `Comment`. This is why we have given its prop a more generic name: `user` rather than `author`.
+Der `Avatar` muss nicht wissen, dass er in innerhalb `Comment` gerendert wird. Darum geben wir dem prop einen gebräuchlicheren namen als: `author` und nennen es `user`.
 
-We recommend naming props from the component's own point of view rather than the context in which it is being used.
+Wir empfehlen props nicht nach dem Kontext in dem sie verwenden werden, sondern aus dem sie kommen zu benennen.
 
-We can now simplify `Comment` a tiny bit:
+Wir können nun `Comment` ein bisschen vereinfachen:
 
 ```js{5}
 function Comment(props) {
@@ -197,8 +197,7 @@ function Comment(props) {
   );
 }
 ```
-
-Next, we will extract a `UserInfo` component that renders an `Avatar` next to the user's name:
+Als nächstes werden wir eine `UserInfo` Komponente extrahieren, welche einen `Avatar` neben den Namen des Benutzers rendert:
 
 ```js{3-8}
 function UserInfo(props) {
@@ -213,7 +212,7 @@ function UserInfo(props) {
 }
 ```
 
-This lets us simplify `Comment` even further:
+Dadurch können wir `Comment` noch ein wenig mehr vereinfachen:
 
 ```js{4}
 function Comment(props) {
@@ -255,8 +254,9 @@ function withdraw(account, amount) {
 }
 ```
 
+React ist sehr flexibel, es gibt aber eine strikte Regel:
 React is pretty flexible but it has a single strict rule:
 
-**All React components must act like pure functions with respect to their props.**
+**Alle React-Komponenten müssen sich im Bezug auf ihre Props, als sogenannte "pure functions" verhalten.**
 
 Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
