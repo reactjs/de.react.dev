@@ -16,7 +16,7 @@ Ein Element beschreibt was du auf dem Bildschirm sehen möchtest:
 const element = <h1>Hallo Welt</h1>;
 ```
 
-Anders als die DOM Elemente eines Browsers, sind React Elemente, schlichte Objekte und kostengünstiger zu erstellen.
+Anders als die DOM Elemente eines Browsers, sind React Elemente schlichte kosteneffektive Objekte.
 React DOM kümmert sich um das Aktualisieren des DOMs und den dazugehörigen React Elementen.
 
 >**Hinweis:**
