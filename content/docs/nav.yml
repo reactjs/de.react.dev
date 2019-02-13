@@ -1,24 +1,24 @@
 - title: Installation
   items:
     - id: getting-started
-      title: Getting Started
+      title: Erste SChritte
     - id: add-react-to-a-website
-      title: Add React to a Website
+      title: React einer WEbseite hinzufügen
     - id: create-a-new-react-app
-      title: Create a New React App
+      title: Erstelle eine React-App
     - id: cdn-links
       title: CDN Links
-- title: Main Concepts
+- title: Hauptkonzepte
   isOrdered: true
   items:
     - id: hello-world
-      title: Hello World
+      title: Hallo Welt
     - id: introducing-jsx
       title: Introducing JSX
     - id: rendering-elements
       title: Rendering Elements
     - id: components-and-props
-      title: Components and Props
+      title: Komponenten and Props
     - id: state-and-lifecycle
       title: State and Lifecycle
     - id: handling-events
@@ -79,7 +79,7 @@
       title: Uncontrolled Components
     - id: web-components
       title: Web Components
-- title: API Reference
+- title: API Referenz
   items:
     - id: react-api
       title: React
