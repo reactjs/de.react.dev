@@ -14,7 +14,7 @@
     - id: hello-world
       title: Hallo Welt
     - id: introducing-jsx
-      title: Introducing JSX
+      title: Einführung in JSX
     - id: rendering-elements
       title: Rendering Elements
     - id: components-and-props
