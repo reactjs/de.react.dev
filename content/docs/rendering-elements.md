@@ -47,7 +47,7 @@ Es wird "Hallo Welt" auf der Seite angezeigt.
 
 ## Aktualisieren des gerenderten Elements {#updating-the-rendered-element}
 
-React Elemente sind [unveränderbar](https://en.wikipedia.org/wiki/Immutable_object). Wenn du einmal ein Element erstellt hast, kannst du dessen
+React Elemente sind [immuntable](https://en.wikipedia.org/wiki/Immutable_object) (unveränderbar). Wenn du einmal ein Element erstellt hast, kannst du dessen
 Kind-Elemente oder Attribute nicht mehr verändern. Eine Element kannst du dir vorstellen, wie ein einzelnes Bild eines Filmes: Es repräsentiert die Benutzeroberfläche (UI) zu einem bestimmten Zeitpunkt.
 
 Mit dem was wir bis jetzt erfahren haben, wissen wir nur, dass der einzige Weg um die Benutzeroberfläche zu Aktualisieren und neue Elemente zu erstellen, das Aufrufen von `ReactDOM.render()` ist.
