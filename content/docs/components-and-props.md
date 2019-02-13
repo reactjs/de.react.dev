@@ -16,13 +16,13 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+Mit Komponenten kannst du deine Benutzeroberfläche in unabhängige, wiederverwendbare Teile aufteilen und jedes einzelne von ihnen als unabhängig betrachten. Diese Seite bietet dir eine Einführung in die Idee hinter Komponenten. Du kannst [detailierte Komponentenbeschreibung in der API Referenz](/docs/react-component.html) finden.
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+Vom Konzept her, sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren beliebige Eingaben ("props" genannnt) und geben React-Elemente zurück, welche beschreiben was auf dem Bildschirm angezeigt werden soll.
 
 ## Funktions- und Klassenkomponenten {#function-and-class-components}
 
-The simplest way to define a component is to write a JavaScript function:
+Der einfachste Weg eine Komponente zu definieren, ist eine JavaScript-Funktion zu schreiben:
 
 ```js
 function Willkommen(props) {
@@ -32,7 +32,7 @@ function Willkommen(props) {
 
 This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
 
-You can also use an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component:
+Du kannst auch [ES6 Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) benutzen um Komponenten zu definieren:
 
 ```js
 class Willkommen extends React.Component {
