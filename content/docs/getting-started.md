@@ -49,7 +49,7 @@ Du kannst React innerhalb einer Minute zu einer HTML-Seite hinzufügen. Danach k
 
 Am Besten fängst du ein neues React-Projekt mit [einer einfachen HTML Seite und ein paar Script-Tags an](/docs/add-react-to-a-website.html). Innerhalb einer Minute hast du alles fertig aufgsetzt!
 
-Sobald jedoch deine Anwendung wächst, solltest du eine fertiges Setup verwenden. Es gibt eine Menge vorhandener [JavaScript Werzeuge](/docs/create-a-new-react-app.html) die wir für größere Anwendungen empfehlen.
+Sobald jedoch deine Anwendung wächst, solltest du ein fertiges Setup verwenden. Es gibt eine Menge vorhandener [JavaScript Werzeuge](/docs/create-a-new-react-app.html) die wir für größere Anwendungen empfehlen.
 Jedes von ihnen kommt mit wenig bis garkeiner Vorkonfiguration aus und lässt dich trotzdem den vollen Funktionsumfang des React-Ökosystems genießen.
 
 ## Lerne React {#learn-react}
