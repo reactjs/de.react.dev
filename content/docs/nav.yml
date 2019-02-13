@@ -28,7 +28,7 @@
     - id: lists-and-keys
       title: Listen und Keys
     - id: forms
-      title: Forms
+      title: Formulare
     - id: lifting-state-up
       title: Lifting State Up
     - id: composition-vs-inheritance
@@ -66,7 +66,7 @@
     - id: reconciliation
       title: Reconciliation
     - id: refs-and-the-dom
-      title: Refs and the DOM
+      title: Refs und das DOM
     - id: render-props
       title: Render Props
     - id: static-type-checking
