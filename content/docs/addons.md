@@ -4,9 +4,9 @@ title: Add-Ons
 permalink: docs/addons.html
 ---
 
-> Notiz:
+> **Hinweis:**
 >
-> `React.addons` ist seit React v15.5 nicht mehr aktuell. Die Add-Ons sind in ein separates Modul verschoben worden und einige von ihnen veraltet.
+> `React.addons` ist seit React v15.5 veraltet. Die Add-Ons sind in ein separates Modul verschoben worden und einige von ihnen nicht mehr dem neusten Stand.
 
 React Add-Ons sind eine Ansammlung von nützlichen Modulen für das Erstellen von React-Apps. **Sie sollten aber als "experimentell" betrachtet werden**, da es sein kann, dass sie sich häufiger als React-Core ändern.
 
