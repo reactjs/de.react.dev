@@ -63,9 +63,7 @@ Wie jede unbekannte Technologie, hat auch React eine gewisse Lernkurve. Mit etwa
 
 ### Erste Beispiele {#first-examples}
 
-Die [React Homepage](/) beinhaltet ein paar React Beispiele mit einem Live-Editor.
-Auch wenn du vorher noch nichts mit React gemacht hast kannst du hiermit ein wenig rumprobieren und direkt sehen was für Auswirkungen
-deine Änderungen haben.
+Die [React Homepage](/) beinhaltet ein paar React Beispiele mit einem Live-Editor. Auch wenn du vorher noch nichts mit React gemacht hast kannst du hiermit ein wenig rumprobieren und direkt sehen was für Auswirkungen deine Änderungen haben.
 
 ### React für Anfänger {#react-for-beginners}
 
@@ -80,8 +78,7 @@ Wenn du einen Designhintergrund hast, könnte [diese Sammlung](http://reactforde
 
 Die React Dokumentation setzt fundierte JavaScript Sprachkentnisse voraus. Du musst keine Experte sein, aber es wird dir viel schwerer fallen, React und JavaScript gleichzeitig zu lernen.
 
-Wir empfehlen dir diesen [JavaScript-Überblick](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) durchzugehen und deinen Wissensstand zu überprüfen. Es wird dich zwischen 30 Minuten und einer Stunde deiner Zeit
-kosten, aber danach solltest du dich sicherer fühlen, React zu lernen.
+Wir empfehlen dir diesen [JavaScript-Überblick](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) durchzugehen und deinen Wissensstand zu überprüfen. Es wird dich zwischen 30 Minuten und einer Stunde deiner Zeit kosten, aber danach solltest du dich sicherer fühlen, React zu lernen.
 
 >**Tipp:**
 >
@@ -109,7 +106,7 @@ führen wir eine [Liste von empfehlenswerten Quellen](/community/courses.html). 
 
 ### Fortgeschrittene Konzepte {#advanced-concepts}
 
-Once you're comfortable with the [main concepts](#main-concepts) and played with React a little bit, you might be interested in more advanced topics. This section will introduce you to the powerful, but less commonly used React features like [context](/docs/context.html) and [refs](/docs/refs-and-the-dom.html).
+Wenn du einmal mit den Huaptkonzepten vetraut bist und ein wenig mit React herumgespielt hast, bist du vielleicht an den fortgeschrittenen Konzepten interessiert. Dieser Abschnitt zeigt dir mächtige React-Funktionen, wie [context](/docs/context.html) und [refs](/docs/refs-and-the-dom.html), diese finden aber weniger häufig Verwendung.
 
 ### API Referenz {#api-reference}
 
