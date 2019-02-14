@@ -93,9 +93,10 @@ Lass uns mal zusammen fassen, was in diesem Beispiel passiert:
 
 ## Komponenten zusammensetzen {#composing-components}
 
-Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+Komponenten können bei ihrer Ausgabe auf andere Komponenten verweisen.
+This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
 
-For example, we can create an `App` component that renders `Welcome` many times:
+Zum Beispiel können wir die `App` Komponente mehrere Male `Welcome` rendern lassen:
 
 ```js{8-10}
 function Welcome(props) {
@@ -120,7 +121,7 @@ ReactDOM.render(
 
 [Auf CodePen ausprobieren](codepen://components-and-props/composing-components)
 
-Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
+Typischerweise haben neue React-Apps eine einzige `App` Komponente an erste Stelle. Wenn du aber React in ein bestehendes Projekt integrierst, fängst du wahrscheinlich von unten nach oben (bottom-up) an und erstellst Komponenten wie `Button`, dabei arbeitest dich Schritt für Schritt die View-Hierarchy nach oben.
 
 ## Komponenten auslagern {#extracting-components}
 
@@ -232,7 +233,7 @@ function Comment(props) {
 
 [Auf CodePen ausprobieren](codepen://components-and-props/extracting-components-continued)
 
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be a reusable component.
+Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Fausregel ist es, dass wenn ein Teil der Benutzeroberfläche, wie `Button`, `Panel` oder `Avatar` mehrere Male verwendet werden oder so komplex sind wie `App`, `FeedStory` oder `Comment`, gute Kandidaten für wiederverwendebare Komponenten sind.
 
 ## Props und Read-Only {#props-are-read-only}
 
