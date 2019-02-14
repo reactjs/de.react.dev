@@ -25,39 +25,39 @@ Vom Konzept her, sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren bel
 Der einfachste Weg eine Komponente zu definieren, ist eine JavaScript-Funktion zu schreiben:
 
 ```js
-function Willkommen(props) {
+function Welcome(props) {
   return <h1>Hallo {props.name}</h1>;
 }
 ```
 
-This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
+Diese Funktion is eine gültige React-Komponente, da sie ein einziges "props" (steht für properties) Objekt mit Daten akzeptiert und eine React-Element zurückgibt. Wir nennen dies "Funktionskomponenten", weil es sich hier buchstäblich um JavaScript Funktionen handelt.
 
 Du kannst auch [ES6 Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) benutzen um Komponenten zu definieren:
 
 ```js
-class Willkommen extends React.Component {
+class Welcome extends React.Component {
   render() {
     return <h1>Hallo {this.props.name}</h1>;
   }
 }
 ```
 
-The above two components are equivalent from React's point of view.
+Die beiden obrigen Komponenten sind aus der Sicht von React identisch.
 
-Classes have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html). Until then, we will use function components for their conciseness.
+Klassen haben noch ein paar zusätzliche Eigenschaften, diese besprechen wir aber erst im [nächsten Abschnitt](/docs/state-and-lifecycle.html). Bis dahin werden wir für die Funktionskomponenten wegen ihrer Übersichtlichkeit nehmen.
 
 ## Eine Komponente rendern {#rendering-a-component}
 
-Previously, we only encountered React elements that represent DOM tags:
+Bis jetzt haben wir nur React-Elemente kennegelernt, dir DOM-Tags repräsentiert haben:
 
 ```js
 const element = <div />;
 ```
 
-However, elements can also represent user-defined components:
+Elemente können aber auch benutzerdefinierte Komponenten darstellen:
 
 ```js
-const element = <Willkommen name="Sara" />;
+const element = <Welcome name="Sara" />;
 ```
 
 When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
@@ -65,11 +65,11 @@ When React sees an element representing a user-defined component, it passes JSX 
 For example, this code renders "Hallo Sara" on the page:
 
 ```js{1,5}
-function Willkommen(props) {
+function Welcome(props) {
   return <h1>Hallo {props.name}</h1>;
 }
 
-const element = <Willkommen name="Sara" />;
+const element = <Welcome name="Sara" />;
 ReactDOM.render(
   element,
   document.getElementById('root')
@@ -78,36 +78,36 @@ ReactDOM.render(
 
 [Auf CodePen ausprobieren](codepen://components-and-props/rendering-a-component)
 
-Let's recap what happens in this example:
+Lass uns mal zusammen fassen, was in diesem Beispiel passiert:
 
-1. We call `ReactDOM.render()` with the `<Willkommen name="Sara" />` element.
-2. React calls the `Willkommen` component with `{name: 'Sara'}` as the props.
-3. Our `Willkommen` component returns a `<h1>Hallo Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hallo Sara</h1>`.
+1. Wir rufen `ReactDOM.render()` mit dem React-Element `<Welcome name="Sara" />` auf.
+2. React ruft die `Welcome` Komponente mit den Eigenschaften (props) `{name: 'Sara'}` auf.
+3. Unsere `Welcome` Komponente gibt als Ergebnis `<h1>Hallo Sara</h1>` zurück.
+4. React aktualsiert effektiv das DOM um `<h1>Hallo Sara</h1>` abzugleichen.
 
->**Note:** Always start component names with a capital letter.
+>**Hinweis:** Starte Namen von Komponenten immer mit Großbuchstaben.
 >
->React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Willkommen />` represents a component and requires `Willkommen` to be in scope.
+>React behandelt Komponenten, die mit Kleinbuchstaben beginnen, als DOM-Tags. Zum Beispiel stellt `<div />` ein HTML div-Tag dar, aber `<Welcome />` stellt eine Komponente dar und erfordert, dass `Welcome` im Scope ist.
 >
->To learn more about the reasoning behind this convention, please read [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
+>Bitte lese [JSX im Detail](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized), um mehr über diese Konvention zu erfahren.
 
 ## Komponenten zusammensetzen {#composing-components}
 
 Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
 
-For example, we can create an `App` component that renders `Willkommen` many times:
+For example, we can create an `App` component that renders `Welcome` many times:
 
 ```js{8-10}
-function Willkommen(props) {
+function Welcome(props) {
   return <h1>Hallo {props.name}</h1>;
 }
 
 function App() {
   return (
     <div>
-      <Willkommen name="Sara" />
-      <Willkommen name="Cahal" />
-      <Willkommen name="Edite" />
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
     </div>
   );
 }
@@ -246,7 +246,7 @@ function sum(a, b) {
 
 Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
 
-In contrast, this function is impure because it changes its own input:
+Im Umkehrschluss ist diese Funktion keine "pure function", sondern "impure", da sie ihre eigenen Eingaben ändert:
 
 ```js
 function withdraw(account, amount) {
@@ -254,8 +254,7 @@ function withdraw(account, amount) {
 }
 ```
 
-React ist sehr flexibel, es gibt aber eine strikte Regel:
-React is pretty flexible but it has a single strict rule:
+React ist sehr flexibel, es gibt aber eine strikte Regeln:
 
 **Alle React-Komponenten müssen sich im Bezug auf ihre Props, als sogenannte "pure functions" verhalten.**
 

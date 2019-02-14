@@ -1,13 +1,13 @@
-function Willkommen(props) {
+function Welcome(props) {
   return <h1>Hallo {props.name}</h1>;
 }
 
 function App() {
   return (
     <div>
-      <Willkommen name="Sara" />
-      <Willkommen name="Cahal" />
-      <Willkommen name="Edite" />
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
     </div>
   );
 }
