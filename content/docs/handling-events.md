@@ -1,6 +1,6 @@
 ---
 id: handling-events
-title: Handling Events
+title: Handhabung von Events
 permalink: docs/handling-events.html
 prev: state-and-lifecycle.html
 next: conditional-rendering.html
@@ -8,12 +8,12 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
-Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:
+Die Handhabung von Events in React-Elementen ist ähnlich wie bei DOM-Elementen. Es gibt nur ein paar syntaktische Unterschiede:
 
-* React events are named using camelCase, rather than lowercase.
-* With JSX you pass a function as the event handler, rather than a string.
+* Events in React werden nicht in Kleinbuchstaben, sondern in camelCase benannt.
+* In JSX wird eine Funktion als Eventhandler übergeben und kein String.
 
-For example, the HTML:
+Zum Beispiel dieses HTML:
 
 ```html
 <button onclick="activateLasers()">
@@ -21,7 +21,7 @@ For example, the HTML:
 </button>
 ```
 
-is slightly different in React:
+ist in React ein wenig anders:
 
 ```js{1}
 <button onClick={activateLasers}>
