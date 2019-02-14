@@ -60,9 +60,9 @@ Elemente können aber auch benutzerdefinierte Komponenten darstellen:
 const element = <Welcome name="Sara" />;
 ```
 
-When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
+React übergibt, wenn es ein Element als benutzerdefinierte Komponente erkennt, alle JSX Attribute als ein einziges Objekt. Dies sind die sogenannten "props" (Eigenschaften).
 
-For example, this code renders "Hallo Sara" on the page:
+Zum Beispiel rendert dieser Code "Hallo Sara" auf die Seite:
 
 ```js{1,5}
 function Welcome(props) {
@@ -236,7 +236,7 @@ Extracting components might seem like grunt work at first, but having a palette 
 
 ## Props und Read-Only {#props-are-read-only}
 
-Whether you declare a component [as a function or a class](#function-and-class-components), it must never modify its own props. Consider this `sum` function:
+Es ist egal ob eine Komponente [als Funktion oder Klasse](#function-and-class-components) deklarierst, sie darf nie ihre eigenen props verändern. Schauen wir uns mal diese `sum` Funktion an:
 
 ```js
 function sum(a, b) {
@@ -244,7 +244,7 @@ function sum(a, b) {
 }
 ```
 
-Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
+Solch eine Funktion wird als ["pure"](https://en.wikipedia.org/wiki/Pure_function) bezeichnet, da sie nicht ihre Eingaben ändert und immer das gleiche Ergbenis für die gleichen Eingaben zurückgibt.
 
 Im Umkehrschluss ist diese Funktion keine "pure function", sondern "impure", da sie ihre eigenen Eingaben ändert:
 
@@ -258,4 +258,4 @@ React ist sehr flexibel, es gibt aber eine strikte Regeln:
 
 **Alle React-Komponenten müssen sich im Bezug auf ihre Props, als sogenannte "pure functions" verhalten.**
 
-Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
+Natürlich sind Anwendungen dynamisch und ändern ihre Benutzeroberfläche über die Zeit. Im [nächsten Abschnitt](/docs/state-and-lifecycle.html) werden wir das "state" Konzept vorstellen. React-Komponenten reagieren auf Benutzereingaben, Netzwerkantworten und vieles mehr, dabei erlaubt uns der State (Zustand), die Ausgabe einer Komponente über die Zeit zu ändern.
