@@ -94,7 +94,7 @@ Lass uns mal zusammen fassen, was in diesem Beispiel passiert:
 ## Komponenten zusammensetzen {#composing-components}
 
 Komponenten können bei ihrer Ausgabe auf andere Komponenten verweisen.
-This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+So können wir für jedes Detaillevel die selben abstrahierten Komponenten wiederverwenden. Denn sowohl Buttons, Formulare als auch Screens, werden in React-Apps allgemein als Komponenten bezeichnet.
 
 Zum Beispiel können wir die `App` Komponente mehrere Male `Welcome` rendern lassen:
 
