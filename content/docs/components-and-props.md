@@ -78,7 +78,7 @@ ReactDOM.render(
 
 [Auf CodePen ausprobieren](codepen://components-and-props/rendering-a-component)
 
-Lass uns mal zusammen fassen, was in diesem Beispiel passiert:
+Fassen wir mal zusammen, was in diesem Beispiel passiert:
 
 1. Wir rufen `ReactDOM.render()` mit dem React-Element `<Welcome name="Sarah" />` auf.
 2. React ruft die `Welcome` Komponente mit den Eigenschaften (props) `{name: 'Sara'}` auf.
