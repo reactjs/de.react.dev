@@ -213,7 +213,7 @@ function UserInfo(props) {
 }
 ```
 
-Dadurch können wir `Comment` noch ein wenig mehr vereinfachen:
+Dadurch können wir `Comment` weiter vereinfachen:
 
 ```js{4}
 function Comment(props) {
