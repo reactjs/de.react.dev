@@ -18,7 +18,7 @@ next: state-and-lifecycle.html
 
 Komponenten erlauben dir deine Benutzeroberfläche in unabhängige, wiederverwendbare Teile aufzubrechen und jeden als isoliert zu betrachten. Diese Seite bietet dir eine Einführung in die Idee hinter Komponenten. Du kannst eine [detailierte Komponentenbeschreibung in der API Referenz](/docs/react-component.html) finden.
 
-Vom Konzept her, sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren beliebige Eingaben ("props" genannnt) und geben React-Elemente zurück, welche beschreiben was auf dem Bildschirm angezeigt werden soll.
+Vom Konzept her sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren beliebige Eingaben ("props" genannnt) und geben React-Elemente zurück, welche beschreiben was auf dem Bildschirm angezeigt werden soll.
 
 ## Funktions- und Klassenkomponenten {#function-and-class-components}
 
