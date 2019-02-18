@@ -96,7 +96,7 @@ Lass uns mal zusammen fassen, was in diesem Beispiel passiert:
 Komponenten können bei ihrer Ausgabe auf andere Komponenten verweisen.
 So können wir für jedes Detaillevel die selben abstrahierten Komponenten wiederverwenden. Denn sowohl Buttons, Formulare als auch Screens, werden in React-Apps allgemein als Komponenten bezeichnet.
 
-Zum Beispiel können wir die `App` Komponente mehrere Male `Welcome` rendern lassen:
+Zum Beispiel können wir die `App` Komponente mehrmals `Welcome` rendern lassen:
 
 ```js{8-10}
 function Welcome(props) {
