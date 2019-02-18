@@ -87,7 +87,7 @@ Fassen wir mal zusammen, was in diesem Beispiel passiert:
 
 >**Hinweis:** Beginne den Namen von Komponenten immer mit einem Großbuchstaben.
 >
->React behandelt Komponenten, die mit Kleinbuchstaben beginnen, als DOM-Tags. Zum Beispiel stellt `<div />` ein HTML div-Tag dar, aber `<Welcome />` stellt eine Komponente dar und erfordert, dass `Welcome` im Scope ist.
+>React behandelt Komponenten, die mit Kleinbuchstaben beginnen, als DOM-Tags. Zum Beispiel stellt `<div />` ein HTML div-Tag dar, `<Welcome />` hingegen ist eine Komponente und erfordert, dass `Welcome` im Scope ist.
 >
 >Bitte lese [JSX im Detail](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized), um mehr über diese Konvention zu erfahren.
 
