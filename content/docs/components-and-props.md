@@ -85,7 +85,7 @@ Fassen wir mal zusammen, was in diesem Beispiel passiert:
 3. Unsere `Welcome`-Komponente gibt als Ergebnis `<h1>Hallo Sarah</h1>` zurück.
 4. React aktualsiert effizient das DOM um `<h1>Hallo Sarah</h1>` abzugleichen.
 
->**Hinweis:** Starte Namen von Komponenten immer mit Großbuchstaben.
+>**Hinweis:** Beginne den Namen von Komponenten immer mit einem Großbuchstaben.
 >
 >React behandelt Komponenten, die mit Kleinbuchstaben beginnen, als DOM-Tags. Zum Beispiel stellt `<div />` ein HTML div-Tag dar, aber `<Welcome />` stellt eine Komponente dar und erfordert, dass `Welcome` im Scope ist.
 >
