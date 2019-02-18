@@ -32,7 +32,7 @@ function Welcome(props) {
 
 Diese Funktion is eine gültige React-Komponente, da sie ein einziges "props" (steht für properties) Objekt mit Daten akzeptiert und eine React-Element zurückgibt. Wir nennen dies "Funktionskomponenten", weil es sich hier buchstäblich um JavaScript Funktionen handelt.
 
-Du kannst auch [ES6 Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) benutzen um Komponenten zu definieren:
+Du kannst ebenfalls [ES6-Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) benutzen um Komponenten zu definieren:
 
 ```js
 class Welcome extends React.Component {
