@@ -235,7 +235,7 @@ function Comment(props) {
 
 Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche, wie `Button`, `Panel` oder `Avatar` öfters verwendet werden oder ähnlich komplex wie `App`, `FeedStory` oder `Comment` sind, gute Kandidaten für wiederverwendbare Komponenten sind.
 
-## Props und Read-Only {#props-are-read-only}
+## Props sind Read-Only {#props-are-read-only}
 
 Es ist egal ob eine Komponente [als Funktion oder Klasse](#function-and-class-components) deklarierst, sie darf nie ihre eigenen props verändern. Schauen wir uns mal diese `sum` Funktion an:
 
