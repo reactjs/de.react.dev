@@ -16,7 +16,7 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Mit Komponenten kannst du deine Benutzeroberfläche in unabhängige, wiederverwendbare Teile aufteilen und jedes einzelne von ihnen als unabhängig betrachten. Diese Seite bietet dir eine Einführung in die Idee hinter Komponenten. Du kannst [detailierte Komponentenbeschreibung in der API Referenz](/docs/react-component.html) finden.
+Komponenten erlauben dir deine Benutzeroberfläche in unabhängige, wiederverwendbare Teile aufzubrechen und jeden als isoliert zu betrachten. Diese Seite bietet dir eine Einführung in die Idee hinter Komponenten. Du kannst eine [detailierte Komponentenbeschreibung in der API Referenz](/docs/react-component.html) finden.
 
 Vom Konzept her, sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren beliebige Eingaben ("props" genannnt) und geben React-Elemente zurück, welche beschreiben was auf dem Bildschirm angezeigt werden soll.
 
