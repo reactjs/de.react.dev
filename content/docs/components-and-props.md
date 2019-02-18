@@ -155,7 +155,7 @@ function Comment(props) {
 
 [Auf CodePen ausprobieren](codepen://components-and-props/extracting-components)
 
-Diese Komponente nimmt `author` (ein object), `text` (ein string), and `date` (ein date) als Props entgegen und beschreibt einen Kommentar auf einer Social Media Webseite.
+Diese Komponente nimmt `author` (ein Objekt), `text` (ein String), und `date` (ein date-Objekt) als Props entgegen und beschreibt einen Kommentar auf einer Social Media Webseite.
 
 Aufgrund der Verschachtelung könnte diese Komponente schwer abänderbar sein, außerdem ist es auch schwierig einzelne Teile davon wiederzuverwenden. Lass uns doch mal ein paar Komponenten daraus ziehen.
 
