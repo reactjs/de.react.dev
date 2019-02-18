@@ -62,7 +62,7 @@ const element = <Welcome name="Sara" />;
 
 React übergibt, wenn es ein Element als benutzerdefinierte Komponente erkennt, alle JSX Attribute als ein einziges Objekt. Dies sind die sogenannten "props" (Eigenschaften).
 
-Zum Beispiel rendert dieser Code "Hallo Sara" auf die Seite:
+Zum Beispiel rendert dieser Code "Hallo Sarah" auf die Seite:
 
 ```js{1,5}
 function Welcome(props) {
