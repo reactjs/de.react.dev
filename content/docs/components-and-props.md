@@ -237,7 +237,7 @@ Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende za
 
 ## Props sind Read-Only {#props-are-read-only}
 
-Es ist egal ob eine Komponente [als Funktion oder Klasse](#function-and-class-components) deklarierst, sie darf nie ihre eigenen props verändern. Schauen wir uns mal diese `sum` Funktion an:
+Es ist egal, ob eine Komponente [als Funktion oder Klasse](#function-and-class-components) deklariert wird, sie darf nie ihre eigenen props verändern. Schauen wir uns mal diese `sum` Funktion an:
 
 ```js
 function sum(a, b) {
