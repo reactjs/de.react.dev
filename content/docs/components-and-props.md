@@ -80,7 +80,7 @@ ReactDOM.render(
 
 Lass uns mal zusammen fassen, was in diesem Beispiel passiert:
 
-1. Wir rufen `ReactDOM.render()` mit dem React-Element `<Welcome name="Sara" />` auf.
+1. Wir rufen `ReactDOM.render()` mit dem React-Element `<Welcome name="Sarah" />` auf.
 2. React ruft die `Welcome` Komponente mit den Eigenschaften (props) `{name: 'Sara'}` auf.
 3. Unsere `Welcome` Komponente gibt als Ergebnis `<h1>Hallo Sara</h1>` zurück.
 4. React aktualsiert effektiv das DOM um `<h1>Hallo Sara</h1>` abzugleichen.
