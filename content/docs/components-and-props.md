@@ -127,7 +127,7 @@ Typischerweise haben neue React-Apps eine einzige `App` Komponente an erste Stel
 
 Hab keine Angst vor dem Aufteilen von Komponenten in kleinere Komponenten.
 
-Nehmen wir mal als Beispiel diese `Comment` Komponente:
+Nehmen wir mal als Beispiel diese `Comment`-Komponente:
 
 ```js
 function Comment(props) {
