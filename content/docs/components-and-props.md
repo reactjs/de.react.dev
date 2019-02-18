@@ -172,7 +172,7 @@ function Avatar(props) {
 }
 ```
 
-Der `Avatar` muss nicht wissen, dass er in innerhalb `Comment` gerendert wird. Darum geben wir dem prop einen gebräuchlicheren namen als: `author` und nennen es `user`.
+Der `Avatar` muss nicht wissen, dass er in innerhalb von `Comment` gerendert wird. Darum geben wir dem prop einen gebräuchlicheren namen als: `author` und nennen es `user`.
 
 Wir empfehlen props nicht nach dem Kontext in dem sie verwenden werden, sondern aus dem sie kommen zu benennen.
 
