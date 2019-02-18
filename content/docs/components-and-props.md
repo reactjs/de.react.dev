@@ -48,7 +48,7 @@ Klassen haben noch ein paar zusätzliche Eigenschaften welche wir aber erst im [
 
 ## Eine Komponente rendern {#rendering-a-component}
 
-Bis jetzt haben wir nur React-Elemente kennegelernt, dir DOM-Tags repräsentiert haben:
+Bis jetzt haben wir nur React-Elemente kennengelernt, die DOM-Tags repräsentiert haben:
 
 ```js
 const element = <div />;
