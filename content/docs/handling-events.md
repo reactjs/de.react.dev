@@ -17,7 +17,7 @@ Zum Beispiel dieses HTML:
 
 ```html
 <button onclick="activateLasers()">
-  Activate Lasers
+  Aktiviere Laser
 </button>
 ```
 
@@ -25,30 +25,30 @@ ist in React ein wenig anders:
 
 ```js{1}
 <button onClick={activateLasers}>
-  Activate Lasers
+  Aktiviere Laser
 </button>
 ```
 
-Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default link behavior of opening a new page, you can write:
+Ein weiterer Unterschied ist, dass `false` nicht zurückgegeben werden kann um das Standardverhalten von React zu unterbinden. Es muss explizit `preventDefault` aufgerufen werden. Um beispielsweise das Aufrufen eines Links in schlichtem HTML zu verhindern, kannst du folgendes schreiben:
 
 ```html
-<a href="#" onclick="console.log('The link was clicked.'); return false">
-  Click me
+<a href="#" onclick="console.log('Der Link wurde geklickt.'); return false">
+  Klicke mich
 </a>
 ```
 
-In React, this could instead be:
+In React könnte es stattdessen so aussehen:
 
 ```js{2-5,8}
 function ActionLink() {
   function handleClick(e) {
     e.preventDefault();
-    console.log('The link was clicked.');
+    console.log('Der Link wurde geklickt.');
   }
 
   return (
     <a href="#" onClick={handleClick}>
-      Click me
+      Klicke mich
     </a>
   );
 }
@@ -79,7 +79,7 @@ class Toggle extends React.Component {
   render() {
     return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
+        {this.state.isToggleOn ? 'AN' : 'AUS'}
       </button>
     );
   }
@@ -104,13 +104,13 @@ class LoggingButton extends React.Component {
   // This syntax ensures `this` is bound within handleClick.
   // Warning: this is *experimental* syntax.
   handleClick = () => {
-    console.log('this is:', this);
+    console.log('this ist:', this);
   }
 
   render() {
     return (
       <button onClick={this.handleClick}>
-        Click me
+        Klicke mich
       </button>
     );
   }
@@ -124,14 +124,14 @@ If you aren't using class fields syntax, you can use an [arrow function](https:/
 ```js{7-9}
 class LoggingButton extends React.Component {
   handleClick() {
-    console.log('this is:', this);
+    console.log('this ist:', this);
   }
 
   render() {
     // This syntax ensures `this` is bound within handleClick
     return (
       <button onClick={(e) => this.handleClick(e)}>
-        Click me
+        Klicke mich
       </button>
     );
   }
@@ -145,8 +145,8 @@ The problem with this syntax is that a different callback is created each time t
 Inside a loop it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
 
 ```js
-<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
-<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+<button onClick={(e) => this.deleteRow(id, e)}>Zeile entfernen</button>
+<button onClick={this.deleteRow.bind(this, id)}>Zeile entfernen</button>
 ```
 
 The above two lines are equivalent, and use [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) respectively.
