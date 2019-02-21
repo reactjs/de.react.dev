@@ -48,7 +48,7 @@
           href: /tutorial/tutorial.html#passing-data-through-props
           forceInternal: true
         - id: making-an-interactive-component
-         title: Erstellen einer interaktiven Komponente
+          title: Erstellen einer interaktiven Komponente
           href: /tutorial/tutorial.html#making-an-interactive-component
           forceInternal: true
         - id: developer-tools
