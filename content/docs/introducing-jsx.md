@@ -70,11 +70,7 @@ ReactDOM.render(
 
 [](codepen://introducing-jsx)
 
-<<<<<<< HEAD
-Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist prinzipiell nicht notwendig und wenn man es macht, empfehlen wir, Klammern drumherum zu setzen, um etwaige Fehler durch das [automatische Einfügen von Semikolons](http://stackoverflow.com/q/2846283) zu vermeiden.
-=======
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
->>>>>>> d615c5b7bcceef420c7f9246035f8ae3ba8ae11a
+Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist prinzipiell nicht notwendig und wenn man es macht, empfehlen wir, Klammern drumherum zu setzen, um etwaige Fehler durch das [automatische Einfügen von Semikolons](https://stackoverflow.com/q/2846283) zu vermeiden.
 
 ### JSX ist auch ein Ausdruck {#jsx-is-an-expression-too}
 
@@ -142,11 +138,7 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-<<<<<<< HEAD
-Standardmäßig [escaped](http://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, dass nicht explizit so implementiert wurde. Alles wird zu einem String konvertiert und danach erst gerendert. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
-=======
-By default, React DOM [escapes](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
->>>>>>> d615c5b7bcceef420c7f9246035f8ae3ba8ae11a
+Standardmäßig [escaped](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, dass nicht explizit so implementiert wurde. Alles wird zu einem String konvertiert und danach erst gerendert. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
 
 ### JSX repräsentiert Objekte {#jsx-represents-objects}
 
@@ -189,8 +181,5 @@ Im nächsten Abschnitt gehen wir auf das Rendering von React-Elementen ins DOM e
 
 >**Tipp:**
 >
-<<<<<<< HEAD
->Wir empfehlen die Verwendung der ["Babel" Sprachdefinition](http://babeljs.io/docs/editors) für den Editor deiner Wahl, sodass sowohl ES6 als auch JSX-Code vernünftig dargestellt werden kann. Diese Webseite nutzt das [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/)-Farbschema, welches mit Babel kompatibel ist.
-=======
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme which is compatible with it.
->>>>>>> d615c5b7bcceef420c7f9246035f8ae3ba8ae11a
+
+>Wir empfehlen das Verwenden der ["Babel" Sprachdefinition](https://babeljs.io/docs/editors) für den Editor deiner Wahl, sodass sowohl ES6 als auch JSX-Code vernünftig dargestellt werden kann. Diese Webseite nutzt das [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/)-Farbschema, welches mit Babel kompatibel ist.
