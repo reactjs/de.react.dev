@@ -3,7 +3,7 @@
     - id: getting-started
       title: Erste SChritte
     - id: add-react-to-a-website
-      title: React einer WEbseite hinzufügen
+      title: React einer Webseite hinzufügen
     - id: create-a-new-react-app
       title: Erstelle eine React-App
     - id: cdn-links
@@ -44,9 +44,9 @@
     - id: context
       title: Context
     - id: error-boundaries
-      title: Error Boundaries
+      title: Fehlergrenzen
     - id: forwarding-refs
-      title: Forwarding Refs
+      title: Weiterleiten von Refs
     - id: fragments
       title: Fragments
     - id: higher-order-components
@@ -54,15 +54,15 @@
     - id: integrating-with-other-libraries
       title: Integrating with Other Libraries
     - id: jsx-in-depth
-      title: JSX In Depth
+      title: JSX im Detail
     - id: optimizing-performance
       title: Optimizing Performance
     - id: portals
       title: Portals
     - id: react-without-es6
-      title: React Without ES6
+      title: React ohne ES6
     - id: react-without-jsx
-      title: React Without JSX
+      title: React ohne JSX
     - id: reconciliation
       title: Reconciliation
     - id: refs-and-the-dom
@@ -70,13 +70,13 @@
     - id: render-props
       title: Render Props
     - id: static-type-checking
-      title: Static Type Checking
+      title: Statische Typisierung
     - id: strict-mode
       title: Strict Mode
     - id: typechecking-with-proptypes
-      title: Typechecking mit PropTypes
+      title: Typisierung mit PropTypes
     - id: uncontrolled-components
-      title: Uncontrolled Components
+      title: Ungesteuerte Komponenten
     - id: web-components
       title: Web Components
 - title: API Referenz
@@ -126,28 +126,28 @@
 - title: Mithelfen
   items:
   - id: how-to-contribute
-    title: How to Contribute
+    title: Wie man mithilft
   - id: codebase-overview
-    title: Codebase Overview
+    title: Codebasis Übersicht
   - id: implementation-notes
-    title: Implementation Notes
+    title: Implementierungs Hinweise
   - id: design-principles
-    title: Design Principles
+    title: Design Prinzipien
 - title: FAQ
   items:
     - id: faq-ajax
       title: AJAX and APIs
     - id: faq-build
-      title: Babel, JSX, and Build Steps
+      title: Babel, JSX und Build Steps
     - id: faq-functions
-      title: Passing Functions to Components
+      title: Funktionen an Komponenten weitergeben
     - id: faq-state
       title: Component State
     - id: faq-styling
-      title: Styling and CSS
+      title: Styling und CSS
     - id: faq-structure
-      title: File Structure
+      title: Dateistruktur
     - id: faq-versioning
       title: Versioning Policy
     - id: faq-internals
-      title: Virtual DOM and Internals
+      title: Virtual DOM und Internals
