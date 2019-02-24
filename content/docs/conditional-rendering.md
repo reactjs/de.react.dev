@@ -42,7 +42,7 @@ ReactDOM.render(
 );
 ```
 
-[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
+**[Auf CodePen ausprobieren](codepen://conditional-rendering/conditional-rendering)**
 
 Abhängig vom Wert des `isLoggedIn` Prop stellt das Beispiel eine der Begrüßungen dar.
 
@@ -116,7 +116,7 @@ ReactDOM.render(
 );
 ```
 
-[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
+**[Auf CodePen ausprobieren](codepen://conditional-rendering/element-variable)**
 
 Während Variablen und `if` Ausdrücke einen guten Weg darstellen um eine Komponente bedingt anzuzeigen, benötigt man manchmal eine etwas kürzere Schreibweise. Es gibt mehrere Wege, Bedingungen direkt in JSX mit aufzunehmen. Diese werden anschließend erklärt.
 
@@ -146,7 +146,7 @@ ReactDOM.render(
 );
 ```
 
-[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
+**[Auf CodePen ausprobieren](codepen://conditional-rendering/inline-if-else-with-logical-operator)**
 
 Das funktioniert, weil `true && ausdruck` in JavaScript immer zu `ausdruck` evaluiert und `false && ausdruck` immer zu `false` evaluiert.
 
@@ -238,6 +238,6 @@ ReactDOM.render(
 );
 ```
 
-[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
+**[Auf CodePen ausprobieren](codepen://conditional-rendering/preventing-component-rendering)**
 
 Der Rückgabewert `null` aus der `render` Methode einer Komponente hat keinen Einfluss auf die Aufrufe der Lifecycle-Methoden. `componentDidUpdate` wird beispielsweise weiterhin aufgerufen.
