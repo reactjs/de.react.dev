@@ -72,7 +72,7 @@ Dieser stellt die wichtigsten React-Konzepte detailliert und anfängerfreundlich
 
 ### React für Designer {#react-for-designers}
 
-Wenn du einen Designhintergrund hast, könnte [diese Sammlung](http://reactfordesigners.com/) sehr hilfreich für dich sein.
+Wenn du einen Designhintergrund hast, könnte [diese Sammlung](https://reactfordesigners.com/) sehr hilfreich für dich sein.
 
 ### JavaScript Resources {#javascript-resources}
 
@@ -82,7 +82,7 @@ Wir empfehlen dir diesen [JavaScript-Überblick](https://developer.mozilla.org/e
 
 >**Tipp:**
 >
-> Wenn dich manche JavaScript Funktionweisen verwirren sollten, können wir dir zum nachschlagen, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) und [javascript.info](http://javascript.info/) empfehlen. Außerdem gibt es auch noch unser [Community Forum](/community/support.html), in dem du nach Hilfe fragen kannst.
+> Wenn dich manche JavaScript Funktionweisen verwirren sollten, können wir dir zum nachschlagen, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) und [javascript.info](https://javascript.info/) empfehlen. Außerdem gibt es auch noch unser [Community Forum](/community/support.html), in dem du nach Hilfe fragen kannst.
 
 ### Praktisches Tutorial {#practical-tutorial}
 
