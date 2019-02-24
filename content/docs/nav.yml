@@ -104,7 +104,7 @@
       title: Anforderungen an die JavaScript-Umgebung
     - id: glossary
       title: Glossar
-- title: Hooks (New)
+- title: Hooks (Neu)
   isOrdered: true
   items:
       - id: hooks-intro
@@ -123,7 +123,7 @@
         title: Hooks API Referenz
       - id: hooks-faq
         title: Hooks FAQ
-- title: Contributing
+- title: Mithelfen
   items:
   - id: how-to-contribute
     title: How to Contribute
