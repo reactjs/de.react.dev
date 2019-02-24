@@ -10,7 +10,7 @@ redirect_from:
 
 Mit React können verschiedene Komponenten erstellt werden, die ein gewünschtes Verhalten kapseln. In Abhängigkeit vom State der Anwendung können dann einige davon dargestellt werden.
 
-Die Darstellung auf Basis von Bedingungen funktioniert genauso wie Bedingungen in JavaScript. Mit JavaScript Operatoren wie [`if`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/if...else) oder dem [Bedingten Operator](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) kann man Elemente erstellen, die den aktuellen State repräsentieren und React zeigt sie dann im UI an.
+Die bedingte Darstellung (engl. conditional rendering) in React funktioniert genauso wie Bedingungen in JavaScript. Benutze JavaScript Operatoren wie [`if`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/if...else) oder den [Bedingten Operator](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) um Elemente zu erstellen, welche den aktuellen State widerspiegeln. React aktualisiert dementsprechend die aktuelle Benutzeroberfläche.
 
 Stelle dir diese beiden Komponenten vor:
 
@@ -44,13 +44,13 @@ ReactDOM.render(
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
-Abhängig vom Wert des `isLoggedIn` Prop, stellt das Beispiel eine der Begrüßungen dar.
+Abhängig vom Wert des `isLoggedIn` Prop stellt das Beispiel eine der Begrüßungen dar.
 
 ### Element Variablen {#element-variables}
 
 Man kann Elemente auch in Variablen speichern. Das kann hilfreich sein, wenn man einen Teil der Komponente bedingt darstellen und den Rest unverändert lassen möchte.
 
-Stelle dir diese beiden neuen Komponenten vor, die Anmelde- und Abmeldeknöpfe darstellen sollen.
+Betrachten wir diese beiden neuen Komponenten, welche Anmelde- und Abmeldebuttons darstellen:
 
 ```js
 function LoginButton(props) {
@@ -72,7 +72,7 @@ function LogoutButton(props) {
 
 Im unteren Beispiel erstellen wir eine [zustandsbehaftete Komponente](/docs/state-and-lifecycle.html#adding-local-state-to-a-class), die wir `LoginControl` nennen.
 
-Sie wird je nach aktuellem State entweder einen `<LoginButton />` oder einen `<LogoutButton />` darstellen. Außerdem wird sie immer das `<Greeting />` aus dem vorherigen Beispiel darstellen.
+Sie wird je nach aktuellem State entweder einen `<LoginButton />` oder einen `<LogoutButton />` darstellen. Außerdem wird sie immer das `<Greeting />` aus dem vorherigen Beispiel anzeigen.
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
