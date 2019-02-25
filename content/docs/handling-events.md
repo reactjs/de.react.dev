@@ -95,7 +95,7 @@ ReactDOM.render(
 
 Du musst Vorsichtig sein mit der Bedeutung von `this` in JSX Callbacks. In JavaScript sind Klassenmethoden nicht an diese standardmäßig [gebunden](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind). Wenn du vergisst `this.handleClick` and die Klasse zu binden und an `onClick` übergibst, wird `this` `undefined` sein, wenn die Funktion tatsächlich aufgerufen wird.
 
-Dies ist kein spezielles Verhalten von React; Es ist Teil davon, [wie Funktionen in JavaScript arbeiten](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Generell solltest du eine Methode ohne `()` am Ende, wie `onClick={this.handleClick}`, binden.
+Dies ist kein spezielles Verhalten von React; Es ist Teil davon, [wie Funktionen in JavaScript arbeiten](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Generell solltest du eine Methode ohne `()` am Ende wie `onClick={this.handleClick}`, binden.
 
 Wenn es dich stört immer `bind` aufzurufen, gibt es zwei Möglichkeiten dies zu umgehen. Wenn du die experimentelle [public class fields Syntax](https://babeljs.io/docs/plugins/transform-class-properties/) verwendest, kannst du Klassenfelder benutzen um Callbacks richtig zu binden:
 
