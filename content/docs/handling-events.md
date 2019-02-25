@@ -54,9 +54,9 @@ function ActionLink() {
 }
 ```
 
-Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+Hier ist `e` ein synthetisches Event. React definiert diese synthetischen Events gemäß des [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), also brauchst du dir keine Sorgen über die browserübergreifende Kompatibilität machen. Mehr Informationen findest du im [`SyntheticEvent`](/docs/events.html) Referenz Handbuch.
 
-When using React you should generally not need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
+Bei der Benutzung von React, solltest du im Normalfall den Aufruf von `addEventListener` nicht benötigen um Events an Elemente im DOM zu binden nach dem sie erstellt worden. Stelle stattdessen einfach einen Listener zur Verfügung, wenn das Element initial gerendert wurde.
 
 When you define a component using an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), a common pattern is for an event handler to be a method on the class. For example, this `Toggle` component renders a button that lets the user toggle between "ON" and "OFF" states:
 
