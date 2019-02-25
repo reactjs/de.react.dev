@@ -58,7 +58,7 @@ Hier ist `e` ein synthetisches Event. React definiert diese synthetischen Events
 
 Bei der Benutzung von React, solltest du im Normalfall den Aufruf von `addEventListener` nicht benötigen um Events an Elemente im DOM zu binden nach dem sie erstellt worden. Stelle stattdessen einfach einen Listener zur Verfügung, wenn das Element initial gerendert wurde.
 
-Wenn du eine Komponente als [ES6 Klassse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definierst, ist ein gängiges Pattern, dass der Eventhandler eine Methode der Klasse ist. Zum Beispiel rendert diese `Toggle` Komponente eine Button, welcher zwischen den States "AN" und "AUS" wechselt:
+Wenn du eine Komponente als [ES6 Klassse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definierst, ist ein gängiges Pattern, dass der Eventhandler eine Methode der Klasse ist. Zum Beispiel rendert diese `Toggle` Komponente einen Button, welcher zwischen den States "AN" und "AUS" wechselt:
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
