@@ -102,7 +102,7 @@ Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anz
 
 [Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
-[Download the full example (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
 
 >Hinweis
 >
