@@ -110,7 +110,7 @@ class LoggingButton extends React.Component {
   render() {
     return (
       <button onClick={this.handleClick}>
-        Klicke mich
+        Klick mich
       </button>
     );
   }
