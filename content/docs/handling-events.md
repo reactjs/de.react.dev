@@ -56,7 +56,7 @@ function ActionLink() {
 
 Hier ist `e` ein synthetisches Event. React definiert diese synthetischen Events gemäß des [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), also brauchst du dir keine Sorgen über die browserübergreifende Kompatibilität machen. Mehr Informationen findest du im [`SyntheticEvent`](/docs/events.html) Referenz Handbuch.
 
-Bei der Benutzung von React, solltest du im Normalfall den Aufruf von `addEventListener` nicht benötigen um Events an Elemente im DOM zu binden nach dem sie erstellt worden. Stelle stattdessen einfach einen Listener zur Verfügung, wenn das Element initial gerendert wurde.
+Mit React solltest du im Normalfall `addEventListener` nicht aufrufen müssen, um Events an DOM Elemente zu binden, nachdem sie erstellt worden. Stattdessen stellst du einfach einen Listener zur Verfügung, wenn das Element initial gerendert wurde.
 
 Wenn du eine Komponente als [ES6 Klassse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definierst, ist ein gängiges Pattern, dass der Eventhandler eine Methode der Klasse ist. Zum Beispiel rendert diese `Toggle` Komponente einen Button, welcher zwischen den States "AN" und "AUS" wechselt:
 
