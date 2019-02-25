@@ -33,7 +33,7 @@ Ein weiterer Unterschied ist, dass `false` nicht zurückgegeben werden kann um d
 
 ```html
 <a href="#" onclick="console.log('Der Link wurde geklickt.'); return false">
-  Klicke mich
+  Klick mich
 </a>
 ```
 
