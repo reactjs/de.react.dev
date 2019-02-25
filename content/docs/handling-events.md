@@ -29,7 +29,7 @@ ist in React ein wenig anders:
 </button>
 ```
 
-Ein weiterer Unterschied ist, dass `false` nicht zurückgegeben werden kann um das Standardverhalten von React zu unterbinden. Es muss explizit `preventDefault` aufgerufen werden. Um beispielsweise das Aufrufen eines Links in schlichtem HTML zu verhindern, kannst du folgendes schreiben:
+Ein weiterer Unterschied ist, dass `false` nicht zurückgegeben werden kann, um das Standardverhalten von React zu unterbinden. Es muss explizit `preventDefault` aufgerufen werden. Um beispielsweise das Aufrufen eines Links in schlichtem HTML zu verhindern, kannst du folgendes schreiben:
 
 ```html
 <a href="#" onclick="console.log('Der Link wurde geklickt.'); return false">
