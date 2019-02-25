@@ -194,7 +194,7 @@ npx babel --watch src --out-dir . --presets react-app/prod
 
 Du brauchst nicht darauf zu warten, dass der Befehl fertig ausgeführt wird -- er startet einen automatisierten Watcher für JSX.
 
-When du jetzt eine Datei unter `src/like_button.js` mit diesem **[JSX Starter Code](https://cdn.rawgit.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)** erstellst, wird der Watcher eine präprozessierte `like_button.js` mit einfachem JavaScript Code erstellen, der im Browser ausgeführt werden kann.
+Wenn du jetzt eine Datei unter `src/like_button.js` mit diesem **[JSX Starter Code](https://cdn.rawgit.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)** erstellst, wird der Watcher eine präprozessierte `like_button.js` mit einfachem JavaScript Code erstellen, der im Browser ausgeführt werden kann.
 
 Zusätzlich kannst du durch diesen Ansatz moderne JavaScript Syntax Funktionalitäten wie Klassen verwenden, ohne dass dein Code in alten Browsern nicht funktionieren würde.
 
