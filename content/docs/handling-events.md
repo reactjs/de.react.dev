@@ -48,7 +48,7 @@ function ActionLink() {
 
   return (
     <a href="#" onClick={handleClick}>
-      Klicke mich
+      Klick mich
     </a>
   );
 }
