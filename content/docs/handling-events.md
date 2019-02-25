@@ -93,16 +93,16 @@ ReactDOM.render(
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
 
-You have to be careful about the meaning of `this` in JSX callbacks. In JavaScript, class methods are not [bound](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind) by default. If you forget to bind `this.handleClick` and pass it to `onClick`, `this` will be `undefined` when the function is actually called.
+Du musst Vorsichtig sein mit der Bedeutung von `this` in JSX Callbacks. In JavaScript sind Klassenmethoden nicht an diese standardmäßig [gebunden](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind). Wenn du vergisst `this.handleClick` and die Klasse zu binden und an `onClick` übergibst, wird `this` `undefined` sein, wenn die Funktion tatsächlich aufgerufen wird.
 
-This is not React-specific behavior; it is a part of [how functions work in JavaScript](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Generally, if you refer to a method without `()` after it, such as `onClick={this.handleClick}`, you should bind that method.
+Dies ist kein spezielles Verhalten von React; Es ist Teil davon, [wie Funktionen in JavaScript arbeiten](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Generell solltest du eine Methode ohne `()` am Ende, wie `onClick={this.handleClick}`, binden.
 
-If calling `bind` annoys you, there are two ways you can get around this. If you are using the experimental [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/), you can use class fields to correctly bind callbacks:
+Wenn es dich stört immer `bind` aufzurufen, gibt es zwei Möglichkeiten dies zu umgehen. Wenn du die experimentelle [public class fields sSyntax](https://babeljs.io/docs/plugins/transform-class-properties/) verwendest, kannst du Klassenfelder benutzen um Callbacks richtig zu binden:
 
 ```js{2-6}
 class LoggingButton extends React.Component {
-  // This syntax ensures `this` is bound within handleClick.
-  // Warning: this is *experimental* syntax.
+  // Diese Syntax stellt sicher, dass `this` innerhalb von handleClick gebunden ist.
+  // Warnung: Dies ist *experimentelle* Syntax.
   handleClick = () => {
     console.log('this ist:', this);
   }
@@ -117,9 +117,9 @@ class LoggingButton extends React.Component {
 }
 ```
 
-This syntax is enabled by default in [Create React App](https://github.com/facebookincubator/create-react-app).
+Diese Syntax is standardmäßig in [Create React App](https://github.com/facebookincubator/create-react-app) aktiviert.
 
-If you aren't using class fields syntax, you can use an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) in the callback:
+Wenn du die class field Syntax nicht verwendest, hast du die Möglichkeit im Callback eine [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) zu verwenden:
 
 ```js{7-9}
 class LoggingButton extends React.Component {
@@ -128,7 +128,7 @@ class LoggingButton extends React.Component {
   }
 
   render() {
-    // This syntax ensures `this` is bound within handleClick
+    // Diese Syntax stellt sicher, dass `this` innerhalb von handleClick gebunden ist.
     return (
       <button onClick={(e) => this.handleClick(e)}>
         Klicke mich
