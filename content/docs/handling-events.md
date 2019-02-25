@@ -58,7 +58,7 @@ Hier ist `e` ein synthetisches Event. React definiert diese synthetischen Events
 
 Bei der Benutzung von React, solltest du im Normalfall den Aufruf von `addEventListener` nicht benötigen um Events an Elemente im DOM zu binden nach dem sie erstellt worden. Stelle stattdessen einfach einen Listener zur Verfügung, wenn das Element initial gerendert wurde.
 
-When you define a component using an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), a common pattern is for an event handler to be a method on the class. For example, this `Toggle` component renders a button that lets the user toggle between "ON" and "OFF" states:
+Wenn du eine Komponente als [ES6 Klassse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definierst, ist ein gängiges Pattern, dass der Eventhandler eine Methode der Klasse ist. Zum Beispiel rendert diese `Toggle` Komponente eine Button, welcher zwischen den States "AN" und "AUS" wechselt:
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
@@ -66,7 +66,7 @@ class Toggle extends React.Component {
     super(props);
     this.state = {isToggleOn: true};
 
-    // This binding is necessary to make `this` work in the callback
+    // Diese Bindung ist nötig, damit `this` in der Callback-Methode funktioniert
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -91,7 +91,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
 
 You have to be careful about the meaning of `this` in JSX callbacks. In JavaScript, class methods are not [bound](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind) by default. If you forget to bind `this.handleClick` and pass it to `onClick`, `this` will be `undefined` when the function is actually called.
 
