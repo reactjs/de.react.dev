@@ -17,7 +17,7 @@ Die Mehrheit der Webseiten sind und brauchen keine SPAs zu sein. Probiere React 
 ---
 
 - [Füge React in einer Minute hinzu](#add-react-in-one-minute)
-- [Optional: Benutze React mit JSX](#optional-try-react-with-jsx) (no bundler necessary!)
+- [Optional: Benutze React mit JSX](#optional-try-react-with-jsx) (Kein Bundler benötigt!)
 
 ## Füge React in einer Minute hinzu {#add-react-in-one-minute}
 
@@ -43,7 +43,7 @@ Wir haben diesem `div` ein eindeutiges `id` HTML Attribut. Das erlaubt es uns sp
 
 >Tipp
 >
->Du kannst ein "container" `<div>` wie das oben **überall** im `<body>` Tag setzen. Du kannst so viele unabhängige DOM Container in einer Seite haben wie du brauchst. Normalerweise sind sie leer -- Falls DOM Container Inhalt besitzen, wird React diesen überschreiben.
+>Du kannst ein "container" `<div>` wie das oben **überall** im `<body>` Tag setzen. Du kannst so viele unabhängige DOM Container in einer Seite haben wie du brauchst. Normalerweise sind sie leer -- Falls die DOM Container Inhalt besitzen, wird React diesen überschreiben.
 
 ### Schritt 2: Fürge die Script Tags hinzu {#step-2-add-the-script-tags}
 
@@ -63,7 +63,6 @@ Als nächstes fügen wir direkt vor dem schließenden `</body>` Tag drei `<scrip
 </body>
 ```
 
-The first two tags load React. The third one will load your component code.
 Die ersten zwei Tags laden React. Der dritte läd deinen Komponenten Code.
 
 ### Schritt 3: Erstelle eine React Komponente {#step-3-create-a-react-component}
@@ -74,7 +73,7 @@ Erstelle eine Datei mit dem Namen `like_button.js` und speichere sie neben deine
 
 >Tipp
 >
->Dieser Code definiert eine React Komponente mit dem Namen `LikeButton`. Mach dir keine Sorgen, falls du das noch nicht verstehst -- Wir werden die Bausteine von React später in unserem [hands-on tutorial](/tutorial/tutorial.html) und dem [main concepts guide](/docs/hello-world.html) behandeln. Jetzt wollen wir sie erstmal auf dem Monitor angezeigt bekommen!
+>Dieser Code definiert eine React Komponente mit dem Namen `LikeButton`. Mach dir keine Sorgen, falls du das noch nicht verstehst -- Wir werden die Bausteine von React später in unserem [hands-on tutorial](/tutorial/tutorial.html) und dem [main concepts guide](/docs/hello-world.html) behandeln. Jetzt wollen wir sie erstmal im Browser angezeigt bekommen!
 
 Nach **[dem Starter Code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, füge zwei Zeilen am Ende von `like_button.js` an:
 
@@ -91,7 +90,6 @@ Diese zwei Codezeilen finden den von uns zu unserem HTML hinzugefügen `<div>` C
 
 Es gibt keinen vierten Schritt. **Du hast gerade deine erste React Komponente zu deiner Webseite hinzugefügt.**
 
-Check out the next sections for more tips on integrating React.
 Sieh dir die nächsten Abschnitte an, um mehr Tipps zu erhalten, wie du React integrieren kannst.
 
 **[Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
@@ -100,7 +98,7 @@ Sieh dir die nächsten Abschnitte an, um mehr Tipps zu erhalten, wie du React in
 
 ### Tipp: Verwende Komponeten wieder {#tip-reuse-a-component}
 
-Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anzeigen wollen. Hier ist ein Beispiel, das den "Like" Button dreimal anzeigt und einige Daten hinzufügt.
+Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anzeigen wollen. Hier ist ein Beispiel, welches den "Like" Button dreimal anzeigt und einige Daten hinzufügt.
 
 [Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
@@ -108,11 +106,11 @@ Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anz
 
 >Hinweis
 >
->Diese Herangehensweise ist besonders sinnvoll, wenn mit React gebaute Teile der Seite voneinander isoliert sind. In React Code selbst ist es einfacher stattdessen [component composition](/docs/components-and-props.html#composing-components) zu verwenden.
+>Diese Herangehensweise ist besonders sinnvoll, wenn mit React gebaute Teile der Seite voneinander isoliert sind. In React Code selbst ist es einfacher stattdessen [Komponenten Komposition](/docs/components-and-props.html#composing-components) zu verwenden.
 
 ### Tipp: Minifiziere JavaScript für die Produktionsumgebung {#tip-minify-javascript-for-production}
 
-Bevor du deine Webseite für die Produktionsumgebung bereitstellst, denke daran, dass unminifiziertes JavaScript die Seite für deine User signifankt verlangsamen kann.
+Bevor du deine Webseite für die Produktionsumgebung deployst, denke daran, dass unminifiziertes JavaScript die Seite für deine User signifankt verlangsamen kann.
 
 Falls du bereits die Anwendungsscripts minifiziert hast, **ist deine Seite fertig für die Produktionsumgebung**, sobald du sichergestellt hast, dass das bereitgestellte HTML die Versionen von React lädt, die auf `production.min.js` enden:
 
@@ -138,7 +136,7 @@ return e(
 );
 ```
 
-React bitet allerdings auch die Option an, stattdessen [JSX](/docs/introducing-jsx.html) zu benutzen.
+React bietet allerdings auch die Option an, stattdessen [JSX](/docs/introducing-jsx.html) zu benutzen.
 
 ```js
 // Zeige einen "Like" <button> an
@@ -155,7 +153,7 @@ Du kannst JSX mit [diesem Online Konverter](https://babeljs.io/repl#?babili=fals
 
 ### Schnell JSX ausprobieren {#quickly-try-jsx}
 
-Der schnellste Weg JSX in deinem Projekt auszuprobieren ist, diesen `<script>` Tag deiner Seite hinzuzufügen:
+Du kannst JSX in deinem Projekt am schnellsten ausprobieren, indem du diesen `<script>` Tag deiner Seite hinzufügst:
 
 ```html
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -163,7 +161,7 @@ Der schnellste Weg JSX in deinem Projekt auszuprobieren ist, diesen `<script>` T
 
 Jetzt kannst JSX in jedem `<script>` Tag verwenden, indem du ihm ein `type="text/babel"` Attribut hinzufügst. Hier kannst du [eine Besipiel HTML Datei mit JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) herunterladen und mit ihr experimentieren.
 
-Um zu lernen und simple Demos zu bauen ist dieser Ansatz gut. Allerdings macht er deine Webseite langsam und **ist nicht für die Produktionsumgebung geeignet**. Wenn du bereit bist weiter zu machen, entferne den neuen `<script>` Tag und das `type="text/babel"`, das du hinzugefügt hast. Im nächsten Abschnitt wirst du stattdessen einen JSX preprocessor aufsetzen, der alle deine `<script>` Tags automatisch konvertiert.
+Um zu lernen und einfache Demos zu bauen ist dieser Ansatz ausreichend. Allerdings macht er deine Webseite langsam und **ist nicht für die Produktionsumgebung geeignet**. Wenn du bereit bist weiter zu machen, entferne den neuen `<script>` Tag und das `type="text/babel"`, das du eben hinzugefügt hast. Im nächsten Abschnitt wirst du stattdessen einen JSX Präprozessor aufsetzen, der alle deine `<script>` Tags automatisch konvertiert.
 
 ### Füge JSX einem Projekt hinzu {#add-jsx-to-a-project}
 
