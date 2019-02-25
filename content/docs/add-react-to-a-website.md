@@ -84,7 +84,7 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
-Diese zwei Codezeilen finden den von uns zu unserem HTML hinzugefügen `<div>` Container aus dem ersten Schritt und zeigen dann unsere React Komponente mit dem "Like" Button darin an.
+Diese zwei Codezeilen finden den von uns zu unserem HTML hinzugefügten `<div>` Container aus dem ersten Schritt und zeigen dann unsere React Komponente mit dem "Like" Button darin an.
 
 ### Das ist alles! {#thats-it}
 
