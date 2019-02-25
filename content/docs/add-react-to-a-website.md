@@ -94,7 +94,7 @@ Sieh dir die nächsten Abschnitte an, um mehr Tipps zu erhalten, wie du React in
 
 **[Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
-**[Komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+**[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
 
 ### Tipp: Verwende Komponeten wieder {#tip-reuse-a-component}
 
