@@ -57,7 +57,7 @@ Wenn du bereit bist auf die Produktionsumgebung zu deployen, führe `npm run bui
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) ist ein beliebtes und leichtes Framework für mit React gebaute, **statische und vom Server gerenderte Anwendungen**. Es beinhaltet **Styling- und Routinglösungen** out of the box und nimmt an, dass du als Serverumgebung [Node.js](https://nodejs.org/) verwendest.
+[Next.js](https://nextjs.org/) ist ein beliebtes und leichtgewichtiges Framework für mit React gebaute, **statische und vom Server gerenderte Anwendungen**. Es beinhaltet **Styling- und Routinglösungen** out of the box und nimmt an, dass du als Serverumgebung [Node.js](https://nodejs.org/) verwendest.
 
 Lerne Next.js durch den [offizielen Leitfaden](https://nextjs.org/learn/).
 
