@@ -12,7 +12,7 @@ Verwende so wenig oder so viel React wie du möchtest.
 
 React wurde von Beginn an für graduelle Benutzung konzipiert und du kannst so wenig oder so viel React benutzen, wie du möchtest. Vielleicht möchtest du einer existierenden Seite nur an wenige Stellen etwas Interaktivität hinzufügen. React Komponenten sind perfekt dafür geeignet.
 
-Die Mehrheit der Webseiten sind und brauchen keine SPAs zu sein. Probiere React in einem kleinen Teil deiner Webseite mit **ein paar Zeilen Code und ohne build tooling** aus. Dann kannst du die Verwendung entweder graduell erweitern oder auf ein paar dynamische Widgets beschränken.
+Die Mehrheit der Webseiten sind und brauchen keine SPAs zu sein. Probiere React in einem kleinen Teil deiner Webseite mit **ein paar Zeilen Code und ohne Build-Werkzeuge** aus. Dann kannst du die Verwendung entweder schrittweise erweitern oder auf ein paar dynamische Widgets beschränken.
 
 ---
 
