@@ -83,7 +83,7 @@ Die folgenden Werkzeuge bieten mehr Flexibilität und Freiheiten. Wir empfehlen 
 
 Typischerweise besteht eine JavaScript Build Werkzeugkette aus:
 
-* Einem **Paket Manager** wie [Yarn](https://yarnpkg.com/) oder [npm](https://www.npmjs.com/). Dadurch erhälst du Zugriff auf ein breites Ökosystem von Drittbibliotheken, die du einfach installieren oder aktualisieren kannst.
+* Einem **Paket Manager** wie [Yarn](https://yarnpkg.com/) oder [npm](https://www.npmjs.com/). Dadurch erhältst du Zugriff auf ein breites Ökosystem von Drittbibliotheken, die du einfach installieren oder aktualisieren kannst.
 
 * Einem **Bundler** wie [webpack](https://webpack.js.org/) oder [Parcel](https://parceljs.org/). Das erlaubt dir modularen Code zu schreiben und ihn in kleine Pakete zu packen, um die Ladezeit zu optimieren.
 
