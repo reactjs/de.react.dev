@@ -198,4 +198,4 @@ Wenn du jetzt eine Datei unter `src/like_button.js` mit diesem **[JSX Starter Co
 
 Zusätzlich kannst du durch diesen Ansatz moderne JavaScript Syntax Funktionalitäten wie Klassen verwenden, ohne dass dein Code in alten Browsern nicht funktionieren würde.
 
-Falls du merkst, dass du im Umgang mit build tools sicher wirst und du von ihnen mehr machen lassen willst, beschreibt [der nächste Abschnitt](/docs/create-a-new-react-app.html) einige der beliebtesten und zugänglichsten toolchains. Falls aber nicht -- Script Tags sind genauso ok!
+Falls du merkst, dass du im Umgang mit Build-Werkzeugen sicher wirst und du von ihnen mehr machen lassen willst, beschreibt [der nächste Abschnitt](/docs/create-a-new-react-app.html) einige der beliebtesten und zugänglichsten Ansammlungen von diesen. Falls aber nicht -- Script Tags sind genauso ok!
