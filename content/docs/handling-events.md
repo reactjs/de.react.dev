@@ -11,7 +11,7 @@ redirect_from:
 Die Handhabung von Events in React-Elementen ist ähnlich wie bei DOM-Elementen. Es gibt nur ein paar syntaktische Unterschiede:
 
 * Events in React werden nicht in Kleinbuchstaben, sondern in camelCase benannt.
-* In JSX wird eine Funktion als Eventhandler übergeben und kein String.
+* In JSX übergibst du eine Funktion als Eventhandler und keinen String.
 
 Zum Beispiel dieses HTML:
 
