@@ -65,7 +65,7 @@ Lerne Next.js durch den [offizielen Leitfaden](https://nextjs.org/learn/).
 
 [Gatsby](https://www.gatsbyjs.org/) ist der beste Weg, um mit React **statische Webseiten** zu erstellen. Es lässt dich React Komponenten benutzen, erzeugt aber vorgerendertes HTML und CSS, um die schnellstmögliche Ladezeit zu garantieren.
 
-Lerne Gatsby durch den [offiziellen Leitfaden](https://www.gatsbyjs.org/docs/) und einer [Gallerie mit Starter Kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
+Lerne Gatsby durch den [offiziellen Leitfaden](https://www.gatsbyjs.org/docs/) und einer [Galerie mit Starter Kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
 
 ### Flexiblere Werkzeuge {#more-flexible-toolchains}
 
