@@ -91,7 +91,7 @@ ReactDOM.render(
 );
 ```
 
-[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
+[**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
 
 Mit der Bedeutung von `this` musst du in JSX Callbacks vorsichtig sein. In JavaScript sind Klassenmethoden nicht standardmäßig daran [gebunden](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind). Wenn du vergisst `this.handleClick` an die Klasse zu binden und an `onClick` übergibst, wird `this` beim Aufruf der Funktion `undefined` sein.
 
