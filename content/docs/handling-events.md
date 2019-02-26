@@ -119,7 +119,7 @@ class LoggingButton extends React.Component {
 
 Diese Syntax is standardmäßig in [Create React App](https://github.com/facebookincubator/create-react-app) aktiviert.
 
-Wenn du die class field Syntax nicht verwendest, hast du die Möglichkeit im Callback eine [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) zu verwenden:
+Wenn du die class field Syntax nicht verwendest, hast du die Möglichkeit im Callback eine [Lambda-Funktion](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) zu verwenden:
 
 ```js{7-9}
 class LoggingButton extends React.Component {
@@ -138,17 +138,17 @@ class LoggingButton extends React.Component {
 }
 ```
 
-The problem with this syntax is that a different callback is created each time the `LoggingButton` renders. In most cases, this is fine. However, if this callback is passed as a prop to lower components, those components might do an extra re-rendering. We generally recommend binding in the constructor or using the class fields syntax, to avoid this sort of performance problem.
+Das Problem mit dieser Syntax ist, dass jedes Rendern des `LoggingButton` einen anderen Callback erzeugt. In den meisten Fällen, ist das ok. Wenn jedoch dieser Callback an tiefer gelegene Komoponenten als Prop weitergegeben wird, könnten diese sich ein weiteres Mal neu rendern. Generell empfehlen wir, um diese Art von Performance Problemen zu vermeinden, die Events im Konstruktor zu binden oder die class field Syntax zu verwenden.
 
-## Passing Arguments to Event Handlers {#passing-arguments-to-event-handlers}
+## Argumente an Eventhandler geben {#passing-arguments-to-event-handlers}
 
-Inside a loop it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
+Innerhalb einer Schleife ist es üblich, einen zusätzlichen Parameter an den Eventhandler zu übergeben. Wenn beispielsweise `id` die Zeilen ID ist, würde folgendes funktionieren.
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Zeile entfernen</button>
 <button onClick={this.deleteRow.bind(this, id)}>Zeile entfernen</button>
 ```
 
-The above two lines are equivalent, and use [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) respectively.
+Die beiden obigen Zeilen sind äquivalent und benutzen [Lambda-Funktionen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) bzw. [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind).
 
-In both cases, the `e` argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with `bind` any further arguments are automatically forwarded.
+In beiden Fällen repräsentiert das `e` Argument das React Event und wird als zweites Argument nach der ID mitgeliefert. Bei einer Lambda-Funktion müssen wir es explizit übergeben, aber mit `bind` werden alle weiteren Argumente automatisch weitergeleitet.
