@@ -117,7 +117,7 @@ class LoggingButton extends React.Component {
 }
 ```
 
-Diese Syntax is standardmäßig in [Create React App](https://github.com/facebookincubator/create-react-app) aktiviert.
+Diese Syntax ist standardmäßig in [Create React App](https://github.com/facebookincubator/create-react-app) aktiviert.
 
 Wenn du die class field Syntax nicht verwendest, hast du die Möglichkeit im Callback eine [Lambda-Funktion](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) zu verwenden:
 
