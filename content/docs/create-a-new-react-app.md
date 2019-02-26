@@ -30,7 +30,7 @@ Das ist auch **der einfachste Weg, um React in eine existierende Webseite zu int
 
 Das React Team empfiehlt bevorzugt diese Lösungen:
 
-- Wenn du **React lernst** oder eine neue [Single Page](/docs/glossary.html#single-page-application) Anwendung erstellst, dann benutze [Create React App](#create-react-app).
+- Wenn du **React lernst** oder **eine neue [Single Page](/docs/glossary.html#single-page-application) Anwendung** erstellst, dann benutze [Create React App](#create-react-app).
 - Wenn du eine **vom Server gerenderte Webseite mit Node.js** baust, dann probier [Next.js](#nextjs).
 - Wenn du eine **statische auf Inhalt orientierte Webseite baust**, dann probier [Gatsby](#Gatsby).
 - Wenn du eine **Komponentenbibliothek** baust oder **mit einer existierenden Codebasis integrierst**, dann probiere [flexiblere Werkzeuge](#more-flexible-toolchains).
