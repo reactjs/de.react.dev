@@ -52,7 +52,7 @@
     - id: higher-order-components
       title: Higher-Order Components
     - id: integrating-with-other-libraries
-      title: Integrating with Other Libraries
+      title: Integration mit anderen Bibliotheken
     - id: jsx-in-depth
       title: JSX im Detail
     - id: optimizing-performance
@@ -91,7 +91,7 @@
     - id: react-dom-server
       title: ReactDOMServer
     - id: dom-elements
-      title: DOM Elements
+      title: DOM Elemente
     - id: events
       title: SyntheticEvent
     - id: test-utils
@@ -142,7 +142,7 @@
     - id: faq-functions
       title: Funktionen an Komponenten weitergeben
     - id: faq-state
-      title: Component State
+      title: Komponent State
     - id: faq-styling
       title: Styling und CSS
     - id: faq-structure
