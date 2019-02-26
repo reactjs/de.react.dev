@@ -14,9 +14,9 @@ In diesem Abschnitt werden wir einige Problemstellungen betrachten, bei denen En
 
 ## Eingrenzung {#containment}
 
-Einige Komponenten kennen ihr Kinder nicht im Voraus. Dies ist inbesonderen bei Komponenten wie `Sidebar` oder `Dialog` üblich, die generische "Boxen" darstellen.
+Einige Komponenten kennen ihre Kinder nicht im Voraus. Dies ist besonders häufig bei Komponenten wie `Sidebar` oder `Dialog` der Fall, die generische "Boxen" darstellen.
 
-Wir empfehlen, dass solche Komponenten die spezielle `children` Eigenschaft nutzen um Kind-Elemente direkt in ihre Ausgabe zu übergeben:
+Wir empfehlen, dass solche Komponenten die spezielle `children` Prop nutzen um Kind-Elemente direkt in ihre Ausgabe zu übergeben:
 
 ```js{4}
 function FancyBorder(props) {
@@ -47,9 +47,9 @@ function WelcomeDialog() {
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)
 
-Alles innerhalb des `<FancyBorder>` JSX-Elements wird in die `FancyBorder` Komponente als eine `children` Eigenschaft übergeben. Da `{props.children}` von `FancyBorder` innerhalb eines `<div>` gerendert wird, erscheinen die übergebenen Elemente in der finalen Ausgabe.
+Alles innerhalb des `<FancyBorder>` JSX-Elements wird in die `FancyBorder` Komponente als eine `children` Prop übergeben. Da `{props.children}` von `FancyBorder` innerhalb eines `<div>` gerendert wird, erscheinen die übergebenen Elemente in der finalen Ausgabe.
 
-Obwohl dies weniger üblich ist, wirst du manchmal möglicherweise mehrere "Lücken" in einer Komponenten benötigen. In solchen Fällen kannst du dir eine eigene Konvention überlegen anstatt `children` zu nutzen:
+Obwohl dies weniger üblich ist, wirst du manchmal möglicherweise mehrere "Lücken" in einer Komponente benötigen. In solchen Fällen kannst du dir eine eigene Konvention überlegen anstatt `children` zu nutzen:
 
 ```js{5,8,18,21}
 function SplitPane(props) {
@@ -80,13 +80,13 @@ function App() {
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
 
-React-Elemente wie `<Contacts />` und `<Chat />` sind lediglich Objekte, somit kannst du sie wie beliebige andere Daten als Eigenschaften übergeben. Dieser Ansatz wird dich möglicherweise an "slots" in anderen Bibliotheken erinnern, allerdings gibt es keinerlei Einschränkungen im Hinblick auf das, was du in React als Eigenschaften übergeben kannst.
+React-Elemente wie `<Contacts />` und `<Chat />` sind lediglich Objekte, somit kannst du sie wie beliebige andere Daten als Props übergeben. Dieser Ansatz wird dich möglicherweise an "slots" in anderen Bibliotheken erinnern, allerdings gibt es keinerlei Einschränkungen im Hinblick auf das, was du in React als Prop übergeben kannst.
 
 ## Spezialisierung {#specialization}
 
-Manchmal betrachten wir Komponenten als "spezielle Fälle" von anderen Komponenten. Zum Beispiel könnte man sagen, dass `WelcomeDialog` ein spezieller Fall von `Dialog` ist.
+Manchmal betrachten wir Komponenten als "Sonderfälle" von anderen Komponenten. Zum Beispiel könnte man sagen, dass `WelcomeDialog` ein Sonderfall von `Dialog` ist.
 
-In React wird dies ebenfalls durch Komposition erreicht, indem eine "spezifischere" Komponenete eine "generischere" rendert und mit Eigenschaften konfiguriert:
+In React wird dies ebenfalls durch Komposition erreicht, indem eine "spezifischere" Komponente eine "generischere" rendert und mit Props konfiguriert:
 
 ```js{5,8,16-18}
 function Dialog(props) {
@@ -167,6 +167,6 @@ class SignUpDialog extends React.Component {
 
 Bei Facebook verwenden wir React in tausenden von Komponenten, und wir haben keinen Anwendungsfall gefunden, bei dem wir empfehlen würden eine Vererbungshierarchie zu erstellen.
 
-Eigenschaften und Komposition geben dir all die Flexibilität, die du brauchst um das Aussehen und Verhalten einer Komponente auf explizite und sichere Art anzupassen. Denk daran, dass Komponenten beliebige Eigenschaften akzeptieren können, inklusive primitiver Werte, React-Elementen oder Funktionen.
+Props und Komposition geben dir all die Flexibilität, die du brauchst um das Aussehen und Verhalten einer Komponente auf explizite und sichere Art anzupassen. Denk daran, dass Komponenten beliebige Props akzeptieren können, inklusive primitiver Werte, React-Elementen oder Funktionen.
 
-Wenn du Funktionalität, die nicht UI-bezogen ist, zwischen Komponenten wiederverwenden möchtest, empfehlen wir dir diese in ein separates JavaScript-Modul zu extrahieren. Die Komponenten können dieses importieren und die Funktion, das Objekt oder eine Klasse nutzen, ohne sie zu erweitern.
+Wenn du Funktionalität, die nicht UI-bezogen ist, zwischen Komponenten wiederverwenden möchtest, empfehlen wir dir diese in ein separates JavaScript-Modul auszulagern. Die Komponenten können dieses importieren und die Funktion, das Objekt oder eine Klasse nutzen, ohne sie zu erweitern.
