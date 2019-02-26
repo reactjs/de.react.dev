@@ -39,7 +39,7 @@ Optional: [Komplettes Beispiel herunterladen (2KB gezippt)](https://gist.github.
 <!-- ... existierendes HTML ... -->
 ```
 
-Wir haben diesem `div` ein eindeutiges `id` HTML Attribut. Das erlaubt es uns später mit JavaScript wiederzufinden und darin eine React Komponente anzuzeigen.
+Wir haben diesem `div` ein eindeutiges `id` HTML Attribut gegeben. Das erlaubt es uns es später mit JavaScript wiederzufinden und darin eine React Komponente anzuzeigen.
 
 >Tipp
 >
