@@ -43,7 +43,7 @@ Wir haben diesem `div` ein eindeutiges `id` HTML Attribut gegeben. Das erlaubt e
 
 >Tipp
 >
->Du kannst ein "container" `<div>` wie das oben **überall** im `<body>` Tag setzen. Du kannst so viele unabhängige DOM Container in einer Seite haben wie du brauchst. Normalerweise sind sie leer -- Falls die DOM Container Inhalt besitzen, wird React diesen überschreiben.
+>Du kannst einen "Container" `<div>` wie das oben **überall** im `<body>` Tag setzen. Du kannst so viele unabhängige DOM Container in einer Seite haben wie du brauchst. Normalerweise sind sie leer -- Falls die DOM Container Inhalt besitzen, wird React diesen überschreiben.
 
 ### Schritt 2: Füge die Script Tags hinzu {#step-2-add-the-script-tags}
 
