@@ -20,7 +20,7 @@ Diese Seite beschreibt einige beliebte Werkzeuge für React, die bei Aufgaben he
 
 Die auf dieser Seite empfohlenen Werkzeuge **benötigen keine Konfiguration um loszulegen**.
 
-## Du braucht vielleicht keine Werkzeuge {#you-might-not-need-a-toolchain}
+## Du brauchst vielleicht keine Werkzeuge {#you-might-not-need-a-toolchain}
 
 Falls du die oben beschriebenen Probleme nicht kennst oder dich noch nicht bei der Benutzung von JavaScript Werkzeugen wohlfühlst, überlege, [React als einfachen `<script>` Tag einer HTML Seite hinzuzufügen](/docs/add-react-to-a-website.html), optional [mit JSX](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
 
