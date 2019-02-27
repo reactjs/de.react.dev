@@ -10,14 +10,14 @@ next: handling-events.html
 
 Diese Seite stellt das Konzept des States und Lifecycles in einer React-Komponente vor. Du kannst eine [detailiertere API Referenz für Komponenten hier finden](/docs/react-component.html).
 
-Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `ReactDOM.render()` to change the rendered output:
+Gucken wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. In dem Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg gelernt, die UI zu aktualisieren. Wir rufen `ReactDOM.render()` auf, um die gerenderte Ausgabe zu ändern:
 
 ```js{8-11}
 function tick() {
   const element = (
     <div>
-      <h1>Hello, world!</h1>
-      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+      <h1>Hallo Welt!</h1>
+      <h2>Es ist {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
   ReactDOM.render(
@@ -31,16 +31,16 @@ setInterval(tick, 1000);
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
-In this section, we will learn how to make the `Clock` component truly reusable and encapsulated. It will set up its own timer and update itself every second.
+In diesem Abschnitt lernen wir, wie wir die `Clock` Komponente wirklich wiederverwenbar und in sich gekapselt machen. Sie richtet sich ihren eigenen Timer ein und aktualisiert sich jede Sekunde.
 
-We can start by encapsulating how the clock looks:
+Wir können mit der Kapslung starten, so sieht die Uhr aus:
 
 ```js{3-6,12}
 function Clock(props) {
   return (
     <div>
-      <h1>Hello, world!</h1>
-      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+      <h1>Hallo Welt!</h1>
+      <h2>Es ist {props.date.toLocaleTimeString()}.</h2>
     </div>
   );
 }
@@ -57,9 +57,9 @@ setInterval(tick, 1000);
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
-However, it misses a crucial requirement: the fact that the `Clock` sets up a timer and updates the UI every second should be an implementation detail of the `Clock`.
+Es fehlt jedoch eine entscheidende Anforderung: Die Tatsache, dass `Clock` einen Timer aufsetzt und die UI jede Sekunden aktualisiert sollte ein Teil der Implementierung von `Clock` sein.
 
-Ideally we want to write this once and have the `Clock` update itself:
+Idealerweise wollen wir dies nur einmal schreiben und `Clock` die Aktualisierung selbständig durchführen lassen:
 
 ```js{2}
 ReactDOM.render(
@@ -68,9 +68,9 @@ ReactDOM.render(
 );
 ```
 
-To implement this, we need to add "state" to the `Clock` component.
+Um dies zu implementieren, müssen wir der `Clock` Komponente einen "State" hinzufügen.
 
-State is similar to props, but it is private and fully controlled by the component.
+State ist ähnlich wie Props, aber es ist privat und wird vollständig von der Komponente kontrolliert.
 
 We [mentioned before](/docs/components-and-props.html#functional-and-class-components) that components defined as classes have some additional features. Local state is exactly that: a feature available only to classes.
 
