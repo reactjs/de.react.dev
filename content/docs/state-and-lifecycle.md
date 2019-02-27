@@ -306,15 +306,15 @@ Jetzt tickt die Uhr jede Sekunde.
 
 Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge die Methoden aufgerufen werden:
 
-1) When `<Clock />` is passed to `ReactDOM.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+1) Wenn `Clock` an `ReactDOM.render()` gegeben wird, ruft React den Konstruktor der `Clock` Komponente auf. Da `Clock` die aktuelle Uhrzeit anzeigen muss, initialisert es `this.state` mit einem Objekt, welches die aktuelle Uhrzeit enthält. Wir werden diesen State später aktualisieren.
 
-2) React then calls the `Clock` component's `render()` method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the `Clock`'s render output.
+2) React ruft dann die `render()` Methode der `Clock` Komponente auf. So lernt React, was auf dem Bildschirm angezeigt werden soll. Dann aktualisiert React das DOM entsprechend der gerenderten Ausgabe von `Clock`.
 
-3) When the `Clock` output is inserted in the DOM, React calls the `componentDidMount()` lifecycle method. Inside it, the `Clock` component asks the browser to set up a timer to call the component's `tick()` method once a second.
+3) Wenn die Ausgabe von `Clock` in das DOM eingefügt wurde, ruft React die Lifecycle Methode `componentDidMount()` auf. In dieser fordert die `Clock` Komponente den Browser auf einen Timer aufzusetzen, der jede Sekunde die `tick()` Methode aufruft.
 
-4) Every second the browser calls the `tick()` method. Inside it, the `Clock` component schedules a UI update by calling `setState()` with an object containing the current time. Thanks to the `setState()` call, React knows the state has changed, and calls the `render()` method again to learn what should be on the screen. This time, `this.state.date` in the `render()` method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
+4) Jede Sekunde ruft der Browser die `tick()` Methode auf. Innerhalb dieser plant die `Clock` Komponente das Aktualisieren der UI in dem `setState()` mit einem Objekt, welches die aktuelle Uhrzeit beinhaltet, aufruft. Dank des `setState()` aufrufs, weiß React, dass sich der State geändert hat und ruft die `render()` Methode auf um erneut zu erfahren, was auf dem Bildschirm dargestellt werden soll. Diesmal wird `this.state.date` in der `render()` Methode anders sein und der gerenderte Inhalt die aktualsierte Zeit beinhalten. React aktualisiert dementsprechend das DOM.
 
-5) If the `Clock` component is ever removed from the DOM, React calls the `componentWillUnmount()` lifecycle method so the timer is stopped.
+5) Wenn die `Clock` Komponente jemals aus dem DOM entfernt wird, ruft React die `componentWillUnmount()` Lifecycle Methode auf und der Timer stoppt.
 
 ## Benutze State korrekt {#using-state-correctly}
 
@@ -340,9 +340,9 @@ Der einzige Ort, an dem du `this.state` setzen kannst, ist der Konstruktor.
 
 ### Stateaktualsierungen können asynchron sein {#state-updates-may-be-asynchronous}
 
-React may batch multiple `setState()` calls into a single update for performance.
+React kann aus Preformancegründen mehrere `setState()` Aufrufe in einem Update zusammenfassen.
 
-Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
+Da `this.props` und `this.state` asynchron aktualisiert werden können, solltest du nicht darauf verlassen, die Werte für Berechnungen des nächsten State verwenden zu können.
 
 Beispielsweise, kann dieser Code den Counter nicht aktualisieren.
 
@@ -353,7 +353,7 @@ this.setState({
 });
 ```
 
-To fix it, use a second form of `setState()` that accepts a function rather than an object. That function will receive the previous state as the first argument, and the props at the time the update is applied as the second argument:
+Um dies zu verhindern, benutzen wir eine zweite Form von `setState()`, die eine Funktion anstatt eines Objektes entgegennimmt. Diese Funktion besitzt als erstes Argument den vorherigen State und die Props zum Zeitpunkt der Aktualisierung, als zweites Argument:
 
 ```js
 // Correct
@@ -409,13 +409,13 @@ Dann kannst du sie unabhängig in verschiedenen `setState()` aufrufen aktualsier
 
 Das Zusammenführen ist nur oberflächlich und `this.setState({comments})` lässt `this.state.posts` bestehen, aber ersetzt `this.state.comments`.
 
-## Der Datenfluss nach unten {#the-data-flows-down}
+## Der "top-down" Datenfluss {#the-data-flows-down}
 
-Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn't care whether Es ist defined as a function or a class.
+Weder parent noch child Komponenten können wissen ob eine bestimmte Komponente stateful oder stateless ist, uns sollten sich auch nicht darum kümmern ob sie als Funktion oder Klasse definiert wurde.
 
-This is why state is often called local or encapsulated. Es ist not accessible to any component other than the one that owns and sets it.
+Deshalb wird der State oft als lokal oder gekapselt bezeichnet. Er ist nur für die Komponente, die ihn besitzt und erstellt hat zugänglich. Für sonst keine andere Komponente.
 
-A component may choose to pass its state down as props to its child components:
+Eine Komponente kann sich aussuchen ob sie ihren State als Props weitergeben möchte:
 
 ```js
 <h2>Es ist {this.state.date.toLocaleTimeString()}.</h2>
@@ -427,7 +427,7 @@ Dies funktioniert auch für benutzerdefinierte Komponenten:
 <FormattedDate date={this.state.date} />
 ```
 
-The `FormattedDate` component would receive the `date` in its props and wouldn't know whether it came from the `Clock`'s state, from the `Clock`'s props, or was typed by hand:
+Die `FormattedDate` Komponente nimmt `date` als Prop entgegen und wüsste nicht ob es aus dem `Clock`'s State, Props oder von Handeingabe kommt:
 
 ```js
 function FormattedDate(props) {
@@ -437,11 +437,11 @@ function FormattedDate(props) {
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
 
-This is commonly called a "top-down" or "unidirectional" data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components "below" them in the tree.
+Dies wird allgemein als "top-down" oder "unidirektionaler" Datenfluss bezeichnet. Jeder State ist immer im Besitz einer bestimmten Komponente und alle Daten oder Benutzeroberflächen die von diesem State abgeleitet sind, können nur alle "unteren" Komponenten im Baum betreffen.
 
-If you imagine a component tree as a waterfall of props, each component's state is like an additional water source that joins it at an arbitrary point but also flows down.
+Wenn du dir einen Komponentenbaum als Prop-Wasserfall vorstellst, ist jeder State der Komponente wie eine zusätzliche Wasserquelle, die an einer belieben Stelle entspringt und mit nach unten fließt.
 
-To show that all components are truly isolated, we can create an `App` component that renders three `<Clock>`s:
+Um zu zeigen, dass wirklich alle Elemente in sich geschlossen sind, erstellen wir eine `App` Komponente die drei `<Clock>`s rendert:
 
 ```js{4-6}
 function App() {
@@ -464,4 +464,4 @@ ReactDOM.render(
 
 Jede `Clock` setzt ihren eigenen Timer auf und aktualisiert sich selbstständig.
 
-In React apps, whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
+In React Apps wird das Implementierungsdetail der Komponente, das sich im Laufe der Zeit ändern kann, als stateless oder stateful betrachtet. Du kannst stateless Komponenten innerhalb svon tateful Komponenten benutzen und umgekehrt.
