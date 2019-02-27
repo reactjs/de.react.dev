@@ -246,7 +246,7 @@ Die `componentDidMount()` Methode wir nachdem die Komponenten in das DOM gerende
 
 Beachte, wie wir die Timer-ID in `this` speichern.
 
-Während `this.reps` von React selbst eingerichtet wird und `this.state` eine besondere Bedeutung hat, steht es dir frei, der Klasse manuell zusätzliche Felder hinzuzufügen, wenn du etwas was nicht am Datenverlauf teilnimmt (wie eine Timer-ID) speichern musst.
+Während `this.reps` von React selbst eingerichtet wird und `this.state` eine besondere Bedeutung hat, steht es dir frei, der Klasse manuell zusätzliche Felder hinzuzufügen, wenn du etwas was nicht am Datenfluss teilnimmt (wie eine Timer-ID) speichern musst.
 
 Wir werden den Timer in der `componentWillUnmount()` Lifecycle Mthode abbrechen:
 
@@ -304,7 +304,7 @@ ReactDOM.render(
 
 Jetzt tickt die Uhr jede Sekunde.
 
-Let's quickly recap what's going on and the order in which the methods are called:
+Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge die Methoden aufgerufen werden:
 
 1) When `<Clock />` is passed to `ReactDOM.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
 
@@ -316,35 +316,35 @@ Let's quickly recap what's going on and the order in which the methods are calle
 
 5) If the `Clock` component is ever removed from the DOM, React calls the `componentWillUnmount()` lifecycle method so the timer is stopped.
 
-## Using State Correctly {#using-state-correctly}
+## Benutze State korrekt {#using-state-correctly}
 
-There are three things you should know about `setState()`.
+Es gibt drei Dinge die du über `setState()` wissen solltest.
 
-### Do Not Modify State Directly {#do-not-modify-state-directly}
+### Bearbeite den State nicht direkt {#do-not-modify-state-directly}
 
-For example, this will not re-render a component:
+Dies wird zum Beispiel kein neu Rendern der Komponente bewirken:
 
 ```js
 // Wrong
 this.state.comment = 'Hello';
 ```
 
-Instead, use `setState()`:
+Benutze stattdessen `setState()`:
 
 ```js
 // Correct
 this.setState({comment: 'Hello'});
 ```
 
-The only place where you can assign `this.state` is the constructor.
+Der einzige Ort, an dem du `this.state` setzen kannst, ist der Konstruktor.
 
-### State Updates May Be Asynchronous {#state-updates-may-be-asynchronous}
+### Stateaktualsierungen können asynchron sein {#state-updates-may-be-asynchronous}
 
 React may batch multiple `setState()` calls into a single update for performance.
 
 Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
 
-For example, this code may fail to update the counter:
+Beispielsweise, kann dieser Code den Counter nicht aktualisieren.
 
 ```js
 // Wrong
@@ -362,7 +362,7 @@ this.setState((state, props) => ({
 }));
 ```
 
-We used an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) above, but it also works with regular functions:
+Wir haben eine [Lamda Funktion](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) oben verwendet, aber normale Funktionen funktionieren ebenso:
 
 ```js
 // Correct
@@ -373,11 +373,11 @@ this.setState(function(state, props) {
 });
 ```
 
-### State Updates are Merged {#state-updates-are-merged}
+### Stateaktualsierungen werden zusammengeführt {#state-updates-are-merged}
 
-When you call `setState()`, React merges the object you provide into the current state.
+Wenn du `setState()?` aufrufst, führt React das von dir bereitgestellte Objekt mit dem aktuellen State zusammen.
 
-For example, your state may contain several independent variables:
+So kann dein State beispielsweise mehrere unabhängige Variablen beinhalten:
 
 ```js{4,5}
   constructor(props) {
@@ -389,7 +389,7 @@ For example, your state may contain several independent variables:
   }
 ```
 
-Then you can update them independently with separate `setState()` calls:
+Dann kannst du sie unabhängig in verschiedenen `setState()` aufrufen aktualsieren.
 
 ```js{4,10}
   componentDidMount() {
@@ -407,9 +407,9 @@ Then you can update them independently with separate `setState()` calls:
   }
 ```
 
-The merging is shallow, so `this.setState({comments})` leaves `this.state.posts` intact, but completely replaces `this.state.comments`.
+Das Zusammenführen ist nur oberflächlich und `this.setState({comments})` lässt `this.state.posts` bestehen, aber ersetzt `this.state.comments`.
 
-## The Data Flows Down {#the-data-flows-down}
+## Der Datenfluss nach unten {#the-data-flows-down}
 
 Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn't care whether Es ist defined as a function or a class.
 
@@ -421,7 +421,7 @@ A component may choose to pass its state down as props to its child components:
 <h2>Es ist {this.state.date.toLocaleTimeString()}.</h2>
 ```
 
-This also works for user-defined components:
+Dies funktioniert auch für benutzerdefinierte Komponenten:
 
 ```js
 <FormattedDate date={this.state.date} />
