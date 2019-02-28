@@ -86,7 +86,7 @@ Eine Komponente wie `Clock` kannst du in fünf Schritten in eine Klasse umwandel
 
 4. Ersetze `props` mit `this.props` in der `render()` Methode.
 
-5. Lösche alle übrigen leeren Funktionsdeklarationen.
+5. Lösche alle übrigen, leeren Funktionsdeklarationen.
 
 ```js
 class Clock extends React.Component {
