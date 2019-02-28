@@ -201,7 +201,7 @@ In Anwendungen mit vielen Komponenten, ist es wichtig Ressourcen wieder freizuge
 
 Wir wollen einen [Timer anlegen](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval), wenn `Clock` zum ersten Mal ins DOM gerendert wird. Dies wird in React als "mounting" bezeichnet.
 
-Wir wollen auch, dass der [Timer entfernt](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) wird, wenn das von `Clock` erstellte DOM Element gelöscht wird. Dies wird in React als "unmounting" genannt.
+Wir wollen auch, dass der [Timer entfernt](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) wird, wenn das von `Clock` erstellte DOM Element gelöscht wird. Dies wird in React als "unmounting" bezeichnet.
 
 Wir können spezielle Methoden in der Komponentenklasse deklarieren um in diesen beim mount und unmounting etwas Code auszuführen:
 
