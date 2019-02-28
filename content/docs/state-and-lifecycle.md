@@ -248,7 +248,7 @@ Beachte, wie wir die Timer-ID in `this` speichern.
 
 Während `this.props` von React selbst eingerichtet wird, und `this.state` eine besondere Bedeutung hat, steht es dir frei, der Klasse manuell zusätzliche Felder hinzuzufügen, wenn du etwas speichern musst, das nicht am Datenfluss teilnimmt (wie eine Timer-ID).
 
-Wir werden den Timer in der `componentWillUnmount()` Lifecycle Mthode abbrechen:
+Wir werden den Timer in der `componentWillUnmount()` Lifecycle Methode abbrechen:
 
 ```js{2}
   componentWillUnmount() {
