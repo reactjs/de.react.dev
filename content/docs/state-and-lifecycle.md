@@ -72,7 +72,7 @@ Um dies zu implementieren, müssen wir der `Clock` Komponente einen "State" hinz
 
 Der State ähnelt den Props, aber er ist privat und wird vollständig von der Komponente kontrolliert.
 
-Wir haben schon [vorher erwähnt](/docs/components-and-props.html#functional-and-class-components), dass Komponenten die als Klassen definiert werden, ein paar zusätzliche Features haben. Der lokale State genau das: Ein Feature, welches nur in Klassen verfügbar ist.
+Wir haben schon [vorher erwähnt](/docs/components-and-props.html#functional-and-class-components), dass Komponenten die als Klassen definiert werden, über einige zusätzliche Features verfügen. Der lokale State ist genau das: Ein Feature, welches nur in Klassen verfügbar ist.
 
 ## Umwandeln einer Funktion in eine Klasse {#converting-a-function-to-a-class}
 
