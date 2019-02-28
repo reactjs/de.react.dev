@@ -233,7 +233,7 @@ class Clock extends React.Component {
 
 Diese Methoden werden "Lifecycle Methoden" genannt.
 
-Die `componentDidMount()` Methode wir nachdem die Komponenten in das DOM gerendert wurde ausgeführt. Dies ist eine gute Stelle um den Timer aufzusetzen:
+Die `componentDidMount()` Methode wird ausgeführt nachdem die Komponenten in das DOM gerendert wurde. Dies ist eine gute Stelle um den Timer anzulegen:
 
 ```js{2-5}
   componentDidMount() {
