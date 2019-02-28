@@ -411,7 +411,7 @@ Das Zusammenführen ist nur oberflächlich und `this.setState({comments})` läss
 
 ## Der "top-down" Datenfluss {#the-data-flows-down}
 
-Weder parent noch child Komponenten können wissen ob eine bestimmte Komponente stateful oder stateless ist, uns sollten sich auch nicht darum kümmern ob sie als Funktion oder Klasse definiert wurde.
+Weder Eltern- noch Kind-Komponenten können wissen ob eine bestimmte Komponente stateful oder stateless ist, und sollten sich auch nicht darum kümmern ob sie als Funktion oder Klasse definiert wurde.
 
 Deshalb wird der State oft als lokal oder gekapselt bezeichnet. Er ist nur für die Komponente, die ihn besitzt und erstellt hat zugänglich. Für sonst keine andere Komponente.
 
