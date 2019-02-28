@@ -57,7 +57,7 @@ setInterval(tick, 1000);
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
-Es fehlt jedoch eine entscheidende Anforderung: Die Tatsache, dass `Clock` einen Timer aufsetzt und die UI jede Sekunden aktualisiert sollte ein Teil der Implementierung von `Clock` sein.
+Es fehlt jedoch eine entscheidende Anforderung: Die Tatsache, dass `Clock` einen Timer anlegt und das UI jede Sekunden aktualisiert sollte ein Detail der Implementierung von `Clock` sein.
 
 Idealerweise wollen wir dies nur einmal schreiben und `Clock` die Aktualisierung selbständig durchführen lassen:
 
