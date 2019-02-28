@@ -31,7 +31,7 @@ setInterval(tick, 1000);
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
-In diesem Abschnitt lernen wir, wie wir die `Clock` Komponente wirklich wiederverwenbar und in sich gekapselt machen. Sie richtet sich ihren eigenen Timer ein und aktualisiert sich jede Sekunde.
+In diesem Abschnitt werden wir lernen, wie wir die `Clock` Komponente wirklich wiederverwendbar und in sich gekapselt machen. Sie richtet sich ihren eigenen Timer ein und aktualisiert sich jede Sekunde.
 
 Wir können mit der Kapselung des Erscheinungsbildes der Uhr anfangen:
 
