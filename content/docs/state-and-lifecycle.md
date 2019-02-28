@@ -126,7 +126,7 @@ class Clock extends React.Component {
 }
 ```
 
-2) Füge einen [Klassenkonstruktor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) der den initialen `this.state` zuweist, hinzu:
+2) Füge einen [Klassenkonstruktor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) hinzu, der das initiale `this.state` zuweist:
 
 ```js{4}
 class Clock extends React.Component {
