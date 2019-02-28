@@ -320,7 +320,7 @@ Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge 
 
 Es gibt drei Dinge die du über `setState()` wissen solltest.
 
-### Bearbeite den State nicht direkt {#do-not-modify-state-directly}
+### Bearbeite State nicht direkt {#do-not-modify-state-directly}
 
 Dies wird zum Beispiel kein neu Rendern der Komponente bewirken:
 
