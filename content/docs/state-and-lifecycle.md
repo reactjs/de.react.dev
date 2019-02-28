@@ -164,7 +164,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-Wir werden später den Code des Timers zurück in die Komponente fügen.
+Wir werden später den Code des Timers zurück in die Komponente einfügen.
 
 Das Ergebnis sieht so aus:
 
