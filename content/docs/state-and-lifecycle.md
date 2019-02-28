@@ -33,7 +33,7 @@ setInterval(tick, 1000);
 
 In diesem Abschnitt lernen wir, wie wir die `Clock` Komponente wirklich wiederverwenbar und in sich gekapselt machen. Sie richtet sich ihren eigenen Timer ein und aktualisiert sich jede Sekunde.
 
-Wir können mit der Kapslung starten, so sieht die Uhr aus:
+Wir können mit der Kapselung des Erscheinungsbildes der Uhr anfangen:
 
 ```js{3-6,12}
 function Clock(props) {
