@@ -199,7 +199,7 @@ Als nächstes werden wir dafür sorgen, dass `Clock` einen eigenen Timer einrich
 
 In Anwendungen mit vielen Komponenten, ist es wichtig Ressourcen wieder freizugeben, wenn die Komponente gelöscht wird.
 
-Wir wollen einen [Timer aufsetzen](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval), wenn `Clock` zum ersten Mal ins DOM gerendert wird. Dies wird in React als "mounting" genannt.
+Wir wollen einen [Timer anlegen](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval), wenn `Clock` zum ersten Mal ins DOM gerendert wird. Dies wird in React als "mounting" bezeichnet.
 
 Wir wollen auch, dass der [Timer entfernt](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) wird, wenn das von `Clock` erstellte DOM Element gelöscht wird. Dies wird in React als "unmounting" genannt.
 
