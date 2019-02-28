@@ -362,7 +362,7 @@ this.setState((state, props) => ({
 }));
 ```
 
-Wir haben eine [Lamda Funktion](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) oben verwendet, aber normale Funktionen funktionieren ebenso:
+Wir haben oben eine [Lamda Funktion](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) verwendet, aber normale Funktionen funktionieren ebenso:
 
 ```js
 // Correct
