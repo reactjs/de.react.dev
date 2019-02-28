@@ -464,4 +464,4 @@ ReactDOM.render(
 
 Jede `Clock` setzt ihren eigenen Timer auf und aktualisiert sich selbstständig.
 
-In React Apps wird das Implementierungsdetail der Komponente, das sich im Laufe der Zeit ändern kann, als stateless oder stateful betrachtet. Du kannst stateless Komponenten innerhalb svon tateful Komponenten benutzen und umgekehrt.
+In React Apps wird das Implementierungsdetail der Komponente, das sich im Laufe der Zeit ändern kann, als stateless oder stateful betrachtet. Du kannst stateless Komponenten innerhalb von stateful Komponenten benutzen und umgekehrt.
