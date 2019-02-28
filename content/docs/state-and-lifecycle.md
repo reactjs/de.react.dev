@@ -105,7 +105,7 @@ class Clock extends React.Component {
 
 `Clock` ist nun als Klasse und nicht mehr als Funktion definiert.
 
-Die `render` Methode wird jedes mal aufgerufen, wenn ein Update stattfindet, aber solange wir `<Clock />` in den selben DOM-Knoten rendern, wird nur eine einzige Instanz der `Clock` Klasse verwendet. Diese lässt uns zusätzliche Features, wie den lokalen State und Lifecycle Methoden verwenden.
+Die `render` Methode wird jedes mal aufgerufen, wenn ein Update stattfindet, aber solange wir `<Clock />` in den selben DOM-Knoten rendern, wird nur eine einzige Instanz der `Clock` Klasse verwendet. Diese lässt uns zusätzliche Features, wie den lokalen State und Lifecycle-Methoden verwenden.
 
 ## Lokalen State einer Klasse hinzufügen {#adding-local-state-to-a-class}
 
