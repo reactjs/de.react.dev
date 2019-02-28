@@ -353,7 +353,7 @@ this.setState({
 });
 ```
 
-Um dies zu verhindern, benutzen wir eine zweite Form von `setState()`, die eine Funktion anstatt eines Objektes entgegennimmt. Diese Funktion besitzt als erstes Argument den vorherigen State und die Props zum Zeitpunkt der Aktualisierung, als zweites Argument:
+Um dies zu verhindern, verwenden wir eine zweite Form von `setState()`, die eine Funktion anstatt eines Objektes entgegennimmt. Diese Funktion besitzt als erstes Argument den vorherigen State und die Props zum Zeitpunkt der Aktualisierung als zweites Argument:
 
 ```js
 // Correct
