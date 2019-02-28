@@ -78,7 +78,7 @@ Wir haben schon [vorher erwähnt](/docs/components-and-props.html#functional-and
 
 Eine Komponente wie `Clock` kannst du in fünf Schritten in eine Klasse umwandeln:
 
-1. Erstelle eine [ES6 Klasse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) mit dem selben Namen, die mit Hilfe von `extends` durch `React.Component` erweitert wird.
+1. Erstelle eine [ES6 Klasse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) mit dem selben Namen, die `React.Component` erweitert.
 
 2. Erstelle eine leere Methode namens `render()`.
 
