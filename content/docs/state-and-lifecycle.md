@@ -76,7 +76,7 @@ Wir haben schon [vorher erwähnt](/docs/components-and-props.html#functional-and
 
 ## Umwandeln einer Funktion in eine Klasse {#converting-a-function-to-a-class}
 
-Du kannst in fünf Schritten eine Komponente, wie `Clock`, in eine Klasse umwandeln:
+Eine Komponente wie `Clock` kannst du in fünf Schritten in eine Klasse umwandeln:
 
 1. Erstelle eine [ES6 Klasse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) mit dem selben Namen, die mit Hilfe von `extends` durch `React.Component` erweitert wird.
 
