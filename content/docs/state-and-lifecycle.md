@@ -316,7 +316,7 @@ Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge 
 
 5) Wenn die `Clock` Komponente jemals aus dem DOM entfernt wird, ruft React die `componentWillUnmount()` Lifecycle Methode auf und der Timer stoppt.
 
-## Benutze State korrekt {#using-state-correctly}
+## State korrekt verwenden {#using-state-correctly}
 
 Es gibt drei Dinge die du über `setState()` wissen solltest.
 
