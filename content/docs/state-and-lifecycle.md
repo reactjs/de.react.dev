@@ -308,7 +308,7 @@ Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge 
 
 1) Wenn `Clock` an `ReactDOM.render()` gegeben wird, ruft React den Konstruktor der `Clock` Komponente auf. Da `Clock` die aktuelle Uhrzeit anzeigen muss, initialisiert es `this.state` mit einem Objekt, welches die aktuelle Uhrzeit enthält. Wir werden diesen State später aktualisieren.
 
-2) React ruft dann die `render()` Methode der `Clock` Komponente auf. So lernt React, was auf dem Bildschirm angezeigt werden soll. Dann aktualisiert React das DOM entsprechend der gerenderten Ausgabe von `Clock`.
+2) React ruft dann die `render()` Methode der `Clock` Komponente auf. So weiß React, was auf dem Bildschirm angezeigt werden soll. Dann aktualisiert React das DOM entsprechend der gerenderten Ausgabe von `Clock`.
 
 3) Wenn die Ausgabe von `Clock` in das DOM eingefügt wurde, ruft React die Lifecycle Methode `componentDidMount()` auf. In dieser fordert die `Clock` Komponente den Browser auf einen Timer anzulegen, der jede Sekunde die `tick()` Methode aufruft.
 
