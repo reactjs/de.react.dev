@@ -342,7 +342,7 @@ Der einzige Ort, an dem du `this.state` setzen kannst, ist der Konstruktor.
 
 React kann aus Preformancegründen mehrere `setState()` Aufrufe in einem Update zusammenfassen.
 
-Da `this.props` und `this.state` asynchron aktualisiert werden können, solltest du nicht darauf verlassen, die Werte für Berechnungen des nächsten State verwenden zu können.
+Da `this.props` und `this.state` asynchron aktualisiert werden können, solltest du dich nicht darauf verlassen, die Werte für Berechnungen des nächsten State verwenden zu können.
 
 Beispielsweise, kann dieser Code den Counter nicht aktualisieren.
 
