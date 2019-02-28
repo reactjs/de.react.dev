@@ -70,7 +70,7 @@ ReactDOM.render(
 
 Um dies zu implementieren, müssen wir der `Clock` Komponente einen "State" hinzufügen.
 
-Der State ist ähnlich wie die Props, aber er ist privat und wird vollständig von der Komponente kontrolliert.
+Der State ähnelt den Props, aber er ist privat und wird vollständig von der Komponente kontrolliert.
 
 Wir haben schon [vorher erwähnt](/docs/components-and-props.html#functional-and-class-components), dass Komponenten die als Klassen definiert werden, ein paar zusätzliche Features haben. Der lokale State genau das: Ein Feature, welches nur in Klassen verfügbar ist.
 
