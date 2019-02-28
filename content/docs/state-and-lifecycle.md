@@ -427,7 +427,7 @@ Dies funktioniert auch für benutzerdefinierte Komponenten:
 <FormattedDate date={this.state.date} />
 ```
 
-Die `FormattedDate` Komponente nimmt `date` als Prop entgegen und wüsste nicht ob es aus dem `Clock`'s State, Props oder von Handeingabe kommt:
+Die `FormattedDate` Komponente nimmt `date` als Prop entgegen und wüsste nicht ob es aus dem State oder den Props von `Clock` stammt, oder von Hand eingegeben wurde:
 
 ```js
 function FormattedDate(props) {
