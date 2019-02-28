@@ -8,7 +8,7 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-Diese Seite stellt das Konzept des States und Lifecycles in einer React-Komponente vor. Du kannst eine [detailiertere API Referenz für Komponenten hier finden](/docs/react-component.html).
+Diese Seite stellt das Konzept des States und Lifecycles in einer React-Komponente vor. Hier kannst du eine [detailiertere API Referenz für Komponenten](/docs/react-component.html) finden.
 
 Gucken wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. In dem Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg gelernt, die UI zu aktualisieren. Wir rufen `ReactDOM.render()` auf, um die gerenderte Ausgabe zu ändern:
 
