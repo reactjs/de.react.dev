@@ -9,11 +9,11 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
-Häufig müssen mehrere Komponenten dieselben sich ändernden Daten widerspiegeln. Wir empfehlen, den gemeinsamen State bis zum nächsten gemeinsamen Vorfahren anzuheben. Schauen wir uns anhand eines praktischen Beispiels an, wie das funktioniert.
+Häufig müssen mehrere Komponenten dieselben sich ändernden Daten widerspiegeln. Wir empfehlen, den gemeinsamen State bis zum nächsten gemeinsamen Vorfahren anzuheben. Schauen wir uns anhand eines Beispiels an, wie das funktioniert.
 
 In diesem Abschnitt erstellen wir einen Temperaturrechner, der berechnet, ob das Wasser bei einer bestimmten Temperatur kocht.
 
-Wir beginnen mit einer Komponente namens `BoilingVerdict`. Sie akzeptiert die Celsius-Temperatur als Prop und gibt aus, ob diese ausreichend ist, um das Wasser zu kochen:
+Wir beginnen mit einer Komponente namens `BoilingVerdict`. Sie akzeptiert die Temperatur in Celsius als Prop und gibt aus, ob diese ausreichend ist, um das Wasser zu kochen:
 
 ```js{3,5}
 function BoilingVerdict(props) {
@@ -25,9 +25,6 @@ function BoilingVerdict(props) {
 ```
 
 Als Nächstes erstellen wir eine Komponente namens `Calculator`. Sie rendert ein `<input>`, in das man die Temperatur eingeben kann, und speichert den Wert in `this.state.temperature`.
-
-Additionally, it renders the `BoilingVerdict` for the current input value.
-Darüber hinaus rendert sie `BoilingVerdict` mit dem aktuellen Eingabewert.
 
 ```js{5,9,13,17-21}
 class Calculator extends React.Component {
@@ -61,7 +58,7 @@ class Calculator extends React.Component {
 
 ## Ein zweites Eingabefeld hinzufügen {#adding-a-second-input}
 
-Unsere neue Anforderung ist, dass wir zusätzlich zu einem Celsius-Eingabefeld ein Fahrenheit-Eingabefeld bereitstellen und diese beiden dann synchron bleiben.
+Unsere neue Anforderung ist es, zusätzlich zu einem Celsius-Eingabefeld, ein Fahrenheit-Eingabefeld bereitzustellen und beide synchron zu halten.
 
 Wir können mit dem Extrahieren einer `TemperatureInput` Komponente aus `Calculator` beginnen. Wir werden ihr eine neue `scale` Prop hinzufügen, die entweder "c" oder "f" sein kann:
 
@@ -113,7 +110,7 @@ class Calculator extends React.Component {
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/jGBryx?editors=0010)
 
-Wir haben jetzt zwei Eingabefelder, aber wenn du die Temperatur in eines von ihnen eingibst, wird das andere nicht aktualisiert. Dies widerspricht unserer Anforderung: wir wollen sie synchron halten.
+Wir haben jetzt zwei Eingabefelder. Aber wenn du die Temperatur in eines von ihnen eingibst, wird das andere nicht aktualisiert. Das widerspricht unserer Anforderung: wir wollen sie synchron halten.
 
 `BoilingVerdict` kann auch nicht von `Calculator` aus angezeigt werden. `Calculator` kennt die aktuelle Temperatur nicht, da sie in `TemperatureInput` verborgen ist.
 
@@ -172,11 +169,11 @@ class TemperatureInput extends React.Component {
 
 Wir möchten jedoch, dass diese beiden Eingabefelder miteinander synchron sind. Wenn wir das Celsius-Eingabefeld aktualisieren, sollte das Fahrenheit-Eingabefeld die umgerechnete Temperatur widerspiegeln und umgekehrt.
 
-In React wird gemeinsam genutzter State erreicht, indem er auf den nächsten gemeinsamen Vorfahren der Komponenten verschoben wird, die ihn benötigen. Dies wird als "Anheben von State" bezeichnet. Wir werden den lokalen State aus `TemperatureInput` entfernen und ihn stattdessen in die `Calculator` Komponente verschieben.
+In React ist gemeinsam genutzter State möglich, indem er auf den nächsten gemeinsamen Vorfahren der Komponenten verschoben wird, die ihn benötigen. Dies wird als "Anheben von State" bezeichnet. Wir werden den lokalen State aus `TemperatureInput` entfernen und ihn stattdessen in die `Calculator` Komponente verschieben.
 
 Wenn `Calculator` den gemeinsam genutzten State verwaltet, wird er in beiden Eingabefeldern zur "Quelle der Wahrheit" für die aktuelle Temperatur. `Calculator` kann beide anweisen Werte zu haben, die miteinander übereinstimmen. Da die Props beider `TemperatureInput` Komponenten von derselben übergeordneten `Calculator` Komponente stammen, sind die beiden Eingabefelder immer synchron.
 
-Schauen wir uns Schritt für Schritt an wie das funktioniert.
+Schauen wir uns Schritt für Schritt an, wie das funktioniert.
 
 Zuerst werden wir in der `TemperatureInput` Komponente `this.state.temperature` durch `this.props.temperature` ersetzen. Für den Moment tun wir einfach so, als ob `this.props.temperature` bereits vorhanden wäre, obwohl wir es erst noch von `Calculator` aus übergeben müssen:
 
@@ -189,9 +186,9 @@ Zuerst werden wir in der `TemperatureInput` Komponente `this.state.temperature` 
 
 Wir wissen, dass Props schreibgeschützt sind. Wenn sich `temperature` im lokalen State befindet, kann `TemperatureInput` einfach `this.setState()` aufrufen, um sie zu ändern. Jetzt, da die Temperatur von der übergeordneten Komponente als Prop kommt, hat `TemperatureInput` keine Kontrolle darüber.
 
-In React wird dies normalerweise dadurch gelöst, dass man eine "kontrollierte Komponente" erzeugt. Genau wie das <input> DOM-Element sowohl eine `value` als auch eine `onChange` Prop akzeptiert, kann auch die benutzerdefinierte `TemperatureInput` Komponente sowohl die Temperatur als auch die `onTemperatureChange` Prop der übergeordneten `Calculator` Komponente akzeptieren.
+In React wird das üblicherweise gelöst, indem man eine "kontrollierte Komponente" erzeugt. Genau wie das `<input>` DOM-Element sowohl eine `value` als auch eine `onChange` Prop akzeptiert, kann auch die benutzerdefinierte `TemperatureInput` Komponente sowohl die Temperatur als auch die `onTemperatureChange` Prop der übergeordneten `Calculator` Komponente akzeptieren.
 
-Wenn `TemperatureInput` nun seine Temperatur aktualisieren möchte, ruft sie `this.props.onTemperatureChange` auf:
+Wenn nun `TemperatureInput` seine Temperatur aktualisieren möchte, ruft sie `this.props.onTemperatureChange` auf:
 
 ```js{3}
   handleChange(e) {
@@ -302,13 +299,13 @@ class Calculator extends React.Component {
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/WZpxpz?editors=0010)
 
-Unabhängig davon, welches Eingabefeld du bearbeitest, werden `this.state.temperature` und `this.state.scale` in `Calculator` aktualisiert. Bei einem der Eingabefelder wird der Wert unverändert übernommen, sodass alle Benutzereingaben erhalten bleiben und der andere Eingabewert immer auf dieser Basis neu berechnet wird.
+Unabhängig davon, welches Eingabefeld du bearbeitest, `this.state.temperature` und `this.state.scale` werden jetzt in `Calculator` aktualisiert. Bei einem der Eingabefelder wird der Wert unverändert übernommen, sodass alle Benutzereingaben erhalten bleiben und der andere Eingabewert immer auf dieser Basis neu berechnet wird.
 
-Hier ist nochmals zusammengefasst was passiert, wenn du ein Eingabefeld bearbeitest:
+Fassen wir nochmal zusammen, was passiert, wenn du ein Eingabefeld bearbeitest:
 
-* React ruft die als `onChange` angegebene Funktion im DOM-Element <input> auf. In unserem Fall ist dies die `handleChange` Methode in der `TemperatureInput` Komponente.
-* Die `handleChange` Methode der `TemperatureInput` Komponente ruft `this.props.onTemperatureChange()` mit dem neuen gewünschten Wert auf. Ihre Props, einschließlich `onTemperatureChange`, wurden von der übergeordneten Komponente, `Calculator`, bereitgestellt.
-* Als die `Calculator` Komponente zuletzt gerendert wurde hat sie festgelegt, dass `onTemperatureChange` der Celsius `TemperatureInput` Komponente ihre `handleCelsiusChange` Methode ist, und `onTemperatureChange` der Fahrenheit `TemperatureInput` Komponente ihre `handleFahrenheitChange` Methode. Eine dieser beiden Methoden von `Calculator` wird also aufgerufen, je nachdem welche Eingabe wir bearbeitet haben.
+* React ruft die als `onChange` angegebene Funktion im DOM-Element `<input>` auf. In unserem Fall ist dies die `handleChange` Methode in der `TemperatureInput` Komponente.
+* Die `handleChange` Methode der `TemperatureInput` Komponente ruft `this.props.onTemperatureChange()` mit dem neuen gewünschten Wert auf. Ihre Props, einschließlich `onTemperatureChange`, wurden von der übergeordneten `Calculator` Komponente bereitgestellt.
+* Als die `Calculator` Komponente zuletzt gerendert wurde, hat sie festgelegt, dass `onTemperatureChange` der Celsius `TemperatureInput` Komponente ihre `handleCelsiusChange` Methode ist, und `onTemperatureChange` der Fahrenheit `TemperatureInput` Komponente ihre `handleFahrenheitChange` Methode. Eine dieser beiden Methoden von `Calculator` wird also aufgerufen, je nachdem welche Eingabe wir bearbeitet haben.
 * Innerhalb dieser Methoden fordert die `Calculator` Komponente React auf sich selbst erneut zu rendern, indem `this.setState()` mit dem neuen Eingabewert und der aktuellen Maßeinheit des gerade bearbeiteten Eingabefelds aufgerufen wird.
 * React ruft die Render-Methode der `Calculator` Komponente auf, um zu erfahren, wie die Benutzeroberfläche aussehen soll. Die Werte beider Eingabefelder werden basierend auf der aktuellen Temperatur und des aktiven Maßstabs neu berechnet. Die Temperaturkonvertierung wird an dieser Stelle durchgeführt.
 * React ruft die Render-Methoden der einzelnen `TemperatureInput` Komponenten mit ihren neuen, von `Calculcator` festgelegten Props auf. Es erfährt so, wie ihre Benutzeroberfläche aussehen soll.
@@ -321,7 +318,7 @@ Bei jedem Update werden dieselben Schritte durchlaufen, sodass die Eingabefelder
 
 Es sollte eine einzige "Quelle der Wahrheit" für alle Daten geben, die sich in einer React-Anwendung ändern. Normalerweise wird der State zuerst der Komponente hinzugefügt, die ihn zum Rendern benötigt. Wenn andere Komponenten ihn ebenfalls benötigen, kannst du ihn bis zu ihrem nächsten gemeinsamen Vorfahren anheben. Anstatt zu versuchen den State zwischen verschiedenen Komponenten zu synchronisieren, solltest du dich auf den [Top-Down-Datenfluss](/docs/state-and-lifecycle.html#the-data-flows-down) verlassen.
 
-Beim Anheben des State muss mehr Code geschrieben werden als bei einer so genannten "bidirektionalen Bindung" (two-way binding). Der Vorteil ist jedoch, dass weniger Arbeit erfoderlich ist um Fehler zu finden und zu isolieren. Da jeder State in einer Komponente "lebt" und nur diese Komponente ihn ändern kann, ist der Spielraum für Fehler stark eingeschränkt. Darüber hinaus kannst du jegliche benutzerdefinierte Logik implementieren, um Benutzereingaben abzulehnen oder umzuwandeln.
+Beim Anheben des State muss mehr Code geschrieben werden als bei einer so genannten "bidirektionalen Bindung" (two-way binding). Der Vorteil ist jedoch, dass weniger Arbeit erfoderlich ist, um Fehler zu finden und zu isolieren. Da jeder State in einer Komponente "lebt" und nur diese Komponente ihn ändern kann, ist der Spielraum für Fehler stark eingeschränkt. Darüber hinaus kannst du jegliche benutzerdefinierte Logik implementieren, um Benutzereingaben abzulehnen oder umzuwandeln.
 
 Wenn etwas aus den Props oder dem State abgeleitet werden kann, sollte es wahrscheinlich nicht im State sein. Anstatt `celsiusValue` und `fahrenheitValue` zu speichern, speichern wir nur die zuletzt bearbeitete Temperatur und deren Maßeinheit. Der Wert der anderen Eingabefelder kann in der Methode `render()` immer daraus berechnet werden. Auf diese Weise können wir das andere Feld löschen oder Rundungen anwenden, ohne dass dabei die Genauigkeit der Benutzereingaben verloren geht.
 
