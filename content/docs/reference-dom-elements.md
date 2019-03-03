@@ -14,17 +14,17 @@ redirect_from:
   - "tips/dangerously-set-inner-html.html"
 ---
 
-React implementiert eine browserunabhängiges DOM-System für Performacne und browser-übergreifende Kompatibilität. Wir haben die Gelegenheit genutzt, um ein paar Ecken und Kanten in den DOM-Implementationen der Browser zu bereinigen.
+React implementiert eine browserunabhängiges DOM-System für Performance und browser-übergreifende Kompatibilität. Wir haben die Gelegenheit genutzt, um ein paar Ecken und Kanten in der DOM-Implementation der Browser zu bereinigen.
 
-In React sollen alle DOM Eigenschaften und Attribute (einschließlich  Event-Handler) camelCased sein. Zum Beispiel, das HTML-Attribut `tabindex` entspricht dem Attribut `tabIndex` in React. Ausnahmen sind die `aria-*` und `data-*` Attribute, welche kleingeschrieben werden sollen. Zum Beispiel kannst du weiterhin `aria-label` für `aria-label` verwenden.
+In React sollen alle DOM Eigenschaften und Attribute (einschließlich  Event-Handler) camelCased sein. Das HTML-Attribut `tabindex` entspricht zum Beispiel dem Attribut `tabIndex` in React. Ausnahmen sind die `aria-*` und `data-*` Attribute, welche kleingeschrieben werden sollen. Beispielsweise kannst du in React weiterhin `aria-label` für das HTML-Attribut `aria-label` verwenden.
 
 ## Unterschiede bei Attributen {#differences-in-attributes}
 
-Es gibt etliche Attribute, die in React unterschiedlich funktionieren als in HTML:
+Es gibt diverse Attribute, die in React unterschiedlich funktionieren als in HTML:
 
 ### checked {#checked}
 
-Das `checked` Attribute wird von `<input>` Komponenten des Typs `checkbox` oder `radio` unterstützt. Du kannst es benutzten um festzulegen, ob die Komponente angekreuzt ist oder nicht. Das ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultChecked` ist das unkontrollierte Äquivalent, welches festlegt, ob die Komponente angekreuzt ist, wenn sie erstmals gemounted wird.
+Das `checked` Attribut wird von `<input>` Komponenten des Typs `checkbox` oder `radio` unterstützt. Du kannst es benutzten, um festzulegen, ob die Komponente angekreuzt ist oder nicht. Das ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultChecked` ist das unkontrollierte Äquivalent, welches festlegt, ob die Komponente angekreuzt ist, wenn sie erstmals gemounted wird.
 
 ### className {#classname}
 
@@ -34,7 +34,7 @@ Benutze stattdessen das `class` Attribut, wenn du React mit Web-Komponenten benu
 
 ### dangerouslySetInnerHTML {#dangerouslysetinnerhtml}
 
-`dangerouslySetInnerHTML` ist der Ersatz von React für die Benutzung von `innerHTML` in dem Browser-DOM. Im Allgemeinen ist es riskant HTML aus dem Programmcode heraus zu manipulieren, da es einfach ist, unbeabsichtigt Benutzer eines [cross-site scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) Angriffs auszusetzen. Deshalb ist es zwar möglich, HTML direkt aus React heraus zu Manipulieren, man muss dafür aber `dangerouslySetInnerHTML` schreiben und ein Objekt mit einem `__html` Schlüssel mitgeben, um sich daran zu erinnern, dass es gefährlich ist. Zum Beispiel:
+`dangerouslySetInnerHTML` ist der Ersatz von React für die Benutzung von `innerHTML` in dem Browser-DOM. Im Allgemeinen ist es riskant, HTML aus dem Programmcode heraus zu manipulieren, da es einfach ist, unbeabsichtigt Benutzer einem [cross-site scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) Angriff auszusetzen. Deshalb ist es zwar möglich, HTML direkt aus React heraus zu Manipulieren, man muss dafür aber `dangerouslySetInnerHTML` schreiben und ein Objekt mit `__html` als Schlüssel mitgeben, um sich daran zu erinnern, dass es gefährlich ist. Zum Beispiel:
 
 ```js
 function createMarkup() {
@@ -48,11 +48,11 @@ function MyComponent() {
 
 ### htmlFor {#htmlfor}
 
-Da `for` ein für JavaScript reserviert es Wort ist, verwenden React-Elemente stattdessen `htmlFor`.
+Da `for` ein für JavaScript reserviertes Wort ist, verwenden React-Elemente stattdessen `htmlFor`.
 
 ### onChange {#onchange}
 
-Der `onChange` Event verhält sich, wie es zu erwarten ist: wann immer sich das Feld eines Formulars ändert, wird dieser Event ausgelöst. Wir verwenden absichtlich nicht das bereits existierende Verhalten des Browsers, da `onChange` eine Fehlbezeichnung für dessen verhalten ist. React verlässt sich auf diesen Event, um Eingaben des Users in Echtzeit zu bearbeiten.
+Der `onChange` Event verhält sich, wie es zu erwarten ist: wann immer sich das Feld eines Formulars ändert, wird dieser Event ausgelöst. Wir verwenden absichtlich nicht das bereits existierende Verhalten des Browsers, da `onChange` keine passende Bezeichnung für dessen verhalten ist. React verlässt sich auf diesen Event, um Eingaben des Users in Echtzeit zu bearbeiten.
 
 ### selected {#selected}
 
@@ -62,7 +62,7 @@ Das Attribut `selected` wird von `<option>` Komponenten unterstützt. Du kannst 
 
 >Hinweis
 >
->Einige Beispiele in der Dokumentation verwenden `style` der Einfachheit halber. **Allerdings wird es nicht empfohlen, das `style` Attribut als das primäre Mittel für das Styling einzusetzen.** In den meisten Fällen, sollte [`className`](#classname) benutzt werden, um Klassen in einem externen CSS-Stylesheet zu referenzieren. `style` wird in React-Anwendungen hauptsächlich dazu eingesetzt, um dynamisch berechnete Styles während des Renderings hinzuzufügen. Siehe auch [FAQ: Styling und CSS](/docs/faq-styling.html).
+>Einige Beispiele in der Dokumentation verwenden `style` der Einfachheit halber. **Allerdings wird es nicht empfohlen, das `style` Attribut als das primäre Mittel für das Styling einzusetzen.** In den meisten Fällen sollte [`className`](#classname) benutzt werden, um Klassen in einem externen CSS-Stylesheet zu referenzieren. `style` wird in React-Anwendungen hauptsächlich dazu eingesetzt, um dynamisch berechnete Styles während des Renderings hinzuzufügen. Siehe auch [FAQ: Styling und CSS](/docs/faq-styling.html).
 
 Das `style `Attribut akzeptiert ein JavaScript-Objekt mit camelCased Attributen anstelle von einem CSS String. Dies ist konsistent mit dem DOM `style` Attribut. Es ist effizienter und verhindert XSS Sicherheitslücken. Zum Beispiel:
 
@@ -77,7 +77,7 @@ function HelloWorldComponent() {
 }
 ```
 
-Beachte dass die Styles nicht autoprefixed werden. Um ältere Browser zu unterstüzen, musst du die passenden Style Eigenschaften zur Verfügung stellen:
+Beachte, dass die Styles nicht autoprefixed werden. Um ältere Browser zu unterstüzen, musst du die passenden Style-Eigenschaften zur Verfügung stellen:
 
 ```js
 const divStyle = {
@@ -90,7 +90,7 @@ function ComponentWithTransition() {
 }
 ```
 
-Style-Keys sind camelCased, um konsistent zu sein mit dem Zugriff zu Eigenschaften auf DOM nodes von JS aus (z.B. `node.style.backgroundImage`). Herstellerspezifische Prefixed [abgesehen von `ms`](https://www.andismith.com/blogs/2012/02/modernizr-prefixed/) sollten mit einem Großbuchstaben beginnen. Darum beginnt `WebkitTransition` mit einem großen "W".
+Style-Keys sind camelCased, um konsistent zu sein mit dem Zugriff zu Eigenschaften auf DOM nodes von JS aus (z.B. `node.style.backgroundImage`). Herstellerspezifische Prefixes [abgesehen von `ms`](https://www.andismith.com/blogs/2012/02/modernizr-prefixed/) sollten mit einem Großbuchstaben beginnen. Darum beginnt `WebkitTransition` mit einem großen "W".
 
 React fügt automatisch einen "px" Suffix zu bestimmten numerischen inline Style-Eigenschaften hinzu. Wenn du andere Einheiten als "px" verwenden willst, kannst du den Wert als String mit der gewünschten Einheiten angeben. Zum Beispiel:
 
@@ -116,11 +116,11 @@ Im Normalfall gibt es eine Warnung, wenn ein Element mit Kindern ebenfalls als `
 
 Wenn du serverseitiges Rendering für React benutzt, gibt es im Normalfall eine Warnung, wenn der Server und der Client unterschiedliche Inhalte rendern. Allerdings ist es in seltenen Fällen sehr schwierig oder gar unmöglich eine exakte Übereinstimmung zu garantieren. Beispielsweise Timestamps können zwischen Server und Client voneinander abweichen.
 
-Wenn du `suppressHydrationWarning` auf `true` setzt, wird React dich nicht mehr über nicht übereinstimmende Attribute und Inhalte des Elementes warnen. Dies funktioniert allerdings nur eine Stufe tief und soll lediglich als Notlösung benutzt werden. Verwende es nur, wenn es wirklich notwendig ist. Du kannst mehr über dieses Feature erfahren in der [`ReactDOM.hydrate()` Dokumentation](/docs/react-dom.html#hydrate).
+Wenn du `suppressHydrationWarning` auf `true` setzt, wird React dich nicht mehr über nicht übereinstimmende Attribute und Inhalte des Elementes warnen. Dies funktioniert allerdings nur eine Stufe tief und soll lediglich in ganz bestimmten Fällen wenn es wirklich notwendig ist genutzt werden. Du kannst mehr über dieses Feature erfahren in der [`ReactDOM.hydrate()` Dokumentation](/docs/react-dom.html#hydrate).
 
 ### value {#value}
 
-Das `value` Attribut wird unterstützt von `<input>` und `<textarea>` Komponenten. Du kannst es benutzen, um den Wert einer Komponente zu setzen. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultValue` ist das unkontrollierte Äquivalent, welches den Wert`defaultChecked` ist das unkontrollierte Äquivalent, welches den Wert der Komponente setzt, wenn sie erstmals gemounted wird.
+Das `value` Attribut wird unterstützt von `<input>` und `<textarea>` Komponenten. Du kannst es benutzen, um den Wert einer Komponente zu setzen. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultValue` ist das unkontrollierte Äquivalent, welches den Wert der Komponente setzt, wenn sie erstmals gemounted wird.
 
 ## Alle unterstützen HTML Attribute {#all-supported-html-attributes}
 
