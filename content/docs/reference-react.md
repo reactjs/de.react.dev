@@ -335,7 +335,7 @@ Beachte, dass das Rendern von `lazy`-Komponenten ein `<React.Suspense>` weiter o
 
 > **Hinweis**
 >
-> Die Verwendung von `React.lazy` mit dynamischen Imports setzt voraus, das in der JS-Umgebung `Promises` verfügbar sind. Hierzu braucht man ein Polyfill für IE11 und darunter.
+> Die Verwendung von `React.lazy` mit dynamischen Imports setzt voraus, dass in der JS-Umgebung `Promises` verfügbar sind. Hierzu braucht man ein Polyfill für IE11 und darunter.
 
 * * *
 
