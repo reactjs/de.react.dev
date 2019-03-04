@@ -14,9 +14,9 @@ redirect_from:
   - "tips/dangerously-set-inner-html.html"
 ---
 
-React implementiert eine browserunabhängiges DOM-System für Performance und browser-übergreifende Kompatibilität. Wir haben die Gelegenheit genutzt, um ein paar Ecken und Kanten in der DOM-Implementation der Browser zu bereinigen.
+React implementiert ein browserunabhängiges DOM-System für Leistung und browser-übergreifende Kompatibilität. Wir haben die Gelegenheit genutzt, um ein paar Ecken und Kanten in der DOM-Implementation der Browser zu bereinigen.
 
-In React sollen alle DOM Eigenschaften und Attribute (einschließlich  Event-Handler) camelCased sein. Das HTML-Attribut `tabindex` entspricht zum Beispiel dem Attribut `tabIndex` in React. Ausnahmen sind die `aria-*` und `data-*` Attribute, welche kleingeschrieben werden sollen. Beispielsweise kannst du in React weiterhin `aria-label` für das HTML-Attribut `aria-label` verwenden.
+In React sollen alle DOM Eigenschaften und Attribute (einschließlich Event-Handler) camelCased sein. Das HTML-Attribut `tabindex` entspricht zum Beispiel dem Attribut `tabIndex` in React. Ausnahmen sind die `aria-*` und `data-*` Attribute, welche kleingeschrieben werden sollen. Beispielsweise kannst du in React weiterhin `aria-label` für das HTML-Attribut `aria-label` verwenden.
 
 ## Unterschiede bei Attributen {#differences-in-attributes}
 
@@ -28,7 +28,7 @@ Das `checked` Attribut wird von `<input>` Komponenten des Typs `checkbox` oder `
 
 ### className {#classname}
 
-Benutze das `className` Attribut, um eine CSS-Klasse zu definieren. Dies trifft auf alle regulären DOM- und SVG-Elemente wie zum Beispiel `<div>` oder `<a>` zu.
+Benutze das `className` Attribut, um eine CSS-Klasse anzugeben. Das trifft auf alle regulären DOM- und SVG-Elemente wie zum Beispiel `<div>` oder `<a>` zu.
 
 Benutze stattdessen das `class` Attribut, wenn du React mit Web-Komponenten benutzt (was ungewöhnlich ist).
 
@@ -52,7 +52,7 @@ Da `for` ein für JavaScript reserviertes Wort ist, verwenden React-Elemente sta
 
 ### onChange {#onchange}
 
-Der `onChange` Event verhält sich, wie es zu erwarten ist: wann immer sich das Feld eines Formulars ändert, wird dieser Event ausgelöst. Wir verwenden absichtlich nicht das bereits existierende Verhalten des Browsers, da `onChange` keine passende Bezeichnung für dessen verhalten ist. React verlässt sich auf diesen Event, um Eingaben des Users in Echtzeit zu bearbeiten.
+Der `onChange` Event verhält sich, wie es zu erwarten ist: wann immer sich das Feld eines Formulars ändert, wird dieser Event ausgelöst. Wir verwenden absichtlich nicht das bereits existierende Verhalten des Browsers, da `onChange` keine passende Bezeichnung für dessen Verhalten ist. React verlässt sich auf diesen Event, um Eingaben des Users in Echtzeit zu bearbeiten.
 
 ### selected {#selected}
 
@@ -90,7 +90,7 @@ function ComponentWithTransition() {
 }
 ```
 
-Style-Keys sind camelCased, um konsistent zu sein mit dem Zugriff zu Eigenschaften auf DOM nodes von JS aus (z.B. `node.style.backgroundImage`). Herstellerspezifische Prefixes [abgesehen von `ms`](https://www.andismith.com/blogs/2012/02/modernizr-prefixed/) sollten mit einem Großbuchstaben beginnen. Darum beginnt `WebkitTransition` mit einem großen "W".
+Style-Keys sind camelCased, um beim Zugriff auf Eigenschaften von DOM Knoten von JS aus (z.B. `node.style.backgroundImage`) konsistent zu sein . Browserspezifische Prefixes [abgesehen von `ms`](https://www.andismith.com/blogs/2012/02/modernizr-prefixed/) sollten mit einem Großbuchstaben beginnen. Darum beginnt `WebkitTransition` mit einem großen "W".
 
 React fügt automatisch einen "px" Suffix zu bestimmten numerischen inline Style-Eigenschaften hinzu. Wenn du andere Einheiten als "px" verwenden willst, kannst du den Wert als String mit der gewünschten Einheiten angeben. Zum Beispiel:
 
@@ -116,11 +116,11 @@ Im Normalfall gibt es eine Warnung, wenn ein Element mit Kindern ebenfalls als `
 
 Wenn du serverseitiges Rendering für React benutzt, gibt es im Normalfall eine Warnung, wenn der Server und der Client unterschiedliche Inhalte rendern. Allerdings ist es in seltenen Fällen sehr schwierig oder gar unmöglich eine exakte Übereinstimmung zu garantieren. Beispielsweise Timestamps können zwischen Server und Client voneinander abweichen.
 
-Wenn du `suppressHydrationWarning` auf `true` setzt, wird React dich nicht mehr über nicht übereinstimmende Attribute und Inhalte des Elementes warnen. Dies funktioniert allerdings nur eine Stufe tief und soll lediglich in ganz bestimmten Fällen wenn es wirklich notwendig ist genutzt werden. Du kannst mehr über dieses Feature erfahren in der [`ReactDOM.hydrate()` Dokumentation](/docs/react-dom.html#hydrate).
+Wenn du `suppressHydrationWarning` auf `true` setzt, wird React dich nicht mehr über nicht übereinstimmende Attribute und Inhalte des Elementes warnen. Dies funktioniert allerdings nur eine Stufe tief und soll lediglich in ganz bestimmten Fällen wenn es wirklich notwendig ist genutzt werden. Du kannst mehr über dieses Feature in der [`ReactDOM.hydrate()` Dokumentation](/docs/react-dom.html#hydrate) erfahren.
 
 ### value {#value}
 
-Das `value` Attribut wird unterstützt von `<input>` und `<textarea>` Komponenten. Du kannst es benutzen, um den Wert einer Komponente zu setzen. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultValue` ist das unkontrollierte Äquivalent, welches den Wert der Komponente setzt, wenn sie erstmals gemounted wird.
+Das `value` Attribut wird  von `<input>` und `<textarea>` Komponenten unterstützt. Du kannst es benutzen, um den Wert einer Komponente zu setzen. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultValue` ist das unkontrollierte Äquivalent, welches den Wert der Komponente setzt, wenn sie erstmals gemounted wird.
 
 ## Alle unterstützen HTML Attribute {#all-supported-html-attributes}
 
