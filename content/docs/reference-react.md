@@ -111,7 +111,7 @@ Wenn die `render()` Funktion einer React-Komponente bei Gleichbleiben von Props 
 >
 > `shouldComponentUpdate()` von `React.PureComponent` vergleicht Objekte nur oberflächlich. Falls diese komplexe Datenstrukturen enthalten, könnte es für tiefer gelegene Unterschiede zu falschen Negativbefunden kommen. Benutze `PureComponent` nur dann, wenn Props und State einfach sind, oder verwende [`forceUpdate()`](/docs/react-component.html#forceupdate) wenn du weißt, dass tiefergelegene Datenstrukturen sich verändert haben. Oder überlege dir, [unveränderliche (immutable) Objekte](https://facebook.github.io/immutable-js/) zu verwenden, um das schnelle Vergleichen geschachtelter Daten zu erleichtern.
 >
-> Darüber hinaus überspringt das `shouldComponentUpdate()` von `React.PureComponent` den kompletten der Komponente untergeordneten Teilbaum. Es sollte also sichergestellt werden, dass alle Kind-Komponenten auch "pur" sind.
+> Darüber hinaus überspringt `shouldComponentUpdate()` von `React.PureComponent` den kompletten der Komponente untergeordneten Teilbaum. Es sollte also sichergestellt werden, dass alle Kind-Komponenten auch "pur" sind.
 
 * * *
 
