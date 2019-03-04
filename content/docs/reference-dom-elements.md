@@ -77,7 +77,7 @@ function HelloWorldComponent() {
 }
 ```
 
-Beachte, dass die Styles nicht autoprefixed werden. Um ältere Browser zu unterstüzen, musst du die passenden Style-Eigenschaften zur Verfügung stellen:
+Beachte, dass die Styles nicht automatisch einen Präfix erhalten. Um ältere Browser zu unterstüzen, musst du die passenden Style-Eigenschaften zur Verfügung stellen:
 
 ```js
 const divStyle = {
