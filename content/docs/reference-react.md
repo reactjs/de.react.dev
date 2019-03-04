@@ -201,7 +201,7 @@ React.createFactory(type)
 
 Gibt eine Funktion zurück, die React-Elemente eines bestimmten Typs erzeugt. Wie bei [`React.createElement()`](#createElement) kann das Typ-Argument entweder ein Tag-Name als String (z.B. `'div'` oder `'span'`), ein [React Komponenten](/docs/components-and-props.html) Typ (eine Klasse oder eine Funktion) oder ein [React Fragment](#reactfragment) Typ sein.
 
-Dieser Helfer gilt als Legacy, und wir empfehlen, entweder JSX oder `React.createElement()` direkt zu verwenden.
+Dieser Helfer gilt als veraltet, und wir empfehlen, entweder JSX oder `React.createElement()` direkt zu verwenden.
 
 Wenn du JSX verwendest, rufst du `React.createFactory()` normalerweise nicht direkt auf. Siehe [React ohne JSX](/docs/react-without-jsx.html) für mehr Informationen.
 
