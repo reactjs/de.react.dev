@@ -19,7 +19,7 @@ redirect_from:
 
 ### Komponenten {#components}
 
-Mit React-Komponenten kann die Benutzeroberfläche in unabhängige, wiederverwendbare Bestandteile aufgeteilt werden, die jeweils einzeln betrachtet werden können. React-Komponenten können als Unterklassen von `React.Component` oder `React.PureComponent` definiert werden.
+Mit React-Komponenten kann die Benutzeroberfläche in unabhängige, wiederverwendbare Bestandteile aufgeteilt werden, die jeweils isoliert betrachtet werden können. React-Komponenten können als Unterklassen von `React.Component` oder `React.PureComponent` definiert werden.
 
  - [`React.Component`](#reactcomponent)
  - [`React.PureComponent`](#reactpurecomponent)
