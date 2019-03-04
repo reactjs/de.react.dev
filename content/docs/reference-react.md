@@ -59,7 +59,7 @@ Siehe [React ohne JSX](/docs/react-without-jsx.html) für mehr Informationen.
 
 ### Suspense {#suspense}
 
-Mit Suspense können Komponenten vor dem Rendern auf etwas "warten". Momentan unterstützt Suspense nur einen Anwendungsfall: [Komponenten dynamisch laden mit `React.lazy`](/docs/code-splitting.html#reactlazy). In Zukunft wird es auch andere Anwendungsfälle wie z.B. das Abrufen von Daten unterstützen.
+Mit Suspense können Komponenten vor dem Rendern auf etwas "warten". Momentan unterstützt Suspense nur einen Anwendungsfall: [Komponenten dynamisch mit `React.lazy`](/docs/code-splitting.html#reactlazy) laden. In Zukunft wird es auch andere Anwendungsfälle wie z.B. das Abrufen von Daten unterstützen.
 
 - [`React.lazy`](#reactlazy)
 - [`React.Suspense`](#reactsuspense)
