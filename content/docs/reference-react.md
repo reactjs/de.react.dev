@@ -13,7 +13,7 @@ redirect_from:
   - "docs/top-level-api-zh-CN.html"
 ---
 
-`React` ist der Zugangspunkt zur React-Bibliothek. Falls du React aus einem `<script>`-Tag aus lädst, sind diese Top-Level APIs im globalen `React` Objekt verfügbar. Falls du ES6 mit npm verwendest, kannst du `import React from 'react'` schreiben. Falls du ES5 mit npm verwendest, kannst du `var React = require('react')` schreiben.
+`React` ist der Zugangspunkt zur React-Bibliothek. Falls du React von einem `<script>`-Tag heraus lädst, sind diese Top-Level APIs im globalen `React` Objekt verfügbar. Falls du ES6 mit npm verwendest, kannst du `import React from 'react'` schreiben. Falls du ES5 mit npm verwendest, kannst du `var React = require('react')` schreiben.
 
 ## Übersicht {#overview}
 
