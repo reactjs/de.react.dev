@@ -105,7 +105,7 @@ Unter [React.Component API Referenz](/docs/react-component.html) gibt es eine Li
 
 `React.PureComponent` ähnelt [`React.Component`](#reactcomponent), unterscheidet sich aber dahingehend, dass [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) von  [`React.Component`](#reactcomponent) nicht implementiert wird, während `React.PureComponent` es durch das oberflächliche Vergleichen von Props und State implementiert.
 
-Wenn die `render()` Funktion einer React-Komponente bei Gleichbleiben von Props und State das gleiche Ergebnis hat, kann die Nutzung von `React.PureComponent` in manchen Fällen die Performance verbessern.
+Wenn die `render()` Funktion einer React-Komponente bei Gleichbleiben von Props und State das gleiche Ergebnis rendert, kann die Nutzung von `React.PureComponent` in manchen Fällen die Performance verbessern.
 
 > Hinweis
 >
