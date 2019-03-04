@@ -82,7 +82,7 @@ Beachte, dass die Styles nicht autoprefixed werden. Um ältere Browser zu unters
 ```js
 const divStyle = {
   WebkitTransition: 'all', // beachte den Großbuchstaben 'W' hier
-  msTransition: 'all' // 'ms' ist der einige herstellerspezifische Prefix mit einem Kleinbuchstaben
+  msTransition: 'all' // 'ms' ist der einige browserspezifische Prefix mit einem Kleinbuchstaben
 };
 
 function ComponentWithTransition() {
