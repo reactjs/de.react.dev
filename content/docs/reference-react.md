@@ -308,7 +308,7 @@ Du kannst auch die Kurzschreibweise `<></>` verwenden. Für mehr Informationen s
 * [Refs an DOM Komponenten weitergeben](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
 * [Refs and Higher-Order Komponenten weitergeben](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
 
-`React.forwardRef` akzeptiert eine render-Funktion als Argument. React ruft diese Funktion mit den zwei Argumenten `props` und `ref` auf und sollte eine React-Node zurückgeben.
+`React.forwardRef` akzeptiert eine render-Funktion als Argument. React ruft diese Funktion mit den zwei Argumenten `props` und `ref` auf und sollte einen React-Knoten zurückgeben.
 
 `embed:reference-react-forward-ref.js`
 
