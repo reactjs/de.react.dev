@@ -87,7 +87,7 @@ Mit Suspense können Komponenten vor dem Rendern auf etwas "warten". Momentan un
 
 ### `React.Component` {#reactcomponent}
 
-`React.Component` ist die Basis-Klasse für React-Komponenten die mit [ES6-Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definiert werden:
+`React.Component` ist die Basis-Klasse für React-Komponenten, die mit [ES6-Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definiert werden:
 
 ```javascript
 class Greeting extends React.Component {
