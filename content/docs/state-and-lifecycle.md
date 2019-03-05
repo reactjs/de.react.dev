@@ -373,7 +373,7 @@ this.setState(function(state, props) {
 });
 ```
 
-### Stateaktualsierungen werden zusammengeführt {#state-updates-are-merged}
+### Stateaktualisierungen werden zusammengeführt {#state-updates-are-merged}
 
 Wenn du `setState()?` aufrufst, führt React das von dir bereitgestellte Objekt mit dem aktuellen State zusammen.
 
