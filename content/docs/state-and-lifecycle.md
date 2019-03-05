@@ -322,7 +322,7 @@ Es gibt drei Dinge die du über `setState()` wissen solltest.
 
 ### Bearbeite State nicht direkt {#do-not-modify-state-directly}
 
-Dies wird zum Beispiel kein neu Rendern der Komponente bewirken:
+Dies wird zum Beispiel kein neurendern der Komponente bewirken:
 
 ```js
 // Wrong
