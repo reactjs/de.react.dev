@@ -318,7 +318,7 @@ Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge 
 
 ## State korrekt verwenden {#using-state-correctly}
 
-Es gibt drei Dinge die du über `setState()` wissen solltest.
+Es gibt drei Dinge, die du über `setState()` wissen solltest.
 
 ### Bearbeite State nicht direkt {#do-not-modify-state-directly}
 
