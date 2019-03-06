@@ -13,7 +13,7 @@ redirect_from:
   - "docs/top-level-api-zh-CN.html"
 ---
 
-`React` ist der Zugangspunkt zur React-Bibliothek. Falls du React von einem `<script>`-Tag heraus lädst, sind diese Top-Level APIs im globalen `React` Objekt verfügbar. Falls du ES6 mit npm verwendest, kannst du `import React from 'react'` schreiben. Falls du ES5 mit npm verwendest, kannst du `var React = require('react')` schreiben.
+`React` ist der Zugangspunkt zur React-Bibliothek. Falls du React von einem `<script>`-Tag heraus lädst, sind diese Top-Level APIs im globalen `React`-Objekt verfügbar. Solltest du ES6 mit npm verwenden, kannst du `import React from 'react'` schreiben. Wenn du ES5 mit npm verwendest, kannst du `var React = require('react')` schreiben.
 
 ## Übersicht {#overview}
 
@@ -24,7 +24,7 @@ Mit React-Komponenten kann die Benutzeroberfläche in unabhängige, wiederverwen
  - [`React.Component`](#reactcomponent)
  - [`React.PureComponent`](#reactpurecomponent)
 
-Solltest du keine ES6-Klassen benutzen, kannst du stattdessen das `create-react-class` Modul verwenden. Siehe [React ohne ES6](/docs/react-without-es6.html) für mehr Informationen.
+Solltest du keine ES6-Klassen benutzen, kannst du stattdessen das `create-react-class`-Modul verwenden. Siehe [React ohne ES6](/docs/react-without-es6.html) für mehr Informationen.
 
 React-Komponenten können auch als Funktionen definiert werden, die ummantelt werden können:
 
@@ -32,7 +32,7 @@ React-Komponenten können auch als Funktionen definiert werden, die ummantelt we
 
 ### React-Elemente erstellen {#creating-react-elements}
 
-Wir empfehlen, [JSX](/docs/introducing-jsx.html) zu verwenden, um zu beschreiben, wie die Benutzeroberfläche aussehen soll. Jedes JSX-Element ist einfach syntaktischer Zucker für das Aufrufen von [`React.createElement()`](#createelement). Wenn du JSX verwendest, rufst du die folgenden Methoden normalerweise nicht direkt auf:
+Um zu beschreiben, wie die Benutzeroberfläche aussehen soll, empfehlen wir, [JSX](/docs/introducing-jsx.html) zu verwenden. Ein JSX-Element ist eine alternative Schreibweise für das Aufrufen von [`React.createElement()`](#createelement). Wenn du JSX verwendest, rufst du die folgenden Methoden normalerweise nicht direkt auf:
 - [`createElement()`](#createelement)
 - [`createFactory()`](#createfactory)
 
@@ -59,14 +59,14 @@ Siehe [React ohne JSX](/docs/react-without-jsx.html) für mehr Informationen.
 
 ### Suspense {#suspense}
 
-Mit Suspense können Komponenten vor dem Rendern auf etwas "warten". Momentan unterstützt Suspense nur einen Anwendungsfall: [Komponenten dynamisch mit `React.lazy`](/docs/code-splitting.html#reactlazy) laden. In Zukunft wird es auch andere Anwendungsfälle wie z.B. das Abrufen von Daten unterstützen.
+Mit Suspense können Komponenten vor dem Rendern auf etwas "warten". Momentan unterstützt Suspense nur einen Anwendungsfall: [Komponenten dynamisch laden mit `React.lazy`](/docs/code-splitting.html#reactlazy). In Zukunft wird es auch andere Anwendungsfälle wie z.B. das Abrufen von Daten unterstützen.
 
 - [`React.lazy`](#reactlazy)
 - [`React.Suspense`](#reactsuspense)
 
 ### Hooks {#hooks}
 
-*Hooks* sind neu in React 16.8. Sie erlauben die Verwendung von State und anderen React Features ohne Klassen. Hooks haben einen [eigenen Bereich in der Dokumentation](/docs/hooks-intro.html) und eine eigene API Referenz:
+*Hooks* sind neu in React 16.8. Sie erlauben die Verwendung von State und anderen React-Features ohne Klassen. Hooks haben einen [eigenen Bereich in der Dokumentation](/docs/hooks-intro.html) und eine eigene API-Referenz:
 
 - [Grundlegende Hooks](/docs/hooks-reference.html#basic-hooks)
   - [`useState`](/docs/hooks-reference.html#usestate)
@@ -97,7 +97,7 @@ class Greeting extends React.Component {
 }
 ```
 
-Unter [React.Component API Referenz](/docs/react-component.html) gibt es eine Liste der Methoden und Eigenschaften, die sich auf die `React.Component` Basis-Klasse beziehen.
+Unter [React.Component API-Referenz](/docs/react-component.html) gibt es eine Liste der Methoden und Eigenschaften, die sich auf die `React.Component`-Basisklasse beziehen.
 
 * * *
 
@@ -105,7 +105,7 @@ Unter [React.Component API Referenz](/docs/react-component.html) gibt es eine Li
 
 `React.PureComponent` ähnelt [`React.Component`](#reactcomponent), unterscheidet sich aber dahingehend, dass [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) von  [`React.Component`](#reactcomponent) nicht implementiert wird, während `React.PureComponent` es durch das oberflächliche Vergleichen von Props und State implementiert.
 
-Wenn die `render()` Funktion einer React-Komponente bei Gleichbleiben von Props und State das gleiche Ergebnis rendert, kann die Nutzung von `React.PureComponent` in manchen Fällen die Performance verbessern.
+Wenn die `render()`-Funktion einer React-Komponente bei Gleichbleiben von Props und State das gleiche Ergebnis rendert, kann die Nutzung von `React.PureComponent` in manchen Fällen die Performance verbessern.
 
 > Hinweis
 >
@@ -123,11 +123,11 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-`React.memo` ist eine [Higher-Order Komponente](/docs/higher-order-components.html). Sie ähnelt [`React.PureComponent`](#reactpurecomponent), gilt allerdings für Funktionen statt für Klassen.
+`React.memo` ist eine [Higher-Order-Komponente](/docs/higher-order-components.html). Sie ähnelt [`React.PureComponent`](#reactpurecomponent), gilt allerdings für Funktionen statt für Klassen.
 
-Wenn eine Funktions-Komponente bei Gleichbleiben von Props und State das gleiche Ergebnis rendert, kann in manchen Fällen die Performance verbessert werden, wenn die Komponente mit einem Aufruf an React-memo ummantelt wird und so das Ergebnis memoisiert wird. Das bedeutet, dass React das Rendern der Komponente überspringt und stattdessen das zuletzt gerenderte Ergebnis wiederverwendet.
+Wenn eine Funktions-Komponente bei Gleichbleiben von Props und State das gleiche Ergebnis rendert, kann in manchen Fällen die Performance verbessert werden, wenn die Komponente mit einem Aufruf an `React.memo` ummantelt wird und so das Ergebnis memoisiert wird. Das bedeutet, dass React das Rendern der Komponente überspringt und stattdessen das zuletzt gerenderte Ergebnis wiederverwendet.
 
-Standardmäßig vergleicht es komplexe Objekte im Props-Objet nur oberflächlich. Wenn du Kontrolle über den Vergleich haben möchtest, kannst du `React.memo` als zweites Argument eine benutzerdefinierte Vergleichsfunktion mitgeben.
+Standardmäßig vergleicht es komplexe Objekte im Props-Objekt nur oberflächlich. Wenn du Kontrolle über den Vergleich haben möchtest, kannst du `React.memo` als zweites Argument eine benutzerdefinierte Vergleichsfunktion mitgeben.
 
 
 ```javascript
@@ -147,7 +147,7 @@ Diese Methode existiert nur zur **[Performance-Optimierung](/docs/optimizing-per
 
 > Hinweis
 >
-> Im Gegensatz zur [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) Methode in Klassen-Komponenten gibt die `areEqual` Funktion `true` zurück, wenn die Props gleich sind und `false`, wenn die Props unterschiedlich sind, also genau andersherum als `shouldComponentUpdate`.
+> Im Gegensatz zur [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate)-Methode in Klassen-Komponenten gibt die `areEqual`-Funktion `true` zurück, wenn die Props gleich sind und `false`, wenn die Props unterschiedlich sind, also genau andersherum als `shouldComponentUpdate`.
 
 * * *
 
@@ -161,7 +161,7 @@ React.createElement(
 )
 ```
 
-Erzeugt und gibt ein neues [React-Element](/docs/rendering-elements.html) eines bestimmten Typs zurück. Das Typ-Argument kann entweder ein Tag-Name als String (z.B. `'div'` oder `'span'`), ein  [React Komponenten](/docs/components-and-props.html) Typ  (eine Klasse oder eine Funktion) oder ein [React Fragment](#reactfragment) Typ sein.
+Erzeugt und gibt ein neues [React-Element](/docs/rendering-elements.html) eines bestimmten Typs zurück. Das Typ-Argument kann entweder ein Tag-Name als String (z.B. `'div'` oder `'span'`), ein  [React-Komponenten](/docs/components-and-props.html)-Typ  (eine Klasse oder eine Funktion) oder ein [React-Fragment](#reactfragment)-Typ sein.
 
 In [JSX](/docs/introducing-jsx.html) geschriebener Code wird konvertiert, um `React.createElement()` zu benutzen. Wenn du JSX verwendest, rufst du `React.createElement()` normalerweise nicht direkt auf. Siehe [React ohne JSX](/docs/react-without-jsx.html) für mehr Informationen.
 
@@ -199,7 +199,7 @@ Diese API wurde als Ersatz für das veraltete `React.addons.cloneWithProps()` ei
 React.createFactory(type)
 ```
 
-Gibt eine Funktion zurück, die React-Elemente eines bestimmten Typs erzeugt. Wie bei [`React.createElement()`](#createElement) kann das Typ-Argument entweder ein Tag-Name als String (z.B. `'div'` oder `'span'`), ein [React Komponenten](/docs/components-and-props.html) Typ (eine Klasse oder eine Funktion) oder ein [React Fragment](#reactfragment) Typ sein.
+Gibt eine Funktion zurück, die React-Elemente eines bestimmten Typs erzeugt. Wie bei [`React.createElement()`](#createElement) kann das Typ-Argument entweder ein Tag-Name als String (z.B. `'div'` oder `'span'`), ein  [React-Komponenten](/docs/components-and-props.html)-Typ  (eine Klasse oder eine Funktion) oder ein [React-Fragment](#reactfragment)-Typ sein.
 
 Dieser Helfer gilt als veraltet, und wir empfehlen, entweder JSX oder `React.createElement()` direkt zu verwenden.
 
@@ -267,7 +267,7 @@ React.Children.only(children)
 React.Children.toArray(children)
 ```
 
-Gibt die eher undurchschaubare `children` Datenstruktur als flaches Array zurück, wobei jedem Kind ein Key zugeordnet ist. Nützlich, falls in render-Methoden Kinder-Ansammlungen manipuliert werden sollen, insbesondere beim Umordnen oder Slicen von `this.props.children`, bevor diese weitergegeben werden.
+Gibt die eher undurchschaubare `children`-Datenstruktur als flaches Array zurück, wobei jedem Kind ein Key zugeordnet ist. Nützlich, falls in render-Methoden Kinder-Ansammlungen manipuliert werden sollen, insbesondere beim Umordnen oder Slicen von `this.props.children`, bevor diese weitergegeben werden.
 
 > Hinweis:
 >
@@ -277,7 +277,7 @@ Gibt die eher undurchschaubare `children` Datenstruktur als flaches Array zurüc
 
 ### `React.Fragment` {#reactfragment}
 
-Die `React.Fragment` Komponente erlaubt dir, mehrere Elemente in einer `render()` Methode zurückzugeben, ohne ein zusätzliches DOM-Element zu kreieren:
+Die `React.Fragment`-Komponente erlaubt dir, mehrere Elemente in einer `render()`-Methode zurückzugeben, ohne ein zusätzliches DOM-Element zu kreieren:
 
 ```javascript
 render() {
@@ -303,18 +303,18 @@ Du kannst auch die Kurzschreibweise `<></>` verwenden. Für mehr Informationen s
 
 ### `React.forwardRef` {#reactforwardref}
 
-`React.forwardRef` erstellt eine React-Komponente, die das [ref](/docs/refs-and-the-dom.html)-Attribut, das sie erhält, an eine ihr in der Baumstruktur untergeordneten Komponente weitergibt. Diese Technik ist nicht sehr verbreitet, ist jedoch ein zwei Fällen besonders nützlich:
+`React.forwardRef` erstellt eine React-Komponente, die das [ref](/docs/refs-and-the-dom.html)-Attribut, das sie erhält, an eine ihr in der Baumstruktur untergeordnete Komponente weitergibt. Diese Technik ist nicht sehr verbreitet, ist jedoch in zwei Fällen besonders nützlich:
 
-* [Refs an DOM Komponenten weitergeben](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
-* [Refs and Higher-Order Komponenten weitergeben](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
+* [Refs an DOM-Komponenten weitergeben](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
+* [Refs and Higher-Order-Komponenten weitergeben](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
 
 `React.forwardRef` akzeptiert eine render-Funktion als Argument. React ruft diese Funktion mit den zwei Argumenten `props` und `ref` auf und sollte einen React-Knoten zurückgeben.
 
 `embed:reference-react-forward-ref.js`
 
-Im obigen Beispiel übergibt React eine `ref`, die dem `<FancyButton ref={ref}>` Element gegeben wurde, als zweites Argument an die render-Funktion innerhalb des `React.forwardRef` Aufrufs. Diese render-Funktion gibt die `ref` an das `<button ref={ref}` Element weiter.
+Im obigen Beispiel übergibt React eine `ref`, die dem `<FancyButton ref={ref}>`-Element gegeben wurde, als zweites Argument an die render-Funktion innerhalb des `React.forwardRef`-Aufrufs. Diese render-Funktion gibt die `ref` an das `<button ref={ref}>`-Element weiter.
 
-Dadurch zeigt `ref.current` direkt auf die `<button>` DOM-Element-Instanz, nachdem React die `ref` eingefügt hat.
+Dadurch zeigt `ref.current` direkt auf die `<button>`-DOM-Element-Instanz, nachdem React die `ref` eingefügt hat.
 
 Für mehr Informationen siehe [Refs weitergeben](/docs/forwarding-refs.html).
 
@@ -324,7 +324,7 @@ Für mehr Informationen siehe [Refs weitergeben](/docs/forwarding-refs.html).
 
 `React.lazy()` lässt dich eine Komponente definieren, die dynamisch geladen wird. Das hilft, die Bundlegröße zu reduzieren, indem das Laden von Komponenten, die im ursprünglichen Render nicht benutzt werden, verzögert wird.
 
-In unserer [Code-Splitting Dokumentation](/docs/code-splitting.html#reactlazy) kannst du lernen, wie es benutzt wird. Du kannst auch [diesen Artikel](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) lesen, in dem die Verwendung im Detail erläutert wird.
+In unserer [Code-Splitting-Dokumentation](/docs/code-splitting.html#reactlazy) kannst du lernen, wie es benutzt wird. Du kannst auch [diesen Artikel](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) lesen, in dem die Verwendung im Detail erläutert wird.
 
 ```js
 // Diese Komponente wird dynamisch geladen
@@ -341,7 +341,7 @@ Beachte, dass das Rendern von `lazy`-Komponenten ein `<React.Suspense>` weiter o
 
 ### `React.Suspense` {#reactsuspense}
 
-`React.Suspense` lässt dich den Lade-Indikator bestimmen, der angezeigt wird, falls einige Komponenten weiter unten im Rendering-Baum noch nicht render-bereit sind. Momentan ist das Laden von `lazy` Komponenten der **einzige** Anwendungsfall, den `<React.Suspense>` unterstützt:
+`React.Suspense` lässt dich den Lade-Indikator bestimmen, der angezeigt wird, falls einige Komponenten weiter unten im Rendering-Baum noch nicht render-bereit sind. Momentan ist das Laden von `lazy`-Komponenten der **einzige** Anwendungsfall, den `<React.Suspense>` unterstützt:
 
 ```js
 // Diese Komponente wird dynamisch geladen
@@ -359,7 +359,7 @@ function MyComponent() {
 }
 ```
 
-Das ist in unserem [Code-Splitting Guide](/docs/code-splitting.html#reactlazy) dokumentiert. Beachte, dass sich `lazy`-Komponenten tief im `Suspense`-Baum befinden können -- es muss nicht jede einzelne davon ummantelt werden. Es wird empfohlen, `<Suspense>` dort zu verwenden, wo ein Lade-Indikator angezeigt werden soll, und `lazy(`) dort zu verwenden, wo Code-Splitting stattfinden soll.
+Das ist in unserem [Code-Splitting-Guide](/docs/code-splitting.html#reactlazy) dokumentiert. Beachte, dass sich `lazy`-Komponenten tief im `Suspense`-Baum befinden können -- es muss nicht jede einzelne davon ummantelt werden. Es wird empfohlen, `<Suspense>` dort zu verwenden, wo ein Lade-Indikator angezeigt werden soll, und `lazy(`) dort zu verwenden, wo Code-Splitting stattfinden soll.
 
 Wir planen, mit `Suspense` zukünftig weitere, bisher noch nicht unterstützte, Anwendungsfälle wie z.B. das Abrufen von Daten abzudecken. Mehr Informationen gibt es in [unserer Roadmap](/blog/2018/11/27/react-16-roadmap.html).
 
