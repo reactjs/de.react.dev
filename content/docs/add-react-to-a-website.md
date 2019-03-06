@@ -110,7 +110,11 @@ Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anz
 
 ### Tipp: Minifiziere JavaScript für die Produktionsumgebung {#tip-minify-javascript-for-production}
 
+<<<<<<< HEAD
 Bevor du deine Webseite für die Produktionsumgebung deployst, denke daran, dass unminifiziertes JavaScript die Seite für deine User signifankt verlangsamen kann.
+=======
+Before deploying your website to production, be mindful that unminified JavaScript can significantly slow down the page for your users.
+>>>>>>> b50fe64c1e88489022eddf2cfff0995778827f84
 
 Falls du bereits die Anwendungsscripts minifiziert hast, **ist deine Seite fertig für die Produktionsumgebung**, sobald du sichergestellt hast, dass das bereitgestellte HTML die Versionen von React lädt, die auf `production.min.js` enden:
 
