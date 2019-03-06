@@ -177,7 +177,7 @@ React.cloneElement(
 )
 ```
 
-Klont und gibt ein neues React-Element zurück, bei dem es `element` als Ausgangspunkt verwendet. Das resultierende Element hat die Props des ursprünglichen Elements, in die die neuen Props oberflächlich eingefügt werden. Neue Kinder ersetzen die existierenden Kinder. `key` und `ref` des ursprünglichen Elements bleiben erhalten.
+Klone und gebe ein neues React-Element mit `element` als Ausgangspunkt zurück. Das resultierende Element hat die Props des ursprünglichen Elements, in die die neuen Props oberflächlich eingefügt werden. Neue Kinder ersetzen die existierenden Kinder. `key` und `ref` des ursprünglichen Elements bleiben erhalten.
 
 `React.cloneElement()` ist fast äquivalent zu:
 
