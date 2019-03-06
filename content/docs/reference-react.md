@@ -24,7 +24,7 @@ Mit React-Komponenten kann die Benutzeroberfläche in unabhängige, wiederverwen
  - [`React.Component`](#reactcomponent)
  - [`React.PureComponent`](#reactpurecomponent)
 
-Falls du keine ES6-Klassen benutzt, kannst du stattdessen das `create-react-class` Modul verwenden. Siehe [React ohne ES6](/docs/react-without-es6.html) für mehr Informationen.
+Solltest du keine ES6-Klassen benutzen, kannst du stattdessen das `create-react-class` Modul verwenden. Siehe [React ohne ES6](/docs/react-without-es6.html) für mehr Informationen.
 
 React-Komponenten können auch als Funktionen definiert werden, die ummantelt werden können:
 
