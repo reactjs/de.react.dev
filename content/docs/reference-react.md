@@ -186,7 +186,8 @@ Klone und gebe ein neues React-Element mit `element` als Ausgangspunkt zurück. 
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
 
-Es schützt jedoch auch `ref`s. Das bedeutet, dass wenn ein Kind mit einer `ref` kommt, wird diese nicht versehentlich vom Vorfahren gestohlen. Es bekommt die gleiche `ref`, verknüpft mit dem neuen Element.
+Zudem bleiben auch `ref`s erhalten. Das bedeutet, dass bei einem Kindelement mit einem `ref` 
+ nicht versehentlich die Referenz vom Elternelement übertragen wird. Das Kindelement erhält die gleiche `ref`, verknüpft mit dem neuen Element.
 
 Diese API wurde als Ersatz für das veraltete `React.addons.cloneWithProps()` eingeführt.
 
