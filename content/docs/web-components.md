@@ -6,7 +6,7 @@ redirect_from:
   - "docs/webcomponents.html"
 ---
 
-React und [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) wurden entwickelt um unterschiedliche Probleme zu lösen. Web Components bieten eine starke Entkapselung für wiederverwendbare Komponenten, wobei React eine deklarative Bibliothek bietet, die das DOM mit deinen Daten synchronisiert. Die beiden Ziele ergänzen sich gegenseitig. Als Entwickler kannst du React in Web Components oder Web Componentens in React verwenden, oder beides.
+React und [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) wurden entwickelt um unterschiedliche Probleme zu lösen. Web Components bieten eine starke Kapselung für wiederverwendbare Komponenten, wobei React eine deklarative Bibliothek bietet, die das DOM mit deinen Daten synchronisiert. Die beiden Ziele ergänzen sich gegenseitig. Als Entwickler kannst du React in Web Components oder Web Componentens in React verwenden, oder beides.
 
 Most people who use React don't use Web Components, but you may want to, especially if you are using third-party UI components that are written using Web Components.
 
