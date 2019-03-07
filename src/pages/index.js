@@ -50,7 +50,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; Eine JavaScript Bibliothek für das Erstellen von Benutzeroberflächen"
+          title="React &ndash; Eine JavaScript Bibliothek zum Erstellen von Benutzeroberflächen"
           ogUrl={createOgUrl('index.html')}
         />
         <div css={{width: '100%'}}>
