@@ -22,10 +22,10 @@ class HelloMessage extends React.Component {
 
 > Hinweis:
 >
-> Web Components often expose an imperative API. For instance, a `video` Web Component might expose `play()` and `pause()` functions. To access the imperative APIs of a Web Component, you will need to use a ref to interact with the DOM node directly. If you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.
+> Web Componentes haben meist eine imperative API. Beispielsweise könnte eine `video` Web Component, die beiden Funktionen `play()` und `pause()` bereitstellen. Um auf die imperative API zuzugreifen, wird eine Referenz (ref) benötigt um mit dem DOM-Knoten direkt zu interagieren. Wenn du Web Components von Drittanbietern verwendest, ist die beste Herangehensweise, eine React-Komponente zu erstellen die, die diese umschließt.
 >
-> Events emitted by a Web Component may not properly propagate through a React render tree.
-> You will need to manually attach event handlers to handle these events within your React components.
+> Events, welche von einer Web Component gesendet werden könnten sich möglicherweise nicht über den React-Baum ausbreiten.
+> Du musst manuelle Event-Handler erstellen, um diese Events in deinen React-Komponenten zu vearbeiten.
 
 Eine häufige Verwirrung entsteht dadurch, dass Web Components "class" anstatt "className" verwenden.
 
@@ -59,4 +59,4 @@ customElements.define('x-search', XSearch);
 >Hinweis:
 >
 >Dieser Code **wird nicht** funktionieren, wenn du Klassen mit Babel umwandelst. See [this issue](https://github.com/w3c/webcomponents/issues/587) for the discussion.
->Include the [custom-elements-es5-adapter](https://github.com/webcomponents/webcomponentsjs#custom-elements-es5-adapterjs) before you load your web components to fix this issue.
+>Füge den [custom-elements-es5-adapter](https://github.com/webcomponents/webcomponentsjs#custom-elements-es5-adapterjs) hinzu, bevor deine Web Component läd, um dieses Problem zu beseitigen.
