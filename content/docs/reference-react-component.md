@@ -17,7 +17,7 @@ redirect_from:
 
 This page contains a detailed API reference for the React component class definition. It assumes you're familiar with fundamental React concepts, such as [Components and Props](/docs/components-and-props.html), as well as [State and Lifecycle](/docs/state-and-lifecycle.html). If you're not, read them first.
 
-## Overview {#overview}
+## Überblick {#ueberblick}
 
 React lets you define components as classes or functions. Components defined as classes currently provide more features which are described in detail on this page. To define a React component class, you need to extend `React.Component`:
 
@@ -37,11 +37,11 @@ The only method you *must* define in a `React.Component` subclass is called [`re
 >
 >React doesn't force you to use the ES6 class syntax. If you prefer to avoid it, you may use the `create-react-class` module or a similar custom abstraction instead. Take a look at [Using React without ES6](/docs/react-without-es6.html) to learn more.
 
-### The Component Lifecycle {#the-component-lifecycle}
+### Der Lebenszyklus von Komponenten {#der-lebenszyklus-von-komponenten}
 
 Each component has several "lifecycle methods" that you can override to run code at particular times in the process. **You can use [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) as a cheat sheet.** In the list below, commonly used lifecycle methods are marked as **bold**. The rest of them exist for relatively rare use cases.
 
-#### Mounting {#mounting}
+#### Das Einfügen {#mounting}
 
 These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
 
@@ -56,7 +56,7 @@ These methods are called in the following order when an instance of a component 
 >
 >- [`UNSAFE_componentWillMount()`](#unsafe_componentwillmount)
 
-#### Updating {#updating}
+#### Das Aktualisieren {#das-ktualisieren}
 
 An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
 
@@ -73,41 +73,41 @@ An update can be caused by changes to props or state. These methods are called i
 >- [`UNSAFE_componentWillUpdate()`](#unsafe_componentwillupdate)
 >- [`UNSAFE_componentWillReceiveProps()`](#unsafe_componentwillreceiveprops)
 
-#### Unmounting {#unmounting}
+#### Das Entfernen {#unmounting}
 
 This method is called when a component is being removed from the DOM:
 
 - [**`componentWillUnmount()`**](#componentwillunmount)
 
-#### Error Handling {#error-handling}
+#### Fehler-Behandlung {#fehler-behandlung}
 
 These methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
 
 - [`static getDerivedStateFromError()`](#static-getderivedstatefromerror)
 - [`componentDidCatch()`](#componentdidcatch)
 
-### Other APIs {#other-apis}
+### Andere APIs {#andere-apis}
 
 Each component also provides some other APIs:
 
   - [`setState()`](#setstate)
   - [`forceUpdate()`](#forceupdate)
 
-### Class Properties {#class-properties}
+### Klassenattribute {#klassenattribute}
 
   - [`defaultProps`](#defaultprops)
   - [`displayName`](#displayname)
 
-### Instance Properties {#instance-properties}
+### Instanzattribute {#instanzattribute}
 
   - [`props`](#props)
   - [`state`](#state)
 
 * * *
 
-## Reference {#reference}
+## Referenz {#referenz}
 
-### Commonly Used Lifecycle Methods {#commonly-used-lifecycle-methods}
+### Meistgenutzte Lifecycle Methods {#commonly-used-lifecycle-methods}
 
 The methods in this section cover the vast majority of use cases you'll encounter creating React components. **For a visual reference, check out [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).**
 
@@ -243,7 +243,7 @@ You **should not call `setState()`** in `componentWillUnmount()` because the com
 
 * * *
 
-### Rarely Used Lifecycle Methods {#rarely-used-lifecycle-methods}
+### Selten genutzte Lifecycle Methods {#rarely-used-lifecycle-methods}
 
 The methods in this section correspond to uncommon use cases. They're handy once in a while, but most of your components probably don't need any of them. **You can see most of the methods below on [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) if you click the "Show less common lifecycles" checkbox at the top of it.**
 
@@ -313,7 +313,7 @@ In the above examples, it is important to read the `scrollHeight` property in `g
 
 * * *
 
-### Error boundaries {#error-boundaries}
+### Fehlerbegrenzungen {#error-boundaries}
 
 [Error boundaries](/docs/error-boundaries.html) are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
 
@@ -420,7 +420,7 @@ class ErrorBoundary extends React.Component {
 
 * * *
 
-### Legacy Lifecycle Methods {#legacy-lifecycle-methods}
+### Veraltete Lifecycle Methods {#legacy-lifecycle-methods}
 
 The lifecycle methods below are marked as "legacy". They still work, but we don't recommend using them in the new code. You can learn more about migrating away from legacy lifecycle methods in [this blog post](/blog/2018/03/27/update-on-async-rendering.html).
 
@@ -492,7 +492,7 @@ Typically, this method can be replaced by `componentDidUpdate()`. If you were re
 
 * * *
 
-## Other APIs {#other-apis-1}
+## Andere APIs {#other-apis-1}
 
 Unlike the lifecycle methods above (which React calls for you), the methods below are the methods *you* can call from your components.
 
@@ -583,7 +583,7 @@ Normally you should try to avoid all uses of `forceUpdate()` and only read from 
 
 * * *
 
-## Class Properties {#class-properties-1}
+## Klassenattribute {#class-properties-1}
 
 ### `defaultProps` {#defaultprops}
 
@@ -623,7 +623,7 @@ The `displayName` string is used in debugging messages. Usually, you don't need 
 
 * * *
 
-## Instance Properties {#instance-properties-1}
+## Instanzattribute {#instance-properties-1}
 
 ### `props` {#props}
 
