@@ -50,7 +50,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; Eine JavaScript Bibliothek für das Bauen von Benutzeroberflächen"
+          title="React &ndash; Eine JavaScript Bibliothek zum Erstellen von Benutzeroberflächen"
           ogUrl={createOgUrl('index.html')}
         />
         <div css={{width: '100%'}}>
@@ -133,7 +133,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    Eine JavaScript Bibliothek für das Bauen von Benutzeroberflächen
+                    Eine JavaScript Bibliothek zum Erstellen von Benutzeroberflächen
                   </p>
                   <Flex
                     valign="center"
@@ -285,12 +285,12 @@ class Home extends Component {
               <Flex valign="center">
                 <CtaItem>
                   <ButtonLink to="/docs/getting-started.html" type="primary">
-                    Get Started
+                    Erste Schritte
                   </ButtonLink>
                 </CtaItem>
                 <CtaItem>
                   <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    Take the Tutorial
+                    Zum Tutorial
                   </ButtonLink>
                 </CtaItem>
               </Flex>
