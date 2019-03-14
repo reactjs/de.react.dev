@@ -98,7 +98,7 @@ browserify ./index.js \
 
 >**Hinweis:**
 >
->Der Package-Name ist `uglify-js`, aber die Binary, die es zur Verfügung stellt, heißt `uglifyjs`.<br>
+>Der Paketname ist `uglify-js`, aber die Binary, die es zur Verfügung stellt, heißt `uglifyjs`.<br>
 >Das ist kein Tippfehler.
 
 Denke daran, dass du das nur für Production-Builds machen musst. Du solltest diese Plugins nicht während des Entwickelns benutzen, denn sie verbergen nützliche React-Warnungen und machen die Builds viel langsamer.
