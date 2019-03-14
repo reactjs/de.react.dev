@@ -12,9 +12,9 @@ Intern verwendet React mehrere clevere Techniken, um die Anzahl kostspieliger DO
 
 Falls du Benchmarking betreibst oder Performance-Probleme in deinen React-Apps feststellst, stelle sicher, dass du sie mit dem minifizierten Production-Build testest.
 
-Standardmäßig liefert React viele hilfreiche Warnungen mit. Diese Warnungen sind während des Entwickelns sehr nützlich. Allerdings machen sie React größer und langsamer, weshalb du sichergehen solltest, beim Deployment die Production-Version zu verwenden.
+Standardmäßig enthält React viele hilfreiche Warnungen. Diese Warnungen sind während des Entwickelns sehr nützlich. Allerdings machen sie React größer und langsamer, weshalb du beim Deployen darauf achten solltest, die Production-Version zu verwenden.
 
-Falls du nicht sicher bist, ob dein Build-Prozess korrekt eingerichtet ist, kannst du ihn überprüfen, indem du [React Developer Tools für Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) installierst. Wenn du eine Seite mit React im Production-Modus besuchst, hat das Icon einen dunklen Hintergrund:
+Falls du nicht sicher bist, ob dein Build-Prozess korrekt eingerichtet ist, kannst du ihn überprüfen, indem du die [React Developer Tools für Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) installierst. Wenn du eine Seite mit React im Production-Modus besuchst, hat das Icon einen dunklen Hintergrund:
 
 <img src="../images/docs/devtools-prod.png" style="max-width:100%" alt="React DevTools auf einer Webseite mit React im Production-Modus">
 
@@ -28,7 +28,7 @@ Weiter unten findest du eine Anleitung, wie du die Production-Version deiner App
 
 ### Create React App {#create-react-app}
 
-Falls dein Projekt mit [Create React App](https://github.com/facebookincubator/create-react-app) erstellt wurde, führe folgendes aus:
+Falls dein Projekt mit [Create React App](https://github.com/facebookincubator/create-react-app) erstellt wurde, führe Folgendes aus:
 
 ```
 npm run build
@@ -61,13 +61,13 @@ npm install --save-dev uglify-js-brunch
 yarn add --dev uglify-js-brunch
 ```
 
-Dann füge die `-p`-Flag zum `build`-Command hinzu, um einen Production-Build zu erstellen:
+Um dann einen Production-Build zu erstellen, füge zum `build`-Befehl das `-p`-Flag hinzu:
 
 ```
 brunch build -p
 ```
 
-Denke daran, dass du das nur für Production-Builds machen musst. Benutze die `-p`-Flag oder dieses Plugin nicht während des Entwickelns, denn es verbirgt nützliche React-Warnungen und macht die Builds viel langsamer.
+Denke daran, dass du das nur für Production-Builds machen musst. Du solltest das `-p`-Flag oder dieses Plugin nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### Browserify {#browserify}
 
@@ -101,7 +101,7 @@ browserify ./index.js \
 >Der Paketname ist `uglify-js`, aber die Binary, die es zur Verfügung stellt, heißt `uglifyjs`.<br>
 >Das ist kein Tippfehler.
 
-Denke daran, dass du das nur für Production-Builds machen musst. Du solltest diese Plugins nicht während der Entwicklung benutzen, denn sie verbergen nützliche React-Warnungen und machen die Builds viel langsamer.
+Denke daran, dass du das nur für Production-Builds machen musst. Du solltest diese Plugins nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### Rollup {#rollup}
 
@@ -135,7 +135,7 @@ plugins: [
 
 Siehe dir ein komplettes Setup-Beispiel [in diesem Gist](https://gist.github.com/Rich-Harris/cb14f4bc0670c47d00d191565be36bf0) an.
 
-Denke daran, dass du das nur für Production-Builds machen musst. Du solltest das `uglify`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung benutzen, denn sie verbergen nützliche React-Warnungen und machen die Builds viel langsamer.
+Denke daran, dass du das nur für Production-Builds machen musst. Du solltest das `uglify`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### webpack {#webpack}
 
@@ -155,11 +155,11 @@ new webpack.optimize.UglifyJsPlugin()
 
 Mehr Informationen darüber findest du in der [webpack-Dokumentation](https://webpack.js.org/guides/production-build/).
 
-Denke daran, dass du das nur für Production-Builds machen musst. Du solltest `UglifyJsPlugin` oder `DefinePlugin` mit `'production'` nicht während der Entwicklung verwenden, denn sie verbergen nützliche React-Warnungen und machen die Builds viel langsamer.
+Denke daran, dass du das nur für Production-Builds machen musst. Du solltest `UglifyJsPlugin` oder `DefinePlugin` mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ## Komponenten-Profiling mit dem Chrome Performance-Tab {#profiling-components-with-the-chrome-performance-tab}
 
-Im **Entwickler**-Modus kannst du in unterstützten Browser mit den Performance-Tools visualisieren, wie Komponenten gemountet, upgedatet und geunmountet werden. Zum Beispiel:
+Im **Entwickler**-Modus kannst du in unterstützten Browsern mit den Performance-Tools visualisieren, wie Komponenten gemountet, upgedatet und geunmountet werden. Zum Beispiel:
 
 <center><img src="../images/blog/react-perf-chrome-timeline.png" style="max-width:100%" alt="React components in Chrome timeline" /></center>
 
