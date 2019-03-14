@@ -135,7 +135,7 @@ plugins: [
 
 Siehe dir ein komplettes Setup-Beispiel [in diesem Gist](https://gist.github.com/Rich-Harris/cb14f4bc0670c47d00d191565be36bf0) an.
 
-Denke daran, dass du das nur für Production-Builds machen musst. Du solltest das `uglify`-Plugin oder das `replace`-Plugin mit `'production'` nicht während des Entwickelns benutzen, denn sie verbergen nützliche React-Warnungen und machen die Builds viel langsamer.
+Denke daran, dass du das nur für Production-Builds machen musst. Du solltest das `uglify`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung benutzen, denn sie verbergen nützliche React-Warnungen und machen die Builds viel langsamer.
 
 ### webpack {#webpack}
 
