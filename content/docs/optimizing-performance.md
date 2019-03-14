@@ -165,7 +165,7 @@ Im **Entwickler**-Modus kannst du in unterstützten Browser mit den Performance-
 
 In Chrome geht das so:
 
-1. Deaktiviere vorübergehend **alle Chrome-Erweiterungen, insbesondere React DevTools**. Sie können die Ergebnise deutlich verzerren!
+1. Deaktiviere vorübergehend **alle Chrome-Erweiterungen, insbesondere React DevTools**. Sie können die Ergebnisse deutlich verzerren!
 
 2. Stelle sicher, dass du die Anwendung im Entwickler-Modus ausführst.
 
