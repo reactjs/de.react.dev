@@ -159,7 +159,7 @@ Denke daran, dass du das nur für Production-Builds machen musst. Du solltest `U
 
 ## Komponenten-Profiling mit dem Chrome Performance-Tab {#profiling-components-with-the-chrome-performance-tab}
 
-Im **Entwickler**-Modus kannst du visualisieren, wie Komponenten gemountet, upgedatet und geunmountet werden, wenn du die Performance-Tools unterstützter Browser verwendest. Zum Beispiel:
+Im **Entwickler**-Modus kannst du in unterstützten Browser mit den Performance-Tools visualisieren, wie Komponenten gemountet, upgedatet und geunmountet werden. Zum Beispiel:
 
 <center><img src="../images/blog/react-perf-chrome-timeline.png" style="max-width:100%" alt="React components in Chrome timeline" /></center>
 
