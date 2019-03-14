@@ -85,7 +85,7 @@ Um einen Production-Build zu erstellen, stelle sicher, dass du diese Transformer
 
 * Der [`envify`](https://github.com/hughsk/envify)-Transformer stellt sicher, dass die richtige Build-Umgebung gesetzt wird. Benutze ihn global (`-g`).
 * Der [`uglifyify`](https://github.com/hughsk/uglifyify)-Transformer entfernt Entwickler-Importe. Benutze auch ihn global (`-g`).
-* Schließlich wird das so entstandene Bundle an [`uglify-js`](https://github.com/mishoo/UglifyJS2) geleitet, wo es "mangled" wird ([lies warum](https://github.com/hughsk/uglifyify#motivationusage)).
+* Schließlich wird das so entstandene Bundle an [`uglify-js`](https://github.com/mishoo/UglifyJS2) geleitet, wo es "gemangled" wird ([lies warum](https://github.com/hughsk/uglifyify#motivationusage)).
 
 Zum Beispiel:
 
