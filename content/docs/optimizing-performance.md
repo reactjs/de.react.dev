@@ -6,7 +6,7 @@ redirect_from:
   - "docs/advanced-performance.html"
 ---
 
-Intern verwendet React mehrere schlaue Techniken, um die Anzahl kostspieliger DOM-Vorgänge zu minimieren, die nötig sind, um die Benutzeroberfläche zu aktualisieren. Für viele Anwendungen führt React zu einer schnellen Benutzeroberfläche, ohne dass die Performance mit viel Aufwand optimiert werden muss. Trotzdem gibt es mehrere Möglichkeiten, wie du deine React-Anwendung noch schneller machen kannst.
+Intern verwendet React mehrere clevere Techniken, um die Anzahl kostspieliger DOM-Vorgänge zu minimieren, die nötig sind, um die Benutzeroberfläche zu aktualisieren. Für viele Anwendungen führt React zu einer schnellen Benutzeroberfläche, ohne dass die Performance mit viel Aufwand optimiert werden muss. Trotzdem gibt es mehrere Möglichkeiten, wie du deine React-Anwendung noch schneller machen kannst.
 
 ## Benutze den Production-Build {#use-the-production-build}
 
