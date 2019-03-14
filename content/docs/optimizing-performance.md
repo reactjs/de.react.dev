@@ -28,7 +28,7 @@ Weiter unten findest du eine Anleitung, wie du die Production-Version deiner App
 
 ### Create React App {#create-react-app}
 
-Falls dein Projekt mit [Create React App](https://github.com/facebookincubator/create-react-app) erstellt wurde, führe aus:
+Falls dein Projekt mit [Create React App](https://github.com/facebookincubator/create-react-app) erstellt wurde, führe folgendes aus:
 
 ```
 npm run build
