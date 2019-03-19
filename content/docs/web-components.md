@@ -33,8 +33,8 @@ Eine häufige Verwirrung entsteht dadurch, dass Web Components "class" anstatt "
 function BrickFlipbox() {
   return (
     <brick-flipbox class="demo">
-      <div>front</div>
-      <div>back</div>
+      <div>vorne</div>
+      <div>hinten</div>
     </brick-flipbox>
   );
 }
