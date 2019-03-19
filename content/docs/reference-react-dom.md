@@ -102,7 +102,7 @@ Wenn eine Komponente `null` oder `false` rendert, gibt `findDOMNode` `null` zur√
 >
 > `findDOMNode` funktioniert nur bei gemounteten Komponenten (also Komponenten die in das DOM platziert wurden). Versuchst du einen Aufruf bei einer Komponente die noch nicht gemounted wurde (z.B. beim Aufruf von `findDOMNode()` in `render()` innerhalb einer Komponente die noch nicht erstellt wurde) wird eine Ausnahme geworfen.
 >
-> `findDOMNode` kann nicht bei Funktionskomponenten genutzt werden
+> `findDOMNode` kann nicht bei Funktionskomponenten genutzt werden.
 
 * * *
 
@@ -112,4 +112,4 @@ Wenn eine Komponente `null` oder `false` rendert, gibt `findDOMNode` `null` zur√
 ReactDOM.createPortal(child, container)
 ```
 
-Erstellt ein Portal. Portale sind ein Weg um [untergeordnete Elemente in einen DOM Knoten zu rendern die au√üerhalb der Hierarchie der DOM Komponente existiert](docs/portals.html).
+Erstellt ein Portal. Portale sind ein Weg um [untergeordnete Elemente in einen DOM Knoten zu rendern die au√üerhalb der Hierarchie der DOM Komponente existieren](docs/portals.html).
