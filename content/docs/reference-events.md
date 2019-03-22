@@ -1,18 +1,19 @@
 ---
 id: events
-title: SyntheticEvent
+title: Synthetisches Event
 permalink: docs/events.html
 layout: docs
-category: Reference
+category: Referenz
 ---
 
-This reference guide documents the `SyntheticEvent` wrapper that forms part of React's Event System. See the [Handling Events](/docs/handling-events.html) guide to learn more.
+Dieser Referenzleitfaden dokumentiert den `SyntheticEvent` Wrapper, welcher einen Bestandteil des Eventsystems von React darstellt.
+. Siehe [Handhabung von Events](/docs/handling-events.html) für mehr Informationen zu diesem Thema.
 
-## Overview {#overview}
+## Übersicht {#overview}
 
-Your event handlers will be passed instances of `SyntheticEvent`, a cross-browser wrapper around the browser's native event. It has the same interface as the browser's native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers.
+Die Eventhandler stellen eine Instanz des synthetischen Events dar, ein browserübergreifender Wrapper für das native Eventobjekt des Browsers. Das Interface vom synthetischen Event ist ident zu dem nativen Event des Browsers, inklusive `stopPropagation()` und `preventDefault()`. Eine Besonderheit der synthetischen Events ist jedoch die identische Funktionsweise in allen Browsern.
 
-If you find that you need the underlying browser event for some reason, simply use the `nativeEvent` attribute to get it. Every `SyntheticEvent` object has the following attributes:
+Falls aus irgendeinem Grund der Zugriff auf das native Browserevent notwendig ist, kann dieses mittels `nativeEvent` Attributs abgerufen werden. Jedes `SyntheticEvent` Objekt hat folgende Attribute:
 
 ```javascript
 boolean bubbles
@@ -31,75 +32,75 @@ number timeStamp
 string type
 ```
 
-> Note:
+> Hinweis:
 >
-> As of v0.14, returning `false` from an event handler will no longer stop event propagation. Instead, `e.stopPropagation()` or `e.preventDefault()` should be triggered manually, as appropriate.
+> Ab der Version 0.14 führt die Rückgabe des Wertes `false` von einem Eventhandler nicht zu einer Unterbrechung der Eventkette. Stattdessen soll `e.stopPropagation() oder `e.preventDefault()` explizit aufgerufen werden.
 
-### Event Pooling {#event-pooling}
+### Event Poolbildung {#event-pooling}
 
-The `SyntheticEvent` is pooled. This means that the `SyntheticEvent` object will be reused and all properties will be nullified after the event callback has been invoked.
-This is for performance reasons.
-As such, you cannot access the event in an asynchronous way.
+Das synthetische Event wird aus einem Eventpool entnommen. Im konkreten Fall bedeutet dies, dass das Objekt welches das synthetische Event repräsentiert, wiederverwendet wird und alle Eigenschafen nach dem Aufruf des Eventcallbacks nullifiziert werden.
+Diese Umsetzung bringt eine bessere Performance mit sich.
+Somit ist es ein asynchroner Zugriff auf das Event nicht möglich.
 
 ```javascript
 function onClick(event) {
-  console.log(event); // => nullified object.
-  console.log(event.type); // => "click"
-  const eventType = event.type; // => "click"
+  console.log(event); // => nullifiziertes Objekt.
+  console.log(event.type); // => "Klick"
+  const eventType = event.type; // => "Klick"
 
   setTimeout(function() {
     console.log(event.type); // => null
-    console.log(eventType); // => "click"
+    console.log(eventType); // => "Klick"
   }, 0);
 
-  // Won't work. this.state.clickEvent will only contain null values.
+  // Dies wird nicht funktionieren. this.state.clickEvent wird nur null Werte beinhalten.
   this.setState({clickEvent: event});
 
-  // You can still export event properties.
+  // Das Exportieren der Eventeigenschaften ist trotzdem möglich.
   this.setState({eventType: event.type});
 }
 ```
 
-> Note:
+> Hinweis:
 >
-> If you want to access the event properties in an asynchronous way, you should call `event.persist()` on the event, which will remove the synthetic event from the pool and allow references to the event to be retained by user code.
+> Wenn ein asynchroner Zugriff notwendig ist, kann dies durch den Aufruf von `event.persist()` auf dem Eventobjekt erfolgen. Dies führt zu der Entfernung des syntethischen Events aus dem Eventpool und erlaubt die Verwendung der Eventreferenzen.
 
-## Supported Events {#supported-events}
+## Unterstützte Events {#supported-events}
 
-React normalizes events so that they have consistent properties across different browsers.
+React führt eine Normalisierung der Events durch, damit dessen Eigenschaften konsistent und Browserübergreifend sind.
 
-The event handlers below are triggered by an event in the bubbling phase. To register an event handler for the capture phase, append `Capture` to the event name; for example, instead of using `onClick`, you would use `onClickCapture` to handle the click event in the capture phase.
+Die folgenden Eventhandler werden von einem Event in der Bubbling-Phase ausgelöst. Um ein Eventhandler für die Capture-Phase zu registrieren, muss `Capture` zum Eventnamen hinzugefügt werden; Bepsiel: Anstatt `onClick`, würde man `onClickCapture` für das Handling des Events in der Capture-Phase benutzen.
 
-- [Clipboard Events](#clipboard-events)
+- [Zwischenablage Events](#clipboard-events)
 - [Composition Events](#composition-events)
-- [Keyboard Events](#keyboard-events)
-- [Focus Events](#focus-events)
+- [Tastatur Events](#keyboard-events)
+- [Fokus Events](#focus-events)
 - [Form Events](#form-events)
-- [Mouse Events](#mouse-events)
+- [Maus Events](#mouse-events)
 - [Pointer Events](#pointer-events)
-- [Selection Events](#selection-events)
+- [Auswahl Events](#selection-events)
 - [Touch Events](#touch-events)
 - [UI Events](#ui-events)
 - [Wheel Events](#wheel-events)
 - [Media Events](#media-events)
-- [Image Events](#image-events)
+- [Bild Events](#image-events)
 - [Animation Events](#animation-events)
 - [Transition Events](#transition-events)
 - [Other Events](#other-events)
 
 * * *
 
-## Reference {#reference}
+## Referenz {#reference}
 
-### Clipboard Events {#clipboard-events}
+### Zwischenablage Events {#clipboard-events}
 
-Event names:
+Eventnamen:
 
 ```
 onCopy onCut onPaste
 ```
 
-Properties:
+Eigenschaften:
 
 ```javascript
 DOMDataTransfer clipboardData
