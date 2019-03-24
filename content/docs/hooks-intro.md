@@ -75,7 +75,7 @@ In vielen Fällen ist es nicht möglich, diese Komponenten in kleinere aufzuteil
 
 Um diese Probleme zu lösen, **geben dir Hooks die Möglichkeit eine Komponente in mehrere kleine Funktionen ohne Bezug zueinander aufzuteilen (z.B. Funktionen für Datenabrufe oder Abonnements)**, anstatt das Aufteilen anhand der Lifecycle-Methoden zu erzwingen. Optional kannst du den lokalen State auch mit einem Reducer verwalten, um den State vorhersagbarer zu machen.
 
-Wir werden das mehr in [Using the Effect Hook](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns) erörtern.
+Wir werden das mehr in [den Effect Hook benutzen](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns) erörtern.
 
 ### Klassen verwirren Mensch und Maschine {#classes-confuse-both-people-and-machines}
 
