@@ -73,7 +73,7 @@ Oft mussten wir Komponenten pflegen, die klein starteten, aber zu einem unübers
 
 In vielen Fällen ist es nicht möglich, diese Komponenten in kleinere aufzuteilen, weil dann die State-behaftete Logik überall verteilt wäre. Zudem ist es schwer diese zu testen. Dieses ist einer der Gründe, wieso viele Leute es bevorzugen, React zusammen mit einer separaten State-Management Bibliothek zu benutzen. Das allerdings führt oft dazu, dass zu viele Abstraktionen eingeführt werden, dass man zwischen verschiedenen Daten wechseln muss, und macht es schwerer Komponenten wiederzuverwenden.
 
-Um diese Probleme zu lösen, **geben dir Hooks die Möglichkeit eine Komponente in mehrere kleine Funktionen, die keinen Bezug zueinander haben, aufzuteilen (z.B. Funktionen für Daten-Abrufe oder Abonnements)**, statt das Aufteilen anhand der Lifecycle-Methoden zu erzwingen. Optional kannst du lokalen State auch mit einem Reducer verwalten, um den State vorhersagbarer zu machen.
+Um diese Probleme zu lösen, **geben dir Hooks die Möglichkeit eine Komponente in mehrere kleine Funktionen ohne Bezug zueinander aufzuteilen (z.B. Funktionen für Datenabrufe oder Abonnements)**, anstatt das Aufteilen anhand der Lifecycle-Methoden zu erzwingen. Optional kannst du den lokalen State auch mit einem Reducer verwalten, um den State vorhersagbarer zu machen.
 
 Wir werden das mehr in [Using the Effect Hook](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns) erörtern.
 
