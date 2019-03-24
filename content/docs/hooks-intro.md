@@ -53,7 +53,7 @@ Bevor wir weitermachen, beachte, dass Hooks:
 
 **Hooks ersetzen nicht dein Wissen über React-Konzepte**. Stattdessen geben Hooks eine direktere Schnittstelle zu den React-Konzepten, die du schon kennst: Props, State, Context, Refs, und Lifecycle. Wie wir später sehen werden, erlauben Hooks auch neue, mächtige Mittel, diese zu kombinieren.
 
-**Wenn du Hooks sofort erlernen möchtest, dann bitte [springe einfach direkt zur nächsten Seite!](/docs/hooks-overview.html)** Du kannst aber auch weiterlesen, um zu erfahren, wieso wir Hooks hinzugefügt haben und wie wir sie benutzen, ohne unsere Applikationen neuzuschreiben.
+**Wenn du Hooks sofort erlernen möchtest, dann [springe direkt zur nächsten Seite!](/docs/hooks-overview.html)** Du kannst aber auch weiterlesen, um zu erfahren, wieso wir Hooks hinzugefügt haben und wie wir sie benutzen, ohne unsere Applikationen neuzuschreiben.
 
 ## Motivation {#motivation}
 
