@@ -23,7 +23,7 @@ function Example() {
   );
 }
 ```
-Diese neue Funktion `useState` ist der erste Hook, mit der wir uns beschäftigen werden - dieses Beispiel war nur Teaser. Keine Angst, wenn es noch keinen Sinn ergibt!
+Die neue Funktion `useState` ist der erste Hook, mit dem wir uns beschäftigen werden. Bei diesem Beispiel handelt es sich nur um eine Vorschau. Keine Angst, wenn es jetzt noch keinen Sinn ergibt!
 
 **[Auf der nächsten Seite](/docs/hooks-overview.html) kannst du anfangen Hooks zu erlernen.** Auf dieser Seite werden wir erklären, wieso wir Hooks zu React hinzufügen und wie sie dir helfen können, großartige Applikationen zu schreiben.
 
