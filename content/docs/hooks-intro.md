@@ -43,7 +43,7 @@ Auf der React Conf 2018 gaben Sophie Alpert und Dan Abramov eine Einführung zu 
 
 Bevor wir weitermachen, beachte, dass Hooks:
 
-* **Vollständig optional** Du kannst Hooks in einigen Komponenten ausprobieren, ohne dass existierender Code neugeschrieben muss. Du musst Hooks momentan weder erlernen, noch benutzen, wenn du nicht möchtest. 
+* **Vollständig optional** sind. Du kannst Hooks in einigen Komponenten ausprobieren, ohne dass existierender Code neugeschrieben muss. Du musst Hooks momentan weder erlernen, noch benutzen, wenn du nicht möchtest. 
 
 * **100% abwärtskompatibel** Hooks beinhalten keine funktionsgefährdende Änderungen.
 
