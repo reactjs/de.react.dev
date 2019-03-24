@@ -47,7 +47,7 @@ Bevor wir weitermachen, beachte, dass Hooks:
 
 * **100% abwärtskompatibel** sind. Hooks beinhalten keine funktionsgefährdende Änderungen.
 
-* **Nun verfügbar.** Hooks sind nun mit dem Release v16.8.0 verfügbar.
+* **Nun verfügbar** sind. Hooks sind nun mit dem Release v16.8.0 verfügbar.
 
 **Es gibt keine Pläne Klassen aus React zu entfernen.** Du kannst [unten auf dieser Seite](#gradual-adoption-strategy) mehr über die schrittweise Einführung von Hooks erfahren.
 
