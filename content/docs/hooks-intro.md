@@ -93,7 +93,7 @@ Um diese Probleme zu lösen, **lassen Hooks dich mehr React-Features ohne Klasse
 
 >**TLDR: Es gibt keine Pläne Klassen aus React zu entfernen.**
 
-Wir wissen, dass React Entwickler darauf fokussiert sind, Produkte auszuliefern, und haben daher keine Zeit sich jede neuveröffentlichte API anzueignen. Hooks sind sehr neu und es könnte besser sein, mit dem Erlernen oder Einführen zu warten, bis es mehr Beispiele und Tutorials gibt.
+Wir wissen, dass React Entwickler darauf fokussiert sind, Produkte auszuliefern und haben daher keine Zeit sich jede neuveröffentlichte API anzueignen. Hooks sind sehr neu und es könnte besser sein, mit dem Erlernen oder Einführen zu warten, bis es mehr Beispiele und Tutorials gibt.
 
 Wir verstehen zudem, dass die Hürde, eine neue Primitive zu React hinzuzufügen, extrem hoch ist. Für neugierige Leser haben wir einen [detaillierten RFC](https://github.com/reactjs/rfcs/pull/68) erstellt, welcher die Motivation detaillierter beschreibt und außerdem weitere Perspektive zu spezifischen Designentscheidungen und verwandter Stand der Technik bietet.
 
