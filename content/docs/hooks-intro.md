@@ -4,7 +4,7 @@ title: Einführung in Hooks
 permalink: docs/hooks-intro.html
 next: hooks-overview.html
 ---
-*Hooks* sind ein neues Feature in React 16.8. Mit ihnen lassen sich State und andere React Features nutzen, ohne dass eine Klasse geschrieben werden muss.
+*Hooks* sind ein neues Feature in React 16.8. Damit lassen sich State und andere React Features nutzen, ohne dass eine Klasse geschrieben werden muss.
 
 ```js{4,5}
 import React, { useState } from 'react';
