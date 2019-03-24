@@ -99,7 +99,7 @@ Wir verstehen zudem, dass die Hürde, eine neue Primitive zu React hinzuzufügen
 
 **Entscheidend ist, dass Hooks Seite an Seite mit dem existierendem Code funktionieren, so dass du sie nach und nach einführen kannst.** Es gibt keine Eile zu Hooks zu migrieren. Wir empfehlen Abstand von großen Umschreibungen zu nehmen. Dies gilt erst recht für existierende, komplexe Klassen-Komponenten. Es verlangt eine leichte Änderung der Denkweise um mit "Denken in Hooks" zu starten. Laut unserer Erfahrung ist es besser das Benutzen von Hooks zuerst in neuen und unkritischen Komponenten zu proben. Darüberhinaus sollte sichergestellt sein, dass jedes Teammitglied sich mit ihnen wohlfühlt. Nachdem du Hooks ausprobiert, sei Willkommen [dein Feedback](https://github.com/facebook/react/issues/new), egal ob positiv oder negativ, an uns heranzureichen.
 
-Wir beabsichtigen für Hooks das Abdecken von allen existierenden Anwendungsfällen von Klassen, aber **wir werden Klassen-Komponenten auch in der nahen Zukunft weiter unterstützen.** Hier, bei Facebook, haben wir zehntausende von Komponenten, die wir mit Klassen geschrieben haben und wir haben absolut keine Pläne diese neuzuschreiben. Stattdessen fangen wir an Hooks in neuem Code zu benutzen - Seite an Seite mit Klassen.
+Wir beabsichtigen für Hooks das Abdecken von allen existierenden Anwendungsfällen von Klassen, aber **wir werden Klassen-Komponenten auch in der nahen Zukunft weiter unterstützen.** Hier bei Facebook, haben wir zehntausende von Komponenten, die wir mit Klassen geschrieben haben und wir haben absolut keine Pläne diese neuzuschreiben. Stattdessen fangen wir an Hooks in neuem Code zu benutzen - Seite an Seite mit Klassen.
 
 ## Häufig gestellte Fragen {#frequently-asked-questions}
 
