@@ -57,7 +57,7 @@ Bevor wir weitermachen, beachte, dass Hooks:
 
 ## Motivation {#motivation}
 
-Hooks lösen eine große Vielzahl an augenscheinlich zusammenhanglose Problemen in React, die wir in über fünf Jahren von Schreiben und Warten von tausenden Komponenten angetroffen haben. Ganz gleich, ob du React lernst, es täglich nutzt, oder sogar eine andere Bibliothek mit einem ähnlichen Komponenten-Modell bevorzugst, einige dieser Probleme können bekannt vorkommen. 
+Hooks lösen eine große Vielzahl an augenscheinlich zusammenhanglose Problemen in React auf die wir in über fünf Jahren Schreiben und Warten von tausenden Komponenten gestoßen sind. Ganz gleich, ob du React lernst, es täglich nutzt, oder sogar eine andere Bibliothek mit einem ähnlichen Komponenten-Modell bevorzugst, einige dieser Probleme könnten dir bekannt vorkommen. 
 
 ### Es ist schwer, State-behaftete Logik zwischen Komponenten wiederzuverwenden {#its-hard-to-reuse-stateful-logic-between-components}
 
