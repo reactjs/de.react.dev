@@ -41,7 +41,7 @@ Auf der React Conf 2018 gaben Sophie Alpert und Dan Abramov eine Einführung zu 
 
 ## Keine funktionsgefährdende Änderungen {#no-breaking-changes}
 
-Bevor wir weitermachen, beachte, dass Hooks sind:
+Bevor wir weitermachen, beachte, dass Hooks:
 
 * **Vollständig optional** Du kannst Hooks in einigen Komponenten ausprobieren, ohne dass existierender Code neugeschrieben muss. Du musst Hooks momentan weder erlernen, noch benutzen, wenn du nicht möchtest. 
 
