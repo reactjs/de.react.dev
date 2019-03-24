@@ -45,7 +45,7 @@ Bevor wir weitermachen, beachte, dass Hooks:
 
 * **Vollständig optional** sind. Du kannst Hooks in einigen Komponenten ausprobieren, ohne dass existierender Code neugeschrieben muss. Du musst Hooks momentan weder erlernen, noch benutzen, wenn du nicht möchtest. 
 
-* **100% abwärtskompatibel** Hooks beinhalten keine funktionsgefährdende Änderungen.
+* **100% abwärtskompatibel** sind. Hooks beinhalten keine funktionsgefährdende Änderungen.
 
 * **Nun verfügbar.** Hooks sind nun mit dem Release v16.8.0 verfügbar.
 
