@@ -210,7 +210,7 @@ Falls deine Anwendung lange Datenlisten (mit Hunderten oder Tausenden von Zeilen
 
 React baut und pflegt eine interne Repräsentation der gerenderten Benutzeroberfläche. Sie beinhaltet die React-Elemente, die deine Komponenten zurückgeben. Diese Repräsentation erlaubt es React, zu vermeiden, neue DOM-Knoten zu erstellen oder auf bereits existierende zuzugreifen, wenn dies nicht nötig ist, da dies langsamer sein kann als Operationen an JavaScript-Objekten. Man spricht manchmal vom "virtuellen DOM", aber in React Native funktioniert es auf die gleiche Weise.
 
-Wenn Props oder State eines Komponenten sich verändern, entscheidet React, ob ein tatsächliches DOM-Update nötig ist, indem es das neu ausgegebene Element mit dem zuvor gerenderten abgleicht. Wenn sie unterschiedlich sind, updated React das DOM.
+Wenn Props oder State eines Komponenten sich verändern, entscheidet React, ob ein tatsächliches DOM-Update nötig ist, indem es das neu ausgegebene Element mit dem zuvor gerenderten abgleicht. Wenn sie unterschiedlich sind, aktualisiert React das DOM.
 
 Du kannst diese Updates des virtuellen DOMs mit den React DevTools visualisieren:
 
