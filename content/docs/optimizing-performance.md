@@ -252,7 +252,7 @@ Da `shouldComponentUpdate` für den von C2 ausgehenden Teilbaum `false` zurückg
 
 Für C1 und C3 hat `shouldComponentUpdate` `true` zurückgegeben, wodurch React zu den Blättern weiterwandern musste, um diese zu überprüfen. Für C6 hat `shouldComponentUpdate` `true` zurückgegeben, und da die gerenderten Elemente nicht übereinstimmten, musste React das DOM updaten.
 
-Der letze interessante Fall ist C8. React musste diese Komponente rendern, aber da die zurückgegebenen React-Elemente keinen Unterschied zu den den zuvor gerenderten hatte, musste es das DOM nicht updaten.
+Der letze interessante Fall ist C8. React musste diese Komponente rendern, aber da die zurückgegebenen React-Elemente keinen Unterschied zu den zuvor gerenderten hatte, musste es das DOM nicht updaten.
 
 Beachte, dass React nur für C6 das DOM verändern musste, was unvermeidlich war. C8 war nach dem Vergleich der gerenderten React-Elemente abgehakt, und für C7 sowie den Teilbaum von C2 musste nicht einmal ein Vergleich stattfinden, da der Prozess hier schon nach `shouldComponentUpdate` abgehakt war und somit `render` nicht aufgerufen werden musste.
 
