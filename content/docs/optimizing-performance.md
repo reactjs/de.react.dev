@@ -390,7 +390,7 @@ function updateColorMap(colormap) {
 
 `updateColorMap` gibt nun ein neues Objekt zurück, statt das alte zu ändern. `Object.assign` ist ES6 and benötigt ein Polyfill.
 
-Es gibt ein JavaScript-Propsal zur Unterstützung der [Object Spread-Syntax](https://github.com/sebmarkbage/ecmascript-rest-spread), um es leichter zu machen, Objekte ebenfalls zu updaten, ohne sie zu mutieren.
+Es gibt ein JavaScript-Propsal zur Unterstützung der [Object Spread-Syntax](https://github.com/sebmarkbage/ecmascript-rest-spread), um es leichter zu machen, Objekte ebenfalls zu updaten, ohne sie zu verändern.
 
 ```js
 function updateColorMap(colormap) {
