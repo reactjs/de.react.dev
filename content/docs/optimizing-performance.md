@@ -8,23 +8,23 @@ redirect_from:
 
 Intern verwendet React mehrere clevere Techniken, um die Anzahl kostspieliger DOM-Vorgänge zu minimieren, die nötig sind, um die Benutzeroberfläche zu aktualisieren. Für viele Anwendungen führt React zu einer schnellen Benutzeroberfläche, ohne dass die Performance mit viel Aufwand optimiert werden muss. Trotzdem gibt es mehrere Möglichkeiten, wie du deine React-Anwendung noch schneller machen kannst.
 
-## Benutze den Production-Build {#use-the-production-build}
+## Benutze den Produktions-Build {#use-the-production-build}
 
-Falls du Benchmarking betreibst oder Performance-Probleme in deinen React-Apps feststellst, stelle sicher, dass du sie mit dem minifizierten Production-Build testest.
+Falls du Benchmarking betreibst oder Performance-Probleme in deinen React-Apps feststellst, stelle sicher, dass du sie mit dem minifizierten Produktions-Build testest.
 
-Standardmäßig enthält React viele hilfreiche Warnungen. Diese Warnungen sind während des Entwickelns sehr nützlich. Allerdings machen sie React größer und langsamer, weshalb du beim Deployen darauf achten solltest, die Production-Version zu verwenden.
+Standardmäßig enthält React viele hilfreiche Warnungen. Diese Warnungen sind während des Entwickelns sehr nützlich. Allerdings machen sie React größer und langsamer, weshalb du beim Deployen darauf achten solltest, die Produktions-Version zu verwenden.
 
-Falls du nicht sicher bist, ob dein Build-Prozess korrekt eingerichtet ist, kannst du ihn überprüfen, indem du die [React Developer Tools für Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) installierst. Wenn du eine Seite mit React im Production-Modus besuchst, hat das Icon einen dunklen Hintergrund:
+Falls du nicht sicher bist, ob dein Build-Prozess korrekt eingerichtet ist, kannst du ihn überprüfen, indem du die [React Developer Tools für Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) installierst. Wenn du eine Seite mit React im Produktions-Modus besuchst, hat das Icon einen dunklen Hintergrund:
 
-<img src="../images/docs/devtools-prod.png" style="max-width:100%" alt="React DevTools auf einer Webseite mit React im Production-Modus">
+<img src="../images/docs/devtools-prod.png" style="max-width:100%" alt="React DevTools auf einer Webseite mit React im Produktions-Modus">
 
 Wenn du eine Seite mit React im Entwickler-Modus besuchst, hat das Icon einen roten Hintergrund:
 
 <img src="../images/docs/devtools-dev.png" style="max-width:100%" alt="React DevTools auf einer Webseite mit React im Entwickler-Modus">
 
-Der Entwickler-Modus sollte benutzt werden, während du an der App arbeitest, und der Production-Modus, wenn du die Webseite deployst.
+Der Entwickler-Modus sollte benutzt werden, während du an der App arbeitest, und der Produktions-Modus, wenn du die Webseite deployst.
 
-Weiter unten findest du eine Anleitung, wie du die Production-Version deiner App erstellst.
+Weiter unten findest du eine Anleitung, wie du die Produktions-Version deiner App erstellst.
 
 ### Create React App {#create-react-app}
 
@@ -34,7 +34,7 @@ Falls dein Projekt mit [Create React App](https://github.com/facebookincubator/c
 npm run build
 ```
 
-Damit wird im `build/`-Ordner deines Projekts ein Production-Build deiner App erstellt. 
+Damit wird im `build/`-Ordner deines Projekts ein Produktions-Build deiner App erstellt. 
 
 Denke daran, dass das nur erforderlich ist, bevor du deine App deployst. Zum normalen Entwickeln benutze `npm start`.
 
@@ -47,11 +47,11 @@ Wir bieten produktionsfertige Versionen von React und React DOM als Einzeldateie
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-Denke daran, dass nur React-Dateien, die mit `.production.min.js` enden, für die Production geeignet sind.
+Denke daran, dass nur React-Dateien, die mit `.production.min.js` enden, für die Produktionsumgebung geeignet sind.
 
 ### Brunch {#brunch}
 
-Um den effizientesten Brunch-Production-Build zu bekommen, installiere das [`uglify-js-brunch`](https://github.com/brunch/uglify-js-brunch)-Plugin:
+Um den effizientesten Brunch-Produktions-Build zu bekommen, installiere das [`uglify-js-brunch`](https://github.com/brunch/uglify-js-brunch)-Plugin:
 
 ```
 # Falls du npm verwendest
@@ -61,17 +61,17 @@ npm install --save-dev uglify-js-brunch
 yarn add --dev uglify-js-brunch
 ```
 
-Um dann einen Production-Build zu erstellen, füge zum `build`-Befehl das `-p`-Flag hinzu:
+Um dann einen Produktions-Build zu erstellen, füge zum `build`-Befehl das `-p`-Flag hinzu:
 
 ```
 brunch build -p
 ```
 
-Denke daran, dass du das nur für Production-Builds machen musst. Du solltest das `-p`-Flag oder dieses Plugin nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest das `-p`-Flag oder dieses Plugin nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### Browserify {#browserify}
 
-Um den effizientesten Browserify-Production-Build zu bekommen, installiere ein paar Plugins:
+Um den effizientesten Browserify-Produktions-Build zu bekommen, installiere ein paar Plugins:
 
 ```
 # Falls du npm verwendest
@@ -81,7 +81,7 @@ npm install --save-dev envify uglify-js uglifyify
 yarn add --dev envify uglify-js uglifyify 
 ```
 
-Um einen Production-Build zu erstellen, stelle sicher, dass du diese Transformer hinzufügst **(die Reihenfolge ist wichtig)**:
+Um einen Produktions-Build zu erstellen, stelle sicher, dass du diese Transformer hinzufügst **(die Reihenfolge ist wichtig)**:
 
 * Der [`envify`](https://github.com/hughsk/envify)-Transformer stellt sicher, dass die richtige Build-Umgebung gesetzt wird. Benutze ihn global (`-g`).
 * Der [`uglifyify`](https://github.com/hughsk/uglifyify)-Transformer entfernt Entwickler-Importe. Benutze auch ihn global (`-g`).
@@ -101,11 +101,11 @@ browserify ./index.js \
 >Der Paketname ist `uglify-js`, aber die Binary, die es zur Verfügung stellt, heißt `uglifyjs`.<br>
 >Das ist kein Tippfehler.
 
-Denke daran, dass du das nur für Production-Builds machen musst. Du solltest diese Plugins nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest diese Plugins nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### Rollup {#rollup}
 
-Um den effizientesten Rollup-Production-Build zu bekommen, installiere ein paar Plugins:
+Um den effizientesten Rollup-Produktions-Build zu bekommen, installiere ein paar Plugins:
 
 ```
 # Falls du npm benutzt
@@ -115,7 +115,7 @@ npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugi
 yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify 
 ```
 
-Um einen Production-Build zu kreieren, stelle sicher, dass du diese Plugins hinzufügst **(die Reihenfolge ist wichtig)**:
+Um einen Produktions-Build zu kreieren, stelle sicher, dass du diese Plugins hinzufügst **(die Reihenfolge ist wichtig)**:
 
 * Das [`replace`](https://github.com/rollup/rollup-plugin-replace)-Plugin stellt sicher, dass die richtige Build-Umgebung gesetzt wird. 
 * Das [`commonjs`](https://github.com/rollup/rollup-plugin-commonjs)-Plugin bietet CommonJS-Unterstützung in Rollup.
@@ -135,7 +135,7 @@ plugins: [
 
 Siehe dir ein komplettes Setup-Beispiel [in diesem Gist](https://gist.github.com/Rich-Harris/cb14f4bc0670c47d00d191565be36bf0) an.
 
-Denke daran, dass du das nur für Production-Builds machen musst. Du solltest das `uglify`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest das `uglify`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### webpack {#webpack}
 
@@ -144,7 +144,7 @@ Denke daran, dass du das nur für Production-Builds machen musst. Du solltest da
 >Falls du Create React App verwendest, folge bitte den [Anweisungen weiter oben](#create-react-app).<br>
 >Dieser Abschnitt ist nur relevant, wenn du webpack direkt konfigurierst.
 
-Um den effizientesten webpack-Production-Build zu bekommen, stelle sicher, dass deine Production-Konfiguration die folgenden Plugins beinhaltet:
+Um den effizientesten webpack-Produktions-Build zu bekommen, stelle sicher, dass deine Produktions-Konfiguration die folgenden Plugins beinhaltet:
 
 ```js
 new webpack.DefinePlugin({
@@ -155,7 +155,7 @@ new webpack.optimize.UglifyJsPlugin()
 
 Mehr Informationen darüber findest du in der [webpack-Dokumentation](https://webpack.js.org/guides/production-build/).
 
-Denke daran, dass du das nur für Production-Builds machen musst. Du solltest `UglifyJsPlugin` oder `DefinePlugin` mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest `UglifyJsPlugin` oder `DefinePlugin` mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ## Komponenten-Profiling mit dem Chrome Performance-Tab {#profiling-components-with-the-chrome-performance-tab}
 
@@ -179,7 +179,7 @@ In Chrome geht das so:
 
 Für eine detailliertere Anleitung schaue dir [diesen Artikel von Ben Schwarz](https://calibreapp.com/blog/2017-11-28-debugging-react/) an.
 
-Beachte, dass **diese Zahlen relativ sind und Komponenten in Production schneller rendern werden**. Trotzdem sollten sie dir dabei helfen, zu erkennen, wenn voneinander unabhängige UI-Elemente aus Versehen geupdatet werden, und wie tief und wie oft deine UI-Updates stattfinden.
+Beachte, dass **diese Zahlen relativ sind und Komponenten in der Produktionsumgebung schneller rendern werden**. Trotzdem sollten sie dir dabei helfen, zu erkennen, wenn voneinander unabhängige UI-Elemente aus Versehen geupdatet werden, und wie tief und wie oft deine UI-Updates stattfinden.
 
 Momentan sind Chrome, Edge, and IE die einzigen Browser, die dieses Feature unterstützten, aber wir verwenden die Standard-[User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), weshalb wir annehmen, dass mehr Browser es unterstützen werden.
 
@@ -197,7 +197,7 @@ Falls du die React DevTools noch nicht installiert hast, kannst du sie hier find
 
 > Hinweis
 >
-> Ein Production-Profiling-Bundle von `react-dom` ist auch als `react-dom/profiling` verfügbar.
+> Ein Produktions-Profiling-Bundle von `react-dom` ist auch als `react-dom/profiling` verfügbar.
 > Lese mehr über die Verwendung dieses Bundles auf [fb.me/react-profiling](https://fb.me/react-profiling).
 
 ## Virtualisiere lange Listen {#virtualize-long-lists}
