@@ -372,7 +372,7 @@ handleClick() {
 };
 ```
 
-Du kannst auch Code, der Objekte mutiert, in ähnlicher Weise umschreiben. Lass uns z. B. sagen, wir haben ein Objekt namens `colormap` und möchten eine Funktion schreiben, die `colormap.blue` in `blue` umändert. Wir könnten schreiben:
+Du kannst auch Code, der Objekte verändert, in ähnlicher Weise umschreiben. Lass uns z. B. sagen, wir haben ein Objekt namens `colormap` und möchten eine Funktion schreiben, die `colormap.blue` in `blue` umändert. Wir könnten schreiben:
 
 ```js
 function updateColorMap(colormap) {
