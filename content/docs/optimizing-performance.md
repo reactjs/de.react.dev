@@ -244,7 +244,7 @@ In den meisten Fällen kannst du [`React.PureComponent`](/docs/react-api.html#re
 
 ## shouldComponentUpdate in Aktion {#shouldcomponentupdate-in-action}
 
-Hier ist ein Teilbaum von Komponenten. Für jede Komponente gibt `SCU` an, was `shouldComponentUpdate` zurückgegeben hat, und `vDOMEq` gibt an, ob die gerenderten React-Elemente übereinstimmen. Die Farbe des Kreises schließlich zeigt, ob eine Komponente abgeglichen werden musste oder nicht.
+Hier ist ein Teilbaum von Komponenten. Für jede Komponente gibt `SCU` an, was `shouldComponentUpdate` zurückgegeben hat, und `vDOMEq` gibt an, ob die gerenderten React-Elemente übereinstimmen. Die Farbe des Kreises zeigt schließlich, ob eine Komponente abgeglichen werden musste oder nicht.
 
 <figure><img src="../images/docs/should-component-update.png" style="max-width:100%" /></figure>
 
