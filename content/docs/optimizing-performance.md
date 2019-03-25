@@ -289,7 +289,7 @@ class CounterButton extends React.Component {
 }
 ```
 
-In diesem Code überprüft `shouldComponentUpdate` lediglich, ob es eine Veränderung in `props.color` oder `state.count` gegeben hat. Wenn diese Werte sich nicht verändern, wird die Komponente nicht geupdatet. Für den Fall, dass deine Komponente komplexer wird, könntest du ein ähnliches Muster verwenden, indem du einen "flachen Vergleich" zwischen allen Feldern von `props` und `state` machst, um festzustellen, ob die Komponente geupdatet werden soll. Dieses Muster ist häufig genug, dass React einen Helfer zur Verfügung stellt, um diese Logik zu verwenden - durch Vererbung von `React.PureComponent`. Dieser Code ist ein einfacherer Weg, dasselbe zu erreichen:
+In diesem Code überprüft `shouldComponentUpdate` lediglich, ob es eine Veränderung in `props.color` oder `state.count` gegeben hat. Wenn diese Werte sich nicht verändern, wird die Komponente nicht aktualisiert. Für den Fall, dass deine Komponente komplexer wird, könntest du ein ähnliches Muster verwenden, indem du einen "flachen Vergleich" zwischen allen Feldern von `props` und `state` machst, um festzustellen, ob die Komponente aktualisiert werden soll. Dieses Muster ist häufig genug, dass React einen Helfer zur Verfügung stellt, um diese Logik zu verwenden - durch Vererbung von `React.PureComponent`. Dieser Code ist ein einfacherer Weg, dasselbe zu erreichen:
 
 ```js
 class CounterButton extends React.PureComponent {
