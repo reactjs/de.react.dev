@@ -230,7 +230,7 @@ Schau dir folgendes Beispiel an:
 
 Beachte, dass beim Eingeben eines zweiten To-do-Eintrags bei jedem Tastenanschlag auch der erste To-do-Eintrag aufblinkt. Das bedeutet, dass er von React bei jeder Eingabe erneut gerendert wird. Dies wird manchmal as "verschwendetes" Rendern bezeichnet. Es ist unnötig, da der erste To-do-Eintrag sich nicht verändert hat, aber das weiß React nicht. 
 
-Obwohl React nur DOM-Knoten updatet, die sich verändert haben, braucht das erneute Rendern etwas Zeit. In vielen Fällen ist das kein Problem, doch wenn die Verlangsamung sich bemerkbar macht, kannst du den Prozess beschleunigen, indem du die Lifecycle-Funktion `shouldComponentUpdate`, die vor jedem erneuten Rendern ausgelöst wird, überschreibst. Die Standard-Implementierung dieser Funktion gibt `true` zurück und lässt React somit das Update durchführen:
+Obwohl React nur DOM-Knoten aktualisiert, die sich verändert haben, braucht das erneute Rendern etwas Zeit. In vielen Fällen ist das kein Problem, doch wenn die Verlangsamung sich bemerkbar macht, kannst du den Prozess beschleunigen, indem du die Lifecycle-Funktion `shouldComponentUpdate`, die vor jedem erneuten Rendern ausgelöst wird, überschreibst. Die Standard-Implementierung dieser Funktion gibt `true` zurück und lässt React somit das Update durchführen:
 
 ```javascript
 shouldComponentUpdate(nextProps, nextState) {
