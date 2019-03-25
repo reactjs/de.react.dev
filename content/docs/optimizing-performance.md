@@ -380,7 +380,7 @@ function updateColorMap(colormap) {
 }
 ```
 
-Um dies zu schreiben, ohne das Original-Objekt zu mutieren, können wir die [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)-Methode verwenden:
+Um dies zu schreiben, ohne das Original-Objekt zu verändern, können wir die [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)-Methode verwenden:
 
 ```js
 function updateColorMap(colormap) {
