@@ -181,7 +181,7 @@ Für eine detailliertere Anleitung schaue dir [diesen Artikel von Ben Schwarz](h
 
 Beachte, dass **diese Zahlen relativ sind und Komponenten in der Produktionsumgebung schneller rendern werden**. Trotzdem sollten sie dir dabei helfen, zu erkennen, wenn voneinander unabhängige UI-Elemente aus Versehen geupdatet werden, und wie tief und wie oft deine UI-Updates stattfinden.
 
-Momentan sind Chrome, Edge, and IE die einzigen Browser, die dieses Feature unterstützten, aber wir verwenden die Standard-[User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), weshalb wir annehmen, dass mehr Browser es unterstützen werden.
+Momentan sind Chrome, Edge und IE die einzigen Browser, die dieses Feature unterstützten, aber wir verwenden die Standard-[User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), weshalb wir annehmen, dass mehr Browser es unterstützen werden.
 
 ## Komponenten-Profiling mit dem DevTools-Profiler {#profiling-components-with-the-devtools-profiler}
 
@@ -210,9 +210,9 @@ Falls deine Anwendung lange Datenlisten (mit Hunderten oder Tausenden von Zeilen
 
 React baut und pflegt eine interne Repräsentation der gerenderten Benutzeroberfläche. Sie beinhaltet die React-Elemente, die deine Komponenten zurückgeben. Diese Repräsentation erlaubt es React, zu vermeiden, neue DOM-Knoten zu erstellen oder auf bereits existierende zuzugreifen, wenn dies nicht nötig ist, da dies langsamer sein kann als Operationen an JavaScript-Objekten. Man spricht manchmal vom "virtuellen DOM", aber in React Native funktioniert es auf die gleiche Weise.
 
-Wenn Props oder State eines Komponenten sich verändern, entscheidet React, ob ein tatsächliches DOM-Update nötig ist, indem es das neu ausgegebene Element mit dem zuvor gerenderten abgleicht. Wenn sie unterschiedlich sind, aktualisiert React das DOM.
+Wenn Props oder State einer Komponente sich verändern, entscheidet React, ob ein tatsächliches DOM-Update nötig ist, indem es das neu ausgegebene Element mit dem zuvor gerenderten abgleicht. Wenn sie unterschiedlich sind, aktualisiert React das DOM.
 
-Du kannst diese Updates des virtuellen DOMs mit den React DevTools visualisieren:
+Du kannst diese Re-render des virtuellen DOMs nun mit den React DevTools visualisieren:
 
 - [Chrome Browser-Erweiterung](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 - [Firefox Browser-Erweiterung](https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/)
@@ -238,7 +238,7 @@ shouldComponentUpdate(nextProps, nextState) {
 }
 ```
 
-Wenn du weißt, dass deine Komponente in manchen Fällen kein Update benötigt, kannst du stattdessen `shouldComponentUpdate` `false` zurückgeben lassen, um den kompletten Rendering-Prozess zu überspringen, einschließlich dem Aufruf der `render()`-Funktion auf diese und darunterliegende Komponenten.
+Wenn du weißt, dass deine Komponente in manchen Fällen kein Update benötigt, kannst du stattdessen `false` von `shouldComponentUpdate` zurückgeben lassen, um den kompletten Rendering-Prozess zu überspringen, einschließlich des Aufrufs der `render()`-Funktion auf diese und die darunterliegenden Komponenten.
 
 In den meisten Fällen kannst du [`React.PureComponent`](/docs/react-api.html#reactpurecomponent) verwenden, statt `shouldComponentUpdate()` von Hand zu schreiben. Es ist äquivalent zur Implementierung von `shouldComponentUpdate()` mit einem flachen Vergleich von alten und neuen Props und State.
 
@@ -388,7 +388,7 @@ function updateColorMap(colormap) {
 }
 ```
 
-`updateColorMap` gibt nun ein neues Objekt zurück, statt das alte zu ändern. `Object.assign` ist ES6 and benötigt ein Polyfill.
+`updateColorMap` gibt nun ein neues Objekt zurück, statt das alte zu ändern. `Object.assign` ist ES6 und benötigt ein Polyfill.
 
 Es gibt ein JavaScript-Propsal zur Unterstützung der [Object Spread-Syntax](https://github.com/sebmarkbage/ecmascript-rest-spread), um es leichter zu machen, Objekte ebenfalls zu updaten, ohne sie zu verändern.
 
