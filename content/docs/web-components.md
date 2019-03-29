@@ -27,7 +27,7 @@ class HelloMessage extends React.Component {
 > Events, welche von einer Web Component gesendet werden könnten sich möglicherweise nicht über den React-Baum ausbreiten.
 > Du musst manuelle Event-Handler erstellen, um diese Events in deinen React-Komponenten zu vearbeiten.
 
-Häufige entsteht Verwirrung dadurch, dass Web Components "class" anstatt "className" verwenden.
+Eine häufige Verwirrung besteht darin, dass Web Components "class" anstatt "className" verwenden.
 
 ```javascript
 function BrickFlipbox() {
