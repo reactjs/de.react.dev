@@ -109,7 +109,7 @@ Jede Komponente bietet zudem noch andere APIs an:
 
 ### Meistgenutzte Lifecycle Methods {#commonly-used-lifecycle-methods}
 
-The methods in this section cover the vast majority of use cases you'll encounter creating React components. **For a visual reference, check out [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).**
+Die Methoden in diesem Abschnitt decken große Mehrheit der Anwendungsfälle ab, denen du beim Erzeugen von React Komponenten begegnen wirst. **Für eine visuelle Referenz, sieh dir dieses [Lifecycle-Diagramm](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) an.**
 
 ### `render()` {#render}
 
@@ -117,23 +117,23 @@ The methods in this section cover the vast majority of use cases you'll encounte
 render()
 ```
 
-The `render()` method is the only required method in a class component.
+Die `render()`-Methode ist die einzige erforderliche Methode einer Klassenkomponente.
 
-When called, it should examine `this.props` and `this.state` and return one of the following types:
+Beim Aufruf überprüft sie `this.props` und `this.state` und gibt eines der folgenden Typen zurück:
 
-- **React elements.** Typically created via [JSX](/docs/introducing-jsx.html). For example, `<div />` and `<MyComponent />` are React elements that instruct React to render a DOM node, or another user-defined component, respectively.
-- **Arrays and fragments.** Let you return multiple elements from render. See the documentation on [fragments](/docs/fragments.html) for more details.
-- **Portals**. Let you render children into a different DOM subtree. See the documentation on [portals](/docs/portals.html) for more details.
-- **String and numbers.** These are rendered as text nodes in the DOM.
-- **Booleans or `null`**. Render nothing. (Mostly exists to support `return test && <Child />` pattern, where `test` is boolean.)
+- **React Elemente.** Typischerweise erzeugt durch [JSX](/docs/introducing-jsx.html). Beispielsweise geben `<div />` und `<MyComponent />` React Elemente zurück, welche React anweisen entsprechend einen DOM-Knoten oder eine andere benutzerdefinierte Komponente zu rendern.
+- **Arrays und Fragmente.** Erlaubt mehrere Elemente von der render Methode zurück geben zu lassen. Lese die Dokumentation bezüglich [Fragmente](/docs/fragments.html) für mehr Informationen.
+- **Portale**. Erlaubt das Rendern von Kindelementen innerhalb eines anderen DOM-Unterbaums. Lese die Dokumentation bezüglich [Portale](/docs/portals.html) für mehr Informationen.
+- **Zeichenketten und Zahlen.** Diese werden als Textknoten in der DOM gerendert.
+- **Booleans or `null`**. Nichts wird gerendert. (Existiert hauptsächlich um das `return test && <Child />`-Muster zu unterstützen, wobei `test` boolean ist.)
 
-The `render()` function should be pure, meaning that it does not modify component state, it returns the same result each time it's invoked, and it does not directly interact with the browser.
+Die `render()`-Funktion sollte rein sein, was bedeutet, dass es nicht die State der Komponente verändert, jedesmal das gleiche Ergebnis beim Aufruf liefert und nicht direkt mit dem Browser interagiert.
 
-If you need to interact with the browser, perform your work in `componentDidMount()` or the other lifecycle methods instead. Keeping `render()` pure makes components easier to think about.
+Wenn du mit dem Browser interagieren musst, tue dies innerhalb von `componentDidMount()` oder den anderen Lifecycle-Methoden. Eine reine `render()`-Funktion hilft dabei Komponenten simpel zu halten.
 
-> Note
+> Hinweis
 >
-> `render()` will not be invoked if [`shouldComponentUpdate()`](#shouldcomponentupdate) returns false.
+> `render()` wird nicht aufgerufen, falls [`shouldComponentUpdate()`](#shouldcomponentupdate) false zurückgibt.
 
 * * *
 
