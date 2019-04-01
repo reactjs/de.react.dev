@@ -39,26 +39,26 @@ Die einzige Methode, die in einer `React.Component`-Unterklasse implementiert we
 
 ### Der Lebenszyklus von Komponenten {#the-component-lifecycle}
 
-Each component has several "lifecycle methods" that you can override to run code at particular times in the process. **You can use [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) as a cheat sheet.** In the list below, commonly used lifecycle methods are marked as **bold**. The rest of them exist for relatively rare use cases.
+Jede Komponente hat verschiedene "Lifecycle-Methoden", welche du überschreiben kannst um Code zu einem bestimmten Zeitpunkt des Prozesses laufen zu lassen. **Du kannst [dieses Lifecycle-Diagramm](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) als Spickzettel nutzen.** In der Liste unten sind die häufig verwendeten Methoden **fett** hervorgehoben. Die restlichen Methoden existiert für relativ seltene Anwendungsfälle.
 
 #### Das Einfügen {#mounting}
 
-These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+Diese Methoden werden, sobald eine Instanz einer Komponente erzeugt und in die DOM eingefügt wird, in der folgenden Reihenfolge aufgerufen:
 
 - [**`constructor()`**](#constructor)
 - [`static getDerivedStateFromProps()`](#static-getderivedstatefromprops)
 - [**`render()`**](#render)
 - [**`componentDidMount()`**](#componentdidmount)
 
->Note:
+>Hinweis:
 >
->These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>Diese Methoden werden als Altlasten angesehen und in neuem Code solltest du [diese meiden](/blog/2018/03/27/update-on-async-rendering.html):
 >
 >- [`UNSAFE_componentWillMount()`](#unsafe_componentwillmount)
 
 #### Das Aktualisieren {#updating}
 
-An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
+Eine Aktualisierung kann durch Änderungen an Props oder State ausgelöst werden. Diese Methoden werden, sobald eine Komponente erneut gerendert wird, in der folgenden Reihenfolge aufgerufen:
 
 - [`static getDerivedStateFromProps()`](#static-getderivedstatefromprops)
 - [`shouldComponentUpdate()`](#shouldcomponentupdate)
@@ -66,29 +66,29 @@ An update can be caused by changes to props or state. These methods are called i
 - [`getSnapshotBeforeUpdate()`](#getsnapshotbeforeupdate)
 - [**`componentDidUpdate()`**](#componentdidupdate)
 
->Note:
+>Hinweis:
 >
->These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>Diese Methoden werden als Altlasten angesehen und in neuem Code solltest du [diese meiden](/blog/2018/03/27/update-on-async-rendering.html):
 >
 >- [`UNSAFE_componentWillUpdate()`](#unsafe_componentwillupdate)
 >- [`UNSAFE_componentWillReceiveProps()`](#unsafe_componentwillreceiveprops)
 
 #### Das Entfernen {#unmounting}
 
-This method is called when a component is being removed from the DOM:
+Diese Methode wird aufgerufen, sobald eine Komponente aus der DOM entfernt wird:
 
 - [**`componentWillUnmount()`**](#componentwillunmount)
 
-#### Fehler-Behandlung {#error-handling}
+#### Fehlerbehandlung {#error-handling}
 
-These methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+Diese Methoden werden aufgerufen, sobald während des Rendern, in einer Lifecycle-Methode oder im Konstruktor einer Kindkomponente ein Fehler auftritt.
 
 - [`static getDerivedStateFromError()`](#static-getderivedstatefromerror)
 - [`componentDidCatch()`](#componentdidcatch)
 
 ### Andere APIs {#other-apis}
 
-Each component also provides some other APIs:
+Jede Komponente bietet zudem noch andere APIs an:
 
   - [`setState()`](#setstate)
   - [`forceUpdate()`](#forceupdate)
