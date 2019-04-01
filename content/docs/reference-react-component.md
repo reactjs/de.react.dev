@@ -15,29 +15,29 @@ redirect_from:
   - "tips/use-react-with-other-libraries.html"
 ---
 
-This page contains a detailed API reference for the React component class definition. It assumes you're familiar with fundamental React concepts, such as [Components and Props](/docs/components-and-props.html), as well as [State and Lifecycle](/docs/state-and-lifecycle.html). If you're not, read them first.
+Diese Seite enthält eine detailierte API-Referenz für die React-Component Klassendefinition. Sie nimmt an, dass du mit den grundlegenden React-Konzepten, wie [Komponenten und Props](/docs/components-and-props.html) und [State und Lifecycle](/docs/state-and-lifecycle.html), vertraut bist. Falls nicht, lese die zuerst.
 
-## Überblick {#ueberblick}
+## Überblick {#overview}
 
-React lets you define components as classes or functions. Components defined as classes currently provide more features which are described in detail on this page. To define a React component class, you need to extend `React.Component`:
+React erlaubt das Definieren von Komponenten als Klassen oder Funktionen. Als Klasse definierte Komponenten bieten aktuell mehr Funktionen, auf welche hier im Detail eingegangen wird. Um eine React Komponente als Klasse zu definieren, muss `React.Component` erweitert werden:
 
 ```js
-class Welcome extends React.Component {
+class Willkommen extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return <h1>Hallo, {this.props.name}</h1>;
   }
 }
 ```
 
-The only method you *must* define in a `React.Component` subclass is called [`render()`](#render). All the other methods described on this page are optional.
+Die einzige Methode, die in einer `React.Component`-Unterklasse implementiert werden *muss*, heißt [`render()`](#render). Alle anderen auf dieser Seite beschriebenen Methoden sind optional.
 
-**We strongly recommend against creating your own base component classes.** In React components, [code reuse is primarily achieved through composition rather than inheritance](/docs/composition-vs-inheritance.html).
+**Wir raten streng davon ab, eigene Basiskomponentenklassen zu schreiben** In React Komponenten wird [hauptsächlich Code-Wiederverwendung eher durch Komposition als durch Vererbung erreicht](/docs/composition-vs-inheritance.html).
 
->Note:
+>Hinweis:
 >
->React doesn't force you to use the ES6 class syntax. If you prefer to avoid it, you may use the `create-react-class` module or a similar custom abstraction instead. Take a look at [Using React without ES6](/docs/react-without-es6.html) to learn more.
+>React zwingt dich nicht die ES6-Klassensyntax zu verwenden. Falls du sie vermeiden möchtest, kannst du das `create-react-class` Modul oder eine ähnliche eigene Abstraktion verwenden. Sie dir [React ohne ES6](/docs/react-without-es6.html) an, um mehr darüber zu lernen.
 
-### Der Lebenszyklus von Komponenten {#der-lebenszyklus-von-komponenten}
+### Der Lebenszyklus von Komponenten {#the-component-lifecycle}
 
 Each component has several "lifecycle methods" that you can override to run code at particular times in the process. **You can use [this lifecycle diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) as a cheat sheet.** In the list below, commonly used lifecycle methods are marked as **bold**. The rest of them exist for relatively rare use cases.
 
@@ -56,7 +56,7 @@ These methods are called in the following order when an instance of a component 
 >
 >- [`UNSAFE_componentWillMount()`](#unsafe_componentwillmount)
 
-#### Das Aktualisieren {#das-ktualisieren}
+#### Das Aktualisieren {#updating}
 
 An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
 
@@ -79,33 +79,33 @@ This method is called when a component is being removed from the DOM:
 
 - [**`componentWillUnmount()`**](#componentwillunmount)
 
-#### Fehler-Behandlung {#fehler-behandlung}
+#### Fehler-Behandlung {#error-handling}
 
 These methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
 
 - [`static getDerivedStateFromError()`](#static-getderivedstatefromerror)
 - [`componentDidCatch()`](#componentdidcatch)
 
-### Andere APIs {#andere-apis}
+### Andere APIs {#other-apis}
 
 Each component also provides some other APIs:
 
   - [`setState()`](#setstate)
   - [`forceUpdate()`](#forceupdate)
 
-### Klassenattribute {#klassenattribute}
+### Klassenattribute {#class-properties}
 
   - [`defaultProps`](#defaultprops)
   - [`displayName`](#displayname)
 
-### Instanzattribute {#instanzattribute}
+### Instanzattribute {#instance-properties}
 
   - [`props`](#props)
   - [`state`](#state)
 
 * * *
 
-## Referenz {#referenz}
+## Referenz {#reference}
 
 ### Meistgenutzte Lifecycle Methods {#commonly-used-lifecycle-methods}
 
