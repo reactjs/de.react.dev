@@ -1,6 +1,6 @@
 ---
 id: hooks-rules
-title: Rules of Hooks
+title: Regeln von Hooks
 permalink: docs/hooks-rules.html
 next: hooks-custom.html
 prev: hooks-effect.html
