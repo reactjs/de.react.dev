@@ -80,7 +80,7 @@ Aber warum funktioniert es, dass immer genau der richtige State bei `useState` b
 
 ```js
 // ------------
-// 1. Rendering
+// Erstes Rendering
 // ------------
 useState('Mary')           // 1. Die State-Variable name mit 'Mary' initialisieren
 useEffect(persistForm)     // 2. Effect hinzufügen, um das Formular persistent zu halten
