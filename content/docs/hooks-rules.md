@@ -16,7 +16,7 @@ Hooks sind zwar JavaScript Funtionen, allerdings müssen dabei zwei Regeln beach
 
 ### Verwende Hooks nur innerhalb von React-Funktionen {#only-call-hooks-from-react-functions}
 
-**Verwende keine Hooks in normalen JavaScript-Funktionen.**  Stattdessen gilt:
+**Rufe Hooks nicht in normalen JavaScript-Funktionen auf.**  Stattdessen kannst du:
 
 * ✅ Verwende Hooks in React-Funktionen
 * ✅ Verwende Hooks in eigenen Hooks (Mehr dazu auf der [nächsten Seite](/docs/hooks-custom.html)).
