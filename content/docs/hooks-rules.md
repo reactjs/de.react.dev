@@ -19,7 +19,7 @@ Hooks sind zwar JavaScript Funtionen, allerdings müssen dabei zwei Regeln beach
 **Rufe Hooks nicht in normalen JavaScript-Funktionen auf.**  Stattdessen kannst du:
 
 * ✅ Hooks in React-Funktions-Komponenten aufrufen.
-* ✅ Verwende Hooks in eigenen Hooks (Mehr dazu auf der [nächsten Seite](/docs/hooks-custom.html)).
+* ✅ Hooks in eigenen Hooks aufrufen (Mehr dazu auf der [nächsten Seite](/docs/hooks-custom.html)).
 
 Durch das Befolgen dieser Regeln stellst du sicher, dass die State-behaftete Logik einer Komponente aus dem Quellcode auf Anhieb erkennbar ist.
 
