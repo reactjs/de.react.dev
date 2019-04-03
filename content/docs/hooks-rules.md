@@ -88,7 +88,7 @@ useState('Poppins')        // 3. Die State-Variable surname mit 'Poppins' initia
 useEffect(updateTitle)     // 4. Effect hinzufügen, um den Titel zu aktualisieren
 
 // -------------
-// 2. Rendering
+// Zweites Rendering
 // -------------
 useState('Mary')           // 1. Die State-Variable name auslesen (Das Argument wird ignoriert)
 useEffect(persistForm)     // 2. Den Effect ersetzen, der das Formular persistent hält
