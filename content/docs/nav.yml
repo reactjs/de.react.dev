@@ -38,7 +38,7 @@
 - title: Advanced Guides
   items:
     - id: accessibility
-      title: Accessibility
+      title: Zugänglichkeit
     - id: code-splitting
       title: Code-Splitting
     - id: context
@@ -56,7 +56,7 @@
     - id: jsx-in-depth
       title: JSX im Detail
     - id: optimizing-performance
-      title: Optimizing Performance
+      title: Performance optimieren
     - id: portals
       title: Portals
     - id: react-without-es6
