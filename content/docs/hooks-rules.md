@@ -21,7 +21,7 @@ Hooks sind zwar JavaScript Funtionen, allerdings müssen dabei zwei Regeln beach
 * ✅ Hooks in React-Funktions-Komponenten aufrufen.
 * ✅ Verwende Hooks in eigenen Hooks (Mehr dazu auf der [nächsten Seite](/docs/hooks-custom.html)).
 
-Wenn diese Regeln befolgt werden, ist die State-behaftete Logik einer Komponente auf Anhieb erkennbar.
+Durch das Befolgen dieser Regeln stellst du sicher, dass die State-behaftete Logik einer Komponente aus dem Quellcode auf Anhieb erkennbar ist.
 
 ## ESLint Plugin {#eslint-plugin}
 
