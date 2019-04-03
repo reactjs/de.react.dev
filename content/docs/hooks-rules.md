@@ -109,7 +109,7 @@ Solange die Reihenfolge der Hooks-Aufrufe zwischen den Rendering's gleich bleibt
   }
 ```
 
-Bei dem ersten Rendering ist die Bedingung `name !== ''` ist `true`, also der Hook durchgeführt wird. Im nächsten Rendering könnte der Nutzer das Formular löschen, damit wäre die Bedingung `false`. Folglich würde im nächsten Rendering der Hook übersprungen, und die Reihenfolge würde sich ändern:
+Bei dem ersten Rendering ist die Bedingung `name !== ''` `true`, also führen wir diesen Hook aus. Im nächsten Rendering könnte der Nutzer das Formular löschen, damit wäre die Bedingung `false`. Folglich würde im nächsten Rendering der Hook übersprungen, und die Reihenfolge würde sich ändern:
 
 ```js
 useState('Mary')           // 1. Die State-Variable name auslesen (Das Argument wird ignoriert)
