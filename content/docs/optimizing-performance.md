@@ -430,6 +430,6 @@ x === z; // true
 
 In diesem Fall wird eine neue Referenz zurückgegeben, wenn `x` verändert wird, und so können wir die Referenzen auf Gleichheit prüfen `(x === y)`, um zu verifizieren, dass der neue Wert, der in `y` gespeichert wurde, sich vom ursprünglichen Wert unterscheidet, der in `x` gespeichert ist.
 
-Zwei weitere Bibliotheken, die dabei helfen können, unveränderliche Datenstrukturen zu benutzen, sind [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) und [immutability-helper](https://github.com/kolodny/immutability-helper).
+Zwei weitere Bibliotheken, die dabei helfen können, unveränderliche Datenstrukturen zu benutzen, sin [Immer](https://github.com/mweststrate/immer), [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) und [immutability-helper](https://github.com/kolodny/immutability-helper).
 
 Unveränderliche Datenstrukturen bieten dir einen leichten Weg, Änderungen an Objekten nachzuverfolgen, und das ist alles, was wir brauchen, um `shouldComponentUpdate` zu implementieren. Dies kann oft zu einem Performanceanstieg führen.
