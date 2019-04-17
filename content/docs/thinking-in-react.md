@@ -1,6 +1,6 @@
 ---
 id: thinking-in-react
-title: Thinking in React
+title: Denken in React
 permalink: docs/thinking-in-react.html
 redirect_from:
   - 'blog/2013/11/05/thinking-in-react.html'
@@ -8,9 +8,9 @@ redirect_from:
 prev: composition-vs-inheritance.html
 ---
 
-React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.
+React ist unserer Meinung nach der beste Weg, um große, schnelle Web Applikationen mit JavaScript zu erstellen. Es hat sich für uns bei Facebook und Instagram sehr gelohnt.
 
-One of the many great parts of React is how it makes you think about apps as you build them. In this document, we'll walk you through the thought process of building a searchable product data table using React.
+Einer der vielen großartigen Teile von React ist, wie es dich zum Nachdenken über die Applikationen bringt, während du sie erstellst. In diesem Dokument führen wir dich durch den Denkprozess, wie man eine durchsuchbare Produktdatentabelle mit React erstellt.
 
 ## Start With A Mock {#start-with-a-mock}
 
