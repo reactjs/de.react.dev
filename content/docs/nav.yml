@@ -35,7 +35,7 @@
       title: Composition vs Inheritance
     - id: thinking-in-react
       title: Thinking In React
-- title: Advanced Guides
+- title: Fortgeschrittene Anleitungen
   items:
     - id: accessibility
       title: Zugänglichkeit
@@ -148,6 +148,6 @@
     - id: faq-structure
       title: Dateistruktur
     - id: faq-versioning
-      title: Versioning Policy
+      title: Versionierungsrichtlinie
     - id: faq-internals
-      title: Virtual DOM und Internals
+      title: Virtuelles DOM und Internes
