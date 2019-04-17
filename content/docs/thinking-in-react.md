@@ -31,27 +31,27 @@ Unsere JSON API gibt uns Daten zurück, die folgendermaßen aussehen:
 ];
 ```
 
-## Step 1: Break The UI Into A Component Hierarchy {#step-1-break-the-ui-into-a-component-hierarchy}
+## Schritt 1: Zerlege die Benutzeroberfläche in eine Komponentenhierarchie {#step-1-break-the-ui-into-a-component-hierarchy}
 
-The first thing you'll want to do is to draw boxes around every component (and subcomponent) in the mock and give them all names. If you're working with a designer, they may have already done this, so go talk to them! Their Photoshop layer names may end up being the names of your React components!
+Zuerst solltest du um jede Komponente und Unterkomponente des Mock-Ups eine Box zeichnen und jeder einen Name geben. Falls du mit einem Designer zusammenarbeitest, hat er das vielleicht schon getan, also geh und frage ihn! Die Namen der Photoshop-Ebenen könnten letztendlich die Namen deiner React-Komponenten sein!
 
-But how do you know what should be its own component? Just use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
+Aber woher weißt du, was eine eigene Komponente sein sollte? Verwende einfach die gleichen Techniken, die du auch verwendest, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt anlegen möchtest. Eine dieser Techniken ist das[Single Responsibility Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erledigen. Sobald sie wächst, sollte sie in kleinere Teilkomponenten zerlegt werden.
 
-Since you're often displaying a JSON data model to a user, you'll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. That's because UI and data models tend to adhere to the same *information architecture*, which means the work of separating your UI into components is often trivial. Just break it up into components that represent exactly one piece of your data model.
+Da du einem Benutzer häufig ein JSON Datenmodell präsentieren wirst, wirst du feststellen, dass, falls dein Datenmodell korrekt aufgebaut wurde, deine Benutzeroberfläche (und damit auch deine Komponentenstruktur) gut dazu zusammenpasst. Das liegt daran, dass Benutzeroberfläche und Datenmodell tendenziell der gleichen *Informationsarchitektur* folgen, was bedeutet, dass es oft trivial ist, deine Benutzeroberfläche in Komponenten aufzuteilen. Zerlege sie einfach in Komponenten, die genau ein Stück deines Datenmodells darstellen.
 
 ![Component diagram](../images/blog/thinking-in-react-components.png)
 
-You'll see here that we have five components in our simple app. We've italicized the data each component represents.
+Du siehst hier, dass wir fünf Komponenten in unserer einfachen App haben. Wir haben die Daten, die von jeder Komponente repräsentiert werden, kursiv dargestellt.
 
-  1. **`FilterableProductTable` (orange):** contains the entirety of the example
-  2. **`SearchBar` (blue):** receives all *user input*
-  3. **`ProductTable` (green):** displays and filters the *data collection* based on *user input*
-  4. **`ProductCategoryRow` (turquoise):** displays a heading for each *category*
-  5. **`ProductRow` (red):** displays a row for each *product*
+  1. **`FilterableProductTable` (orange):** enthält das gesamte Beispiel
+  2. **`SearchBar` (blau):** empfängt alle *Benutzereingaben*
+  3. **`ProductTable` (grün):** zeigt und filtert die *Daten* basierend auf *Benutzereingaben* an
+  4. **`ProductCategoryRow` (türkis):** zeigt eine Überschrift für jede *Kategorie* an
+  5. **`ProductRow` (rot):** zeigt eine Zeile für jedes *Produkt* an
 
-If you look at `ProductTable`, you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and there's an argument to be made either way. For this example, we left it as part of `ProductTable` because it is part of rendering the *data collection* which is `ProductTable`'s responsibility. However, if this header grows to be complex (i.e. if we were to add affordances for sorting), it would certainly make sense to make this its own `ProductTableHeader` component.
+Wenn du dir `ProductTable` anschaust, wirsts du feststellen, dass der Tabellenkopf (mit den Bezeichnungen "Name" und "Price") keine eigene Komponente ist. Das ist eine Frage der Präferenz und es gibt Argumente für beide Seiten. Für dieses Beispiel haben wir ihn als Teil von `ProductTable` gelassen, da er Teil der Darstellung der *Daten* ist, die in der Verantwortung von `ProductTable` liegt. Wenn diese Kopfzeile jedoch immer komplexer werden sollte (d.h. falls wir beispielsweise eine Sortierung hinzufügen würden), wäre es sicherlich sinnvoll, diese Kopfzeile zu einer eigenen `ProductTableHeader`-Komponente zu machen.
 
-Now that we've identified the components in our mock, let's arrange them into a hierarchy. This is easy. Components that appear within another component in the mock should appear as a child in the hierarchy:
+Nachdem wir nun die Komponenten in unserem Mock-Up identifiziert haben, lass uns diese in eine Hierarchie einordnen. Das ist einfach. Komponenten, die innerhalb einer anderen Komponente im Mock-Up erscheinen, sollten als Kind in der Hierarchie erscheinen:
 
   * `FilterableProductTable`
     * `SearchBar`
