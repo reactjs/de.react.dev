@@ -12,13 +12,13 @@ React ist unserer Meinung nach der beste Weg, um große, schnelle Web Applikatio
 
 Einer der vielen großartigen Teile von React ist, wie es dich zum Nachdenken über die Applikationen bringt, während du sie erstellst. In diesem Dokument führen wir dich durch den Denkprozess, wie man eine durchsuchbare Produktdatentabelle mit React erstellt.
 
-## Start With A Mock {#start-with-a-mock}
+## Beginne mit einem Mock-Up {#start-with-a-mock}
 
-Imagine that we already have a JSON API and a mock from our designer. The mock looks like this:
+Stell dir vor, dass wir bereits eine JSON API und ein Mock-Up unseres Designers haben. Das Mock-Up sieht so aus:
 
 ![Mockup](../images/blog/thinking-in-react-mock.png)
 
-Our JSON API returns some data that looks like this:
+Unsere JSON API gibt uns Daten zurück, die folgendermaßen aussehen:
 
 ```
 [
