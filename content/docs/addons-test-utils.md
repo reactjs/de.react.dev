@@ -139,7 +139,7 @@ mockComponent(
 
 > Hinweis:
 >
-> `mockComponent()` is eine veraltete API. Wir empfehlen, stattdessen [shallow rendering](/docs/shallow-renderer.html) oder [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) zu verwenden.
+> `mockComponent()` ist eine veraltete API. Wir empfehlen, stattdessen [shallow rendering](/docs/shallow-renderer.html) oder [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) zu verwenden.
 
 * * *
 
