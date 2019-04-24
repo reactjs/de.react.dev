@@ -234,7 +234,7 @@ findRenderedDOMComponentWithClass(
 )
 ```
 
-Wie [`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass), erwartet aber genau ein Resultat und gibt dieses zurück. Falls es mehr oder weniger als ein Match gibt, wird ein Fehler ausgegeben.
+Verhält sich wie [`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass), erwartet aber genau ein Resultat und gibt dieses zurück. Gibt einen Fehler aus, falls es mehr oder weniger als eine Übereinstimmung gibt.
 
 * * *
 
