@@ -122,7 +122,7 @@ it('kann einen Counter rendern und updaten', () => {
 });
 ```
 
-Vergiss nicht, dass das Dispatchen von DOM-Events nur funktioniert, wenn der DOM-Container zum `document` hinzugefügt wurde. Du kannst [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) zur Hilfe nehmen, um Boilerplate-Code zu reduzieren.
+Vergiss nicht, dass das abschicken von DOM-Events nur funktioniert, wenn der DOM-Container zum `document` hinzugefügt wurde. Du kannst [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) zur Hilfe nehmen, um Boilerplate-Code zu reduzieren.
 
 * * *
 
