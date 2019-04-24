@@ -53,7 +53,7 @@ npm start
 
 Create React App handhabt weder Backend-Logik noch Datenbanken; es erzeugt einfach nur eine Frontend Build Pipeline, so dass du es mit jedem gewünschten Backend verwenden kannst. Unter der Haube verwendet es [Babel](https://babeljs.io/) und [webpack](https://webpack.js.org/), aber darüber musst du nichts wissen.
 
-Wenn du bereit bist auf die Produktionsumgebung zu deployen, führe `npm run build` aus. Dies erstellt einen optimierten Build für deine Anwendung im `build` Ordner. Du kannst mehr über Create React App [in der README](https://github.com/facebookincubator/create-react-app#create-react-app--) und dem [Benutzerhandbuch](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents) erfahren.
+Wenn du bereit bist auf die Produktionsumgebung zu deployen, führe `npm run build` aus. Dies erstellt einen optimierten Build für deine Anwendung im `build` Ordner. Du kannst mehr über Create React App [in der README](https://github.com/facebookincubator/create-react-app#create-react-app--) und dem [Benutzerhandbuch](https://facebook.github.io/create-react-app/) erfahren.
 
 ### Next.js {#nextjs}
 

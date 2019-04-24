@@ -28,7 +28,7 @@ Durch das Befolgen dieser Regeln stellst du sicher, dass die State-behaftete Log
 Wir haben das ESLint-Plugin [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) veröffentlicht, das diese Regeln durchsetzt. Du kannst dieses Plugin folgendermaßen zu deinem Projekt hinzufügen, falls du es ausprobieren möchtest:
 
 ```bash
-npm install eslint-plugin-react-hooks
+npm install eslint-plugin-react-hooks --save-dev
 ```
 
 ```js
