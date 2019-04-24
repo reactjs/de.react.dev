@@ -53,7 +53,11 @@ npm start
 
 Create React App handhabt weder Backend-Logik noch Datenbanken; es erzeugt einfach nur eine Frontend Build Pipeline, so dass du es mit jedem gewünschten Backend verwenden kannst. Unter der Haube verwendet es [Babel](https://babeljs.io/) und [webpack](https://webpack.js.org/), aber darüber musst du nichts wissen.
 
+<<<<<<< HEAD
 Wenn du bereit bist auf die Produktionsumgebung zu deployen, führe `npm run build` aus. Dies erstellt einen optimierten Build für deine Anwendung im `build` Ordner. Du kannst mehr über Create React App [in der README](https://github.com/facebookincubator/create-react-app#create-react-app--) und dem [Benutzerhandbuch](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents) erfahren.
+=======
+When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app--) and the [User Guide](https://facebook.github.io/create-react-app/).
+>>>>>>> 6bc6e7b1411d4befc3ecfbe45b898ca474116020
 
 ### Next.js {#nextjs}
 
@@ -69,7 +73,11 @@ Lerne Gatsby durch den [offiziellen Leitfaden](https://www.gatsbyjs.org/docs/) u
 
 ### Flexiblere Werkzeuge {#more-flexible-toolchains}
 
+<<<<<<< HEAD
 Die folgenden Werkzeuge bieten mehr Flexibilität und Freiheiten. Wir empfehlen sie für erfahrenere Benutzer:
+=======
+The following toolchains offer more flexibility and choice. We recommend them to more experienced users:
+>>>>>>> 6bc6e7b1411d4befc3ecfbe45b898ca474116020
 
 - **[Neutrino](https://neutrinojs.org/)** kombiniert die Stärke von [webpack](https://webpack.js.org/) mit der Einfachheit von Voreinstellungen und bringt eine Voreinstellung für [React Anwendungen](https://neutrinojs.org/packages/react/) und [React Komponenten](https://neutrinojs.org/packages/react-components/) mit.
 
