@@ -320,7 +320,7 @@ Simulate.{eventName}(
 )
 ```
 
-Simuliere das Dispatchen eines Events auf einem DOM-Knoten mit optionalen `eventData`-Eventdaten.
+Simuliere das Abschicken eines Events auf einen DOM-Knoten mit optionalen `eventData`-Eventdaten.
 
 `Simulate` hat eine Methode für [jedes Event, das React versteht](/docs/events.html#supported-events).
 
