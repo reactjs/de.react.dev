@@ -59,24 +59,24 @@ Nachdem wir nun die Komponenten in unserem Mock-Up identifiziert haben, lass uns
       * `ProductCategoryRow`
       * `ProductRow`
 
-## Step 2: Build A Static Version in React {#step-2-build-a-static-version-in-react}
+## Schritt 2: Erstelle eine statische Version in React {#step-2-build-a-static-version-in-react}
 
 <p data-height="600" data-theme-id="0" data-slug-hash="BwWzwm" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/BwWzwm">Thinking In React: Step 2</a> on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-Now that you have your component hierarchy, it's time to implement your app. The easiest way is to build a version that takes your data model and renders the UI but has no interactivity. It's best to decouple these processes because building a static version requires a lot of typing and no thinking, and adding interactivity requires a lot of thinking and not a lot of typing. We'll see why.
+Jetzt, da du deine Komponentenhierarchie hast, ist es an der Zeit, die Applikation zu implementieren. Der einfachste Weg ist, eine Version zu erstellen, die dein Datenmodell verwendet und die Benutzeroberfläche rendert, aber keine Interaktivität hat. Es ist am besten, diese Prozesse zu entkoppeln, denn die Erstellung einer statischen Version erfordert viel Tippen und weniger Nachdenken, und das Hinzufügen von Interaktivität erfordert viel Nachdenken und weniger Tippen. Wir werden sehen, warum.
 
-To build a static version of your app that renders your data model, you'll want to build components that reuse other components and pass data using *props*. *props* are a way of passing data from parent to child. If you're familiar with the concept of *state*, **don't use state at all** to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.
+Um eine statische Version deiner App zu erstellen, die dein Datenmodell rendert, solltest du Komponenten erstellen, die andere Komponenten wiederverwenden und Daten per *Props* weitergeben. *Props* sind eine Möglichkeit, Daten von Eltern zu Kind zu übertragen. Wenn du mit dem Konzept von *state* vertraut bist, verwende **state hierfür noch nicht**, um diese statische Version zu erstellen. State ist nur für Interaktivität reserviert, d.h. Daten, die sich im Laufe der Zeit ändern. Da es sich um eine statische Version der App handelt, benötigst du ihn nicht.
 
-You can build top-down or bottom-up. That is, you can either start with building the components higher up in the hierarchy (i.e. starting with `FilterableProductTable`) or with the ones lower in it (`ProductRow`). In simpler examples, it's usually easier to go top-down, and on larger projects, it's easier to go bottom-up and write tests as you build.
+Du kannst von oben nach unten (top-down) oder von unten nach oben (bottom-up) vorgehen. Das heißt, du kannst entweder mit dem Aufbau der Komponenten von oben in der Hierarchie beginnen (d.h. mit `FilterableProductTable`) oder mit denjenigen weiter unten (`ProductRow`). In simpleren Beispielen ist es in der Regel einfacher, von oben nach unten zu gehen, und bei größeren Projekten ist es einfacher, beim Erstellen von unten nach oben zu gehen und gleichzeitig Tests zu schreiben.
 
-At the end of this step, you'll have a library of reusable components that render your data model. The components will only have `render()` methods since this is a static version of your app. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. If you make a change to your underlying data model and call `ReactDOM.render()` again, the UI will be updated. It's easy to see how your UI is updated and where to make changes since there's nothing complicated going on. React's **one-way data flow** (also called *one-way binding*) keeps everything modular and fast.
+Am Ende dieses Schrittes steht dir eine Ansammlung von wiederverwendbaren Komponenten zur Verfügung, die dein Datenmodell darstellt. Die Komponenten haben jeweils nur eine `render()` Methode, da es sich um eine statische Version deiner App handelt. Die Komponente an der Spitze der Hierarchie (`FilterableProductTable`) nimmt dein Datenmodell als Prop. Wenn du eine Änderung an deinem zugrunde liegenden Datenmodell vornimmst und `ReactDOM.render()` erneut aufrufst, wird die Benutzeroberfläche aktualisiert. Es ist leicht zu erkennen, wie deine Benutzeroberfläche aktualisiert wird und wo Änderungen vorgenommen werden können, da nichts Kompliziertes vor sich geht. React's **One-Way-Data Flow** (Daten fließen nur in eine Richtung) (auch *One-Way-Binding* genannt) hält alles modular und schnell.
 
-Simply refer to the [React docs](/docs/) if you need help executing this step.
+Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in die [React docs](/docs/).
 
-### A Brief Interlude: Props vs State {#a-brief-interlude-props-vs-state}
+### Ein kurzer Einschub: Props vs State {#a-brief-interlude-props-vs-state}
 
-There are two types of "model" data in React: props and state. It's important to understand the distinction between the two; skim [the official React docs](/docs/interactivity-and-dynamic-uis.html) if you aren't sure what the difference is.
+Es gibt zwei Arten von Daten in React: Props und State. Es ist wichtig, den Unterschied zwischen den beiden zu verstehen; durchforste [die offiziellen React-Docs](/docs/interactivity-and-dynamic-uis.html), wenn du sich nicht sicher bist, was der Unterschied ist.
 
 ## Step 3: Identify The Minimal (but complete) Representation Of UI State {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
