@@ -106,7 +106,7 @@ führen wir eine [Liste von empfehlenswerten Quellen](/community/courses.html). 
 
 ### Fortgeschrittene Konzepte {#advanced-concepts}
 
-Wenn du einmal mit den Hauptkonzepten vertraut bist und ein wenig mit React herumgespielt hast, bist du vielleicht an den fortgeschrittenen Konzepten interessiert. Dieser Abschnitt zeigt dir mächtige React-Funktionen, wie [context](/docs/context.html) und [refs](/docs/refs-and-the-dom.html), diese finden aber weniger häufig Verwendung.
+Wenn du einmal mit den [Hauptkonzepten](/docs/hello-world.html) vertraut bist und ein wenig mit React herumgespielt hast, bist du vielleicht an den fortgeschrittenen Konzepten interessiert. Dieser Abschnitt zeigt dir mächtige React-Features, wie [context](/docs/context.html) und [refs](/docs/refs-and-the-dom.html), diese finden aber weniger häufig Verwendung.
 
 ### API Referenz {#api-reference}
 
