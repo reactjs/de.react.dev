@@ -113,7 +113,7 @@ class Columns extends React.Component {
 
 Du kannst `<></>` so verwenden, wie du jedes andere Element verwendest. Mit Ausnahme davon, dass es keine Keys oder Attribute unterstützt.
 
-Beachten, dass **[viele Tools es noch nicht unterstützen](/blog/2017/11/28/react-v16.2.0-fragment-support.html#support-for-fragment-syntax)**, so dass du vielleicht `<React.Fragment>` explizit schreiben solltest, bis das Tooling aufholt.
+Beachte, dass **[viele Tools es noch nicht unterstützen](/blog/2017/11/28/react-v16.2.0-fragment-support.html#support-for-fragment-syntax)**, so dass du vielleicht `<React.Fragment>` explizit schreiben solltest, bis das Tooling aufholt.
 
 ### Keyed Fragmente {#keyed-fragments}
 
