@@ -1,6 +1,6 @@
 ---
 id: lists-and-keys
-title: Listen und Keys
+title: Listen und Schlüssel
 permalink: docs/lists-and-keys.html
 prev: conditional-rendering.html
 next: forms.html
@@ -96,7 +96,7 @@ ReactDOM.render(
 
 [**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
 
-## Keys {#keys}
+## Schlüssel(Keys) {#keys}
 
 Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:
 
@@ -134,13 +134,13 @@ We don't recommend using indexes for keys if the order of items may change. This
 
 Here is an [in-depth explanation about why keys are necessary](/docs/reconciliation.html#recursing-on-children) if you're interested in learning more.
 
-### Extracting Components with Keys {#extracting-components-with-keys}
+### Extrahieren von Komponenten mit Schlüsseln {#extracting-components-with-keys}
 
 Keys only make sense in the context of the surrounding array.
 
 For example, if you [extract](/docs/components-and-props.html#extracting-components) a `ListItem` component, you should keep the key on the `<ListItem />` elements in the array rather than on the `<li>` element in the `ListItem` itself.
 
-**Example: Incorrect Key Usage**
+**Beispiel: Falsche Schlüsselverwendung**
 
 ```javascript{4,5,14,15}
 function ListItem(props) {
@@ -173,7 +173,7 @@ ReactDOM.render(
 );
 ```
 
-**Example: Correct Key Usage**
+**Beispiel: Richtige Schlüsselverwendung**
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
@@ -206,7 +206,7 @@ ReactDOM.render(
 
 A good rule of thumb is that elements inside the `map()` call need keys.
 
-### Keys Must Only Be Unique Among Siblings {#keys-must-only-be-unique-among-siblings}
+### Schlüssel müssen nur bei Geschwistern eindeutig sein {#keys-must-only-be-unique-among-siblings}
 
 Keys used within arrays should be unique among their siblings. However they don't need to be globally unique. We can use the same keys when we produce two different arrays:
 
@@ -237,8 +237,8 @@ function Blog(props) {
 }
 
 const posts = [
-  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+  {id: 1, title: 'Hallo Welt', content: 'Willkommen beim Lernen von React!'},
+  {id: 2, title: 'Installation', content: 'Du kannst React via npm installieren.'}
 ];
 ReactDOM.render(
   <Blog posts={posts} />,
@@ -261,7 +261,7 @@ const content = posts.map((post) =>
 
 With the example above, the `Post` component can read `props.id`, but not `props.key`.
 
-### Embedding map() in JSX {#embedding-map-in-jsx}
+### Einbetten von map() in JSX {#embedding-map-in-jsx}
 
 In the examples above we declared a separate `listItems` variable and included it in JSX:
 
