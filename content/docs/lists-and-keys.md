@@ -1,14 +1,14 @@
 ---
 id: lists-and-keys
-title: Lists and Keys
+title: Listen und Keys
 permalink: docs/lists-and-keys.html
 prev: conditional-rendering.html
 next: forms.html
 ---
 
-First, let's review how you transform lists in JavaScript.
+Lass uns zuerst schauen, wie wir Listen in JavaScript transformieren können.
 
-Given the code below, we use the [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function to take an array of `numbers` and double their values. We assign the new array returned by `map()` to the variable `doubled` and log it:
+In dem untenstehenden Code verwenden wir die [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) Funktion um die Werte eines `Nummern`-Arrays zu verdoppeln. Wir weisen das von `map()` neu zurückgegebene Array der Variable `double` zu und loggen es:
 
 ```javascript{2}
 const numbers = [1, 2, 3, 4, 5];
@@ -16,15 +16,15 @@ const doubled = numbers.map((number) => number * 2);
 console.log(doubled);
 ```
 
-This code logs `[2, 4, 6, 8, 10]` to the console.
+Dieser Code schreibt `[2, 4, 6, 8, 10]` in die Konsole.
 
-In React, transforming arrays into lists of [elements](/docs/rendering-elements.html) is nearly identical.
+In React, ist das transformieren von Arrays in [Element](/docs/rendering-elements.html)-Listen nahezu identisch.
 
-### Rendering Multiple Components {#rendering-multiple-components}
+### Rendern meherer Komponenten {#rendering-multiple-components}
 
-You can build collections of elements and [include them in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) using curly braces `{}`.
+Du kannst Sammlungen von Elementen erstellen und diese mit geschweiften Klammern `{}` [in JSX einbinden](/docs/introducing-jsx.html#embedding-expressions-in-jsx).
 
-Below, we loop through the `numbers` array using the JavaScript [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function. We return a `<li>` element for each item. Finally, we assign the resulting array of elements to `listItems`:
+Nachfolgend wird ein `Nummern`-Array mit Hilfe der JavaScript [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) Funktion. Wir geben für jeden Eintrag im Array ein `<li>` Element zurück. Schließlich weisen wir das Array der Variable `listItems` zu:
 
 ```javascript{2-4}
 const numbers = [1, 2, 3, 4, 5];
@@ -33,7 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-We include the entire `listItems` array inside a `<ul>` element, and [render it to the DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+Wir fügen das gesamte `listItems` Array in ein `<ul>` Element, und [rendern es in das DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
 
 ```javascript{2}
 ReactDOM.render(
@@ -42,7 +42,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
+[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
 
 This code displays a bullet list of numbers between 1 and 5.
 
@@ -94,7 +94,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
+[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
 
 ## Keys {#keys}
 
@@ -202,7 +202,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
+[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
 
 A good rule of thumb is that elements inside the `map()` call need keys.
 
@@ -246,7 +246,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
+[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
 Keys serve as a hint to React but they don't get passed to your components. If you need the same value in your component, pass it explicitly as a prop with a different name:
 
@@ -296,6 +296,6 @@ function NumberList(props) {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
+[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
 Sometimes this results in clearer code, but this style can also be abused. Like in JavaScript, it is up to you to decide whether it is worth extracting a variable for readability. Keep in mind that if the `map()` body is too nested, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
