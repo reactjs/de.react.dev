@@ -14,8 +14,8 @@ Eine Anwendung für React 16 sollte wie folgt aussehen, wenn sie mit der Hilfe v
 core-js gepolyfilled wird um älteren Browsern zur Verfügung gestellt zu werden:
 
 ```js
-import 'core-js/es6/map';
-import 'core-js/es6/set';
+import 'core-js/es/map';
+import 'core-js/es/set';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
