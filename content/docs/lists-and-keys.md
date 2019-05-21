@@ -44,13 +44,13 @@ ReactDOM.render(
 
 [**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
 
-This code displays a bullet list of numbers between 1 and 5.
+Dieser Code stellt eine Liste von Aufzählungen von 1 bis 5 dar.
 
-### Basic List Component {#basic-list-component}
+### Grundlegende Listen-Komponente {#basic-list-component}
 
-Usually you would render lists inside a [component](/docs/components-and-props.html).
+Normalerweise würdest du Listen innerhalb einer [Komponente](/docs/components-and-props.html) rendern.
 
-We can refactor the previous example into a component that accepts an array of `numbers` and outputs a list of elements.
+Wir können das vorherige Beispiel in eine Komponente überführen. Diese akzeptiert ein `Nummern`-Array und gibt dieses als Liste von Elementen aus.
 
 ```javascript{3-5,7,13}
 function NumberList(props) {
@@ -70,9 +70,9 @@ ReactDOM.render(
 );
 ```
 
-When you run this code, you'll be given a warning that a key should be provided for list items. A "key" is a special string attribute you need to include when creating lists of elements. We'll discuss why it's important in the next section.
+Wenn du diesen Code ausführst, dann wird dir eine Warnung angezeigt, die dir sagt, dass ein Schlüssel(key) für jedes Element der Liste bereitgestellt werden soll. Ein `key` ist ein spezielles String-Attribut, das bei der Erstellung von Elementlisten berücksichtigt werden muss. Wir werden im nächsten Abschnitt sehen, warum es wichtig ist.
 
-Let's assign a `key` to our list items inside `numbers.map()` and fix the missing key issue.
+Weisen wir nun innerhalb von `numbers.map()` das `key`-Attribut hinzu, um die Warnung des fehlenden Schlüssels zu beheben.
 
 ```javascript{4}
 function NumberList(props) {
@@ -98,7 +98,7 @@ ReactDOM.render(
 
 ## Schlüssel(Keys) {#keys}
 
-Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:
+Schlüssel helfen React zu erkennen, welche Elemente geändert, hinzugefügt oder gelöscht wurden. Schlüssel sollten Elementen in einem Array zugewiesen werden, um diesen eine beständige Identität zu geben:
 
 ```js{3}
 const numbers = [1, 2, 3, 4, 5];
@@ -109,7 +109,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. Most often you would use IDs from your data as keys:
+Der beste Weg einen Schlüssel zu definieren, ist die Verwendung einen Strings, der das Listelemente eindeutig von seinen Geschwisterelementen unterscheiden lässt. Meistens würdest du IDs aus deinen Daten als Schlüssel nehmen:
 
 ```js{2}
 const todoItems = todos.map((todo) =>
@@ -119,11 +119,11 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
-When you don't have stable IDs for rendered items, you may use the item index as a key as a last resort:
+Wenn du keine IDs für die gerenderten Elemente hast, kannst du als letzte Maßnahme auch den Listenindex benutzen:
 
 ```js{2,3}
 const todoItems = todos.map((todo, index) =>
-  // Only do this if items have no stable IDs
+  // Mache dies nur, wenn dir keine IDs zur Verfügung stehen
   <li key={index}>
     {todo.text}
   </li>
