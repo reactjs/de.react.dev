@@ -62,6 +62,6 @@ Du kannst dir den shallowRenderer als den "Ort" vorstellen an dem die zu testend
 
 ### `shallowRenderer.getRenderOutput()` {#shallowrenderergetrenderoutput}
 
-Nachdem `shallowRenderer.render()` aufgerufen worden ist, bekommt man mit `shallowRenderer.getRenderOutput()` den flachen gerenderten Output.
+Nachdem `shallowRenderer.render()` aufgerufen wurde, kannst du dir mit `shallowRenderer.getRenderOutput()` die flach gerenderte Ausgabe zurückgeben lassen.
 
 Dann kann man anfangen, den Output zu testen.
