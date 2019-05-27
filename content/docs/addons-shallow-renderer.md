@@ -15,7 +15,7 @@ var ShallowRenderer = require('react-test-renderer/shallow'); // ES5 mit npm
 
 ## Übersicht {#overview}
 
-Beim Schreiben von *unit tests* kann flaches Rendering (engl. shallow rendering) hilfreich sein. Flaches Rendering ermöglicht es, eine Komponente "einen Level tief" zu rendern, und vergleicht den zurückgegebenen Wert der Render Methode, ohne über das Verhalten der Kinder-Komponenten, welche beim flachen Rendering nicht instanziiert oder gerendert werden. Dies verlangt nicht einen DOM.
+Beim Schreiben von *unit tests* kann flaches Rendering (engl. shallow rendering) hilfreich sein. Flaches Rendering ermöglicht es, eine Komponente "einen Level tief" zu rendern, und vergleicht den zurückgegebenen Wert der Render Methode, ohne sich über das Verhalten der Kind-Komponenten, welche nicht instanziiert oder gerendert werden, Sorgen zu machen. Ein DOM wird hierbei nicht verlangt.
 
 Wenn du zum Beispiel folgendes Komponent hast:
 
