@@ -46,11 +46,12 @@ expect(result.props.children).toEqual([
 ]);
 ```
 
-Zurzeit hat flaches Rendering die Einschränkung, dass `refs` nicht unterstützt werden.
+Flaches Rendering hat derzeit die Einschränkung, dass refs nicht unterstützt werden.
 
 > Hinweis:
 >
-> Wir empfehlen, sich die [Shallow Rendering API](https://airbnb.io/enzyme/docs/api/shallow.html) von Enzyme anzusehen. Sie ermöglicht eine bessere *high-level API* mit denselben Funktionalitäten.
+> Wir empfehlen auch, sich die [Shallow Rendering API](https://airbnb.io/enzyme/docs/api/shallow.html) von Enzyme anzusehen. Sie stellt eine angenehmere *übergeordnete API* mit den gleichen Funktionalitäten bereit.
+
 
 ## Referenz {#reference}
 
@@ -64,4 +65,4 @@ Du kannst dir den shallowRenderer als den "Ort" vorstellen an dem die zu testend
 
 Nachdem `shallowRenderer.render()` aufgerufen wurde, kannst du dir mit `shallowRenderer.getRenderOutput()` die flach gerenderte Ausgabe zurückgeben lassen.
 
-Dann kann man anfangen, den Output zu testen.
+Dann kann man anfangen, die Ausgabe zu testen.
