@@ -1,14 +1,14 @@
 ---
 id: accessibility
-title: Accessibility
+title: Barrierefreiheit
 permalink: docs/accessibility.html
 ---
 
-## Why Accessibility? {#why-accessibility}
+## Warum Barrierefreiheit? {#why-accessibility}
 
-Web accessibility (also referred to as [**a11y**](https://en.wiktionary.org/wiki/a11y)) is the design and creation of websites that can be used by everyone. Accessibility support is necessary to allow assistive technology to interpret web pages.
+Barrierefreiheit im Web (Auch bekannt unter dem Begriff [**a11y**](https://en.wiktionary.org/wiki/a11y)) beschreibt Design und Umsetzung von Websites welche ausnahmlos von Jedem genutzt werden können. Barriefreiheit ist notwendig um Assistenzprogrammen das Interpretieren von Websites zu ermöglichen. 
 
-React fully supports building accessible websites, often by using standard HTML techniques.
+React unterstützt das Erstellen von barrierefreien Websites in vollem Außmaß, unter Anderem durch die Nutzung von Standard-HTML-Technologien. 
 
 ## Standards and Guidelines {#standards-and-guidelines}
 
