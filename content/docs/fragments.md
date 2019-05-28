@@ -4,7 +4,7 @@ title: Fragments
 permalink: docs/fragments.html
 ---
 
-Eine häufige Sache ist, dass eine Komponente mehrere Elemente zurückgibt. Mit Fragments kannst du eine Liste von Kindelementen gruppieren, ohne einen zusätzlichen Konten dem DOM hinzuzufügen.
+Es kommt häufig vor, dass eine Komponente mehrere Elemente. Mit Fragments kannst du eine Liste von Kindelementen gruppieren, ohne dem DOM einen zusätzlichen Knoten hinzuzufügen.
 
 ```js
 render() {
@@ -22,7 +22,7 @@ Es gibt auch eine neue [Kurzschreibweise](#short-syntax) um diese zu deklarieren
 
 ## Motivation {#motivation}
 
-Gängig ist, dass eine Komponente, eine Liste von Kindelementen zurückgibt. Nehmen wir diesen React-Beispiel-Schnipsel:
+Gängig ist, dass eine Komponente, eine Liste von Kindelementen zurückgibt. Nehmen wir diesen React-Schnipsel:
 
 ```jsx
 class Table extends React.Component {
@@ -53,7 +53,7 @@ class Columns extends React.Component {
 }
 ```
 
-ergibt eine Ausgabe von `<Table />` wie folgt:
+Eine Ausgabe von `<Table />` ergibt dann folgendes:
 
 ```jsx
 <table>
@@ -66,7 +66,7 @@ ergibt eine Ausgabe von `<Table />` wie folgt:
 </table>
 ```
 
-Fragmente lösen diese Problem.
+Fragmente lösen dieses Problem.
 
 ## Verwendung {#usage}
 
@@ -96,7 +96,7 @@ dies resultiert in einer korrekten Ausgabe von `<Table />`:
 
 ### Kurzschreibweise {#short-syntax}
 
-Es gibt einen neuen kürzeren weg, welchen du verwenden kannst um Fragmente zu deklarieren. Es sieht aus wie leere Tags:
+Es gibt eine neue kürzere Schreibweise, welche du verwenden kannst um Fragmente zu deklarieren. Diese sieht aus wie leere Tags:
 
 ```jsx{4,7}
 class Columns extends React.Component {
@@ -111,20 +111,20 @@ class Columns extends React.Component {
 }
 ```
 
-Du kannst `<></>` so verwenden, wie du jedes andere Element verwendest. Mit Ausnahme davon, dass es keine Keys oder Attribute unterstützt.
+Du kannst `<></>` so verwenden, wie du jedes andere Element verwendest. Mit Ausnahme davon, dass es keine Keys oder andere Attribute unterstützt.
 
-Beachte, dass **[viele Tools es noch nicht unterstützen](/blog/2017/11/28/react-v16.2.0-fragment-support.html#support-for-fragment-syntax)**, so dass du vielleicht `<React.Fragment>` explizit schreiben solltest, bis das Tooling aufholt.
+Beachte, dass **[viele Tools diese noch nicht unterstützen](/blog/2017/11/28/react-v16.2.0-fragment-support.html#support-for-fragment-syntax)**, so dass du vielleicht explizit `<React.Fragment>` schreiben solltest, bis das Tooling nachgezogen wurde.
 
 ### Keyed Fragmente {#keyed-fragments}
 
-Fragmente, die mit der expliziten `<React.Fragment>` Syntax deklariert wurden, können Schlüssel haben. Ein Anwendungsfall dafür ist das Durchlaufen von Daten um ein Array von Fragmenten zu erzeugen, z.B. um eine Beschreibungsliste zu erstellen:
+Fragmente, die mit der expliziten `<React.Fragment>` Syntax deklariert wurden, können Schlüssel besitzen. Ein Anwendungsfall dafür ist das Durchlaufen von Daten um ein Array von Fragmenten zu erzeugen, z.B. um eine Beschreibungsliste zu erstellen:
 
 ```jsx
 function Glossary(props) {
   return (
     <dl>
       {props.items.map(item => (
-        // Without the `key`, React will fire a key warning
+        // Ohne  `key`, wird React eine Key-Warnung ausgeben
         <React.Fragment key={item.id}>
           <dt>{item.term}</dt>
           <dd>{item.description}</dd>
@@ -135,7 +135,7 @@ function Glossary(props) {
 }
 ```
 
-`key`ist das einzige Attribut, welches an ein `Fragment` gegeben werden kann. Zukünftig könnten wir die Unterstützung für zusätzliche Attribute hinzufügen, wie z. B. Event-Handler.
+`key` ist das einzige Attribut, welches an ein `Fragment` gegeben werden kann. Zukünftig könnten wir die Unterstützung für zusätzliche Attribute hinzufügen, wie z. B. Event-Handler.
 
 ### Live Demo {#live-demo}
 
