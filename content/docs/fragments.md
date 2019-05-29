@@ -4,7 +4,7 @@ title: Fragments
 permalink: docs/fragments.html
 ---
 
-Es kommt häufig vor, dass eine Komponente mehrere Elemente. Mit Fragments kannst du eine Liste von Kindelementen gruppieren, ohne dem DOM einen zusätzlichen Knoten hinzuzufügen.
+Es kommt häufig vor, dass eine Komponente mehrere Elemente zurückgibt. Mit Fragments kannst du eine Liste von Kindelementen gruppieren, ohne dem DOM einen zusätzlichen Knoten hinzuzufügen.
 
 ```js
 render() {
