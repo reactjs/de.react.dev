@@ -96,9 +96,9 @@ ReactDOM.render(
 
 [**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
 
-## Schlüssel(Keys) {#keys}
+## Schlüssel (Keys) {#keys}
 
-Schlüssel helfen React zu erkennen, welche Elemente geändert, hinzugefügt oder gelöscht wurden. Schlüssel sollten Elementen in einem Array zugewiesen werden, um diesen eine beständige Identität zu geben:
+Schlüssel (im Weiteren Keys genannt) helfen React zu erkennen, welche Elemente geändert, hinzugefügt oder gelöscht wurden. Keys sollten Elementen in einem Array zugewiesen werden, um diesen eine beständige Identität zu geben:
 
 ```js{3}
 const numbers = [1, 2, 3, 4, 5];
@@ -109,7 +109,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-Der beste Weg einen Schlüssel zu definieren, ist die Verwendung einen Strings, der das Listelemente eindeutig von seinen Geschwisterelementen unterscheiden lässt. Meistens würdest du IDs aus deinen Daten als Schlüssel nehmen:
+Der beste Weg einen Key zu definieren, ist die Verwendung eines Strings, der das Listelemente eindeutig von seinen Geschwisterelementen unterscheiden lässt. Meistens würdest du IDs aus deinen Daten als Keys verwenden:
 
 ```js{2}
 const todoItems = todos.map((todo) =>
@@ -130,14 +130,13 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-Wir empfehlen dir nicht die Indizes für die Schlüssel zu verwenden, da sich die Reihenfolge der Listeneinträge verändern kann. Dies kann sich negativ auf die Performance auswirken und zu Problemen mit dem Komponenten-State führen. Lese mehr darüber im Artikel von Robin Pokorny's über eine asuführliche Erklärung über die na
-Check out Robin Pokorny's article for an [in-depth explanation on the negative impacts of using an index as a key](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318). If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
+Wir empfehlen dir nicht die Indizes für die Keys zu verwenden, da sich die Reihenfolge der Listeneinträge verändern kann. Dies kann sich negativ auf die Performance auswirken und zu Problemen mit dem Komponenten-State führen. Im Artikel von Robin Pokorny's kannst du eine [ausführlichere Erklärung über die negativen Auswirkungen beim Verwenden des Index als Key](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) finden. Wenn du Listenelemente keinen expliziten Key zuweist, verwendet React standardmäßig die Indizes als Key.
 
-Here is an [in-depth explanation about why keys are necessary](/docs/reconciliation.html#recursing-on-children) if you're interested in learning more.
+Wenn du dich dafür interessiert mehr zu lernen, ist hier [eine ausführliche Erklärung, warum Keys nötig sind](/docs/reconciliation.html#recursing-on-children).
 
-### Extrahieren von Komponenten mit Schlüsseln {#extracting-components-with-keys}
+### Extrahieren von Komponenten mit Keys {#extracting-components-with-keys}
 
-Keys only make sense in the context of the surrounding array.
+Keys ergeben im Zusammenhang mit dem umgebenden Array Sinn.
 
 For example, if you [extract](/docs/components-and-props.html#extracting-components) a `ListItem` component, you should keep the key on the `<ListItem />` elements in the array rather than on the `<li>` element in the `ListItem` itself.
 
