@@ -38,7 +38,7 @@ class Table extends React.Component {
 }
 ```
 
-`<Columns />` muss mehrere `<td>` Elemente zurückgeben, damit das gerenderte HTML gültig ist. Wenn ein übergeordnetes div in `render()` von `<Columns />` verwendet wird, wird das resultierende HTML ungültig sein.
+`<Columns />` muss mehrere `<td>` Elemente zurückgeben, damit das gerenderte HTML gültig ist. Wenn ein übergeordnetes div in `render()` von `<Columns />` verwendet werden würde, würde das resultierende HTML ungültig sein.
 
 ```jsx
 class Columns extends React.Component {
