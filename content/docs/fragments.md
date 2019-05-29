@@ -117,7 +117,7 @@ Beachte, dass **[viele Tools diese noch nicht unterstützen](/blog/2017/11/28/re
 
 ### Keyed Fragmente {#keyed-fragments}
 
-Fragmente, die mit der expliziten `<React.Fragment>` Syntax deklariert wurden, können Schlüssel besitzen. Ein Anwendungsfall dafür ist das Durchlaufen von Daten um ein Array von Fragmenten zu erzeugen, z.B. um eine Beschreibungsliste zu erstellen:
+Fragmente, die mit der expliziten `<React.Fragment>` Syntax deklariert wurden, können Keys besitzen. Ein Anwendungsfall dafür ist das Durchlaufen von Daten um ein Array von Fragmenten zu erzeugen, z.B. um eine Beschreibungsliste zu erstellen:
 
 ```jsx
 function Glossary(props) {
