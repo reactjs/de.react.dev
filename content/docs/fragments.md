@@ -22,7 +22,7 @@ Es gibt auch eine neue [Kurzschreibweise](#short-syntax) um diese zu deklarieren
 
 ## Motivation {#motivation}
 
-Gängig ist, dass eine Komponente, eine Liste von Kindelementen zurückgibt. Nehmen wir diesen React-Schnipsel:
+Gängig ist, dass eine Komponente eine Liste von Kindelementen zurückgibt. Nehmen wir diesen React-Schnipsel:
 
 ```jsx
 class Table extends React.Component {
