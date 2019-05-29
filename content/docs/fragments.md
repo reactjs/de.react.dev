@@ -96,7 +96,7 @@ dies resultiert in einer korrekten Ausgabe von `<Table />`:
 
 ### Kurzschreibweise {#short-syntax}
 
-Es gibt eine neue kürzere Schreibweise, welche du verwenden kannst um Fragmente zu deklarieren. Diese sieht aus wie leere Tags:
+Es gibt eine neue kürzere Schreibweise, welche du verwenden kannst um Fragmente zu deklarieren. Diese sieht wie leere Tags aus:
 
 ```jsx{4,7}
 class Columns extends React.Component {
