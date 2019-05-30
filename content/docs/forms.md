@@ -17,7 +17,7 @@ HTML-Formularelemente funktionieren in React ein bisschen anders als DOM-Element
     Name:
     <input type="text" name="name" />
   </label>
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Absenden" />
 </form>
 ```
 
@@ -25,7 +25,7 @@ Dieses Formular hat das Standard HTML Verhalten, dass es beim Absenden den Benut
 
 ## Kontrollierte Komponenten {#controlled-components}
 
-In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
+Formelemente wie `<input>`, `<textarea>` und `<select>` behalten in HTML typischerweise ihren eigenen Zustand bei und aktualisiert ihn basierend auf Benutzereingaben. In React wird der veränderbare State typischerweise in der State-Eigenschaft der Komponente gehalten und nur mit [`setState()`](/docs/react-component.html#setstate) aktualisiert.
 
 We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
 
@@ -76,13 +76,13 @@ handleChange(event) {
 }
 ```
 
-## Der textarea Tag {#the-textarea-tag}
+## Der textarea-Tag {#the-textarea-tag}
 
 In HTML, a `<textarea>` element defines its text by its children:
 
 ```html
 <textarea>
-  Hello there, this is some text in a text area
+  Hallo, dies ist ein bisschen Text in der im textarea-Tag
 </textarea>
 ```
 
@@ -93,7 +93,7 @@ class EssayForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'Please write an essay about your favorite DOM element.'
+      value: 'Bitte schreibe einen Aufsatz über dein lieblings DOM-Element.'
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -105,7 +105,7 @@ class EssayForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('An essay was submitted: ' + this.state.value);
+    alert('Ein Aufsatz wurde eingereicht: ' + this.state.value);
     event.preventDefault();
   }
 
@@ -116,7 +116,7 @@ class EssayForm extends React.Component {
           Essay:
           <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Absenden" />
       </form>
     );
   }
@@ -125,15 +125,15 @@ class EssayForm extends React.Component {
 
 Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
 
-## Der select Tag {#the-select-tag}
+## Der select-Tag {#the-select-tag}
 
 In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
 
 ```html
 <select>
-  <option value="grapefruit">Grapefruit</option>
-  <option value="lime">Lime</option>
-  <option selected value="coconut">Coconut</option>
+  <option value="grapefruit">Pampelmuse</option>
+  <option value="lime">Limette</option>
+  <option selected value="coconut">Kokosnuss</option>
   <option value="mango">Mango</option>
 </select>
 ```
@@ -155,7 +155,7 @@ class FlavorForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Your favorite flavor is: ' + this.state.value);
+    alert('Dein Lieblingsgeschmack ist: ' + this.state.value);
     event.preventDefault();
   }
 
@@ -165,13 +165,13 @@ class FlavorForm extends React.Component {
         <label>
           Pick your favorite flavor:
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
+            <option value="grapefruit">Pampelmuse</option>
+            <option value="lime">Limette</option>
+            <option selected value="coconut">Kokosnuss</option>
             <option value="mango">Mango</option>
           </select>
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Absenden" />
       </form>
     );
   }
@@ -232,7 +232,7 @@ class Reservation extends React.Component {
     return (
       <form>
         <label>
-          Is going:
+          Wirf hingehen:
           <input
             name="isGoing"
             type="checkbox"
@@ -241,7 +241,7 @@ class Reservation extends React.Component {
         </label>
         <br />
         <label>
-          Number of guests:
+          Anzahl der Gäste:
           <input
             name="numberOfGuests"
             type="number"
@@ -264,7 +264,7 @@ this.setState({
 });
 ```
 
-It is equivalent to this ES5 code:
+Ist das Equivalent zu diesem ES5-Code:
 
 ```js{2}
 var partialState = {};
