@@ -1,6 +1,6 @@
 ---
 id: lists-and-keys
-title: Listen und Schlüssel
+title: Listen und Keys
 permalink: docs/lists-and-keys.html
 prev: conditional-rendering.html
 next: forms.html
@@ -42,7 +42,7 @@ ReactDOM.render(
 );
 ```
 
-[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
 
 Dieser Code stellt eine Liste von Aufzählungen von 1 bis 5 dar.
 
@@ -94,7 +94,7 @@ ReactDOM.render(
 );
 ```
 
-[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
 
 ## Schlüssel (Keys) {#keys}
 
@@ -156,7 +156,7 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Falsch! Der Key sollte hier anbgegeben werden:
+    // Falsch! Der Key sollte hier angegeben werden:
     <ListItem value={number} />
   );
   return (
@@ -177,14 +177,14 @@ ReactDOM.render(
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
-  // Richtig! There is no need to specify the key here:
+  // Richtig! Die Angabe des Keys ist hier nicht erforderlich:
   return <li>{props.value}</li>;
 }
 
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Richtig! Key should be specified inside the array.
+    // Richtig! Der Key sollte hier angegeben werden.
     <ListItem key={number.toString()}
               value={number} />
   );
@@ -202,13 +202,13 @@ ReactDOM.render(
 );
 ```
 
-[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
 
-A good rule of thumb is that elements inside the `map()` call need keys.
+Eine gute Faustregel ist, dass Elemente innerhalb von `map()` einen Key benötigen.
 
-### Schlüssel müssen nur bei Geschwistern eindeutig sein {#keys-must-only-be-unique-among-siblings}
+### Keys müssen nur bei Geschwistern eindeutig sein {#keys-must-only-be-unique-among-siblings}
 
-Keys used within arrays should be unique among their siblings. However they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+Keys, die in einem Array verwendet werden, sollten eindeutig unter ihren Geschwistern sein. Global müssen sie dies jedoch nicht. Man kann somit die gleichen Keys in zwei verschiedenen Arrays verwenden:
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -246,9 +246,9 @@ ReactDOM.render(
 );
 ```
 
-[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
-Keys serve as a hint to React but they don't get passed to your components. If you need the same value in your component, pass it explicitly as a prop with a different name:
+Keys dienen React als Hinweise, aber werden nicht an die Komponente weitergegeben. Wenn du den gleichen Wert in deiner Komponente benötigst, dann übergib ihn explizit als Prop mit einem anderen Namen:
 
 ```js{3,4}
 const content = posts.map((post) =>
@@ -259,11 +259,11 @@ const content = posts.map((post) =>
 );
 ```
 
-With the example above, the `Post` component can read `props.id`, but not `props.key`.
+In dem obigen Beispiel, kann die `Post`-Komponente `props.id` lesen, aber nicht `props.key`.
 
 ### Einbetten von map() in JSX {#embedding-map-in-jsx}
 
-In the examples above we declared a separate `listItems` variable and included it in JSX:
+Im folgenden Beispiel deklarieren wir eine `listItems`-Variable und betten sie in JSX ein:
 
 ```js{3-6}
 function NumberList(props) {
@@ -280,7 +280,7 @@ function NumberList(props) {
 }
 ```
 
-JSX allows [embedding any expression](/docs/introducing-jsx.html#embedding-expressions-in-jsx) in curly braces so we could inline the `map()` result:
+JSX erlaubt es, [jeden Ausdruck](/docs/introducing-jsx.html#embedding-expressions-in-jsx), der in geschweifte Klammern gesetzt wird, einzubetten. Somit können wir `map()` inline setzen:
 
 ```js{5-8}
 function NumberList(props) {
@@ -296,6 +296,6 @@ function NumberList(props) {
 }
 ```
 
-[**Probiere es auf Codepen**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
-Sometimes this results in clearer code, but this style can also be abused. Like in JavaScript, it is up to you to decide whether it is worth extracting a variable for readability. Keep in mind that if the `map()` body is too nested, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+Manchmal führt dies zu klarerem Code, aber diese Stil kann ebenso missbruacht werden. Wie in JavaScript liegt es an dir zu entscheiden ob es sich lohnt eine Variable zur besseren Lesbarkeit zu benutzen. Behalte im Hinterkopf, dass wenn `map()` zu verschachtelt ist, es wahrscheinlich eine guter Zeitpunkt ist diesen Code in eine [Komponente auszulagern](/docs/components-and-props.html#extracting-components).
