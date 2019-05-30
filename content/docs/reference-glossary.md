@@ -31,7 +31,7 @@ Package managers are tools that allow you to manage dependencies in your project
 
 ## CDN {#cdn}
 
-CDN stands for Content Delivery Network. CDNs deliver cached, static content from a network of servers across the globe.
+CDN steht für Content Delivery Network. CDNs sind Netzwerke von Servern auf der ganzen Welt, die gecachte, statische Inhalte ausliefern.
 
 ## JSX {#jsx}
 
