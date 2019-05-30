@@ -1,6 +1,6 @@
 ---
 id: forms
-title: Forms
+title: Formulare
 permalink: docs/forms.html
 prev: lists-and-keys.html
 next: lifting-state-up.html
@@ -9,7 +9,7 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+HTML-Formularelemente funktionieren in React ein bisschen anders als DOM-Elemente, weil Formularelemente einen natürlichen internen State besitzt. Beispielsweise akzeptiert dieses HTML-Formular einen einzelnen Namen:
 
 ```html
 <form>
@@ -21,9 +21,9 @@ HTML form elements work a little bit differently from other DOM elements in Reac
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+Dieses Formular hat das Standard HTML Verhalten, dass es beim Absenden den Benutzer zu einer neuen Seite weiterleitet. Wenn du dieses Verhalten in React willst, funktioniert es einfach. In den meisten Fällen ist es jedoch sinnvoll, eine JavaScript-Funktion zu benutzen, die das Absenden des Formulars übernimmt und Zugriff auf die Eingabedaten des Benutzers hat. Um dies zu erreichen, wird standardmäßig eine Technik namens "kontrollierte Komponenten" verwendet.
 
-## Controlled Components {#controlled-components}
+## Kontrollierte Komponenten {#controlled-components}
 
 In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
 
@@ -57,14 +57,14 @@ class NameForm extends React.Component {
           Name:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Absenden" />
       </form>
     );
   }
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
 Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
 
@@ -76,7 +76,7 @@ handleChange(event) {
 }
 ```
 
-## The textarea Tag {#the-textarea-tag}
+## Der textarea Tag {#the-textarea-tag}
 
 In HTML, a `<textarea>` element defines its text by its children:
 
@@ -125,7 +125,7 @@ class EssayForm extends React.Component {
 
 Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
 
-## The select Tag {#the-select-tag}
+## Der select Tag {#the-select-tag}
 
 In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
 
@@ -178,7 +178,7 @@ class FlavorForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
 Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
 
@@ -190,7 +190,7 @@ Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select
 ><select multiple={true} value={['B', 'C']}>
 >```
 
-## The file input Tag {#the-file-input-tag}
+## Der file input Tag {#the-file-input-tag}
 
 In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
 
@@ -200,7 +200,7 @@ In HTML, an `<input type="file">` lets the user choose one or more files from th
 
 Because its value is read-only, it is an **uncontrolled** component in React. It is discussed together with other uncontrolled components [later in the documentation](/docs/uncontrolled-components.html#the-file-input-tag).
 
-## Handling Multiple Inputs {#handling-multiple-inputs}
+## Umgang mit mehreren Inputs {#handling-multiple-inputs}
 
 When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
 
@@ -254,7 +254,7 @@ class Reservation extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
 Note how we used the ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) syntax to update the state key corresponding to the given input name:
 
