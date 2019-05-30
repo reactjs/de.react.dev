@@ -70,7 +70,7 @@ ReactDOM.render(
 );
 ```
 
-Wenn du diesen Code ausführst, dann wird dir eine Warnung angezeigt, die dir sagt, dass ein Schlüssel(key) für jedes Element der Liste bereitgestellt werden soll. Ein `key` ist ein spezielles String-Attribut, das bei der Erstellung von Elementlisten berücksichtigt werden muss. Wir werden im nächsten Abschnitt sehen, warum es wichtig ist.
+Wenn du diesen Code ausführst, dann wird dir eine Warnung angezeigt, die dir sagt, dass ein Key für jedes Element der Liste bereitgestellt werden soll. Ein `key` ist ein spezielles String-Attribut, das bei der Erstellung von Elementlisten berücksichtigt werden muss. Wir werden im nächsten Abschnitt sehen, warum es wichtig ist.
 
 Weisen wir nun innerhalb von `numbers.map()` das `key`-Attribut hinzu, um die Warnung des fehlenden Schlüssels zu beheben.
 
@@ -136,17 +136,17 @@ Wenn du dich dafür interessiert mehr zu lernen, ist hier [eine ausführliche Er
 
 ### Extrahieren von Komponenten mit Keys {#extracting-components-with-keys}
 
-Keys ergeben im Zusammenhang mit dem umgebenden Array Sinn.
+Keys ergeben nur im Zusammenhang mit einem umgebenden Array Sinn.
 
-For example, if you [extract](/docs/components-and-props.html#extracting-components) a `ListItem` component, you should keep the key on the `<ListItem />` elements in the array rather than on the `<li>` element in the `ListItem` itself.
+Wenn du beispielsweise eine `ListItem`-Komponente [extrahierst](/docs/components-and-props.html#extracting-components), solltest du den Key auf das `<ListItem />`-Element im Array setzen und nicht auf das `<li>`-Element im `ListItem` selbst.
 
-**Beispiel: Falsche Schlüsselverwendung**
+**Beispiel: Falsche Verwendung von Keys**
 
 ```javascript{4,5,14,15}
 function ListItem(props) {
   const value = props.value;
   return (
-    // Wrong! There is no need to specify the key here:
+    // Falsch! Die Angabe des Keys ist hier nicht erforderlich:
     <li key={value.toString()}>
       {value}
     </li>
@@ -156,7 +156,7 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Wrong! The key should have been specified here:
+    // Falsch! Der Key sollte hier anbgegeben werden:
     <ListItem value={number} />
   );
   return (
@@ -177,14 +177,14 @@ ReactDOM.render(
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
-  // Correct! There is no need to specify the key here:
+  // Richtig! There is no need to specify the key here:
   return <li>{props.value}</li>;
 }
 
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    // Correct! Key should be specified inside the array.
+    // Richtig! Key should be specified inside the array.
     <ListItem key={number.toString()}
               value={number} />
   );
