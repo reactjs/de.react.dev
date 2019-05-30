@@ -1,6 +1,6 @@
 ---
 id: glossary
-title: Glossary of React Terms
+title: Glossar der React Begriffe
 layout: docs
 category: Reference
 permalink: docs/glossary.html
@@ -17,21 +17,21 @@ Though you may build a single-page application in React, it is not a requirement
 
 These acronyms all refer to the most recent versions of the ECMAScript Language Specification standard, which the JavaScript language is an implementation of. The ES6 version (also known as ES2015) includes many additions to the previous versions such as: arrow functions, classes, template literals, `let` and `const` statements. You can learn more about specific versions [here](https://en.wikipedia.org/wiki/ECMAScript#Versions).
 
-## Compilers {#compilers}
+## Kompiler {#compilers}
 
-A JavaScript compiler takes JavaScript code, transforms it and returns JavaScript code in a different format. The most common use case is to take ES6 syntax and transform it into syntax that older browsers are capable of interpreting. [Babel](https://babeljs.io/) is the compiler most commonly used with React.
+Ein JavaScript-Kompiler nimmt JavaScript Code, wandelt ihn um und gibt JavaScript Code in einem anderen Format zurück. Der häufigste Anwendungsfall ist die Umwandlung von ES6-Syntax in eine Syntax, die ältere Browser interpretieren können. [Babel](https://babeljs.io/) ist der Kompiler, der am häufigsten mit React verwendet wird.
 
-## Bundlers {#bundlers}
+## Bundler {#bundlers}
 
 Bundlers take JavaScript and CSS code written as separate modules (often hundreds of them), and combine them together into a few files better optimized for the browsers. Some bundlers commonly used in React applications include [Webpack](https://webpack.js.org/) and [Browserify](http://browserify.org/).
 
-## Package Managers {#package-managers}
+## Paket-Manager {#package-managers}
 
 Package managers are tools that allow you to manage dependencies in your project. [npm](https://www.npmjs.com/) and [Yarn](https://yarnpkg.com/) are two package managers commonly used in React applications. Both of them are clients for the same npm package registry.
 
 ## CDN {#cdn}
 
-CDN stands for Content Delivery Network. CDNs deliver cached, static content from a network of servers across the globe. 
+CDN stands for Content Delivery Network. CDNs deliver cached, static content from a network of servers across the globe.
 
 ## JSX {#jsx}
 
@@ -45,19 +45,19 @@ ReactDOM.render(
   <h1 className="hello">My name is {name}!</h1>,
   document.getElementById('root')
 );
-```  
+```
 
-## [Elements](/docs/rendering-elements.html) {#elements}
+## [Elemente](/docs/rendering-elements.html) {#elements}
 
 React elements are the building blocks of React applications. One might confuse elements with a more widely known concept of "components". An element describes what you want to see on the screen. React elements are immutable.
 
 ```js
-const element = <h1>Hello, world</h1>;
+const element = <h1>Hallo, Welt</h1>;
 ```
 
 Typically, elements are not used directly, but get returned from components.
 
-## [Components](/docs/components-and-props.html) {#components}
+## [Komponenten](/docs/components-and-props.html) {#components}
 
 React components are small, reusable pieces of code that return a React element to be rendered to the page. The simplest version of React component is a plain JavaScript function that returns a React element:
 
@@ -77,7 +77,7 @@ class Welcome extends React.Component {
 }
 ```
 
-Components can be broken down into distinct pieces of functionality and used within other components. Components can return other components, arrays, strings and numbers. A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be a reusable component. Component names should also always start with a capital letter (`<Wrapper/>` **not** `<wrapper/>`). See [this documentation](/docs/components-and-props.html#rendering-a-component) for more information on rendering components. 
+Components can be broken down into distinct pieces of functionality and used within other components. Components can return other components, arrays, strings and numbers. A good rule of thumb is that if a part of your UI is used several times (Button, Panel, Avatar), or is complex enough on its own (App, FeedStory, Comment), it is a good candidate to be a reusable component. Component names should also always start with a capital letter (`<Wrapper/>` **not** `<wrapper/>`). See [this documentation](/docs/components-and-props.html#rendering-a-component) for more information on rendering components.
 
 ### [`props`](/docs/components-and-props.html) {#props}
 
@@ -97,10 +97,10 @@ If you need to modify some value in response to user input or a network response
 `props.children` is available on every component. It contains the content between the opening and closing tags of a component. For example:
 
 ```js
-<Welcome>Hello world!</Welcome>
+<Welcome>Hallo Welt!</Welcome>
 ```
 
-The string `Hello world!` is available in `props.children` in the `Welcome` component:
+The string `Hallo Welt!` is available in `props.children` in the `Welcome` component:
 
 ```js
 function Welcome(props) {
@@ -126,13 +126,13 @@ The most important difference between `state` and `props` is that `props` are pa
 
 For each particular piece of changing data, there should be just one component that "owns" it in its state. Don't try to synchronize states of two different components. Instead, [lift it up](/docs/lifting-state-up.html) to their closest shared ancestor, and pass it down as props to both of them.
 
-## [Lifecycle Methods](/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class) {#lifecycle-methods}
+## [Lifecycle Methoden](/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class) {#lifecycle-methods}
 
 Lifecycle methods are custom functionality that gets executed during the different phases of a component. There are methods available when the component gets created and inserted into the DOM ([mounting](/docs/react-component.html#mounting)), when the component updates, and when the component gets unmounted or removed from the DOM.
 
- ## [Controlled](/docs/forms.html#controlled-components) vs. [Uncontrolled Components](/docs/uncontrolled-components.html)
+ ## [Kontrollierte](/docs/forms.html#controlled-components) vs. [Unkontrollierte Komponenten](/docs/uncontrolled-components.html)
 
-React has two different approaches to dealing with form inputs. 
+React has two different approaches to dealing with form inputs.
 
 An input form element whose value is controlled by React is called a *controlled component*. When a user enters data into a controlled component a change event handler is triggered and your code decides whether the input is valid (by re-rendering with the updated value). If you do not re-render then the form element will remain unchanged.
 
@@ -161,6 +161,6 @@ Handling events with React elements has some syntactic differences:
 * React event handlers are named using camelCase, rather than lowercase.
 * With JSX you pass a function as the event handler, rather than a string.
 
-## [Reconciliation](/docs/reconciliation.html) {#reconciliation}
+## [Abgleich](/docs/reconciliation.html) {#reconciliation}
 
 When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called "reconciliation".
