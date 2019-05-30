@@ -49,30 +49,30 @@ ReactDOM.render(
 
 ## [Elemente](/docs/rendering-elements.html) {#elements}
 
-React elements are the building blocks of React applications. One might confuse elements with a more widely known concept of "components". An element describes what you want to see on the screen. React elements are immutable.
+React-Elemente sind die Bausteine von React-Anwendungen. Elemente könnten mit dem allgemein bekannteren Konzept der "Komponenten" verwechselt werden. Ein Element beschreibt was du auf dem Bildschirm sehen möchtest. React-Elemente sind unveränderbar.
 
 ```js
 const element = <h1>Hallo, Welt</h1>;
 ```
 
-Typically, elements are not used directly, but get returned from components.
+Normalerweise werden Elemente nicht direkt verwendet, sondern von Komponenten zurückgegeben.
 
 ## [Komponenten](/docs/components-and-props.html) {#components}
 
-React components are small, reusable pieces of code that return a React element to be rendered to the page. The simplest version of React component is a plain JavaScript function that returns a React element:
+React-Komponenten sind kleine, wiederverwendebare Codestücke, die ein zu renderndes React-Element an die Seite zurückgeben. Die einfachste Version einer React-Komponente ist eine simple JavaScript-Funktion, die ein React-Element zurückgibt:
 
 ```js
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>Hallo, {props.name}</h1>;
 }
 ```
 
-Components can also be ES6 classes:
+Komponenten können ebenso ES6-Klassen sein:
 
 ```js
 class Welcome extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return <h1>Hallo, {this.props.name}</h1>;
   }
 }
 ```
