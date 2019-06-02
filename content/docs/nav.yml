@@ -97,7 +97,7 @@
     - id: test-utils
       title: Test Utilities
     - id: shallow-renderer
-      title: Flaches Rendern
+      title: Shallow Renderer
     - id: test-renderer
       title: Test Renderer
     - id: javascript-environment-requirements
