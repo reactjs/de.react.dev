@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "bugs": {
-    "url": "https://github.com/reactjs/reactjs.org"
+    "url": "https://github.com/reactjs/de.reactjs.org"
   },
   "dependencies": {
     "babel-eslint": "^8.0.1",
@@ -61,7 +61,7 @@
     "node": ">8.4.0",
     "yarn": "^1.3.2"
   },
-  "homepage": "https://reactjs.org/",
+  "homepage": "https://de.reactjs.org/",
   "keywords": [
     "gatsby"
   ],
@@ -69,7 +69,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactjs/reactjs.org.git"
+    "url": "git+https://github.com/reactjs/de.reactjs.org.git"
   },
   "scripts": {
     "build": "gatsby build",
