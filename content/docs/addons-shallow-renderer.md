@@ -1,6 +1,6 @@
 ---
 id: shallow-renderer
-title: Flaches Rendern
+title: Shallow Renderer
 permalink: docs/shallow-renderer.html
 layout: docs
 category: Reference
