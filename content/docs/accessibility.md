@@ -10,13 +10,13 @@ Barrierefreiheit im Web (Auch bekannt unter dem Begriff [**a11y**](https://en.wi
 
 React unterstützt das Erstellen von barrierefreien Websites in vollem Außmaß, unter Anderem durch die Nutzung von Standard-HTML-Technologien. 
 
-## Standards and Guidelines {#standards-and-guidelines}
+## Standards und Anleitungen {#standards-and-guidelines}
 
 ### WCAG {#wcag}
 
-The [Web Content Accessibility Guidelines](https://www.w3.org/WAI/intro/wcag) provides guidelines for creating accessible web sites.
+Die [Web Content Accessibility Guidelines](https://www.w3.org/WAI/intro/wcag) enthalten Anleitungen um barrierefreie Websites zu erstellen.
 
-The following WCAG checklists provide an overview:
+Die folgenden WCAG-Checklisten geben einen kurzen Überblick:
 
 - [WCAG checklist from Wuhcag](https://www.wuhcag.com/wcag-checklist/)
 - [WCAG checklist from WebAIM](https://webaim.org/standards/wcag/checklist)
