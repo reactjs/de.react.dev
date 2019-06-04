@@ -18,15 +18,15 @@ Die [Web Content Accessibility Guidelines](https://www.w3.org/WAI/intro/wcag) en
 
 Die folgenden WCAG-Checklisten geben einen kurzen Überblick:
 
-- [WCAG checklist from Wuhcag](https://www.wuhcag.com/wcag-checklist/)
-- [WCAG checklist from WebAIM](https://webaim.org/standards/wcag/checklist)
-- [Checklist from The A11Y Project](https://a11yproject.com/checklist.html)
+- [WCAG checklist von Wuhcag](https://www.wuhcag.com/wcag-checklist/)
+- [WCAG checklist von WebAIM](https://webaim.org/standards/wcag/checklist)
+- [Checklist von dem A11Y Project](https://a11yproject.com/checklist.html)
 
 ### WAI-ARIA {#wai-aria}
 
-The [Web Accessibility Initiative - Accessible Rich Internet Applications](https://www.w3.org/WAI/intro/aria) document contains techniques for building fully accessible JavaScript widgets.
+Das [Web Accessibility Initiative - Accessible Rich Internet Applications](https://www.w3.org/WAI/intro/aria) Dokument zeigt Techniken für das Entwickeln vollkommen barrierefreier JavaScript Widgets. 
 
-Note that all `aria-*` HTML attributes are fully supported in JSX. Whereas most DOM properties and attributes in React are camelCased, these attributes should be hyphen-cased (also known as kebab-case, lisp-case, etc) as they are in plain HTML:
+Es gilt dass alle `aria-*` HTML-Attribute in JSX komplett unterstützt werden. Während die meisten DOM-Eigenschaften und Attribute in React in camelCase umgesetzt werden, sollten diese Attribute hyphen-cased (auch bekannt als kebab-case, lisp-case, usw.) sein, so wie man es auch bei normalem HTML tun würde:
 
 ```javascript{3,4}
 <input
