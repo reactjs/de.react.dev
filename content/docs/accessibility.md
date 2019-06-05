@@ -40,15 +40,14 @@ Es gilt dass alle `aria-*` HTML-Attribute in JSX komplett unterstützt werden. W
 ```
 
 ## Semantic HTML {#semantic-html}
-Semantic HTML is the foundation of accessibility in a web application. Using the various HTML elements to reinforce the meaning of information
-in our websites will often give us accessibility for free.
+Semantisches HTML ist das Fundament der Barrierefreiheit einer Webanwendung. Das Nutzen der verschiedenen HTML-Elemente welche die Bedeutung einer Information betonen bringt dir oftmals Barrierefreiheit ohne extra Aufwand.  
 
 - [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
-Sometimes we break HTML semantics when we add `<div>` elements to our JSX to make our React code work, especially when working with lists (`<ol>`, `<ul>` and `<dl>`) and the HTML `<table>`.
-In these cases we should rather use [React Fragments](/docs/fragments.html) to group together multiple elements.
+Manchmal wird die Bedeutung verschiedener HTML Elemente verfälscht indem ein `<div>` Element um das JSX hinzugefügt wird um den Reactcode zum laufen zu bringen, besonders häufig beim Arbeiten mit Listen (`<ol>`, `<ul>` und `<dl>`) und der HTML `<table>`. 
+Hier sollten besser [React Fragments](/docs/fragments.html) genutzt werden um mehrere Elemente in einer Gruppe zusammenzufassen.
 
-For example,
+Zum Beispiel,
 
 ```javascript{1,5,8}
 import React, { Fragment } from 'react';
@@ -73,7 +72,7 @@ function Glossary(props) {
 }
 ```
 
-You can map a collection of items to an array of fragments as you would any other type of element as well:
+Es ist auch möglich mehrere Fragmente in einem Array vai der `map` Funktion zusammenzufassen, genauso wie du es bei anderen Element auch tun würdest:
 
 ```javascript{6,9}
 function Glossary(props) {
@@ -91,7 +90,7 @@ function Glossary(props) {
 }
 ```
 
-When you don't need any props on the Fragment tag you can use the [short syntax](/docs/fragments.html#short-syntax), if your tooling supports it:
+Solltest du keine props für einen Fragment-Tag brauchen kannst du die folgende [short syntax](/docs/fragments.html#short-syntax) nutzen, sofern JS-Tooling Diese unterstützt:
 
 ```javascript{3,6}
 function ListItem({ item }) {
@@ -104,7 +103,7 @@ function ListItem({ item }) {
 }
 ```
 
-For more info, see [the Fragments documentation](/docs/fragments.html).
+Weitere Infos findest in der [Dokumentation über Fragments](/docs/fragments.html).
 
 ## Accessible Forms {#accessible-forms}
 
