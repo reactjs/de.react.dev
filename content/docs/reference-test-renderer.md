@@ -233,7 +233,7 @@ Die Eltern-Testinstanz dieser Testinstanz.
 ```javascript
 testInstance.children
 ```
-Die Kindertestinstanzen dieser Testinstanz.
+Die Kind-Testinstanzen dieser Testinstanz.
 
 ## Ideas {#ideas}
 
