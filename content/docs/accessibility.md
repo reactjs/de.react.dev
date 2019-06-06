@@ -108,15 +108,15 @@ Weitere Infos findest in der [Dokumentation über Fragments](/docs/fragments.htm
 ## Accessible Forms {#accessible-forms}
 
 ### Labeling {#labeling}
-Every HTML form control, such as `<input>` and `<textarea>`, needs to be labeled accessibly. We need to provide descriptive labels that are also exposed to screen readers.
+Jedes HTML Formularelement, wie zum Beispiel `<input>` und `<textarea>`, muss barrierefrei etikettiert werden. Beschreibende `label`, welche Für Screenreader relevant sind, müssen vorhanden sein.  
 
-The following resources show us how to do this:
+In folgenden Quellen kannst du nachlesen wie Dies am besten umzusetzen ist:
 
-- [The W3C shows us how to label elements](https://www.w3.org/WAI/tutorials/forms/labels/)
-- [WebAIM shows us how to label elements](https://webaim.org/techniques/forms/controls)
-- [The Paciello Group explains accessible names](https://www.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
+- [Das W3C zeigt wie Elemente zu etikettieren sind](https://www.w3.org/WAI/tutorials/forms/labels/)
+- [WebAIM zeigt wie Elemente zu etikettieren sind](https://webaim.org/techniques/forms/controls)
+- [Die Paciello Gruppe erklärt barrierefreie Namen](https://www.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
 
-Although these standard HTML practices can be directly used in React, note that the `for` attribute is written as `htmlFor` in JSX:
+Auch wenn diese HTML-Standards direkt in React genutzt werden können, solltest du darauf achten dass das `for` Attribut in JSX `htmlFor` heißt.
 
 ```javascript{1}
 <label htmlFor="namedInput">Name:</label>
