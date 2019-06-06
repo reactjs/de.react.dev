@@ -219,7 +219,7 @@ Der Komponententyp welcher mit der Testinstanz übereinstimmt. Eine `<Button />`
 ```javascript
 testInstance.props
 ```
-Die Props welche mit der Testinstanz übereinstimmen. Eine `<Button size="small" />` Komponente hat zum Beispiel als Props `{size: 'small'}`.
+Die Props welche mit der Testinstanz übereinstimmen. Eine `<Button size="small" />` Komponente besitzt zum Beispiel folgende Props `{size: 'small'}`.
 
 ### `testInstance.parent` {#testinstanceparent}
 
