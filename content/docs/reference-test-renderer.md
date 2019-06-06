@@ -237,7 +237,7 @@ Die Kindertestinstanzen dieser Testinstanz.
 
 ## Ideas {#ideas}
 
-Du kannst die `createNodeMock` Funktion `TestRenderer.create` als Option mitgeben, welche speziell geschriebene Pseudoreferenzen (*custom mock refs*) ermöglicht. `createNodeMock` akzeptiert das aktuelle Element und sollte ein Pseudoreferenzobjekt zurückgeben. Das ist für das Testen von Komponenten nützlich, die von Referenzen abhängen.
+Du kannst die `createNodeMock`-Funktion `TestRenderer.create` als Option mitgeben, welche speziell geschriebene Pseudoreferenzen (*custom mock refs*) ermöglicht. `createNodeMock` akzeptiert das aktuelle Element und sollte ein Pseudoreferenz-Objekt zurückgeben. Dies ist für das Testen von Komponenten nützlich, die von Referenzen abhängen.
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
