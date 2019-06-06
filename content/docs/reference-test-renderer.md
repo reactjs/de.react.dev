@@ -17,7 +17,7 @@ const TestRenderer = require('react-test-renderer'); // ES5 mit npm
 
 Dieses Paket stellt einen React-Renderer zu Verfügung, mit dem React Komponenten in reine Javascript-Objekte umgewandelt werden können, ohne dabei vom DOM oder einer nativen mobilen Umgebungen abhängig zu sein.
 
-Im Grunde genommen macht es dieses Paket sehr einfach, einen Snapshot der Plattform-Hierarchie (ähnlich eines DOM-Baums) zu erstellen, welche von einem React DOM oder einer React Native Komponente gerendert wird, ohne einen Browser oder [jsdom](https://github.com/tmpvar/jsdom) zu benützen.
+Im Grunde macht es dieses Paket einfach, einen Snapshot der Plattform-Hierarchie (ähnlich eines DOM-Baums) zu erstellen, der von einer React DOM oder React Native Komponente erstellt wurde, ohne einen Browser oder [jsdom](https://github.com/tmpvar/jsdom) zu verwenden.
 
 Beispiel:
 
