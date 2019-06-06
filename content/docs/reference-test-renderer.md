@@ -40,7 +40,7 @@ console.log(testRenderer.toJSON());
 
 Du kannst das Snapshot-Test-Feature von Jest nutzen, um automatisch eine Kopie des JSON-Baums in einer Datei zu speichern und deine Tests daraufhin zu überprüfen, ob sie sich nicht geändert hat: [Erfahre mehr darüber](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html).
 
-Auch um spezifische Knoten zu finden und Behauptungen über sie zu machen, kannst du die Ausgabe durchleuchten.
+Du kannst auch die Ausgabe durchlaufen, um bestimmte Knoten zu finden und über sie Aussagen zu treffen.
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
