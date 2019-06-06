@@ -204,7 +204,7 @@ Findet alle nachkommenden Testinstanzen mit den bereitgestellten `props`.
 testInstance.instance
 ```
 
-Die Komponenteninstanz welche mit der Testinstanz übereinstimmt. Das ist nur bei Klassenkomponenten verfügbar, da Funktionskomponenten keine Instanzen haben. Es passt mit dem `this` Wert von der mitgegebenen Komponente zusammen.
+Die Komponenteninstanz welche mit der Testinstanz übereinstimmt. Dies ist nur bei Klassenkomponenten verfügbar, da Funktionskomponenten keine Instanzen besitzen. Der Wert von `this` stimmt mit dem der mitgegebenen Komponente überein.
 
 ### `testInstance.type` {#testinstancetype}
 
