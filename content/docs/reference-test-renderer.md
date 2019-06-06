@@ -226,7 +226,7 @@ Die Props welche mit der Testinstanz übereinstimmen. Eine `<Button size="small"
 ```javascript
 testInstance.parent
 ```
-Die Elterntestinstanz dieser Testinstanz.
+Die Eltern-Testinstanz dieser Testinstanz.
 
 ### `testInstance.children` {#testinstancechildren}
 
