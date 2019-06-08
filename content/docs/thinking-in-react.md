@@ -49,7 +49,7 @@ Du siehst hier, dass wir fünf Komponenten in unserer einfachen App haben. Wir h
   4. **`ProductCategoryRow` (türkis):** zeigt eine Überschrift für jede *Kategorie* an
   5. **`ProductRow` (rot):** zeigt eine Zeile für jedes *Produkt* an
 
-Wenn du dir `ProductTable` anschaust, wirsts du feststellen, dass der Tabellenkopf (mit den Bezeichnungen "Name" und "Price") keine eigene Komponente ist. Das ist eine Frage der Präferenz und es gibt Argumente für beide Seiten. Für dieses Beispiel haben wir ihn als Teil von `ProductTable` gelassen, da er Teil der Darstellung der *Daten* ist, die in der Verantwortung von `ProductTable` liegt. Wenn diese Kopfzeile jedoch immer komplexer werden sollte (d.h. falls wir beispielsweise eine Sortierung hinzufügen würden), wäre es sicherlich sinnvoll, diese Kopfzeile zu einer eigenen `ProductTableHeader`-Komponente zu machen.
+Wenn du dir `ProductTable` anschaust, wirst du feststellen, dass der Tabellenkopf (mit den Bezeichnungen "Name" und "Price") keine eigene Komponente ist. Das ist eine Frage der Präferenz und es gibt Argumente für beide Seiten. Für dieses Beispiel haben wir ihn als Teil von `ProductTable` gelassen, da er Teil der Darstellung der *Daten* ist, die in der Verantwortung von `ProductTable` liegt. Wenn diese Kopfzeile jedoch immer komplexer werden sollte (d.h. falls wir beispielsweise eine Sortierung hinzufügen würden), wäre es sicherlich sinnvoll, diese Kopfzeile zu einer eigenen `ProductTableHeader`-Komponente zu machen.
 
 Nachdem wir nun die Komponenten in unserem Mock-Up identifiziert haben, lass uns diese in eine Hierarchie einordnen. Das ist einfach. Komponenten, die innerhalb einer anderen Komponente im Mock-Up erscheinen, sollten als Kind in der Hierarchie erscheinen:
 
