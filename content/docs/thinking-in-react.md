@@ -8,9 +8,9 @@ redirect_from:
 prev: composition-vs-inheritance.html
 ---
 
-React ist unserer Meinung nach der beste Weg, um große, schnelle Web Applikationen mit JavaScript zu erstellen. Es hat sich für uns bei Facebook und Instagram sehr gelohnt.
+React ist unserer Meinung nach der beste Weg, um große, schnelle Web-Anwendungen mit JavaScript zu erstellen. Es hat sich für uns bei Facebook und Instagram sehr gelohnt.
 
-Einer der vielen großartigen Teile von React ist, wie es dich zum Nachdenken über die Applikationen bringt, während du sie erstellst. In diesem Dokument führen wir dich durch den Denkprozess, wie man eine durchsuchbare Produktdatentabelle mit React erstellt.
+Einer der vielen großartigen Teile von React ist, wie es dich zum Nachdenken über die Anwendungen bringt, während du sie erstellst. In diesem Dokument führen wir dich durch den Denkprozess, wie man eine durchsuchbare Produktdatentabelle mit React erstellt.
 
 ## Beginne mit einem Mock-Up {#start-with-a-mock}
 
@@ -41,7 +41,7 @@ Da du einem Benutzer häufig ein JSON Datenmodell präsentieren wirst, wirst du 
 
 ![Component diagram](../images/blog/thinking-in-react-components.png)
 
-Du siehst hier, dass wir fünf Komponenten in unserer einfachen App haben. Wir haben die Daten, die von jeder Komponente repräsentiert werden, kursiv dargestellt.
+Du siehst hier, dass wir fünf Komponenten in unserer einfachen Anwendung haben. Wir haben die Daten, die von jeder Komponente repräsentiert werden, kursiv dargestellt.
 
   1. **`FilterableProductTable` (orange):** enthält das gesamte Beispiel
   2. **`SearchBar` (blau):** empfängt alle *Benutzereingaben*
@@ -64,13 +64,13 @@ Nachdem wir nun die Komponenten in unserem Mock-Up identifiziert haben, lass uns
 <p data-height="600" data-theme-id="0" data-slug-hash="BwWzwm" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/BwWzwm">Thinking In React: Step 2</a> on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-Jetzt, da du deine Komponentenhierarchie hast, ist es an der Zeit, die Applikation zu implementieren. Der einfachste Weg ist, eine Version zu erstellen, die dein Datenmodell verwendet und die Benutzeroberfläche rendert, aber keine Interaktivität hat. Es ist am besten, diese Prozesse zu entkoppeln, denn die Erstellung einer statischen Version erfordert viel Tippen und weniger Nachdenken, und das Hinzufügen von Interaktivität erfordert viel Nachdenken und weniger Tippen. Wir werden sehen, warum.
+Jetzt, da du deine Komponentenhierarchie hast, ist es an der Zeit, die Anwendung zu implementieren. Der einfachste Weg ist, eine Version zu erstellen, die dein Datenmodell verwendet und die Benutzeroberfläche rendert, aber keine Interaktivität hat. Es ist am besten, diese Prozesse zu entkoppeln, denn die Erstellung einer statischen Version erfordert viel Tippen und weniger Nachdenken, und das Hinzufügen von Interaktivität erfordert viel Nachdenken und weniger Tippen. Wir werden sehen, warum.
 
-Um eine statische Version deiner App zu erstellen, die dein Datenmodell rendert, solltest du Komponenten erstellen, die andere Komponenten wiederverwenden und Daten per *Props* weitergeben. *Props* sind eine Möglichkeit, Daten von Eltern zu Kind zu übertragen. Wenn du mit dem Konzept von *state* vertraut bist, verwende **state hierfür noch nicht**, um diese statische Version zu erstellen. State ist nur für Interaktivität reserviert, d.h. Daten, die sich im Laufe der Zeit ändern. Da es sich um eine statische Version der App handelt, benötigst du ihn nicht.
+Um eine statische Version deiner Anwendung zu erstellen, die dein Datenmodell rendert, solltest du Komponenten erstellen, die andere Komponenten wiederverwenden und Daten per *Props* weitergeben. *Props* sind eine Möglichkeit, Daten von Eltern zu Kind zu übertragen. Wenn du mit dem Konzept von *state* vertraut bist, verwende **state hierfür noch nicht**, um diese statische Version zu erstellen. State ist nur für Interaktivität reserviert, d.h. Daten, die sich im Laufe der Zeit ändern. Da es sich um eine statische Version der Anwendung handelt, benötigst du ihn nicht.
 
 Du kannst von oben nach unten (top-down) oder von unten nach oben (bottom-up) vorgehen. Das heißt, du kannst entweder mit dem Aufbau der Komponenten von oben in der Hierarchie beginnen (d.h. mit `FilterableProductTable`) oder mit denjenigen weiter unten (`ProductRow`). In simpleren Beispielen ist es in der Regel einfacher, von oben nach unten zu gehen, und bei größeren Projekten ist es einfacher, beim Erstellen von unten nach oben zu gehen und gleichzeitig Tests zu schreiben.
 
-Am Ende dieses Schrittes steht dir eine Ansammlung von wiederverwendbaren Komponenten zur Verfügung, die dein Datenmodell darstellt. Die Komponenten haben jeweils nur eine `render()` Methode, da es sich um eine statische Version deiner App handelt. Die Komponente an der Spitze der Hierarchie (`FilterableProductTable`) nimmt dein Datenmodell als Prop. Wenn du eine Änderung an deinem zugrunde liegenden Datenmodell vornimmst und `ReactDOM.render()` erneut aufrufst, wird die Benutzeroberfläche aktualisiert. Es ist leicht zu erkennen, wie deine Benutzeroberfläche aktualisiert wird und wo Änderungen vorgenommen werden können, da nichts kompliziertes vor sich geht. React's **One-Way-Data Flow** (Daten fließen nur in eine Richtung) (auch *One-Way-Binding* genannt) hält alles modular und schnell.
+Am Ende dieses Schrittes steht dir eine Ansammlung von wiederverwendbaren Komponenten zur Verfügung, die dein Datenmodell darstellt. Die Komponenten haben jeweils nur eine `render()` Methode, da es sich um eine statische Version deiner Anwendung handelt. Die Komponente an der Spitze der Hierarchie (`FilterableProductTable`) nimmt dein Datenmodell als Prop. Wenn du eine Änderung an deinem zugrunde liegenden Datenmodell vornimmst und `ReactDOM.render()` erneut aufrufst, wird die Benutzeroberfläche aktualisiert. Es ist leicht zu erkennen, wie deine Benutzeroberfläche aktualisiert wird und wo Änderungen vorgenommen werden können, da nichts kompliziertes vor sich geht. React's **One-Way-Data Flow** (Daten fließen nur in eine Richtung) (auch *One-Way-Binding* genannt) hält alles modular und schnell.
 
 Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in die [React docs](/docs/).
 
@@ -82,7 +82,7 @@ Es gibt zwei Arten von Daten in React: Props und State. Es ist wichtig, den Unte
 
 Um deine Benutzeroberfläche interaktiv zu machen, musst du in der Lage sein, Änderungen an deinem zugrunde liegenden Datenmodell auszulösen. React macht dies mit **state** einfach.
 
-Um deine App korrekt zu erstellen, musst du zunächst an den minimalen Satz von veränderbaren **states** denken, die deine App benötigt. Der Schlüssel dazu ist[DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Finde die absolut minimale Darstellung des **states**, den deine Anwendung benötigt und berechne bei Bedarf alles andere, was du benötigst. Wenn du beispielsweise eine TODO-Liste erstellst, nutze einfach einen Array für die TODO-Elemente; nutze keine separate **state**-Variable für die Anzahl der Elemente. Möchtest du die Anzahl an TODO-Elementen darstellen, nimm einfach die Länge des TODO-Arrays.
+Um deine Anwendung korrekt zu erstellen, musst du zunächst an den minimalen Satz von veränderbaren **states** denken, die deine Anwendung benötigt. Der Schlüssel dazu ist[DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Finde die absolut minimale Darstellung des **states**, den deine Anwendung benötigt und berechne bei Bedarf alles andere, was du benötigst. Wenn du beispielsweise eine TODO-Liste erstellst, nutze einfach einen Array für die TODO-Elemente; nutze keine separate **state**-Variable für die Anzahl der Elemente. Möchtest du die Anzahl an TODO-Elementen darstellen, nimm einfach die Länge des TODO-Arrays.
 
 Denke an alle Daten in unserer Beispielanwendung. Wir haben:
 
@@ -108,7 +108,7 @@ Letztendlich sieht unser **state** folgendermaßen aus:
 
 <p data-height="600" data-theme-id="0" data-slug-hash="qPrNQZ" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">Schau dir <a href="https://codepen.io/gaearon/pen/qPrNQZ">In React denken: Schritt 4</a> auf <a href="https://codepen.io">CodePen</a> an.</p>
 
-OK, wir haben also herausgefunden, was der minimale Satz an **state** der App ist. Als Nächstes müssen wir herausfinden, welche Komponente diesen **state** verändert oder *besitzt*.
+OK, wir haben also herausgefunden, was der minimale Satz an **state** der Anwendung ist. Als Nächstes müssen wir herausfinden, welche Komponente diesen **state** verändert oder *besitzt*.
 
 Denk daran: Bei React geht es um den einseitigen Datenfluss (One-Way-Data Flow) entlang der Komponentenhierarchie. Es ist möglicherweise nicht sofort klar, welche Komponente welchen **state** besitzen soll. **Dies ist oft der am schwierigsten zu verstehende Teil für Neueinsteiger, ** also folge diesen Schritten, um es herauszufinden:
 
