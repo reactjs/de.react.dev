@@ -78,31 +78,31 @@ Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in
 
 Es gibt zwei Arten von Daten in React: Props und State. Es ist wichtig, den Unterschied zwischen den beiden zu verstehen; durchforste [die offiziellen React-Docs](/docs/interactivity-and-dynamic-uis.html), wenn du dir nicht sicher bist, was der Unterschied ist.
 
-## Step 3: Identify The Minimal (but complete) Representation Of UI State {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
+## Schritt 3: Identifiziere die minimale (aber vollständige) Darstellung des Zustandes der Benutzeroberfläche {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
-To make your UI interactive, you need to be able to trigger changes to your underlying data model. React makes this easy with **state**.
+Um deine Benutzeroberfläche interaktiv zu machen, musst du in der Lage sein, Änderungen an deinem zugrunde liegenden Datenmodell auszulösen. React macht dies mit **state** einfach.
 
-To build your app correctly, you first need to think of the minimal set of mutable state that your app needs. The key here is [DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Figure out the absolute minimal representation of the state your application needs and compute everything else you need on-demand. For example, if you're building a TODO list, just keep an array of the TODO items around; don't keep a separate state variable for the count. Instead, when you want to render the TODO count, simply take the length of the TODO items array.
+Um deine App korrekt zu erstellen, musst du zunächst an den minimalen Satz von veränderbaren **states** denken, die deine App benötigt. Der Schlüssel dazu ist[DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Finde die absolut minimale Darstellung des **states**, den deine Anwendung benötigt und berechne bei Bedarf alles andere, was du benötigst. Wenn du beispielsweise eine TODO-Liste erstellst, nutze einfach einen Array für die TODO-Elemente; nutze keine separate **state**-Variable für die Anzahl der Elemente. Möchtest du die Anzahl an TODO-Elementen darstellen, nimm einfach die Länge des TODO-Arrays.
 
-Think of all of the pieces of data in our example application. We have:
+Denke an alle Daten in unserer Beispielanwendung. Wir haben:
 
-  * The original list of products
-  * The search text the user has entered
-  * The value of the checkbox
-  * The filtered list of products
+  * die ursprüngliche Liste der Produkte
+  * den vom Benutzer eingegebenen Suchtext
+  * der Wert des Auswahlfeldes
+  * die gefilterte Liste der Produkte
 
-Let's go through each one and figure out which one is state. Simply ask three questions about each piece of data:
+Lass uns jeden einzelnen Punkt durchgehen und herausfinden, welcher davon **state** ist. Stelle einfach drei Fragen zu jedem Datenelement:
 
-  1. Is it passed in from a parent via props? If so, it probably isn't state.
-  2. Does it remain unchanged over time? If so, it probably isn't state.
-  3. Can you compute it based on any other state or props in your component? If so, it isn't state.
+  1. Wird es von einem Elternteil über **props** weitergegeben? Wenn ja, dann ist es wahrscheinlich kein **state**.
+  2. Bleibt es im Laufe der Zeit unverändert? Wenn ja, dann ist es wahrscheinlich kein **state**.
+  3. Kann es basierend auf einem anderen **state** oder **props** berechnet werden? Wenn ja, dann ist es kein **state**.
 
-The original list of products is passed in as props, so that's not state. The search text and the checkbox seem to be state since they change over time and can't be computed from anything. And finally, the filtered list of products isn't state because it can be computed by combining the original list of products with the search text and value of the checkbox.
+Die ursprüngliche Liste der Produkte wird als **props** übergeben, also ist das kein **state**. Der Suchtext und das Auswahlfeld scheinen **state** zu sein, da sie sich im Laufe der Zeit ändern und aus nichts berechnet werden können. Und schließlich ist die gefilterte Liste der Produkte kein **state**, da sie berechnet werden kann, indem man die ursprüngliche Liste der Produkte mit dem Suchtext und dem Wert des Auswahlfeldes kombiniert.
 
-So finally, our state is:
+Letztendlich sieht unser **state** folgendermaßen aus:
 
-  * The search text the user has entered
-  * The value of the checkbox
+  * der vom Benutzer eingegebene Suchtext
+  * der Wert des Auswahlfeldes
 
 ## Step 4: Identify Where Your State Should Live {#step-4-identify-where-your-state-should-live}
 
