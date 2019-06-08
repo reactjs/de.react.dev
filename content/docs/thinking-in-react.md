@@ -1,6 +1,6 @@
 ---
 id: thinking-in-react
-title: Denken in React
+title: In React denken
 permalink: docs/thinking-in-react.html
 redirect_from:
   - 'blog/2013/11/05/thinking-in-react.html'
