@@ -76,7 +76,7 @@ Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in
 
 ### Ein kurzer Einschub: Props vs State {#a-brief-interlude-props-vs-state}
 
-Es gibt zwei Arten von Daten in React: Props und State. Es ist wichtig, den Unterschied zwischen den beiden zu verstehen; durchforste [die offiziellen React-Docs](/docs/interactivity-and-dynamic-uis.html), wenn du sich nicht sicher bist, was der Unterschied ist.
+Es gibt zwei Arten von Daten in React: Props und State. Es ist wichtig, den Unterschied zwischen den beiden zu verstehen; durchforste [die offiziellen React-Docs](/docs/interactivity-and-dynamic-uis.html), wenn du dir nicht sicher bist, was der Unterschied ist.
 
 ## Step 3: Identify The Minimal (but complete) Representation Of UI State {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
