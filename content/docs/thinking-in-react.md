@@ -144,6 +144,6 @@ Lass uns darüber nachdenken, was wir erreichen wollen. Wir möchten sicherstell
 
 Obwohl das komplex klingt, handelt es sich eigentlich nur um ein paar Zeilen Code. Und es ist sehr explizit dargestellt, wie deine Daten in der Anwendung fließen.
 
-## And That's It {#and-thats-it}
+## Und das war's dann auch schon {#and-thats-it}
 
-Hopefully, this gives you an idea of how to think about building components and applications with React. While it may be a little more typing than you're used to, remember that code is read far more than it's written, and it's extremely easy to read this modular, explicit code. As you start to build large libraries of components, you'll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink. :)
+Hoffentlich gibt dies dir eine Vorstellung davon, wie du mit React über die Entwicklung von Komponenten und Anwendungen nachdenken kannst. Auch wenn es ein wenig mehr Tippen sein kann, als du es gewohnt bist, denk daran, dass Code viel mehr gelesen als geschrieben wird, und es extrem einfach ist, diesen modularen, expliziten Code zu lesen. Wenn du beginnst, große Bibliotheken von Komponenten zu erstellen, dann wirst du diese Explizität und Modularität zu schätzen wissen und mit der Wiederverwendung von Code wird die Anzahl deiner Codezeilen schrumpfen. :)
