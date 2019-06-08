@@ -106,7 +106,7 @@ Letztendlich sieht unser **state** folgendermaßen aus:
 
 ## Schritt 4: Identifiziere, wo dein **state** leben soll {#step-4-identify-where-your-state-should-live}
 
-<p data-height="600" data-theme-id="0" data-slug-hash="qPrNQZ" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">Schau dir <a href="https://codepen.io/gaearon/pen/qPrNQZ">In React denken: Schritt</a> auf <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="600" data-theme-id="0" data-slug-hash="qPrNQZ" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">Schau dir <a href="https://codepen.io/gaearon/pen/qPrNQZ">In React denken: Schritt 4</a> auf <a href="https://codepen.io">CodePen</a> an.</p>
 
 OK, wir haben also herausgefunden, was der minimale Satz an **state** der App ist. Als Nächstes müssen wir herausfinden, welche Komponente diesen **state** verändert oder *besitzt*.
 
@@ -129,19 +129,20 @@ Cool, wir haben uns also dazu entschieden, dass unser **state** in `FilterablePr
 
 Du wirst sehen können, wie sich deine Anwendung verhalten wird: Setze `filterText` auf `"ball"` und aktualisiere deine Anwendung. Du wirst sehen, dass die Tabelle korrekt aktualisiert wurde.
 
-## Step 5: Add Inverse Data Flow {#step-5-add-inverse-data-flow}
+## Schritt 5: Füge inversen Datenfluss hinzu {#step-5-add-inverse-data-flow}
 
-<p data-height="600" data-theme-id="0" data-slug-hash="LzWZvb" data-default-tab="js,result" data-user="rohan10" data-embed-version="2" data-pen-title="Thinking In React: Step 5" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/LzWZvb">Thinking In React: Step 5</a> on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="600" data-theme-id="0" data-slug-hash="LzWZvb" data-default-tab="js,result" data-user="rohan10" data-embed-version="2" data-pen-title="Thinking In React: Step 5" class="codepen">Schau dir <a href="https://codepen.io/gaearon/pen/LzWZvb">In React denken: Schritt 4</a> auf <a href="https://codepen.io">CodePen</a> an.</p>
 
-So far, we've built an app that renders correctly as a function of props and state flowing down the hierarchy. Now it's time to support data flowing the other way: the form components deep in the hierarchy need to update the state in `FilterableProductTable`.
+Bisher haben wir eine Anwendung entwickelt, die in Abhängigkeit von **props** und **state**, die in der Hierarchie nach unten fließen, korrekt gerendert wird. Jetzt ist es an der Zeit, den Datenfluss in die andere Richtung zu unterstützen: Die Formular-Komponenten tief in der Hierarchie müssen den **state** in der `FilterableProductTable` aktualisieren.
 
-React makes this data flow explicit to make it easy to understand how your program works, but it does require a little more typing than traditional two-way data binding.
+React macht diesen Datenfluss explizit, um es leicht verständlich zu machen, wie dein Programm funktioniert, aber es erfordert ein wenig mehr Tippen als herkömmliches **Two-Way-Binding** (Daten fließen in beide Richtungen).
 
-If you try to type or check the box in the current version of the example, you'll see that React ignores your input. This is intentional, as we've set the `value` prop of the `input` to always be equal to the `state` passed in from `FilterableProductTable`.
+Wenn du in der aktuellen Version des Beispiels versuchst, das Auswahlfeld anzuklicken, wirst du feststellen, dass React deine Eingabe ignoriert. Dies ist beabsichtigt, da wir den `value` **prop** des `input`s so eingestellt haben, dass er immer gleich des **state** ist, der von `FilterableProductTable` übergeben wird.
 
-Let's think about what we want to happen. We want to make sure that whenever the user changes the form, we update the state to reflect the user input. Since components should only update their own state, `FilterableProductTable` will pass callbacks to `SearchBar` that will fire whenever the state should be updated. We can use the `onChange` event on the inputs to be notified of it. The callbacks passed by `FilterableProductTable` will call `setState()`, and the app will be updated.
 
-Though this sounds complex, it's really just a few lines of code. And it's really explicit how your data is flowing throughout the app.
+Lass uns darüber nachdenken, was wir erreichen wollen. Wir möchten sicherstellen, dass wir bei jeder Änderung des Formulars durch den Benutzer den **states** aktualisieren, um die Benutzereingaben widerzuspiegeln. Da Komponenten nur ihren eigenen **state** aktualisieren sollten, leitet `FilterableProductTable` Callbacks an `SearchBar` weiter, die ausgelöst werden, wenn **state** aktualisiert werden soll. Wir können den `onChange` Event auf die Eingabefelder anwenden, um darüber informiert zu werden. Die von `FilterableProductTable` übergebenen Callbacks rufen `setState()` auf und die Anwendung wird aktualisiert.
+
+Obwohl das komplex klingt, handelt es sich eigentlich nur um ein paar Zeilen Code. Und es ist sehr explizit dargestellt, wie deine Daten in der Anwendung fließen.
 
 ## And That's It {#and-thats-it}
 
