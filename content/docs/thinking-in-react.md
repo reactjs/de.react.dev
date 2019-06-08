@@ -33,7 +33,7 @@ Unsere JSON API gibt uns Daten zurück, die folgendermaßen aussehen:
 
 ## Schritt 1: Zerlege die Benutzeroberfläche in eine Komponentenhierarchie {#step-1-break-the-ui-into-a-component-hierarchy}
 
-Zuerst solltest du um jede Komponente und Unterkomponente des Mock-Ups eine Box zeichnen und jeder einen Name geben. Falls du mit einem Designer zusammenarbeitest, hat er das vielleicht schon getan, also geh und frage ihn! Die Namen der Photoshop-Ebenen könnten letztendlich die Namen deiner React-Komponenten sein!
+Zuerst solltest du um jede Komponente (und Unterkomponente) des Mock-Ups eine Box zeichnen und jeder einen Name geben. Falls du mit einem Designer zusammenarbeitest, hat er das vielleicht schon getan, also geh und frage ihn! Die Namen der Photoshop-Ebenen könnten letztendlich die Namen deiner React-Komponenten sein!
 
 Aber woher weißt du, was eine eigene Komponente sein sollte? Verwende einfach die gleichen Techniken, die du auch verwendest, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt anlegen möchtest. Eine dieser Techniken ist das[Single Responsibility Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erledigen. Sobald sie wächst, sollte sie in kleinere Teilkomponenten zerlegt werden.
 
