@@ -115,7 +115,7 @@ Denk daran: Bei React geht es um den einseitigen Datenfluss (One-Way-Data Flow) 
 Für jedes Stück **state** in deiner Anwendung:
 
   * Identifiziere jede Komponente, die etwas rendert, das auf diesem **state** basiert.
-  * Suche eine gemeinsame "Eigentümer"-Komponente (eine einzelne Komponente, die oberhalb der untersuchten Komponenten liegen, die den **state** benötigen).
+  * Suche eine gemeinsame "Eigentümer"-Komponente (eine einzelne Komponente, die oberhalb der untersuchten Komponenten liegt, die den **state** benötigen).
   * Entweder der gemeinsame Eigentümer oder eine andere Komponente, die in der Hierarchie oberhalb liegt, sollte den **state** besitzen.
   * Kannst du keine Komponente finden, für die es sinnvoll ist, den **state** zu besitzen, erstelle eine neue Komponente, nur um den **state** zu halten, und füge sie irgendwo in der Hierarchie über der gemeinsamen Eigentümer-Komponente hinzu.
 
