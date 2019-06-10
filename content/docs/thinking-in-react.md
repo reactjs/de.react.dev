@@ -97,7 +97,7 @@ Lass uns jeden einzelnen Punkt durchgehen und herausfinden, welcher davon **stat
   2. Bleibt es im Laufe der Zeit unverändert? Wenn ja, dann ist es wahrscheinlich kein **state**.
   3. Kann es basierend auf einem anderen **state** oder **props** berechnet werden? Wenn ja, dann ist es kein **state**.
 
-Die ursprüngliche Liste der Produkte wird als **props** übergeben, also ist das kein **state**. Der Suchtext und das Auswahlfeld scheinen **state** zu sein, da sie sich im Laufe der Zeit ändern und aus nichts berechnet werden können. Und schließlich ist die gefilterte Liste der Produkte kein **state**, da sie berechnet werden kann, indem man die ursprüngliche Liste der Produkte mit dem Suchtext und dem Wert des Auswahlfeldes kombiniert.
+Die ursprüngliche Liste der Produkte wird als **props** übergeben, also ist dies kein **state**. Der Suchtext und das Auswahlfeld scheinen **state** zu sein, da sie sich im Laufe der Zeit ändern und aus nichts berechnet werden können. Und schließlich ist die gefilterte Liste der Produkte kein **state**, da sie berechnet werden kann, indem man die ursprüngliche Liste der Produkte mit dem Suchtext und dem Wert des Auswahlfeldes kombiniert.
 
 Letztendlich sieht unser **state** folgendermaßen aus:
 
