@@ -133,7 +133,7 @@ Du wirst sehen können, wie sich deine Anwendung verhalten wird: Setze `filterTe
 
 <p data-height="600" data-theme-id="0" data-slug-hash="LzWZvb" data-default-tab="js,result" data-user="rohan10" data-embed-version="2" data-pen-title="Thinking In React: Step 5" class="codepen">Schau dir <a href="https://codepen.io/gaearon/pen/LzWZvb">In React denken: Schritt 4</a> auf <a href="https://codepen.io">CodePen</a> an.</p>
 
-Bisher haben wir eine Anwendung entwickelt, die in Abhängigkeit von **props** und **state**, die in der Hierarchie nach unten fließen, korrekt gerendert wird. Jetzt ist es an der Zeit, den Datenfluss in die andere Richtung zu unterstützen: Die Formular-Komponenten tief in der Hierarchie müssen den **state** in der `FilterableProductTable` aktualisieren.
+Bisher haben wir eine Anwendung entwickelt, die in Abhängigkeit von **props** und **state**, die in der Hierarchie nach unten fließen, korrekt gerendert wird. Jetzt ist es an der Zeit, den Datenfluss in die andere Richtung zu unterstützen: Die Formular-Komponenten tief in der Hierarchie müssen den **state** in `FilterableProductTable` aktualisieren.
 
 React macht diesen Datenfluss explizit, um es leicht verständlich zu machen, wie dein Programm funktioniert, aber es erfordert ein wenig mehr Tippen als herkömmliches **Two-Way-Binding** (Daten fließen in beide Richtungen).
 
