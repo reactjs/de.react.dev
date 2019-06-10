@@ -108,7 +108,7 @@ Letztendlich sieht unser **state** folgendermaßen aus:
 
 <p data-height="600" data-theme-id="0" data-slug-hash="qPrNQZ" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">Schau dir <a href="https://codepen.io/gaearon/pen/qPrNQZ">In React denken: Schritt 4</a> auf <a href="https://codepen.io">CodePen</a> an.</p>
 
-OK, wir haben also herausgefunden, was der minimale Satz an **state** der Anwendung ist. Als Nächstes müssen wir herausfinden, welche Komponente diesen **state** verändert oder *besitzt*.
+OK, wir haben also herausgefunden, was die minimalste Menge des **state**s der Anwendung ist. Als Nächstes müssen wir herausfinden, welche Komponente diesen **state** verändert oder *besitzt*.
 
 Denk daran: Bei React geht es um den einseitigen Datenfluss (One-Way-Data Flow) entlang der Komponentenhierarchie. Es ist möglicherweise nicht sofort klar, welche Komponente welchen **state** besitzen soll. **Dies ist oft der am schwierigsten zu verstehende Teil für Neueinsteiger, ** also folge diesen Schritten, um es herauszufinden:
 
