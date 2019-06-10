@@ -112,7 +112,7 @@ OK, wir haben also herausgefunden, was die minimalste Menge des **state**s der A
 
 Denk daran: Bei React geht es um den einseitigen Datenfluss (One-Way-Data Flow) entlang der Komponentenhierarchie. Es ist möglicherweise nicht sofort klar, welche Komponente welchen **state** besitzen soll. **Dies ist oft der am schwierigsten zu verstehende Teil für Neueinsteiger, ** also folge diesen Schritten, um es herauszufinden:
 
-Für jeden Teil **state** in deiner Anwendung:
+Für jedes Stück **state** in deiner Anwendung:
 
   * Identifiziere jede Komponente, die etwas rendert, das auf diesem **state** basiert.
   * Suche eine gemeinsame "Eigentümer"-Komponente (eine einzelne Komponente, die oberhalb der untersuchten Komponenten liegen, die den **state** benötigen).
