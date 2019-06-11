@@ -7,9 +7,9 @@ permalink: docs/glossary.html
 
 ---
 
-## Single-page Application {#single-page-application}
+## Single-Page Anwendnung {#single-page-application}
 
-A single-page application is an application that loads a single HTML page and all the necessary assets (such as JavaScript and CSS) required for the application to run. Any interactions with the page or subsequent pages do not require a round trip to the server which means the page is not reloaded.
+Eine Single-Page Anwendnung ist eine Anwendungen, die eine einzelne HTML Seite und all deren Ressourcen (wie JavaScript oder CSS) lädt, die für das Ausführen der Anwendung erforderlich sind. Jegliche Interaktionen mit der Seite und deren Unterseiten benötigen keine erneute Serveranfrage, d. h. die Seite muss nicht neu geladen werden.
 
 Though you may build a single-page application in React, it is not a requirement. React can also be used for enhancing small parts of existing websites with additional interactivity. Code written in React can coexist peacefully with markup rendered on the server by something like PHP, or with other client-side libraries. In fact, this is exactly how React is being used at Facebook.
 
@@ -100,7 +100,7 @@ If you need to modify some value in response to user input or a network response
 <Welcome>Hallo Welt!</Welcome>
 ```
 
-The string `Hallo Welt!` is available in `props.children` in the `Welcome` component:
+Der String `Hallo Welt!` ist in `props.children` in der `Welcome`-Komponente verfügbar:
 
 ```js
 function Welcome(props) {
@@ -108,7 +108,7 @@ function Welcome(props) {
 }
 ```
 
-For components defined as classes, use `this.props.children`:
+Für Komponenten die als Klassen definiert worden, verwende `this.props.children`:
 
 ```js
 class Welcome extends React.Component {
@@ -132,13 +132,13 @@ Lifecycle methods are custom functionality that gets executed during the differe
 
  ## [Kontrollierte](/docs/forms.html#controlled-components) vs. [Unkontrollierte Komponenten](/docs/uncontrolled-components.html)
 
-React has two different approaches to dealing with form inputs.
+React besitzt zwei verschiedene Ansätze, um mit Formulareingaben umzugehen.
 
 An input form element whose value is controlled by React is called a *controlled component*. When a user enters data into a controlled component a change event handler is triggered and your code decides whether the input is valid (by re-rendering with the updated value). If you do not re-render then the form element will remain unchanged.
 
 An *uncontrolled component* works like form elements do outside of React. When a user inputs data into a form field (an input box, dropdown, etc) the updated information is reflected without React needing to do anything. However, this also means that you can't force the field to have a certain value.
 
-In most cases you should use controlled components.
+In den meisten Fällen solltest du kontrollierte Komponenten verwenden.
 
 ## [Keys](/docs/lists-and-keys.html) {#keys}
 
@@ -156,10 +156,10 @@ Use refs sparingly. If you find yourself often using refs to "make things happen
 
 ## [Events](/docs/handling-events.html) {#events}
 
-Handling events with React elements has some syntactic differences:
+Die Handhabung von Events in React-Elementen weist einige syntaktische Unterschiede auf:
 
-* React event handlers are named using camelCase, rather than lowercase.
-* With JSX you pass a function as the event handler, rather than a string.
+* React Event-Handler werden nicht in Kleinbuchstaben, sondern in camelCase geschrieben.
+* Bei JSX übergibst du als Event-Handler eine Funktion und keinen String.
 
 ## [Abgleich](/docs/reconciliation.html) {#reconciliation}
 
