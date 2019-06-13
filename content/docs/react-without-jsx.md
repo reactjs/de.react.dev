@@ -42,7 +42,7 @@ Wenn du neugierig auf weitere Beispiele bist, bei denen JSX in Javascript konver
 
 Die Komponente kann der Funktion entweder als String, als Unterklasse von `React.Component` oder als zustandslose (engl. stateless) Komponente in Form einer einfachen Funktion zur Verfügung gestellt werden.
 
-Solltest du das häufige Tippen von `React.createElement` satt haben, kannst du auf ein übliches Muster zurückgreigen: Das Zuweisen eines Shorthands. 
+Solltest du das häufige Tippen von `React.createElement` satt haben, kannst du auf ein übliches Muster zurückgreifen: Das Zuweisen eines Shorthands. 
 
 ```js
 const e = React.createElement;
