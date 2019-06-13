@@ -4,7 +4,7 @@ title: React Without JSX
 permalink: docs/react-without-jsx.html
 ---
 
-JSX ist keine Voraussetzung für die Benutzung von React. Der Verzicht auf JSX ist besonders dann von Vorteil, wenn man in seiner Entwicklungsumgebung keine Kompilierung durchführen möchte.
+JSX ist keine Voraussetzung für die Benutzung von React. Besonders praktisch ist der Verzicht auf JSX dann, wenn man in seiner Entwicklungsumgebung keine Kompilierung durchführen möchte.
 
 Jedes JSX Element ist eigentlich nur syntaktischer Zucker für den Aufruf von `React.createElement(component, props, ...children)`. Dementsprechend kannst du alles, was mit JSX möglich ist, auch in einfachem Javascript umsetzen.
 
