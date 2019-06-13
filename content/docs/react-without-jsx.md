@@ -38,11 +38,11 @@ ReactDOM.render(
 );
 ```
 
-If you're curious to see more examples of how JSX is converted to JavaScript, you can try out [the online Babel compiler](babel://jsx-simple-example).
+Wenn du neugierig auf weitere Beispiele bist, bei denen JSX in Javascript konvertiert wird, dann probiere gerne den [online Babel compiler](babel://jsx-simple-example) aus.
 
-The component can either be provided as a string, or as a subclass of `React.Component`, or a plain function for stateless components.
+Die Komponente kann der Funktion entweder als String, als Unterklasse von `React.Component` oder als stateless Komponente in Form einer einfachen Funktion zur Verfügung gestellt werden.
 
-If you get tired of typing `React.createElement` so much, one common pattern is to assign a shorthand:
+Solltest du das häufige Tippen von `React.createElement` satt haben, kannst du auf ein übliches Muster zurückgreigen: Das Zuweisen eines Shorthands. 
 
 ```js
 const e = React.createElement;
