@@ -4,11 +4,11 @@ title: React Without JSX
 permalink: docs/react-without-jsx.html
 ---
 
-JSX is not a requirement for using React. Using React without JSX is especially convenient when you don't want to set up compilation in your build environment.
+JSX ist keine Voraussetzung für die Benutzung von React. Der Verzicht auf JSX ist besonders dann von Vorteil, wenn man in seiner Entwicklungsumgebung keine Kompilierung durchführen möchte.
 
-Each JSX element is just syntactic sugar for calling `React.createElement(component, props, ...children)`. So, anything you can do with JSX can also be done with just plain JavaScript.
+Jedes JSX Element ist eigentlich nur syntaktischer Zucker für den Aufruf von `React.createElement(component, props, ...children)`. Dementsprechend kannst du alles, was mit JSX möglich ist, auch in einfachem Javascript umsetzen.
 
-For example, this code written with JSX:
+Als Beispiel, dieser Code in JSX:
 
 ```js
 class Hello extends React.Component {
@@ -23,7 +23,7 @@ ReactDOM.render(
 );
 ```
 
-can be compiled to this code that does not use JSX:
+kann in diesen Code kompiliert werden, welcher kein JSX benutzt.
 
 ```js
 class Hello extends React.Component {
