@@ -24,7 +24,7 @@ In React, ist das transformieren von Arrays in [Element](/docs/rendering-element
 
 Du kannst Sammlungen von Elementen erstellen und diese mit geschweiften Klammern `{}` [in JSX einbinden](/docs/introducing-jsx.html#embedding-expressions-in-jsx).
 
-Nachfolgend wird ein `Nummern`-Array mit Hilfe der JavaScript [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) Funktion. Wir geben für jeden Eintrag im Array ein `<li>` Element zurück. Schließlich weisen wir das Array der Variable `listItems` zu:
+Nachfolgend wird ein `Nummern`-Array mit Hilfe der JavaScript [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)-Funktion durchlaufen. Wir geben für jeden Eintrag im Array ein `<li>` Element zurück. Schließlich weisen wir das Array der Variable `listItems` zu:
 
 ```javascript{2-4}
 const numbers = [1, 2, 3, 4, 5];
