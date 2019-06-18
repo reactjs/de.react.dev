@@ -278,7 +278,7 @@ Da `setState()` automatisch [die einzelne Teile in den aktuellen State überfüh
 
 Das Angeben eines `value`-Prop auf einer [kontrollierten Komponente(/docs/forms.html#controlled-components) verhindert, dass der Benutzer den Eingabewert ändern kann, es sei denn, du wünscht es. Wenn du einen Wert angegeben hast, aber das Eingabefeld noch editierbar ist, hast du möglicherweise versehentlich `value` auf `undefiniert` oder `null` gesetzt.
 
-Der folgende Code demonstriert dies. (Das Eingabefeld ist zuerste gesperrt, wird aber nach einer kurzen Verzögerung editierbar.)
+Der folgende Code demonstriert dies. (Das Eingabefeld ist zuerst gesperrt, wird aber nach einer kurzen Verzögerung editierbar.)
 
 ```javascript
 ReactDOM.render(<input value="hi" />, mountNode);
