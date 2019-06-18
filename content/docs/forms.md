@@ -202,7 +202,7 @@ Da dessen Wert schreibgeschützt ist, ist dies eine **unkontrollierte** Komponen
 
 ## Umgang mit mehreren Eingabefeldern {#handling-multiple-inputs}
 
-Wenn du mehrere kontrollierte `input`-Elemente benötigst, kannst du das `name`-Attribut zu jedem Element hinzufügen und die Handler-Funktion entscheiden lassen was baiserend auf dem Wert von `event.target.name`, zu tun ist.
+Wenn du mehrere kontrollierte `input`-Elemente benötigst, kannst du das `name`-Attribut zu jedem Element hinzufügen und die Handler-Funktion entscheiden lassen, was, basierend auf dem Wert von `event.target.name`, zu tun ist.
 
 Zum Beispiel:
 
