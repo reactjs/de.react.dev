@@ -20,7 +20,7 @@ Dieser Code schreibt `[2, 4, 6, 8, 10]` in die Konsole.
 
 In React, ist das transformieren von Arrays in [Element](/docs/rendering-elements.html)-Listen nahezu identisch.
 
-### Rendern meherer Komponenten {#rendering-multiple-components}
+### Rendern mehrerer Komponenten {#rendering-multiple-components}
 
 Du kannst Sammlungen von Elementen erstellen und diese mit geschweiften Klammern `{}` [in JSX einbinden](/docs/introducing-jsx.html#embedding-expressions-in-jsx).
 
