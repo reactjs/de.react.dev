@@ -8,7 +8,7 @@ next: forms.html
 
 Lass uns zuerst schauen, wie wir Listen in JavaScript transformieren können.
 
-In dem untenstehenden Code verwenden wir die [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) Funktion um die Werte eines `Nummern`-Arrays zu verdoppeln. Wir weisen das von `map()` neu zurückgegebene Array der Variable `double` zu und loggen es:
+In dem untenstehenden Code verwenden wir die [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)-Funktion um die Werte eines `Nummern`-Arrays zu verdoppeln. Wir weisen das von `map()` neu zurückgegebene Array der Variable `double` zu und loggen es:
 
 ```javascript{2}
 const numbers = [1, 2, 3, 4, 5];
