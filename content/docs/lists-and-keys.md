@@ -18,7 +18,7 @@ console.log(doubled);
 
 Dieser Code schreibt `[2, 4, 6, 8, 10]` in die Konsole.
 
-In React, ist das transformieren von Arrays in [Element](/docs/rendering-elements.html)-Listen nahezu identisch.
+In React ist das Transformieren von Arrays in [Element](/docs/rendering-elements.html)-Listen nahezu identisch.
 
 ### Rendern mehrerer Komponenten {#rendering-multiple-components}
 
