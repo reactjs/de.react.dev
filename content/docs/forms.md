@@ -93,7 +93,7 @@ class EssayForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'Bitte schreibe einen Aufsatz über dein lieblings DOM-Element.'
+      value: 'Bitte schreibe einen Aufsatz über dein Lieblings-DOM-Element.'
     };
 
     this.handleChange = this.handleChange.bind(this);
