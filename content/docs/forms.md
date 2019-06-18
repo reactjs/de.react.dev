@@ -127,7 +127,7 @@ Merke dir, dass `this.state.value` im Konstruktor initialisert wird, so dass das
 
 ## Der select-Tag {#the-select-tag}
 
-In HTML, erstellt `<select>` eine Dropdown-Liste. Zum Beispiel erstellt dieses HTML eine Dropdown-Liste von Geschmacksrichtungen:
+In HTML erstellt `<select>` eine Dropdown-Liste. Zum Beispiel erstellt dieses HTML eine Dropdown-Liste von Geschmacksrichtungen:
 
 ```html
 <select>
