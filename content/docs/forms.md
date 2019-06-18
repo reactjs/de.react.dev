@@ -167,7 +167,7 @@ class FlavorForm extends React.Component {
           <select value={this.state.value} onChange={this.handleChange}>
             <option value="grapefruit">Pampelmuse</option>
             <option value="lime">Limette</option>
-            <option selected value="coconut">Kokosnuss</option>
+            <option value="coconut">Kokosnuss</option>
             <option value="mango">Mango</option>
           </select>
         </label>
