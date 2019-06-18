@@ -295,4 +295,4 @@ Es kann manchmal mühsam sein kontrollierte Komponenten zu verwenden, da du für
 
 ## Vollumfassende Lösungen {#fully-fledged-solutions}
 
-Wenn du nach einer Komplettlösung mit Validierung, dem im Blick behalten von besuchten Feldern und der Handhabung von Formularverabeitung suchst, ist [Formik](https://jaredpalmer.com/formik) eine der beliebtesten Entscheidungen. Es basiert jedoch auf den selben Pinzipien von kontrollierten Komponenten und der Verwaltung des States - also vernachlässige es nicht, darüber etwas zu lernen.
+Wenn du nach einer Komplettlösung mit Validierung, dem Im-Blick-Behalten von besuchten Feldern und der Handhabung von Formularverarbeitung suchst, ist [Formik](https://jaredpalmer.com/formik) eine der beliebtesten Entscheidungen. Es basiert jedoch auf den selben Pinzipien von kontrollierten Komponenten und der Verwaltung des States - also vernachlässige es nicht, darüber etwas zu lernen.
