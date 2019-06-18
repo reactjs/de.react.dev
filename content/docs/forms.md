@@ -180,7 +180,7 @@ class FlavorForm extends React.Component {
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
-Zusammenfassend ist es so, dass `<input type="text">`, `<textarea>`, und `<select>` sehr ähnlich funkionieren - alle besitzen ein `value`-Attribut, welches benutzt werden um eine kontrollierte Komponente umzusetzen.
+Zusammenfassend ist es so, dass `<input type="text">`, `<textarea>` und `<select>` sehr ähnlich funktionieren - alle besitzen ein `value`-Attribut, welches benutzt wird, um eine kontrollierte Komponente umzusetzen.
 
 > Hinweis
 >
