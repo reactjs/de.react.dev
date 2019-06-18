@@ -27,7 +27,7 @@ Dieses Formular hat das Standard HTML Verhalten, dass es beim Absenden den Benut
 
 Formelemente wie `<input>`, `<textarea>` und `<select>` behalten in HTML typischerweise ihren eigenen Zustand bei und aktualisiert ihn basierend auf Benutzereingaben. In React wird der veränderbare State typischerweise in der State-Eigenschaft der Komponente gehalten und nur mit [`setState()`](/docs/react-component.html#setstate) aktualisiert.
 
-Wir können beides kombinieren und den React-State zur alleinigen "source of truth" machen. Die React-Komponente rendert dann das Formular und steuert ebenso die nachfolgenden Benutzereingaben. Ein Eingabeformular-Element, dessen Wert auf diese Art und Weise von React kontrolliert wird, wird "kontrollierte Komponente" genannt.
+Wir können beides kombinieren, indem wir den React-State zur alleinigen "source of truth" machen. Die React-Komponente rendert dann das Formular und steuert ebenso die nachfolgenden Benutzereingaben. Ein Eingabeformular-Element, dessen Wert auf diese Art und Weise von React kontrolliert wird, wird "kontrollierte Komponente" genannt.
 
 Wenn wir zum Beispiel das vorherige Formular-Beispiel nehmen und den eingegbenen Namen, wenn er abgeschickt wird, loggen, dann können wir das Formular als kontrollierte Komponente schreiben:
 
