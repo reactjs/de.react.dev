@@ -138,7 +138,7 @@ In HTML, erstellt `<select>` eine Dropdown-Liste. Zum Beispiel erstellt dieses H
 </select>
 ```
 
-Beachte, dass die Option Kokosnuss aufgrund des `selected`-Attributs zunächst ausgewählt ist. React benutzt statt dem `selected`-Attribut, ein `value`-Attribut auf dem `select`-Tag. Dies ist in einer kontrollierten Komponente komfortabler, da du sie nur an einer Stelle bearbeiten musst. Zum Beispiel:
+Beachte, dass die Option "Kokosnuss" aufgrund des `selected`-Attributs zunächst ausgewählt ist. React benutzt statt dem `selected`-Attribut, ein `value`-Attribut auf dem `select`-Tag. Dies ist in einer kontrollierten Komponente komfortabler, da du sie nur an einer Stelle bearbeiten musst. Zum Beispiel:
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
