@@ -105,9 +105,9 @@ function ListItem({ item }) {
 
 Weitere Infos findest in der [Dokumentation über Fragments](/docs/fragments.html).
 
-## Accessible Forms {#accessible-forms}
+## Barrierefreie Formulare {#accessible-forms}
 
-### Labeling {#labeling}
+### Etikettierung {#labeling}
 Jedes HTML Formularelement, wie zum Beispiel `<input>` und `<textarea>`, muss barrierefrei etikettiert werden. Beschreibende `label`, welche Für Screenreader relevant sind, müssen vorhanden sein.  
 
 In folgenden Quellen kannst du nachlesen wie Dies am besten umzusetzen ist:
@@ -123,38 +123,39 @@ Auch wenn diese HTML-Standards direkt in React genutzt werden können, solltest 
 <input id="namedInput" type="text" name="name"/>
 ```
 
-### Notifying the user of errors {#notifying-the-user-of-errors}
+### Den Nutzer über Fehler informieren  {#notifying-the-user-of-errors}
 
-Error situations need to be understood by all users. The following link shows us how to expose error texts to screen readers as well:
+Fehlersituation müssen von allen Nutzern gleich verstanden werden. The foglenden Links zeigen uns wie man Fehlermeldungen auch für Screenreader interpretier gestaltet:
 
-- [The W3C demonstrates user notifications](https://www.w3.org/WAI/tutorials/forms/notifications/)
-- [WebAIM looks at form validation](https://webaim.org/techniques/formvalidation/)
+- [Das W3C demonstriert Fehlermeldungen](https://www.w3.org/WAI/tutorials/forms/notifications/)
+- [WebAIM nimmt sich der Formularvalidierung an](https://webaim.org/techniques/formvalidation/)
 
-## Focus Control {#focus-control}
+## Fokuskontrolle {#focus-control}
 
-Ensure that your web application can be fully operated with the keyboard only:
+Stelle sicher dass deine Webanwednung vollständig per Tastatur bedienbar ist: 
 
-- [WebAIM talks about keyboard accessibility](https://webaim.org/techniques/keyboard/)
+- [WebAIM sprich über Tastaturbarrierefreiheit](https://webaim.org/techniques/keyboard/)
 
-### Keyboard focus and focus outline {#keyboard-focus-and-focus-outline}
+### Tastaturfokus und die Fokusaußenlinie {#keyboard-focus-and-focus-outline}
 
-Keyboard focus refers to the current element in the DOM that is selected to accept input from the keyboard. We see it everywhere as a focus outline similar to that shown in the following image:
+Der Tastaturfokus zeigt auf das aktuell ausgewählte DOM-Element welches Eingaben von der Tastatur annimt. Man sieht dies überall anhand der Fokusaußenlinie, genau wie Diese im folgenden Bild:
 
 <img src="../images/docs/keyboard-focus.png" alt="Blue keyboard focus outline around a selected link." />
 
-Only ever use CSS that removes this outline, for example by setting `outline: 0`, if you are replacing it with another focus outline implementation.
+Benutze CSS zum Entfernen dieser Linie, zum Beispiel indem du `outline: 0`benutzt, außschließlich nur wenn du Diese auch durch eine andere Implementierung einer Fokusaußenlinie ersetzt. 
 
-### Mechanisms to skip to desired content {#mechanisms-to-skip-to-desired-content}
+### Mechanismen um direkt zum wichtigsten Inhalt zu springen {#mechanisms-to-skip-to-desired-content}
 
-Provide a mechanism to allow users to skip past navigation sections in your application as this assists and speeds up keyboard navigation.
+Stelle einen Mechanismus zur verfügung welcher die Naviagtionselemente deiner Webanwendung überspringt. Dies beschleunigt die Navigation mit der Tastatur.
 
-Skiplinks or Skip Navigation Links are hidden navigation links that only become visible when keyboard users interact with the page. They are very easy to implement with internal page anchors and some styling:
+Skiplinks, odr auch Skip Navigation Links sind versteckte Navigationslinks die nur dann sichtbar werden wenn Tastaturnutzer mit der Seite interagieren. Diese sind sehr einfach via internen Seitenankern und etwas Styling zu implementieren:
 
 - [WebAIM - Skip Navigation Links](https://webaim.org/techniques/skipnav/)
 
 Also use landmark elements and roles, such as `<main>` and `<aside>`, to demarcate page regions as assistive technology allow the user to quickly navigate to these sections.
+Nutze Außerdem semantische Elemente und Rollen, wie zum Beispiel `<main>`und `<aside>` um verschiedene Bereiche deiner Seite voneinander abzugrenzen, da es entprechende Assitenztechnologien so dem User erlauben sich schnell zwischen diesen Elementen zurecht zu finden.  
 
-Read more about the use of these elements to enhance accessibility here:
+Lies hier mehr über diese für die Barrierefreiheit förderlichen Elemente hier:
 
 - [Accessible Landmarks](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
 
