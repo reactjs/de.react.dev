@@ -298,4 +298,4 @@ function NumberList(props) {
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
-Manchmal führt dies zu klarerem Code, aber diese Stil kann ebenso missbruacht werden. Wie in JavaScript liegt es an dir zu entscheiden ob es sich lohnt eine Variable zur besseren Lesbarkeit zu benutzen. Behalte im Hinterkopf, dass wenn `map()` zu verschachtelt ist, es wahrscheinlich eine guter Zeitpunkt ist diesen Code in eine [Komponente auszulagern](/docs/components-and-props.html#extracting-components).
+Manchmal führt dies zu klarerem Code, aber dieser Stil kann ebenso missbraucht werden. Wie in JavaScript liegt es an dir zu entscheiden, ob es sich lohnt, eine Variable zur besseren Lesbarkeit zu benutzen. Behalte im Hinterkopf, dass wenn `map()` zu verschachtelt ist, es wahrscheinlich eine guter Zeitpunkt ist, diesen Code in eine [Komponente auszulagern](/docs/components-and-props.html#extracting-components).
