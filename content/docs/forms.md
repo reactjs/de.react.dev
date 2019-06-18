@@ -232,7 +232,7 @@ class Reservation extends React.Component {
     return (
       <form>
         <label>
-          Wirf hingehen:
+          Wird hingehen:
           <input
             name="isGoing"
             type="checkbox"
