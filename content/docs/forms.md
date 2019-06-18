@@ -264,7 +264,7 @@ this.setState({
 });
 ```
 
-Ist das Equivalent zu diesem ES5-Code:
+Ist das Äquivalent zu diesem ES5-Code:
 
 ```js{2}
 var partialState = {};
