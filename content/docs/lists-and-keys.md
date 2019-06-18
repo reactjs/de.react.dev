@@ -259,7 +259,7 @@ const content = posts.map((post) =>
 );
 ```
 
-In dem obigen Beispiel, kann die `Post`-Komponente `props.id` lesen, aber nicht `props.key`.
+In dem obigen Beispiel kann die `Post`-Komponente `props.id` lesen, aber nicht `props.key`.
 
 ### Einbetten von map() in JSX {#embedding-map-in-jsx}
 
