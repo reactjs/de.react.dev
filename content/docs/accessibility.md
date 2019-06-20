@@ -159,15 +159,17 @@ Lies hier mehr über diese für die Barrierefreiheit förderlichen Elemente hier
 
 - [Accessible Landmarks](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
 
-### Programmatically managing focus {#programmatically-managing-focus}
+### Den Fokus programmatisch verwalten {#programmatically-managing-focus}
 
-Our React applications continuously modify the HTML DOM during runtime, sometimes leading to keyboard focus being lost or set to an unexpected element. In order to repair this, we need to programmatically nudge the keyboard focus in the right direction. For example, by resetting keyboard focus to a button that opened a modal window after that modal window is closed.
+Unsere React-Applikation verändern den HTML-DOM kontinuierlich zur Laufzeit, dies führt dazu dass der Tastatur-Fokus gelegentlich verloren geht oder auf ein unvorhersehbares Element gesetzt wird.
+Um diesem Umstand zuvor zu kommen müssen wir hier programmatisch nachhelfen. Zum Beispiel indem wir den Tastatur Fokus weider auf den Button setzen, welcher ein Modal geöffnet hat, nachdem dieses geschlossen wurde.
 
 MDN Web Docs takes a look at this and describes how we can build [keyboard-navigable JavaScript widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets).
+Die MDN Web Docs beschreiben wie wir [Tastaturgesteurte JavaScript Widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets) realisieren können.
 
-To set focus in React, we can use [Refs to DOM elements](/docs/refs-and-the-dom.html).
+Um per React einen Fokus zu setzen, können wir [Refs auf DOM-Elemente](/docs/refs-and-the-dom.html) nutzen.
 
-Using this, we first create a ref to an element in the JSX of a component class:
+Hierzu erstellen wir zuerst eine Elementreferenz im JSX einer Component-Klasse:
 
 ```javascript{4-5,8-9,13}
 class CustomTextInput extends React.Component {
@@ -189,7 +191,7 @@ class CustomTextInput extends React.Component {
 }
 ```
 
-Then we can focus it elsewhere in our component when needed:
+Danach können wir den Fokus beliebig verändern, falls nötig:
 
  ```javascript
  focus() {
@@ -199,7 +201,7 @@ Then we can focus it elsewhere in our component when needed:
  }
  ```
 
-Sometimes a parent component needs to set focus to an element in a child component. We can do this by [exposing DOM refs to parent components](/docs/refs-and-the-dom.html#exposing-dom-refs-to-parent-components) through a special prop on the child component that forwards the parent's ref to the child's DOM node.
+Gelegentlich ist es nötig dass ein Eletern-Component den Fokus auf ein Element eines Kind-Components setzen muss. Dies lässt sich mit dem [Bereitstellen von DOM-Referenzen eines Eletern-Components](/docs/refs-and-the-dom.html#exposing-dom-refs-to-parent-components) via einer speziellen Property, welche die Referenz des Eleternelements zum Kind-Component weitergibt, umsetzen. 
 
 ```javascript{4,12,16}
 function CustomTextInput(props) {
@@ -226,15 +228,14 @@ class Parent extends React.Component {
 this.inputElement.current.focus();
 ```
 
-When using a HOC to extend components, it is recommended to [forward the ref](/docs/forwarding-refs.html) to the wrapped component using the `forwardRef` function of React. If a third party HOC does not implement ref forwarding, the above pattern can still be used as a fallback.
+Falls du einen Higher-Order-Component nutzt empfiehtl es sich die [Referenz zum umschlossenen Component weiterzugeben](/docs/forwarding-refs.html) indem du die `forwardRef` React-Funktion nutzt.
+Sollte ein Third-Party-HOC diese Technik nicht implentiert haben kannst du das oben verwendete Pattern als einen Fallback nutzen.  
 
-A great focus management example is the [react-aria-modal](https://github.com/davidtheclark/react-aria-modal). This is a relatively rare example of a fully accessible modal window. Not only does it set initial focus on
-the cancel button (preventing the keyboard user from accidentally activating the success action) and trap keyboard focus inside the modal, it also resets focus back to the element that initially triggered the modal.
+Ein gutes Fokus-Beispielt ist das [react-aria-modal](https://github.com/davidtheclark/react-aria-modal). Dies ist ein relativ rares Beispiel eines vollständig barrierefreiem Modal-Fenster. Hier wird der initiale Fokus auf den Abbrechen Button gesetzt (Um den User davon abzuhalten versehentlich die Success-Action zu aktivieren) und der Fokus kann nicht aus dem Modal-Fenster springen. Nachdem das Modal geschlossen wird wird der Fokus wieder zurück auf das Element gesetzt welches das Modal-Fenster getriggered hat. 
 
->Note:
+>Notiz:
 >
->While this is a very important accessibility feature, it is also a technique that should be used judiciously. Use it to repair the keyboard focus flow when it is disturbed, not to try and anticipate how
->users want to use applications.
+>Es handelt sich hier um ein wichtiges Feature welches jedoch in Vernünftigen Rahmen genutzt werden sollte. Nutze dieses Feature um den Tastatur-Fokus anzupassen falls der Flow der App gestört sein sollte und versuche nicht die Tastaturnutzung des Users zu antizipieren.
 
 ## Mouse and pointer events {#mouse-and-pointer-events}
 
