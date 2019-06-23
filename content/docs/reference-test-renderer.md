@@ -38,7 +38,7 @@ console.log(testRenderer.toJSON());
 //   children: [ 'Facebook' ] }
 ```
 
-Du kannst das Snapshot-Test-Feature von Jest nutzen, um automatisch eine Kopie des JSON-Baums in einer Datei zu speichern und deine Tests daraufhin zu überprüfen, ob sie sich nicht geändert hat: [Erfahre mehr darüber](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html).
+Du kannst das Snapshot-Test-Feature von Jest nutzen, um automatisch eine Kopie des JSON-Baums in einer Datei zu speichern und deine Tests daraufhin zu überprüfen, ob sie sich nicht geändert hat: [Erfahre mehr darüber](https://jestjs.io/docs/en/snapshot-testing).
 
 Du kannst auch die Ausgabe durchlaufen, um bestimmte Knoten zu finden und über sie Aussagen zu treffen.
 
