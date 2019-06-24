@@ -35,6 +35,7 @@ Unsere JSON API gibt uns Daten zurück, die folgendermaßen aussehen:
 
 Zuerst solltest du um jede Komponente (und Unterkomponente) des Mock-Ups eine Box zeichnen und jeder einen Name geben. Falls du mit einem Designer zusammenarbeitest, hat er das vielleicht schon getan, also geh und frage ihn! Die Namen der Photoshop-Ebenen könnten letztendlich die Namen deiner React-Komponenten sein!
 
+<<<<<<< HEAD
 Aber woher weißt du, was eine eigene Komponente sein sollte? Verwende einfach die gleichen Techniken, die du auch verwendest, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt anlegen möchtest. Eine dieser Techniken ist das[Single Responsibility Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erledigen. Sobald sie wächst, sollte sie in kleinere Teilkomponenten zerlegt werden.
 
 Da du einem Benutzer häufig ein JSON Datenmodell präsentieren wirst, wirst du feststellen, dass, falls dein Datenmodell korrekt aufgebaut wurde, deine Benutzeroberfläche (und damit auch deine Komponentenstruktur) gut dazu zusammenpasst. Das liegt daran, dass Benutzeroberfläche und Datenmodell tendenziell der gleichen *Informationsarchitektur* folgen, was bedeutet, dass es oft trivial ist, deine Benutzeroberfläche in Komponenten aufzuteilen. Zerlege sie einfach in Komponenten, die genau ein Stück deines Datenmodells darstellen.
@@ -42,6 +43,15 @@ Da du einem Benutzer häufig ein JSON Datenmodell präsentieren wirst, wirst du 
 ![Component diagram](../images/blog/thinking-in-react-components.png)
 
 Du siehst hier, dass wir fünf Komponenten in unserer einfachen Anwendung haben. Wir haben die Daten, die von jeder Komponente repräsentiert werden, kursiv dargestellt.
+=======
+But how do you know what should be its own component? Use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
+
+Since you're often displaying a JSON data model to a user, you'll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. That's because UI and data models tend to adhere to the same *information architecture*, which means the work of separating your UI into components is often trivial. Break it up into components that represent exactly one piece of your data model.
+
+![Component diagram](../images/blog/thinking-in-react-components.png)
+
+You'll see here that we have five components in our app. We've italicized the data each component represents.
+>>>>>>> 92ad9c2f7abb36a306f563fe48b7f52649929608
 
   1. **`FilterableProductTable` (orange):** enthält das gesamte Beispiel
   2. **`SearchBar` (blau):** empfängt alle *Benutzereingaben*
@@ -51,7 +61,11 @@ Du siehst hier, dass wir fünf Komponenten in unserer einfachen Anwendung haben.
 
 Wenn du dir `ProductTable` anschaust, wirst du feststellen, dass der Tabellenkopf (mit den Bezeichnungen "Name" und "Price") keine eigene Komponente ist. Das ist eine Frage der Präferenz und es gibt Argumente für beide Seiten. Für dieses Beispiel haben wir ihn als Teil von `ProductTable` gelassen, da er Teil der Darstellung der *Daten* ist, die in der Verantwortung von `ProductTable` liegt. Wenn diese Kopfzeile jedoch immer komplexer werden sollte (d.h. falls wir beispielsweise eine Sortierung hinzufügen würden), wäre es sicherlich sinnvoll, diese Kopfzeile zu einer eigenen `ProductTableHeader`-Komponente zu machen.
 
+<<<<<<< HEAD
 Lass uns nachdem wir nun die Komponenten in unserem Mock-Up identifiziert haben, sie in eine Hierarchie einordnen. Das ist einfach. Komponenten, die innerhalb einer anderen Komponente im Mock-Up erscheinen, sollten als Kind in der Hierarchie erscheinen:
+=======
+Now that we've identified the components in our mock, let's arrange them into a hierarchy. Components that appear within another component in the mock should appear as a child in the hierarchy:
+>>>>>>> 92ad9c2f7abb36a306f563fe48b7f52649929608
 
   * `FilterableProductTable`
     * `SearchBar`
@@ -70,9 +84,15 @@ Um eine statische Version deiner Anwendung zu erstellen, die dein Datenmodell re
 
 Du kannst von oben nach unten (top-down) oder von unten nach oben (bottom-up) vorgehen. Das heißt, du kannst entweder mit dem Aufbau der Komponenten von oben in der Hierarchie beginnen (d.h. mit `FilterableProductTable`) oder mit denjenigen weiter unten (`ProductRow`). In simpleren Beispielen ist es in der Regel einfacher, von oben nach unten zu gehen, und bei größeren Projekten ist es einfacher, beim Erstellen von unten nach oben zu gehen und gleichzeitig Tests zu schreiben.
 
+<<<<<<< HEAD
 Am Ende dieses Schrittes steht dir eine Ansammlung von wiederverwendbaren Komponenten zur Verfügung, die dein Datenmodell darstellt. Die Komponenten haben jeweils nur eine `render()` Methode, da es sich um eine statische Version deiner Anwendung handelt. Die Komponente an der Spitze der Hierarchie (`FilterableProductTable`) nimmt dein Datenmodell als Prop. Wenn du eine Änderung an deinem zugrunde liegenden Datenmodell vornimmst und `ReactDOM.render()` erneut aufrufst, wird die Benutzeroberfläche aktualisiert. Es ist leicht zu erkennen, wie deine Benutzeroberfläche aktualisiert wird und wo Änderungen vorgenommen werden können, da nichts kompliziertes vor sich geht. React's **One-Way-Data Flow** (Daten fließen nur in eine Richtung) (auch *One-Way-Binding* genannt) hält alles modular und schnell.
 
 Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in die [React docs](/docs/).
+=======
+At the end of this step, you'll have a library of reusable components that render your data model. The components will only have `render()` methods since this is a static version of your app. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. If you make a change to your underlying data model and call `ReactDOM.render()` again, the UI will be updated. You can see how your UI is updated and where to make changes. React's **one-way data flow** (also called *one-way binding*) keeps everything modular and fast.
+
+Refer to the [React docs](/docs/) if you need help executing this step.
+>>>>>>> 92ad9c2f7abb36a306f563fe48b7f52649929608
 
 ### Ein kurzer Einschub: Props vs State {#a-brief-interlude-props-vs-state}
 
@@ -80,9 +100,15 @@ Es gibt zwei Arten von Daten in React: Props und State. Es ist wichtig, den Unte
 
 ## Schritt 3: Identifiziere die minimale (aber vollständige) Darstellung des Zustandes der Benutzeroberfläche {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
+<<<<<<< HEAD
 Um deine Benutzeroberfläche interaktiv zu machen, musst du in der Lage sein, Änderungen an deinem zugrunde liegenden Datenmodell auszulösen. React macht dies mit **state** einfach.
 
 Um deine Anwendung korrekt zu erstellen, musst du zunächst an den minimalen Satz von veränderbaren **states** denken, die deine Anwendung benötigt. Der Schlüssel dazu ist[DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Finde die absolut minimale Darstellung des **states**, den deine Anwendung benötigt und berechne bei Bedarf alles andere, was du benötigst. Wenn du beispielsweise eine TODO-Liste erstellst, nutze einfach einen Array für die TODO-Elemente; nutze keine separate **state**-Variable für die Anzahl der Elemente. Möchtest du die Anzahl an TODO-Elementen darstellen, nimm einfach die Länge des TODO-Arrays.
+=======
+To make your UI interactive, you need to be able to trigger changes to your underlying data model. React achieves this with **state**.
+
+To build your app correctly, you first need to think of the minimal set of mutable state that your app needs. The key here is [DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Figure out the absolute minimal representation of the state your application needs and compute everything else you need on-demand. For example, if you're building a TODO list, keep an array of the TODO items around; don't keep a separate state variable for the count. Instead, when you want to render the TODO count, take the length of the TODO items array.
+>>>>>>> 92ad9c2f7abb36a306f563fe48b7f52649929608
 
 Denke an alle Daten in unserer Beispielanwendung. Wir haben:
 
@@ -91,7 +117,11 @@ Denke an alle Daten in unserer Beispielanwendung. Wir haben:
   * der Wert des Auswahlfeldes
   * die gefilterte Liste der Produkte
 
+<<<<<<< HEAD
 Lass uns jeden einzelnen Punkt durchgehen und herausfinden, welcher davon **state** ist. Stelle einfach drei Fragen zu jedem Datenelement:
+=======
+Let's go through each one and figure out which one is state. Ask three questions about each piece of data:
+>>>>>>> 92ad9c2f7abb36a306f563fe48b7f52649929608
 
   1. Wird es von einem Elternteil über **props** weitergegeben? Wenn ja, dann ist es wahrscheinlich kein **state**.
   2. Bleibt es im Laufe der Zeit unverändert? Wenn ja, dann ist es wahrscheinlich kein **state**.
@@ -114,10 +144,17 @@ Denk daran: Bei React geht es um den einseitigen Datenfluss (One-Way-Data Flow) 
 
 Für jedes Stück **state** in deiner Anwendung:
 
+<<<<<<< HEAD
   * Identifiziere jede Komponente, die etwas rendert, das auf diesem **state** basiert.
   * Suche eine gemeinsame "Eigentümer"-Komponente (eine einzelne Komponente, die oberhalb der untersuchten Komponenten liegt, die den **state** benötigen).
   * Entweder der gemeinsame Eigentümer oder eine andere Komponente, die in der Hierarchie oberhalb liegt, sollte den **state** besitzen.
   * Kannst du keine Komponente finden, für die es sinnvoll ist, den **state** zu besitzen, erstelle eine neue Komponente, nur um den **state** zu halten, und füge sie irgendwo in der Hierarchie über der gemeinsamen Eigentümer-Komponente hinzu.
+=======
+  * Identify every component that renders something based on that state.
+  * Find a common owner component (a single component above all the components that need the state in the hierarchy).
+  * Either the common owner or another component higher up in the hierarchy should own the state.
+  * If you can't find a component where it makes sense to own the state, create a new component solely for holding the state and add it somewhere in the hierarchy above the common owner component.
+>>>>>>> 92ad9c2f7abb36a306f563fe48b7f52649929608
 
 Lass uns diese Strategie für unsere Anwendung durchgehen:
 
@@ -135,11 +172,16 @@ Du wirst sehen können, wie sich deine Anwendung verhalten wird: Setze `filterTe
 
 Bisher haben wir eine Anwendung entwickelt, die in Abhängigkeit von **props** und **state**, die in der Hierarchie nach unten fließen, korrekt gerendert wird. Jetzt ist es an der Zeit, den Datenfluss in die andere Richtung zu unterstützen: Die Formular-Komponenten tief in der Hierarchie müssen den **state** in `FilterableProductTable` aktualisieren.
 
+<<<<<<< HEAD
 React macht diesen Datenfluss explizit, um es leicht verständlich zu machen, wie dein Programm funktioniert, aber es erfordert ein wenig mehr Tippen als herkömmliches **Two-Way-Binding** (Daten fließen in beide Richtungen).
+=======
+React makes this data flow explicit to help you understand how your program works, but it does require a little more typing than traditional two-way data binding.
+>>>>>>> 92ad9c2f7abb36a306f563fe48b7f52649929608
 
 Wenn du in der aktuellen Version des Beispiels versuchst, das Auswahlfeld anzuklicken, wirst du feststellen, dass React deine Eingabe ignoriert. Dies ist beabsichtigt, da wir den `value` **prop** des `input`s so eingestellt haben, dass er immer gleich des **state** ist, der von `FilterableProductTable` übergeben wird.
 
 
+<<<<<<< HEAD
 Lass uns darüber nachdenken, was wir erreichen wollen. Wir möchten sicherstellen, dass wir bei jeder Änderung des Formulars durch den Benutzer den **states** aktualisieren, um die Benutzereingaben widerzuspiegeln. Da Komponenten nur ihren eigenen **state** aktualisieren sollten, leitet `FilterableProductTable` Callbacks an `SearchBar` weiter, die ausgelöst werden, wenn **state** aktualisiert werden soll. Wir können den `onChange` Event auf die Eingabefelder anwenden, um darüber informiert zu werden. Die von `FilterableProductTable` übergebenen Callbacks rufen `setState()` auf und die Anwendung wird aktualisiert.
 
 Obwohl das komplex klingt, handelt es sich eigentlich nur um ein paar Zeilen Code. Und es ist sehr explizit dargestellt, wie deine Daten in der Anwendung fließen.
@@ -147,3 +189,8 @@ Obwohl das komplex klingt, handelt es sich eigentlich nur um ein paar Zeilen Cod
 ## Und das war's dann auch schon {#and-thats-it}
 
 Hoffentlich gibt dies dir eine Vorstellung davon, wie du mit React über die Entwicklung von Komponenten und Anwendungen nachdenken kannst. Auch wenn es ein wenig mehr Tippen sein kann, als du es gewohnt bist, denk daran, dass Code viel mehr gelesen als geschrieben wird, und es extrem einfach ist, diesen modularen, expliziten Code zu lesen. Wenn du beginnst, große Bibliotheken von Komponenten zu erstellen, dann wirst du diese Explizität und Modularität zu schätzen wissen und mit der Wiederverwendung von Code wird die Anzahl deiner Codezeilen schrumpfen. :)
+=======
+## And That's It {#and-thats-it}
+
+Hopefully, this gives you an idea of how to think about building components and applications with React. While it may be a little more typing than you're used to, remember that code is read far more than it's written, and it's less difficult to read this modular, explicit code. As you start to build large libraries of components, you'll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink. :)
+>>>>>>> 92ad9c2f7abb36a306f563fe48b7f52649929608
