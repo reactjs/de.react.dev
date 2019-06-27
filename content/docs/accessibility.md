@@ -39,7 +39,7 @@ Es gilt dass alle `aria-*` HTML-Attribute in JSX komplett unterstützt werden. W
 />
 ```
 
-## Semantic HTML {#semantic-html}
+## Semantisches HTML {#semantic-html}
 Semantisches HTML ist das Fundament der Barrierefreiheit einer Webanwendung. Das Nutzen der verschiedenen HTML-Elemente welche die Bedeutung einer Information betonen bringt dir oftmals Barrierefreiheit ohne extra Aufwand.  
 
 - [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
@@ -237,15 +237,15 @@ Ein gutes Fokus-Beispielt ist das [react-aria-modal](https://github.com/davidthe
 >
 >Es handelt sich hier um ein wichtiges Feature welches jedoch in Vernünftigen Rahmen genutzt werden sollte. Nutze dieses Feature um den Tastatur-Fokus anzupassen falls der Flow der App gestört sein sollte und versuche nicht die Tastaturnutzung des Users zu antizipieren.
 
-## Mouse and pointer events {#mouse-and-pointer-events}
+## Maus- und Pointerevents {#mouse-and-pointer-events}
 
-Ensure that all functionality exposed through a mouse or pointer event can also be accessed using the keyboard alone. Depending only on the pointer device will lead to many cases where keyboard users cannot use your application.
+Stelle sicher dass alle Funktionalitäten welche durch die Maus oder den Zeiger hervorgerufen werden auch via Tastatur gesteuert werden können. Sich komplett von einem Zeigergerät abhängig zu machen führt dazu dass deine App für viele Tastaturnutzer unbrauchbar wird.
 
-To illustrate this, let's look at a prolific example of broken accessibility caused by click events. This is the outside click pattern, where a user can disable an opened popover by clicking outside the element.
+Um Dies zu veranschaulichen sehen wir uns einmal ein Anwendungsbeispiel für mangelhafte Barrierefreiheit wegen Click-Events and. Hier siehst du ein Pärifärklick-Beispiel, in welchem der User eine geöffnete Popup-Nachricht schließen kann indem er außerhalb des Elements klickt.
 
-<img src="../images/docs/outerclick-with-mouse.gif" alt="A toggle button opening a popover list implemented with the click outside pattern and operated with a mouse showing that the close action works." />
+<img src="../images/docs/outerclick-with-mouse.gif" alt="Ein Togglebutton welcher eine Popoverliste öffnet, die zeigt dass diese per Klick außerhalb des Elements zu schließen ist." />
 
-This is typically implemented by attaching a `click` event to the `window` object that closes the popover:
+Typischerweise wird Dies durch ein Klick-Event auf dem `window`-Objekt implementiert welches die Popover-Nachricht schließt:
 
 ```javascript{12-14,26-30}
 class OuterClickExample extends React.Component {
@@ -296,11 +296,11 @@ constructor(props) {
 }
 ```
 
-This may work fine for users with pointer devices, such as a mouse, but operating this with the keyboard alone leads to broken functionality when tabbing to the next element as the `window` object never receives a `click` event. This can lead to obscured functionality which blocks users from using your application.
+Dies würde natürlich mit Zeigergeräten, wie zB. der Maus, super funktionieren, mit der Tastatur alleine führt dies jedoch zu mangelhafter Funktionalität wenn du das nächste Element per tab erreichst. In diesem Fall das `click`-Event nie auf dem `window`-Objekt aufgerufen. Dies kann zu obskuren Fehlern führen, welche es manchen Usern unmöglich macht deine App zu nutzen.
 
-<img src="../images/docs/outerclick-with-keyboard.gif" alt="A toggle button opening a popover list implemented with the click outside pattern and operated with the keyboard showing the popover not being closed on blur and it obscuring other screen elements." />
+<img src="../images/docs/outerclick-with-keyboard.gif" alt="Ein Togglebutton welcher eine Popoverliste öffnet, die nur per Click-Event wieder zu schließen ist." />
 
-The same functionality can be achieved by using an appropriate event handlers instead, such as `onBlur` and `onFocus`:
+Die selbe Funktionalität kann auch durch angemessene Eventhandler, wie zum Beispiel `onBLur` und `onFocus`, gewährleistet werden:
 
 ```javascript{19-29,31-34,37-38,40-41}
 class BlurExample extends React.Component {
@@ -362,11 +362,11 @@ class BlurExample extends React.Component {
 }
 ```
 
-This code exposes the functionality to both pointer device and keyboard users. Also note the added `aria-*` props to support screen-reader users. For simplicity's sake the keyboard events to enable `arrow key` interaction of the popover options have not been implemented.
+Der obige Code gewährleistet die Funktionalität sowohl für Zeigergeräte als auch für Tastaturen. Beachte auch die `aria-*` Attribute zur Unterstützung von Screenreadern. Der Einfachheit halber wurden hier keine Pfeiltasten-Events implementiert um mit dem Popover zu interagieren.
 
-<img src="../images/docs/blur-popover-close.gif" alt="A popover list correctly closing for both mouse and keyboard users." />
+<img src="../images/docs/blur-popover-close.gif" alt="Eine Popoverliste, welche sowohl per Maus als auch per Tastatur nutzbar ist." />
 
-This is one example of many cases where depending on only pointer and mouse events will break functionality for keyboard users. Always testing with the keyboard will immediately highlight the problem areas which can then be fixed by using keyboard aware event handlers.
+Dies hier ist nur ein Beispiel für viele Fälle bei denen die Funktionalität nicht gewährleistet ist wenn du dich nur auf Zeiger-Events verlässt. Ein beständiges Testen mit der Tastutur zeigt dir auch die Schwachstellen, welche mit angemessenen Eventhandlern beseitigt werden können.
 
 ## More Complex Widgets {#more-complex-widgets}
 
