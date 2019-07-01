@@ -51,14 +51,14 @@ Denke daran, dass nur React-Dateien, die mit `.production.min.js` enden, für di
 
 ### Brunch {#brunch}
 
-Um den effizientesten Brunch-Produktions-Build zu bekommen, installiere das [`uglify-js-brunch`](https://github.com/brunch/uglify-js-brunch)-Plugin:
+Um den effizientesten Brunch-Produktions-Build zu bekommen, installiere das [`terser-brunch`](https://github.com/brunch/terser-brunch)-Plugin:
 
-```
+```bash
 # Falls du npm verwendest
-npm install --save-dev uglify-js-brunch
+npm install --save-dev terser-brunch
 
 # Falls du Yarn verwendest
-yarn add --dev uglify-js-brunch
+yarn add --dev terser-brunch
 ```
 
 Um dann einen Produktions-Build zu erstellen, füge zum `build`-Befehl das `-p`-Flag hinzu:
@@ -75,17 +75,17 @@ Um den effizientesten Browserify-Produktions-Build zu bekommen, installiere ein 
 
 ```
 # Falls du npm verwendest
-npm install --save-dev envify uglify-js uglifyify 
+npm install --save-dev envify terser uglifyify 
 
 # Falls du Yarn verwendest
-yarn add --dev envify uglify-js uglifyify 
+yarn add --dev envify terser uglifyify 
 ```
 
 Um einen Produktions-Build zu erstellen, stelle sicher, dass du diese Transformer hinzufügst **(die Reihenfolge ist wichtig)**:
 
 * Der [`envify`](https://github.com/hughsk/envify)-Transformer stellt sicher, dass die richtige Build-Umgebung gesetzt wird. Benutze ihn global (`-g`).
 * Der [`uglifyify`](https://github.com/hughsk/uglifyify)-Transformer entfernt Entwickler-Importe. Benutze auch ihn global (`-g`).
-* Schließlich wird das so entstandene Bundle an [`uglify-js`](https://github.com/mishoo/UglifyJS2) geleitet, wo es "gemangled" wird ([lies warum](https://github.com/hughsk/uglifyify#motivationusage)).
+* Schließlich wird das so entstandene Bundle an [`terser`](https://github.com/terser-js/terser) geleitet, wo es "gemangled" wird ([lies warum](https://github.com/hughsk/uglifyify#motivationusage)).
 
 Zum Beispiel:
 
@@ -93,13 +93,8 @@ Zum Beispiel:
 browserify ./index.js \
   -g [ envify --NODE_ENV production ] \
   -g uglifyify \
-  | uglifyjs --compress --mangle > ./bundle.js
+  | terser --compress --mangle > ./bundle.js
 ```
-
->**Hinweis:**
->
->Der Paketname ist `uglify-js`, aber die Binary, die es zur Verfügung stellt, heißt `uglifyjs`.<br>
->Das ist kein Tippfehler.
 
 Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest diese Plugins nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
@@ -107,19 +102,19 @@ Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du sollt
 
 Um den effizientesten Rollup-Produktions-Build zu bekommen, installiere ein paar Plugins:
 
-```
+```bash
 # Falls du npm benutzt
-npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify 
+npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-terser
 
 # Falls du Yarn benutzt
-yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify 
+yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-terser
 ```
 
 Um einen Produktions-Build zu kreieren, stelle sicher, dass du diese Plugins hinzufügst **(die Reihenfolge ist wichtig)**:
 
 * Das [`replace`](https://github.com/rollup/rollup-plugin-replace)-Plugin stellt sicher, dass die richtige Build-Umgebung gesetzt wird. 
 * Das [`commonjs`](https://github.com/rollup/rollup-plugin-commonjs)-Plugin bietet CommonJS-Unterstützung in Rollup.
-* Das [`uglify`](https://github.com/TrySound/rollup-plugin-uglify)-Plugin komprimiert und "mangled" das finale Bundle.
+* Das [`terser`](https://github.com/TrySound/rollup-plugin-terser-Plugin komprimiert und "mangled" das finale Bundle.
 
 ```js
 plugins: [
@@ -128,14 +123,14 @@ plugins: [
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
   require('rollup-plugin-commonjs')(),
-  require('rollup-plugin-uglify')(),
+  require('rollup-plugin-terser')(),
   // ...
 ]
 ```
 
 Siehe dir ein komplettes Setup-Beispiel [in diesem Gist](https://gist.github.com/Rich-Harris/cb14f4bc0670c47d00d191565be36bf0) an.
 
-Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest das `uglify`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest das `terser`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### webpack {#webpack}
 
@@ -144,18 +139,22 @@ Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du sollt
 >Falls du Create React App verwendest, folge bitte den [Anweisungen weiter oben](#create-react-app).<br>
 >Dieser Abschnitt ist nur relevant, wenn du webpack direkt konfigurierst.
 
-Um den effizientesten webpack-Produktions-Build zu bekommen, stelle sicher, dass deine Produktions-Konfiguration die folgenden Plugins beinhaltet:
+Webpack v4+ minified deinen Code standardmäßig im `production`-Modus.
 
 ```js
-new webpack.DefinePlugin({
-  'process.env.NODE_ENV': JSON.stringify('production')
-}),
-new webpack.optimize.UglifyJsPlugin()
+const TerserPlugin = require('terser-webpack-plugin');
+
+module.exports = {
+  mode: 'production'
+  optimization: {
+    minimizer: [new TerserPlugin({ /* additional options here */ })],
+  },
+};
 ```
 
 Mehr Informationen darüber findest du in der [webpack-Dokumentation](https://webpack.js.org/guides/production/).
 
-Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest `UglifyJsPlugin` oder `DefinePlugin` mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest `TerserPlugin` nicht während der Entwicklung verwenden, da es nützliche React-Warnungen verbergen wird und die Builds viel langsamer macht.
 
 ## Komponenten-Profiling mit dem Chrome Performance-Tab {#profiling-components-with-the-chrome-performance-tab}
 
