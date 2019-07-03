@@ -370,15 +370,15 @@ Dies hier ist nur ein Beispiel für viele Fälle bei denen die Funktionalität n
 
 ## More Complex Widgets {#more-complex-widgets}
 
-A more complex user experience should not mean a less accessible one. Whereas accessibility is most easily achieved by coding as close to HTML as possible, even the most complex widget can be coded accessibly.
+Kompliziertere Handlungen sollten nicht mit weniger Barrierefreiheit einhergehen. Während Barrierefreiheit am einfachen damit umgesetzt werden kann sich so gut wie möglich an den HTML-Standard zu halten, können auch die kompliziertesten Widgets barrierefrei implementiert werden. 
 
 Here we require knowledge of [ARIA Roles](https://www.w3.org/TR/wai-aria/#roles) as well as [ARIA States and Properties](https://www.w3.org/TR/wai-aria/#states_and_properties).
-These are toolboxes filled with HTML attributes that are fully supported in JSX and enable us to construct fully accessible, highly functional React components.
+Wir setzen hier Grundkentinsse in den [ARIA Rollen](https://www.w3.org/TR/wai-aria/#roles) sowie den [ARIA Zuständen und Eigenschaften](https://www.w3.org/TR/wai-aria/#states_and_properties) hervor. 
 
-Each type of widget has a specific design pattern and is expected to function in a certain way by users and user agents alike:
+Jede Art von Widget hat ein spezielles Designpattern und sollte für User und deren Useragents wie folgt funktionieren:
 
-- [WAI-ARIA Authoring Practices - Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices/#aria_ex)
-- [Heydon Pickering - ARIA Examples](https://heydonworks.com/practical_aria_examples/)
+- [WAI-ARIA Konventionen - Designppatterns und Widgets](https://www.w3.org/TR/wai-aria-practices/#aria_ex)
+- [Heydon Pickering - ARIA Beispiele](https://heydonworks.com/practical_aria_examples/)
 - [Inclusive Components](https://inclusive-components.design/)
 
 ## Other Points for Consideration {#other-points-for-consideration}
