@@ -368,7 +368,7 @@ Der obige Code gewährleistet die Funktionalität sowohl für Zeigergeräte als 
 
 Dies hier ist nur ein Beispiel für viele Fälle bei denen die Funktionalität nicht gewährleistet ist wenn du dich nur auf Zeiger-Events verlässt. Ein beständiges Testen mit der Tastutur zeigt dir auch die Schwachstellen, welche mit angemessenen Eventhandlern beseitigt werden können.
 
-## More Complex Widgets {#more-complex-widgets}
+## Kompliziertere Widgets {#more-complex-widgets}
 
 Kompliziertere Handlungen sollten nicht mit weniger Barrierefreiheit einhergehen. Während Barrierefreiheit am einfachen damit umgesetzt werden kann sich so gut wie möglich an den HTML-Standard zu halten, können auch die kompliziertesten Widgets barrierefrei implementiert werden. 
 
