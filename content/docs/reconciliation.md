@@ -4,15 +4,15 @@ title: Abgleich
 permalink: docs/reconciliation.html
 ---
 
-React bietet eine deklarative API, sodass du dich nicht bei jeder Aktualisierung um die genauen Änderungen kümmern musst. Dies erleichtert das Erstellen von Anwendungen erheblich. Es ist jedoch möglicherweise nicht offensichtlich, wie dies in React implementiert ist. Dieser Artikel erklärt welche Entscheidungen wir in Reacts Vergleichsalgorithmus getroffenen haben, damit Komponentenaktualisierungen vorhersehbar und gleichzeitig schnell genug für leistungsstarke Apps sind.
+React bietet eine deklarative API, sodass du dich nicht bei jeder Aktualisierung um die genauen Änderungen kümmern musst. Dies erleichtert das Erstellen von Anwendungen erheblich. Es ist jedoch möglicherweise nicht offensichtlich, wie dies in React implementiert ist. Dieser Artikel erklärt welche Entscheidungen wir in Reacts Vergleichsalgorithmus getroffen haben, damit Komponentenaktualisierungen vorhersehbar und gleichzeitig schnell genug für leistungsstarke Apps sind.
 
 ## Motivation {#motivation}
 
 Wenn du React verwendest, kannst du dir die `render()`-Funktion so vorstellen, dass sie zu einem bestimmten Zeitpunkt einen Baum von React-Elementen erstellt. Bei der nächsten Aktualisierung von State oder Props gibt diese `render()`-Funktion einen anderen Baum von React-Elementen zurück. React muss dann herausfinden, wie die Benutzeroberfläche effizient aktualisiert werden kann, um sie an den neuesten Baum anzupassen.
 
-Es gibt einige generische Lösungen für dieses algorithmische Problem, die Mindestanzahl von Operationen zu generieren um einen Baum in einen anderen umzuwandeln. Die Algorithmen nach dem aktuellen Stand der Technik weisen jedoch eine Komplexität in der Größenordnung von O(n3) auf, wobei n die Anzahl der Elemente im Baum ist.
+Es gibt einige generische Lösungen für dieses algorithmische Problem, die Mindestanzahl von Operationen zu generieren um einen Baum in einen anderen umzuwandeln. Die modernsten Algorithmen weisen jedoch eine Komplexität in der Größenordnung von O(n3) auf, wobei n die Anzahl der Elemente im Baum ist.
 
-Würden wir dies in React verwenden, dann wären für das Anzeigen von 1000 Elementen Vergleiche in der Größenordnung von einer Milliarde notwenig, was viel zu aufwendig ist. Stattdessen implementiert React einen heuristischen O(n)-Algorithmus, der auf zwei Annahmen basiert:
+Würden wir diese in React verwenden, dann wären für das Anzeigen von 1000 Elementen Vergleiche in der Größenordnung von einer Milliarde notwenig, was viel zu aufwendig ist. Stattdessen implementiert React einen heuristischen O(n)-Algorithmus, der auf zwei Annahmen basiert:
 
 1. Zwei Elemente unterschiedlicher Art erzeugen unterschiedliche Bäume.
 2. Der Entwickler kann mit einer `key`-Prop andeuten, welche Kind-Elemente in verschiedenen Renderings stabil sein können.
@@ -27,11 +27,11 @@ Beim Vergleichen ("diffing") zweier Bäume betrachtet React zuerst die beiden Wu
 
 Wenn die Wurzelelemente unterschiedliche Typen haben, entfernt React den alten Baum und erstellt den neuen Baum von Grund auf neu. Ein Wechsel von `<a>` nach `<img>` oder von `<Article>` nach `<Comment>` oder von `<Button>` nach `<div>` führt zu einer vollständigen Neuerstellung.
 
-Beim Entfernen eines Baumes werden alte DOM-Knoten gelöscht. Komponenteninstanzen erhalten `componentWillUnmount()`. Beim Aufbau eines neuen Baums werden neue DOM-Knoten in das DOM eingefügt. Komponenteninstanzen erhalten `componentWillMount()` und dann `componentDidMount()`. Jeder mit dem alten Baum verknüpfte State geht verloren.
+Beim Entfernen eines Baumes werden alte DOM-Knoten gelöscht. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillUnmount()`. Beim Aufbau eines neuen Baums werden neue DOM-Knoten in das DOM eingefügt. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillMount()` und dann `componentDidMount()`. Jeder mit dem alten Baum verknüpfte State geht verloren.
 
-Alle Komponenten unterhalb der Wurzel werden ebenfalls unmountet und ihr State wird gelöscht. Zum Beispiel beim Vergleichen von:
+Alle Komponenten unterhalb der Wurzel werden ebenfalls geunmountet und ihr State wird gelöscht. Zum Beispiel beim Vergleichen von:
 
-```js
+```xml
 <div>
   <Counter />
 </div>
@@ -47,17 +47,17 @@ Dies entfernt den alten `Counter` und mountet einen neuen.
 
 Beim Vergleich von zwei React-DOM-Elementen desselben Typs überprüft React die Attribute von beiden, behält denselben zugrunde liegenden DOM-Knoten bei und aktualisiert nur die geänderten Attribute. Zum Beispiel:
 
-```js
+```xml
 <div className="before" title="stuff" />
 
 <div className="after" title="stuff" />
 ```
 
-Durch den Vergleich dieser beiden Elemente weiß React, dass nur der Klassenname auf dem zugrunde liegenden DOM-Knoten zu ändern ist.
+Durch den Vergleich dieser beiden Elemente weiß React, dass nur der Klassenname (`className`) auf dem zugrunde liegenden DOM-Knoten zu ändern ist.
 
 Beim Aktualisieren von `style` weiß React ebenfalls, dass nur die geänderten Eigenschaften zu aktualisieren sind. Zum Beispiel:
 
-```js
+```xml
 <div style={{color: 'red', fontWeight: 'bold'}} />
 
 <div style={{color: 'green', fontWeight: 'bold'}} />
@@ -79,7 +79,7 @@ Standardmäßig durchläuft React bei einer Rekursion der Kind-Elemente eines DO
 
 Wenn du beispielsweise ein Element am Ende der Kind-Elemente hinzufügst, funktioniert die Konvertierung zwischen diesen beiden Bäumen gut:
 
-```js
+```xml
 <ul>
   <li>first</li>
   <li>second</li>
@@ -96,7 +96,7 @@ React übernimmt die beiden `<li>first</li>` Bäume, übernimmt ebenso die beide
 
 Wenn du es unbedarft implementierst, hat das Einfügen eines Elements am Anfang eine schlechtere Leistung. Das Konvertieren zwischen diesen beiden Bäumen funktioniert beispielsweise schlecht:
 
-```js
+```xml
 <ul>
   <li>Duke</li>
   <li>Villanova</li>
@@ -115,7 +115,7 @@ React mutiert jedes Kind, anstatt zu realisieren, dass die Teilbäume `<li>Duke<
 
 Um dieses Problem zu beheben, unterstützt React ein Schlüssel-Attribut: `key`. Wenn Kind-Elemente Schlüssel haben, verwendet React den Schlüssel, um Kind-Elemente in der ursprünglichen Struktur mit Kind-Elementen in der nachfolgenden Struktur abzugleichen. Wenn du beispielsweise einen Schlüssel zu unserem ineffizienten Beispiel oben hinzufügst, kann die Baumkonvertierung effizienter werden:
 
-```js
+```xml
 <ul>
   <li key="2015">Duke</li>
   <li key="2016">Villanova</li>
@@ -132,7 +132,7 @@ Jetzt weiß React, dass das Element mit dem Schlüssel `'2014'` das neue ist und
 
 In der Praxis ist es normalerweise nicht schwierig, einen Schlüssel zu finden. Das Element, das du anzeigen möchtest, verfügt möglicherweise bereits über eine eindeutige ID, sodass der Schlüssel einfach aus deinen Daten stammen kann:
 
-```js
+```xml
 <li key={item.id}>{item.name}</li>
 ```
 
@@ -142,7 +142,7 @@ Als letzte Möglichkeit kannst du den Index eines Elements im Array als Schlüss
 
 Neuanordnungen können auch Probleme mit dem State von Komponenten verursachen, wenn Indizes als Schlüssel verwendet werden. Komponenteninstanzen werden basierend auf ihrem Schlüssel aktualisiert und wiederverwendet. Wenn der Schlüssel ein Index ist, wird er durch Verschieben eines Elements geändert. Infolgedessen kann der State von Komponenten für Dinge wie ungesteuerte Eingabefelder auf unerwartete Weise verwechselt und aktualisiert werden.
 
-[Hier](codepen://reconciliation/index-used-as-key) findest du ein Codepent-Beispiel für Probleme, die durch die Verwendung von Indizes als Schlüssel verursacht werden können. [Hier] (codepen://reconciliation/no-index-used-as-key) findest du eine aktualisierte Version desselben Beispiels, in der gezeigt wird, wie durch die Nichtverwendung von Indizes als Schlüssel diese Probleme beim Neuordnen, Sortieren und Voranstellen behoben werden.
+[Hier](codepen://reconciliation/index-used-as-key) findest du ein Codepen-Beispiel für Probleme, die durch die Verwendung von Indizes als Schlüssel verursacht werden können. [Hier] (codepen://reconciliation/no-index-used-as-key) findest du eine aktualisierte Version desselben Beispiels, in der gezeigt wird, wie durch die Nichtverwendung von Indizes als Schlüssel diese Probleme beim Neuordnen, Sortieren und Voranstellen behoben werden.
 
 ## Kompromisse {#tradeoffs}
 
@@ -152,6 +152,6 @@ Wir verfeinern die Heuristiken regelmäßig, um gängige Anwendungsfälle zu bes
 
 Da sich React auf Heuristiken stützt, wirkt es sich negativ auf die Leistung aus, wenn die zugrunde liegenden Annahmen nicht erfüllt werden.
 
-1. Der Algorithmus versucht nicht, Teilbäume verschiedener Komponententypen abzugleichen. Wenn du feststellst, dass du zwischen zwei Komponententypen mit sehr ähnlicher Ausgabe wechseln, solltest du möglicherweise denselben Typ festlegen. In der Praxis ist dies normalerweise kein Problem.
+1. Der Algorithmus versucht nicht, Teilbäume verschiedener Komponententypen abzugleichen. Wenn du feststellst, dass du zwischen zwei Komponententypen mit sehr ähnlicher Ausgabe wechselst, solltest du möglicherweise denselben Typ festlegen. In der Praxis ist dies normalerweise kein Problem.
 
-2. Schlüssel sollten stabil, vorhersehbar und eindeutig sein. Instabile Schlüssel (wie die von `Math.random()` erzeugten) führen dazu, dass viele Komponenteninstanzen und DOM-Knoten unnötigerweise neu erstellt werden, was zu Leistungseinbußen und zum Verlust des Status in untergeordneten Komponenten führen kann.
+2. Schlüssel sollten stabil, vorhersehbar und eindeutig sein. Instabile Schlüssel (wie die von `Math.random()` erzeugten) führen dazu, dass viele Komponenteninstanzen und DOM-Knoten unnötigerweise neu erstellt werden, was zu Leistungseinbußen und zum Verlust des States in untergeordneten Komponenten führen kann.
