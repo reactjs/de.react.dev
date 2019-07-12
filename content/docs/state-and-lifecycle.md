@@ -244,7 +244,7 @@ Die `componentDidMount()` Methode wird ausgeführt nachdem die Komponenten in da
   }
 ```
 
-Beachte, wie wir die Timer-ID in `this` speichern.
+Beachte, wie wir die Timer-ID in `this` (`this.timerID`) speichern.
 
 Während `this.props` von React selbst eingerichtet wird, und `this.state` eine besondere Bedeutung hat, steht es dir frei, der Klasse manuell zusätzliche Felder hinzuzufügen, wenn du etwas speichern musst, das nicht am Datenfluss teilnimmt (wie eine Timer-ID).
 
