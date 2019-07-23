@@ -9,13 +9,13 @@ permalink: docs/glossary.html
 
 ## Single-Page Anwendnung {#single-page-application}
 
-Eine Single-Page Anwendnung ist eine Anwendungen, die eine einzelne HTML Seite und all deren Ressourcen (wie JavaScript oder CSS) lädt, die für das Ausführen der Anwendung erforderlich sind. Jegliche Interaktionen mit der Seite und deren Unterseiten benötigen keine erneute Serveranfrage, d. h. die Seite muss nicht neu geladen werden.
+Eine Single-Page Anwendung ist eine Anwendungen, die eine einzelne HTML Seite und all deren Ressourcen (wie JavaScript oder CSS) lädt, die für das Ausführen der Anwendung erforderlich sind. Jegliche Interaktionen mit der Seite und deren Unterseiten benötigen keine erneute Serveranfrage, d. h. die Seite muss nicht neu geladen werden.
 
-Though you may build a single-page application in React, it is not a requirement. React can also be used for enhancing small parts of existing websites with additional interactivity. Code written in React can coexist peacefully with markup rendered on the server by something like PHP, or with other client-side libraries. In fact, this is exactly how React is being used at Facebook.
+Obwohl du mit React komplette Single-Page Anwendungen erstellen kannst, ist dies kein Muss. React kann auch nur für kleine Teile bestehender Webseiten verwendet werden um die Interaktivität zu erweitern. In React geschriebener Code kann in Ruhe mit Markup koexistieren, welches auf dem Server von beispielsweise PHP oder auch clientseitig anderen Bibliotheken gerendert wird. Tatsächlich wird React genau so bei Facebook eingesetzt.
 
 ## ES6, ES2015, ES2016, etc {#es6-es2015-es2016-etc}
 
-These acronyms all refer to the most recent versions of the ECMAScript Language Specification standard, which the JavaScript language is an implementation of. The ES6 version (also known as ES2015) includes many additions to the previous versions such as: arrow functions, classes, template literals, `let` and `const` statements. You can learn more about specific versions [here](https://en.wikipedia.org/wiki/ECMAScript#Versions).
+All diese Kürzel beziehen sich auf den neuesten Standard der ECMAScript Language Specification, von dem JavaScript eine Implementierung ist. Die ES6-Version (auch bekannt als ES2015) enthält viele Ergänzugen zu den Vorgängerversionen wie: Pfeilfunktionen, Klassen, Template-Literale, `let` und `const` Anweiseungen. Du kannst [hier](https://en.wikipedia.org/wiki/ECMAScript#Versions) mehr über bestimmte Versionen lernen.
 
 ## Kompiler {#compilers}
 
