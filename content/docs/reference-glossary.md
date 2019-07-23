@@ -81,20 +81,20 @@ Components can be broken down into distinct pieces of functionality and used wit
 
 ### [`props`](/docs/components-and-props.html) {#props}
 
-`props` are inputs to a React component. They are data passed down from a parent component to a child component.
+`props` sind die Daten die in eine React-Komponenten gegeben werden. Es handelt sich hierbei um Daten, die von einer übergeordneten Komponente an eine untergeordnete Komponente weitergegeben werden.
 
-Remember that `props` are readonly. They should not be modified in any way:
+Denke daran, dass `props` nur lesbar(`readonly`) sind. Sie sollten in keiner Weise verändert werden:
 
 ```js
 // Wrong!
 props.number = 42;
 ```
 
-If you need to modify some value in response to user input or a network response, use `state` instead.
+Wenn du einen Wert aufgrund von Nutzereingaben oder Netzwerkantworten verändern möchtest, verwende `state`.
 
 ### `props.children` {#propschildren}
 
-`props.children` is available on every component. It contains the content between the opening and closing tags of a component. For example:
+`props.children` ist in jeder Komponente verfügar. Es enthält den Inhalt, der zwischen dem öffnenden und schließenden Tag einer Komponente steht. Zum Beispiel:
 
 ```js
 <Welcome>Hallo Welt!</Welcome>
