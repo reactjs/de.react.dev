@@ -25,9 +25,9 @@ Ein JavaScript-Kompiler nimmt JavaScript Code, wandelt ihn um und gibt JavaScrip
 
 Bundlers take JavaScript and CSS code written as separate modules (often hundreds of them), and combine them together into a few files better optimized for the browsers. Some bundlers commonly used in React applications include [Webpack](https://webpack.js.org/) and [Browserify](http://browserify.org/).
 
-## Paket-Manager {#package-managers}
+## Paketmanager {#package-managers}
 
-Package managers are tools that allow you to manage dependencies in your project. [npm](https://www.npmjs.com/) and [Yarn](https://yarnpkg.com/) are two package managers commonly used in React applications. Both of them are clients for the same npm package registry.
+Paketmanager sind Tools, welche dir das Verwalten deiner Projekt-Abhängigkeiten ermöglichen. [npm](https://www.npmjs.com/) und [Yarn](https://yarnpkg.com/) sind zwei Paketmanager, die häufig in React-Anwendungen verwendet werden. Beides Beide sind Clients für die gleiche npm-Paketregistrierung.
 
 ## CDN {#cdn}
 
@@ -42,7 +42,7 @@ React DOM uses camelCase property naming convention instead of HTML attribute na
 ```js
 const name = 'Clementine';
 ReactDOM.render(
-  <h1 className="hello">My name is {name}!</h1>,
+  <h1 className="hello">Mein Name ist {name}!</h1>,
   document.getElementById('root')
 );
 ```
