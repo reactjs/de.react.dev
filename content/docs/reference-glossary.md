@@ -23,7 +23,7 @@ Ein JavaScript-Kompiler nimmt JavaScript Code, wandelt ihn um und gibt JavaScrip
 
 ## Bundler {#bundlers}
 
-Bundlers take JavaScript and CSS code written as separate modules (often hundreds of them), and combine them together into a few files better optimized for the browsers. Some bundlers commonly used in React applications include [Webpack](https://webpack.js.org/) and [Browserify](http://browserify.org/).
+Bundler nehmen JavaScript und CSS-Code, geschrieben als seperate Module (oft hunderte von ihnen), und fügen diese zusammen in ein paar Dateien, die besser für den Browser optimiert sind. Einige der in React-Anwendungen häufig verwendeten Bundler sind [Webpack](https://webpack.js.org/) und [Browserify](http://browserify.org/).
 
 ## Paketmanager {#package-managers}
 
