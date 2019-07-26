@@ -56,7 +56,7 @@ function onClick(event) {
   // Dies wird nicht funktionieren. this.state.clickEvent wird nur null Werte beinhalten.
   this.setState({clickEvent: event});
 
-  // Das Exportieren der Eventeigenschaften ist trotzdem möglich.
+  // Das Exportieren der Eigentschaften des Events ist trotzdem möglich.
   this.setState({eventType: event.type});
 }
 ```
@@ -69,24 +69,24 @@ function onClick(event) {
 
 React führt eine Normalisierung der Events durch, damit dessen Eigenschaften konsistent und Browserübergreifend sind.
 
-Die folgenden Eventhandler werden von einem Event in der Bubbling-Phase ausgelöst. Um ein Eventhandler für die Capture-Phase zu registrieren, muss `Capture` zum Eventnamen hinzugefügt werden; Bepsiel: Anstatt `onClick`, würde man `onClickCapture` für das Handling des Events in der Capture-Phase benutzen.
+Folgende Eventhandler werden von einem Event in der Bubbling-Phase ausgelöst. Um ein Eventhandler für die Capture-Phase zu registrieren, muss `Capture` zum Eventnamen hinzugefügt werden; Bepsiel: Anstatt `onClick`, würde man `onClickCapture` für das Handling des Events in der Capture-Phase benutzen.
 
 - [Zwischenablage Events](#clipboard-events)
-- [Composition Events](#composition-events)
+- [Komposition Events](#composition-events)
 - [Tastatur Events](#keyboard-events)
 - [Fokus Events](#focus-events)
-- [Form Events](#form-events)
+- [Formular Events](#form-events)
 - [Maus Events](#mouse-events)
-- [Pointer Events](#pointer-events)
+- [Mauszeiger Events](#pointer-events)
 - [Auswahl Events](#selection-events)
 - [Touch Events](#touch-events)
 - [UI Events](#ui-events)
-- [Wheel Events](#wheel-events)
-- [Media Events](#media-events)
+- [Mausrad Events](#wheel-events)
+- [Medien Events](#media-events)
 - [Bild Events](#image-events)
 - [Animation Events](#animation-events)
 - [Transition Events](#transition-events)
-- [Other Events](#other-events)
+- [Sonstige Events](#other-events)
 
 * * *
 
@@ -108,15 +108,15 @@ DOMDataTransfer clipboardData
 
 * * *
 
-### Composition Events {#composition-events}
+### Komposition Events {#composition-events}
 
-Event names:
+Eventnamen:
 
 ```
 onCompositionEnd onCompositionStart onCompositionUpdate
 ```
 
-Properties:
+Eigenschaften:
 
 ```javascript
 string data
@@ -125,15 +125,15 @@ string data
 
 * * *
 
-### Keyboard Events {#keyboard-events}
+### Tastatur Events {#keyboard-events}
 
-Event names:
+Eventnamen:
 
 ```
 onKeyDown onKeyPress onKeyUp
 ```
 
-Properties:
+Eigenschaften:
 
 ```javascript
 boolean altKey
@@ -154,9 +154,9 @@ The `key` property can take any of the values documented in the [DOM Level 3 Eve
 
 * * *
 
-### Focus Events {#focus-events}
+### Fokus Events {#focus-events}
 
-Event names:
+Eventnamen:
 
 ```
 onFocus onBlur
@@ -164,7 +164,7 @@ onFocus onBlur
 
 These focus events work on all elements in the React DOM, not just form elements.
 
-Properties:
+Eigenschaften:
 
 ```javascript
 DOMEventTarget relatedTarget
@@ -172,21 +172,21 @@ DOMEventTarget relatedTarget
 
 * * *
 
-### Form Events {#form-events}
+### Formular Events {#form-events}
 
-Event names:
+Eventnamen:
 
 ```
 onChange onInput onInvalid onSubmit
 ```
 
-For more information about the onChange event, see [Forms](/docs/forms.html).
+Für detaillierte Beschreibung des onChange Events, siehe [Formulare](/docs/forms.html).
 
 * * *
 
-### Mouse Events {#mouse-events}
+### Maus Events {#mouse-events}
 
-Event names:
+Eventnamen:
 
 ```
 onClick onContextMenu onDoubleClick onDrag onDragEnd onDragEnter onDragExit
@@ -194,9 +194,11 @@ onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave
 onMouseMove onMouseOut onMouseOver onMouseUp
 ```
 
+TODO:
+Die `onMouseEnter` und `onMouseLeave` Events propagieren
 The `onMouseEnter` and `onMouseLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
 
-Properties:
+Eigenschaften:
 
 ```javascript
 boolean altKey
@@ -217,20 +219,21 @@ boolean shiftKey
 
 * * *
 
-### Pointer Events {#pointer-events}
+### Mauszeiger Events {#pointer-events}
 
-Event names:
+Eventnamen:
 
 ```
 onPointerDown onPointerMove onPointerUp onPointerCancel onGotPointerCapture
 onLostPointerCapture onPointerEnter onPointerLeave onPointerOver onPointerOut
 ```
 
+TODO:
 The `onPointerEnter` and `onPointerLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
 
-Properties:
+Eigenschaften:
 
-As defined in the [W3 spec](https://www.w3.org/TR/pointerevents/), pointer events extend [Mouse Events](#mouse-events) with the following properties:
+Wie in [W3 Spezifikation](https://www.w3.org/TR/pointerevents/) definiert, werden die [Maus Events](#mouse-events) durch Mauszeiger Events mit folgenden Eigenschaften erweitert:
 
 ```javascript
 number pointerId
@@ -245,17 +248,17 @@ string pointerType
 boolean isPrimary
 ```
 
-A note on cross-browser support:
+Hinweis bezüglich cross-browser Unterstützung:
 
-Pointer events are not yet supported in every browser (at the time of writing this article, supported browsers include: Chrome, Firefox, Edge, and Internet Explorer). React deliberately does not polyfill support for other browsers because a standard-conform polyfill would significantly increase the bundle size of `react-dom`.
+Mauszeiger Events werden noch nicht von jedem Browser unterstützt (zur Zeit der Verfassung dieses Artikels wurden folgende Browser unterstützt: Chrome, Firefox, Edge und Internet Explorer). React verzichtet bewusst auf den Polyfill Support für andere Browser, da eine standard-konforme Polyfill Lösung den Umfang des `react-dom` Bündels deutlich steigern würde.
 
-If your application requires pointer events, we recommend adding a third party pointer event polyfill.
+Wenn deine Applikation Mauszeiger-Events voraussetzt, wäre es ratsam einen Mauszeiger-Event Polyfill eines Drittanbieters zu nutzen.
 
 * * *
 
-### Selection Events {#selection-events}
+### Auswahl Events {#selection-events}
 
-Event names:
+Eventnamen:
 
 ```
 onSelect
@@ -265,13 +268,13 @@ onSelect
 
 ### Touch Events {#touch-events}
 
-Event names:
+Eventnamen:
 
 ```
 onTouchCancel onTouchEnd onTouchMove onTouchStart
 ```
 
-Properties:
+Eigenschaften:
 
 ```javascript
 boolean altKey
@@ -288,13 +291,13 @@ DOMTouchList touches
 
 ### UI Events {#ui-events}
 
-Event names:
+Eventnamen:
 
 ```
 onScroll
 ```
 
-Properties:
+Eigenschaften:
 
 ```javascript
 number detail
@@ -303,15 +306,15 @@ DOMAbstractView view
 
 * * *
 
-### Wheel Events {#wheel-events}
+### Mausrad Events {#wheel-events}
 
-Event names:
+Eventnamen:
 
 ```
 onWheel
 ```
 
-Properties:
+Eigenschaften:
 
 ```javascript
 number deltaMode
@@ -322,9 +325,9 @@ number deltaZ
 
 * * *
 
-### Media Events {#media-events}
+### Medien Events {#media-events}
 
-Event names:
+Eventnamen:
 
 ```
 onAbort onCanPlay onCanPlayThrough onDurationChange onEmptied onEncrypted
@@ -335,9 +338,9 @@ onTimeUpdate onVolumeChange onWaiting
 
 * * *
 
-### Image Events {#image-events}
+### Bild Events {#image-events}
 
-Event names:
+Eventnamen:
 
 ```
 onLoad onError
@@ -347,13 +350,13 @@ onLoad onError
 
 ### Animation Events {#animation-events}
 
-Event names:
+Eventnamen:
 
 ```
 onAnimationStart onAnimationEnd onAnimationIteration
 ```
 
-Properties:
+Eigenschaften:
 
 ```javascript
 string animationName
@@ -365,13 +368,13 @@ float elapsedTime
 
 ### Transition Events {#transition-events}
 
-Event names:
+Eventnamen:
 
 ```
 onTransitionEnd
 ```
 
-Properties:
+Eigenschaften:
 
 ```javascript
 string propertyName
@@ -381,9 +384,9 @@ float elapsedTime
 
 * * *
 
-### Other Events {#other-events}
+### Sonstige Events {#other-events}
 
-Event names:
+Eventnamen:
 
 ```
 onToggle
