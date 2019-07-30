@@ -1,6 +1,6 @@
 ---
 id: events
-title: Synthetisches Event
+title: SyntheticEvent
 permalink: docs/events.html
 layout: docs
 category: Referenz
@@ -10,9 +10,9 @@ Dieser Referenzleitfaden dokumentiert den `SyntheticEvent` Wrapper, welcher eine
 
 ## Übersicht {#overview}
 
-Die Eventhandler stellen eine Instanz des synthetischen Events dar, ein browserübergreifender Wrapper für das native Eventobjekt des Browsers. Das Interface vom synthetischen Event ist ident zu dem nativen Event des Browsers, inklusive `stopPropagation()` und `preventDefault()`. Eine Besonderheit der synthetischen Events ist jedoch die identische Funktionsweise in allen Browsern.
+Die Eventhandler stellen eine Instanz von `SyntheticEvent` dar, ein browserübergreifender Wrapper für das native Eventobjekt des Browsers. Das Interface ist identisch zu dem nativen Event des Browsers, inklusive `stopPropagation()` und `preventDefault()`. Eine Besonderheit von `SyntheticEvent` ist jedoch die identische Funktionsweise in allen Browsern.
 
-Falls aus irgendeinem Grund der Zugriff auf das native Browserevent notwendig ist, kann dieses mittels `nativeEvent` Attributs abgerufen werden. Jedes `SyntheticEvent` Objekt hat folgende Attribute:
+Falls aus irgendeinem Grund der Zugriff auf das native Browser-Event notwendig ist, kann dieses mittels dem `nativeEvent`-Attribut abgerufen werden. Jedes `SyntheticEvent` Objekt hat folgende Attribute:
 
 ```javascript
 boolean bubbles
@@ -35,11 +35,11 @@ string type
 >
 > Ab der Version 0.14 führt die Rückgabe des Wertes `false` von einem Eventhandler nicht zu einer Unterbrechung der Eventkette. Stattdessen soll `e.stopPropagation() oder `e.preventDefault()` explizit aufgerufen werden.
 
-### Event Poolbildung {#event-pooling}
+### Event-Pooling {#event-pooling}
 
-Das synthetische Event wird aus einem Eventpool entnommen. Im konkreten Fall bedeutet dies, dass das Objekt welches das synthetische Event repräsentiert, wiederverwendet wird und alle Eigenschafen nach dem Aufruf des Eventcallbacks nullifiziert werden.
+Das  `SyntheticEvent` wird aus einem Event-Pool entnommen. Im konkreten Fall bedeutet dies, dass das Objekt welches das  `SyntheticEvent` repräsentiert, wiederverwendet wird und alle Eigenschafen nach dem Aufruf des Event-Callbacks nullifiziert werden.
 Diese Umsetzung bringt eine bessere Performance mit sich.
-Somit ist es ein asynchroner Zugriff auf das Event nicht möglich.
+Somit ist ein asynchroner Zugriff auf das Event nicht möglich.
 
 ```javascript
 function onClick(event) {
@@ -68,7 +68,7 @@ function onClick(event) {
 
 React führt eine Normalisierung der Events durch, damit dessen Eigenschaften konsistent und Browserübergreifend sind.
 
-Folgende Eventhandler werden von einem Event in der Bubbling-Phase ausgelöst. Um ein Eventhandler für die Capture-Phase zu registrieren, muss `Capture` zum Eventnamen hinzugefügt werden; Bepsiel: Anstatt `onClick`, würde man `onClickCapture` für das Handling des Events in der Capture-Phase benutzen.
+Folgende Eventhandler werden von einem Event in der Bubbling-Phase ausgelöst. Um ein Eventhandler für die Capture-Phase zu registrieren, muss `Capture` zum Eventnamen hinzugefügt werden; Beispiel: Anstatt `onClick`, würde man `onClickCapture` für das Handling des Events in der Capture-Phase benutzen.
 
 - [Zwischenablage Events](#clipboard-events)
 - [Komposition Events](#composition-events)
@@ -76,7 +76,7 @@ Folgende Eventhandler werden von einem Event in der Bubbling-Phase ausgelöst. U
 - [Fokus Events](#focus-events)
 - [Formular Events](#form-events)
 - [Maus Events](#mouse-events)
-- [Mauszeiger Events](#pointer-events)
+- [Pointer Events](#pointer-events)
 - [Auswahl Events](#selection-events)
 - [Touch Events](#touch-events)
 - [UI Events](#ui-events)
@@ -216,7 +216,7 @@ boolean shiftKey
 
 * * *
 
-### Mauszeiger Events {#pointer-events}
+### Pointer-Events {#pointer-events}
 
 Eventnamen:
 
@@ -229,7 +229,7 @@ Die `onPointerEnter` und `onPointerLeave` Events breiten sich vom verlassenen El
 
 Eigenschaften:
 
-Wie in [W3 Spezifikation](https://www.w3.org/TR/pointerevents/) definiert, werden die [Maus Events](#mouse-events) durch Mauszeiger Events mit folgenden Eigenschaften erweitert:
+Wie in der [W3 Spezifikation](https://www.w3.org/TR/pointerevents/) definiert, werden die [Maus-Events](#mouse-events) durch Pointer-Events mit folgenden Eigenschaften erweitert:
 
 ```javascript
 number pointerId
@@ -246,9 +246,9 @@ boolean isPrimary
 
 Hinweis bezüglich cross-browser Unterstützung:
 
-Mauszeiger Events werden noch nicht von jedem Browser unterstützt (zur Zeit der Verfassung dieses Artikels wurden folgende Browser unterstützt: Chrome, Firefox, Edge und Internet Explorer). React verzichtet bewusst auf den Polyfill Support für andere Browser, da eine standard-konforme Polyfill Lösung den Umfang des `react-dom` Bündels deutlich steigern würde.
+Pointer-Events werden noch nicht von jedem Browser unterstützt (zur Zeit der Verfassung dieses Artikels wurden folgende Browser unterstützt: Chrome, Firefox, Edge und Internet Explorer). React verzichtet bewusst auf den Polyfill Support für andere Browser, da eine standard-konforme Polyfill Lösung den Umfang des `react-dom` Bündels deutlich steigern würde.
 
-Wenn deine Applikation Mauszeiger-Events voraussetzt, wäre es ratsam einen Mauszeiger-Event Polyfill eines Drittanbieters zu nutzen.
+Wenn deine Applikation Pointer-Events voraussetzt, wäre es ratsam einen Pointer-Event Polyfill eines Drittanbieters zu nutzen.
 
 * * *
 
