@@ -194,9 +194,7 @@ onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave
 onMouseMove onMouseOut onMouseOver onMouseUp
 ```
 
-TODO:
-Die `onMouseEnter` und `onMouseLeave` Events propagieren
-The `onMouseEnter` and `onMouseLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
+Die `onMouseEnter` und `onMouseLeave` Events breiten sich vom verlassenen Element zu eintretenden aus, statt dem üblichen Propagieren der DOM-Hierarchie nach oben. Des Weiteren besitzen die Events keine Erfassungsphase.
 
 Eigenschaften:
 
@@ -228,8 +226,7 @@ onPointerDown onPointerMove onPointerUp onPointerCancel onGotPointerCapture
 onLostPointerCapture onPointerEnter onPointerLeave onPointerOver onPointerOut
 ```
 
-TODO:
-The `onPointerEnter` and `onPointerLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
+Die `onPointerEnter` und `onPointerLeave` Events breiten sich vom verlassenen Element zu eintretenden aus, statt dem üblichen Propagieren der DOM-Hierarchie nach oben. Des Weiteren besitzen die Events keine Erfassungsphase.
 
 Eigenschaften:
 
