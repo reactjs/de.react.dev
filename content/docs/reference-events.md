@@ -37,9 +37,7 @@ string type
 
 ### Event-Pooling {#event-pooling}
 
-Das  `SyntheticEvent` wird aus einem Event-Pool entnommen. Im konkreten Fall bedeutet dies, dass das Objekt welches das  `SyntheticEvent` repräsentiert, wiederverwendet wird und alle Eigenschafen nach dem Aufruf des Event-Callbacks nullifiziert werden.
-Diese Umsetzung bringt eine bessere Performance mit sich.
-Somit ist ein asynchroner Zugriff auf das Event nicht möglich.
+Das  `SyntheticEvent` wird aus einem Event-Pool entnommen. Im konkreten Fall bedeutet dies, dass das Objekt welches das  `SyntheticEvent` repräsentiert, wiederverwendet wird und alle Eigenschafen nach dem Aufruf des Event-Callbacks nullifiziert werden. Diese Umsetzung bringt eine bessere Performance mit sich. Somit ist ein asynchroner Zugriff auf das Event nicht möglich.
 
 ```javascript
 function onClick(event) {
@@ -161,7 +159,7 @@ Eventnamen:
 onFocus onBlur
 ```
 
-These focus events work on all elements in the React DOM, not just form elements.
+Diese Fokus Events gelten für alle Elemente von React DOM, nicht nur für Formular-Elemente.
 
 Eigenschaften:
 
