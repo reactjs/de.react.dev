@@ -6,8 +6,7 @@ layout: docs
 category: Referenz
 ---
 
-Dieser Referenzleitfaden dokumentiert den `SyntheticEvent` Wrapper, welcher einen Bestandteil des Eventsystems von React darstellt.
-. Siehe [Handhabung von Events](/docs/handling-events.html) für mehr Informationen zu diesem Thema.
+Dieser Referenzleitfaden dokumentiert den `SyntheticEvent` Wrapper, welcher einen Bestandteil des Eventsystems von React darstellt. Siehe [Handhabung von Events](/docs/handling-events.html) für mehr Informationen zu diesem Thema.
 
 ## Übersicht {#overview}
 
