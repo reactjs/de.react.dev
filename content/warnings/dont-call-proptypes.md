@@ -10,7 +10,7 @@ permalink: warnings/dont-call-proptypes.html
 >
 >Um die Umstellung zu automatisieren, haben wir [ein codemod Script](/blog/2017/04/07/react-v15.5.0.html#migrating-from-react.proptypes) zur Verfügung gestellt.
 
-Der Code, der die PropType Validierung implementiert, wird in einer zukünfigten Major Release von der Produktion entfernt. Sobald dies geschehen ist, wird jeder manuelle Aufruf dieser Funktionen im Code (welcher nicht von Produktion entfernt worden ist), eine Fehlermeldung werfen.
+Der Code, der die Funktionen der PropType-Validierung bereitstellt, wird in einem zukünftigen Major-Release der Produktionsversion von React, entfernt. Sobald dies geschehen ist, wird jeder manuelle Aufruf dieser Funktionen im Code (welcher nicht von Produktion entfernt worden ist), eine Fehlermeldung werfen.
 
 ### Deklaration von PropTypes ist immer noch in Ordnung {#declaring-proptypes-is-still-fine}
 
