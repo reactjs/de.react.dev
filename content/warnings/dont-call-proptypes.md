@@ -44,7 +44,7 @@ Wenn du diese Warnung nicht behebst, wird der Code in der Produktion mit React 1
 
 ### Falls du PropTypes nicht direkt aufrufst aber immer noch die Warnung siehst {#if-you-dont-call-proptypes-directly-but-still-get-the-warning}
 
-Untersuche die Stack-Ablaufverfolgung, die von der Warnung entstanden ist. Du wirst die Komponentendefinition finden, die für den direkten Aufruf des PropTypes verantwortlich ist. Wahrscheinlich ist dieses Problem durch PropTypes Dritter verantwortlich, die die Proptypes von React umfassen: 
+Untersuche den Stacktrace, der von dieser Warnung entstanden ist. Du wirst die Komponentendefinition finden, die für den direkten Aufruf der PropTypes verantwortlich ist. Wahrscheinlich ist dieses Problem durch PropTypes Dritter verantwortlich, die die PropTypes von React verwenden: 
 
 
 ```js
