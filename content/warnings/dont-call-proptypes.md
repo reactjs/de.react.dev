@@ -8,7 +8,7 @@ permalink: warnings/dont-call-proptypes.html
 >
 > `React.PropTypes` ist seit React v15.5 in ein anderes Paket verschoben worden. Verwende stattdessen [die `prop-types` Bibliothek](https://www.npmjs.com/package/prop-types).
 >
->Um die Umstellung zu Automatisieren, haben wir [ein codemod Script](/blog/2017/04/07/react-v15.5.0.html#migrating-from-react.proptypes) zur Verfügung gestellt.
+>Um die Umstellung zu automatisieren, haben wir [ein codemod Script](/blog/2017/04/07/react-v15.5.0.html#migrating-from-react.proptypes) zur Verfügung gestellt.
 
 Der Code, der die PropType Validierung implementiert, wird in einer zukünfigten Major Release von der Produktion entfernt. Sobald dies geschehen ist, wird jeder manuelle Aufruf dieser Funktionen im Code (welcher nicht von Produktion entfernt worden ist), eine Fehlermeldung werfen.
 
