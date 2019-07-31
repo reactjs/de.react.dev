@@ -26,7 +26,7 @@ Hier hat sich nichts geändert.
 
 ### Rufe PropTypes nicht direkt auf {#dont-call-proptypes-directly}
 
-Die Verwendung von PropTypes in jeder anderen Art und Weise, außer zum Annotieren von React Komponenten, wird nicht mehr untersützt:
+Die Verwendung von PropTypes in jeder anderen Art und Weise, außer zum ansprechen von React Komponenten, wird nicht mehr unterstützt:
 
 ```javascript
 var apiShape = PropTypes.shape({
