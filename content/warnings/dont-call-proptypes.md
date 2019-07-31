@@ -56,7 +56,7 @@ Button.propTypes = {
 }
 ```
 
-In diesem Fall ist `ThirdPartyPropTypes.deprecated` ein Wrapper welches `PropTypes.bool` aufruft. Dieses Muster an sich ist in Ordnung, aber es triggert einen falschen Alarm. da React annimmt, dass PropTypes direkt aufgeruft werden. In dem nächsten Abschnitt wird erklärt, wie man dieses Problem löst, wenn eine Bibliothek so etwas wie `ThirdPartyPropTypes` verwendet. Falls es eine Bibliothek ist, die du nicht geschrieben hast, kannst du ein Issue dagegen aufmachen.
+In diesem Fall ist `ThirdPartyPropTypes.deprecated` ein Wrapper welcher `PropTypes.bool` aufruft. Dieses Pattern an sich ist in Ordnung, aber es löst einen falschen Alarm aus, da React annimmt, dass PropTypes direkt aufgerufen wird. In dem nächsten Abschnitt wird erklärt, wie man dieses Problem löst, wenn eine Bibliothek so etwas wie `ThirdPartyPropTypes` verwendet. Falls es eine Bibliothek ist, die du nicht geschrieben hast, kannst du hierfür ein Issue aufmachen.
 
 ### Beheben des Fehlalarms in PropTypes von Drittanbietern {#fixing-the-false-positive-in-third-party-proptypes}
 
