@@ -80,7 +80,7 @@ export default function deprecated(propType, explanation) {
 }
 ```
  
-Um diese falsche Fehlermeldung zu lösen, ist sicherzustellen, dass **alle** Argumente an das umschlossene PropType weitergegeben werden. Das ist mit der ES6 `...rest` Notation einfach zu machen: 
+Um diese Falschmeldung zu beheben, musst du sicherzustellen, dass **alle** Argumente an das umschlossene PropType weitergegeben werden. Das ist mit der ES6 `...rest` Notation einfach zu machen: 
  
 ```javascript
 export default function deprecated(propType, explanation) {
