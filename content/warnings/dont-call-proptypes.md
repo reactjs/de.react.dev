@@ -40,7 +40,7 @@ var error = apiShape(json, 'response');
 
 Falls du von dieser Verwendung von PropTypes abhängst, raten wir dir, eine Fork von Proptypes (zum Beispiel [diese](https://github.com/aackerman/PropTypes) [zwei](https://github.com/developit/proptypes) Pakete) zu erstellen oder zu verwenden.
 
-Wird diese Warnung nicht aufgelöst, so wird der Code in der Produktion mit React 16 abstürzen.
+Wenn du diese Warnung nicht behebst, wird der Code in der Produktion mit React 16 abstürzen.
 
 ### Falls du PropTypes nicht direkt aufrufst aber immer noch die Warnung siehst {#if-you-dont-call-proptypes-directly-but-still-get-the-warning}
 
