@@ -33,7 +33,7 @@ string type
 
 > Hinweis:
 >
-> Ab der Version 0.14 führt die Rückgabe des Wertes `false` von einem Eventhandler nicht zu einer Unterbrechung der Eventkette. Stattdessen soll `e.stopPropagation() oder `e.preventDefault()` explizit aufgerufen werden.
+> Ab der Version 0.14 führt die Rückgabe des Wertes `false` von einem Eventhandler nicht zu einer Unterbrechung der Eventkette. Stattdessen soll `e.stopPropagation()` oder `e.preventDefault()` explizit aufgerufen werden.
 
 ### Event-Pooling {#event-pooling}
 
