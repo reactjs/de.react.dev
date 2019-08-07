@@ -49,7 +49,11 @@ Du siehst hier, dass wir fünf Komponenten in unserer einfachen Anwendung haben.
   4. **`ProductCategoryRow` (türkis):** zeigt eine Überschrift für jede *Kategorie* an
   5. **`ProductRow` (rot):** zeigt eine Zeile für jedes *Produkt* an
 
+<<<<<<< HEAD
 Wenn du dir `ProductTable` anschaust, wirst du feststellen, dass der Tabellenkopf (mit den Bezeichnungen "Name" und "Price") keine eigene Komponente ist. Das ist eine Frage der Präferenz und es gibt Argumente für beide Seiten. Für dieses Beispiel haben wir ihn als Teil von `ProductTable` gelassen, da er Teil der Darstellung der *Daten* ist, die in der Verantwortung von `ProductTable` liegt. Wenn diese Kopfzeile jedoch immer komplexer werden sollte (d.h. falls wir beispielsweise eine Sortierung hinzufügen würden), wäre es sicherlich sinnvoll, diese Kopfzeile zu einer eigenen `ProductTableHeader`-Komponente zu machen.
+=======
+If you look at `ProductTable`, you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and there's an argument to be made either way. For this example, we left it as part of `ProductTable` because it is part of rendering the *data collection* which is `ProductTable`'s responsibility. However, if this header grows to be complex (e.g., if we were to add affordances for sorting), it would certainly make sense to make this its own `ProductTableHeader` component.
+>>>>>>> 986381c56879983269c52863d9c205c7a7ba0174
 
 Lass uns nachdem wir nun die Komponenten in unserem Mock-Up identifiziert haben, sie in eine Hierarchie einordnen. Das ist einfach. Komponenten, die innerhalb einer anderen Komponente im Mock-Up erscheinen, sollten als Kind in der Hierarchie erscheinen:
 
