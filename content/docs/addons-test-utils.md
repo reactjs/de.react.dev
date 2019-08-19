@@ -124,8 +124,12 @@ it('kann einen Counter rendern und updaten', () => {
 
 - Vergiss nicht, dass das Abschicken von DOM-Events nur funktioniert, wenn der DOM-Container zum `document` hinzugefügt wurde. Du kannst [`React Testing Library`](https://testing-library.com/react) zur Hilfe nehmen, um Boilerplate-Code zu reduzieren.
 
+<<<<<<< HEAD
 - The [`recipes`](/docs/recipes.html) document contains more details on how `act()` behaves, with examples and usage.
 >>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
+=======
+- The [`recipes`](/docs/testing-recipes.html) document contains more details on how `act()` behaves, with examples and usage.
+>>>>>>> de497e250340ff597ce4964279369f16315b8b4b
 
 * * *
 

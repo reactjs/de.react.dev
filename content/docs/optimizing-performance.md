@@ -211,6 +211,7 @@ React baut und pflegt eine interne Repräsentation der gerenderten Benutzeroberf
 
 Wenn Props oder State einer Komponente sich verändern, entscheidet React, ob ein tatsächliches DOM-Update nötig ist, indem es das neu ausgegebene Element mit dem zuvor gerenderten abgleicht. Wenn sie unterschiedlich sind, aktualisiert React das DOM.
 
+<<<<<<< HEAD
 Du kannst diese Re-render des virtuellen DOMs nun mit den React DevTools visualisieren:
 
 - [Chrome Browser-Erweiterung](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
@@ -230,6 +231,9 @@ Schau dir folgendes Beispiel an:
 Beachte, dass beim Eingeben eines zweiten To-do-Eintrags bei jedem Tastenanschlag auch der erste To-do-Eintrag aufblinkt. Das bedeutet, dass er von React bei jeder Eingabe erneut gerendert wird. Dies wird manchmal as "verschwendetes" Rendern bezeichnet. Es ist unnötig, da der erste To-do-Eintrag sich nicht verändert hat, aber das weiß React nicht. 
 
 Obwohl React nur DOM-Knoten aktualisiert, die sich verändert haben, braucht das erneute Rendern etwas Zeit. In vielen Fällen ist das kein Problem, doch wenn die Verlangsamung sich bemerkbar macht, kannst du den Prozess beschleunigen, indem du die Lifecycle-Funktion `shouldComponentUpdate`, die vor jedem erneuten Rendern ausgelöst wird, überschreibst. Die Standard-Implementierung dieser Funktion gibt `true` zurück und lässt React somit das Update durchführen:
+=======
+Even though React only updates the changed DOM nodes, re-rendering still takes some time. In many cases it's not a problem, but if the slowdown is noticeable, you can speed all of this up by overriding the lifecycle function `shouldComponentUpdate`, which is triggered before the re-rendering process starts. The default implementation of this function returns `true`, leaving React to perform the update:
+>>>>>>> de497e250340ff597ce4964279369f16315b8b4b
 
 ```javascript
 shouldComponentUpdate(nextProps, nextState) {
@@ -399,6 +403,7 @@ function updateColorMap(colormap) {
 
 Solltest du Create React App verwenden, sind sowohl `Object.assign` als auch die Object Spread-Syntax standardmäßig verfügbar. 
 
+<<<<<<< HEAD
 ## Unveränderliche Datenstrukturen verwenden {#using-immutable-data-structures}
 
 [Immutable.js](https://github.com/facebook/immutable-js) ist eine weitere Möglichkeit, dieses Problem zu lösen. Es bietet unveränderliche ("immutable"), fortwährende Sammlungen, die über strukturelles Teilen funktionieren:
@@ -432,3 +437,6 @@ In diesem Fall wird eine neue Referenz zurückgegeben, wenn `x` verändert wird,
 Zwei weitere Bibliotheken, die dabei helfen können, unveränderliche Datenstrukturen zu benutzen, sin [Immer](https://github.com/mweststrate/immer), [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) und [immutability-helper](https://github.com/kolodny/immutability-helper).
 
 Unveränderliche Datenstrukturen bieten dir einen leichten Weg, Änderungen an Objekten nachzuverfolgen, und das ist alles, was wir brauchen, um `shouldComponentUpdate` zu implementieren. Dies kann oft zu einem Performanceanstieg führen.
+=======
+When you deal with deeply nested objects, updating them in an immutable way can feel convoluted. If you run into this problem, check out [Immer](https://github.com/mweststrate/immer) or [immutability-helper](https://github.com/kolodny/immutability-helper). These libraries let you write highly readable code without losing the benefits of immutability.
+>>>>>>> de497e250340ff597ce4964279369f16315b8b4b
