@@ -103,7 +103,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 TestRenderer.create(element, options);
 ```
 
-Erstellt eine `TestRenderer`-Instanz mit dem übergebenem React-Element. Der echte DOM wird nicht verwendet, dennoch rendert es den gesamten Komponentenbaum in den Speicher, sodass du Aussagen darüber machen kannst. Die zurückgegebene Instanz hat folgende Methoden und Properties.
+Erstellt eine `TestRenderer`-Instanz mit dem übergebenem React-Element. Der echte DOM wird nicht verwendet, dennoch rendert es den gesamten Komponentenbaum in den Speicher, sodass du Aussagen darüber machen kannst. Die zurückgegebene [TestRenderer-Instanz](#testrenderer-instance) hat folgende Methoden und Properties.
 
 ### `TestRenderer.act()` {#testrendereract}
 
