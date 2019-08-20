@@ -1,35 +1,35 @@
 ---
 id: reconciliation
-title: Reconciliation
+title: Abgleich
 permalink: docs/reconciliation.html
 ---
 
-React provides a declarative API so that you don't have to worry about exactly what changes on every update. This makes writing applications a lot easier, but it might not be obvious how this is implemented within React. This article explains the choices we made in React's "diffing" algorithm so that component updates are predictable while being fast enough for high-performance apps.
+React bietet eine deklarative API, sodass du dich nicht bei jeder Aktualisierung um die genauen Änderungen kümmern musst. Dies erleichtert das Erstellen von Anwendungen erheblich. Es ist jedoch möglicherweise nicht offensichtlich, wie dies in React implementiert ist. Dieser Artikel erklärt welche Entscheidungen wir in Reacts Vergleichsalgorithmus getroffen haben, damit Komponentenaktualisierungen vorhersehbar und gleichzeitig schnell genug für leistungsstarke Apps sind.
 
 ## Motivation {#motivation}
 
-When you use React, at a single point in time you can think of the `render()` function as creating a tree of React elements. On the next state or props update, that `render()` function will return a different tree of React elements. React then needs to figure out how to efficiently update the UI to match the most recent tree.
+Wenn du React verwendest, kannst du dir die `render()`-Funktion so vorstellen, dass sie zu einem bestimmten Zeitpunkt einen Baum von React-Elementen erstellt. Bei der nächsten Aktualisierung von State oder Props gibt diese `render()`-Funktion einen anderen Baum von React-Elementen zurück. React muss dann herausfinden, wie die Benutzeroberfläche effizient aktualisiert werden kann, um sie an den neuesten Baum anzupassen.
 
-There are some generic solutions to this algorithmic problem of generating the minimum number of operations to transform one tree into another. However, the [state of the art algorithms](https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf) have a complexity in the order of O(n<sup>3</sup>) where n is the number of elements in the tree.
+Es gibt einige generische Lösungen für dieses algorithmische Problem, die Mindestanzahl von Operationen zu generieren um einen Baum in einen anderen umzuwandeln. Die modernsten Algorithmen weisen jedoch eine Komplexität in der Größenordnung von O(n3) auf, wobei n die Anzahl der Elemente im Baum ist.
 
-If we used this in React, displaying 1000 elements would require in the order of one billion comparisons. This is far too expensive. Instead, React implements a heuristic O(n) algorithm based on two assumptions:
+Würden wir diese in React verwenden, dann wären für das Anzeigen von 1000 Elementen Vergleiche in der Größenordnung von einer Milliarde notwenig, was viel zu aufwendig ist. Stattdessen implementiert React einen heuristischen O(n)-Algorithmus, der auf zwei Annahmen basiert:
 
-1. Two elements of different types will produce different trees.
-2. The developer can hint at which child elements may be stable across different renders with a `key` prop.
+1. Zwei Elemente unterschiedlicher Art erzeugen unterschiedliche Bäume.
+2. Der Entwickler kann mit einer `key`-Prop andeuten, welche Kind-Elemente in verschiedenen Renderings stabil sein können.
 
-In practice, these assumptions are valid for almost all practical use cases.
+In der Praxis gelten diese Annahmen für fast alle Anwendungsfälle.
 
-## The Diffing Algorithm {#the-diffing-algorithm}
+## Der Vergleichsalgorithmus {#the-diffing-algorithm}
 
-When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements.
+Beim Vergleichen ("diffing") zweier Bäume betrachtet React zuerst die beiden Wurzelelemente. Das Verhalten hängt von den Typen der Wurzelelemente ab.
 
-### Elements Of Different Types {#elements-of-different-types}
+### Elemente verschiedener Typen {#elements-of-different-types}
 
-Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. Going from `<a>` to `<img>`, or from `<Article>` to `<Comment>`, or from `<Button>` to `<div>` - any of those will lead to a full rebuild.
+Wenn die Wurzelelemente unterschiedliche Typen haben, entfernt React den alten Baum und erstellt den neuen Baum von Grund auf neu. Ein Wechsel von `<a>` nach `<img>` oder von `<Article>` nach `<Comment>` oder von `<Button>` nach `<div>` führt zu einer vollständigen Neuerstellung.
 
-When tearing down a tree, old DOM nodes are destroyed. Component instances receive `componentWillUnmount()`. When building up a new tree, new DOM nodes are inserted into the DOM. Component instances receive `componentWillMount()` and then `componentDidMount()`. Any state associated with the old tree is lost.
+Beim Entfernen eines Baumes werden alte DOM-Knoten gelöscht. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillUnmount()`. Beim Aufbau eines neuen Baums werden neue DOM-Knoten in das DOM eingefügt. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillMount()` und dann `componentDidMount()`. Jeder mit dem alten Baum verknüpfte State geht verloren.
 
-Any components below the root will also get unmounted and have their state destroyed. For example, when diffing:
+Alle Komponenten unterhalb der Wurzel werden ebenfalls geunmountet und ihr State wird gelöscht. Zum Beispiel beim Vergleichen von:
 
 ```xml
 <div>
@@ -41,11 +41,11 @@ Any components below the root will also get unmounted and have their state destr
 </span>
 ```
 
-This will destroy the old `Counter` and remount a new one.
+Dies entfernt den alten `Counter` und mountet einen neuen.
 
-### DOM Elements Of The Same Type {#dom-elements-of-the-same-type}
+### DOM-Elemente desselben Typs {#dom-elements-of-the-same-type}
 
-When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. For example:
+Beim Vergleich von zwei React-DOM-Elementen desselben Typs überprüft React die Attribute von beiden, behält denselben zugrunde liegenden DOM-Knoten bei und aktualisiert nur die geänderten Attribute. Zum Beispiel:
 
 ```xml
 <div className="before" title="stuff" />
@@ -53,9 +53,9 @@ When comparing two React DOM elements of the same type, React looks at the attri
 <div className="after" title="stuff" />
 ```
 
-By comparing these two elements, React knows to only modify the `className` on the underlying DOM node.
+Durch den Vergleich dieser beiden Elemente weiß React, dass nur der Klassenname (`className`) auf dem zugrunde liegenden DOM-Knoten zu ändern ist.
 
-When updating `style`, React also knows to update only the properties that changed. For example:
+Beim Aktualisieren von `style` weiß React ebenfalls, dass nur die geänderten Eigenschaften zu aktualisieren sind. Zum Beispiel:
 
 ```xml
 <div style={{color: 'red', fontWeight: 'bold'}} />
@@ -63,21 +63,21 @@ When updating `style`, React also knows to update only the properties that chang
 <div style={{color: 'green', fontWeight: 'bold'}} />
 ```
 
-When converting between these two elements, React knows to only modify the `color` style, not the `fontWeight`.
+Beim Konvertieren zwischen diesen beiden Elementen weiß React, dass nur der `color` style zu ändern ist und nicht `fontWeight`.
 
-After handling the DOM node, React then recurses on the children.
+Nach der Behandlung des DOM-Knotens kehrt React zu den Kind-Knoten zurück.
 
-### Component Elements Of The Same Type {#component-elements-of-the-same-type}
+### Komponentenelemente desselben Typs {#component-elements-of-the-same-type}
 
-When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element, and calls `componentWillReceiveProps()` and `componentWillUpdate()` on the underlying instance.
+Wenn eine Komponente aktualisiert wird, bleibt die Instanz unverändert, sodass der State renderübergreifend beibehalten wird. React aktualisiert die Props der zugrunde liegenden Komponenteninstanz so, dass sie mit dem neuen Element übereinstimmen, und ruft `componentWillReceiveProps()` und `componentWillUpdate()` auf der zugrunde liegenden Instanz auf.
 
-Next, the `render()` method is called and the diff algorithm recurses on the previous result and the new result.
+Als nächstes wird die `render()`-Methode aufgerufen und der Vergleichsalgorithmus rekursiv auf das vorherige und das neue Ergebnis angewendet.
 
-### Recursing On Children {#recursing-on-children}
+### Auf Kind-Elementen rekursieren {#recursing-on-children}
 
-By default, when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there's a difference.
+Standardmäßig durchläuft React bei einer Rekursion der Kind-Elemente eines DOM-Knotens beide Listen von Kind-Elementen gleichzeitig und generiert eine Mutation, wenn ein Unterschied besteht.
 
-For example, when adding an element at the end of the children, converting between these two trees works well:
+Wenn du beispielsweise ein Element am Ende der Kind-Elemente hinzufügst, funktioniert die Konvertierung zwischen diesen beiden Bäumen gut:
 
 ```xml
 <ul>
@@ -92,9 +92,9 @@ For example, when adding an element at the end of the children, converting betwe
 </ul>
 ```
 
-React will match the two `<li>first</li>` trees, match the two `<li>second</li>` trees, and then insert the `<li>third</li>` tree.
+React übernimmt die beiden `<li>first</li>` Bäume, übernimmt ebenso die beiden `<li>second</li>` Bäume und fügt dann den `<li>thirds</li>` Baum ein.
 
-If you implement it naively, inserting an element at the beginning has worse performance. For example, converting between these two trees works poorly:
+Wenn du es unbedarft implementierst, hat das Einfügen eines Elements am Anfang eine schlechtere Leistung. Das Konvertieren zwischen diesen beiden Bäumen funktioniert beispielsweise schlecht:
 
 ```xml
 <ul>
@@ -109,11 +109,11 @@ If you implement it naively, inserting an element at the beginning has worse per
 </ul>
 ```
 
-React will mutate every child instead of realizing it can keep the `<li>Duke</li>` and `<li>Villanova</li>` subtrees intact. This inefficiency can be a problem.
+React mutiert jedes Kind, anstatt zu realisieren, dass die Teilbäume `<li>Duke</li>` und `<li>Villanova</li>` intakt bleiben können. Diese Ineffizienz kann ein Problem sein.
 
-### Keys {#keys}
+### Schlüssel {#keys}
 
-In order to solve this issue, React supports a `key` attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a `key` to our inefficient example above can make the tree conversion efficient:
+Um dieses Problem zu beheben, unterstützt React ein Schlüssel-Attribut: `key`. Wenn Kind-Elemente Schlüssel haben, verwendet React den Schlüssel, um Kind-Elemente in der ursprünglichen Struktur mit Kind-Elementen in der nachfolgenden Struktur abzugleichen. Wenn du beispielsweise einen Schlüssel zu unserem ineffizienten Beispiel oben hinzufügst, kann die Baumkonvertierung effizienter werden:
 
 ```xml
 <ul>
@@ -128,30 +128,30 @@ In order to solve this issue, React supports a `key` attribute. When children ha
 </ul>
 ```
 
-Now React knows that the element with key `'2014'` is the new one, and the elements with the keys `'2015'` and `'2016'` have just moved.
+Jetzt weiß React, dass das Element mit dem Schlüssel `'2014'` das neue ist und die Elemente mit den Schlüsseln `'2015'` und `'2016'` gerade verschoben wurden.
 
-In practice, finding a key is usually not hard. The element you are going to display may already have a unique ID, so the key can just come from your data:
+In der Praxis ist es normalerweise nicht schwierig, einen Schlüssel zu finden. Das Element, das du anzeigen möchtest, verfügt möglicherweise bereits über eine eindeutige ID, sodass der Schlüssel einfach aus deinen Daten stammen kann:
 
-```js
+```xml
 <li key={item.id}>{item.name}</li>
 ```
 
-When that's not the case, you can add a new ID property to your model or hash some parts of the content to generate a key. The key only has to be unique among its siblings, not globally unique.
+Ist dies nicht der Fall, kannst du deinem Modell eine neue ID-Eigenschaft hinzufügen oder Teile des Inhalts mit einem Hash versehen, um einen Schlüssel zu generieren. Der Schlüssel muss nur unter Geschwister-Elementen eindeutig sein und nicht auf globaler Ebene.
 
-As a last resort, you can pass an item's index in the array as a key. This can work well if the items are never reordered, but reorders will be slow.
+Als letzte Möglichkeit kannst du den Index eines Elements im Array als Schlüssel übergeben. Dies kann gut funktionieren, wenn die Elemente nie neu angeordnet werden. Neuanordnungen werden jedoch langsam sein.
 
-Reorders can also cause issues with component state when indexes are used as keys. Component instances are updated and reused based on their key. If the key is an index, moving an item changes it. As a result, component state for things like uncontrolled inputs can get mixed up and updated in unexpected ways.
+Neuanordnungen können auch Probleme mit dem State von Komponenten verursachen, wenn Indizes als Schlüssel verwendet werden. Komponenteninstanzen werden basierend auf ihrem Schlüssel aktualisiert und wiederverwendet. Wenn der Schlüssel ein Index ist, wird er durch Verschieben eines Elements geändert. Infolgedessen kann der State von Komponenten für Dinge wie ungesteuerte Eingabefelder auf unerwartete Weise verwechselt und aktualisiert werden.
 
-[Here](codepen://reconciliation/index-used-as-key) is an example of the issues that can be caused by using indexes as keys on CodePen, and [here](codepen://reconciliation/no-index-used-as-key) is an updated version of the same example showing how not using indexes as keys will fix these reordering, sorting, and prepending issues.
+[Hier](codepen://reconciliation/index-used-as-key) findest du ein Codepen-Beispiel für Probleme, die durch die Verwendung von Indizes als Schlüssel verursacht werden können. [Hier] (codepen://reconciliation/no-index-used-as-key) findest du eine aktualisierte Version desselben Beispiels, in der gezeigt wird, wie durch die Nichtverwendung von Indizes als Schlüssel diese Probleme beim Neuordnen, Sortieren und Voranstellen behoben werden.
 
-## Tradeoffs {#tradeoffs}
+## Kompromisse {#tradeoffs}
 
-It is important to remember that the reconciliation algorithm is an implementation detail. React could rerender the whole app on every action; the end result would be the same. Just to be clear, rerender in this context means calling `render` for all components, it doesn't mean React will unmount and remount them. It will only apply the differences following the rules stated in the previous sections.
+Es ist wichtig, sich daran zu erinnern, dass der Vergleichsalgorithmus ein Implementierungsdetail ist. React könnte die gesamte App bei jeder Aktion erneut rendern. Das Endergebnis wäre das gleiche. Nur um dies klarzustellen, re-rendern in diesem Kontext bedeutet, dass `render` für alle Komponenten aufgerufen wird. Das heißt jedoch nicht, dass React sie unmountet und dann wieder mountet. Es werden nur die Unterschiede angewendet, die den in den vorherigen Abschnitten beschriebenen Regeln entsprechen.
 
-We are regularly refining the heuristics in order to make common use cases faster. In the current implementation, you can express the fact that a subtree has been moved amongst its siblings, but you cannot tell that it has moved somewhere else. The algorithm will rerender that full subtree.
+Wir verfeinern die Heuristiken regelmäßig, um gängige Anwendungsfälle zu beschleunigen. In der aktuellen Implementierung kannst du die Tatsache ausdrücken, dass ein Teilbaum zwischen seinen Geschwister-Elementen verschoben wurde. Du kannst jedoch nicht feststellen, dass er an eine andere Stelle verschoben wurde. Der Algorithmus rendert den vollständigen Teilbaum erneut.
 
-Because React relies on heuristics, if the assumptions behind them are not met, performance will suffer.
+Da sich React auf Heuristiken stützt, wirkt es sich negativ auf die Leistung aus, wenn die zugrunde liegenden Annahmen nicht erfüllt werden.
 
-1. The algorithm will not try to match subtrees of different component types. If you see yourself alternating between two component types with very similar output, you may want to make it the same type. In practice, we haven't found this to be an issue.
+1. Der Algorithmus versucht nicht, Teilbäume verschiedener Komponententypen abzugleichen. Wenn du feststellst, dass du zwischen zwei Komponententypen mit sehr ähnlicher Ausgabe wechselst, solltest du möglicherweise denselben Typ festlegen. In der Praxis ist dies normalerweise kein Problem.
 
-2. Keys should be stable, predictable, and unique. Unstable keys (like those produced by `Math.random()`) will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.
+2. Schlüssel sollten stabil, vorhersehbar und eindeutig sein. Instabile Schlüssel (wie die von `Math.random()` erzeugten) führen dazu, dass viele Komponenteninstanzen und DOM-Knoten unnötigerweise neu erstellt werden, was zu Leistungseinbußen und zum Verlust des States in untergeordneten Komponenten führen kann.

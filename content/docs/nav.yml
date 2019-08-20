@@ -59,6 +59,8 @@
       title: Performance optimieren
     - id: portals
       title: Portals
+    - id: profiler
+      title: Profiler
     - id: react-without-es6
       title: React ohne ES6
     - id: react-without-jsx
@@ -97,7 +99,7 @@
     - id: test-utils
       title: Test Utilities
     - id: shallow-renderer
-      title: Flaches Rendern
+      title: Shallow Renderer
     - id: test-renderer
       title: Test Renderer
     - id: javascript-environment-requirements
@@ -123,6 +125,14 @@
         title: Hooks API Referenz
       - id: hooks-faq
         title: Hooks FAQ
+- title: Testing
+  items:
+    - id: testing 
+      title: Testing Overview
+    - id: testing-recipes
+      title: Testing Recipes
+    - id: testing-environments
+      title: Testing Environments
 - title: Mithelfen
   items:
   - id: how-to-contribute

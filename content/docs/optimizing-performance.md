@@ -51,14 +51,14 @@ Denke daran, dass nur React-Dateien, die mit `.production.min.js` enden, für di
 
 ### Brunch {#brunch}
 
-Um den effizientesten Brunch-Produktions-Build zu bekommen, installiere das [`uglify-js-brunch`](https://github.com/brunch/uglify-js-brunch)-Plugin:
+Um den effizientesten Brunch-Produktions-Build zu bekommen, installiere das [`terser-brunch`](https://github.com/brunch/terser-brunch)-Plugin:
 
-```
+```bash
 # Falls du npm verwendest
-npm install --save-dev uglify-js-brunch
+npm install --save-dev terser-brunch
 
 # Falls du Yarn verwendest
-yarn add --dev uglify-js-brunch
+yarn add --dev terser-brunch
 ```
 
 Um dann einen Produktions-Build zu erstellen, füge zum `build`-Befehl das `-p`-Flag hinzu:
@@ -75,17 +75,17 @@ Um den effizientesten Browserify-Produktions-Build zu bekommen, installiere ein 
 
 ```
 # Falls du npm verwendest
-npm install --save-dev envify uglify-js uglifyify 
+npm install --save-dev envify terser uglifyify 
 
 # Falls du Yarn verwendest
-yarn add --dev envify uglify-js uglifyify 
+yarn add --dev envify terser uglifyify 
 ```
 
 Um einen Produktions-Build zu erstellen, stelle sicher, dass du diese Transformer hinzufügst **(die Reihenfolge ist wichtig)**:
 
 * Der [`envify`](https://github.com/hughsk/envify)-Transformer stellt sicher, dass die richtige Build-Umgebung gesetzt wird. Benutze ihn global (`-g`).
 * Der [`uglifyify`](https://github.com/hughsk/uglifyify)-Transformer entfernt Entwickler-Importe. Benutze auch ihn global (`-g`).
-* Schließlich wird das so entstandene Bundle an [`uglify-js`](https://github.com/mishoo/UglifyJS2) geleitet, wo es "gemangled" wird ([lies warum](https://github.com/hughsk/uglifyify#motivationusage)).
+* Schließlich wird das so entstandene Bundle an [`terser`](https://github.com/terser-js/terser) geleitet, wo es "gemangled" wird ([lies warum](https://github.com/hughsk/uglifyify#motivationusage)).
 
 Zum Beispiel:
 
@@ -93,13 +93,8 @@ Zum Beispiel:
 browserify ./index.js \
   -g [ envify --NODE_ENV production ] \
   -g uglifyify \
-  | uglifyjs --compress --mangle > ./bundle.js
+  | terser --compress --mangle > ./bundle.js
 ```
-
->**Hinweis:**
->
->Der Paketname ist `uglify-js`, aber die Binary, die es zur Verfügung stellt, heißt `uglifyjs`.<br>
->Das ist kein Tippfehler.
 
 Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest diese Plugins nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
@@ -107,19 +102,19 @@ Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du sollt
 
 Um den effizientesten Rollup-Produktions-Build zu bekommen, installiere ein paar Plugins:
 
-```
+```bash
 # Falls du npm benutzt
-npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify 
+npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-terser
 
 # Falls du Yarn benutzt
-yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify 
+yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-terser
 ```
 
 Um einen Produktions-Build zu kreieren, stelle sicher, dass du diese Plugins hinzufügst **(die Reihenfolge ist wichtig)**:
 
 * Das [`replace`](https://github.com/rollup/rollup-plugin-replace)-Plugin stellt sicher, dass die richtige Build-Umgebung gesetzt wird. 
 * Das [`commonjs`](https://github.com/rollup/rollup-plugin-commonjs)-Plugin bietet CommonJS-Unterstützung in Rollup.
-* Das [`uglify`](https://github.com/TrySound/rollup-plugin-uglify)-Plugin komprimiert und "mangled" das finale Bundle.
+* Das [`terser`](https://github.com/TrySound/rollup-plugin-terser-Plugin komprimiert und "mangled" das finale Bundle.
 
 ```js
 plugins: [
@@ -128,14 +123,14 @@ plugins: [
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
   require('rollup-plugin-commonjs')(),
-  require('rollup-plugin-uglify')(),
+  require('rollup-plugin-terser')(),
   // ...
 ]
 ```
 
 Siehe dir ein komplettes Setup-Beispiel [in diesem Gist](https://gist.github.com/Rich-Harris/cb14f4bc0670c47d00d191565be36bf0) an.
 
-Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest das `uglify`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest das `terser`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### webpack {#webpack}
 
@@ -144,18 +139,22 @@ Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du sollt
 >Falls du Create React App verwendest, folge bitte den [Anweisungen weiter oben](#create-react-app).<br>
 >Dieser Abschnitt ist nur relevant, wenn du webpack direkt konfigurierst.
 
-Um den effizientesten webpack-Produktions-Build zu bekommen, stelle sicher, dass deine Produktions-Konfiguration die folgenden Plugins beinhaltet:
+Webpack v4+ minified deinen Code standardmäßig im `production`-Modus.
 
 ```js
-new webpack.DefinePlugin({
-  'process.env.NODE_ENV': JSON.stringify('production')
-}),
-new webpack.optimize.UglifyJsPlugin()
+const TerserPlugin = require('terser-webpack-plugin');
+
+module.exports = {
+  mode: 'production'
+  optimization: {
+    minimizer: [new TerserPlugin({ /* additional options here */ })],
+  },
+};
 ```
 
 Mehr Informationen darüber findest du in der [webpack-Dokumentation](https://webpack.js.org/guides/production/).
 
-Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest `UglifyJsPlugin` oder `DefinePlugin` mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest `TerserPlugin` nicht während der Entwicklung verwenden, da es nützliche React-Warnungen verbergen wird und die Builds viel langsamer macht.
 
 ## Komponenten-Profiling mit dem Chrome Performance-Tab {#profiling-components-with-the-chrome-performance-tab}
 
@@ -211,24 +210,6 @@ Falls deine Anwendung lange Datenlisten (mit Hunderten oder Tausenden von Zeilen
 React baut und pflegt eine interne Repräsentation der gerenderten Benutzeroberfläche. Sie beinhaltet die React-Elemente, die deine Komponenten zurückgeben. Diese Repräsentation erlaubt es React, zu vermeiden, neue DOM-Knoten zu erstellen oder auf bereits existierende zuzugreifen, wenn dies nicht nötig ist, da dies langsamer sein kann als Operationen an JavaScript-Objekten. Man spricht manchmal vom "virtuellen DOM", aber in React Native funktioniert es auf die gleiche Weise.
 
 Wenn Props oder State einer Komponente sich verändern, entscheidet React, ob ein tatsächliches DOM-Update nötig ist, indem es das neu ausgegebene Element mit dem zuvor gerenderten abgleicht. Wenn sie unterschiedlich sind, aktualisiert React das DOM.
-
-Du kannst diese Re-render des virtuellen DOMs nun mit den React DevTools visualisieren:
-
-- [Chrome Browser-Erweiterung](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-- [Firefox Browser-Erweiterung](https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/)
-- [Eigenständiges Node-Package](https://www.npmjs.com/package/react-devtools)
-
-Wähle in der Entwickler-Konsole die **Highlight Updates**-Option im **React**-Tab aus:
-
-<center><img src="../images/blog/devtools-highlight-updates.png" style="max-width:100%; margin-top:10px;" alt="How to enable highlight updates" /></center>
-
-Interagiere mit deiner Seite. Du solltest um jede Komponente, die erneut gerendert wird, farbige Ränder aufblitzen sehen. Damit kannst du entdecken, wo unnötige Re-render stattfinden. In diesem [Blog-Post](https://blog.logrocket.com/make-react-fast-again-part-3-highlighting-component-updates-6119e45e6833) von [Ben Edelstein](https://blog.logrocket.com/@edelstein) kannst du mehr über diese React DevTools-Funktion lernen.
-
-Schau dir folgendes Beispiel an:
-
-<center><img src="../images/blog/highlight-updates-example.gif" style="max-width:100%; margin-top:20px;" alt="React DevTools Highlight Updates example" /></center>
-
-Beachte, dass beim Eingeben eines zweiten To-do-Eintrags bei jedem Tastenanschlag auch der erste To-do-Eintrag aufblinkt. Das bedeutet, dass er von React bei jeder Eingabe erneut gerendert wird. Dies wird manchmal as "verschwendetes" Rendern bezeichnet. Es ist unnötig, da der erste To-do-Eintrag sich nicht verändert hat, aber das weiß React nicht. 
 
 Obwohl React nur DOM-Knoten aktualisiert, die sich verändert haben, braucht das erneute Rendern etwas Zeit. In vielen Fällen ist das kein Problem, doch wenn die Verlangsamung sich bemerkbar macht, kannst du den Prozess beschleunigen, indem du die Lifecycle-Funktion `shouldComponentUpdate`, die vor jedem erneuten Rendern ausgelöst wird, überschreibst. Die Standard-Implementierung dieser Funktion gibt `true` zurück und lässt React somit das Update durchführen:
 
@@ -400,36 +381,4 @@ function updateColorMap(colormap) {
 
 Solltest du Create React App verwenden, sind sowohl `Object.assign` als auch die Object Spread-Syntax standardmäßig verfügbar. 
 
-## Unveränderliche Datenstrukturen verwenden {#using-immutable-data-structures}
-
-[Immutable.js](https://github.com/facebook/immutable-js) ist eine weitere Möglichkeit, dieses Problem zu lösen. Es bietet unveränderliche ("immutable"), fortwährende Sammlungen, die über strukturelles Teilen funktionieren:
-
-* *Unveränderlich*: Einmal erstellt, kann eine Sammlung nicht mehr zu einem anderen Zeitpunkt verändert werden.
-* *Fortwährend*: Neue Sammlungen können aus vorherigen Sammlungen und einer Mutation wie z. B. `set` erstellt werden. Die ursprüngliche Sammlung ist auch nach dem Erstellen der neuen Sammlung noch gültig.
-* *Strukturelles Teilen*: Neue Sammlungen werden erstellt, indem so viel der Struktur der ursprünglichen Sammlung wie möglich verwendet wird, wodurch das Kopieren auf ein Minimum reduziert wird, um die Performance zu verbessern.
-
-Unveränderlichkeit ("immutability") vereinfacht das Nachverfolgen von Änderungen. Eine Veränderung führt immer zu einem neuen Objekt, sodass wir nur prüfen müssen, ob die Referenz auf das Objekt sich geändert hat. Hier ein Beispiel in normalem JavaScript-Code:
-
-```javascript
-const x = { foo: 'bar' };
-const y = x;
-y.foo = 'baz';
-x === y; // true
-```
-
-Obwohl `y` bearbeitet wurde, gibt der Vergleich `true` zurück, da `y` eine Referenz auf dasselbe Objekt ist wie `x`. Du kannst ähnlichen Code mit `immutable.js` schreiben:
-
-```javascript
-const SomeRecord = Immutable.Record({ foo: null });
-const x = new SomeRecord({ foo: 'bar' });
-const y = x.set('foo', 'baz');
-const z = x.set('foo', 'bar');
-x === y; // false
-x === z; // true
-```
-
-In diesem Fall wird eine neue Referenz zurückgegeben, wenn `x` verändert wird, und so können wir die Referenzen auf Gleichheit prüfen `(x === y)`, um zu verifizieren, dass der neue Wert, der in `y` gespeichert wurde, sich vom ursprünglichen Wert unterscheidet, der in `x` gespeichert ist.
-
-Zwei weitere Bibliotheken, die dabei helfen können, unveränderliche Datenstrukturen zu benutzen, sin [Immer](https://github.com/mweststrate/immer), [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) und [immutability-helper](https://github.com/kolodny/immutability-helper).
-
-Unveränderliche Datenstrukturen bieten dir einen leichten Weg, Änderungen an Objekten nachzuverfolgen, und das ist alles, was wir brauchen, um `shouldComponentUpdate` zu implementieren. Dies kann oft zu einem Performanceanstieg führen.
+Wenn du mit tief verschachtelten Objekten zu tun hast, kann sich das Aktualisieren des unveränderbaren Objektes, verworren anfühlen. Wenn du auf dieses Problem stößt, schaue dir [Immer](https://github.com/mweststrate/immer) oder [immutability-helper](https://github.com/kolodny/immutability-helper) an. Mit diesen Bibliotheken kannst du gut lesbaren Code schreiben, ohne die Vorteile der Unveränderlichkeit (engl. immutability) zu verlieren.
