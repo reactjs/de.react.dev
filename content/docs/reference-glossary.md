@@ -81,7 +81,7 @@ Komponenten können in mehrere kleinere Teile zerlegt und deren Funktionialität
 
 ### [`props`](/docs/components-and-props.html) {#props}
 
-`props` sind die Daten die in eine React-Komponenten gegeben werden. Es handelt sich hierbei um Daten, die von einer übergeordneten Komponente an eine untergeordnete Komponente weitergegeben werden.
+`props` sind die Werte, die in eine React-Komponenten gegeben werden. Es handelt sich hierbei um Daten, die von einer übergeordneten Komponente an eine untergeordnete Komponente weitergegeben werden.
 
 Denke daran, dass `props` nur lesbar(`readonly`) sind. Sie sollten in keiner Weise verändert werden:
 
