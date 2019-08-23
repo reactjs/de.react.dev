@@ -35,7 +35,7 @@ CDN steht für Content Delivery Network. CDNs sind Netzwerke von Servern auf der
 
 ## JSX {#jsx}
 
-JSX ist eine Syntaxwerweiterung für JavaScript. Es ist ähnlich einer Template-Sprache, hat aber den vollen Leistungsumfang von JavaScript. JSX wird bei `React.createElement()` Aufrufen kompiliert, welche das reine JavaScript-Objekt namens "React elements" zurückgeben. Um ein grundlegendes Verständnis für JSX zu bekommen, [sieh dir diese Dokumentation an](/docs/introducing-jsx.html) und ein ausfürliches Tutorial zu JSX findest du [hier](/docs/jsx-in-depth.html).
+JSX ist eine Syntaxerweiterung für JavaScript. Es ist ähnlich einer Template-Sprache, hat aber den vollen Leistungsumfang von JavaScript. JSX wird bei `React.createElement()` Aufrufen kompiliert, welche das reine JavaScript-Objekt namens "React elements" zurückgeben. Um ein grundlegendes Verständnis für JSX zu bekommen, [sieh dir diese Dokumentation an](/docs/introducing-jsx.html) und ein ausfürliches Tutorial zu JSX findest du [hier](/docs/jsx-in-depth.html).
 
 React DOM benutzt die camelCase Namenskonvention anstelle von HTML-Attributnamen. Zum Beispiel wird `tabindex` zu `tabIndex` in JSX. Das Attribut `class` wird zu `className`, da `class` ein reserviertes Wort in JavaScript ist:
 
