@@ -150,7 +150,7 @@ Keys müssen nur in einem Array untereinander eindeutig sein. Sie müssen nicht 
 
 ## [Refs](/docs/refs-and-the-dom.html) {#refs}
 
-React unterstützt ein spezielles Attribut, das du an jede Komponente anhängen kannst. Das `ref`-Attribut kann ein Objekt sein, das mit der [`React.createRef()-Funktion`](/docs/react-api.html#reactcreateref), einer Callback-Funktion oder einem String (veraltete API) erstellt wurde. Wenn das `ref`-Attribut eine Callback-Funktion, erhält die Funktion das zugrundeliegende DOM-Element oder die Klassen-Instanz (je nach Elementtyp). Dadurch haben wir direkten Zugriff auf das DOM-Element oder die Komponenteninstanz.
+React unterstützt ein spezielles Attribut, das du an jede Komponente anhängen kannst. Das `ref`-Attribut kann ein Objekt sein, das mit der [`React.createRef()-Funktion`](/docs/react-api.html#reactcreateref), einer Callback-Funktion oder einem String (veraltete API) erstellt wurde. Wenn das `ref`-Attribut eine Callback-Funktion ist, erhält die Funktion das zugrundeliegende DOM-Element oder die Klassen-Instanz (je nach Elementtyp). Dadurch haben wir direkten Zugriff auf das DOM-Element oder die Komponenteninstanz.
 
 Benutze refs sparsam. Wenn du dich da bei erwischst, refs in deiner Anwendung zu benutzen um "Dinge möglich zu machen", solltest du dich ein bisschen mehr mit dem [top-down Datenfluss](/docs/lifting-state-up.html) auseinandersetzen.
 
