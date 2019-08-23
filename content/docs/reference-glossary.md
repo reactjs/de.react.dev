@@ -124,7 +124,7 @@ Eine Komponente benötigt `state`, wenn sich mit ihr vebundene Daten im Laufe de
 
 Der wichtigste Unterschied zwischen `state` und `props` ist, dass `props` von einer übergeordneten Komponente übergeben werden, aber `state` in einer Komponente selbst verwaltet wird. Eine Komponente kann nicht ihre `props` ändern, aber ihren `state`.
 
-Für jedes einzelene Teil von Daten die sich ändern, sollte es nur eine Komponente geben, die diese Daten in ihrem State "besitzt". Versuche nicht States von zwei verschiedenen Komponenten zu synchronisieren. Verschiebe stattdessen den State in die am nächsten höhergelegende gemeinsame Komponente ([lift it up](/docs/lifting-state-up.html)) und gebe sie als Props an beide von ihnen weiter.
+Jeder Datensatz, der sich ändern kann, sollte nur zu einer Komponente zugeordnet sein, die ihren State "besitzt". Versuche nicht States von zwei verschiedenen Komponenten zu synchronisieren. Verschiebe stattdessen den State in die am nächsten höhergelegende gemeinsame Komponente ([lift it up](/docs/lifting-state-up.html)) und gebe sie als Props an beide von ihnen weiter.
 
 ## [Lifecycle-Methoden](/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class) {#lifecycle-methods}
 
