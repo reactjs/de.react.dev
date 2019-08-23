@@ -134,7 +134,7 @@ Lifecycle-Methoden sind benutzerdefinierte Funktionen, die in den verschiedenen 
 
 React besitzt zwei verschiedene Ansätze, um mit Formulareingaben umzugehen.
 
-Ein Eingabefeld dessen Wert (engl. value) von React gesteuert wird, wird als *kontrollierte Komponente* bezeichnet. Wenn ein Benutzer Daten in eine kontrollierte Komponente eingibt, wird ein Change-Event-Handlr ausgelöst und dein Code entscheidet ob der Wert gültig ist (durch erneutes Render mit de, aktualisierten Wert). Wenn du es nicht erneut renderst, bleibt das Formularelement unverändert.
+Ein Eingabefeld dessen Wert (engl. value) von React gesteuert wird, wird als *kontrollierte Komponente* bezeichnet. Wenn ein Benutzer Daten in eine kontrollierte Komponente eingibt, wird ein Change-Event-Handlr ausgelöst und dein Code entscheidet ob der Wert gültig ist (durch erneutes Render mit dem aktualisierten Wert). Wenn du es nicht erneut renderst, bleibt das Formularelement unverändert.
 
 Eine *unkontrollierte Komponente* funktioniert, wie sie es auch außerhalb von React tun würde. Wenn ein Benutzer Daten in ein Formularfeld (Eingabefeld, Dropdown, etc.) eingibt, werden die aktualisierten                              Informationen angezeigt, ohne dass React etwas tun muss. Das bedeutet aber auch, dass du das Feld nicht dazu zwingen kannst einen bestimmten Wert zu haben.
 
