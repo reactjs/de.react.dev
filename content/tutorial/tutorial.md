@@ -540,44 +540,43 @@ class Board extends React.Component {
 
 **[Schau dir den vollständigen Code bis zu dieser Stelle an](https://codepen.io/gaearon/pen/ybbQJX?editors=0010)**
 
-Nach diesen Änderungen sind wir wieder in der Lage die Quadrate zu füllen, wenn wir diese klicken.
-After these changes, we're again able to click on the Squares to fill them. However, now the state is stored in the Board component instead of the individual Square components. When the Board's state changes, the Square components re-render automatically. Keeping the state of all squares in the Board component will allow it to determine the winner in the future.
+Nach diesen Änderungen sind wir wieder in der Lage die Quadrate zu füllen, wenn wir diese klicken. Jedoch wird jetzt der Zustand im Spielbrett anstelle jedes einzelnen Quadrats gespeichert. Wenn das Spielbrett seinen Zustand ändert, wird automatisch die Quadrat-Komponente neu-gerendert. Den Zustand aller Quadrate im Spielbrett zu speichern gibt uns auch die Möglichkeit den Gewinner zu bestimmen.
 
-Since the Square components no longer maintain state, the Square components receive values from the Board component and inform the Board component when they're clicked. In React terms, the Square components are now **controlled components**. The Board has full control over them.
+Dadurch, dass die Quadrate nicht mehr ihren eigenen state verwalten, erhalten die Quadrate die Werte vom Spielbrett und informieren die Spielbrett-Komponente, wenn sie geklickt wurden. Im React-Jargon, die Quadrate sind nun **kontrollierte Komponente** (engl. **controlled components**). Das Spielbrett hat volle Kontrolle über sie.
 
-Note how in `handleClick`, we call `.slice()` to create a copy of the `squares` array to modify instead of modifying the existing array. We will explain why we create a copy of the `squares` array in the next section.
+Ist dir aufgefallen, wie wir in `handleClick` die Methode `.slice()` aufgerufen haben, um jedes mal eine neue Kopie vom `squares`-Array zu erzeugen? Wir werden im nächsten Abschnitt erklären, warum wir eine Kopie vom `squares`-Array erzeugen.     
 
-### Warum ist Immutability wichtig {#why-immutability-is-important}
+### Warum ist Unveränderlichkeit (engl. Immutability) wichtig {#why-immutability-is-important}
 
-In the previous code example, we suggested that you use the `.slice()` operator to create a copy of the `squares` array to modify instead of modifying the existing array. We'll now discuss immutability and why immutability is important to learn.
+Im vorherigen Code-Beispiel haben wir empfohlen, `.slice()` zu verwenden um eine Kopie vom `squares`-Array zu erzeugen anstelle direkt das existierende Array zu modifizieren. Nun besprechen wir Unveränderlichkeit (engl. Immutability) und warum Unveränderlichkeit wichtig ist zu lernen.
 
-There are generally two approaches to changing data. The first approach is to *mutate* the data by directly changing the data's values. The second approach is to replace the data with a new copy which has the desired changes.
+Es gibt prinzipiell zwei Herangehensweisen Daten verändern. Die erste ist, die Daten *abzuändern* (engl. *mutate*) indem man den Wert direkt überschreibt. Der zweite Weg ist, den alten Datensatz durch eine neue Kopie zu ersetzen und die Änderungen der Kopie zuzuweisen.
 
-#### Data Change with Mutation {#data-change-with-mutation}
+#### Verändern von Datensätzen durch direktes Abändern {#data-change-with-mutation}
 ```javascript
 var player = {score: 1, name: 'Jeff'};
 player.score = 2;
-// Now player is {score: 2, name: 'Jeff'}
+// player ist jetzt {score: 2, name: 'Jeff'}
 ```
 
-#### Data Change without Mutation {#data-change-without-mutation}
+#### Verändern von Datensätzen ohne direktes Abändern {#data-change-without-mutation}
 ```javascript
 var player = {score: 1, name: 'Jeff'};
 
 var newPlayer = Object.assign({}, player, {score: 2});
-// Now player is unchanged, but newPlayer is {score: 2, name: 'Jeff'}
+// player ist unverändert, aber newPlayer ist jetzt {score: 2, name: 'Jeff'}
 
-// Or if you are using object spread syntax proposal, you can write:
+// Oder alternativ, wenn du den object spread syntax proposal verwendest:
 // var newPlayer = {...player, score: 2};
 ```
 
-The end result is the same but by not mutating (or changing the underlying data) directly, we gain several benefits described below.
+Das Endresultat ist das gleiche, aber dadurch, dass du nicht direkt die Daten (oder die darunterliegenden Eigenschaften) abänderst, gewinnen wir einige Vorteile, die nachfolgend aufgelistet sind:
 
-#### Complex Features Become Simple {#complex-features-become-simple}
+#### Komplexe Funktionalitäten werden Einfach {#complex-features-become-simple}
 
-Immutability makes complex features much easier to implement. Later in this tutorial, we will implement a "time travel" feature that allows us to review the tic-tac-toe game's history and "jump back" to previous moves. This functionality isn't specific to games -- an ability to undo and redo certain actions is a common requirement in applications. Avoiding direct data mutation lets us keep previous versions of the game's history intact, and reuse them later.
+Unveränderlichkeit macht komplexe Funktionalität einfacher zum Implementieren. Weiter unten in diesem Tutorial werden wir eine "Zeitreisen"- (engl. time travel) Funktionalität einbauen, die es uns erlaubt Einsicht in die Tic-Tac-Toe-Spielhistorie zu gewinnen und zu vorherigen Zügen zurückzuspringen. Diese Funktionalität ist nicht nur für Spiele geeignet -- die Möglichkeit bestimmte Aktionen rückgängig zu machen und wiederherzustellen ist eine häufige Anforderung für Anwendungen. Das Vermeiden vom direkten Abändern der Daten ermöglicht uns die alten Zustände intakt zu lassen und diese zu einem späteren Zeitpunkt wieder zu verwenden. 
 
-#### Detecting Changes {#detecting-changes}
+#### Veränderung erkennen {#detecting-changes}
 
 Detecting changes in mutable objects is difficult because they are modified directly. This detection requires the mutable object to be compared to previous copies of itself and the entire object tree to be traversed.
 
