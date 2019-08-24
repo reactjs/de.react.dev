@@ -346,17 +346,18 @@ Nach dem installieren der React DevTools kannst du mit Rechtsklick auf ein jedes
 
 ## Das Spiel fertigstellen {#completing-the-game}
 
-We now have the basic building blocks for our tic-tac-toe game. To have a complete game, we now need to alternate placing "X"s and "O"s on the board, and we need a way to determine a winner.
+Jetzt haben wir die Basis-Blöcke für unser Tic-Tac-Toe-Spiel. Um das Spiel zu vervollständigen, brauchen wir die abwechselnde Platzierung von 'X'en und '0'en auf dem Spielfeld und wir brauchen noch einen Weg um den Gewinner festzustellen.
 
 ### Den State hochholen {#lifting-state-up}
 
-Currently, each Square component maintains the game's state. To check for a winner, we'll maintain the value of each of the 9 squares in one location.
+Zurzeit verwaltet jede Quadrat-Komponente seinen eigenen Spiel-State. Um herauszufinden, ob es einen Gewinner gibt, werden wir die Werte jedes der 9 Quadrate an einem Ort verwalten.
 
-We may think that Board should just ask each Square for the Square's state. Although this approach is possible in React, we discourage it because the code becomes difficult to understand, susceptible to bugs, and hard to refactor. Instead, the best approach is to store the game's state in the parent Board component instead of in each Square. The Board component can tell each Square what to display by passing a prop, [just like we did when we passed a number to each Square](#passing-data-through-props).
+Man könnte denken, dass man jedes Quadrat zu seinem aktuellen Zustand (engl. state) befragen sollte. Dieser Weg ist zwar eine mögliche Herangehensweise in React, wir raten jedoch davon ab, da dies zu unverständlichen Code führt, der mehr Bugs haben kann und  schwer überarbeitbar ist.
+Anstelle dessen ist die beste Herangehensweise den aktuellen Zustand in die Spielbrett-Elternkomponente zu speichern statt in jedem Quadrat selbst. Die Spielbrett-Komponente kann jedem Quadrat durch props mitteilen, was sie anzeigen sollen, [genau wie wir Zahlen an die Quadrate mitgegeben haben](#passing-data-through-props).
 
-**To collect data from multiple children, or to have two child components communicate with each other, you need to declare the shared state in their parent component instead. The parent component can pass the state back down to the children by using props; this keeps the child components in sync with each other and with the parent component.**
+**Um Daten in mehreren Kindelementen zu sammeln oder um zwei Komponente miteinader kommunizieren zu lassen, musst du einen geteilten State in einer Elternkomponente definieren. Die Elternkomponente kann den State zurück an die Kinder mittels props weiterreichen. So können Kindkomponente und ihre Elternkomponente miteinander in Synchronisation gehalten werden**
 
-Lifting state into a parent component is common when React components are refactored -- let's take this opportunity to try it out. We'll add a constructor to the Board and set the Board's initial state to contain an array with 9 nulls. These 9 nulls correspond to the 9 squares:
+Den State in die Elternkomponente hochzubringen ist ein häufiges Vorkommen, wenn React-Komponente überarbeitet werden -- Lass uns diese Möglichkeit nutzen und es ausprobieren. Wir fügen einen Konstruktor zum Spielbrett hinzu und setzen den initialen State zu einem array mit 9 nulls. Diese 9 nulls korrespondieren dann mit den 9 Quadraten.
 
 ```javascript{2-7}
 class Board extends React.Component {
@@ -398,7 +399,7 @@ class Board extends React.Component {
 }
 ```
 
-When we fill the board in later, the board will look something like this:
+Wenn wir später das Spielbrett füllen, wird das Spielbrett so aussieht:
 
 ```javascript
 [
@@ -408,7 +409,7 @@ When we fill the board in later, the board will look something like this:
 ]
 ```
 
-The Board's `renderSquare` method currently looks like this:
+Die `renderSquare`-Methode sieht aktuell so aus:
 
 ```javascript
   renderSquare(i) {
@@ -416,9 +417,9 @@ The Board's `renderSquare` method currently looks like this:
   }
 ```
 
-In the beginning, we [passed the `value` prop down](#passing-data-through-props) from the Board to show numbers from 0 to 8 in every Square. In a different previous step, we replaced the numbers with an "X" mark [determined by Square's own state](#making-an-interactive-component). This is why Square currently ignores the `value` prop passed to it by the Board.
+Am Anfang haben wir vom Spielbrett [`value` als prop weitergegeben](#passing-data-through-props) um die Nummern 0 bis 8 in jedem Quadrat anzuzeigen. In einem weiteren vorherigen Schritt haben wir die Zahlen dann mit einem "X", [bestimmt durch den State der Quadrate](#making-an-interactive-component), ersetzt. Deshalb ignoriert das Quadrat gerade den als prop übermittelten `value`.
 
-We will now use the prop passing mechanism again. We will modify the Board to instruct each individual Square about its current value (`'X'`, `'O'`, or `null`). We have already defined the `squares` array in the Board's constructor, and we will modify the Board's `renderSquare` method to read from it:
+Wir werden jetzt den prop-Weitergeben-Mechanismus wieder verwenden. Wir werden das Spielbrett so anpassen, dass es jedem einzelnen Quadrat seinem aktuellen Zustand (`'X'`, `'O'`, oder `null`) mitteilt. Wir haben bereits das `squares` array im Konstruktor des Spielbretts definiert und werden nun die `renderSquare`-Methode anpassen, sodass diese davon liest:
 
 ```javascript{2}
   renderSquare(i) {
@@ -426,13 +427,13 @@ We will now use the prop passing mechanism again. We will modify the Board to in
   }
 ```
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/gWWQPY?editors=0010)**
+**[Schau dir den vollständigen Code bis zu diesem Punkt an](https://codepen.io/gaearon/pen/gWWQPY?editors=0010)**
 
-Each Square will now receive a `value` prop that will either be `'X'`, `'O'`, or `null` for empty squares.
+Jedes Quadrat erhält nun `value` als prop, welches entweder den Wert `'X'`, `'O'`, oder `null` für leere Quadrate enthält. 
 
-Next, we need to change what happens when a Square is clicked. The Board component now maintains which squares are filled. We need to create a way for the Square to update the Board's state. Since state is considered to be private to a component that defines it, we cannot update the Board's state directly from Square.
+Als nächstes müssen wir das Verhalten ändern, wenn ein Quadrat geklickt wird. Die Spielbrett-Komponente verwaltet bereits welche Quadrate gefüllt sind. Wir brauchen jetzt einen Weg für die Quadrate den state im Spielbrett anzupassen. Da state als private Variable in der Komponente definiert ist, können wir es nicht direkt vom Quadrat aktualisieren.
 
-To maintain the Board's state's privacy, we'll pass down a function from the Board to the Square. This function will get called when a Square is clicked. We'll change the `renderSquare` method in Board to:
+Um die Privatsphäre des Spielbretts zu wahren, müssen wir eine Funktion vom Spielbrett runter in die Quadrate mitgeben. Diese Funktion wird dann aufgerufen, wenn ein Quadrat geklickt wird. Dafür ändern wir `renderSquare` im Spielbrett ab: 
 
 ```javascript{5}
   renderSquare(i) {
@@ -445,17 +446,17 @@ To maintain the Board's state's privacy, we'll pass down a function from the Boa
   }
 ```
 
->Note
+>Hinweis
 >
->We split the returned element into multiple lines for readability, and added parentheses so that JavaScript doesn't insert a semicolon after `return` and break our code.
+>Wir spalten das zurückgegebene Element in mehrere Zeilen wegen der Lesbarkeit auf und haben Klammern hinzugefügt, damit JavaScript kein Semikolon hinter das `return` setzt und somit unseren Code zerstört
 
-Now we're passing down two props from Board to Square: `value` and `onClick`. The `onClick` prop is a function that Square can call when clicked. We'll make the following changes to Square:
+Jetzt geben wir zwei props vom Spielbrett zum Quadrat: `value` und `onClick`. Der `onClick`-prop ist eine Funktion, die vom Quadrat immer aufgerufen wird, wenn es geklickt wird. Dafür machen wir folgende Änderungen im Quadrat:
 
-* Replace `this.state.value` with `this.props.value` in Square's `render` method
-* Replace `this.setState()` with `this.props.onClick()` in Square's `render` method
-* Delete the `constructor` from Square because Square no longer keeps track of the game's state
+* Ersetzen von `this.state.value` mit `this.props.value` in der `render`-Methode vom Quadrat.
+* Ersetzen von `this.setState()` mit `this.props.onClick()` in der `render`-Methode vom Quadrat. 
+* Löschen des `constructor` im Quadrat, da das Quadrat nicht mehr den Zustand des Spiels verfolgen muss
 
-After these changes, the Square component looks like this:
+Nach diesen Änderungen sieht unsere Quadrat-Komponente so aus:
 
 ```javascript{1,2,6,8}
 class Square extends React.Component {
@@ -472,19 +473,19 @@ class Square extends React.Component {
 }
 ```
 
-When a Square is clicked, the `onClick` function provided by the Board is called. Here's a review of how this is achieved:
+Wenn ein Quadrat geklickt wird, die vom Spielbrett bereitgestellte `onClick`-Funktion wird aufgerufen. Nachfolgend ist eine Zusammenfassung, wie das funktioniert:
 
-1. The `onClick` prop on the built-in DOM `<button>` component tells React to set up a click event listener.
-2. When the button is clicked, React will call the `onClick` event handler that is defined in Square's `render()` method.
-3. This event handler calls `this.props.onClick()`. The Square's `onClick` prop was specified by the Board.
-4. Since the Board passed `onClick={() => this.handleClick(i)}` to Square, the Square calls `this.handleClick(i)` when clicked.
-5. We have not defined the `handleClick()` method yet, so our code crashes.
+1. Die `onClick`-prop der im DOM eingebauten `<button>`-Komponente teilt React mit, einen Event Listener zu installieren.
+2. Wenn ein Button geklickt wird ruft React den `onClick` Event Handler auf, der in der `render()`-Methode des Quadrats definiert ist.
+3. Der Event Handler ruft `this.props.onClick()` auf. Die `onClick`-prop des Quadrats wurde vom Spielbrett spezifiziert.
+4. Da das Spielbrett `onClick={() => this.handleClick(i)}` dem Quadrat übergeben hat, ruft das Quadrat `this.handleClick(i)` auf, wenn es geklickt wird.
+5. Wir haben `handleClick()` noch nicht definiert, daher crasht unser Code noch.
 
->Note
+>Hinweis
 >
->The DOM `<button>` element's `onClick` attribute has a special meaning to React because it is a built-in component. For custom components like Square, the naming is up to you. We could name the Square's `onClick` prop or Board's `handleClick` method differently. In React, however, it is a convention to use `on[Event]` names for props which represent events and `handle[Event]` for the methods which handle the events.
+>Das DOM-`<button>`-Element `onClick`-Attribut hat eine besondere Bedeutung für React, weil es eine vor-eingebaute Komponente ist. Die Benamung bei eigenen Komponenten, wie Quadrat, ist dir überlassen. Wir könnten die `onClick`-prop vom Quadrat oder die `handleClick`-Methode des Spielbretts auch anders benennen. In React, jedoch, ist es eine Konvention `on[Event]` für props zu benutzen, die Events repräsentieren und `handle[Event]` für Methoden, die Events behandeln.
 
-When we try to click a Square, we should get an error because we haven't defined `handleClick` yet. We'll now add `handleClick` to the Board class:
+Wenn wir versuchen ein Quadrat anzuklicken, sollten wir noch eine Fehlermeldung bekommen, da wir `handleClick` bisher noch nicht definiert haben. Wir fügen `handleClick` nun zur Spielbrett-Klasse hinzu:
 
 ```javascript{9-13}
 class Board extends React.Component {
@@ -537,8 +538,9 @@ class Board extends React.Component {
 }
 ```
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/ybbQJX?editors=0010)**
+**[Schau dir den vollständigen Code bis zu dieser Stelle an](https://codepen.io/gaearon/pen/ybbQJX?editors=0010)**
 
+Nach diesen Änderungen sind wir wieder in der Lage die Quadrate zu füllen, wenn wir diese klicken.
 After these changes, we're again able to click on the Squares to fill them. However, now the state is stored in the Board component instead of the individual Square components. When the Board's state changes, the Square components re-render automatically. Keeping the state of all squares in the Board component will allow it to determine the winner in the future.
 
 Since the Square components no longer maintain state, the Square components receive values from the Board component and inform the Board component when they're clicked. In React terms, the Square components are now **controlled components**. The Board has full control over them.
