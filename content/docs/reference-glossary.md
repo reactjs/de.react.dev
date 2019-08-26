@@ -15,7 +15,7 @@ Obwohl du mit React komplette Single-Page Anwendungen erstellen kannst, ist dies
 
 ## ES6, ES2015, ES2016, etc {#es6-es2015-es2016-etc}
 
-Diese Kürzel beziehen sich alle auf den neuesten Standard der ECMAScript-Language-Specification, von dem JavaScript eine Implementierung ist. Die ES6-Version (auch bekannt als ES2015) enthält viele Ergänzungen zu den Vorgängerversionen wie: Pfeilfunktionen, Klassen, Template-Literale, `let` und `const` Anweisungen. Du kannst [hier](https://en.wikipedia.org/wiki/ECMAScript#Versions) mehr über bestimmte Versionen lernen.
+Diese Kürzel beziehen sich alle auf den neuesten Standard der ECMAScript Language Specification, von dem JavaScript eine Implementierung ist. Die ES6-Version (auch bekannt als ES2015) enthält viele Ergänzungen zu den Vorgängerversionen wie: Pfeilfunktionen, Klassen, Template Literale, `let` und `const` Anweisungen. Du kannst [hier](https://en.wikipedia.org/wiki/ECMAScript#Versions) mehr über bestimmte Versionen lernen.
 
 ## Kompiler {#compilers}
 
