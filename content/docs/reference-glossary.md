@@ -9,7 +9,7 @@ permalink: docs/glossary.html
 
 ## Single-Page Anwendung {#single-page-application}
 
-Eine Single-Page Anwendung ist eine Anwendungen, die eine einzelne HTML Seite und all deren Ressourcen (wie JavaScript oder CSS) lädt, die für das Ausführen der Anwendung erforderlich sind. Jegliche Interaktionen mit der Seite und deren Unterseiten benötigen keine erneute Serveranfrage, d. h. die Seite muss nicht neu geladen werden.
+Eine Single-Page-Anwendung ist eine Anwendungen, die eine einzelne HTML-Seite und all deren Ressourcen (wie JavaScript oder CSS) lädt, die für das Ausführen der Anwendung erforderlich sind. Jegliche Interaktionen mit der Seite und deren Unterseiten benötigen keine erneute Serveranfrage, d. h. die Seite muss nicht neu geladen werden.
 
 Obwohl du mit React komplette Single-Page Anwendungen erstellen kannst, ist dies kein Muss. React kann auch nur für kleine Teile bestehender Webseiten verwendet werden um die Interaktivität zu erweitern. In React geschriebener Code kann in Ruhe mit Markup koexistieren, welches auf dem Server von beispielsweise PHP oder auch clientseitig anderen Bibliotheken gerendert wird. Tatsächlich wird React genau so bei Facebook eingesetzt.
 
