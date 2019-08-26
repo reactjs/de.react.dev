@@ -77,7 +77,7 @@ class Welcome extends React.Component {
 }
 ```
 
-Komponenten können in mehrere kleinere Teile zerlegt und deren Funktionialität in anderen Komponenten wiederverwendet werden. Komponenten können andere Komponenten, Array, Strings und Nummer zurückgeben. Eine gute Faustregel ist, dass wenn ein Teil deiner Benutzeroberfläche mehrmals verwendet wird (Button, Panel, Avatar), oder komplex genug ist (App, FeedStory, Comment), sie ein guter Kandidat ist, eine wiederverwendebare Komponente zu sein. Kompomnentennamen sollten immer mit einem Großbuchstaben beginnen (`<Wrapper/>` **nicht** `<wrapper/>`). Weitere Informationen findest du in [dieser Dokumentation](/docs/components-and-props.html#rendering-a-component)  zum Rendern von Komponenten.
+Komponenten können in mehrere kleinere Teile zerlegt und deren Funktionialität in anderen Komponenten wiederverwendet werden. Komponenten können andere Komponenten, Arrays, Strings und Nummern zurückgeben. Eine gute Faustregel ist, dass wenn ein Teil deiner Benutzeroberfläche mehrmals verwendet wird (Button, Panel, Avatar), oder komplex genug ist (App, FeedStory, Comment), sie ein guter Kandidat ist, eine wiederverwendebare Komponente zu sein. Kompomnentennamen sollten immer mit einem Großbuchstaben beginnen (`<Wrapper/>` **nicht** `<wrapper/>`). Weitere Informationen findest du in [dieser Dokumentation](/docs/components-and-props.html#rendering-a-component) zum Rendern von Komponenten.
 
 ### [`props`](/docs/components-and-props.html) {#props}
 
