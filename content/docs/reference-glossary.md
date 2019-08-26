@@ -19,7 +19,7 @@ Diese Kürzel beziehen sich alle auf den neuesten Standard der ECMAScript Langua
 
 ## Kompiler {#compilers}
 
-Ein JavaScript-Kompiler nimmt JavaScript Code, wandelt ihn um und gibt JavaScript Code in einem anderen Format zurück. Der häufigste Anwendungsfall ist die Umwandlung von ES6-Syntax in eine Syntax, die ältere Browser interpretieren können. [Babel](https://babeljs.io/) ist der Kompiler, der am häufigsten mit React verwendet wird.
+Ein JavaScript-Kompiler nimmt JavaScript-Code, wandelt ihn um und gibt JavaScript-Code in einem anderen Format zurück. Der häufigste Anwendungsfall ist die Umwandlung von ES6-Syntax in eine Syntax, die ältere Browser interpretieren können. [Babel](https://babeljs.io/) ist der Kompiler, der am häufigsten mit React verwendet wird.
 
 ## Bundler {#bundlers}
 
