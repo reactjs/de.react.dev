@@ -108,7 +108,7 @@ function Welcome(props) {
 }
 ```
 
-Für Komponenten die als Klassen definiert worden, verwende `this.props.children`:
+Für Komponenten, die als Klassen definiert wurden, verwende `this.props.children`:
 
 ```js
 class Welcome extends React.Component {
