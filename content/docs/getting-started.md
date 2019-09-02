@@ -128,10 +128,14 @@ Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst abe
 
 ## Versionierte Dokumentation {#versioned-documentation}
 
+<<<<<<< HEAD
 Diese Dokumentation entspricht immer der neuesten "stable" Version von React.
 Seit React 16, können alle älteren Dokumentation [auf einer seperaten Seite](/versions) gefunden werden.
 Bitte beachte, dass die Dokumentation vergangener Versionen am Releasedatum zwischengespeichert wurde und nicht mehr kontinuierlich
 aktualsiert wird.
+=======
+This documentation always reflects the latest stable version of React. Since React 16, you can find older versions of the documentation on a [separate page](/versions). Note that documentation for past versions is snapshotted at the time of the release, and isn't being continuously updated.
+>>>>>>> 941f54180ef5e652221f54ef6d1f6f2e9e063597
 
 ## Fehlt etwas? {#something-missing}
 
