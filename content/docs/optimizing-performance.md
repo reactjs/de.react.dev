@@ -145,7 +145,7 @@ Webpack v4+ minified deinen Code standardmäßig im `production`-Modus.
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  mode: 'production'
+  mode: 'production',
   optimization: {
     minimizer: [new TerserPlugin({ /* additional options here */ })],
   },
