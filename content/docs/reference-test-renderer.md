@@ -149,11 +149,7 @@ Gibt ein Objekt, dass den gerenderten Baum darstellt, zurück. Dieser Baum enth�
 testRenderer.toTree()
 ```
 
-<<<<<<< HEAD
-Gibt ein Objekt, dass den gerenderten Baum darstellt, zurück. Im Gegensatz zu `toJSON()` ist diese Repräsentation detaillierter und beinhaltet benutzergeschriebene Komponenten. Wahrscheinlich wirst du diese Method nicht benötigen, außer du schreibst eine eigene Assertions-Bibliothek, welche auf Test Renderer aufbaut.
-=======
-Return an object representing the rendered tree. The representation is more detailed than the one provided by `toJSON()`, and includes the user-written components. You probably don't need this method unless you're writing your own assertion library on top of the test renderer.
->>>>>>> 941f54180ef5e652221f54ef6d1f6f2e9e063597
+Gibt ein Objekt, dass den gerenderten Baum darstellt, zurück. Im Gegensatz zu `toJSON()` ist diese Repräsentation detaillierter und beinhaltet benutzergeschriebene Komponenten. Wahrscheinlich wirst du diese Methode nicht benötigen, außer du schreibst eine eigene Assertions-Bibliothek, welche auf Test Renderer aufbaut.
 
 ### `testRenderer.update()` {#testrendererupdate}
 
