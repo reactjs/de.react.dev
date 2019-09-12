@@ -130,8 +130,7 @@ Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst abe
 
 Diese Dokumentation entspricht immer der neuesten "stable" Version von React.
 Seit React 16, können alle älteren Dokumentation [auf einer seperaten Seite](/versions) gefunden werden.
-Bitte beachte, dass die Dokumentation vergangener Versionen am Releasedatum zwischengespeichert wurde und nicht mehr kontinuierlich
-aktualsiert wird.
+Bitte beachte, dass die Dokumentation vergangener Versionen am Releasedatum zwischengespeichert wurde und nicht mehr kontinuierlich aktualsiert wird.
 
 ## Fehlt etwas? {#something-missing}
 
