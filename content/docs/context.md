@@ -198,7 +198,25 @@ Benötigt eine [Funktion als Kind](/docs/render-props.html#using-props-other-tha
 > 
 > Für nähere Informationen über das 'Funkion als Kind' Muster, siehe [render props](/docs/render-props.html).
 
+
 ## Beispiele {#examples}
+=======
+### `Context.displayName` {#contextdisplayname}
+
+Kontext-Objekt akzeptiert eine `displayName` String-Eigenschaft. React DevTools verwendet diesen String um festzustellen, was für den Kontext darzustellen ist.
+
+Die folgende Komponente wird zum Beispiel als MyDisplayName in den DevTools erscheinen:
+
+```js
+const MyContext = React.createContext(/* irgendein Wert */);
+MyContext.displayName = 'MyDisplayName';
+
+<MyContext.Provider> // "MyDisplayName.Provider" in DevTools
+<MyContext.Consumer> // "MyDisplayName.Consumer" in DevTools
+```
+
+## Examples {#examples}
+
 
 ### Dynamischer Kontext {#dynamic-context}
 
