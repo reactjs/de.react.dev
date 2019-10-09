@@ -191,7 +191,7 @@ onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave
 onMouseMove onMouseOut onMouseOver onMouseUp
 ```
 
-Die `onMouseEnter` und `onMouseLeave` Events breiten sich vom verlassenen Element zu eintretenden aus, statt dem üblichen Propagieren der DOM-Hierarchie nach oben. Des Weiteren besitzen die Events keine Erfassungsphase.
+Anstatt des gewöhnlichen Bubblings werden die `onMouseEnter` und `onMouseLeave` -Events, vom verlassenen Element, zum betretenden Element weitergegeben. Sie haben auch keine Capture-Phase.
 
 Eigenschaften:
 
