@@ -3,7 +3,7 @@ id: events
 title: SyntheticEvent
 permalink: docs/events.html
 layout: docs
-category: Referenz
+category: Reference
 ---
 
 Dieser Referenzleitfaden dokumentiert den `SyntheticEvent` Wrapper, welcher einen Bestandteil des Eventsystems von React darstellt. Siehe [Handhabung von Events](/docs/handling-events.html) für mehr Informationen zu diesem Thema.
