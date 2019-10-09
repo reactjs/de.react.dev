@@ -93,7 +93,7 @@
     - id: dom-elements
       title: DOM Elemente
     - id: events
-      title: Synthetisches Event
+      title: SyntheticEvent
     - id: test-utils
       title: Test Utilities
     - id: shallow-renderer
