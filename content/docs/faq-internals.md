@@ -8,7 +8,7 @@ category: FAQ
 
 ### Was ist das virtuelle DOM? {#what-is-the-virtual-dom}
 
-Das virtuelle DOM (VDOM) ist ein Programmierkonzept, bei dem eine ideale oder "virtuelle" Darstellung der Benutzerschnittstelle (UI) im Speicher gehalten und mit dem "echten" DOM mittels einer Bibliothek names ReactDOM synchronisiert wird. Dieser Prozess wird [Abgleich](/docs/reconciliation.html) genannt.
+Das virtuelle DOM (VDOM) ist ein Programmierkonzept, bei dem eine ideale oder "virtuelle" Darstellung der Benutzerschnittstelle (UI) im Speicher gehalten und mit dem "echten" DOM mittels einer Bibliothek names ReactDOM synchronisiert wird. Dieser Prozess wird [Abgleich (engl. reconcilation)](/docs/reconciliation.html) genannt.
 
 Dieser Ansazu ermöglicht die deklarative API von React: Du sagst React, in welchem Zustand die UI sein soll, und React stellt sicher, dass das DOM zu diesem Zustand passt. Das abstrahiert von Attributmanipulation, Eventbehandlung und manuellen Updates im DOM, die man ansonsten verwenden müsste, um eine App zu bauen.
 
