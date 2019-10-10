@@ -18,7 +18,7 @@ Nein! Für mehr Informationen, sieh dir ["React ohne ES6"](/docs/react-without-e
 
 ```jsx
 <div>
-  {/* Kommentare hier */}
+  {/* Kommentar hier */}
   Hallo, {name}!
 </div>
 ```
