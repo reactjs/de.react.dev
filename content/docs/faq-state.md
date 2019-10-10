@@ -1,6 +1,6 @@
 ---
 id: faq-state
-title: Zustand von Komponenten
+title: State in Komponenten
 permalink: docs/faq-state.html
 layout: docs
 category: FAQ
@@ -12,7 +12,7 @@ category: FAQ
 
 ### Was ist der Unterschied zwischen `state` und `props`? {#what-is-the-difference-between-state-and-props}
 
-[`props`](/docs/components-and-props.html) (kurz für englisch "properties") und [`state`](/docs/state-and-lifecycle.html) sind beide einfache JavaScript-Objekte. Obwohl beide Informationen halten, die das Erebnis des Renderns beeinflussen, unterscheiden sie sich in einem entscheidenden Punkt: `props` werden *an* die Komponente gereicht (ähnlich zu Funktionsparametern), während `state` *in* der Komponente verwaltet wird (ähnlich zu Variablen, die in einer Funktion deklariert werden).
+[`props`](/docs/components-and-props.html) (kurz für englisch "properties") und [`state`](/docs/state-and-lifecycle.html) sind beide einfache JavaScript-Objekte. Obwohl beide Informationen halten, die das Ergebnis des Renderns beeinflussen, unterscheiden sie sich in einem entscheidenden Punkt: `props` werden *an* die Komponente gereicht (ähnlich zu Funktionsparametern), während `state` *in* der Komponente verwaltet wird (ähnlich zu Variablen, die in einer Funktion deklariert werden).
 
 Hier sind einige gute Quellen dazu, wann man `props` verwenden sollte und wann `state`:
 * [Props vs State](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
@@ -22,26 +22,26 @@ Hier sind einige gute Quellen dazu, wann man `props` verwenden sollte und wann `
 
 In React repräsentieren sowohl `this.props` als auch `this.state` den *gerenderten* Wert, d.h. das was aktuell angezeigt wird.
 
-Aufrufe an  `setState` sind asynchron - verlasse dich nicht darauf, dass `this.state` direkt nach einem Aufruf an `setState` den neuen Wert repräsentiert. Verwende eine Updater-Funktion statt einem Objekt, wenn du Werte basierend auf dem aktuellen Zustand berechnen musst (siehe folgendes Beispiel für Details).
+Aufrufe an  `setState` sind asynchron - verlasse dich nicht darauf, dass `this.state` direkt nach einem Aufruf an `setState` den neuen Wert repräsentiert. Verwende eine Updater-Funktion statt einem Objekt, wenn du Werte basierend auf dem aktuellen State berechnen musst (siehe folgendes Beispiel für Details).
 
 Beispiel-Code, der sich *nicht* wie erwartet verhält:
 
 ```jsx
-erhoeheZaehler() {
+incrementCount() {
   // Achtung: dies verhält sich *nicht* wie erwartet.
-  this.setState({count: this.state.zaehler + 1});
+  this.setState({count: this.state.count + 1});
 }
 
-behandleEtwas() {
-  // Nehmen wir an, `this.state.zaehler` startet bei 0.
-  this.erhoeheZaehler();
-  this.erhoeheZaehler();
-  this.erhoeheZaehler();
-  // Wenn React die Komponente neu rendert, wird `this.state.zaehler` 1 sein, obwohl du 3 erwartest.
+handleSomething() {
+  // Nehmen wir an, `this.state.count` startet bei 0.
+  this.incrementCount();
+  this.incrementCount();
+  this.incrementCount();
+  // Wenn React die Komponente neu rendert, wird `this.state.count` 1 sein, obwohl du 3 erwartest.
 
-  // Das liegt daran, dass `erhoeheZaehler()` von `this.state.zaehler` liest,
-  // aber React `this.state.zaehler` nicht verändert bevor die Komponente neu gerendert wird.
-  // Daher liest `erhoeheZaehler()` jedes Mal den Wert 0 von `this.state.zaehler`,
+  // Das liegt daran, dass `incrementCount()` von `this.state.count` liest,
+  // aber React `this.state.count` nicht verändert bevor die Komponente neu gerendert wird.
+  // Daher liest `incrementCount()` jedes Mal den Wert 0 von `this.state.count`,
   // und setzt ihn auf 1.
 
   // Die richtige Lösung findet sich weiter unten!
@@ -50,29 +50,29 @@ behandleEtwas() {
 
 Siehe im Folgenden, wie man das Problem beheben kann.
 
-### Wie kann ich den Zustand verändern mit Werten, die vom aktuellen Zustand abhängen? {#how-do-i-update-state-with-values-that-depend-on-the-current-state}
+### Wie kann ich den State verändern mit Werten, die vom aktuellen State abhängen? {#how-do-i-update-state-with-values-that-depend-on-the-current-state}
 
-Gib eine Funktion statt einem Objekt an `setState` um sicherzustellen, dass der Aufruf immer den aktuellsten Wert des Zustands verwendet (siehe unten). 
+Gib eine Funktion statt einem Objekt an `setState` um sicherzustellen, dass der Aufruf immer den aktuellsten Wert des States verwendet (siehe unten). 
 
 ### Was ist der Unterschied, wenn man ein Objekt oder eine Funktion an `setState` gibt? {#what-is-the-difference-between-passing-an-object-or-a-function-in-setstate}
 
-Gibt man eine Funktion an `setState`, so kann man in der Funktion auf den aktuellen Wert des Zustands zugreifen. Nachdem Aufrufe an `setState` gebündelt durchgeführt werden, lässt dich das Veränderungen aufeinanderfolgend durchführen und du kannst dir sicher sein, dass die Veränderungen aufeinander aufbauen anstatt zu konkurrieren:
+Gibt man eine Funktion an `setState`, so kann man in der Funktion auf den aktuellen Wert des States zugreifen. Da Aufrufe an `setState` gebündelt durchgeführt werden, kannst du Updates verketten und sicher stellen, dass diese aufeinanderfolgend durchgeführt werden, anstatt miteinander zu kollidieren:
 
 ```jsx
-erhoeheZaehlerCount() {
+incrementCountCount() {
   this.setState((state) => {
     // Wichtig: verwende `state` statt `this.state` beim Update.
-    return {count: state.zaehler + 1}
+    return {count: state.count + 1}
   });
 }
 
-behandleEtwas() {
-  // Nehmen wir an, `this.state.zaehler` startet bei 0.
-  this.erhoeheZaehler();
-  this.erhoeheZaehler();
-  this.erhoeheZaehler();
+handleSomething() {
+  // Nehmen wir an, `this.state.count` startet bei 0.
+  this.incrementCount();
+  this.incrementCount();
+  this.incrementCount();
 
-  // Wenn du `this.state.zaehler` verwenden würdest, wäre es immer noch 0.
+  // Wenn du `this.state.count` verwenden würdest, wäre es immer noch 0.
   // Wenn React aber die Komponente neu rendert, wird es 3 sein.
 }
 ```
@@ -83,7 +83,7 @@ behandleEtwas() {
 
 Aktuell ist `setState` in Event Handlern asynchron.
 
-Das stellt z.B. sicher, dass `Kind` nicht zwei mal gerendert wird, wenn sowohl `Mutter` und `Kind` `setState` während eines Klick-Events aufrufen. Stattdessen "leert" React die Zustandsveränderungen am Ende des Browser-Events. Das führt in größeren Apps zu signifikanten Performance-Gewinnen.
+Das stellt z.B. sicher, dass das `Kind`-Element nicht zwei mal gerendert wird, wenn sowohl `Eltern`-Element und `Kind`-Element `setState` während eines Klick-Events aufrufen. Stattdessen "leert" React die Veränderungen des States am Ende des Browser-Events. Das führt in größeren Apps zu signifikanten Performance-Gewinnen.
 
 Das ist ein Implementierungdetail, verlasse dich also nicht direkt darauf. In zukünftigen Versionen wird React Updates standardmäßig in mehr Fällen bündeln.
 
@@ -95,13 +95,13 @@ Du magst dich immer noch fragen, warum React nicht einfach `this.state` sofort o
 
 Die zwei wichtigsten Gründe sind:
 
-* Das würde die Konsitenz zwischen `props` und `state` brechen, was zu sehr schwer verständlichen Problemen führen würde.
+* Das würde die Konsistenz zwischen `props` und `state` brechen und zu Problemen führen, die sehr schwer zu debuggen sind.
 * Das würde einige der neuen Features, an denen wir arbeiten, unmöglich machen.
 
 Dieser [GitHub-Kommentar](https://github.com/facebook/react/issues/11527#issuecomment-360199710) nennt spezifische Beispiele.
 
-### Sollte ich eine Zustandsverwaltungsbibliothek wie Redux oder MobX verwenden? {#should-i-use-a-state-management-library-like-redux-or-mobx}
+### Sollte ich eine State-Management-Bibliothek wie Redux oder MobX verwenden? {#should-i-use-a-state-management-library-like-redux-or-mobx}
 
 [Vielleicht.](https://redux.js.org/faq/general#when-should-i-use-redux)
 
-Es ist eine ziemlich gute Idee, React zu verstehen, bevor man weitere Bibliotheken hinzufügt. Du kannst recht komplexe Applikationen auch mit ausschließlich der Zustandsverwaltung von React bauen.
+Es ist eine ziemlich gute Idee, React zu verstehen, bevor man weitere Bibliotheken hinzufügt. Du kannst auch recht komplexe Applikationen nur mit React erstellen.
