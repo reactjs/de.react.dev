@@ -1,18 +1,18 @@
 ---
 id: faq-structure
-title: File Structure
+title: Datenstruktur
 permalink: docs/faq-structure.html
 layout: docs
 category: FAQ
 ---
 
-### Is there a recommended way to structure React projects? {#is-there-a-recommended-way-to-structure-react-projects}
+### Gibt es einen empfohlene Datenstruktur für React-Projekte? {#is-there-a-recommended-way-to-structure-react-projects}
 
-React doesn't have opinions on how you put files into folders. That said there are a few common approaches popular in the ecosystem you may want to consider.
+React hat keine Meinung dazu, wie Sie Dateien in Ordnern ablegen. Es gibt jedoch einige gängige Ansätze, die Sie in Betracht ziehen sollten.
 
-#### Grouping by features or routes {#grouping-by-features-or-routes}
+#### Gruppierung nach Merkmalen oder Routen {#grouping-by-features-or-routes}
 
-One common way to structure projects is locate CSS, JS, and tests together inside folders grouped by feature or route.
+Eine gängige Methode zum Strukturieren von Projekten ist CSS, JS und Tests zu finden, die nach Merkmalen oder Routen in Ordnern gruppiert werden können.
 
 ```
 common/
@@ -35,11 +35,11 @@ profile/
   ProfileAPI.js
 ```
 
-The definition of a "feature" is not universal, and it is up to you to choose the granularity. If you can't come up with a list of top-level folders, you can ask the users of your product what major parts it consists of, and use their mental model as a blueprint.
+Die Definition eines "Merkmals" ist nicht universell und es liegt an Ihnen, die Granularität zu wählen. Wenn es Ihnen schwer fällt sich eine top-level Ordnerstruktur zu erdenken, können Sie die Benutzer Ihres Produktes fragen aus welchen Hauptbestandteilen es aufgebaut ist, und dieses Modell als Entwurf verwenden.
 
-#### Grouping by file type {#grouping-by-file-type}
+#### Gruppierung nach Dateityp {#grouping-by-file-type}
 
-Another popular way to structure projects is to group similar files together, for example:
+Eine andere beliebte Methode zum Strukturieren von Projekten besteht darin, ähnliche Dateien zu gruppieren. Zum Beispiel:
 
 ```
 api/
@@ -59,16 +59,16 @@ components/
   ProfileHeader.css
 ```
 
-Some people also prefer to go further, and separate components into different folders depending on their role in the application. For example, [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) is a design methodology built on this principle. Remember that it's often more productive to treat such methodologies as helpful examples rather than strict rules to follow.
+Einige Leute gehen einen Schritt weiter und sortieren Komponenten nach ihrer Rolle in der Anwendung. Das [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) ist ein Beispiel was die auf diesem Prinzip basiert ist. Denken Sie daran, dass es oft produktiver ist, solche Methoden als hilfreiche Beispiele, anstatt Regeln zu betrachten.
 
-#### Avoid too much nesting {#avoid-too-much-nesting}
+#### Vermeiden Sie zu viel Verschachtelung {#avoid-too-much-nesting}
 
-There are many pain points associated with deep directory nesting in JavaScript projects. It becomes harder to write relative imports between them, or to update those imports when the files are moved. Unless you have a very compelling reason to use a deep folder structure, consider limiting yourself to a maximum of three or four nested folders within a single project. Of course, this is only a recommendation, and it may not be relevant to your project.
+Es gibt viele Probleme wenn JavaScript Projekte zu tief verschachtelt werden. Es wird schwieriger, relative Importe zwischen Dateien zu erstellen oder diese Importe zu aktualisieren, wenn Dateien verschoben werden. Sie sollten sich auf eine drei bis vier Ordner tiefe Struktur beschränken, es sei denn Sie haben einen guten Grund für eine Tiefere. Dies ist natürlich nur eine Empfehlung und möglicherweise für Ihr Projekt nicht relevant.
 
-#### Don't overthink it {#dont-overthink-it}
+#### Überdenken Sie es nicht {#dont-overthink-it}
 
-If you're just starting a project, [don't spend more than five minutes](https://en.wikipedia.org/wiki/Analysis_paralysis) on choosing a file structure. Pick any of the above approaches (or come up with your own) and start writing code! You'll likely want to rethink it anyway after you've written some real code.
+Wenn Sie ein neues Projekt anfangen, [verbringen Sie nicht mehr als fünf Minuten](https://de.wikipedia.org/wiki/Paralyse_durch_Analyse) um eine Datenstruktur auszuwählen. Wählen Sie einen der oben genannten Ansätze (oder überlegen Sie sich einen eigenen) und legen Sie los! Sie werden die Datenstruktur wahrscheinlich überdenken wollen, nachdem Sie ein wenig Code geschrieben haben.
 
-If you feel completely stuck, start by keeping all files in a single folder. Eventually it will grow large enough that you will want to separate some files from the rest. By that time you'll have enough knowledge to tell which files you edit together most often. In general, it is a good idea to keep files that often change together close to each other. This principle is called "colocation".
+Wenn Sie sich nicht sicher fühlen, sollten Sie zunächst alle Dateien in einem einzigen Ordner speichern. Irgendwann wird dieser so groß werden, dass Sie einige Dateien von dem Rest trennen möchten. Zu diesem Zeitpunkt werden Sie genug Wissen, um festzustellen zu können, welche Dateien Sie am häufigsten gemeinsam bearbeiten. Im Allgemeinen ist es eine gute Idee, Dateien, die Sie häufig gemeinsam ändern, nahe beieinander zu abzulegen. Dieses Prinzip nennt man "Kollokation".
 
-As projects grow larger, they often use a mix of both of the above approaches in practice. So choosing the "right" one in the beginning isn't very important.
+Sobald Projekte größer werden, wird in der Praxis häufig eine Mischung aus beiden oben genannten Ansätzen verwendet. Daher ist es nicht sehr wichtig, am Anfang den "richtigen" zu wählen.
