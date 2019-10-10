@@ -12,7 +12,7 @@ Das virtuelle DOM (VDOM) ist ein Programmierkonzept, bei dem eine ideale oder "v
 
 Dieser Ansatz ermöglicht die deklarative API von React: Du sagst React, in welchem Zustand die UI sein soll, und React stellt sicher, dass das DOM zu diesem Zustand passt. Dies abstrahiert die Attributmanipulation, die Behandlung von Events und manuelle DOM-Updates, die man ansonsten verwenden müsste, um eine App zu bauen.
 
-Nachdem "virtuelles DOM" eher ein Schema als eine spezifische Technologie ist, verwenden die Leute den Begriff manchmal für andere Dinge. Im Kontext von React wird der Begriff "virtuelles DOM" normalerweise mit [React-Elementen](/docs/rendering-elements.html) assoziiert, da diese die Objekte sind, die die UI repräsentieren. Allerdings nutzt React außerdem interne Objekte namens "Fasern", um zusätzliche Informationen über den Komponentenbaum zu speichern. Diese können ebenfalls als ein Teil der Implementierung des "virtuellen DOM" in React betrachtet werden.
+Nachdem "virtuelles DOM" eher ein Schema als eine spezifische Technologie ist, verwenden die Leute den Begriff manchmal für andere Dinge. Im Kontext von React wird der Begriff "virtuelles DOM" normalerweise mit [React-Elementen](/docs/rendering-elements.html) assoziiert, da diese die Objekte sind, die die UI repräsentieren. Allerdings nutzt React außerdem interne Objekte namens "fibers", um zusätzliche Informationen über den Komponentenbaum zu speichern. Diese können ebenfalls als ein Teil der Implementierung des "virtuellen DOM" in React betrachtet werden.
 
 ### Ist das Schatten-DOM das selbe wie das virtuelle DOM? {#is-the-shadow-dom-the-same-as-the-virtual-dom}
 
