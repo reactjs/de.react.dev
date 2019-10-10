@@ -16,7 +16,7 @@ Nachdem "virtuelles DOM" eher ein Schema als eine spezifische Technologie ist, v
 
 ### Ist das Shadow-DOM das Selbe wie das virtuelle DOM? {#is-the-shadow-dom-the-same-as-the-virtual-dom}
 
-Nein, das sind verschiedene Dinge. Das Schatten-DOM ist eine Browsertechnologie, die vorwiegend für das Scoping von Variablen und CSS in Webkomponenten designed wurde. Das virtuelle DOM ist ein Konzept, das von browserfremden Bibliotheken in JavaScript für Browser implementiert wird.
+Nein, das sind verschiedene Dinge. Das Shadow-DOM ist eine Browser-Technologie, die vorwiegend für das Scoping von Variablen und CSS in Webkomponenten designed wurde. Das virtuelle DOM ist ein Konzept, das durch Bibliotheken in JavaScript, auf Basis der Browser API implementiert wird.
 
 ### Was ist "React Fiber"? {#what-is-react-fiber}
 
