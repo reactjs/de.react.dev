@@ -65,7 +65,7 @@ Einige Leute gehen einen Schritt weiter und sortieren Komponenten nach ihrer Rol
 
 Es gibt viele Probleme wenn JavaScript Projekte zu tief verschachtelt werden. Es wird schwieriger, relative Importe zwischen Dateien zu erstellen oder diese Importe zu aktualisieren, wenn Dateien verschoben werden. Du solltest dich innerhalb deines Projektes auf maximal drei bis vier verschachtelte Ordner beschränken, es sei denn du hast einen guten Grund für eine tiefere Ordnerstruktur. Dies ist natürlich nur eine Empfehlung und möglicherweise für dein Projekt nicht relevant.
 
-#### Überdenken Sie es nicht {#dont-overthink-it}
+#### Denke nicht zu viel darüber nach {#dont-overthink-it}
 
 Wenn du ein neues Projekt anfängst, [verbringe dafür nicht mehr als fünf Minuten](https://de.wikipedia.org/wiki/Paralyse_durch_Analyse) um eine Dateistruktur auszuwählen. Wähle einen der oben genannten Ansätze (oder überlege dir einen eigenen) und leg los! Du wirst die Dateistruktur wahrscheinlich sowieso überdenken, nachdem du ein wenig Code geschrieben hast.
 
