@@ -61,7 +61,7 @@ components/
 
 Einige Leute gehen einen Schritt weiter und sortieren Komponenten nach ihrer Rolle in der Anwendung. Das [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) ist ein Beispiel was die auf diesem Prinzip basiert ist. Denken Sie daran, dass es oft produktiver ist, solche Methoden als hilfreiche Beispiele, anstatt Regeln zu betrachten.
 
-#### Vermeiden Sie zu viel Verschachtelung {#avoid-too-much-nesting}
+#### Vermeide zu viele Verschachtelungen {#avoid-too-much-nesting}
 
 Es gibt viele Probleme wenn JavaScript Projekte zu tief verschachtelt werden. Es wird schwieriger, relative Importe zwischen Dateien zu erstellen oder diese Importe zu aktualisieren, wenn Dateien verschoben werden. Sie sollten sich auf eine drei bis vier Ordner tiefe Struktur beschränken, es sei denn Sie haben einen guten Grund für eine Tiefere. Dies ist natürlich nur eine Empfehlung und möglicherweise für Ihr Projekt nicht relevant.
 
