@@ -6,7 +6,7 @@ layout: docs
 category: FAQ
 ---
 
-### Gibt es einen empfohlene Datenstruktur für React-Projekte? {#is-there-a-recommended-way-to-structure-react-projects}
+### Gibt es eine empfohlene Dateistruktur für React-Projekte? {#is-there-a-recommended-way-to-structure-react-projects}
 
 React hat keine Meinung dazu, wie Sie Dateien in Ordnern ablegen. Es gibt jedoch einige gängige Ansätze, die Sie in Betracht ziehen sollten.
 
