@@ -63,7 +63,7 @@ Einige Leute gehen einen Schritt weiter und sortieren Komponenten nach ihrer Rol
 
 #### Vermeide zu viele Verschachtelungen {#avoid-too-much-nesting}
 
-Es gibt viele Probleme wenn JavaScript Projekte zu tief verschachtelt werden. Es wird schwieriger, relative Importe zwischen Dateien zu erstellen oder diese Importe zu aktualisieren, wenn Dateien verschoben werden. Sie sollten sich auf eine drei bis vier Ordner tiefe Struktur beschränken, es sei denn Sie haben einen guten Grund für eine Tiefere. Dies ist natürlich nur eine Empfehlung und möglicherweise für Ihr Projekt nicht relevant.
+Es gibt viele Probleme wenn JavaScript Projekte zu tief verschachtelt werden. Es wird schwieriger, relative Importe zwischen Dateien zu erstellen oder diese Importe zu aktualisieren, wenn Dateien verschoben werden. Du solltest dich innerhalb deines Projektes auf maximal drei bis vier verschachtelte Ordner beschränken, es sei denn du hast einen guten Grund für eine tiefere Ordnerstruktur. Dies ist natürlich nur eine Empfehlung und möglicherweise für dein Projekt nicht relevant.
 
 #### Überdenken Sie es nicht {#dont-overthink-it}
 
