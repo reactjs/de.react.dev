@@ -67,7 +67,7 @@ Es gibt viele Probleme wenn JavaScript Projekte zu tief verschachtelt werden. Es
 
 #### Überdenken Sie es nicht {#dont-overthink-it}
 
-Wenn Sie ein neues Projekt anfangen, [verbringen Sie nicht mehr als fünf Minuten](https://de.wikipedia.org/wiki/Paralyse_durch_Analyse) um eine Datenstruktur auszuwählen. Wählen Sie einen der oben genannten Ansätze (oder überlegen Sie sich einen eigenen) und legen Sie los! Sie werden die Datenstruktur wahrscheinlich überdenken wollen, nachdem Sie ein wenig Code geschrieben haben.
+Wenn du ein neues Projekt anfängst, [verbringe dafür nicht mehr als fünf Minuten](https://de.wikipedia.org/wiki/Paralyse_durch_Analyse) um eine Dateistruktur auszuwählen. Wähle einen der oben genannten Ansätze (oder überlege dir einen eigenen) und leg los! Du wirst die Dateistruktur wahrscheinlich sowieso überdenken, nachdem du ein wenig Code geschrieben hast.
 
 Wenn Sie sich nicht sicher fühlen, sollten Sie zunächst alle Dateien in einem einzigen Ordner speichern. Irgendwann wird dieser so groß werden, dass Sie einige Dateien von dem Rest trennen möchten. Zu diesem Zeitpunkt werden Sie genug Wissen, um festzustellen zu können, welche Dateien Sie am häufigsten gemeinsam bearbeiten. Im Allgemeinen ist es eine gute Idee, Dateien, die Sie häufig gemeinsam ändern, nahe beieinander zu abzulegen. Dieses Prinzip nennt man "Kollokation".
 
