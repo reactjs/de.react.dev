@@ -59,7 +59,7 @@ components/
   ProfileHeader.css
 ```
 
-Einige Leute gehen einen Schritt weiter und sortieren Komponenten nach ihrer Rolle in der Anwendung. Das [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) ist ein Beispiel was die auf diesem Prinzip basiert ist. Denken Sie daran, dass es oft produktiver ist, solche Methoden als hilfreiche Beispiele, anstatt Regeln zu betrachten.
+Einige Leute gehen einen Schritt weiter und sortieren Komponenten nach ihrer Rolle in der Anwendung. Das [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) ist ein Beispiel was auf diesem Prinzip basiert. Denke daran, dass es oft produktiver ist, solche Methoden als hilfreiche Beispiele, anstatt Regeln zu betrachten.
 
 #### Vermeide zu viele Verschachtelungen {#avoid-too-much-nesting}
 
