@@ -12,7 +12,7 @@ React hat keine Meinung dazu, wie du Dateien in Ordnern ablegst. Es gibt jedoch 
 
 #### Gruppierung nach Merkmalen oder Routen {#grouping-by-features-or-routes}
 
-Eine gängige Methode zum Strukturieren von Projekten ist CSS, JS und Tests zu finden, die nach Merkmalen oder Routen in Ordnern gruppiert werden können.
+Eine gängige Methode zum Strukturieren von Projekten ist CSS, JS und Tests zu finden, die nach Features oder Routen in Ordnern gruppiert werden können.
 
 ```
 common/
