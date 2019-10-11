@@ -1,28 +1,28 @@
 ---
 id: error-boundaries
-title: Error Boundaries
+title: Fehlergrenzen
 permalink: docs/error-boundaries.html
 ---
 
-In the past, JavaScript errors inside components used to corrupt React’s internal state and cause it to [emit](https://github.com/facebook/react/issues/4026) [cryptic](https://github.com/facebook/react/issues/6895) [errors](https://github.com/facebook/react/issues/8579) on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them.
+In der Vergangenheit, führten JavaScript Fehler innerhalb der Komponenten zu einem fehlerhaften Zustand innerhalb von React, welcher ein [Auftreten](https://github.com/facebook/react/issues/4026) [kryptischer](https://github.com/facebook/react/issues/6895) [Fehlermeldungen](https://github.com/facebook/react/issues/8579) in den folgenden Render-Vorgängen verursachte. Diese Fehler wurden immer von einem zuvor aufgetretenem Fehler innerhalb der Applikation verursacht, jedoch war seitens React keine Möglichkeit bereitgestellt, um auf diese Fehler innerhalb der Komponenten zu reagieren und sich von diesen zu erholen.
 
 
-## Introducing Error Boundaries {#introducing-error-boundaries}
+## Einführung zu Fehlergrenzen {#introducing-error-boundaries}
 
-A JavaScript error in a part of the UI shouldn’t break the whole app. To solve this problem for React users, React 16 introduces a new concept of an “error boundary”.
+Ein JavaScript Fehler in einem Teil der UI sollte nicht die ganze Applikation zerstören. Um eine Lösung für dieses Problem bereitzustellen, wurde mit React 16 das Konzept einer "Fehlergrenze" vorgestellt.
 
-Error boundaries are React components that **catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI** instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+Fehlergrenzen sind React-Komponenten die **JavaScript Fehler im ihrem ganzen Kind-Komponenten Baum abfangen, diese loggen und eine Fallback-UI**, anstatt einen zerstörten Komponenten-Baum anzuzeigen. Fehlergrenzen fangen Fehler während dem Rendering, in Lifecycle-Methoden und in Konstruktoren des ganzen Komponenten-Baums darunter.
 
-> Note
+> Hinweis
 >
-> Error boundaries do **not** catch errors for:
+> Fehlergrenzen fangen in folgenden Fällen **keine** Fehler ab :
 >
-> * Event handlers ([learn more](#how-about-event-handlers))
-> * Asynchronous code (e.g. `setTimeout` or `requestAnimationFrame` callbacks)
-> * Server side rendering
-> * Errors thrown in the error boundary itself (rather than its children)
+> * Eventhandler ([learn more](#how-about-event-handlers))
+> * Asynchroner Code (z.B. `setTimeout` or `requestAnimationFrame` Callbacks)
+> * Server side Rendering
+> * Fehler die in der Fehlergrenze selbst und nicht in dessen Kind-Komponenten auftreten
 
-A class component becomes an error boundary if it defines either (or both) of the lifecycle methods [`static getDerivedStateFromError()`](/docs/react-component.html#static-getderivedstatefromerror) or [`componentDidCatch()`](/docs/react-component.html#componentdidcatch). Use `static getDerivedStateFromError()` to render a fallback UI after an error has been thrown. Use `componentDidCatch()` to log error information.
+Eine Klassen-Komponente wird zu einer Fehlergrenze wenn es eine oder beide der folgenden Lifecycle-Methoden definiert [`static getDerivedStateFromError()`](/docs/react-component.html#static-getderivedstatefromerror) oder [`componentDidCatch()`](/docs/react-component.html#componentdidcatch). Benutze `static getDerivedStateFromError()` um eine Fallback-UI zu rendern, nachdem ein Fehler aufgetreten ist. Benutze `componentDidCatch()` um Informationen über den Fehler zu loggen.
 
 ```js{7-10,12-15,18-21}
 class ErrorBoundary extends React.Component {
@@ -32,27 +32,27 @@ class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
+    // Update den State damit beim nächsten Render-Vorgang die Fallback-UI angezeigt wird.
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
-    // You can also log the error to an error reporting service
+    // Du kannst den Fehler auch zu einem Fehlermonitoring-Service loggen
     logErrorToMyService(error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
+      // Du kannst eine beliebige Fallback-UI rendern
       return <h1>Something went wrong.</h1>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 ```
 
-Then you can use it as a regular component:
+Die Fehlergrenze kann wie eine reguläre Komponente genutzt werden:
 
 ```js
 <ErrorBoundary>
@@ -60,9 +60,9 @@ Then you can use it as a regular component:
 </ErrorBoundary>
 ```
 
-Error boundaries work like a JavaScript `catch {}` block, but for components. Only class components can be error boundaries. In practice, most of the time you’ll want to declare an error boundary component once and use it throughout your application.
+Fehlergrenzen funktionieren wie das `catch {}` in JavaScript, nur für Komponenten. Die Definition der Fehlergrenze als Klassenkomponente ist Voraussetzung. In der Praxis wirst du wahrscheinlich die Fehlergrenze-Komponente ein einziges mal Deklarieren und diese dann durchgehend in deiner Applikation benutzen.
 
-Note that **error boundaries only catch errors in the components below them in the tree**. An error boundary can’t catch an error within itself. If an error boundary fails trying to render the error message, the error will propagate to the closest error boundary above it. This, too, is similar to how catch {} block works in JavaScript.
+Beachte dass **Fehlergrenzen nur Fehler in den Komponenten abfangen, die sich unter der Fehlergrenze im Komponenten-Baum befinden**. Eine Fehlergrenze kann keine Fehler abfangen, die innerhalb der Fehlergrenze selbst aufgetreten sind. Wenn die Fehlergrenze den in ihr aufgetretenen Fehler nicht verarbeiten kann, wird dieser zur nächstgelegenen Fehlergrenze nach oben weitergereicht. Dies ist ebenso ähnlich der Funktionalit#t eines `catch {}` Blocks in JavaScript.
 
 ## Live Demo {#live-demo}
 
