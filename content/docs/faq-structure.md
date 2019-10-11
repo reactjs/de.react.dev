@@ -35,7 +35,7 @@ profile/
   ProfileAPI.js
 ```
 
-Die Definition eines "Merkmals" ist nicht universell und es liegt an Ihnen, die Granularität zu wählen. Wenn es Ihnen schwer fällt sich eine top-level Ordnerstruktur zu erdenken, können Sie die Benutzer Ihres Produktes fragen aus welchen Hauptbestandteilen es aufgebaut ist, und dieses Modell als Entwurf verwenden.
+Die Definition eines "Features" ist nicht universell und es liegt an dir, die Granularität zu wählen. Wenn es dir schwer fällt eine top-level Ordnerstruktur zu erdenken, kannst du die Benutzer deines Produktes fragen aus welchen Hauptbestandteilen es aufgebaut ist, und dieses Modell als Entwurf verwenden.
 
 #### Gruppierung nach Dateityp {#grouping-by-file-type}
 
