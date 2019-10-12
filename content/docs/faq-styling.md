@@ -8,7 +8,7 @@ category: FAQ
 
 ### Wie füge ich CSS-Klassen zu Komponenten hinzu? {#how-do-i-add-css-classes-to-components}
 
-Übergebe einen String für die `className`-Prop:
+Übergebe einen String für das `className`-Prop:
 
 ```jsx
 render() {
