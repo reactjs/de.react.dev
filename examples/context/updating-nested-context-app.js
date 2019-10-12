@@ -16,7 +16,7 @@ class App extends React.Component {
 
     // highlight-range{1-2,5}
     // State enthält auch die Update-Funktion, also wird
-    // es dem Kontext Provider überreicht.
+    // es dem Context Provider überreicht.
     this.state = {
       theme: themes.light,
       toggleTheme: this.toggleTheme,
