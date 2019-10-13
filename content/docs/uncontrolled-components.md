@@ -74,7 +74,7 @@ In HTML kann der Benutzer mit `<input type="file">` eine oder mehrere Dateien au
 <input type="file" />
 ```
 
-In React, ein `<input type="file" />` ist immer eine unkontrollierte Komponente, da ihr Wert nur von einem Benutzer und nicht programmatisch festgelegt werden kann.
+In React ist `<input type="file" />` immer eine unkontrollierte Komponente, da ihr Wert nur von einem Benutzer und nicht programmatisch festgelegt werden kann.
 
 Du solltest die File API verwenden, um mit den Dateien zu interagieren. Das folgende Beispiel zeigt, wie du einen [ref auf dem DOM-Knoten](/docs/refs-and-the-dom.html) erstellst, um auf Dateien in einem Submit-Handler zuzugreifen:
 
