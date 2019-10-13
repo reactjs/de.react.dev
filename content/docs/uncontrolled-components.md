@@ -41,7 +41,7 @@ class NameForm extends React.Component {
 
 Mit unkontrollierten Komponenten ist es manchmal einfacher, React und nicht-React Code zu integrieren, da die Quelle der Wahrheit in einer unkontrollierten Komponente das DOM ist. Es kann auch etwas weniger Code sein, wenn du eine schnelle Lösung haben möchtest. Ansonsten solltest du in der Regel kontrollierte Komponenten verwenden.
 
-Wenn es immer noch nicht klar ist, welche Art von Komponente du für eine bestimmte Situation verwenden solltest, findest du möglicherweise [diesen Artikel über kontrollierte versus unkontrollierte Komponente](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) hilfreich.
+Wenn es immer noch nicht klar ist, welche Art von Komponente du für eine bestimmte Situation verwenden solltest, findest du möglicherweise [diesen Artikel über kontrollierte gegen unkontrollierte Komponente](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) hilfreich.
 
 ### Standardwerte {#default-values}
 
