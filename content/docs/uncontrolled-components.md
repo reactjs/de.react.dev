@@ -64,7 +64,7 @@ render() {
 }
 ```
 
-Ebenso understützen `<input type="checkbox">` und `<input type="radio">` `defaultChecked`, und `<select>` und `<textarea>` understützen `defaultValue`.
+Ebenso unterstützen `<input type="checkbox">` und `<input type="radio">` `defaultChecked`, und `<select>` und `<textarea>` unterstützen `defaultValue`.
 
 ## Das Datei input Element {#the-file-input-tag}
 
