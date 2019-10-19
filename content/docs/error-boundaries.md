@@ -4,22 +4,22 @@ title: Fehlergrenzen
 permalink: docs/error-boundaries.html
 ---
 
-In der Vergangenheit, führten JavaScript Fehler innerhalb der Komponenten zu einem fehlerhaften Zustand innerhalb von React, welcher ein [Auftreten](https://github.com/facebook/react/issues/4026) [kryptischer](https://github.com/facebook/react/issues/6895) [Fehlermeldungen](https://github.com/facebook/react/issues/8579) in den folgenden Render-Vorgängen verursachte. Diese Fehler wurden immer von einem zuvor aufgetretenem Fehler innerhalb der Applikation verursacht, jedoch war seitens React keine Möglichkeit bereitgestellt, um auf diese Fehler innerhalb der Komponenten zu reagieren und sich von diesen zu erholen.
+In der Vergangenheit, führten JavaScript-Fehler in Komponenten zu einem fehlerhaften Zustand innerhalb von React, welcher ein [Auftreten](https://github.com/facebook/react/issues/4026) [kryptischer](https://github.com/facebook/react/issues/6895) [Fehlermeldungen](https://github.com/facebook/react/issues/8579) in den folgenden Render-Vorgängen verursachte. Diese Fehler wurden immer von einem zuvor aufgetretenen Fehler in der Applikation verursacht, jedoch war seitens React keine Möglichkeit bereitgestellt, um auf diese Fehler innerhalb der Komponenten zu reagieren und sich von diesen zu erholen.
 
 
 ## Einführung zu Fehlergrenzen {#introducing-error-boundaries}
 
-Ein JavaScript Fehler in einem Teil der UI sollte nicht die ganze Applikation zerstören. Um eine Lösung für dieses Problem bereitzustellen, wurde mit React 16 das Konzept einer "Fehlergrenze" vorgestellt.
+Ein JavaScript-Fehler in einem Teil der UI sollte nicht die ganze Applikation zerstören. Um eine Lösung für dieses Problem bereitzustellen, wurde mit React 16 das Konzept einer "Fehlergrenze" vorgestellt.
 
-Fehlergrenzen sind React-Komponenten die **JavaScript Fehler im ihrem ganzen Kind-Komponenten Baum abfangen, diese loggen und eine Fallback-UI**, anstatt einen zerstörten Komponenten-Baum anzuzeigen. Fehlergrenzen fangen Fehler während dem Rendering, in Lifecycle-Methoden und in Konstruktoren des ganzen Komponenten-Baums darunter.
+Fehlergrenzen sind React-Komponenten die **JavaScript-Fehler im ihrem ganzen Kind-Komponenten Baum abfangen, diese loggen und eine Fallback-UI**, anstatt eines zerstörten Komponenten-Baums anzeigen. Fehlergrenzen fangen Fehler während des Renderings, in Lifecycle-Methoden und in Konstruktoren des ganzen Komponenten-Baums darunter.
 
 > Hinweis
 >
 > Fehlergrenzen fangen in folgenden Fällen **keine** Fehler ab :
 >
-> * Eventhandler ([learn more](#how-about-event-handlers))
-> * Asynchroner Code (z.B. `setTimeout` or `requestAnimationFrame` Callbacks)
-> * Server side Rendering
+> * Event-Handler ([Lies mehr dazu](#how-about-event-handlers))
+> * Asynchroner Code (z.B. `setTimeout` oder `requestAnimationFrame` Callbacks)
+> * Serverseitiges Rendering
 > * Fehler die in der Fehlergrenze selbst und nicht in dessen Kind-Komponenten auftreten
 
 Eine Klassen-Komponente wird zu einer Fehlergrenze wenn es eine oder beide der folgenden Lifecycle-Methoden definiert [`static getDerivedStateFromError()`](/docs/react-component.html#static-getderivedstatefromerror) oder [`componentDidCatch()`](/docs/react-component.html#componentdidcatch). Benutze `static getDerivedStateFromError()` um eine Fallback-UI zu rendern, nachdem ein Fehler aufgetreten ist. Benutze `componentDidCatch()` um Informationen über den Fehler zu loggen.
@@ -44,7 +44,7 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // Du kannst eine beliebige Fallback-UI rendern
-      return <h1>Something went wrong.</h1>;
+      return <h1>Etwas ist schiefgelaufen.</h1>;
     }
 
     return this.props.children;
@@ -62,51 +62,51 @@ Die Fehlergrenze kann wie eine reguläre Komponente genutzt werden:
 
 Fehlergrenzen funktionieren wie das `catch {}` in JavaScript, nur für Komponenten. Die Definition der Fehlergrenze als Klassenkomponente ist Voraussetzung. In der Praxis wirst du wahrscheinlich die Fehlergrenze-Komponente ein einziges mal Deklarieren und diese dann durchgehend in deiner Applikation benutzen.
 
-Beachte dass **Fehlergrenzen nur Fehler in den Komponenten abfangen, die sich unter der Fehlergrenze im Komponenten-Baum befinden**. Eine Fehlergrenze kann keine Fehler abfangen, die innerhalb der Fehlergrenze selbst aufgetreten sind. Wenn die Fehlergrenze den in ihr aufgetretenen Fehler nicht verarbeiten kann, wird dieser zur nächstgelegenen Fehlergrenze nach oben weitergereicht. Dies ist ebenso ähnlich der Funktionalit#t eines `catch {}` Blocks in JavaScript.
+Beachte dass **Fehlergrenzen nur Fehler in den Komponenten abfangen, die sich im Komponenten-Baum unter der Fehlergrenze befinden**. Eine Fehlergrenze kann keine Fehler abfangen, die innerhalb der Fehlergrenze selbst aufgetreten sind. Wenn die Fehlergrenze den in ihr aufgetretenen Fehler nicht verarbeiten kann, wird dieser zur nächstgelegenen Fehlergrenze nach oben weitergereicht. Dies ist ebenso ähnlich der Funktionalität eines `catch {}` Blocks in JavaScript.
 
 ## Live Demo {#live-demo}
 
-Check out [this example of declaring and using an error boundary](https://codepen.io/gaearon/pen/wqvxGa?editors=0010) with [React 16](/blog/2017/09/26/react-v16.0.html).
+Schau dir [folgendes Beispiel für die Deklaration und Nutzung einer Fehlergrenze](https://codepen.io/gaearon/pen/wqvxGa?editors=0010) mit [React 16](/blog/2017/09/26/react-v16.0.html) an.
 
 
-## Where to Place Error Boundaries {#where-to-place-error-boundaries}
+## Wo platziert man Fehlergrenzen {#where-to-place-error-boundaries}
 
-The granularity of error boundaries is up to you. You may wrap top-level route components to display a “Something went wrong” message to the user, just like server-side frameworks often handle crashes. You may also wrap individual widgets in an error boundary to protect them from crashing the rest of the application.
-
-
-## New Behavior for Uncaught Errors {#new-behavior-for-uncaught-errors}
-
-This change has an important implication. **As of React 16, errors that were not caught by any error boundary will result in unmounting of the whole React component tree.**
-
-We debated this decision, but in our experience it is worse to leave corrupted UI in place than to completely remove it. For example, in a product like Messenger leaving the broken UI visible could lead to somebody sending a message to the wrong person. Similarly, it is worse for a payments app to display a wrong amount than to render nothing.
-
-This change means that as you migrate to React 16, you will likely uncover existing crashes in your application that have been unnoticed before. Adding error boundaries lets you provide better user experience when something goes wrong.
-
-For example, Facebook Messenger wraps content of the sidebar, the info panel, the conversation log, and the message input into separate error boundaries. If some component in one of these UI areas crashes, the rest of them remain interactive.
-
-We also encourage you to use JS error reporting services (or build your own) so that you can learn about unhandled exceptions as they happen in production, and fix them.
+Über die Granularität der Fehlergrenzen kannst du frei entscheiden. Du kannst die top-level Route-Komponenten umschließen, um dem User eine "Etwas ist schiefgelaufen" Meldung anzuzeigen, diese Variante wird oft von serverseitigen Frameworks zur Fehlerbehandlung eingesetzt. Du kannst aber auch individuelle Widgets mit einer Fehlergrenze umschließen, um zu verhindern, dass diese den Rest der Applikation zum Absturz bringen.
 
 
-## Component Stack Traces {#component-stack-traces}
+## Neues Verhalten für nicht abgefangene Fehlermeldungen {#new-behavior-for-uncaught-errors}
 
-React 16 prints all errors that occurred during rendering to the console in development, even if the application accidentally swallows them. In addition to the error message and the JavaScript stack, it also provides component stack traces. Now you can see where exactly in the component tree the failure has happened:
+Diese Änderung hat eine wesentliche Auswirkung. **Mit React 16 führen Fehler, die nicht von einer Fehlergrenze abgefangen wurden, zum Unmounten des gesamten React Komponenten-Baums.**
 
-<img src="../images/docs/error-boundaries-stack-trace.png" style="max-width:100%" alt="Error caught by Error Boundary component">
+Wir haben über diese Entscheidung diskutiert, unserer Erfahrung nach ist es jedoch schlimmer eine fehlerhafte UI anzuzeigen, anstatt diese komplett zu entfernen. Zum Beispiel in einem Produkt wie ein Messenger, wäre es möglich, dass durch das Anzeigen einer fehlerhaften UI, die Nachricht an eine falsche Person verschickt werden könnte. Ähnlich schlimm wäre es in einer Bezahlapplikation, einen falschen Betrag, statt einfach nichts zu rendern.
 
-You can also see the filenames and line numbers in the component stack trace. This works by default in [Create React App](https://github.com/facebookincubator/create-react-app) projects:
+Diese Änderung bedeutet, dass sobald du auf React 16 migrierst, wirst du höchstwahrscheinlich einige zuvor unbemerkte Fehler in deiner Applikation entdecken. Wenn etwas schief läuft, gibt das Hinzufügen von Fehlergrenzen dir die Möglichkeit, eine bessere Nutzererfahrung zu gewährleisten.
 
-<img src="../images/docs/error-boundaries-stack-trace-line-numbers.png" style="max-width:100%" alt="Error caught by Error Boundary component with line numbers">
+Zum Beispiel, der Facebook Messenger umschließt den Inhalt der Seitenleiste, des Informationspanels, des Unterhaltungsverlaufs und der Nachrichteneingabe mit separaten Fehlergrenzen. Wenn eines dieser UI-Bereiche abstürzt, bleibt der Rest interaktiv.
 
-If you don’t use Create React App, you can add [this plugin](https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source) manually to your Babel configuration. Note that it’s intended only for development and **must be disabled in production**.
+Des Weiteren raten wir dir ein Fehlermonitoring-Service zu nutzen (oder dein eigenes zu implementieren), damit du über die am Live-System aufgetretenen Fehler informiert bist und diese beheben kannst.
 
-> Note
+
+## Strack-Trace von Komponenten {#component-stack-traces}
+
+React 16 gibt alle Fehlermeldungen in der Konsole aus, die im Zuge des Renderingvorgangs während der Entwicklung aufgetreten sind. Dies passiert auch dann, wenn die Applikation die Fehlermeldungen unabsichtlich unterdrückt. Zusätzlich zu den Fehlermeldungen und dem JavaScript-Stack, werden auch die Komponenten Stack-Traces ausgegeben. Somit kannst du genau sehen, wo im Komponenten-Baum der Fehler zuerst aufgetreten ist:
+
+<img src="../images/docs/error-boundaries-stack-trace.png" style="max-width:100%" alt="Fehler der durch eine Fehlregrenze-Komponente abgefangen wurde">
+
+Du kannst auch die Dateinamen und Zeilennummern im Komponenten Stack-Trace sehen. Dies funktionert standardmäßig in [Create React App](https://github.com/facebookincubator/create-react-app) Projekten:
+
+<img src="../images/docs/error-boundaries-stack-trace-line-numbers.png" style="max-width:100%" alt="Fehler der durch eine Fehlregrenze-Komponente abgefangen wurde, mit Angabe zur Zeilennummern">
+
+Wenn du Create React App nicht verwendest, kannst du [folgende Erweiterung](https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source) manuell zu deiner Babel-Konfiguration hinzufügen. Hinweis: Diese ist nur für den Einsatz während des Entwicklungsprozesses gedacht und **muss am Live-System deaktiviert werden**.
+
+> Hinweis
 >
-> Component names displayed in the stack traces depend on the [`Function.name`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name) property. If you support older browsers and devices which may not yet provide this natively (e.g. IE 11), consider including a `Function.name` polyfill in your bundled application, such as [`function.name-polyfill`](https://github.com/JamesMGreene/Function.name). Alternatively, you may explicitly set the [`displayName`](/docs/react-component.html#displayname) property on all your components.
+> Namen von Komponenten die im Stack-Trace angezeigt werden, hängen von der [`Function.name`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name) Eigenschaft ab. Wenn du ältere Browser und Endgeräte unterstützen möchtest, welche diese Eigenschaft noch nicht unterstützen (z.B. IE 11), könntest du den Einsatz eines `Function.name` Polyfills wie [`function.name-polyfill`](https://github.com/JamesMGreene/Function.name) in deiner gebündelten Applikation, in Erwägung ziehen. Alternativ, kannst du auch die [`displayName`](/docs/react-component.html#displayname) Eigenschaft explizit für alle deine Komponenten definieren.
 
 
-## How About try/catch? {#how-about-trycatch}
+## Wie sieht es mit try/catch aus? {#how-about-trycatch}
 
-`try` / `catch` is great but it only works for imperative code:
+`try` / `catch` ist großartig, funktioniert jedoch nur beim imperativen Code:
 
 ```js
 try {
@@ -116,21 +116,21 @@ try {
 }
 ```
 
-However, React components are declarative and specify *what* should be rendered:
+React-Komponenten sind deklarativ und spezifizieren *was* gerendert werden soll:
 
 ```js
 <Button />
 ```
 
-Error boundaries preserve the declarative nature of React, and behave as you would expect. For example, even if an error occurs in a `componentDidUpdate` method caused by a `setState` somewhere deep in the tree, it will still correctly propagate to the closest error boundary.
+Fehlergrenzen bewahren die deklarative Natur von React und verhalten sich so wie du es erwarten würdest. Zum Beispiel, sogar wenn ein Fehler in einer `componentDidUpdate` Methode auftritt, verursacht von einem `setState` irgendwo tief im Komponenten-Baum, wird dieser Fehler trotzdem zur nächstgelegenen Fehlergrenze weitergeleitet.
 
-## How About Event Handlers? {#how-about-event-handlers}
+## Wie sieht es mit Event-Handler aus? {#how-about-event-handlers}
 
-Error boundaries **do not** catch errors inside event handlers.
+Fehlergrenzen fangen **keine** Fehler innerhalb der Event-Handler ab.
 
-React doesn't need error boundaries to recover from errors in event handlers. Unlike the render method and lifecycle methods, the event handlers don't happen during rendering. So if they throw, React still knows what to display on the screen.
+React braucht keine Fehlergrenzen um sich von Fehlern innerhalb von Event-Handler zu erholen. Im Gegensatz zu Render- und Lifecycle-Methoden finden Event-Handler nicht während des Renderings statt. Das heißt, im Falle eines Fehlers weiß React noch immer, was angezeigt werden soll.
 
-If you need to catch an error inside event handler, use the regular JavaScript `try` / `catch` statement:
+Wenn du einen Fehler innerhalb von Event-Handler abfangen möchtest, nutze das normale `try` / `catch` JavaScript-Statement:
 
 ```js{9-13,17-20}
 class MyComponent extends React.Component {
@@ -142,7 +142,7 @@ class MyComponent extends React.Component {
 
   handleClick() {
     try {
-      // Do something that could throw
+      // Mache etwas, was zu einem Fehler führt
     } catch (error) {
       this.setState({ error });
     }
@@ -150,17 +150,17 @@ class MyComponent extends React.Component {
 
   render() {
     if (this.state.error) {
-      return <h1>Caught an error.</h1>
+      return <h1>Ein Fehler wurde abgefangen.</h1>
     }
-    return <div onClick={this.handleClick}>Click Me</div>
+    return <div onClick={this.handleClick}>Klick mich</div>
   }
 }
 ```
 
-Note that the above example is demonstrating regular JavaScript behavior and doesn't use error boundaries.
+Hinweis: Das Beispiel oben demonstriert das normale JavaScript-Verhalten und setzt keine Fehlergrenzen ein.
 
-## Naming Changes from React 15 {#naming-changes-from-react-15}
+## Änderung der Namengebung von React 15 {#naming-changes-from-react-15}
 
-React 15 included a very limited support for error boundaries under a different method name: `unstable_handleError`. This method no longer works, and you will need to change it to `componentDidCatch` in your code starting from the first 16 beta release.
+React 15 besaß einen sehr limitierten Support für Fehlergrenzen unter dem Methodennamen: `unstable_handleError`. Diese Methode funktioniert nicht mehr und muss stattdessen im Quellcode durch `componentDidCatch`, angefangen beim ersten 16 Beta-Release, ersetzt werden.
 
-For this change, we’ve provided a [codemod](https://github.com/reactjs/react-codemod#error-boundaries) to automatically migrate your code.
+Für diese Änderungen, stellen wir einen [Codemod](https://github.com/reactjs/react-codemod#error-boundaries) zur Verfügung, um die Migration in deinem Quellcode automatisch vorzunehmen.
