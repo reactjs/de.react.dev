@@ -1,29 +1,29 @@
 ---
 id: forwarding-refs
-title: Forwarding Refs
+title: Weiterleiten von Refs
 permalink: docs/forwarding-refs.html
 ---
 
-Ref forwarding is a technique for automatically passing a [ref](/docs/refs-and-the-dom.html) through a component to one of its children. This is typically not necessary for most components in the application. However, it can be useful for some kinds of components, especially in reusable component libraries. The most common scenarios are described below.
+Weiterleiten von Refs ist eine Technik für das automatische Weiterleiten einer [ref](/docs/refs-and-the-dom.html) durch eine Komponente zum einem der Kinder dieser Komponente. Dies ist des Öfteren nicht notwendig für die meisten Komponenten in der Applikation. Nichtsdestotrotz, kann es für gewisse Art von Komponenten nützlich sein, vor allem wenn es sich dabei um wiederverwendbare Komponenten-Bibliotheken handelt. Die gängisten Szenarien werden unterhalb beschrieben.
 
-## Forwarding refs to DOM components {#forwarding-refs-to-dom-components}
+## Weiterleiten von Refs zu DOM-Komponenten {#forwarding-refs-to-dom-components}
 
-Consider a `FancyButton` component that renders the native `button` DOM element:
+Stelle dir eine `FancyButton` Komponente vor, welche das native `button` DOM-Element rendert:
 `embed:forwarding-refs/fancy-button-simple.js`
 
-React components hide their implementation details, including their rendered output. Other components using `FancyButton` **usually will not need to** [obtain a ref](/docs/refs-and-the-dom.html) to the inner `button` DOM element. This is good because it prevents components from relying on each other's DOM structure too much.
+React Komponenten verbergen ihre Implemenentierungsdetails, einschließlich der gerenderten Ausgabe. Andere Komponenten die `FancyButton` benutzen, werden **in den meisten Fällen keine Notwendigkeit** für den [Abruf einer Ref](/docs/refs-and-the-dom.html) zum inneren `button` DOM-Element haben. Das ist gut so, da dies eine zu starke Abhängigkeit unter den Komponenten auf die gegenseitige DOM-Struktur verhindert.
 
-Although such encapsulation is desirable for application-level components like `FeedStory` or `Comment`, it can be inconvenient for highly reusable "leaf" components like `FancyButton` or `MyTextInput`. These components tend to be used throughout the application in a similar manner as a regular DOM `button` and `input`, and accessing their DOM nodes may be unavoidable for managing focus, selection, or animations.
+Trotz der Tatsache, dass solch eine Kapselung für Komponenten in der Anwendungsebene wie `FeedStory` oder `Comment` erwünscht ist, kann dies für "Blatt-Komponenten" mit hoher Wiederverwendbarkeit wie `FancyButton` oder `MyTextInput` unpraktisch sein. Diese Komponenten werden oft in der ganzen Anwendung als reguläre DOM `button` und `input` auf ähnliche Weise eingesetzt und der Zugriff auf dessen DOM-Knoten könnte für die Regelung von Fokus, Auswahl oder Animationen unvermeidlich sein.
 
-**Ref forwarding is an opt-in feature that lets some components take a `ref` they receive, and pass it further down (in other words, "forward" it) to a child.**
+**Ref Weiterleitung ist ein Opt-In Feature, welches manchen Komponenten die Möglichkeit bereitstellt, eine erhaltene `ref` weiter nach unten zu einem Kind durchzulassen (in anderen Worten, "weiterleiten").**
 
-In the example below, `FancyButton` uses `React.forwardRef` to obtain the `ref` passed to it, and then forward it to the DOM `button` that it renders:
+Im unteren Beispiel benutzt `FancyButton` `React.forwardRef`, um die übermittelte `ref` abzurufen und diese dann an den gerenderten DOM `button` zu weiterleiten.
 
 `embed:forwarding-refs/fancy-button-simple-ref.js`
 
-This way, components using `FancyButton` can get a ref to the underlying `button` DOM node and access it if necessary—just like if they used a DOM `button` directly.
+In diesem Fall, können die Komponenten die `FancyButton` nutzen, das Ref zum unterliegenden `button` DOM-Knoten abrufen und dies bei bedarf nutzen—so als ob sie direkt auf den DOM `button` zugreifen würden.
 
-Here is a step-by-step explanation of what happens in the above example:
+Hier ist eine Schritt für Schritt erklärung was im oberen Beispiel passiert:
 
 1. We create a [React ref](/docs/refs-and-the-dom.html) by calling `React.createRef` and assign it to a `ref` variable.
 1. We pass our `ref` down to `<FancyButton ref={ref}>` by specifying it as a JSX attribute.
