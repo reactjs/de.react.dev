@@ -47,11 +47,7 @@ Du kannst React innerhalb einer Minute zu einer HTML-Seite hinzufügen. Danach k
 
 ### Erstelle eine neue React App {#create-a-new-react-app}
 
-<<<<<<< HEAD
 Am Besten fängst du ein neues React-Projekt mit [einer einfachen HTML Seite und ein paar Script-Tags an](/docs/add-react-to-a-website.html). Innerhalb einer Minute hast du alles fertig aufgesetzt!
-=======
-When starting a React project, a [simple HTML page with script tags](/docs/add-react-to-a-website.html) might still be the best option. It only takes a minute to set up!
->>>>>>> d2ade76cce133af47ab198188fa2de03fa51834b
 
 Sobald jedoch deine Anwendung wächst, solltest du ein fertiges Setup verwenden. Es gibt eine Menge vorhandener [JavaScript Werzeuge](/docs/create-a-new-react-app.html) die wir für größere Anwendungen empfehlen.
 Jedes von ihnen kommt mit wenig bis garkeiner Vorkonfiguration aus und lässt dich trotzdem den vollen Funktionsumfang des React-Ökosystems genießen.
@@ -128,11 +124,7 @@ Der [React Blog](/blog/) ist die offizielle Quelle für Neuigkeiten des React-Te
 
 Du kannst auch unserem Account, [@reactjs](https://twitter.com/reactjs), auf Twitter folgen. Du würdest aber nichts wichtiges verpassen, wenn du nur den Blog liest.
 
-<<<<<<< HEAD
-Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst aber eine detailierte Liste aller Änderung in der [CHANGELOG.md, im React Repository finden](https://github.com/facebook/react/blob/master/CHANGELOG.md), genauso wie auf der [Releases Seite](https://github.com/facebook/react/releases).
-=======
-Not every React release deserves its own blog post, but you can find a detailed changelog for every release in the [`CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/master/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react/releases) page.
->>>>>>> d2ade76cce133af47ab198188fa2de03fa51834b
+Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst aber eine detailierte Liste aller Änderungen in der [CHANGELOG.md, im React Repository finden](https://github.com/facebook/react/blob/master/CHANGELOG.md), genauso wie auf der [Releases-Seite](https://github.com/facebook/react/releases).
 
 ## Versionierte Dokumentation {#versioned-documentation}
 
