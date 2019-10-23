@@ -1,17 +1,13 @@
 ---
 id: code-splitting
-title: Code-Splitting
+title: Code-Aufteilung
 permalink: docs/code-splitting.html
 ---
 
 ## Bundling {#bundling}
 
-Most React apps will have their files "bundled" using tools like
-[Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) or
-[Browserify](http://browserify.org/).
-Bundling is the process of following imported files and merging them into a
-single file: a "bundle". This bundle can then be included on a webpage to load
-an entire app at once.
+Die meisten React Anwendungen haben ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammenführen lassen.
+Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bündel kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.
 
 #### Beispiel {#example}
 
@@ -31,7 +27,7 @@ export function add(a, b) {
 }
 ```
 
-**Bundle:**
+**Bündel:**
 
 ```js
 function add(a, b) {
@@ -78,7 +74,7 @@ of code needed during the initial load.
 The best way to introduce code-splitting into your app is through the dynamic
 `import()` syntax.
 
-**Before:**
+**Vorher:**
 
 ```js
 import { add } from './math';
@@ -86,7 +82,7 @@ import { add } from './math';
 console.log(add(16, 26));
 ```
 
-**After:**
+**Nachher:**
 
 ```js
 import("./math").then(math => {
