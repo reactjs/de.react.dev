@@ -3,8 +3,7 @@ id: forwarding-refs
 title: Weiterleiten von Refs
 permalink: docs/forwarding-refs.html
 ---
-
-Weiterleiten von Refs ist eine Technik für das automatische Weiterleiten einer [Ref](/docs/refs-and-the-dom.html) durch eine Komponente zu einem der Kinder dieser Komponente. Normalerweise besteht für die meisten Komponenten innerhalb einer Anwendung kein Bedarf dafür. Nichtsdestotrotz, kann es für gewisse Art von Komponenten nützlich sein, vor allem wenn es sich dabei um wiederverwendbare Komponenten-Bibliotheken handelt. Die gängigsten Szenarien werden unterhalb beschrieben.
+Weiterleiten von Refs ist eine Technik für die automatische Übergabe einer [Ref](/docs/refs-and-the-dom.html) durch eine Komponente an eines seiner Kinder. Normalerweise besteht für die meisten Komponenten innerhalb einer Anwendung kein Bedarf dafür. Nichtsdestotrotz, kann es für gewisse Arten von Komponenten nützlich sein, vor allem wenn es sich dabei um wiederverwendbare Komponenten-Bibliotheken handelt. Die gängigsten Szenarien werden unterhalb beschrieben.
 
 ## Weiterleiten von Refs zu DOM-Komponenten {#forwarding-refs-to-dom-components}
 
