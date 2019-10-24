@@ -4,14 +4,14 @@ title: Fehlergrenzen
 permalink: docs/error-boundaries.html
 ---
 
-In der Vergangenheit, führten JavaScript-Fehler in Komponenten zu einem fehlerhaften Zustand innerhalb von React, welcher ein [Auftreten](https://github.com/facebook/react/issues/4026) [kryptischer](https://github.com/facebook/react/issues/6895) [Fehlermeldungen](https://github.com/facebook/react/issues/8579) in den folgenden Render-Vorgängen verursachte. Diese Fehler wurden immer von einem zuvor aufgetretenen Fehler in der Anwendung verursacht, jedoch war seitens React keine Möglichkeit bereitgestellt, um auf diese Fehler innerhalb der Komponenten zu reagieren und sich von diesen zu erholen.
+In der Vergangenheit, führten JavaScript-Fehler in Komponenten zu einem fehlerhaften Zustand innerhalb von React, welcher ein [Auftreten](https://github.com/facebook/react/issues/4026) [kryptischer](https://github.com/facebook/react/issues/6895) [Fehlermeldungen](https://github.com/facebook/react/issues/8579) in den folgenden Render-Vorgängen verursachte. Diese Fehler wurden immer von einem zuvor aufgetretenen Fehler in der Anwendung verursacht, jedoch war seitens React keine Möglichkeit bereitgestellt, um mit Fehlern in Komponenten elegant umzugehen.
 
 
 ## Einführung zu Fehlergrenzen {#introducing-error-boundaries}
 
 Ein JavaScript-Fehler in einem Teil der UI sollte nicht die ganze Anwendung zerstören. Um eine Lösung für dieses Problem bereitzustellen, wurde mit React 16 das Konzept einer "Fehlergrenze" vorgestellt.
 
-Fehlergrenzen sind React-Komponenten die **JavaScript-Fehler im ihrem ganzen Kind-Komponenten Baum abfangen, diese loggen und eine Fallback-UI**, anstatt eines zerstörten Komponenten-Baums anzeigen. Fehlergrenzen fangen Fehler während des Renderings, in Lifecycle-Methoden und in Konstruktoren des ganzen Komponenten-Baums darunter.
+Fehlergrenzen sind React-Komponenten die **JavaScript-Fehler in ihrem ganzen Kind-Komponenten Baum abfangen, diese loggen und eine Fallback-UI**, anstatt eines zerstörten Komponenten-Baums anzeigen. Fehlergrenzen fangen Fehler während des Renderings, in Lifecycle-Methoden und in Konstruktoren des ganzen Komponenten-Baums darunter.
 
 > Hinweis
 >
