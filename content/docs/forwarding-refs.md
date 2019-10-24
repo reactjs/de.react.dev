@@ -45,13 +45,13 @@ Bedingte Anwendung von `React.forwardRef` bei Vorhandensein, ist ebenso aus den 
 
 ## Weiterleiten von Refs in Higher-Order-Komponenten {#forwarding-refs-in-higher-order-components}
 
-Diese Technik kann besonders in Verbindung mit [Higher-Order-Komponenten](/docs/higher-order-components.html) (auch bekannt als HOK) nützlich sein. Beginnen wir mit einer Beispiel-HOK, welche die Eigenschaften einer Komponente in die Konsole loggt:
+Diese Technik kann besonders in Verbindung mit [Higher-Order-Komponenten](/docs/higher-order-components.html) (auch bekannt als HOC) nützlich sein. Beginnen wir mit einer Beispiel-HOC, welche die Eigenschaften einer Komponente in die Konsole loggt:
 `embed:forwarding-refs/log-props-before.js`
 
-Die "logProps" HOK gibt alle `props` an die Komponente durch, die von ihr umschlossen wird, aus diesem Grund wird die gerenderte Ausgabe gleich sein. Wir können zum Beispiel diese HOK nutzen, um alle Eigenschaften zu loggen, die an unsere "fancy button" Komponente weitergegeben werden:
+Die "logProps" HOC gibt alle `props` an die Komponente durch, die von ihr umschlossen wird, aus diesem Grund wird die gerenderte Ausgabe gleich sein. Wir können zum Beispiel diese HOC nutzen, um alle Eigenschaften zu loggen, die an unsere "fancy button" Komponente weitergegeben werden:
 `embed:forwarding-refs/fancy-button.js`
 
-Folgendes muss im oberen Beispiel beachtet werden: es werden keine Refs weitergegeben. Das ist der Tatsache zu entnehmen, dass `ref` keine Eigenschaft ist. Ähnlich dem `key`, wird es anders von React behandelt. Wenn du eine Ref zu einer HOK hinzufügst, wird diese die äußerste Container-Komponente und nicht die umschlossene Komponente referenzieren.
+Folgendes muss im oberen Beispiel beachtet werden: es werden keine Refs weitergegeben. Das ist der Tatsache zu entnehmen, dass `ref` keine Eigenschaft ist. Ähnlich dem `key`, wird es anders von React behandelt. Wenn du eine Ref zu einer HOC hinzufügst, wird diese die äußerste Container-Komponente und nicht die umschlossene Komponente referenzieren.
 
 Dies bedeutet, dass Refs die für unsere `FancyButton` Komponente bestimmt waren, eigentlich der `LogProps` Komponente zugewiesen sein werden:
 `embed:forwarding-refs/fancy-button-ref.js`
