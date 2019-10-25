@@ -3,11 +3,11 @@ title: Unknown Prop Warning
 layout: single
 permalink: warnings/unknown-prop.html
 ---
-Die Warnung `unknown-prop` wird ausgelöst, wenn du versuchst, ein DOM-Element zu rendern. du solltest sicherstellen, dass Ihre DOM-Elemente keine herumschwebenden Sporenstützen haben.
+Die Warnung `unknown-prop` wird ausgelöst, wenn du versuchst, ein DOM-Element zu rendern. du solltest sicherstellen, dass deine DOM-Elemente keine herumschwebenden Sporenstützen haben.
 
 Es gibt einige wahrscheinliche Gründe, warum diese Warnung angezeigt werden könnte:
 
-1. Verwendest du `{...this.props}` oder `cloneElement(element, this.props)`? Ihre Komponente überträgt ihre eigenen Requisiten direkt auf ein untergeordnetes Element (eg. [transferring props](/docs/transferring-props.html)). Wenn du Requisiten an eine untergeordnete Komponente übertragst, solltest du sicherstellen, dass du nicht versehentlich Requisiten weiterleitest, die von der übergeordneten Komponente interpretiert werden sollen.
+1. Verwendest du `{...this.props}` oder `cloneElement(element, this.props)`? Deine Komponente überträgt deine eigenen Requisiten direkt auf ein untergeordnetes Element (eg. [transferring props](/docs/transferring-props.html)). Wenn du Requisiten an eine untergeordnete Komponente übertragst, solltest du sicherstellen, dass du nicht versehentlich Requisiten weiterleitest, die von der übergeordneten Komponente interpretiert werden sollen.
 
 2. Du verwendest ein nicht standardmäßiges DOM-Attribut auf einem nativen DOM-Knoten, um möglicherweise benutzerdefinierte Daten darzustellen. Wenn du versuchst, benutzerdefinierte Daten an ein Standard-DOM-Element anzuhängen, solltest du ein benutzerdefiniertes Datenattribut verwenden, wie [im MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes) beschrieben.
 
