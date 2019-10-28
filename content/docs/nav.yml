@@ -8,13 +8,9 @@
       title: Erstelle eine React-App
     - id: cdn-links
       title: CDN Links
-<<<<<<< HEAD
-- title: Hauptkonzepte
-=======
     - id: release-channels
-      title: Release Channels
-- title: Main Concepts
->>>>>>> 081bb31226919062938ef924472ba1b4170facfc
+      title: Release Kanäle
+- title: Hauptkonzepte
   isOrdered: true
   items:
     - id: hello-world
