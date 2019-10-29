@@ -149,7 +149,7 @@
     - id: concurrent-mode-reference
       title: Concurrent Mode API Reference
 - title: Mithelfen
-    items:
+  items:
     - id: how-to-contribute
       title: Wie man mithilft
     - id: codebase-overview
