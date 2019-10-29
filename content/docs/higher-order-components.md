@@ -1,22 +1,22 @@
 ---
 id: higher-order-components
-title: Higher-Order Components
+title: Higher-Order-Komponenten
 permalink: docs/higher-order-components.html
 ---
 
-A higher-order component (HOC) is an advanced technique in React for reusing component logic. HOCs are not part of the React API, per se. They are a pattern that emerges from React's compositional nature.
+Eine Higher-Order-Komponente (HOC) ist eine fortgeschrittene Vorgehensweise für Wiederverwendung der Komponentenlogik in React. HOCs sind kein Teil der React API an sich. Sie sind ein Pattern welches sich aus der Kompositionseigenschaft von React ergibt.
 
-Concretely, **a higher-order component is a function that takes a component and returns a new component.**
+Konkret, **eine Higher-Order-Komponente ist eine Funktion, die eine Komponente übernimmt und eine neue Komponente zurückgibt.**
 
 ```js
 const EnhancedComponent = higherOrderComponent(WrappedComponent);
 ```
 
-Whereas a component transforms props into UI, a higher-order component transforms a component into another component.
+Während eine Komponente alle Props in UI umwandelt, wandelt die Higher-Order-Komponente eine Komponente in eine andere Komponente um.
 
-HOCs are common in third-party React libraries, such as Redux's [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) and Relay's [`createFragmentContainer`](http://facebook.github.io/relay/docs/en/fragment-container.html).
+HOCs sind häufig in React-Bibliotheken von Drittanbietern anzutrefen, als Beispiele dafür könnten [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) von Redux und das [`createFragmentContainer`](http://facebook.github.io/relay/docs/en/fragment-container.html) von Relay herangeführt werden.
 
-In this document, we'll discuss why higher-order components are useful, and how to write your own.
+In diesem Dokument, werden wir erörtern, warum Higher-Order-Komponenten nützlich sind und wie du deine eigene schreiben kannst.
 
 ## Use HOCs For Cross-Cutting Concerns {#use-hocs-for-cross-cutting-concerns}
 
