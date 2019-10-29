@@ -51,7 +51,7 @@ class MyComponent extends React.Component {
           });
         },
         // Hinweis: Es ist wichtig, Fehler hier zu behandeln
-        // anstatt im einem catch-Block, damit wir Exceptions von
+        // anstatt im einem catch()-Block, damit wir Exceptions von
         // echten Bugs in der Komponente unterscheiden können.
         (error) => {
           this.setState({
