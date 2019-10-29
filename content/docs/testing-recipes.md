@@ -1,6 +1,6 @@
 ---
 id: testing-recipes
-title: Testing Recipes
+title: Testing-Rezepte
 permalink: docs/testing-recipes.html
 prev: testing.html
 next: testing-environments.html
