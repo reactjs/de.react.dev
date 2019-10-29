@@ -12,7 +12,7 @@ Du kannst jede AJAX-Bibliothek mit React verwenden. Beliebte Bibliotheken sind [
 
 ### Wann im Komponenten-Lifecycle sollte ich einen AJAX-Aufruf machen? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
 
-Du solltest Daten mit AJAX-Aufrufen in der [`componentDidMount`](/docs/react-component.html#mounting) Lifecycle-Methode laden. So kannst Du `setState` verwenden, um Deine Komponente zu aktualisieren, sobald Daten geladen wurden.
+Du solltest Daten mit AJAX-Aufrufen in der [`componentDidMount`](/docs/react-component.html#mounting) Lifecycle-Methode laden. So kannst Du `setState` verwenden, um deine Komponente zu aktualisieren, sobald Daten geladen wurden.
 
 ### Beispiel: AJAX-Ergebnisse verwenden, um lokalen State zu setzen {#example-using-ajax-results-to-set-local-state}
 
