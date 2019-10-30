@@ -24,14 +24,14 @@ Dies bedeutet normalerweise eines von drei Dingen:
 
 ## Refs auf Funktionskomponenten {#refs-on-function-components}
 
-Wenn `<Foo>` eine Funktionskomponente ist, kannst du keine `ref` hinzufügen:
+Wenn `<Foo>` eine Funktionskomponente ist, kannst du kein `ref` hinzufügen:
 
 ```js
 // Doesn't work if Foo is a function!
 <Foo ref={foo} />
 ```
 
-Wenn du einer Komponente einen `ref` hinzufügen musst, konvertierst du ihn zuerst in eine Klasse, oder verwendest du keine `ref`, da diese [selten erforderlich](/docs/refs-and-the-dom.html#when-to-use-refs) sind.
+Wenn du einer Komponente einen `ref` hinzufügen musst, konvertierst du ihn zuerst in eine Klasse, oder verwendest du kein `ref`, da diese [selten erforderlich](/docs/refs-and-the-dom.html#when-to-use-refs) sind.
 
 ## Zeichenfolgenreferenzen außerhalb der Rendermethode {#strings-refs-outside-the-render-method}
 
