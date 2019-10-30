@@ -3,7 +3,7 @@ title: Unknown Prop Warning
 layout: single
 permalink: warnings/unknown-prop.html
 ---
-Die Warnung `unknown-prop` wird ausgelöst, wenn du versuchst, ein DOM-Element zu rendern. du solltest sicherstellen, dass deine DOM-Elemente keine herumschwebenden Sporenstützen haben.
+Die Warnung `unknown-prop` wird ausgelöst, wenn du versuchst, ein DOM-Element mit einem Prop zu rendern, welches nicht von React als gültiges DOM-Attribut/Eigenschaft erkannt wird. Du solltest sicherstellen, dass deine DOM-Elemente keine falschen Props haben, die umherfliegen.
 
 Es gibt einige wahrscheinliche Gründe, warum diese Warnung angezeigt werden könnte:
 
