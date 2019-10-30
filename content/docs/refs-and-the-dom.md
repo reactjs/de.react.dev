@@ -23,7 +23,7 @@ Es gibt einige gute Anwendungsfälle für Refs:
 * Imperative Animationen auslösen.
 * Integration in DOM-Bibliotheken von Drittanbietern.
 
-Vermeiden Sie die Verwendung von Refs für alles, was deklarativ durchgeführt werden kann.
+Vermeide die Verwendung von Refs für alles, was deklarativ durchgeführt werden kann.
 
 Anstatt beispielsweise die Methoden `open ()` und `close ()` in einer `Dialog` -Komponente verfügbar zu machen, übergebe ihr eine` isOpen`-Prop.
 
@@ -33,7 +33,7 @@ Deine erste Neigung könnte sein, Refs zu verwenden, um Dinge in deier App "gesc
 
 > Hinweis
 >
-> Die folgenden Beispiele wurden aktualisiert, um die in React 16.3 eingeführte API `React.createRef()` zu verwenden. Wenn Sie eine frühere Version von React verwenden, empfehlen wir stattdessen die Verwendung von [callback Refs](#callback-refs).
+> Die folgenden Beispiele wurden aktualisiert, um die in React 16.3 eingeführte API `React.createRef()` zu verwenden. Wenn du eine frühere Version von React verwendest, empfehlen wir stattdessen die Verwendung von [callback Refs](#callback-refs).
 
 ### Refs erstellen {#creating-refs}
 
@@ -130,7 +130,7 @@ class AutoFocusTextInput extends React.Component {
 }
 ```
 
-Beachten Sie, dass dies nur funktioniert, wenn `CustomTextInput` als Klasse deklariert ist:
+Beachte, dass dies nur funktioniert, wenn `CustomTextInput` als Klasse deklariert ist:
 
 ```js{1}
 class CustomTextInput extends React.Component {
