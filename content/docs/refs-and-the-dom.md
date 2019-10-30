@@ -75,20 +75,20 @@ Dieser Code verwendet ein `ref`, um einen Verweis auf einen DOM-Knoten zu speich
 class CustomTextInput extends React.Component {
   constructor(props) {
     super(props);
-    // create a ref to store the textInput DOM element
+    // Erstelle ein Ref zum Speichern des textInput-DOM-Elements
     this.textInput = React.createRef();
     this.focusTextInput = this.focusTextInput.bind(this);
   }
 
   focusTextInput() {
-    // Explicitly focus the text input using the raw DOM API
-    // Note: we're accessing "current" to get the DOM node
+    // Fokussiere die Texteingabe explizit mit der Raw-DOM-API
+    // inweis: Wir greifen auf "current" zu, um den DOM-Knoten zu erhalten
     this.textInput.current.focus();
   }
 
   render() {
-    // tell React that we want to associate the <input> ref
-    // with the `textInput` that we created in the constructor
+    // Sage, dass wir den <input>-Ref mit dem im Konstruktor
+    // erstellten `textInput` verknüpfen möchten
     return (
       <div>
         <input
@@ -153,7 +153,7 @@ class Parent extends React.Component {
     this.textInput = React.createRef();
   }
   render() {
-    // This will *not* work!
+    // Das wird *nicht* funktionieren!
     return (
       <MyFunctionComponent ref={this.textInput} />
     );
@@ -167,7 +167,7 @@ Du kannst jedoch **das Attribut `ref` in einer Funktionskomponente verwenden**, 
 
 ```javascript{2,3,6,13}
 function CustomTextInput(props) {
-  // textInput must be declared here so the ref can refer to it
+  // Hier muss textInput deklariert werden, damit der Verweis darauf verweisen kann
   let textInput = React.createRef();
 
   function handleClick() {
@@ -221,19 +221,20 @@ class CustomTextInput extends React.Component {
     };
 
     this.focusTextInput = () => {
-      // Focus the text input using the raw DOM API
+      // Fokussiere die Texteingabe mithilfe der DOM-API
       if (this.textInput) this.textInput.focus();
     };
   }
 
   componentDidMount() {
-    // autofocus the input on mount
+    // Autofokussiere den Eingang auf Mount
     this.focusTextInput();
   }
 
   render() {
-    // Use the `ref` callback to store a reference to the text input DOM
-    // element in an instance field (for example, this.textInput).
+    // Verwenden Sie den `ref` Callback, um einen Verweis auf das
+    // Texteingabe-DOM-Element in einem Instanzfeld (z. B. this.textInput)
+    // zu speichern.
     return (
       <div>
         <input
