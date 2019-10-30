@@ -19,7 +19,7 @@ In einer typischen React-Applikation werden Daten von oben herab (Elternkomponet
 - [Beispiele](#examples)
   - [Dynamischer Context](#dynamic-context)
   - [Updaten des Contextes von einer genesteten Komponente](#updating-context-from-a-nested-component)
-  - [Konsumieren mehrerer Contexten](#consuming-multiple-contexts)
+  - [Konsumieren mehrerer Contexte](#consuming-multiple-contexts)
 - [Fallen](#caveats)
 - [Legacy API](#legacy-api)
 
