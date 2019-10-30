@@ -1,54 +1,53 @@
 ---
 id: react-without-es6
-title: React Without ES6
+title: React ohne ES6
 permalink: docs/react-without-es6.html
 ---
 
-Normally you would define a React component as a plain JavaScript class:
+Normalerweise definiere eine React-Komponente als einfache JavaScript-Klasse:
 
 ```javascript
-class Greeting extends React.Component {
+class Gruss extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}</h1>;
   }
 }
 ```
 
-If you don't use ES6 yet, you may use the `create-react-class` module instead:
-
+Wenn du ES6 noch nicht verwende, kannst du stattdessen das Modul `create-react-class` verwenden:
 
 ```javascript
 var createReactClass = require('create-react-class');
-var Greeting = createReactClass({
+var Gruss = createReactClass({
   render: function() {
     return <h1>Hello, {this.props.name}</h1>;
   }
 });
 ```
 
-The API of ES6 classes is similar to `createReactClass()` with a few exceptions.
+Die API von ES6-Klassen ähnelt mit wenigen Ausnahmen der von `createReactClass()`.
 
-## Declaring Default Props {#declaring-default-props}
+## Default-Props deklarieren {#declaring-default-props}
 
-With functions and ES6 classes `defaultProps` is defined as a property on the component itself:
+Mit Funktionen und ES6-Klassen wird `defaultProps` als Eigenschaft für die Komponente selbst definiert:
 
 ```javascript
-class Greeting extends React.Component {
+class Gruss extends React.Component {
   // ...
 }
 
-Greeting.defaultProps = {
-  name: 'Mary'
+Gruss.defaultProps = {
+  name: 'Maria'
 };
 ```
 
-With `createReactClass()`, you need to define `getDefaultProps()` as a function on the passed object:
+Mit `createReactClass()` musst du `getDefaultProps()` als Funktion für das übergebene Objekt definieren:
 
 ```javascript
-var Greeting = createReactClass({
+var Gruss = createReactClass({
   getDefaultProps: function() {
     return {
-      name: 'Mary'
+      name: 'Maria'
     };
   },
 
@@ -57,8 +56,9 @@ var Greeting = createReactClass({
 });
 ```
 
-## Setting the Initial State {#setting-the-initial-state}
+## Anfangs-State einstellen {#setting-the-initial-state}
 
+In ES6-Klassen kannst du den Anfangs-State definieren, indem Sie im Konstruktor `this.state` zuweisen:
 In ES6 classes, you can define the initial state by assigning `this.state` in the constructor:
 
 ```javascript
