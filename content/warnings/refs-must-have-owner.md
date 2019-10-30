@@ -58,6 +58,6 @@ ReactDOM.render(
 
 ## Mehrere Kopien von React {#multiple-copies-of-react}
 
-Bower leistet gute Arbeit bei der Deduplizierung von Abhängigkeiten, npm jedoch nicht. Wenn du mit `ref` nichts (Lustiges) machst, liegt das Problem wahrscheinlich nicht an deinen `ref`, sondern eher daran, dass mehrere Kopien von React in dein Projekt geladen wurden. Wenn du ein Modul eines Drittanbieters über npm aufrufst, erhaltest du manchmal eine doppelte Kopie der Abhängigkeitsbibliothek, was zu Problemen führen kann.
+Bower leistet gute Arbeit bei der Deduplizierung von Abhängigkeiten, npm jedoch nicht. Wenn du mit `ref` nichts (Ausgefallenes) machst, liegt das Problem wahrscheinlich nicht an deinen `ref`, sondern eher daran, dass mehrere Kopien von React in dein Projekt geladen wurden. Wenn du ein Modul eines Drittanbieters über npm aufrufst, erhältst du manchmal eine doppelte Kopie der Abhängigkeitsbibliothek, was zu Problemen führen kann.
 
 Wenn du npm verwendest, kann `npm ls` oder `npm ls react` zum Aufleuchten beitragen.
