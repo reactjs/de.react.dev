@@ -25,7 +25,7 @@ In einer typischen React-Anwendung werden Daten top-down (Elternkomponente zurKi
 
 ## Wann Context verwendet werden soll {#when-to-use-context}
 
-Context wurde entwickelt, um Daten zu teilen, welche für einen Baum von React Komponenten als "global" bezeichnet werden können, zum Beispiel der aktelle authentifizierter Nutzer, das Theme oder die bevorzugte Sprache. In dem unten angeführten Codebeispiel zum Beispiel, ziehen wir ein Theme Prop manuell durch den Code, um die Button-Komponente zu stylen:
+Context wurde entwickelt, um Daten zu teilen, welche für einen Baum von React Komponenten als "global" bezeichnet werden können, zum Beispiel der aktuelle authentifizierte Nutzer, das Theme oder die bevorzugte Sprache. In dem unten angeführten Codebeispiel, leiten wir ein Theme Prop manuell durch den Code, um die Button-Komponente zu stylen:
 
 `embed:context/motivation-problem.js`
 
