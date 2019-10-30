@@ -163,7 +163,7 @@ class Parent extends React.Component {
 
 Du solltest die Komponente in eine Klasse konvertieren, wenn du einen Ref darauf benötigst, genau wie du es tust, wenn du Lebenszyklusmethoden oder -zustände benötigst.
 
-Du kann jedoch **das Attribut `ref` in einer Funktionskomponente verwenden**, solange du auf ein DOM-Element oder eine Klassenkomponente verweist:
+Du kannst jedoch **das Attribut `ref` in einer Funktionskomponente verwenden**, solange du auf ein DOM-Element oder eine Klassenkomponente verweist:
 
 ```javascript{2,3,6,13}
 function CustomTextInput(props) {
@@ -197,13 +197,13 @@ Du könntest zwar [Hinzufügen eines Ref zu einer Klassenkomponente](#adding-a-r
 
 Wenn du React 16.3 oder höher verwendest, empfehlen wir in diesen Fällen die Verwendung von [Weiterleiten von Refs](/docs/forwarding-refs.html). **Mit der Weiterleitung von Refs können Komponenten festlegen, dass der Ref jeder untergeordneten Komponente als ihr eigener angezeigt wird**. Ein detailliertes Beispiel, wie der DOM-Knoten eine untergeordnete Komponente für eine übergeordnete Komponente verfügbar gemacht wird, findest du [in der Dokumentation zur Weiterleiten von Refs](/docs/forwarding-refs.html#forwarding-refs-to-dom-components).
 
-Wenn du React 16.2 oder eine niedrigere Version verwendest oder mehr Flexibilität benötigst, als durch die Weiterleiten von Refs bereitgestellt wird, kann du [diesen alternativen Ansatz](https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509) verwenden und einen Ref explizit als übergeben anders benanntes Prop.
+Wenn du React 16.2 oder eine niedrigere Version verwendest oder mehr Flexibilität benötigst, als durch die Weiterleiten von Refs bereitgestellt wird, kannst du [diesen alternativen Ansatz](https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509) verwenden und einen Ref explizit als übergeben anders benanntes Prop.
 
-Wenn möglich, raten wir davon ab, DOM-Knoten freizulegen, dies kann jedoch eine nützliche Notluke sein. Beachte, dass du bei diesem Ansatz der untergeordneten Komponente Code hinzufügen musst. Wenn du absolut keine Kontrolle über die Implementierung der untergeordneten Komponente hast, kann du als letzte Option [`findDOMNode ()`](/docs/react-dom.html#finddomnode) verwenden, dies wird jedoch in [`StrictMode`](/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage) nicht empfohlen und ist veraltet.
+Wenn möglich, raten wir davon ab, DOM-Knoten freizulegen, dies kann jedoch eine nützliche Notluke sein. Beachte, dass du bei diesem Ansatz der untergeordneten Komponente Code hinzufügen musst. Wenn du absolut keine Kontrolle über die Implementierung der untergeordneten Komponente hast, kannst du als letzte Option [`findDOMNode ()`](/docs/react-dom.html#finddomnode) verwenden, dies wird jedoch in [`StrictMode`](/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage) nicht empfohlen und ist veraltet.
 
 ### Callback Refs {#callback-refs}
 
-React unterstützt auch eine andere Methode zum Festlegen von Refs mit der Bezeichnung "Callback Refs", mit der du genauer steuern kann, wann Refs festgelegt und deaktiviert werden.
+React unterstützt auch eine andere Methode zum Festlegen von Refs mit der Bezeichnung "Callback Refs", mit der du genauer steuern kannst, wann Refs festgelegt und deaktiviert werden.
 
 Anstatt ein von `createRef()` erzeugtes `ref`-Attribut zu übergeben, übergebe eine Funktion. Die Funktion erhält als Argument die Instanz der React-Komponente oder das HTML-DOM-Element, auf das an anderer Stelle zugegriffen werden kann.
 
@@ -253,7 +253,7 @@ class CustomTextInput extends React.Component {
 
 React ruft den Rückruf `ref` mit dem DOM-Element auf, wenn die Komponente bereitgestellt wird, und ruft ihn mit `null` auf, wenn die Bereitstellung aufgehoben wird. Refs sind garantiert auf dem neuesten Stand, bevor `componentDidMount` oder `componentDidUpdate` ausgelöst werden.
 
-Du kann callback Refs zwischen Komponenten übergeben, wie du es mit Objektreferenzen kann, die mit `React.createRef()` erstellt wurden.
+Du kannst callback Refs zwischen Komponenten übergeben, wie du es mit Objektreferenzen kannst, die mit `React.createRef()` erstellt wurden.
 
 ```javascript{4,13}
 function CustomTextInput(props) {
