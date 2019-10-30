@@ -31,7 +31,7 @@ Wenn `<Foo>` eine Funktionskomponente ist, kannst du kein `ref` hinzufügen:
 <Foo ref={foo} />
 ```
 
-Wenn du einer Komponente einen `ref` hinzufügen musst, konvertierst du ihn zuerst in eine Klasse, oder verwendest du kein `ref`, da diese [selten erforderlich](/docs/refs-and-the-dom.html#when-to-use-refs) sind.
+Wenn du einer Komponente einen `ref` hinzufügen musst, konvertiere ihn zuerst in eine Klasse, oder verwende kein `ref`, da diese [selten erforderlich](/docs/refs-and-the-dom.html#when-to-use-refs) sind.
 
 ## Zeichenfolgenreferenzen außerhalb der Rendermethode {#strings-refs-outside-the-render-method}
 
