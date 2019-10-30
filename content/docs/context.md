@@ -35,7 +35,7 @@ Mit der Verwendung von Context können wir das Übergeben der Props durch Zwisch
 
 ## Bevor du Context verwendest {#before-you-use-context}
 
-Context wird hauptsächlich verwendet, wenn Daten von *vielen* Komponenten in verschiedenen genesteten Schichten erreichbar sein müssen. Benütze es sparsam, weil es das Wiederverwenden von Komponenten schwieriger macht.
+Context wird hauptsächlich verwendet, wenn Daten von *vielen* Komponenten in verschiedenen genesteten Schichten erreichbar sein müssen. Benutze es sparsam, weil es das Wiederverwenden von Komponenten schwieriger macht.
 
 **Wenn du nur das Übergeben von Props durch mehrere Schichten verhindern möchtest, ist [Komponenten-Komposition](/docs/composition-vs-inheritance.html) oft die bessere Lösung als Context.**
 
