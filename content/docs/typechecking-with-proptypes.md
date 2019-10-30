@@ -30,7 +30,7 @@ Greeting.propTypes = {
 };
 ```
 
-`PropTypes` exportiert eine Reihe von Prüfern, die verwendet werden können, um sicherzustellen, dass die Daten, die Sie erhalten, gültig sind. In diesem Beispiel verwenden wir `PropTypes.string`. Wenn ein ungültiger Wert für einen Prop angegeben wird, wird eine Warnung in der JavaScript-Konsole angezeigt. Aus Performance-Gründen wird `propTypes` nur im Entwicklungsmodus geprüft.
+`PropTypes` exportiert eine Reihe von Prüfern, die verwendet werden können, um sicherzustellen, dass die Daten, die du erhältst, gültig sind. In diesem Beispiel verwenden wir `PropTypes.string`. Wenn ein ungültiger Wert für einen Prop angegeben wird, wird eine Warnung in der JavaScript-Konsole angezeigt. Aus Performance-Gründen wird `propTypes` nur im Entwicklungsmodus geprüft.
 
 ### PropTypes {#proptypes}
 
@@ -178,7 +178,7 @@ ReactDOM.render(
 );
 ```
 
-Wenn du eine Babel-Transformation wie [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/) verwendest, kannst du auch `defaultProps` als statische Eigenschaft innerhalb einer React-Komponentenklasse deklarieren. Diese Syntax ist jedoch noch nicht finalisiert und erfordert einen Kompilierungsschritt, um in einem Browser zu funktionieren. Weitere Informationen finden Sie in der [Vorschau der Klassenfelder](https://github.com/tc39/proposal-class-fields).
+Wenn du eine Babel-Transformation wie [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/) verwendest, kannst du auch `defaultProps` als statische Eigenschaft innerhalb einer React-Komponentenklasse deklarieren. Diese Syntax ist jedoch noch nicht finalisiert und erfordert einen Kompilierungsschritt, um in einem Browser zu funktionieren. Weitere Informationen findest du in der [Vorschau der Klassenfelder](https://github.com/tc39/proposal-class-fields).
 
 
 ```javascript
