@@ -83,7 +83,7 @@ Mit dieser Veränderung muss nur die obereste Seitenkomponente über die Verwend
 
 Diese *inversion of control* (engl. für Umkehrung der Steuerung) macht den Code, durch das Reduzieren der Anzahl an überreichten Props durch die Anwendung und durch die Steigerung der Kontrolle der Root-Komponenten, in vielen Fällen sauberer. Jedoch ist das nicht in jedem Fall die richtige Entscheidung: durch das Schieben der Komplexität höher in den Baum, werden diese Higher-Level-Komponenten komplizierter und erzwingen die Lower-Level-Komponenten flexibler als erwünscht zu sein.
 
-Du bist nicht auf ein einzelnes Kind für eine Komponente beschränkt. Du kann mehrere Kinder durchgeben, sogar mehrere seperate Slots für Kinder aben, [wie hier dokumentiert wird](/docs/composition-vs-inheritance.html#containment):
+Du bist nicht auf ein einzelnes Kind für eine Komponente beschränkt. Du kannst mehrere Kinder durchgeben, sogar mehrere seperate Slots für Kinder haben, [wie hier dokumentiert wird](/docs/composition-vs-inheritance.html#containment):
 
 
 ```js
