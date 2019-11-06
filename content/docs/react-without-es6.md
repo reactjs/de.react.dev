@@ -4,7 +4,7 @@ title: React ohne ES6
 permalink: docs/react-without-es6.html
 ---
 
-Normalerweise definiert man eine React Komponente als eine einfache JavaScript-Klasse:
+Normalerweise definiert man eine React-Komponente als eine einfache JavaScript-Klasse:
 
 ```javascript
 class Greeting extends React.Component {
