@@ -322,6 +322,6 @@ Beim Anheben des State muss mehr Code geschrieben werden als bei einer so genann
 
 Wenn etwas aus den Props oder dem State abgeleitet werden kann, sollte es wahrscheinlich nicht im State sein. Anstatt `celsiusValue` und `fahrenheitValue` zu speichern, speichern wir nur die zuletzt bearbeitete Temperatur und deren Maßeinheit. Der Wert der anderen Eingabefelder kann in der Methode `render()` immer daraus berechnet werden. Auf diese Weise können wir das andere Feld löschen oder Rundungen anwenden, ohne dass dabei die Genauigkeit der Benutzereingaben verloren geht.
 
-Wenn in der Benutzeroberfläche etwas nicht stimmt, kannst du die Props mithilfe der [React Developer Tools](https://github.com/facebook/react-devtools) überprüfen und den Komponenten-Baum nach oben durchgehen, bis du die für die Aktualisierung des State verantwortliche Komponente findest. So kannst du Fehler bis zu ihrer Quelle zurückverfolgen:
+Wenn in der Benutzeroberfläche etwas nicht stimmt, kannst du die Props mithilfe der [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) überprüfen und den Komponenten-Baum nach oben durchgehen, bis du die für die Aktualisierung des State verantwortliche Komponente findest. So kannst du Fehler bis zu ihrer Quelle zurückverfolgen:
 
 <img src="../images/docs/react-devtools-state.gif" alt="State in React DevTools überwachen" max-width="100%" height="100%">
