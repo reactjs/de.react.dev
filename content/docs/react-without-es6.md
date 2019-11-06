@@ -178,7 +178,7 @@ Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
 
 Manchmal haben sehr unterschiedliche Komponenten ähnliche Funktionen. Diese werden manchmal als [Cross-Cutting Concern](https://de.wikipedia.org/wiki/Cross-Cutting_Concern) bezeichnet. Mit `createReactClass` kannst du dafür ein altes `mixins`-System verwenden.
 
-Ein häufiger Anwendungsfall ist eine Komponente, die sich in einem bestimmten Zeitintervall selbst aktualisieren möchte. Es ist einfach, `setInterval()` zu verwenden, aber es ist wichtig, das Intervall abzubrechen, wenn du es nicht mehr benötigst, um Speicherplatz zu sparen. React bietet [Lebenszyklusmethoden](/docs/react-component.html#the-component-lifecycle) an, die dich wissen lassen, wann eine Komponente im Begriff ist erstellt oder zerstört zu werden. Wir können ein Mixin erstellen, dass diese Methoden verwendet, um eine einfache `setInterval()`-Funktion bereitzustellen, die automatisch bereinigt wird, wenn deine Komponente zerstört wird.
+Ein häufiger Anwendungsfall ist eine Komponente, die sich in einem bestimmten Zeitintervall selbst aktualisieren möchte. Es ist einfach, `setInterval()` zu verwenden, aber es ist wichtig, das Intervall abzubrechen, wenn du es nicht mehr benötigst, um Speicherplatz zu sparen. React bietet [Lifecycle-Methoden](/docs/react-component.html#the-component-lifecycle) an, die dich wissen lassen, wann eine Komponente im Begriff ist erstellt oder zerstört zu werden. Wir können ein Mixin erstellen, das diese Methoden verwendet, um eine einfache `setInterval()`-Funktion bereitzustellen, die automatisch bereinigt wird, wenn deine Komponente zerstört wird.
 
 ```javascript
 var SetIntervalMixin = {
