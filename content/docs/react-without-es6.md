@@ -83,7 +83,7 @@ var Counter = createReactClass({
 
 ## Autobinding {#autobinding}
 
-In React Komponenten, die als ES6-Klassen deklarierten wurden, folgen Methoden der gleichen Semantik wie reguläre ES6-Klassen. Dies bedeutet, dass `this` sich nicht automatisch an die Instanz bindet. Du musst im **constructor** explizit `.bind(this)` verwenden:
+In React-Komponenten, die als ES6-Klassen deklariert wurden, folgen Methoden der gleichen Semantik wie reguläre ES6-Klassen. Dies bedeutet, dass `this` sich nicht automatisch an die Instanz bindet. Du musst im **constructor** explizit `.bind(this)` verwenden:
 
 ```javascript
 class SagHallo extends React.Component {
