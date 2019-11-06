@@ -58,7 +58,7 @@ var Greeting = createReactClass({
 
 ## Den Anfangs-**state** Festsetzen {#setting-the-initial-state}
 
-In ES6-Klassen kannst du den Anfangs-**state** definieren, indem du in dem **constructor** `this.state` zuweist:
+In ES6-Klassen kannst du den Anfangs-**state** definieren, indem du im **constructor** `this.state` zuweist:
 
 ```javascript
 class Counter extends React.Component {
