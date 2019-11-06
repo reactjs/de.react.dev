@@ -160,7 +160,7 @@ class SagHallo extends React.Component {
 
 Bitte beachte, dass die obige Syntax **experimentell** ist und sich die Syntax möglicherweise ändert oder der Vorschlag nicht in die Sprache eingebaut wird.
 
-Wenn du lieber auf Nummer sicher gehen möchten, hast du einige Möglichkeiten:
+Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
 
 * Binde Methoden im **constructor**.
 * Verwende Pfeilfunktionen, z.B. `onClick={(e) => this.handleClick(e)}`.
