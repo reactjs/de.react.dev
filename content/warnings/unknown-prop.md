@@ -27,7 +27,7 @@ function MyDiv(props) {
     // SCHLECHT! Weil du sicher weißt, dass "layout" kein Prop ist, die <div> versteht.
     return <div {...props} style={getHorizontalStyle()} />
   } else {
-    // SCHLECHT! Weil du sicher weißt, dass "layout" keine Requisite ist, die <div> versteht.
+    // SCHLECHT! Weil du sicher weißt, dass "layout" kein Prop ist, die <div> versteht.
     return <div {...props} style={getVerticalStyle()} />
   }
 }
