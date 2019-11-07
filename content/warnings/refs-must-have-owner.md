@@ -38,7 +38,7 @@ Wenn du einer Komponente einen `ref` hinzufügen musst, konvertiere ihn zuerst i
 Dies bedeutet normalerweise, dass du versuchst, einer Komponente, die keinen Eigentümer hat (d. h. nicht innerhalb der `render` Methode einer anderen Komponente erstellt wurde), einen `ref` hinzuzufügen. Zum Beispiel, das funktioniert nicht:
 
 ```js
-// Doesn't work!
+// Funktioniert nicht!
 ReactDOM.render(<App ref="app" />, el);
 ```
 
