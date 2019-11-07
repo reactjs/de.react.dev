@@ -33,7 +33,7 @@ function MyDiv(props) {
 }
 ```
 
-**Gut:** Mit dem Spread-Operator kannst du Variablen von Requisiten abziehen und die verbleibenden Requisiten in eine Variable einfügen.
+**Gut:** Mit dem Spread-Operator kannst du Variablen aus den Props herausziehen und die verbleibenden Props in eine Variable einfügen.
 
 ```js
 function MyDiv(props) {
