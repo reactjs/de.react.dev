@@ -24,7 +24,7 @@ Um dies zu beheben, sollten zusammengesetzte Komponenten alle Props "verbrauchen
 ```js
 function MyDiv(props) {
   if (props.layout === 'horizontal') {
-    // SCHLECHT! Weil du sicher weißt, dass "layout" keine Requisite ist, die <div> versteht.
+    // SCHLECHT! Weil du sicher weißt, dass "layout" kein Prop ist, die <div> versteht.
     return <div {...props} style={getHorizontalStyle()} />
   } else {
     // SCHLECHT! Weil du sicher weißt, dass "layout" keine Requisite ist, die <div> versteht.
