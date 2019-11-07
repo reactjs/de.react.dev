@@ -27,7 +27,7 @@ Dies bedeutet normalerweise eines von drei Dingen:
 Wenn `<Foo>` eine Funktionskomponente ist, kannst du kein `ref` hinzufügen:
 
 ```js
-// Doesn't work if Foo is a function!
+// Funktioniert nicht, wenn Foo eine Funktion ist!
 <Foo ref={foo} />
 ```
 
