@@ -42,7 +42,7 @@ Dies bedeutet normalerweise, dass du versuchst, einer Komponente, die keinen Eig
 ReactDOM.render(<App ref="app" />, el);
 ```
 
-Versuche, diese Komponente in einer neuen Komponente der obersten Ebene zu rendern, die den `ref` enthält. Alternativ kannst du einen callback ref verwenden:
+Versuche, diese Komponente in eine neue Top-Level-Komponente zu rendern, die den `ref` enthält. Alternativ kannst du einen callback ref verwenden:
 
 ```js
 let app;
