@@ -46,7 +46,7 @@ function MyDiv(props) {
 }
 ```
 
-**Gut:** Du kannst die Requisiten auch einem neuen Objekt zuweisen und die von Ihnen verwendeten Schlüssel aus dem neuen Objekt löschen. Achtest du darauf, die Requisiten nicht aus dem ursprünglichen `this.props`-Objekt zu löschen, da dieses Objekt als unveränderlich angesehen werden sollte.
+**Gut:** Du kannst die Props auch einem neuen Objekt zuweisen und die von Ihnen verwendeten Schlüssel aus dem neuen Objekt löschen. Achte darauf, die Props nicht aus dem ursprünglichen `this.props`-Objekt zu löschen, da dieses Objekt als unveränderlich angesehen werden sollte.
 
 ```js
 function MyDiv(props) {
