@@ -17,7 +17,7 @@ Es gibt einige wahrscheinliche Gründe, warum diese Warnung angezeigt werden kö
 
 ---
 
-Um dies zu beheben, sollten Verbundkomponenten alle Requisiten "verbrauchen", die für die Verbundkomponente und nicht für die untergeordnete Komponente vorgesehen sind. Beispiel:
+Um dies zu beheben, sollten zusammengesetzte Komponenten alle Props "verbrauchen", die für die  zusammengesetzte Komponente und nicht für die untergeordnete Komponente vorgesehen sind. Beispiel:
 
 **Schlecht:** Unerwartetes `layout`-Prop wird an das `div`-Tag weitergeleitet.
 
