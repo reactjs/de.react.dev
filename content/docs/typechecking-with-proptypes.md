@@ -78,7 +78,7 @@ MyComponent.propTypes = {
   // Ein Array, eines bestimmten Typs 
   optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
 
-  // Ein Objekt mit Eigenschaftswerten eines bestimmten Typs
+  // Ein Objekt mit Eigenschaftswerten eines bestimmten Typs.
   optionalObjectOf: PropTypes.objectOf(PropTypes.number),
 
   // Ein Objekt, das eine bestimmte Form annimmt.
