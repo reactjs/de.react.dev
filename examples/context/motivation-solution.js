@@ -7,7 +7,7 @@ const ThemeContext = React.createContext('light');
 class App extends React.Component {
   render() {
     // highlight-range{1-3,5}
-    // Verwende einen Provider um das aktuelle Theme durch den Baum weitergeben.
+    // Verwende einen Provider um das aktuelle Theme durch den Baum zu leiten.
     // Jede Komponente kann es lesen, ganz egal wie tief sie liegt.
     // In diesem Beispiel, übergeben wir "dark" als den aktuellen Wert.
     return (
