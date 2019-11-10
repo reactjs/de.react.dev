@@ -87,7 +87,7 @@ MyComponent.propTypes = {
     fontSize: PropTypes.number
   }),
   
-  // Ein Objekt mit Warnungen zu zusätzlichen Eigenschaften
+  // Ein Objekt mit Warnungen zu zusätzlichen Eigenschaften.
   optionalObjectWithStrictShape: PropTypes.exact({
     name: PropTypes.string,
     quantity: PropTypes.number
