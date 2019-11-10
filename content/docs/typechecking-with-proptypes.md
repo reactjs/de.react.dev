@@ -40,7 +40,7 @@ Hier ist ein Beispiel, das die verschiedenen verfügbaren Validatoren dokumentie
 import PropTypes from 'prop-types';
 
 MyComponent.propTypes = {
-  // Du kannst eine Prop als einen bestimmtn  JS-Typ deklarieren. 
+  // Du kannst eine Prop als einen bestimmten JS-Typ deklarieren.
   // Standardmäßig sind alle diese Optionen optional.
   optionalArray: PropTypes.array,
   optionalBool: PropTypes.bool,
