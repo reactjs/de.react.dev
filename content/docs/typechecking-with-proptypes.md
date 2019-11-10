@@ -153,7 +153,7 @@ MyComponent.propTypes = {
 };
 ```
 
-### Default Prop Values {#default-prop-values}
+### Standard Prop Werte {#default-prop-values}
 
 Du kannst Standardwerte für deine `Props` definieren, indem du sie der speziellen Eigenschaft `defaultProps` zuweist:
 
