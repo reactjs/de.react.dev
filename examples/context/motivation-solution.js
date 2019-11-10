@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     // highlight-range{1-3,5}
     // Verwende einen Provider um das aktuelle Theme durch den Baum weitergeben.
-    // Jede Komponente kann es lesen, ganz egal wie tief sie sind.
+    // Jede Komponente kann es lesen, ganz egal wie tief sie liegt.
     // In diesem Beispiel, übergeben wir "dark" als den aktuellen Wert.
     return (
       <ThemeContext.Provider value="dark">
