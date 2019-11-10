@@ -60,7 +60,7 @@ MyComponent.propTypes = {
   // Ein React-Element-Typ (z.B. MyComponent).
   optionalElementType: PropTypes.elementType,
   
-  // Du kannst auch deklarieren, dass ein Prop eine Instanz einer Klasse ist. 
+  // Du kannst auch deklarieren, dass eine Prop eine Instanz einer Klasse ist. 
   // Dies verwendet JS's instanceOf-Operator.
   optionalMessage: PropTypes.instanceOf(Message),
 
