@@ -138,7 +138,7 @@ import PropTypes from 'prop-types';
 
 class MyComponent extends React.Component {
   render() {
-    // This must be exactly one element or it will warn.
+    // Dies muss genau ein Element sein, sonst erscheint eine Warnung.
     const children = this.props.children;
     return (
       <div>
