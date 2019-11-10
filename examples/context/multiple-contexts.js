@@ -1,4 +1,4 @@
-// Theme Context, Defaultwert ist "light"
+// Theme Context, Standardwert ist "light"
 const ThemeContext = React.createContext('light');
 
 // Eingeloggter User-Context
