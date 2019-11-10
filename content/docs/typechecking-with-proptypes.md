@@ -98,7 +98,7 @@ MyComponent.propTypes = {
   // wenn die Prop nicht vorhanden ist.
   requiredFunc: PropTypes.func.isRequired,
 
-  // Ein Wert eines beliebigen Datentyps
+  // Ein Wert eines beliebigen Datentyps.
   requiredAny: PropTypes.any.isRequired,
 
   // Du kannst auch einen benutzerdefinierten Validierer angeben. 
