@@ -1,7 +1,7 @@
 // highlight-range{1-4}
 // Context lasst uns einen Wert tief durch den Komponenten-Baum
 // übergeben ohne ihn explizit durch jede Komponente durchzureichen.
-// Erstelle einen Context für das aktuelle Theme (mit "light" als den Default).
+// Erstelle einen Context für das aktuelle Theme (mit "light" als Standardwert).
 const ThemeContext = React.createContext('light');
 
 class App extends React.Component {
