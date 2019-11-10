@@ -115,7 +115,7 @@ MyComponent.propTypes = {
 
   // Du kannst auch einen benutzerdefinierten Validierer für `arrayOf` 
   // und `objectOf` liefern. Es sollte ein Error-Objekt zurückgeben, wenn die 
-  // Validierung fehlschlägt.  Der Validator wird für jeden Schlüssel im Array 
+  // Validierung fehlschlägt. Der Validator wird für jeden Schlüssel im Array 
   // oder Objekt aufgerufen. Die ersten beiden Argumente des Prüfers sind das 
   // Array oder Objekt selbst und der Schlüssel des aktuellen Elements.
   customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
