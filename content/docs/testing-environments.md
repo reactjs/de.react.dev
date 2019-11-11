@@ -1,6 +1,6 @@
 ---
 id: testing-environments
-title: Testing-Umgebungen
+title: Test-Umgebungen
 permalink: docs/testing-environments.html
 prev: testing-recipes.html
 ---
