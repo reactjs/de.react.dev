@@ -29,7 +29,7 @@ Unterschiedliche Antworten mögen für unterschiedliche Teams und Produkte funkt
 
 **[Jest](https://facebook.github.io/jest/)** ist ein JavaScript-Test-Runner, der dich auf das DOM via [`jsdom`](/docs/testing-environments.html#mocking-a-rendering-surface) zugreifen lässt. Während jsdom nur eine Näherung davon ist, wie der Browser funktioniert, ist es oft gut genug, um React-Komponenten zu testen. Jest bietet eine hohe Iterationsgeschwindigkeit kombiniert mit mächtigen Features wie [Mocking-Modulen](/docs/testing-environments.html#mocking-modules) und [Timern](/docs/testing-environments.html#mocking-timers), wodurch du mehr Kontrolle darüber hast, wie der Code ausgeführt wird.
 
-**[React Testing Library](https://testing-library.com/react)** ist eine Menge von Helpern, die dich React-Komponenten testen lassen, ohne deren Implementierungsdetails zu kennen. Dieser Ansatz macht Refactoring einfach und leitet dich außerdem zu den Best Practices für Accessibility. Obwohl sie keine Möglichkeit bietet, eine Komponente "shallow" (d.h. ohne ihre Kinder) zu rendern, lässt ein Test-Runner wie Jest das via [Mocking](/docs/testing-recipes.html#mocking-modules) zu.
+**[React Testing Library](https://testing-library.com/react)** ist eine Menge von Helpern, die dich React-Komponenten testen lassen, ohne deren Implementierungsdetails zu kennen. Dieser Ansatz macht Refactoring einfach und spornt dich außerdem zu Best Practices für Barrierefreiheit an. Obwohl sie keine Möglichkeit bietet, eine Komponente "shallow" (d.h. ohne ihre Kinder) zu rendern, lässt ein Test-Runner wie Jest das via [Mocking](/docs/testing-recipes.html#mocking-modules) zu.
 
 ### Lerne mehr {#learn-more}
 
