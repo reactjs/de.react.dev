@@ -176,7 +176,11 @@ In Chrome geht das so:
 
 6. React-Events werden unter dem **User Timing**-Label zusammengefasst.
 
+<<<<<<< HEAD
 Für eine detailliertere Anleitung schaue dir [diesen Artikel von Ben Schwarz](https://calibreapp.com/blog/2017-11-28-debugging-react/) an.
+=======
+For a more detailed walkthrough, check out [this article by Ben Schwarz](https://building.calibreapp.com/debugging-react-performance-with-react-16-and-chrome-devtools-c90698a522ad).
+>>>>>>> bbea52211971834d041e76871df8981066c42a3b
 
 Beachte, dass **diese Zahlen relativ sind und Komponenten in der Produktionsumgebung schneller rendern werden**. Trotzdem sollten sie dir dabei helfen, zu erkennen, wenn voneinander unabhängige UI-Elemente aus Versehen geupdatet werden, und wie tief und wie oft deine UI-Updates stattfinden.
 
