@@ -6,7 +6,7 @@ redirect_from:
   - "docs/react-api.html#typechecking-with-proptypes"
 ---
 
-> Note:
+> Hinweis:
 >
 > `React.PropTypes` ist umgezogen in ein anderes Paket seit React v15.5. Bitte benutze stattdessen [die `prop-types`-Bibliothek](https://www.npmjs.com/package/prop-types).
 >
