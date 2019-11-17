@@ -7,7 +7,7 @@ permalink: docs/code-splitting.html
 ## Bundling {#bundling}
 
 Die meisten React Anwendungen haben ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammenführen lassen.
-Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bündel kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.
+Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bundle kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.
 
 #### Beispiel {#example}
 
@@ -37,19 +37,19 @@ function add(a, b) {
 console.log(add(16, 26)); // 42
 ```
 
-> Note:
+> Hinweis:
 >
-> Your bundles will end up looking a lot different than this.
+> Deine Bundles werden am Ende ganz anders aussehen als das hier.
 
-If you're using [Create React App](https://github.com/facebookincubator/create-react-app), [Next.js](https://github.com/zeit/next.js/), [Gatsby](https://www.gatsbyjs.org/), or a similar tool, you will have a Webpack setup out of the box to bundle your
-app.
+Wenn du [Create React App](https://github.com/facebookincubator/create-react-app), [Next.js](https://github.com/zeit/next.js/), [Gatsby](https://www.gatsbyjs.org/), oder ein ähnliches Tool benutzt, wirdt du ein Webpack-Setup haben welches sofort einsatzbereit ist um deine Anwendung zu
+bundlen.
 
-If you aren't, you'll need to setup bundling yourself. For example, see the
-[Installation](https://webpack.js.org/guides/installation/) and
-[Getting Started](https://webpack.js.org/guides/getting-started/) guides on the
-Webpack docs.
+Wenn nicht, musst du das Bundling selbst einrichten. Siehe z. B. die Abschnitte
+[Installation](https://webpack.js.org/guides/installation/) und
+[Erste Schritte](https://webpack.js.org/guides/getting-started/) in der
+Webpack-Dokumentation.
 
-## Code Splitting {#code-splitting}
+## Code-Splitting {#code-splitting}
 
 Bundling is great, but as your app grows, your bundle will grow too. Especially
 if you are including large third-party libraries. You need to keep an eye on
@@ -71,8 +71,8 @@ of code needed during the initial load.
 
 ## `import()` {#import}
 
-The best way to introduce code-splitting into your app is through the dynamic
-`import()` syntax.
+Der beste Weg Code-Splitting in deiner Anwendung einzuführen, ist durch die dynamische
+`import()`-Syntax.
 
 **Vorher:**
 
@@ -90,12 +90,15 @@ import("./math").then(math => {
 });
 ```
 
-> Note:
+> Hinweis:
 >
+> Die dynamische `import()`-Syntax ist ein ECMAScript (JavaScript)
+> [Vorschlag](https://github.com/tc39/proposal-dynamic-import) der aktuell nicht
+> Teil des Sprachenstandards ist. Es wird
 > The dynamic `import()` syntax is a ECMAScript (JavaScript)
 > [proposal](https://github.com/tc39/proposal-dynamic-import) not currently
-> part of the language standard. It is expected to be accepted in the
-> near future.
+> part of the language standard. Es wird erwartet, dass dieser in naher Zukunft
+> akzeptiert wird.
 
 When Webpack comes across this syntax, it automatically starts code-splitting
 your app. If you're using Create React App, this is already configured for you
@@ -110,11 +113,11 @@ parse the dynamic import syntax but is not transforming it. For that you will ne
 
 ## `React.lazy` {#reactlazy}
 
-> Note:
+> Hinweis:
 >
-> `React.lazy` and Suspense are not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we recommend [Loadable Components](https://github.com/smooth-code/loadable-components). It has a nice [guide for bundle splitting with server-side rendering](https://github.com/smooth-code/loadable-components/blob/master/packages/server/README.md).
+> `React.lazy` und Suspense sind noch nicht für das serverseitige Rendering verfügbar. Wenn du Code-Splitting von deiner serverseitig gerenderten Anwendung durchführen möchtest, empfehlen wir dir [Loadable Components](https://github.com/smooth-code/loadable-components). Es gibt einen schönen [Leitfaden für das Bundle-Splitting mit serverseitigem Rendern](https://github.com/smooth-code/loadable-components/blob/master/packages/server/README.md).
 
-The `React.lazy` function lets you render a dynamic import as a regular component.
+Mit der Funktion `React.lazy` kannst du einen dynamischen Import als reguläre Komponente rendern.
 
 **Before:**
 
@@ -128,7 +131,7 @@ import OtherComponent from './OtherComponent';
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 ```
 
-This will automatically load the bundle containing the `OtherComponent` when this component is first rendered.
+Dadurch wird automatisch das Bundle geladen, dass `OtherComponent` enthält, wenn die Komponente das erste Mal gerendert wird.
 
 `React.lazy` takes a function that must call a dynamic `import()`. This must return a `Promise` which resolves to a module with a `default` export containing a React component.
 
@@ -191,7 +194,7 @@ const MyComponent = () => (
 );
 ```
 
-## Route-based code splitting {#route-based-code-splitting}
+## Routen basiertes Code-Splitting {#route-based-code-splitting}
 
 Deciding where in your app to introduce code splitting can be a bit tricky. You
 want to make sure you choose places that will split bundles evenly, but won't
