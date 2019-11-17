@@ -12,7 +12,7 @@ redirect_from:
 >
 >Wir stellen [ein Codemod-Skript](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) zur Verfügung, um die Konvertierung zu automatisieren.
 
-Wenn deine App wächst, kannst du viele Bugs mit einer Typisierung abfangen. Für einige Anwendungen lassen sich JavaScript-Erweiterungen wie [Flow](https://flow.org/) oder [TypeScript](https://www.typescriptlang.org/) verwenden, um die gesamte Anwendung zu überprüfen. Aber selbst wenn du diese nicht verwendest, hat React einige eingebaute Fähigkeiten zur Typisierung. Um die Typisierung an den Props für eine Komponente durchzuführen, kannst du die spezielle Eigenschaft `propTypes` zuweisen:
+Wenn deine Anwendung wächst, kannst du viele Bugs mit einer Typprüfung abfangen. Für einige Anwendungen lassen sich JavaScript-Erweiterungen wie [Flow](https://flow.org/) oder [TypeScript](https://www.typescriptlang.org/) verwenden, um die gesamte Anwendung zu überprüfen. Aber selbst wenn du diese nicht verwendest, hat React einige eingebaute Fähigkeiten zur Überprüfung von Typen. Um die Typprüfung an den Props für eine Komponente durchzuführen, kannst du die spezielle Eigenschaft `propTypes` zuweisen:
 
 ```javascript
 import PropTypes from 'prop-types';
