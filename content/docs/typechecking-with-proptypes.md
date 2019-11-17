@@ -129,7 +129,7 @@ MyComponent.propTypes = {
 };
 ```
 
-### Einzelnes Kind (Child) Anfordern {#requiring-single-child}
+### Einzelnes Kind (Child) anfordern {#requiring-single-child}
 
 Mit `PropTypes.element` kannst du festlegen, dass nur ein einzelnes Kind (Child) an eine Komponente als Children übergeben werden kann.
 
