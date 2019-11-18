@@ -51,23 +51,22 @@ Webpack-Dokumentation.
 
 ## Code-Splitting {#code-splitting}
 
-Bundling is great, but as your app grows, your bundle will grow too. Especially
-if you are including large third-party libraries. You need to keep an eye on
-the code you are including in your bundle so that you don't accidentally make
-it so large that your app takes a long time to load.
+Bundling ist großartig, aber sobald deine Anwendung wächst, wird dein Bundle es auch.
+Insbesondere wenn du größere Bibliotheken von Drittanbietern einbeziehst. Du musst
+ein Auge auf den Code haben, den du im Bundle enthälst, damit du ihn nicht versehentlich
+so groß machst und deine Anwendung zu lange Zeit zum Laden benötigt.
 
-To avoid winding up with a large bundle, it's good to get ahead of the problem
-and start "splitting" your bundle.
- [Code-Splitting](https://webpack.js.org/guides/code-splitting/) is a feature
-supported by bundlers like Webpack and Browserify (via
-[factor-bundle](https://github.com/browserify/factor-bundle)) which can create
-multiple bundles that can be dynamically loaded at runtime.
+Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem
+voraus zu sein und mit dem "Aufteilen" seines Bundles zu beginnen.
+Code-Splitting ist eine Funktion, die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
+[factor-bundle](https://github.com/browserify/factor-bundle)) und kann dadruch mehrere Bundles erzeugen,
+die zur Laufzeit dynamisch geladen werden können.
 
-Code-splitting your app can help you "lazy-load" just the things that are
-currently needed by the user, which can dramatically improve the performance of
-your app. While you haven't reduced the overall amount of code in your app,
-you've avoided loading code that the user may never need, and reduced the amount
-of code needed during the initial load.
+Code-Splitting deiner Anwendung kann dir Helfen genau die Dinge "lazy zu laden",
+die der Benutzer gerade benötigt, was die Performance deiner Anwendung drastisch
+verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, du hast aber
+das Laden von Code vermieden, den der Benutzer möglicherweise nie benötigen wird, zusätzlich
+reduzierst du die Menge an Code die benötigt wird beim initialen Laden.
 
 ## `import()` {#import}
 
@@ -100,16 +99,15 @@ import("./math").then(math => {
 > part of the language standard. Es wird erwartet, dass dieser in naher Zukunft
 > akzeptiert wird.
 
-When Webpack comes across this syntax, it automatically starts code-splitting
-your app. If you're using Create React App, this is already configured for you
-and you can [start using it](https://facebook.github.io/create-react-app/docs/code-splitting) immediately. It's also supported
-out of the box in [Next.js](https://github.com/zeit/next.js/#dynamic-import).
+Wenn Webpack auf diese Syntax stößt, fängt es automatisch mit dem Code-Splitting
+deiner Anwendung an. Wenn du Create-React-App verwendest, ist dies alles vorkonfiguriert und du kannst [direkt loslegen](https://facebook.github.io/create-react-app/docs/code-splitting).
+[Next.js](https://github.com/zeit/next.js/#dynamic-import) unterstützt dies auch direkt out of the box.
 
-If you're setting up Webpack yourself, you'll probably want to read Webpack's
-[guide on code splitting](https://webpack.js.org/guides/code-splitting/). Your Webpack config should look vaguely [like this](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
+Wenn du Webpack selbst einrichtest, wirst du wahrschenlich Webpack's
+[Code-Splitting Leitfaden](https://webpack.js.org/guides/code-splitting/) lesem wollen. Deine Webpack-Konfiguration sollte in etwa [so aussehen](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
 
-When using [Babel](https://babeljs.io/), you'll need to make sure that Babel can
-parse the dynamic import syntax but is not transforming it. For that you will need [babel-plugin-syntax-dynamic-import](https://yarnpkg.com/en/package/babel-plugin-syntax-dynamic-import).
+Wenn du [Babel](https://babeljs.io/) verwendest, müsstest du sicherstellen, dass Babel
+die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all die benötigst du [babel-plugin-syntax-dynamic-import](https://yarnpkg.com/en/package/babel-plugin-syntax-dynamic-import).
 
 ## `React.lazy` {#reactlazy}
 
@@ -133,9 +131,9 @@ const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
 Dadurch wird automatisch das Bundle geladen, dass `OtherComponent` enthält, wenn die Komponente das erste Mal gerendert wird.
 
-`React.lazy` takes a function that must call a dynamic `import()`. This must return a `Promise` which resolves to a module with a `default` export containing a React component.
+`React.lazy` nimmt eine Funktion entgegen, die tein dynamisches `import()` aufrufen muss. Dies muss ein `Promise` zurückgeben, welches eine Modul auflöst, dass eine React-Komponenten im `default` Export enthält.
 
-The lazy component should then be rendered inside a `Suspense` component, which allows us to show some fallback content (such as a loading indicator) while we're waiting for the lazy component to load.
+Die Lazy-Komponente sollte dann in einer `Suspense`-Komponente gerendert werden, was es uns ermöglicht ein wenig Fallback-Inhalt anzuzeigen (z. B. eine Ladeanzeige), während wir darauf warten, dass die Lazy-Komponente lädt.
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
@@ -151,7 +149,7 @@ function MyComponent() {
 }
 ```
 
-The `fallback` prop accepts any React elements that you want to render while waiting for the component to load. You can place the `Suspense` component anywhere above the lazy component. You can even wrap multiple lazy components with a single `Suspense` component.
+Das `fallback`-Prop akzeptiert jede React-Element, die du rendern möchtest, während du drauf wartest, dass die Komponente geladen wird. Du kannst die `Suspense`-Komponente überall über der Lazy-Komponente platzieren. Du kannst sogar mehrere Lazy-Komponenten mit einer einzigen `Suspense`-Komponente umhüllen.
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
@@ -171,9 +169,9 @@ function MyComponent() {
 }
 ```
 
-### Error boundaries {#error-boundaries}
+### Fehlergrenzen {#error-boundaries}
 
-If the other module fails to load (for example, due to network failure), it will trigger an error. You can handle these errors to show a nice user experience and manage recovery with [Error Boundaries](/docs/error-boundaries.html). Once you've created your Error Boundary, you can use it anywhere above your lazy components to display an error state when there's a network error.
+Wenn das andere Modul nicht lädt (z. B. aufgrund eines Netzwerkausfalls), löst es einen Fehler aus. Du kannst diese Fehler behandeln, um eine schönere Benutzererfahrung zu bieten und die Wiederherstellung mit [Fehlergrenzen](/docs/error-boundaries.html) zu verwalten. Sobald du deine Fehlergrenze erstellt hast, kannst du sie überall über deinen Lazy-Komponenten verwenden, um einen Fehlerstatus anzuzeigem, wenn ein Netzwerkfehler vorliegt.
 
 ```js
 import MyErrorBoundary from './MyErrorBoundary';
@@ -227,9 +225,9 @@ const App = () => (
 );
 ```
 
-## Named Exports {#named-exports}
+## Benannte Exporte {#named-exports}
 
-`React.lazy` currently only supports default exports. If the module you want to import uses named exports, you can create an intermediate module that reexports it as the default. This ensures that tree shaking keeps working and that you don't pull in unused components.
+`React.lazy` unterstützt derzeit nur `default` Exporte. Wenn das Module, welches du importieren möchtest benannte `exports` enthält, kannst du ein Zwischenmodul erstellen, das es als `default` wieder exportiert. Dies stellt sicher, dass das Tree-Shaking weiter funktioniert und es keine unbenutzten Komponenten mit einbezieht.
 
 ```js
 // ManyComponents.js
