@@ -6,7 +6,7 @@ permalink: docs/code-splitting.html
 
 ## Bundling {#bundling}
 
-Die meisten React Anwendungen haben ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammenführen lassen.
+Die meisten React Anwendungen werden ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammengeführt haben.
 Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bundle kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.
 
 #### Beispiel {#example}
@@ -58,16 +58,15 @@ so groß machst und deine Anwendung zu lange zum Laden benötigt.
 
 Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem
 voraus zu sein und mit dem "Aufteilen" deines Bundles zu beginnen.
-Code-Splitting ist eine Funktion, 
-die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
-[factor-bundle](https://github.com/browserify/factor-bundle)) und kann dadruch mehrere Bundles erzeugen,
+Code-Splitting ist eine Funktion, die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
+[factor-bundle](https://github.com/browserify/factor-bundle)). Durch sie werden mehrere Bundles erzeugt,
 die zur Laufzeit dynamisch geladen werden können.
 
 Code-Splitting deiner Anwendung kann dir Helfen genau die Dinge "lazy zu laden",
 die der Benutzer gerade benötigt, was die Performance deiner Anwendung drastisch
 verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, du hast aber
-das Laden von Code vermieden, den der Benutzer möglicherweise nie benötigen wird, zusätzlich
-reduzierst du die Menge an Code die benötigt wird beim initialen Laden.
+das Laden von Code vermieden, den der Benutzer möglicherweise nie brauchen wird. Zusätzlich
+reduzierst du die Menge an Code beim initialen Laden.
 
 ## `import()` {#import}
 
