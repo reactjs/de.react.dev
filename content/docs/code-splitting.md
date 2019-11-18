@@ -53,7 +53,7 @@ Webpack-Dokumentation.
 
 Bundling ist großartig, aber sobald deine Anwendung wächst, wird dein Bundle es auch.
 Insbesondere wenn du größere Bibliotheken von Drittanbietern einbeziehst. Du musst
-ein Auge auf den Code haben, den du im Bundle enthälst, damit du ihn nicht versehentlich
+ein Auge auf den Code haben, den du im Bundle hast, damit du ihn nicht versehentlich
 so groß machst und deine Anwendung zu lange Zeit zum Laden benötigt.
 
 Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem
