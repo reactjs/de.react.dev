@@ -150,7 +150,7 @@ function MyComponent() {
 }
 ```
 
-Das `fallback`-Prop akzeptiert jede React-Element, die du rendern möchtest, während du drauf wartest, dass die Komponente geladen wird. Du kannst die `Suspense`-Komponente überall über der Lazy-Komponente platzieren. Du kannst sogar mehrere Lazy-Komponenten mit einer einzigen `Suspense`-Komponente umhüllen.
+Das `fallback`-Prop akzeptiert jedes React-Element, das du rendern möchtest, während du drauf wartest, dass die Komponente geladen wird. Du kannst die `Suspense`-Komponente überall über der Lazy-Komponente platzieren. Du kannst sogar mehrere Lazy-Komponenten mit einer einzigen `Suspense`-Komponente umhüllen.
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
