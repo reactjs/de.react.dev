@@ -108,7 +108,7 @@ Wenn du Webpack selbst einrichtest, wirst du wahrschenlich Webpack's
 [Code-Splitting Leitfaden](https://webpack.js.org/guides/code-splitting/) lesem wollen. Deine Webpack-Konfiguration sollte in etwa [so aussehen](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
 
 Wenn du [Babel](https://babeljs.io/) verwendest, müsstest du sicherstellen, dass Babel
-die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all die benötigst du [babel-plugin-syntax-dynamic-import](https://yarnpkg.com/en/package/babel-plugin-syntax-dynamic-import).
+die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all das benötigst du [babel-plugin-syntax-dynamic-import](https://yarnpkg.com/en/package/babel-plugin-syntax-dynamic-import).
 
 ## `React.lazy` {#reactlazy}
 
