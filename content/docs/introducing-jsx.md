@@ -74,9 +74,9 @@ Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist 
 
 ### JSX ist auch ein Ausdruck {#jsx-is-an-expression-too}
 
-Nach dem Kompilieren werden JSX Ausdrücke normale JavaScript-Funktionssaufrufe und als JavaScript-Objekte ausgewertet.
+Nach dem Kompilieren werden JSX Ausdrücke als normale JavaScript-Funktionssaufrufe und als JavaScript-Objekte ausgewertet.
 
-Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehen, Variablen zugewiesen, als Argument übergeben oder Rückgabewert einer Funktion sein kann:
+Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehend, Variablen zugewiesen oder Argumente übergeben werden können oder auch ein Rückgabewert einer Funktion sein kann:
 
 ```js{3,5}
 function getGreeting(user) {
@@ -95,7 +95,7 @@ Benutze Anführungszeichen um string-Literale als Attribute zu verwenden:
 const element = <div tabIndex="0"></div>;
 ```
 
-Ebenfalls kannst du geschweifte Klammern verwenden um JavaScript-Ausdrücke in ein Attribut einzubinden:
+Ebenfalls kannst du geschweifte Klammern verwenden, um JavaScript-Ausdrücke in ein Attribut einzubinden:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;

@@ -58,7 +58,8 @@ so groß machst und deine Anwendung zu lange Zeit zum Laden benötigt.
 
 Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem
 voraus zu sein und mit dem "Aufteilen" seines Bundles zu beginnen.
-Code-Splitting ist eine Funktion, die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
+Code-Splitting ist eine Funktion, 
+die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
 [factor-bundle](https://github.com/browserify/factor-bundle)) und kann dadruch mehrere Bundles erzeugen,
 die zur Laufzeit dynamisch geladen werden können.
 
@@ -113,7 +114,7 @@ die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all di
 
 > Hinweis:
 >
-> `React.lazy` und Suspense sind noch nicht für das serverseitige Rendering verfügbar. Wenn du Code-Splitting von deiner serverseitig gerenderten Anwendung durchführen möchtest, empfehlen wir dir [Loadable Components](https://github.com/smooth-code/loadable-components). Es gibt einen schönen [Leitfaden für das Bundle-Splitting mit serverseitigem Rendern](https://github.com/smooth-code/loadable-components/blob/master/packages/server/README.md).
+> `React.lazy` und Suspense sind noch nicht für das serverseitige Rendering verfügbar. Wenn du Code-Splitting von deiner serverseitig gerenderten Anwendung durchführen möchtest, empfehlen wir dir [Loadable Components](https://github.com/smooth-code/loadable-components). Es gibt einen schönen [Leitfaden für das Bundle-Splitting mit serverseitigem Rendern](https://www.smooth-code.com/open-source/loadable-components/docs/server-side-rendering/).
 
 Mit der Funktion `React.lazy` kannst du einen dynamischen Import als reguläre Komponente rendern.
 

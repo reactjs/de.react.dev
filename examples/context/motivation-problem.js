@@ -5,11 +5,11 @@ class App extends React.Component {
 }
 
 function Toolbar(props) {
-  // highlight-range{1-4,7}
-  // The Toolbar component must take an extra "theme" prop
-  // and pass it to the ThemedButton. This can become painful
-  // if every single button in the app needs to know the theme
-  // because it would have to be passed through all components.
+  // highlight-range{1-4,7}  
+  // Diese Toolbar-Komponente muss eine extra "theme" Prop annehmen
+  // und an ThemedButton übergeben. Das kann sehr umständlich werden,
+  // wenn jeder einzelne Button in der App über das Theme bescheid
+  // wissen muss, weil es durch alle Komponenten durchgegeben werden muss.
   return (
     <div>
       <ThemedButton theme={props.theme} />
