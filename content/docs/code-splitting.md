@@ -64,7 +64,7 @@ die zur Laufzeit dynamisch geladen werden können.
 
 Code-Splitting deiner Anwendung kann dir Helfen genau die Dinge "lazy zu laden",
 die der Benutzer gerade benötigt, was die Performance deiner Anwendung drastisch
-verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, du hast aber
+verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, aber du hast
 das Laden von Code vermieden, den der Benutzer möglicherweise nie brauchen wird. Zusätzlich
 reduzierst du die Menge an Code beim initialen Laden.
 
