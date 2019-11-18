@@ -57,7 +57,7 @@ ein Auge auf den Code haben, den du im Bundle hast, damit du ihn nicht versehent
 so groß machst und deine Anwendung zu lange zum Laden benötigt.
 
 Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem
-voraus zu sein und mit dem "Aufteilen" seines Bundles zu beginnen.
+voraus zu sein und mit dem "Aufteilen" deines Bundles zu beginnen.
 Code-Splitting ist eine Funktion, 
 die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
 [factor-bundle](https://github.com/browserify/factor-bundle)) und kann dadruch mehrere Bundles erzeugen,
