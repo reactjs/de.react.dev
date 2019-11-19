@@ -194,17 +194,17 @@ const MyComponent = () => (
 
 ## Routen basiertes Code-Splitting {#route-based-code-splitting}
 
-Deciding where in your app to introduce code splitting can be a bit tricky. You
-want to make sure you choose places that will split bundles evenly, but won't
-disrupt the user experience.
+Die Entscheidung wo in deiner Anwendung Code-Splitting einzuführen ist, kann etwas schwierig sein.
+Du solltest sicherstellen, dass du Orte wählst, die die Bundles gleichmäßig aufteilen, aber nicht
+die Benutzererfahrung beeinträchtigen.
 
-A good place to start is with routes. Most people on the web are used to
-page transitions taking some amount of time to load. You also tend to be
-re-rendering the entire page at once so your users are unlikely to be
-interacting with other elements on the page at the same time.
+Ein guter Ausgangspunkt sind Routen. Die meisten Leute im Web sind es
+gewohnt Page-Transitions zu erstellen, die einige Zeit zum Laden benötigen.
+Sie neigen auch dazu, die gesamte Seite auf einmal neu zu rendern, so dass die Benutzer
+wahrscheinlich nicht gleichzeitig mit anderen Elementen auf der Seite interagieren.
 
-Here's an example of how to setup route-based code splitting into your app using
-libraries like [React Router](https://reacttraining.com/react-router/) with `React.lazy`.
+Hier ist ein Beispiel wie du ein routenbasiertes Code-Splitting in deiner Anwendung
+mit Hilfe von Bibliotheken, wie [React Router](https://reacttraining.com/react-router/) mit `React.lazy` einrichtest.
 
 ```js
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -215,7 +215,7 @@ const About = lazy(() => import('./routes/About'));
 
 const App = () => (
   <Router>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>Lade...</div>}>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/about" component={About}/>
@@ -227,7 +227,7 @@ const App = () => (
 
 ## Benannte Exporte {#named-exports}
 
-`React.lazy` unterstützt derzeit nur `default` Exporte. Wenn das Module, welches du importieren möchtest benannte `exports` enthält, kannst du ein Zwischenmodul erstellen, das es als `default` wieder exportiert. Dies stellt sicher, dass das Tree-Shaking weiter funktioniert und es keine unbenutzten Komponenten mit einbezieht.
+`React.lazy` unterstützt derzeit nur `default` Exporte. Wenn das Modul, welches du importieren möchtest benannte `exports` enthält, kannst du ein Zwischenmodul erstellen, das es als `default` wieder exportiert. Dies stellt sicher, dass das Tree-Shaking weiter funktioniert und es keine unbenutzten Komponenten mit einbezieht.
 
 ```js
 // ManyComponents.js
