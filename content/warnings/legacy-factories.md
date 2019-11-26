@@ -29,7 +29,7 @@ function render() {
 
 ## Ohne JSX {#without-jsx}
 
-Wenn du JSX nicht nutzen möchtest oder nicht nutzen kannst, dann musst du deine Komponenten mittels Factory kapseln:
+Wenn du JSX nicht nutzen möchtest oder nicht nutzen kannst, dann musst du deine Komponenten in einer Factory kapseln:
 
 ```javascript
 var React = require('react');
