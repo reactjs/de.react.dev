@@ -18,15 +18,15 @@ HOCs sind häufig in React-Bibliotheken von Drittanbietern anzutrefen, als Beisp
 
 In diesem Dokument, werden wir erörtern, warum Higher-Order-Komponenten nützlich sind und wie du deine eigene schreiben kannst.
 
-## Use HOCs For Cross-Cutting Concerns {#use-hocs-for-cross-cutting-concerns}
+## Nutze HOCs für übergreifende Belangen {#use-hocs-for-cross-cutting-concerns}
 
-> **Note**
+> **Hinweis**
 >
-> We previously recommended mixins as a way to handle cross-cutting concerns. We've since realized that mixins create more trouble than they are worth. [Read more](/blog/2016/07/13/mixins-considered-harmful.html) about why we've moved away from mixins and how you can transition your existing components.
+> Früher haben wir Mixins für die Handhabung von übergreifenden Belangen empfohlen. Seit dem haben wir begriffen, dass Mixins mehr Probleme als Nutzen bereiten. [Lese darüber](/blog/2016/07/13/mixins-considered-harmful.html) warum wir uns von Mixins abgewand haben und wie du deine existierende Komponenten umwandeln kannst.
 
-Components are the primary unit of code reuse in React. However, you'll find that some patterns aren't a straightforward fit for traditional components.
+Komponenten sind die primäre Einheit der Quellcode-Wiederverwendbarkeit in React. Nichtsdestotrotz, wirst du feststellen, dass manche Patterns nicht immer für eine traditionelle Komponente geeignet sind.
 
-For example, say you have a `CommentList` component that subscribes to an external data source to render a list of comments:
+Als Beispiel nehmen wir eine `CommentList` Komponente, die eine externe Datenequelle nutzt, um eine Liste mit Kommentaren zu rendern:
 
 ```js
 class CommentList extends React.Component {
@@ -34,23 +34,23 @@ class CommentList extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      // "DataSource" is some global data source
+      // "DataSource" ist irgendeine globale Datenquellee
       comments: DataSource.getComments()
     };
   }
 
   componentDidMount() {
-    // Subscribe to changes
+    // "Höre" falls Änderungen auftreten sollten
     DataSource.addChangeListener(this.handleChange);
   }
 
   componentWillUnmount() {
-    // Clean up listener
+    // Aufräumen
     DataSource.removeChangeListener(this.handleChange);
   }
 
   handleChange() {
-    // Update component state whenever the data source changes
+    // Update den Zustand der Komponente, jedes mal wenn die Datenquelle eine Änderung bekanntgibt
     this.setState({
       comments: DataSource.getComments()
     });
@@ -68,7 +68,7 @@ class CommentList extends React.Component {
 }
 ```
 
-Later, you write a component for subscribing to a single blog post, which follows a similar pattern:
+Später, erstellst du eine Komponente die auf Änderungen in einem Blog-Eintrag "hört" und ein ähnliches Pattern einsetzt:
 
 ```js
 class BlogPost extends React.Component {
@@ -100,15 +100,15 @@ class BlogPost extends React.Component {
 }
 ```
 
-`CommentList` and `BlogPost` aren't identical — they call different methods on `DataSource`, and they render different output. But much of their implementation is the same:
+`CommentList` und `BlogPost` sind nicht identisch - sie rufen unterschiedliche Methoden von `DataSource` auf und sie rendern unterschiedlichen Output. Jedoch ist die Mehrheit der Implementierung gleich:
 
-- On mount, add a change listener to `DataSource`.
-- Inside the listener, call `setState` whenever the data source changes.
-- On unmount, remove the change listener.
+- Wenn die Komponente gemountet ist, füge einen Listener für Änderungen in `DataSource` hinzu.
+- Innerhalb des Listeners, rufe `setState` auf, sobald sich die Datenquelle ändert.
+- Wenn die Komponente unmountet wird, entferne den Listener.
 
-You can imagine that in a large app, this same pattern of subscribing to `DataSource` and calling `setState` will occur over and over again. We want an abstraction that allows us to define this logic in a single place and share it across many components. This is where higher-order components excel.
+Du kannst dir nun vorstellen, dass in einer großen Applikation, dieses Pattern sehr oft vorkommen wird. Wir wollen eine Abstraktion, die uns erlaubt diese Logik an einem Platz zu definieren und diese dann Komponentenübergreifend zu nutzen. Dies ist der Fall, wo sich die Higher-Order Komponenten auszeichnen.
 
-We can write a function that creates components, like `CommentList` and `BlogPost`, that subscribe to `DataSource`. The function will accept as one of its arguments a child component that receives the subscribed data as a prop. Let's call the function `withSubscription`:
+Wir können eine Funktion schreiben, die Komponenten erstellt, sowie `CommentList` und `BlogPost`, die `DataSource` als Datenquelle nutzt. Die Funktion akzeptiert als einer der Argumente eine Kind-Komponente, die Daten aus der Datenquelle als Eigenschaft erhält. Lass uns die Funktion `withSubscription` nennen:
 
 ```js
 const CommentListWithSubscription = withSubscription(
@@ -122,14 +122,14 @@ const BlogPostWithSubscription = withSubscription(
 );
 ```
 
-The first parameter is the wrapped component. The second parameter retrieves the data we're interested in, given a `DataSource` and the current props.
+Der erste Parameter ist die umschlossene Komponente. Der zweite Parameter erhält die Daten, an denen wir interessiert sind, dies wird durch `DataSource` und aktuelle Props sichergestellt.
 
-When `CommentListWithSubscription` and `BlogPostWithSubscription` are rendered, `CommentList` and `BlogPost` will be passed a `data` prop with the most current data retrieved from `DataSource`:
+Wenn `CommentListWithSubscription` und `BlogPostWithSubscription` gerendert werden, wird eine `data` Eigenschaft an `CommentList` und `BlogPost` übermittelt, diese enthält die aktuellsten Daten, die von `DataSource` erhalten wurden.
 
 ```js
-// This function takes a component...
+// Diese Funktion nimmt eine Komponente...
 function withSubscription(WrappedComponent, selectData) {
-  // ...and returns another component...
+  // ...und gibt eine andere Komponente zurück...
   return class extends React.Component {
     constructor(props) {
       super(props);
@@ -140,7 +140,7 @@ function withSubscription(WrappedComponent, selectData) {
     }
 
     componentDidMount() {
-      // ... that takes care of the subscription...
+      // ... Das stellt sicher, dass Datenänderungen bearbeitet werden...
       DataSource.addChangeListener(this.handleChange);
     }
 
@@ -155,8 +155,8 @@ function withSubscription(WrappedComponent, selectData) {
     }
 
     render() {
-      // ... and renders the wrapped component with the fresh data!
-      // Notice that we pass through any additional props
+      // ... rendern der umschlossenen Komponente mit aktuellsten Daten!
+      // Beachte, dass wir jegliche zusätzliche Props weiterleiten
       return <WrappedComponent data={this.state.data} {...this.props} />;
     }
   };
