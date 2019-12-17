@@ -72,7 +72,7 @@ function Glossary(props) {
 }
 ```
 
-Es ist auch möglich mehrere Fragmente in einem Array vai der `map` Funktion zusammenzufassen, genauso wie du es bei anderen Element auch tun würdest:
+Es ist auch möglich mehrere Fragmente in einem Array mit Hilfe der `map`-Funktion zusammenzufassen, genauso wie du es bei anderen Element auch tun würdest:
 
 ```javascript{6,9}
 function Glossary(props) {
