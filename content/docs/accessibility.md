@@ -8,7 +8,7 @@ permalink: docs/accessibility.html
 
 Barrierefreiheit im Web (Auch bekannt unter dem Begriff [**a11y**](https://en.wiktionary.org/wiki/a11y)) beschreibt Design und Umsetzung von Websites welche ausnahmlos von Jedem genutzt werden können. Barriefreiheit ist notwendig um Assistenzprogrammen das Interpretieren von Websites zu ermöglichen. 
 
-React unterstützt das Erstellen von barrierefreien Websites in vollem Außmaß, unter Anderem durch die Nutzung von Standard-HTML-Technologien. 
+React unterstützt das Erstellen von barrierefreien Webseiten in vollem Ausmaß, unter anderem durch die Nutzung von Standard-HTML-Technologien. 
 
 ## Standards und Anleitungen {#standards-and-guidelines}
 
