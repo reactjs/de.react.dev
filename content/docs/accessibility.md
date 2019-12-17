@@ -44,7 +44,7 @@ Semantisches HTML ist das Fundament der Barrierefreiheit einer Webanwendung. Das
 
 - [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
-Manchmal wird die Bedeutung verschiedener HTML Elemente verfälscht indem ein `<div>` Element um das JSX hinzugefügt wird um den Reactcode zum laufen zu bringen, besonders häufig beim Arbeiten mit Listen (`<ol>`, `<ul>` und `<dl>`) und der HTML `<table>`. 
+Manchmal wird die Bedeutung verschiedener HTML Elemente verfälscht indem ein `<div>` Element um das JSX hinzugefügt wird um den React-Code zum laufen zu bringen, besonders häufig beim Arbeiten mit Listen (`<ol>`, `<ul>` und `<dl>`) und der HTML `<table>`. 
 Hier sollten besser [React Fragments](/docs/fragments.html) genutzt werden um mehrere Elemente in einer Gruppe zusammenzufassen.
 
 Zum Beispiel,
