@@ -249,7 +249,7 @@ Typischerweise wird Dies durch ein Klick-Event auf dem `window`-Objekt implement
 
 ```javascript{12-14,26-30}
 class OuterClickExample extends React.Component {
-constructor(props) {
+  constructor(props) {
     super(props);
 
     this.state = { isOpen: false };
@@ -283,13 +283,13 @@ constructor(props) {
     return (
       <div ref={this.toggleContainer}>
         <button onClick={this.onClickHandler}>Select an option</button>
-        {this.state.isOpen ? (
+        {this.state.isOpen && (
           <ul>
             <li>Option 1</li>
             <li>Option 2</li>
             <li>Option 3</li>
           </ul>
-        ) : null}
+        )}
       </div>
     );
   }
@@ -349,13 +349,13 @@ class BlurExample extends React.Component {
                 aria-expanded={this.state.isOpen}>
           Select an option
         </button>
-        {this.state.isOpen ? (
+        {this.state.isOpen && (
           <ul>
             <li>Option 1</li>
             <li>Option 2</li>
             <li>Option 3</li>
           </ul>
-        ) : null}
+        )}
       </div>
     );
   }
@@ -469,7 +469,7 @@ to assistive technology, such as screen readers.
 In some browsers we can easily view the accessibility information for each element in the accessibility tree:
 
 - [Using the Accessibility Inspector in Firefox](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector)
-- [Activate the Accessibility Inspector in Chrome](https://gist.github.com/marcysutton/0a42f815878c159517a55e6652e3b23a)
+- [Using the Accessibility Inspector in Chrome](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
 - [Using the Accessibility Inspector in OS X Safari](https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)
 
 ### Screen readers {#screen-readers}
@@ -493,7 +493,7 @@ Refer to the following guides on how to best use NVDA:
 
 VoiceOver is an integrated screen reader on Apple devices.
 
-Refer to the following guides on how activate and use VoiceOver:
+Refer to the following guides on how to activate and use VoiceOver:
 
 - [WebAIM - Using VoiceOver to Evaluate Web Accessibility](https://webaim.org/articles/voiceover/)
 - [Deque - VoiceOver for OS X Keyboard Shortcuts](https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts)

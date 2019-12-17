@@ -1,5 +1,5 @@
-// Make sure the shape of the default value passed to
-// createContext matches the shape that the consumers expect!
+// Stelle sicher, dass die Form des Standardwertes, welcher an createContext
+// überreicht wird mit der Form die der Konsument erwartet, übereinstimmt!
 // highlight-range{2-3}
 export const ThemeContext = React.createContext({
   theme: themes.dark,

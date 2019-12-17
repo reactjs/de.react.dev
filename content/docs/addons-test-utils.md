@@ -19,7 +19,7 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 mit npm
 
 > Hinweis:
 >
-> Wir empfehlen die Verwendung der [`react-testing-library`](https://git.io/react-testing-library), die konzipiert wurde, um das Schreiben von Tests zu ermöglichen, in denen Komponenten auf die gleiche Weise verwendet werden wie von Endnutzern.
+> Wir empfehlen die Verwendung der [React Testing Library](https://testing-library.com/react), die konzipiert wurde, um das Schreiben von Tests zu ermöglichen, in denen Komponenten auf die gleiche Weise verwendet werden wie von Endnutzern.
 >
 > Alternativ dazu gibt es von Airbnb eine Test-Utility namens [Enzyme](https://airbnb.io/enzyme/), mit der auf einfache Weise die Ausgabe von React-Komponenten zugesichert (asserted), manipuliert und durchlaufen werden kann.
 
@@ -122,7 +122,9 @@ it('kann einen Counter rendern und updaten', () => {
 });
 ```
 
-Vergiss nicht, dass das Abschicken von DOM-Events nur funktioniert, wenn der DOM-Container zum `document` hinzugefügt wurde. Du kannst [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) zur Hilfe nehmen, um Boilerplate-Code zu reduzieren.
+- Vergiss nicht, dass das Abschicken von DOM-Events nur funktioniert, wenn der DOM-Container zum `document` hinzugefügt wurde. Du kannst [`React Testing Library`](https://testing-library.com/react) zur Hilfe nehmen, um Boilerplate-Code zu reduzieren.
+
+- Das [`recipes`](/docs/testing-recipes.html) Dokument enthält mehr Details dazu, wie sich `act()` verhält, mit Beispiele und Anwendungsgebieten.
 
 * * *
 
@@ -139,7 +141,7 @@ mockComponent(
 
 > Hinweis:
 >
-> `mockComponent()` ist eine veraltete API. Wir empfehlen, stattdessen [shallow rendering](/docs/shallow-renderer.html) oder [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) zu verwenden.
+> `mockComponent()` ist eine veraltete API. Wir empfehlen, stattdessen [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) zu verwenden.
 
 * * *
 

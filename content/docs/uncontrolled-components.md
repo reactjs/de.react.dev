@@ -1,14 +1,14 @@
 ---
 id: uncontrolled-components
-title: Uncontrolled Components
+title: Unkontrollierte Komponenten
 permalink: docs/uncontrolled-components.html
 ---
 
-In most cases, we recommend using [controlled components](/docs/forms.html) to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+In den meisten Fällen empfehlen wir die Verwendung von [kontrollierten Komponenten](/docs/forms.html#controlled-components) zur Implementierung von Formularen. In einer kontrollierten Komponente werden Formulardaten von einer React Komponente verarbeitet. Die Alternative sind unkontrollierte Komponenten, bei denen die Formulardaten vom DOM selbst verarbeitet werden.
 
-To write an uncontrolled component, instead of writing an event handler for every state update, you can [use a ref](/docs/refs-and-the-dom.html) to get form values from the DOM.
+Um eine unkontrollierte Komponente zu erstellen, kannst du anstelle eines Event-Handlers für jede Aktualisierung des States [ein ref](/docs/refs-and-the-dom.html) verwenden, um Formularwerte aus dem DOM abzurufen.
 
-For example, this code accepts a single name in an uncontrolled component:
+Dieser Codeschnipsel akzeptiert beispielsweise einen einzelnen Namen in einer unkontrollierten Komponente:
 
 ```javascript{5,9,18}
 class NameForm extends React.Component {
@@ -19,7 +19,7 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.input.current.value);
+    alert('Ein Name wurde übermittelt: ' + this.input.current.value);
     event.preventDefault();
   }
 
@@ -37,15 +37,15 @@ class NameForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
+[**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
 
-Since an uncontrolled component keeps the source of truth in the DOM, it is sometimes easier to integrate React and non-React code when using uncontrolled components. It can also be slightly less code if you want to be quick and dirty. Otherwise, you should usually use controlled components.
+Mit unkontrollierten Komponenten ist es manchmal einfacher, React und nicht-React Code zu integrieren, da die Quelle der Wahrheit in einer unkontrollierten Komponente das DOM ist. Es kann auch etwas weniger Code sein, wenn du eine schnelle Lösung haben möchtest. Ansonsten solltest du in der Regel kontrollierte Komponenten verwenden.
 
-If it's still not clear which type of component you should use for a particular situation, you might find [this article on controlled versus uncontrolled inputs](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) to be helpful.
+Wenn es immer noch nicht klar ist, welche Art von Komponente du für eine bestimmte Situation verwenden solltest, findest du möglicherweise [diesen Artikel über kontrollierte gegen unkontrollierte Komponente](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) hilfreich.
 
-### Default Values {#default-values}
+### Standardwerte {#default-values}
 
-In the React rendering lifecycle, the `value` attribute on form elements will override the value in the DOM. With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a `defaultValue` attribute instead of `value`.
+Im React-Rendering-Lifecycle überschreibt das "value" Attribut für Formularelemente den Wert im DOM. Bei einer unkontrollierten Komponente möchte man häufig, dass React den Anfangswert angibt, wobei nachfolgende Aktualisierungen nicht kontrolliert werden. Um diesen Fall zu behandeln, kannst du anstelle von `value` ein `defaultValue` Attribut angeben.
 
 ```javascript{7}
 render() {
@@ -64,19 +64,19 @@ render() {
 }
 ```
 
-Likewise, `<input type="checkbox">` and `<input type="radio">` support `defaultChecked`, and `<select>` and `<textarea>` supports `defaultValue`.
+Ebenso unterstützen `<input type="checkbox">` und `<input type="radio">` `defaultChecked`, und `<select>` und `<textarea>` unterstützen `defaultValue`.
 
-## The file input Tag {#the-file-input-tag}
+## Das Datei input Element {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+In HTML kann der Benutzer mit `<input type="file">` eine oder mehrere Dateien aus dem Gerätespeicher auswählen, die auf einen Server hochgeladen oder von JavaScript über die [File API](https://developer.mozilla.org/de/docs/Web/API/File/Zugriff_auf_Dateien_von_Webapplikationen) bearbeitet werden können.
 
 ```html
 <input type="file" />
 ```
 
-In React, an `<input type="file" />` is always an uncontrolled component because its value can only be set by a user, and not programmatically.
+In React ist `<input type="file" />` immer eine unkontrollierte Komponente, da ihr Wert nur von einem Benutzer und nicht programmatisch festgelegt werden kann.
 
-You should use the File API to interact with the files. The following example shows how to create a [ref to the DOM node](/docs/refs-and-the-dom.html) to access file(s) in a submit handler:
+Du solltest die File API verwenden, um mit den Dateien zu interagieren. Das folgende Beispiel zeigt, wie du einen [ref auf dem DOM-Knoten](/docs/refs-and-the-dom.html) erstellst, um auf Dateien in einem Submit-Handler zuzugreifen:
 
 `embed:uncontrolled-components/input-type-file.js`
 
