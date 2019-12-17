@@ -300,7 +300,7 @@ Dies würde natürlich mit Zeigergeräten, wie zB. der Maus, super funktionieren
 
 <img src="../images/docs/outerclick-with-keyboard.gif" alt="Ein Togglebutton welcher eine Popoverliste öffnet, die nur per Click-Event wieder zu schließen ist." />
 
-Die selbe Funktionalität kann auch durch angemessene Eventhandler, wie zum Beispiel `onBLur` und `onFocus`, gewährleistet werden:
+Die gleiche Funktionalität kann durch geeignete Eventhandler, wie zum Beispiel `onBLur` und `onFocus`, erreicht werden:
 
 ```javascript{19-29,31-34,37-38,40-41}
 class BlurExample extends React.Component {
