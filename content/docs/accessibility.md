@@ -233,7 +233,7 @@ Sollte ein Third-Party-HOC diese Technik nicht implentiert haben kannst du das o
 
 Ein gutes Fokus-Beispielt ist das [react-aria-modal](https://github.com/davidtheclark/react-aria-modal). Dies ist ein relativ rares Beispiel eines vollständig barrierefreiem Modal-Fenster. Hier wird der initiale Fokus auf den Abbrechen Button gesetzt (Um den User davon abzuhalten versehentlich die Success-Action zu aktivieren) und der Fokus kann nicht aus dem Modal-Fenster springen. Nachdem das Modal geschlossen wird wird der Fokus wieder zurück auf das Element gesetzt welches das Modal-Fenster getriggered hat. 
 
->Notiz:
+>Hinweis:
 >
 >Es handelt sich hier um ein wichtiges Feature, welches jedoch in einem vernünftigen Rahmen genutzt werden sollte. Nutze dieses Feature, um den Tastatur-Fokus anzupassen, falls der Flow der App gestört sein sollte und versuche nicht, die Tastaturnutzung des Users zu antizipieren.
 
