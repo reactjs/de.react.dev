@@ -27,7 +27,7 @@ var Greeting = createReactClass({
 
 Die API von ES6-Klassen ähnelt sich, mit wenigen Ausnahmen, der von `createReactClass()`.
 
-## Default Props Deklarieren {#declaring-default-props}
+## Deklarieren von Default Props {#declaring-default-props}
 
 Mit Funktionen und ES6-Klassen wird `defaultProps` als Eigenschaft für die Komponente selbst definiert:
 
@@ -56,7 +56,7 @@ var Greeting = createReactClass({
 });
 ```
 
-## Den Anfangs-**state** Festsetzen {#setting-the-initial-state}
+## Setzen des initialen States {#setting-the-initial-state}
 
 In ES6-Klassen kannst du den Anfangs-**state** definieren, indem du im **constructor** `this.state` zuweist:
 
