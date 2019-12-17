@@ -167,7 +167,7 @@ Um diesem Umstand zuvor zu kommen, müssen wir hier programmatisch nachhelfen. Z
 MDN Web Docs takes a look at this and describes how we can build [keyboard-navigable JavaScript widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets).
 Die MDN Web Docs beschreiben wie wir [Tastaturgesteurte JavaScript Widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets) realisieren können.
 
-Um per React einen Fokus zu setzen, können wir [Refs auf DOM-Elemente](/docs/refs-and-the-dom.html) nutzen.
+Um mit React einen Fokus zu setzen, können wir [Refs auf DOM-Elementen](/docs/refs-and-the-dom.html) nutzen.
 
 Hierzu erstellen wir zuerst eine Elementreferenz im JSX einer Component-Klasse:
 
