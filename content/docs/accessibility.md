@@ -296,7 +296,7 @@ class OuterClickExample extends React.Component {
 }
 ```
 
-Dies würde natürlich mit Zeigergeräten, wie zB. der Maus, super funktionieren, mit der Tastatur alleine führt dies jedoch zu mangelhafter Funktionalität wenn du das nächste Element per tab erreichst. In diesem Fall das `click`-Event nie auf dem `window`-Objekt aufgerufen. Dies kann zu obskuren Fehlern führen, welche es manchen Usern unmöglich macht deine App zu nutzen.
+Dies würde natürlich mit Zeigergeräten, wie zB. der Maus, super funktionieren, mit der Tastatur alleine führt dies jedoch zu mangelhafter Funktionalität wenn du das nächste Element per Tab erreichst. In diesem Fall das `click`-Event nie auf dem `window`-Objekt aufgerufen. Dies kann zu obskuren Fehlern führen, welche es manchen Usern unmöglich macht deine App zu nutzen.
 
 <img src="../images/docs/outerclick-with-keyboard.gif" alt="Ein Togglebutton welcher eine Popoverliste öffnet, die nur per Click-Event wieder zu schließen ist." />
 
