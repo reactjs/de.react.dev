@@ -26,7 +26,7 @@ Die folgenden WCAG-Checklisten geben einen kurzen Überblick:
 
 Das [Web Accessibility Initiative - Accessible Rich Internet Applications](https://www.w3.org/WAI/intro/aria) Dokument zeigt Techniken für das Entwickeln vollkommen barrierefreier JavaScript Widgets. 
 
-Es gilt dass alle `aria-*` HTML-Attribute in JSX komplett unterstützt werden. Während die meisten DOM-Eigenschaften und Attribute in React in camelCase umgesetzt werden, sollten diese Attribute hyphen-cased (auch bekannt als kebab-case, lisp-case, usw.) sein, so wie man es auch bei normalem HTML tun würde:
+Es gilt, dass alle `aria-*` HTML-Attribute in JSX komplett unterstützt werden. Während die meisten DOM-Eigenschaften und Attribute in React in camelCase umgesetzt werden, sollten diese Attribute hyphen-cased (auch bekannt als kebab-case, lisp-case, usw.) sein, so wie man es auch bei normalem HTML tun würde:
 
 ```javascript{3,4}
 <input
