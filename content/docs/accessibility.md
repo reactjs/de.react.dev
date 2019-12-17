@@ -201,7 +201,7 @@ Danach können wir den Fokus beliebig verändern, falls nötig:
  }
  ```
 
-Gelegentlich ist es nötig dass ein Eletern-Component den Fokus auf ein Element eines Kind-Components setzen muss. Dies lässt sich mit dem [Bereitstellen von DOM-Referenzen eines Eletern-Components](/docs/refs-and-the-dom.html#exposing-dom-refs-to-parent-components) via einer speziellen Property, welche die Referenz des Eleternelements zum Kind-Component weitergibt, umsetzen. 
+Gelegentlich ist es nötig, dass eine Eltern-Komponente den Fokus auf ein Element einer Kind-Komponente setzen muss. Dies lässt sich mit dem [Bereitstellen von DOM-Referenzen einer Eltern-Komponente](/docs/refs-and-the-dom.html#exposing-dom-refs-to-parent-components) mit einer speziellen Eigenschaft, welche die Referenz der Eltern-Komponente zur Kind-Komponente weitergibt, umsetzen. 
 
 ```javascript{4,12,16}
 function CustomTextInput(props) {
