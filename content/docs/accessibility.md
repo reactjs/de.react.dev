@@ -239,7 +239,7 @@ Ein gutes Fokus-Beispielt ist das [react-aria-modal](https://github.com/davidthe
 
 ## Maus- und Pointerevents {#mouse-and-pointer-events}
 
-Stelle sicher dass alle Funktionalitäten welche durch die Maus oder den Zeiger hervorgerufen werden auch via Tastatur gesteuert werden können. Sich komplett von einem Zeigergerät abhängig zu machen führt dazu dass deine App für viele Tastaturnutzer unbrauchbar wird.
+Stelle sicher, dass alle Funktionalitäten, welche durch die Maus oder den Zeiger hervorgerufen werden, auch via Tastatur gesteuert werden können. Sich komplett von einem Zeigergerät abhängig zu machen, führt dazu, dass deine App für viele Tastaturnutzer unbrauchbar wird.
 
 Um Dies zu veranschaulichen sehen wir uns einmal ein Anwendungsbeispiel für mangelhafte Barrierefreiheit wegen Click-Events and. Hier siehst du ein Pärifärklick-Beispiel, in welchem der User eine geöffnete Popup-Nachricht schließen kann indem er außerhalb des Elements klickt.
 
