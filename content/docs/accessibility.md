@@ -14,7 +14,7 @@ React unterstützt das Erstellen von barrierefreien Webseiten in vollem Ausmaß,
 
 ### WCAG {#wcag}
 
-Die [Web Content Accessibility Guidelines](https://www.w3.org/WAI/intro/wcag) enthalten Anleitungen um barrierefreie Websites zu erstellen.
+Die [Web Content Accessibility Guidelines](https://www.w3.org/WAI/intro/wcag) enthalten Anleitungen um barrierefreie Webseiten zu erstellen.
 
 Die folgenden WCAG-Checklisten geben einen kurzen Überblick:
 
