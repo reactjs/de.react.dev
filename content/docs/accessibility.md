@@ -40,7 +40,7 @@ Es gilt, dass alle `aria-*` HTML-Attribute in JSX komplett unterstützt werden. 
 ```
 
 ## Semantisches HTML {#semantic-html}
-Semantisches HTML ist das Fundament der Barrierefreiheit einer Webanwendung. Das Nutzen der verschiedenen HTML-Elemente welche die Bedeutung einer Information betonen bringt dir oftmals Barrierefreiheit ohne extra Aufwand.  
+Semantisches HTML ist das Fundament der Barrierefreiheit einer Webanwendung. Das Nutzen der verschiedenen HTML-Elemente, welche die Bedeutung einer Information betonen bringt dir oftmals Barrierefreiheit ohne extra Aufwand.  
 
 - [MDN HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
