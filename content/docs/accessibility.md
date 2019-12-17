@@ -235,7 +235,7 @@ Ein gutes Fokus-Beispielt ist das [react-aria-modal](https://github.com/davidthe
 
 >Notiz:
 >
->Es handelt sich hier um ein wichtiges Feature welches jedoch in Vernünftigen Rahmen genutzt werden sollte. Nutze dieses Feature um den Tastatur-Fokus anzupassen falls der Flow der App gestört sein sollte und versuche nicht die Tastaturnutzung des Users zu antizipieren.
+>Es handelt sich hier um ein wichtiges Feature, welches jedoch in einem vernünftigen Rahmen genutzt werden sollte. Nutze dieses Feature, um den Tastatur-Fokus anzupassen, falls der Flow der App gestört sein sollte und versuche nicht, die Tastaturnutzung des Users zu antizipieren.
 
 ## Maus- und Pointerevents {#mouse-and-pointer-events}
 
