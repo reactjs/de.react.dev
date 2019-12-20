@@ -4,7 +4,7 @@ title: React ohne ES6
 permalink: docs/react-without-es6.html
 ---
 
-Normalerweise definiere eine React-Komponente als einfache JavaScript-Klasse:
+Normalerweise definierst du eine React-Komponente als einfache JavaScript-Klasse:
 
 ```javascript
 class Gruss extends React.Component {
@@ -14,7 +14,7 @@ class Gruss extends React.Component {
 }
 ```
 
-Wenn du ES6 noch nicht verwende, kannst du stattdessen das Modul `create-react-class` verwenden:
+Wenn du ES6 noch nicht verwendest, kannst du stattdessen das Modul `create-react-class` verwenden:
 
 ```javascript
 var createReactClass = require('create-react-class');
@@ -82,7 +82,7 @@ var Counter = createReactClass({
 
 ## Autobinding {#autobinding}
 
-In als ES6-Klassen deklarierten React-Komponenten folgen Methoden der gleichen Semantik wie reguläre ES6-Klassen. Dies bedeutet, dass sie `this` nicht automatisch an die Instanz binden. Du musst im Konstruktor explizit `.bind (this)` verwenden:
+In als ES6-Klassen deklarierten React-Komponenten folgen Methoden der gleichen Semantik wie reguläre ES6-Klassen. Dies bedeutet, dass sie `this` nicht automatisch an die Instanz binden. Du musst im Konstruktor explizit `.bind(this)` verwenden:
 
 ```javascript
 class SagHallo extends React.Component {
@@ -132,7 +132,7 @@ var SagHallo = createReactClass({
 
 Das bedeutet, dass das Schreiben von ES6-Klassen mit etwas mehr Boilerplate-Code für Ereignisbehandlungsroutinen geliefert wird, aber die Leistung bei großen Anwendungen ist etwas besser.
 
-Wenn der Boilerplate-Code für du zu unattraktiv ist, kannst du den Syntaxvorschlag **experimentell** [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) mit Babel aktivieren:
+Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den Syntaxvorschlag **experimentell** [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) mit Babel aktivieren:
 
 ```javascript
 class SagHallo extends React.Component {
@@ -140,7 +140,7 @@ class SagHallo extends React.Component {
     super(props);
     this.state = {message: 'Hallo!'};
   }
-  // WARNUNG: Diese Syntax ist experimentell!
+  // WARNUNG: Dieser Syntax ist experimentell!
   // Die Verwendung eines Pfeils hier bindet die Methode:
   handleClick = () => {
     alert(this.state.message);
