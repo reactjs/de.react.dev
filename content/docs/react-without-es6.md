@@ -156,7 +156,7 @@ class SagHallo extends React.Component {
 }
 ```
 
-Bitte beachte, dass die obige Syntax **experimentell** ist und sich die Syntax möglicherweise ändert oder der Vorschlag nicht in die Sprache passt.
+Bitte beachte, dass der obige Syntax **experimentell** ist und sich der Syntax möglicherweise ändert oder der Vorschlag nicht in die Sprache übernommen wird.
 
 Wenn Du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
 
