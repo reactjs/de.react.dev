@@ -112,7 +112,7 @@ Jedes HTML Formularelement, wie zum Beispiel `<input>` und `<textarea>`, muss ba
 
 In folgenden Quellen kannst du nachlesen wie dies am besten umzusetzen ist:
 
-- [Das W3C zeigt wie Elemente zu etikettieren sind](https://www.w3.org/WAI/tutorials/forms/labels/)
+- [Das W3C zeigt wie Elemente zu kennzeichnen sind](https://www.w3.org/WAI/tutorials/forms/labels/)
 - [WebAIM zeigt wie Elemente zu etikettieren sind](https://webaim.org/techniques/forms/controls)
 - [Die Paciello Gruppe erklärt barrierefreie Namen](https://www.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
 
