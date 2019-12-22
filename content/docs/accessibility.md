@@ -90,7 +90,7 @@ function Glossary(props) {
 }
 ```
 
-Solltest du keine props für einen Fragment-Tag brauchen kannst du die folgende [short syntax](/docs/fragments.html#short-syntax) nutzen, sofern JS-Tooling Diese unterstützt:
+Solltest du keine Props für einen Fragment-Tag brauchen kannst du die folgende [short syntax](/docs/fragments.html#short-syntax) nutzen, sofern dein JS-Tooling diese unterstützt:
 
 ```javascript{3,6}
 function ListItem({ item }) {
