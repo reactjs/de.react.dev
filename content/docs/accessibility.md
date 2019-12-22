@@ -132,7 +132,7 @@ Fehlersituation müssen von allen Nutzern gleich verstanden werden. Die folgende
 
 ## Fokuskontrolle {#focus-control}
 
-Stelle sicher dass deine Webanwednung vollständig per Tastatur bedienbar ist: 
+Stelle sicher dass deine Webanwendung vollständig per Tastatur bedienbar ist: 
 
 - [WebAIM sprich über Tastaturbarrierefreiheit](https://webaim.org/techniques/keyboard/)
 
