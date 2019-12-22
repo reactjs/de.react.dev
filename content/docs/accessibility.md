@@ -142,7 +142,7 @@ Der Tastatur-Fokus zeigt auf das aktuell ausgewählte DOM-Element welches Eingab
 
 <img src="../images/docs/keyboard-focus.png" alt="Blue keyboard focus outline around a selected link." />
 
-Benutze CSS zum Entfernen dieser Linie, zum Beispiel indem du `outline: 0`benutzt, außschließlich nur wenn du Diese auch durch eine andere Implementierung einer Fokusaußenlinie ersetzt. 
+Verwende nur dann CSS zum Entfernen dieser Linie, zum Beispiel indem du `outline: 0` setzt, wenn du sie durch eine andere Implementierung der Fokus-Markierung ersetzt. 
 
 ### Mechanismen um direkt zum wichtigsten Inhalt zu springen {#mechanisms-to-skip-to-desired-content}
 
