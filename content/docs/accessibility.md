@@ -134,7 +134,7 @@ Fehlersituation müssen von allen Nutzern gleich verstanden werden. Die folgende
 
 Stelle sicher dass deine Webanwendung vollständig per Tastatur bedienbar ist: 
 
-- [WebAIM sprich über Tastaturbarrierefreiheit](https://webaim.org/techniques/keyboard/)
+- [WebAIM spricht über Barrierefreiheit mit Tastatur](https://webaim.org/techniques/keyboard/)
 
 ### Tastaturfokus und die Fokusaußenlinie {#keyboard-focus-and-focus-outline}
 
