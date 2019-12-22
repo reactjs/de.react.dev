@@ -161,7 +161,7 @@ Mehr über den Einsatz dieser Elemente zur Verbesserung der Barrierefreiheit erf
 
 ### Den Fokus programmatisch verwalten {#programmatically-managing-focus}
 
-Unsere React-Applikation verändern den HTML-DOM kontinuierlich zur Laufzeit, dies führt dazu dass der Tastatur-Fokus gelegentlich verloren geht oder auf ein unvorhersehbares Element gesetzt wird.
+Unsere React-Anwendungen verändern das HTML-DOM kontinuierlich zur Laufzeit, dies führt dazu, dass der Tastatur-Fokus gelegentlich verloren geht oder auf ein unvorhersehbares Element gesetzt wird.
 Um diesem Umstand zuvor zu kommen, müssen wir hier programmatisch nachhelfen. Zum Beispiel indem wir den Tastatur-Fokus wieder auf den Button setzen, welcher ein Modal geöffnet hat, nachdem dieses geschlossen wurde.
 
 MDN Web Docs takes a look at this and describes how we can build [keyboard-navigable JavaScript widgets](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets).
