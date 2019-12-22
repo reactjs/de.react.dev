@@ -116,7 +116,7 @@ In folgenden Quellen kannst du nachlesen wie dies am besten umzusetzen ist:
 - [WebAIM zeigt wie Elemente zu kennzeichnen sind](https://webaim.org/techniques/forms/controls)
 - [Die Paciello Gruppe erklärt barrierefreie Namen](https://www.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
 
-Auch wenn diese HTML-Standards direkt in React genutzt werden können, solltest du darauf achten dass das `for` Attribut in JSX `htmlFor` heißt.
+Auch wenn diese HTML-Standards direkt in React genutzt werden können, solltest du darauf achten dass das `for`-Attribut in JSX `htmlFor` heißt.
 
 ```javascript{1}
 <label htmlFor="namedInput">Name:</label>
