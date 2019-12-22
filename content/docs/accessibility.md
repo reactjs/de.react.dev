@@ -136,7 +136,7 @@ Stelle sicher dass deine Webanwendung vollständig per Tastatur bedienbar ist:
 
 - [WebAIM spricht über Barrierefreiheit mit Tastatur](https://webaim.org/techniques/keyboard/)
 
-### Tastaturfokus und die Fokusaußenlinie {#keyboard-focus-and-focus-outline}
+### Tastatur-Fokus und Fokussierung  {#keyboard-focus-and-focus-outline}
 
 Der Tastaturfokus zeigt auf das aktuell ausgewählte DOM-Element welches Eingaben von der Tastatur annimt. Man sieht dies überall anhand der Fokusaußenlinie, genau wie Diese im folgenden Bild:
 
