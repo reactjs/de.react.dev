@@ -108,7 +108,7 @@ Weitere Infos findest in der [Dokumentation über Fragments](/docs/fragments.htm
 ## Barrierefreie Formulare {#accessible-forms}
 
 ### Kennzeichnung {#labeling}
-Jedes HTML Formularelement, wie zum Beispiel `<input>` und `<textarea>`, muss barrierefrei etikettiert werden. Beschreibende `label`, welche Für Screenreader relevant sind, müssen vorhanden sein.  
+Jedes HTML Formularelement, wie zum Beispiel `<input>` und `<textarea>`, muss barrierefrei gekennzeichnet werden. Es müssen beschreibende Kennzeichnungen, welche für Screenreader relevant sind, vorhanden sein.  
 
 In folgenden Quellen kannst du nachlesen wie dies am besten umzusetzen ist:
 
