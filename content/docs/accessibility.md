@@ -148,7 +148,7 @@ Benutze CSS zum Entfernen dieser Linie, zum Beispiel indem du `outline: 0`benutz
 
 Stelle einen Mechanismus zur Verfügung welcher die Navigationselemente deiner Webanwendung überspringt. Dies beschleunigt die Navigation mit der Tastatur.
 
-Skiplinks, odr auch Skip Navigation Links sind versteckte Navigationslinks die nur dann sichtbar werden wenn Tastaturnutzer mit der Seite interagieren. Diese sind sehr einfach via internen Seitenankern und etwas Styling zu implementieren:
+Skiplinks, oder auch Skip-Navigation-Links sind versteckte Navigations-Links die nur dann sichtbar werden wenn Tastaturnutzer mit der Seite interagieren. Diese sind sehr einfach mit internen Seitenankern und etwas Styling umzusetzen:
 
 - [WebAIM - Skip Navigation Links](https://webaim.org/techniques/skipnav/)
 
