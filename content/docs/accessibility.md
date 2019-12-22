@@ -110,7 +110,7 @@ Weitere Infos findest in der [Dokumentation über Fragments](/docs/fragments.htm
 ### Kennzeichnung {#labeling}
 Jedes HTML Formularelement, wie zum Beispiel `<input>` und `<textarea>`, muss barrierefrei etikettiert werden. Beschreibende `label`, welche Für Screenreader relevant sind, müssen vorhanden sein.  
 
-In folgenden Quellen kannst du nachlesen wie Dies am besten umzusetzen ist:
+In folgenden Quellen kannst du nachlesen wie dies am besten umzusetzen ist:
 
 - [Das W3C zeigt wie Elemente zu etikettieren sind](https://www.w3.org/WAI/tutorials/forms/labels/)
 - [WebAIM zeigt wie Elemente zu etikettieren sind](https://webaim.org/techniques/forms/controls)
