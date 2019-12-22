@@ -155,7 +155,7 @@ Skiplinks, oder auch Skip-Navigation-Links sind versteckte Navigations-Links die
 Also use landmark elements and roles, such as `<main>` and `<aside>`, to demarcate page regions as assistive technology allow the user to quickly navigate to these sections.
 Nutze Außerdem semantische Elemente und Rollen, wie zum Beispiel `<main>`und `<aside>` um verschiedene Bereiche deiner Seite voneinander abzugrenzen, da es entprechende Assitenztechnologien so dem User erlauben sich schnell zwischen diesen Elementen zurecht zu finden.  
 
-Lies hier mehr über diese für die Barrierefreiheit förderlichen Elemente hier:
+Mehr über den Einsatz dieser Elemente zur Verbesserung der Barrierefreiheit erfährst du hier:
 
 - [Accessible Landmarks](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
 
