@@ -138,7 +138,7 @@ Stelle sicher dass deine Webanwendung vollständig per Tastatur bedienbar ist:
 
 ### Tastatur-Fokus und Fokussierung  {#keyboard-focus-and-focus-outline}
 
-Der Tastaturfokus zeigt auf das aktuell ausgewählte DOM-Element welches Eingaben von der Tastatur annimt. Man sieht dies überall anhand der Fokusaußenlinie, genau wie Diese im folgenden Bild:
+Der Tastatur-Fokus zeigt auf das aktuell ausgewählte DOM-Element welches Eingaben der Tastatur annimmt. Man sieht dies überall anhand der Fokussierung (Außenlinie), genau wie diese im folgenden Bild:
 
 <img src="../images/docs/keyboard-focus.png" alt="Blue keyboard focus outline around a selected link." />
 
