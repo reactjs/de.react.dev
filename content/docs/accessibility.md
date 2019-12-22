@@ -125,7 +125,7 @@ Auch wenn diese HTML-Standards direkt in React genutzt werden können, solltest 
 
 ### Den Nutzer über Fehler informieren  {#notifying-the-user-of-errors}
 
-Fehlersituation müssen von allen Nutzern gleich verstanden werden. The foglenden Links zeigen uns wie man Fehlermeldungen auch für Screenreader interpretier gestaltet:
+Fehlersituation müssen von allen Nutzern gleich verstanden werden. Die folgenden Links zeigen uns wie man Fehlermeldungen auch für Screenreader interpretierbar gestaltet:
 
 - [Das W3C demonstriert Fehlermeldungen](https://www.w3.org/WAI/tutorials/forms/notifications/)
 - [WebAIM nimmt sich der Formularvalidierung an](https://webaim.org/techniques/formvalidation/)
