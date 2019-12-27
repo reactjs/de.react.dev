@@ -140,7 +140,7 @@ Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den **experime
 class SagHallo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {nachricht: 'Hallo!'};
+    this.state = {message: 'Hallo!'};
   }
   // WARNUNG: Diese Syntax ist experimentell!
   // Die Verwendung eines Pfeils hier bindet die Methode:
