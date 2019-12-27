@@ -162,7 +162,7 @@ Bitte beachte, dass die obige Syntax **experimentell** ist und sich die Syntax m
 
 Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
 
-* Binde Methoden im **constructor**.
+* Binde Methoden im Konstruktor.
 * Verwende Pfeilfunktionen, z.B. `onClick={(e) => this.handleClick(e)}`.
 * Verwende weiterhin `createReactClass`.
 
