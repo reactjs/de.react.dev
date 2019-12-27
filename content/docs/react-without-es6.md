@@ -217,7 +217,7 @@ var TickTock = createReactClass({
 
 ReactDOM.render(
   <TickTock />,
-  document.getElementById('beispiel')
+  document.getElementById('example')
 );
 ```
 
