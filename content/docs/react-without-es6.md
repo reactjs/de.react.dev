@@ -137,7 +137,7 @@ Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den **experime
 
 
 ```javascript
-class SagHallo extends React.Component {
+class SayHello extends React.Component {
   constructor(props) {
     super(props);
     this.state = {message: 'Hallo!'};
