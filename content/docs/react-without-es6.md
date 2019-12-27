@@ -95,7 +95,7 @@ class SayHello extends React.Component {
   }
 
   handleClick() {
-    alert(this.state.nachricht);
+    alert(this.state.message);
   }
 
   render() {
