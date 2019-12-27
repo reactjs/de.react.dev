@@ -143,7 +143,7 @@ class SayHello extends React.Component {
     this.state = {message: 'Hallo!'};
   }
   // WARNUNG: Diese Syntax ist experimentell!
-  // Die Verwendung eines Pfeils hier bindet die Methode:
+  // Die Verwendung eines Pfeils bindet hier die Methode:
   handleClick = () => {
     alert(this.state.message);
   }
