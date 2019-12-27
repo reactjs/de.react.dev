@@ -145,7 +145,7 @@ class SagHallo extends React.Component {
   // WARNUNG: Diese Syntax ist experimentell!
   // Die Verwendung eines Pfeils hier bindet die Methode:
   handleClick = () => {
-    alert(this.state.nachricht);
+    alert(this.state.message);
   }
 
   render() {
