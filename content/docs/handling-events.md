@@ -56,11 +56,7 @@ function ActionLink() {
 
 Hier ist `e` ein synthetisches Event. React definiert diese synthetischen Events gemäß der [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), also brauchst du dir keine Sorgen über browserübergreifende Kompatibilität machen. Mehr Informationen findest du im [`SyntheticEvent`](/docs/events.html) Referenz Leitfaden.
 
-<<<<<<< HEAD
 Mit React solltest du im Normalfall `addEventListener` nicht aufrufen müssen, um Events an DOM Elemente zu binden, nachdem sie erstellt worden. Stattdessen stellst du einfach einen Listener zur Verfügung, wenn das Element initial gerendert wurde.
-=======
-When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
->>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
 
 Wenn du eine Komponente als [ES6 Klassse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definierst, ist es ein gängiges Pattern, dass der Eventhandler eine Methode der Klasse ist. Zum Beispiel rendert diese `Toggle` Komponente einen Button, der zwischen den States "AN" und "AUS" wechselt:
 
@@ -146,11 +142,7 @@ Das Problem mit dieser Syntax ist, dass jedes Rendern des `LoggingButton` einen 
 
 ## Argumente an Eventhandler übergeben {#passing-arguments-to-event-handlers}
 
-<<<<<<< HEAD
-Innerhalb einer Schleife ist es üblich, einen zusätzlichen Parameter an den Eventhandler zu übergeben. Wenn beispielsweise `id` die ID einer Zeilen ist, würde folgendes funktionieren:
-=======
-Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
->>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
+Innerhalb einer Schleife ist es üblich, einen zusätzlichen Parameter an den Eventhandler zu übergeben. Wenn beispielsweise `id` die ID einer Zeile ist, würde folgendes funktionieren:
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Zeile entfernen</button>
