@@ -181,5 +181,9 @@ Im nächsten Abschnitt gehen wir auf das Rendering von React-Elementen ins DOM e
 
 >**Tipp:**
 >
+<<<<<<< HEAD
 
 >Wir empfehlen das Verwenden der ["Babel" Sprachdefinition](https://babeljs.io/docs/editors) für den Editor deiner Wahl, sodass sowohl ES6 als auch JSX-Code vernünftig dargestellt werden kann. Diese Webseite nutzt das [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/)-Farbschema, welches mit Babel kompatibel ist.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme) color scheme which is compatible with it.
+>>>>>>> 5b6ad388804aaa5cf5504ccd04329f52960e17ae
