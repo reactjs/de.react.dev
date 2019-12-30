@@ -142,7 +142,7 @@ Das Problem mit dieser Syntax ist, dass jedes Rendern des `LoggingButton` einen 
 
 ## Argumente an Eventhandler übergeben {#passing-arguments-to-event-handlers}
 
-Innerhalb einer Schleife ist es üblich, einen zusätzlichen Parameter an den Eventhandler zu übergeben. Wenn beispielsweise `id` die ID einer Zeilen ist, würde folgendes funktionieren:
+Innerhalb einer Schleife ist es üblich, einen zusätzlichen Parameter an den Eventhandler zu übergeben. Wenn beispielsweise `id` die ID einer Zeile ist, würde folgendes funktionieren:
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Zeile entfernen</button>
