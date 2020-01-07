@@ -393,7 +393,7 @@ Gib immer die in den Texten deiner Seite verwendete Sprache an, da Screen-Reader
 
 Verwende einen `<title>` welcher den aktuellen Inhalt der Seite korrekt beschreibt, um sicher zu gehen dass jeder User genau über den Kontext des Dokuments im Klaren ist. 
 
-- [WCAG - Den Bedarf eines Titels verstehen](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html)
+- [WCAG - Den Bedarf eines Dokumenten-Titels verstehen](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html)
 
 In React können wir Diesen mit dem [React Document Title Component](https://github.com/gaearon/react-document-title) realisieren.
 
