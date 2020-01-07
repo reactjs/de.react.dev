@@ -416,7 +416,7 @@ Wenn du deine Kontraste noch genauer testen willst kannst du die folgenden Werkz
 
 ## Entwicklungs- und Testingtools {#development-and-testing-tools}
 
-Es gibt eine Reihe von Werkzeugen um dich bei der Erstellung barrierefreier Webapplikationen zu unterstützen. 
+Es gibt eine Reihe von Werkzeugen um dich bei der Erstellung barrierefreier Webanwendungen zu unterstützen. 
 
 ### Die Tastatur {#the-keyboard}
 
