@@ -462,7 +462,7 @@ Das [Web Accessibility Evaluation Tool](https://wave.webaim.org/extension/) ist 
 
 #### Barrierefreiheitsprüfer und der Barrierefreiheitsbaum {#accessibility-inspectors-and-the-accessibility-tree}
 
-[Der Barrierefreiheitsbaum](https://www.paciellogroup.com/blog/2015/01/the-browser-accessibility-tree/) ist eine Teilmenge des DOM-Baums, welche barrierefreie Objekte für jedes DOM-Element, das für unterstützende Technologie wie zB. Screen-Readern sichtbar sein sollte, enthält. 
+[Der Barrierefreiheitsbaum](https://www.paciellogroup.com/blog/2015/01/the-browser-accessibility-tree/) ist eine Teilmenge des DOM-Baums, welche barrierefreie Objekte für jedes DOM-Element, das für unterstützende Technologie wie z. B. Screen-Readern sichtbar sein sollte, enthält. 
 
 In einigen Browsern ist es einfach möglich die Informationen zur Barrierefreiheit für jedes Element des Barrierefreiheitsbaums zu überprüfen:
 
