@@ -514,5 +514,5 @@ Nutze die folgenden Hinweise, um zu erfahren wie JAWS am besten zu nutzen ist:
 
 Nutze die folgenden Hinweise, um zu erfahren wie ChromeVox am besten zu nutzen ist:
 
-- [Google Chromebook Hilfe - Nutzung des Integrierten Screen-Readers](https://support.google.com/chromebook/answer/7031755?hl=de)
+- [Google Chromebook Hilfe - Nutzung des integrierten Screen-Readers](https://support.google.com/chromebook/answer/7031755?hl=de)
 - [ChromeVox Referenz der klassischen Tastenkombinationen](https://www.chromevox.com/keyboard_shortcuts.html)
