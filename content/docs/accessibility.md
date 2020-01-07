@@ -381,61 +381,61 @@ Jede Art von Widget hat ein spezielles Designpattern und sollte für User und de
 - [Heydon Pickering - ARIA Beispiele](https://heydonworks.com/practical_aria_examples/)
 - [Inclusive Components](https://inclusive-components.design/)
 
-## Other Points for Consideration {#other-points-for-consideration}
+## Andere wichtige Punkte {#other-points-for-consideration}
 
-### Setting the language {#setting-the-language}
+### Einstellung der Sprache {#setting-the-language}
 
-Indicate the human language of page texts as screen reader software uses this to select the correct voice settings:
+Gib immer die in den Texten deiner Seite verwendete Sprache an, da Screen-Reader-Software diese Angabe nutzt um die richtigen Spracheinstellungen auszuwählen.
 
 - [WebAIM - Document Language](https://webaim.org/techniques/screenreader/#language)
 
-### Setting the document title {#setting-the-document-title}
+### Der Titel des Dokuments {#setting-the-document-title}
 
-Set the document `<title>` to correctly describe the current page content as this ensures that the user remains aware of the current page context:
+Verwende den Dokumenten `<title>` um den aktuellen Inhalt der Seite korrekt zu beschreiben, da dies sicherstellt, dass der Benutzer über den aktuellen Seitenkontext informiert ist. 
 
-- [WCAG - Understanding the Document Title Requirement](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html)
+- [WCAG - Den Bedarf eines Dokumenten-Titels verstehen](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html)
 
-We can set this in React using the [React Document Title Component](https://github.com/gaearon/react-document-title).
+In React können wir Diesen mit dem [React Document Title Component](https://github.com/gaearon/react-document-title) realisieren.
 
-### Color contrast {#color-contrast}
+### Farbkontraste {#color-contrast}
 
-Ensure that all readable text on your website has sufficient color contrast to remain maximally readable by users with low vision:
+Stelle sicher, dass die Texte deiner Webseite ausreichende Farbkontraste aufweisen, um auch von Nutzern mit Sehschwäche problemlos lesbar zu sein:
 
-- [WCAG - Understanding the Color Contrast Requirement](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
-- [Everything About Color Contrast And Why You Should Rethink It](https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/)
-- [A11yProject - What is Color Contrast](https://a11yproject.com/posts/what-is-color-contrast/)
+- [WCAG - Den Bedarf für Farbkontrast verstehen](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+- [Alles über den Farbkontrast und warum man ihn überdenken sollte](https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/)
+- [A11yProject - Was ist Farbkontrast](https://a11yproject.com/posts/what-is-color-contrast/)
 
-It can be tedious to manually calculate the proper color combinations for all cases in your website so instead, you can [calculate an entire accessible color palette with Colorable](https://jxnblk.com/colorable/).
+Es kann sehr anstrengend sein die richtigen Farbkombinationen für alle Anwendungsfälle deiner Webseite manuell zu erstellen, anstatt dessen kannst du [eine vollständig barrierefreie Farbpalette mit Colorable berechnen](https://jxnblk.com/colorable/).
 
-Both the aXe and WAVE tools mentioned below also include color contrast tests and will report on contrast errors.
+Sowohl die unten erwähnten aXe als auch die WAVE-Werkzeuge beinhalten Farbkontrast-Tests welche dich über fehlerhafte Kontraste informieren.
 
-If you want to extend your contrast testing abilities you can use these tools:
+Wenn du deine Kontraste noch genauer testen willst kannst du die folgenden Werkzeuge verwenden:
 
-- [WebAIM - Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
-- [The Paciello Group - Color Contrast Analyzer](https://www.paciellogroup.com/resources/contrastanalyser/)
+- [WebAIM - Farbkontrast Checker](https://webaim.org/resources/contrastchecker/)
+- [Die Paciello Gruppe - Farbkontrast Analyzer](https://www.paciellogroup.com/resources/contrastanalyser/)
 
-## Development and Testing Tools {#development-and-testing-tools}
+## Entwicklungs- und Testingtools {#development-and-testing-tools}
 
-There are a number of tools we can use to assist in the creation of accessible web applications.
+Es gibt eine Reihe von Werkzeugen um dich bei der Erstellung barrierefreier Webanwendungen zu unterstützen. 
 
-### The keyboard {#the-keyboard}
+### Die Tastatur {#the-keyboard}
 
-By far the easiest and also one of the most important checks is to test if your entire website can be reached and used with the keyboard alone. Do this by:
+Die mit Abstand einfachste und auch eine der wichtigsten Prüfungen ist es, zu testen, ob deine gesamte Webseite allein mit der Tastatur erreichbar und nutzbar ist. Teste dies wie folgt:
 
-1. Disconnecting your mouse.
-1. Using `Tab` and `Shift+Tab` to browse.
-1. Using `Enter` to activate elements.
-1. Where required, using your keyboard arrow keys to interact with some elements, such as menus and dropdowns.
+1. Deaktiviere deine Maus.
+1. Nutze `Tab` und `Shift+Tab` um zu navigieren.
+1. Nutze `Enter` um Elemente zu aktivieren.
+1. Falls nötig, nutze die Pfeiltasten zur Interaktion mit manchen Elementen, wie z.B. Menüs und Dropdowns. 
 
-### Development assistance {#development-assistance}
+### Hilfsmittel für Entwickler {#development-assistance}
 
-We can check some accessibility features directly in our JSX code. Often intellisense checks are already provided in JSX aware IDE's for the ARIA roles, states and properties. We also have access to the following tool:
+Einige Punkte der Barrierefreiheit können direkt in unserem JSX-Code getestet werden. Oftmals gibt es bereits Intellisense-Tests für ARIA-Roles, States und Properties in JSX-fähigen IDE's. Außerdem steht uns das folgende Werkzeug zur Verfügung:
 
 #### eslint-plugin-jsx-a11y {#eslint-plugin-jsx-a11y}
 
-The [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) plugin for ESLint provides AST linting feedback regarding accessibility issues in your JSX. Many IDE's allow you to integrate these findings directly into code analysis and source code windows.
+Das [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) ESLint-Plugin stellt AST-Linting-Feedback bezogen auf Probleme mit der Barrierefreiheit in deinem JSX zur Verfügung. Viele IDE's machen es dir möglich diese Funktionalität direkt in die Code-Analyse oder die Coding-Oberfläche zu integrieren. 
 
-[Create React App](https://github.com/facebookincubator/create-react-app) has this plugin with a subset of rules activated. If you want to enable even more accessibility rules, you can create an `.eslintrc` file in the root of your project with this content:
+[Create React App](https://github.com/facebookincubator/create-react-app) verfügt über ein Plugin welches einen Teil dieser Regeln aktiviert hat. Solltest du noch mehr Regeln zur Barrierefreiheit nutzen wollen, kannst im Stammverzeichnis deines Projekts eine `.eslintrc`-Datei mit folgendem Inhalt anlegen: 
 
   ```json
   {
@@ -444,77 +444,75 @@ The [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) 
   }
   ```
 
-### Testing accessibility in the browser {#testing-accessibility-in-the-browser}
+### Barrierefreiheit im Browser testen {#testing-accessibility-in-the-browser}
 
-A number of tools exist that can run accessibility audits on web pages in your browser. Please use them in combination with other accessibility checks mentioned here as they can only
-test the technical accessibility of your HTML.
+Es gibt eine Reihe von Werkzeugen, die Barrierefreiheitsprüfungen auf deinen Webseiten im Browser durchführen können. Bitte nutze Diese nur in Verbindung mit den bereits genannten Werkzeugen, da diese Tests nur die technische Barrierefreiheit in deinem HTML kontrollieren können.
 
-#### aXe, aXe-core and react-axe {#axe-axe-core-and-react-axe}
+#### aXe, aXe-core und react-axe {#axe-axe-core-and-react-axe}
 
-Deque Systems offers [aXe-core](https://github.com/dequelabs/axe-core) for automated and end-to-end accessibility tests of your applications. This module includes integrations for Selenium.
+Deque Systems bietet [aXe-core](https://github.com/dequelabs/axe-core) für automatisierte End-to-End-Tests deiner Anwendung an. Dieses Modul enthält auch Einbindungen für Selenium.
 
-[The Accessibility Engine](https://www.deque.com/products/axe/) or aXe, is an accessibility inspector browser extension built on `aXe-core`.
+[The Accessibility Engine](https://www.deque.com/products/axe/), oder aXe, ist eine Browser-Erweiterung basierend auf `aXe-core`, die einen Inspektor für Barrierefreiheit bereitstellt.
 
-You can also use the [react-axe](https://github.com/dylanb/react-axe) module to report these accessibility findings directly to the console while developing and debugging.
+Außerdem kannst du das [react-axe](https://github.com/dylanb/react-axe)-Modul nutzen, um die Ergebnisse dieser Barrierefreiheitskontrollen während der Entwicklung direkt in der Konsole auszugeben.
 
 #### WebAIM WAVE {#webaim-wave}
 
-The [Web Accessibility Evaluation Tool](https://wave.webaim.org/extension/) is another accessibility browser extension.
+Das [Web Accessibility Evaluation Tool](https://wave.webaim.org/extension/) ist eine weitere Browser-Erweiterung.
 
-#### Accessibility inspectors and the Accessibility Tree {#accessibility-inspectors-and-the-accessibility-tree}
+#### Barrierefreiheitsprüfer und der Barrierefreiheitsbaum {#accessibility-inspectors-and-the-accessibility-tree}
 
-[The Accessibility Tree](https://www.paciellogroup.com/blog/2015/01/the-browser-accessibility-tree/) is a subset of the DOM tree that contains accessible objects for every DOM element that should be exposed
-to assistive technology, such as screen readers.
+[Der Barrierefreiheitsbaum](https://www.paciellogroup.com/blog/2015/01/the-browser-accessibility-tree/) ist eine Teilmenge des DOM-Baums, welche barrierefreie Objekte für jedes DOM-Element, das für unterstützende Technologie wie z. B. Screen-Readern sichtbar sein sollte, enthält. 
 
-In some browsers we can easily view the accessibility information for each element in the accessibility tree:
+In einigen Browsern ist es einfach möglich die Informationen zur Barrierefreiheit für jedes Element des Barrierefreiheitsbaums zu überprüfen:
 
-- [Using the Accessibility Inspector in Firefox](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector)
-- [Using the Accessibility Inspector in Chrome](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
-- [Using the Accessibility Inspector in OS X Safari](https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)
+- [Den Barrierefreiheitsprüfer in Firefox nutzen](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector)
+- [Den Barrierefreiheitsprüfer in Chrome nutzen](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
+- [Den Barrierefreiheitsprüfer in OS X Safari nutzen](https://developer.apple.com/library/content/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)
 
-### Screen readers {#screen-readers}
+### Screen-Reader {#screen-readers}
 
-Testing with a screen reader should form part of your accessibility tests.
+Das Testen mit einem Screen-Reader sollte bei deinen Tests zur Barrierefreiheit nicht fehlen.
 
-Please note that browser / screen reader combinations matter. It is recommended that you test your application in the browser best suited to your screen reader of choice.
+Beachte dass es auf die Browser / Screen-Reader Kombination ankommt. Es wird empfohlen, dass du deine Anwendung in dem Browser testest, der am besten zu deinem gewählten Screen-Reader passt.
 
-### Commonly Used Screen Readers {#commonly-used-screen-readers}
+### Häufig genutzte Screen-Reader {#commonly-used-screen-readers}
 
-#### NVDA in Firefox {#nvda-in-firefox}
+#### NVDA im Firefox {#nvda-in-firefox}
 
-[NonVisual Desktop Access](https://www.nvaccess.org/) or NVDA is an open source Windows screen reader that is widely used.
+[NonVisual Desktop Access](https://www.nvaccess.org/), auch NVDA, ist ein häufig genutzter Screen-Reader für Windows. 
 
-Refer to the following guides on how to best use NVDA:
+Nutze die folgenden Hinweise, um zu erfahren wie NVDA am besten zu nutzen ist:
 
-- [WebAIM - Using NVDA to Evaluate Web Accessibility](https://webaim.org/articles/nvda/)
-- [Deque - NVDA Keyboard Shortcuts](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
+- [WebAIM - NVDA zur Auswertung der Web-Barrierefreiheit](https://webaim.org/articles/nvda/)
+- [Deque - NVDA Tastenkombinationen](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
 
-#### VoiceOver in Safari {#voiceover-in-safari}
+#### VoiceOver im Safari {#voiceover-in-safari}
 
-VoiceOver is an integrated screen reader on Apple devices.
+VoiceOver ist ein in Apple-Geräte integrierter Screen-Reader.
 
-Refer to the following guides on how to activate and use VoiceOver:
+Nutze die folgenden Hinweise, um zu erfahren wie man VoiceOver aktiviert:
 
-- [WebAIM - Using VoiceOver to Evaluate Web Accessibility](https://webaim.org/articles/voiceover/)
-- [Deque - VoiceOver for OS X Keyboard Shortcuts](https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts)
-- [Deque - VoiceOver for iOS Shortcuts](https://dequeuniversity.com/screenreaders/voiceover-ios-shortcuts)
+- [WebAIM - VoiceOver zur Auswertung der Web-Barrierefreiheit](https://webaim.org/articles/voiceover/)
+- [Deque - VoiceOver für OS X Tastenkombinationen](https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts)
+- [Deque - VoiceOver für iOS Kombinationen](https://dequeuniversity.com/screenreaders/voiceover-ios-shortcuts)
 
-#### JAWS in Internet Explorer {#jaws-in-internet-explorer}
+#### JAWS im Internet Explorer {#jaws-in-internet-explorer}
 
-[Job Access With Speech](https://www.freedomscientific.com/Products/software/JAWS/) or JAWS, is a prolifically used screen reader on Windows.
+[Job Access With Speech](https://www.freedomscientific.com/Products/software/JAWS/), auch JAWS, ist ein häufig genutzter Screen-Reader für Windows.
 
-Refer to the following guides on how to best use JAWS:
+Nutze die folgenden Hinweise, um zu erfahren wie JAWS am besten zu nutzen ist:
 
-- [WebAIM - Using JAWS to Evaluate Web Accessibility](https://webaim.org/articles/jaws/)
-- [Deque - JAWS Keyboard Shortcuts](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
+- [WebAIM - JAWS zur Auswertung der Web-Barrierefreiheit](https://webaim.org/articles/jaws/)
+- [Deque - JAWS Tastenkombinationen](https://dequeuniversity.com/screenreaders/jaws-keyboard-shortcuts)
 
-### Other Screen Readers {#other-screen-readers}
+### Weitere Screen-Reader {#other-screen-readers}
 
-#### ChromeVox in Google Chrome {#chromevox-in-google-chrome}
+#### ChromeVox im Google Chrome {#chromevox-in-google-chrome}
 
-[ChromeVox](https://www.chromevox.com/) is an integrated screen reader on Chromebooks and is available [as an extension](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) for Google Chrome.
+[ChromeVox](https://www.chromevox.com/) ist ein in Chromebooks integrierter Screen-Reader und ist außerdem [als eine Erweiterung](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=de) für Chrome verfügbar.
 
-Refer to the following guides on how best to use ChromeVox:
+Nutze die folgenden Hinweise, um zu erfahren wie ChromeVox am besten zu nutzen ist:
 
-- [Google Chromebook Help - Use the Built-in Screen Reader](https://support.google.com/chromebook/answer/7031755?hl=en)
-- [ChromeVox Classic Keyboard Shortcuts Reference](https://www.chromevox.com/keyboard_shortcuts.html)
+- [Google Chromebook Hilfe - Nutzung des integrierten Screen-Readers](https://support.google.com/chromebook/answer/7031755?hl=de)
+- [ChromeVox Referenz der klassischen Tastenkombinationen](https://www.chromevox.com/keyboard_shortcuts.html)
