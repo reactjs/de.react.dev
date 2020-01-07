@@ -472,7 +472,7 @@ In einigen Browsern ist es einfach möglich die Informationen zur Barrierefreihe
 
 ### Screen-Reader {#screen-readers}
 
-Das Testen mit einem Screen-Reader sollte bei deinen Barrierefreiheitstests nicht fehlen.
+Das Testen mit einem Screen-Reader sollte bei deinen Tests zur Barrierefreiheit nicht fehlen.
 
 Beachte dass es auf die Browser / Screen-Reader Kombination ankommt. Es wird empfohlen, dass du deine Anwendung in dem Browser testest, der am besten zu deinem gewählten Screen-Reader passt.
 
