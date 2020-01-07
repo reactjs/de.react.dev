@@ -391,7 +391,7 @@ Gib immer die in den Texten deiner Seite verwendete Sprache an, da Screen-Reader
 
 ### Der Titel des Dokuments {#setting-the-document-title}
 
-Verwende einen `<title>` welcher den aktuellen Inhalt der Seite korrekt beschreibt, um sicher zu gehen dass jeder User genau über den Kontext des Dokuments im Klaren ist. 
+Verwende den Dokumenten `<title>` um den aktuellen Inhalt der Seite korrekt zu beschreiben, da dies sicherstellt, dass der Benutzer über den aktuellen Seitenkontext informiert ist. 
 
 - [WCAG - Den Bedarf eines Dokumenten-Titels verstehen](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html)
 
