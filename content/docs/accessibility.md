@@ -458,7 +458,7 @@ Außerdem kannst du das [react-axe](https://github.com/dylanb/react-axe)-Modul n
 
 #### WebAIM WAVE {#webaim-wave}
 
-Das [Web Accessibility Evaluation Tool](https://wave.webaim.org/extension/) ist eine weitere Browsererweiterung.
+Das [Web Accessibility Evaluation Tool](https://wave.webaim.org/extension/) ist eine weitere Browser-Erweiterung.
 
 #### Barrierefreiheitsprüfer und der Barrierefreiheitsbaum {#accessibility-inspectors-and-the-accessibility-tree}
 
