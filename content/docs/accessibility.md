@@ -420,7 +420,7 @@ Es gibt eine Reihe von Werkzeugen um dich bei der Erstellung barrierefreier Weba
 
 ### Die Tastatur {#the-keyboard}
 
-Das bei Weitem Einfachste, aber auch eines der wichtigsten Dinge die du prüfen musst ist die Bedienbarkeit deiner vollständigen Website außschließlich via Tastatur. Teste dies wie folgt:
+Die mit Abstand einfachste und auch eine der wichtigsten Prüfungen ist es, zu testen, ob deine gesamte Webseite allein mit der Tastatur erreichbar und nutzbar ist. Teste dies wie folgt:
 
 1. Deaktiviere deine Maus.
 1. Nutze `Tab` und `Shift+Tab` um zu navigieren.
