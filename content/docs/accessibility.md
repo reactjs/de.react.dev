@@ -401,7 +401,7 @@ In React können wir Diesen mit dem [React Document Title Component](https://git
 
 Stelle sicher, dass die Texte deiner Webseite ausreichende Farbkontraste aufweisen, um auch von Nutzern mit Sehschwäche problemlos lesbar zu sein:
 
-- [WCAG - Den Bedarf für Farbkontraste verstehen](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+- [WCAG - Den Bedarf für Farbkontrast verstehen](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
 - [Alles über den Farbkontrast und warum man ihn überdenken sollte](https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/)
 - [A11yProject - Was ist Farbkontrast](https://a11yproject.com/posts/what-is-color-contrast/)
 
