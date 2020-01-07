@@ -385,7 +385,7 @@ Jede Art von Widget hat ein spezielles Designpattern und sollte für User und de
 
 ### Einstellung der Sprache {#setting-the-language}
 
-Gebe immer die, in den Texten deiner Seite, verwendete Sprache an, da Screen-Reader-Software diese Angabe nutzt um die richtigen Spracheinstellungen auszuwählen.
+Gib immer die in den Texten deiner Seite verwendete Sprache an, da Screen-Reader-Software diese Angabe nutzt um die richtigen Spracheinstellungen auszuwählen.
 
 - [WebAIM - Document Language](https://webaim.org/techniques/screenreader/#language)
 
