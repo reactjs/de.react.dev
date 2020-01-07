@@ -57,12 +57,12 @@ ein Auge auf den Code haben, den du im Bundle hast, damit du ihn nicht versehent
 so groß machst und deine Anwendung zu lange zum Laden benötigt.
 
 Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem
-voraus zu sein und mit dem "Aufteilen" deines Bundles zu beginnen.
+voraus zu sein und mit dem "Splitten" (dt. aufteilen) deines Bundles zu beginnen.
 Code-Splitting ist eine Funktion, die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
 [factor-bundle](https://github.com/browserify/factor-bundle)). Durch sie werden mehrere Bundles erzeugt,
 die zur Laufzeit dynamisch geladen werden können.
 
-Code-Splitting deiner Anwendung kann dir Helfen genau die Dinge "lazy zu laden",
+Code-Splitting deiner Anwendung kann dir helfen genau die Dinge "lazy zu laden",
 die der Benutzer gerade benötigt, was die Performance deiner Anwendung drastisch
 verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, aber du hast
 das Laden von Code vermieden, den der Benutzer möglicherweise nie brauchen wird. Zusätzlich
@@ -89,18 +89,9 @@ import("./math").then(math => {
 });
 ```
 
-> Hinweis:
->
-> Die dynamische `import()`-Syntax ist ein ECMAScript (JavaScript)
-> [Vorschlag](https://github.com/tc39/proposal-dynamic-import) der aktuell nicht
-> Teil des Sprachenstandards ist. Es wird
-> The dynamic `import()` syntax is a ECMAScript (JavaScript)
-> [proposal](https://github.com/tc39/proposal-dynamic-import) not currently
-> part of the language standard. Es wird erwartet, dass dieser in naher Zukunft
-> akzeptiert wird.
-
 Wenn Webpack auf diese Syntax stößt, fängt es automatisch mit dem Code-Splitting
-deiner Anwendung an. Wenn du Create-React-App verwendest, ist dies alles vorkonfiguriert und du kannst [direkt loslegen](https://facebook.github.io/create-react-app/docs/code-splitting).
+deiner Anwendung an. Wenn du Create-React-App verwendest, ist dies alles vorkonfiguriert
+und du kannst [direkt loslegen](https://facebook.github.io/create-react-app/docs/code-splitting).
 [Next.js](https://github.com/zeit/next.js/#dynamic-import) unterstützt dies auch direkt out of the box.
 
 Wenn du Webpack selbst einrichtest, wirst du wahrschenlich Webpack's
@@ -113,7 +104,7 @@ die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all da
 
 > Hinweis:
 >
-> `React.lazy` und Suspense sind noch nicht für das serverseitige Rendering verfügbar. Wenn du Code-Splitting von deiner serverseitig gerenderten Anwendung durchführen möchtest, empfehlen wir dir [Loadable Components](https://github.com/smooth-code/loadable-components). Es gibt einen schönen [Leitfaden für das Bundle-Splitting mit serverseitigem Rendern](https://www.smooth-code.com/open-source/loadable-components/docs/server-side-rendering/).
+> `React.lazy` und Suspense sind noch nicht für das serverseitige Rendering verfügbar. Wenn du Code-Splitting von deiner serverseitig gerenderten Anwendung durchführen möchtest, empfehlen wir dir [Loadable Components](https://github.com/gregberge/loadable-components). Es gibt einen schönen [Leitfaden für das Bundle-Splitting mit serverseitigem Rendern](https://loadable-components.com/docs/server-side-rendering/).
 
 Mit der Funktion `React.lazy` kannst du einen dynamischen Import als reguläre Komponente rendern.
 
@@ -195,7 +186,7 @@ const MyComponent = () => (
 ## Routen basiertes Code-Splitting {#route-based-code-splitting}
 
 Die Entscheidung wo in deiner Anwendung Code-Splitting einzuführen ist, kann etwas schwierig sein.
-Du solltest sicherstellen, dass du Orte wählst, die die Bundles gleichmäßig aufteilen, aber nicht
+Du solltest sicherstellen, dass du Orte wählst, die die Bundles gleichmäßig splitten, aber nicht
 die Benutzererfahrung beeinträchtigen.
 
 Ein guter Ausgangspunkt sind Routen. Die meisten Leute im Web sind es
