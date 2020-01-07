@@ -510,7 +510,7 @@ Nutze die folgenden Hinweise, um zu erfahren wie JAWS am besten zu nutzen ist:
 
 #### ChromeVox im Google Chrome {#chromevox-in-google-chrome}
 
-[ChromeVox](https://www.chromevox.com/) ist ein in Chromebooks integrierter ScreenReader und ist außerdem [als eine Erweiterung](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=de) für Chrome verfügbar.
+[ChromeVox](https://www.chromevox.com/) ist ein in Chromebooks integrierter Screen-Reader und ist außerdem [als eine Erweiterung](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=de) für Chrome verfügbar.
 
 Nutze die folgenden Hinweise, um zu erfahren wie ChromeVox am besten zu nutzen ist:
 
