@@ -446,7 +446,7 @@ Das [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) 
 
 ### Barrierefreiheit im Browser testen {#testing-accessibility-in-the-browser}
 
-Es gibt eine Reihe von Werkzeugen um die Barriefreiheit deiner Webseiten im Browser zu kontrollieren. Bitte nutze Diese nur in Verbindung mit den bereits genannten Werkzeugen, da diese Tests nur die technische Barrierefreiheit in deinem HTML kontrollieren können.
+Es gibt eine Reihe von Werkzeugen, die Barrierefreiheitsprüfungen auf deinen Webseiten im Browser durchführen können. Bitte nutze Diese nur in Verbindung mit den bereits genannten Werkzeugen, da diese Tests nur die technische Barrierefreiheit in deinem HTML kontrollieren können.
 
 #### aXe, aXe-core und react-axe {#axe-axe-core-and-react-axe}
 
