@@ -405,7 +405,7 @@ Stelle sicher, dass die Texte deiner Webseite ausreichende Farbkontraste aufweis
 - [Alles über den Farbkontrast und warum man ihn überdenken sollte](https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/)
 - [A11yProject - Was sind Farbkontraste](https://a11yproject.com/posts/what-is-color-contrast/)
 
-Es kann sehr anstrengend sein die richtigen Farbkombinationen für alle Anwendungsfälle deiner Website manuell zu erstellen, anstatt dessen kannst du [eine vollständig barrierefreie Farbpalette mit Colorable berechnen](https://jxnblk.com/colorable/).
+Es kann sehr anstrengend sein die richtigen Farbkombinationen für alle Anwendungsfälle deiner Webseite manuell zu erstellen, anstatt dessen kannst du [eine vollständig barrierefreie Farbpalette mit Colorable berechnen](https://jxnblk.com/colorable/).
 
 Sowohl die unten erwähnten aXe als auch die WAVE-Werkzeuge beinhalten Farbkontrast-Tests welche dich über fehlerhafte Kontraste informieren.
 
