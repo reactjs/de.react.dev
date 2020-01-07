@@ -132,13 +132,13 @@ Jedes Context-Objekt kommt mit einer Provider React Komponente, welche konsumier
 
 Ein `value` Prop wird von konsumierenden Komponenten akzeptiert, welche von dem Provider abstammen. Ein Provider kann mit vielen Konsumenten verbunden sein. Provider können genestet werden, um tiefer im Baum liegende Werte zu überschreiben.
 
-Alle Konsumenten, welche von dem Provider abstammen, werden rerendert, wenn sich das `value` Prop des Providers ändert. Die Verbreitung des Providers zu dessen abstammenden Konsumenten hängt nicht von der `shouldComponentUpdate` Methode ab, weshalb der Konsument ein Update bekommt, auch wenn eine zuvorkommende Komponente aus dem Update ausbricht.
+Alle Konsumenten, welche von dem Provider abstammen, werden neu gerendert, wenn sich das `value` Prop des Providers ändert. Die Verbreitung des Providers zu dessen abstammenden Konsumenten (einschließlich [`.contextType`](#classcontexttype) und [`useContext`](/docs/hooks-reference.html#usecontext)) hängt nicht von der `shouldComponentUpdate` Methode ab, weshalb der Konsument ein Update bekommt, auch wenn eine zuvorkommende Komponente aus dem Update ausbricht.
 
 Veränderungen werden mit dem Vergleichen des neuen und alten Werten ermittelt, welches den gleichen Algorithmus wie [`Object.is`](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description) verwendet.
 
-> Beachte
+> Hinweis
 > 
-> Diese Art und Weise wie Veränderungen ermittelt werden, kann Probleme schaffen, wenn Objekte als `value` überreicht werden: siehe [Fallen](#caveats)
+> Diese Art und Weise wie Veränderungen ermittelt werden, kann Probleme schaffen, wenn Objekte als `value` überreicht werden: siehe [Caveats](#caveats)
 
 ### `Class.contextType` {#classcontexttype}
 
@@ -194,13 +194,10 @@ Eine React-Komponente die Context-Veränderungen abonniert hat. Das lässt dich 
 
 Benötigt eine [Funktion als Kind](/docs/render-props.html#using-props-other-than-render). Diese Funktion erhält den aktuellen Context-Wert und gibt einen React-Knoten zurück. Das der Funktion übergebende `value` Argument wird mit dem `value` Prop des nahestehensten Provider von diesem Context im Baum darüber übereinstimmen. Falls es keinen Provider für diesen Context im Baum oberhalb gibt, wird das `value` Argument mit dem `defaultValue`, welches `createContext()` übergeben wurde, übereinstimmen.
 
-> Beachte
+> Hinweis
 > 
 > Für nähere Informationen über das 'Funkion als Kind' Muster, siehe [render props](/docs/render-props.html).
 
-
-## Beispiele {#examples}
-=======
 ### `Context.displayName` {#contextdisplayname}
 
 Context-Objekt akzeptiert eine `displayName` String-Eigenschaft. React DevTools verwendet diesen String um festzustellen, was für den Context darzustellen ist.
@@ -215,8 +212,7 @@ MyContext.displayName = 'MyDisplayName';
 <MyContext.Consumer> // "MyDisplayName.Consumer" in DevTools
 ```
 
-## Examples {#examples}
-
+## Beispiele {#examples}
 
 ### Dynamischer Context {#dynamic-context}
 
@@ -246,7 +242,7 @@ Oft ist es nötig, den Context von einer Komponente zu updaten, die sehr tief in
 
 ### Konsumieren mehrerer Contexten {#consuming-multiple-contexts}
 
-Um einem Context das schnelle Rerendern beizubehalten, muss React für einen Context-Konsumenten einen eigenen Knoten im Baum erstellen.
+Um einem Context das schnelle neu Rendern beizubehalten, muss React für einen Context-Konsumenten einen eigenen Knoten im Baum erstellen.
 
 `embed:context/multiple-contexts.js`
 
@@ -265,7 +261,6 @@ Um dieses Problem zu umgehen, hebe den Wert in den State des Elternteils:
 
 ## Legacy API {#legacy-api}
 
-> Beachte
+> Hinweis
 > 
 > Früher hat React eine experimentelle Context API geliefert. Diese alte API wird von allen 16.x Releases supported, jedoch sollten alle Applikationen die es verwenden, zur neuesten Version migrieren. Diese Legacy API wird in zukünftigen React Versionen entfernt werden. Lese die [Legacy Context Dokumentation hier](/docs/legacy-context.html).
- 
