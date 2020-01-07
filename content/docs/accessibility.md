@@ -450,7 +450,7 @@ Es gibt eine Reihe von Werkzeugen um die Barriefreiheit deiner Webseiten im Brow
 
 #### aXe, aXe-core und react-axe {#axe-axe-core-and-react-axe}
 
-Deque Systems bietet [aXe-core](https://github.com/dequelabs/axe-core) für automatisierte End-to-End-Tests deiner App an. Dieses Modul enthält auch Einbindungen für Selenium.
+Deque Systems bietet [aXe-core](https://github.com/dequelabs/axe-core) für automatisierte End-to-End-Tests deiner Anwendung an. Dieses Modul enthält auch Einbindungen für Selenium.
 
 [The Accessibility Engine](https://www.deque.com/products/axe/), oder aXe, ist eine auf `aXe-core` basierende Browsererweiterung zur Kontrolle der Barrierefreiheit.
 
