@@ -218,7 +218,7 @@ const App = () => (
 
 ## Benannte Exporte {#named-exports}
 
-`React.lazy` unterstützt derzeit nur `default` Exporte. Wenn das Modul, welches du importieren möchtest benannte `exports` enthält, kannst du ein Zwischenmodul erstellen, das es als `default` wieder exportiert. Dies stellt sicher, dass das Tree-Shaking weiter funktioniert und es keine unbenutzten Komponenten mit einbezieht.
+`React.lazy` unterstützt derzeit nur `default` Exporte. Wenn das Modul, das du importieren möchtest, benannte `exports` enthält, kannst du ein Zwischenmodul erstellen, das es als `default` wieder exportiert. Dies stellt sicher, dass das Tree-Shaking weiter funktioniert und es keine unbenutzten Komponenten mit einbezieht.
 
 ```js
 // ManyComponents.js
