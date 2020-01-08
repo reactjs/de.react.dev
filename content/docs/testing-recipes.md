@@ -1,6 +1,6 @@
 ---
 id: testing-recipes
-title: Testing Recipes
+title: Test-Rezepte
 permalink: docs/testing-recipes.html
 prev: testing.html
 next: testing-environments.html
@@ -529,7 +529,7 @@ it("should accept selections", () => {
 
   act(() => {
     container
-      .querySelector("[data-testid=2]")
+      .querySelector("[data-testid='2']")
       .dispatchEvent(new MouseEvent("click", { bubbles: true }));
   });
 
