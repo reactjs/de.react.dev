@@ -89,7 +89,7 @@ In React-Komponenten, die als ES6-Klassen deklariert wurden, folgen Methoden der
 class SayHello extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {nachricht: 'Hallo!'};
+    this.state = {message: 'Hallo!'};
     // Diese Zeile ist wichtig!
     this.handleClick = this.handleClick.bind(this);
   }
