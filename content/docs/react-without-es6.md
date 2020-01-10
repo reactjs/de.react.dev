@@ -114,7 +114,7 @@ Mit `createReactClass()` ist dies nicht notwendig, da es alle Methoden bindet:
 ```javascript
 var SagHallo = createReactClass({
   getInitialState: function() {
-    return {nachricht: 'Hallo!'};
+    return {message: 'Hallo!'};
   },
 
   handleClick: function() {
