@@ -1,6 +1,6 @@
 ---
 id: jsx-in-depth
-title: JSX In Depth
+title: JSX im Detail
 permalink: docs/jsx-in-depth.html
 redirect_from:
   - "docs/jsx-spread.html"
@@ -13,7 +13,7 @@ redirect_from:
   - "docs/jsx-in-depth-ko-KR.html"
 ---
 
-Fundamentally, JSX just provides syntactic sugar for the `React.createElement(component, props, ...children)` function. The JSX code:
+Im Grunde stellt JSX nur eine schönere Syntax für die `React.createElement(component, props, ...children)`-Funktion zur Verfügung. Der JSX-Code:
 
 ```js
 <MyButton color="blue" shadowSize={2}>
@@ -21,7 +21,7 @@ Fundamentally, JSX just provides syntactic sugar for the `React.createElement(co
 </MyButton>
 ```
 
-compiles into:
+kompiliert zu:
 
 ```js
 React.createElement(
@@ -31,13 +31,13 @@ React.createElement(
 )
 ```
 
-You can also use the self-closing form of the tag if there are no children. So:
+Du kannst auch die selbstschließende Version des Tags nutzen, sofern keine Kind-Elemente vorhanden sind. So kompiliert:
 
 ```js
 <div className="sidebar" />
 ```
 
-compiles into:
+zu:
 
 ```js
 React.createElement(
@@ -47,19 +47,20 @@ React.createElement(
 )
 ```
 
-If you want to test out how some specific JSX is converted into JavaScript, you can try out [the online Babel compiler](babel://jsx-simple-example).
+Wenn du ausprobieren möchtest wie dein JSX zu welchem JavaScript konvertiert, kannst du [den Online-Babel-Compiler](babel://jsx-simple-example) nutzen.
 
-## Specifying The React Element Type {#specifying-the-react-element-type}
+## Den React Elementen-Typ spezifizieren {#specifying-the-react-element-type}
 
-The first part of a JSX tag determines the type of the React element.
+Der erste Teil eines JSX-Tags gibt den Typen des React-Elements an. 
 
-Capitalized types indicate that the JSX tag is referring to a React component. These tags get compiled into a direct reference to the named variable, so if you use the JSX `<Foo />` expression, `Foo` must be in scope.
+Kapitalisierte Typen geben an dass der JSX-Tag sich auf einen React-Komponenten bezieht. Solche Tags werden in eine direkte Referenz der benannten Variablen kompiliert, folglich muss sich `Foo` auch im entsprechenden Namensraum befinden, wenn du den JSX `<Foo />`-Ausdruck nutzt.
 
-### React Must Be in Scope {#react-must-be-in-scope}
 
-Since JSX compiles into calls to `React.createElement`, the `React` library must also always be in scope from your JSX code.
+### React muss sich im Namensraum befinden {#react-must-be-in-scope}
 
-For example, both of the imports are necessary in this code, even though `React` and `CustomButton` are not directly referenced from JavaScript:
+Da JSX zu einem `React.createElement`-Aufruf kompiliert, muss auch die `React`-Bibliothek immer im Namensraum deines JSX-Codes eingebunden sein.
+
+Beispielsweise sind beide Importierungen in diesem Code nötig, sogar wenn weder `React` noch `CustomButton` direkt im JavaScript aufgegriffen werden:
 
 ```js{1,2,5}
 import React from 'react';
