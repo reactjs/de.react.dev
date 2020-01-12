@@ -72,11 +72,11 @@ function WarningButton() {
 }
 ```
 
-If you don't use a JavaScript bundler and loaded React from a `<script>` tag, it is already in scope as the `React` global.
+Wenn du keinen JavaScript-Bundler nutzt und React via `<script>`-Tag lädst, dann befindet es sich bereits als `React`-Globale im Namensraum.
 
-### Using Dot Notation for JSX Type {#using-dot-notation-for-jsx-type}
+### Die Punkt-Notation als JSX-Typen nutzen {#using-dot-notation-for-jsx-type}
 
-You can also refer to a React component using dot-notation from within JSX. This is convenient if you have a single module that exports many React components. For example, if `MyComponents.DatePicker` is a component, you can use it directly from JSX with:
+Es ist möglich einen React-Komponenten via Punkt-Notation innerhalb des JSX zu referenzieren. Dies ist besonders bequem wenn du mehrere React-Komponenten aus einem Modul exportierst. Wenn zum Beispiel `MyComponents.DatePicker` eine Komponente ist, kannst du Diese direkt im JSX wie folgt nutzen:
 
 ```js{10}
 import React from 'react';
@@ -92,25 +92,25 @@ function BlueDatePicker() {
 }
 ```
 
-### User-Defined Components Must Be Capitalized {#user-defined-components-must-be-capitalized}
+### Nutzerdefinierte Komponenten müssen Kapitalisiert sein {#user-defined-components-must-be-capitalized}
 
-When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>` and results in a string `'div'` or `'span'` passed to `React.createElement`. Types that start with a capital letter like `<Foo />` compile to `React.createElement(Foo)` and correspond to a component defined or imported in your JavaScript file.
+Sobald ein Elemententyp mit einem Kleinbuchstaben beginnt, bezieht sich Dieser auf einen bereits eingebauten Komponenten wie `<div>` oder `<span>`, welche `React.createElement`   als `'div'` oder `'span'` Zeichenkette übergeben werden. Typen die mit einem Großbuchstaben beginnen, wie z.B. `<Foo />`, kompilieren zu `React.createElement(Foo)` und beziehen sich auf eine Komponente, welche in deiner JavaScript-Datei eingebunden oder definiert wurde.
 
-We recommend naming components with a capital letter. If you do have a component that starts with a lowercase letter, assign it to a capitalized variable before using it in JSX.
+Wir empfehlen Komponenten mit einem Großbuchstaben beginnend zu benennen. Solltest du eine Komponente nutzen die mit einem Kleinbuchstaben beginnt, ordne Diese einer kapitalisierten Variable zu, bevor du sie in JSX nutzt.  
 
-For example, this code will not run as expected:
+Folgender Code würde zum Beispiel nicht wie erwartet laufen:
 
 ```js{3,4,10,11}
 import React from 'react';
 
-// Wrong! This is a component and should have been capitalized:
+// Falsch! Dies ist eine Komponente und sollte mit einem Großbuchstaben beginnen:
 function hello(props) {
-  // Correct! This use of <div> is legitimate because div is a valid HTML tag:
+  // Richtig! Diese Nutzung von <div> ist erlaubt, da div ein valider HTML-Tag ist:
   return <div>Hello {props.toWhat}</div>;
 }
 
 function HelloWorld() {
-  // Wrong! React thinks <hello /> is an HTML tag because it's not capitalized:
+  // Falsch! React denkt das <hello /> ein HTML-Tag ist, weil es nicht mit einem Großbuchstaben beginnt:
   return <hello toWhat="World" />;
 }
 ```
