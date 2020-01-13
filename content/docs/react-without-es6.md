@@ -36,7 +36,7 @@ class Greeting extends React.Component {
   // ...
 }
 
-Gruss.defaultProps = {
+Greeting.defaultProps = {
   name: 'Maria'
 };
 ```
