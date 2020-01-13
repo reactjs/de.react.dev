@@ -137,7 +137,7 @@ Das bedeutet, dass ES6-Klassen mit etwas mehr Code für Event-Handler geliefert 
 Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den **experimentellen** Syntaxvorschlag [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) mit Babel aktivieren:
 
 ```javascript
-class SagHallo extends React.Component {
+class SayHello extends React.Component {
   constructor(props) {
     super(props);
     this.state = {message: 'Hallo!'};
