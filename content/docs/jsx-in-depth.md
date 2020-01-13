@@ -115,26 +115,26 @@ function HelloWorld() {
 }
 ```
 
-To fix this, we will rename `hello` to `Hello` and use `<Hello />` when referring to it:
+Um dies zu beheben benennen wir `hello` zu `Hello` um und nutzen `<Hello />` zum einbinden:
 
 ```js{3,4,10,11}
 import React from 'react';
 
-// Correct! This is a component and should be capitalized:
+// Richtig! Da dies eine Komponente ist, sollte Diese auch mit einem Großbuchstaben beginnen:
 function Hello(props) {
-  // Correct! This use of <div> is legitimate because div is a valid HTML tag:
+  // Richtig! Diese Nutzung von <div> ist erlaubt, da div ein valider HTML-Tag ist:
   return <div>Hello {props.toWhat}</div>;
 }
 
 function HelloWorld() {
-  // Correct! React knows <Hello /> is a component because it's capitalized.
+  // Richtig! React weiß dass <Hello /> eine Komponente ist, weil sie mit einem Großbuchstaben beginnt.
   return <Hello toWhat="World" />;
 }
 ```
 
-### Choosing the Type at Runtime {#choosing-the-type-at-runtime}
+### Den Typen zur Laufzeit bestimmen {#choosing-the-type-at-runtime}
 
-You cannot use a general expression as the React element type. If you do want to use a general expression to indicate the type of the element, just assign it to a capitalized variable first. This often comes up when you want to render a different component based on a prop:
+Das Nutzen eines generellen Ausdrucks als React Elementtyp ist nicht möglich. Solltest du dennoch einen generellen Ausdruck zur Bezeichnung eines Elementtyps nutzen wollen, weiße Diesem vorher einer kapitalisierten Variablen zu. Dieser Fall tritt häufig ein wenn du eine Komponente abhängig von einer `prop` rendern willst: 
 
 ```js{10,11}
 import React from 'react';
@@ -146,12 +146,12 @@ const components = {
 };
 
 function Story(props) {
-  // Wrong! JSX type can't be an expression.
+  // Falsch! Der JSX Typ darf kein Ausdruck sein.
   return <components[props.storyType] story={props.story} />;
 }
 ```
 
-To fix this, we will assign the type to a capitalized variable first:
+Um dies zu beheben weisen wir dem Typen zuerst eine kapitalisierte Variable zu:
 
 ```js{10-12}
 import React from 'react';
@@ -163,7 +163,7 @@ const components = {
 };
 
 function Story(props) {
-  // Correct! JSX type can be a capitalized variable.
+  // Richtig! Der JSX Typ kann eine Variable sein welche mit einem Großbuchstaben beginnt.
   const SpecificStory = components[props.storyType];
   return <SpecificStory story={props.story} />;
 }
