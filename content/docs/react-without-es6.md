@@ -4,7 +4,7 @@ title: React ohne ES6
 permalink: docs/react-without-es6.html
 ---
 
-Normalerweise definierst du eine React-Komponente als einfache JavaScript-Klasse:
+Normalerweise definiert man eine React-Komponente als eine einfache JavaScript-Klasse:
 
 ```javascript
 class Gruss extends React.Component {
@@ -14,7 +14,7 @@ class Gruss extends React.Component {
 }
 ```
 
-Wenn du ES6 noch nicht verwendest, kannst du stattdessen das Modul `create-react-class` verwenden:
+Wenn du ES6 noch nicht verwendest, kannst du stattdessen das `create-react-class` Modul verwenden:
 
 ```javascript
 var createReactClass = require('create-react-class');
@@ -56,9 +56,9 @@ var Gruss = createReactClass({
 });
 ```
 
-## Anfänglichen State einstellen {#setting-the-initial-state}
+## Setzen des initialen States {#setting-the-initial-state}
 
-In ES6-Klassen kannst du den anfänglichen State definieren, indem im Konstruktor `this.state` zugewiesen wird:
+In ES6-Klassen kannst du den initialen State definieren, indem du im Konstruktor `this.state` zuweist:
 
 ```javascript
 class Counter extends React.Component {
@@ -69,7 +69,9 @@ class Counter extends React.Component {
   // ...
 }
 ```
-Mit `createReactClass()`musst du eine separate `getInitialState`-Methode bereitstellen,  die den anfänglichen State zurückgibt:
+
+Mit `createReactClass()` musst du eine separate `getInitialState`-Methode bereitstellen, die den initialen State zurückgibt:
+
 
 ```javascript
 var Counter = createReactClass({
@@ -82,7 +84,7 @@ var Counter = createReactClass({
 
 ## Autobinding {#autobinding}
 
-In als ES6-Klassen deklarierten React-Komponenten folgen Methoden der gleichen Semantik wie reguläre ES6-Klassen. Dies bedeutet, dass sie `this` nicht automatisch an die Instanz binden. Du musst im Konstruktor explizit `.bind(this)` verwenden:
+In React-Komponenten, die als ES6-Klassen deklariert wurden, folgen Methoden der gleichen Semantik wie reguläre ES6-Klassen. Dies bedeutet, dass `this` sich nicht automatisch an die Instanz bindet. Du musst im **constructor** explizit `.bind(this)` verwenden:
 
 ```javascript
 class SagHallo extends React.Component {
@@ -108,7 +110,7 @@ class SagHallo extends React.Component {
 }
 ```
 
-Mit `createReactClass ()` ist dies nicht notwendig, da es alle Methoden bindet:
+Mit `createReactClass()` ist dies nicht notwendig, da es alle Methoden bindet:
 
 ```javascript
 var SagHallo = createReactClass({
@@ -117,7 +119,7 @@ var SagHallo = createReactClass({
   },
 
   handleClick: function() {
-    alert(this.state.message);
+    alert(this.state.nachricht);
   },
 
   render: function() {
@@ -130,9 +132,9 @@ var SagHallo = createReactClass({
 });
 ```
 
-Das bedeutet, dass das Schreiben von ES6-Klassen mit etwas mehr Boilerplate-Code für Ereignisbehandlungsroutinen geliefert wird, aber die Leistung bei großen Anwendungen ist etwas besser.
+Das bedeutet, dass ES6-Klassen mit etwas mehr Code für Event-Handler geliefert werden, aber die Leistung bei großen Anwendungen etwas besser ist.
 
-Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den Syntaxvorschlag **experimentell** [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) mit Babel aktivieren:
+Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den **experimentellen** Syntaxvorschlag [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) mit Babel aktivieren:
 
 ```javascript
 class SagHallo extends React.Component {
@@ -140,8 +142,8 @@ class SagHallo extends React.Component {
     super(props);
     this.state = {message: 'Hallo!'};
   }
-  // WARNUNG: Dieser Syntax ist experimentell!
-  // Die Verwendung eines Pfeils hier bindet die Methode:
+  // WARNUNG: Diese Syntax ist experimentell!
+  // Die Verwendung eines Pfeils bindet hier die Methode:
   handleClick = () => {
     alert(this.state.message);
   }
@@ -156,12 +158,12 @@ class SagHallo extends React.Component {
 }
 ```
 
-Bitte beachte, dass der obige Syntax **experimentell** ist und sich der Syntax möglicherweise ändert oder der Vorschlag nicht in die Sprache übernommen wird.
+Bitte beachte, dass die obige Syntax **experimentell** ist und sich die Syntax möglicherweise ändert oder der Vorschlag nicht in die Sprache eingebaut wird.
 
-Wenn Du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
+Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
 
 * Binde Methoden im Konstruktor.
-* Verwende Pfeilfunktionen, z.b. `onClick = {(e) => this.handleClick (e)}`.
+* Verwende Pfeilfunktionen, z.B. `onClick={(e) => this.handleClick(e)}`.
 * Verwende weiterhin `createReactClass`.
 
 ## Mixins {#mixins}
@@ -219,4 +221,4 @@ ReactDOM.render(
 );
 ```
 
-Wenn eine Komponente mehrere Mixins verwendet und mehrere Mixins dieselbe Lifecycle-Methode definieren (d. H. Mehrere Mixins möchten eine Bereinigung durchführen, wenn die Komponente zerstört wird), wird garantiert, dass alle Lifecycle-Methoden aufgerufen werden. Methoden, die für Mixins definiert wurden, die in der Reihenfolge Mixins ausgeführt wurden, wurden aufgelistet, gefolgt von einem Methodenaufruf für die Komponente.
+Wenn eine Komponente mehrere Mixins verwendet und mehrere Mixins definieren dieselbe Lifecycle-Methode (d.h. mehrere Mixins möchten eine Bereinigung durchführen, wenn die Komponente zerstört wird), werden alle Lifecycle-Methoden aufgerufen. Methoden, die für Mixins definiert wurden, werden in der Reihenfolge ausgeführt in der die Mixins aufgelistet wurden, gefolgt von einem Methodenaufruf für die Komponente.
