@@ -44,7 +44,7 @@ Gruss.defaultProps = {
 Mit `createReactClass()` musst du `getDefaultProps()` als Funktion für das übergebene Objekt definieren:
 
 ```javascript
-var Gruss = createReactClass({
+var Greeting = createReactClass({
   getDefaultProps: function() {
     return {
       name: 'Maria'
