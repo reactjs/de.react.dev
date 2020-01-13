@@ -7,7 +7,7 @@ permalink: docs/react-without-es6.html
 Normalerweise definiert man eine React-Komponente als eine einfache JavaScript-Klasse:
 
 ```javascript
-class Gruss extends React.Component {
+class Greeting extends React.Component {
   render() {
     return <h1>Hallo, {this.props.name}</h1>;
   }
