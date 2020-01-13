@@ -32,7 +32,7 @@ Die API von ES6-Klassen ähnelt mit wenigen Ausnahmen der von `createReactClass(
 Mit Funktionen und ES6-Klassen wird `defaultProps` als Eigenschaft für die Komponente selbst definiert:
 
 ```javascript
-class Gruss extends React.Component {
+class Greeting extends React.Component {
   // ...
 }
 
