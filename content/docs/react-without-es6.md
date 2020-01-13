@@ -18,7 +18,7 @@ Wenn du ES6 noch nicht verwendest, kannst du stattdessen das `create-react-class
 
 ```javascript
 var createReactClass = require('create-react-class');
-var Gruss = createReactClass({
+var Greeting = createReactClass({
   render: function() {
     return <h1>Hallo, {this.props.name}</h1>;
   }
