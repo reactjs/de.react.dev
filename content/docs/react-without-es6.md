@@ -113,7 +113,7 @@ class SagHallo extends React.Component {
 Mit `createReactClass()` ist dies nicht notwendig, da es alle Methoden bindet:
 
 ```javascript
-var SagHallo = createReactClass({
+var SayHello = createReactClass({
   getInitialState: function() {
     return {message: 'Hallo!'};
   },
