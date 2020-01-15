@@ -72,7 +72,6 @@ class Counter extends React.Component {
 
 Mit `createReactClass()` musst du eine separate `getInitialState`-Methode bereitstellen, die den initialen State zurückgibt:
 
-
 ```javascript
 var Counter = createReactClass({
   getInitialState: function() {
