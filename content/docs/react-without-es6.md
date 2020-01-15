@@ -172,7 +172,7 @@ Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
 >
 >ES6 wird ohne Mixin-Unterstützung gestartet. Daher werden Mixins bei Verwendung von React with ES6 classes nicht unterstützt.
 >
->**Wir haben auch zahlreiche Probleme in Codebasen festgestellt, die Mixins verwenden, [und empfehlen, diese nicht im neuen Code zu verwenden](/blog/2016/07/13/mixins-considered-harmful.html).**
+**Wir haben auch zahlreiche Probleme in Projekten festgestellt, die Mixins verwenden, [und empfehlen, diese nicht in neuem Code zu verwenden](/blog/2016/07/13/mixins-considered-harmful.html).**
 >
 >Dieser Abschnitt dient nur als Referenz.
 
