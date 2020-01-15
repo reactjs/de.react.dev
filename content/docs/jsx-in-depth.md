@@ -171,19 +171,19 @@ function Story(props) {
 
 ## Props in JSX {#props-in-jsx}
 
-There are several different ways to specify props in JSX.
+Es gibt verschiedene Wege um props in JSX zu nutzen. 
 
-### JavaScript Expressions as Props {#javascript-expressions-as-props}
+### JavaScript-Ausdrücke als Props {#javascript-expressions-as-props}
 
-You can pass any JavaScript expression as a prop, by surrounding it with `{}`. For example, in this JSX:
+Man kann jeden JavaScript-Ausdruck als prop verwenden, indem du ihn mit `{}` ummantelst. Zum Beispiel im folgenden JSX:
 
 ```js
 <MyComponent foo={1 + 2 + 3 + 4} />
 ```
 
-For `MyComponent`, the value of `props.foo` will be `10` because the expression `1 + 2 + 3 + 4` gets evaluated.
+Für `MyComponent` wird der Inhalt von `props.foo` 10 sein, da der Ausdruck `1 + 2 + 3 + 4` ausgeführt wird.
 
-`if` statements and `for` loops are not expressions in JavaScript, so they can't be used in JSX directly. Instead, you can put these in the surrounding code. For example:
+`if`-Anweisungen und `for`-Schleifen sind keine Ausdrücke in JavaScript, können also nicht direkt in JSX genutzt werden. Du kannst Diese stattdessen wie im folgenden Beispiel umsetzen:
 
 ```js{3-7}
 function NumberDescriber(props) {
@@ -197,11 +197,11 @@ function NumberDescriber(props) {
 }
 ```
 
-You can learn more about [conditional rendering](/docs/conditional-rendering.html) and [loops](/docs/lists-and-keys.html) in the corresponding sections.
+Du kannst mehr über [bedingtes Rendering](/docs/conditional-rendering.html) und [Schleifen](/docs/lists-and-keys.html) in den entsprechenden Abschnitten erfahren.
 
 ### String Literals {#string-literals}
 
-You can pass a string literal as a prop. These two JSX expressions are equivalent:
+Du kannst ein String Literal als prop weitergeben. Die folgenden JSX-Ausdrücke sind gleich:
 
 ```js
 <MyComponent message="hello world" />
