@@ -27,7 +27,7 @@ var Greeting = createReactClass({
 
 Die API von ES6-Klassen ähnelt sich, mit wenigen Ausnahmen, der von `createReactClass()`.
 
-## Default-Props deklarieren {#declaring-default-props}
+## Deklarieren von Default-Props {#declaring-default-props}
 
 Mit Funktionen und ES6-Klassen wird `defaultProps` als Eigenschaft für die Komponente selbst definiert:
 
