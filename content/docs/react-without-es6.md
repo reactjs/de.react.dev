@@ -25,7 +25,7 @@ var Greeting = createReactClass({
 });
 ```
 
-Die API von ES6-Klassen ähnelt mit wenigen Ausnahmen der von `createReactClass()`.
+Die API von ES6-Klassen ähnelt sich, mit wenigen Ausnahmen, der von `createReactClass()`.
 
 ## Default-Props deklarieren {#declaring-default-props}
 
