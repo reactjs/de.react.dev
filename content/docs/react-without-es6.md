@@ -27,7 +27,7 @@ var Greeting = createReactClass({
 
 Die API von ES6-Klassen ähnelt sich, mit wenigen Ausnahmen, der von `createReactClass()`.
 
-## Deklarieren von Default Props {#declaring-default-props}
+## Deklarieren von Default-Props {#declaring-default-props}
 
 Mit Funktionen und ES6-Klassen wird `defaultProps` als Eigenschaft für die Komponente selbst definiert:
 
@@ -37,7 +37,7 @@ class Greeting extends React.Component {
 }
 
 Greeting.defaultProps = {
-  name: 'Mary'
+  name: 'Maria'
 };
 ```
 
@@ -47,7 +47,7 @@ Mit `createReactClass()` musst du `getDefaultProps()` als Funktion für das übe
 var Greeting = createReactClass({
   getDefaultProps: function() {
     return {
-      name: 'Mary'
+      name: 'Maria'
     };
   },
 
@@ -135,7 +135,6 @@ Das bedeutet, dass ES6-Klassen mit etwas mehr Code für Event-Handler geliefert 
 
 Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den **experimentellen** Syntaxvorschlag [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) mit Babel aktivieren:
 
-
 ```javascript
 class SayHello extends React.Component {
   constructor(props) {
@@ -172,13 +171,12 @@ Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
 >
 >ES6 hat keine Unterstützung für Mixins, daher sind Mixins nicht unterstützt wenn du React zusammen mit ES6-Klassen benutzt.
 >
->**Wir haben auch zahlreiche Probleme in Projekten festgestellt, die Mixins verwenden, [und empfehlen, diese nicht in neuem Code zu verwenden](/blog/2016/07/13/mixins-considered-harmful.html).**
+**Wir haben auch zahlreiche Probleme in Projekten festgestellt, die Mixins verwenden, [und empfehlen, diese nicht in neuem Code zu verwenden](/blog/2016/07/13/mixins-considered-harmful.html).**
 >
 >Dieser Abschnitt dient nur als Referenz.
 
-Manchmal haben sehr unterschiedliche Komponenten ähnliche Funktionen. Diese werden manchmal als [Cross-Cutting Concern](https://de.wikipedia.org/wiki/Cross-Cutting_Concern) bezeichnet. Mit `createReactClass` kannst du dafür ein altes `mixins`-System verwenden.
+Manchmal haben sehr unterschiedliche Komponenten gemeinsame Funktionen. Diese werden manchmal als [Querschnittsthemen](https://de.wikipedia.org/wiki/Cross-cutting_concern) bezeichnet. Mit `createReactClass` kannst du dafür ein altes `mixins`-System verwenden.
 
-Ein häufiger Anwendungsfall ist eine Komponente, die sich in einem bestimmten Zeitintervall selbst aktualisieren möchte. Es ist einfach, `setInterval()` zu verwenden, aber es ist wichtig, das Intervall abzubrechen, wenn du es nicht mehr benötigst, um Speicherplatz zu sparen. React bietet [Lifecycle-Methoden](/docs/react-component.html#the-component-lifecycle) an, die dich wissen lassen, wann eine Komponente im Begriff ist erstellt oder zerstört zu werden. Wir können ein Mixin erstellen, das diese Methoden verwendet, um eine einfache `setInterval()`-Funktion bereitzustellen, die automatisch bereinigt wird, wenn deine Komponente zerstört wird.
 
 ```javascript
 var SetIntervalMixin = {
