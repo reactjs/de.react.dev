@@ -15,14 +15,14 @@ redirect_from:
   - "tips/use-react-with-other-libraries.html"
 ---
 
-Diese Seite enthält eine detailierte API-Referenz für die React-Component Klassendefinition. Sie nimmt an, dass du mit den grundlegenden React-Konzepten, wie [Komponenten und Props](/docs/components-and-props.html) und [State und Lifecycle](/docs/state-and-lifecycle.html), vertraut bist. Falls nicht, lese die zuerst.
+Diese Seite enthält eine detaillierte API-Referenz für die React-Component-Klassendefinition. Sie nimmt an, dass du mit den grundlegenden React-Konzepten, wie [Komponenten und Props](/docs/components-and-props.html) und [State und Lifecycle](/docs/state-and-lifecycle.html), vertraut bist. Falls nicht, lies darüber zuerst.
 
 ## Überblick {#overview}
 
-React erlaubt das Definieren von Komponenten als Klassen oder Funktionen. Als Klasse definierte Komponenten bieten aktuell mehr Funktionen, auf welche hier im Detail eingegangen wird. Um eine React Komponente als Klasse zu definieren, muss `React.Component` erweitert werden:
+React erlaubt das Definieren von Komponenten als Klassen oder Funktionen. Als Klasse definierte Komponenten bieten aktuell mehr Funktionen, auf welche hier im Detail eingegangen wird. Um eine React-Komponente als Klasse zu definieren, muss `React.Component` erweitert werden:
 
 ```js
-class Willkommen extends React.Component {
+class Welcome extends React.Component {
   render() {
     return <h1>Hallo, {this.props.name}</h1>;
   }
@@ -31,15 +31,15 @@ class Willkommen extends React.Component {
 
 Die einzige Methode, die in einer `React.Component`-Unterklasse implementiert werden *muss*, heißt [`render()`](#render). Alle anderen auf dieser Seite beschriebenen Methoden sind optional.
 
-**Wir raten streng davon ab, eigene Basiskomponentenklassen zu schreiben** In React Komponenten wird [hauptsächlich Code-Wiederverwendung eher durch Komposition als durch Vererbung erreicht](/docs/composition-vs-inheritance.html).
+**Wir raten streng davon ab, eigene Basiskomponentenklassen zu schreiben.** In React-Komponenten wird [hauptsächlich Code-Wiederverwendung eher durch Komposition als durch Vererbung erreicht](/docs/composition-vs-inheritance.html).
 
 >Hinweis:
 >
->React zwingt dich nicht die ES6-Klassensyntax zu verwenden. Falls du sie vermeiden möchtest, kannst du das `create-react-class` Modul oder eine ähnliche eigene Abstraktion verwenden. Sie dir [React ohne ES6](/docs/react-without-es6.html) an, um mehr darüber zu lernen.
+>React zwingt dich nicht die ES6-Klassensyntax zu verwenden. Falls du sie vermeiden möchtest, kannst du das `create-react-class`-Modul oder eine ähnliche eigene Abstraktion verwenden. Sieh dir [React ohne ES6](/docs/react-without-es6.html) an, um mehr darüber zu lernen.
 
 ### Der Lebenszyklus von Komponenten {#the-component-lifecycle}
 
-Jede Komponente hat verschiedene "Lifecycle-Methoden", welche du überschreiben kannst um Code zu einem bestimmten Zeitpunkt des Prozesses laufen zu lassen. **Du kannst [dieses Lifecycle-Diagramm](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) als Spickzettel nutzen.** In der Liste unten sind die häufig verwendeten Methoden **fett** hervorgehoben. Die restlichen Methoden existiert für relativ seltene Anwendungsfälle.
+Jede Komponente hat verschiedene "Lifecycle-Methoden", welche du überschreiben kannst, um Code zu einem bestimmten Zeitpunkt des Prozesses laufen zu lassen. **Du kannst [dieses Lifecycle-Diagramm](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) als Spickzettel nutzen.** In der Liste unten sind die häufig verwendeten Methoden **fett** hervorgehoben. Die restlichen Methoden existiert für relativ seltene Anwendungsfälle.
 
 #### Das Einfügen {#mounting}
 
@@ -109,7 +109,7 @@ Jede Komponente bietet zudem noch andere APIs an:
 
 ### Meistgenutzte Lifecycle Methods {#commonly-used-lifecycle-methods}
 
-Die Methoden in diesem Abschnitt decken große Mehrheit der Anwendungsfälle ab, denen du beim Erzeugen von React Komponenten begegnen wirst. **Für eine visuelle Referenz, sieh dir dieses [Lifecycle-Diagramm](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) an.**
+Die Methoden in diesem Abschnitt decken die große Mehrheit der Anwendungsfälle ab, denen du beim Erzeugen von React-Komponenten begegnen wirst. **Für eine visuelle Referenz, sieh dir dieses [Lifecycle-Diagramm](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) an.**
 
 ### `render()` {#render}
 
@@ -121,13 +121,13 @@ Die `render()`-Methode ist die einzige erforderliche Methode einer Klassenkompon
 
 Beim Aufruf überprüft sie `this.props` und `this.state` und gibt eines der folgenden Typen zurück:
 
-- **React Elemente.** Typischerweise erzeugt durch [JSX](/docs/introducing-jsx.html). Beispielsweise geben `<div />` und `<MyComponent />` React Elemente zurück, welche React anweisen entsprechend einen DOM-Knoten oder eine andere benutzerdefinierte Komponente zu rendern.
-- **Arrays und Fragmente.** Erlaubt mehrere Elemente von der render Methode zurück geben zu lassen. Lese die Dokumentation bezüglich [Fragmente](/docs/fragments.html) für mehr Informationen.
-- **Portale**. Erlaubt das Rendern von Kindelementen innerhalb eines anderen DOM-Unterbaums. Lese die Dokumentation bezüglich [Portale](/docs/portals.html) für mehr Informationen.
+- **React Elemente.** Typischerweise erzeugt durch [JSX](/docs/introducing-jsx.html). Beispielsweise geben `<div />` und `<MyComponent />` React-Elemente zurück, welche React anweisen, entsprechend einen DOM-Knoten oder eine andere benutzerdefinierte Komponente zu rendern.
+- **Arrays und Fragmente.** Erlaubt mehrere Elemente von der render-Methode zurückgeben zu lassen. Lies die Dokumentation bezüglich [Fragmente](/docs/fragments.html) für mehr Informationen.
+- **Portale**. Erlaubt das Rendern von Kindelementen innerhalb eines anderen DOM-Unterbaums. Lies die Dokumentation bezüglich [Portale](/docs/portals.html) für mehr Informationen.
 - **Zeichenketten und Zahlen.** Diese werden als Textknoten in der DOM gerendert.
-- **Booleans or `null`**. Nichts wird gerendert. (Existiert hauptsächlich um das `return test && <Child />`-Muster zu unterstützen, wobei `test` boolean ist.)
+- **Booleans or `null`**. Nichts wird gerendert. (Existiert hauptsächlich um das `return test && <Child />`-Muster zu unterstützen, wobei `test` ein Boolean ist.)
 
-Die `render()`-Funktion sollte rein sein, was bedeutet, dass es nicht die State der Komponente verändert, jedesmal das gleiche Ergebnis beim Aufruf liefert und nicht direkt mit dem Browser interagiert.
+Die `render()`-Funktion sollte rein sein, was bedeutet, dass es den State der Komponente nicht verändert, jedesmal das gleiche Ergebnis beim Aufruf liefert und nicht direkt mit dem Browser interagiert.
 
 Wenn du mit dem Browser interagieren musst, tue dies innerhalb von `componentDidMount()` oder den anderen Lifecycle-Methoden. Eine reine `render()`-Funktion hilft dabei Komponenten simpel zu halten.
 
@@ -278,7 +278,7 @@ static getDerivedStateFromProps(props, state)
 
 This method exists for [rare use cases](/blog/2018/06/07/you-probably-dont-need-derived-state.html#when-to-use-derived-state) where the state depends on changes in props over time. For example, it might be handy for implementing a `<Transition>` component that compares its previous and next children to decide which of them to animate in and out.
 
-Deriving state leads to verbose code and makes your components difficult to think about.  
+Deriving state leads to verbose code and makes your components difficult to think about.
 [Make sure you're familiar with simpler alternatives:](/blog/2018/06/07/you-probably-dont-need-derived-state.html)
 
 * If you need to **perform a side effect** (for example, data fetching or an animation) in response to a change in props, use [`componentDidUpdate`](#componentdidupdate) lifecycle instead.
@@ -324,7 +324,7 @@ Only use error boundaries for recovering from unexpected exceptions; **don't try
 For more details, see [*Error Handling in React 16*](/blog/2017/07/26/error-handling-in-react-16.html).
 
 > Note
-> 
+>
 > Error boundaries only catch errors in the components **below** them in the tree. An error boundary can’t catch an error within itself.
 
 ### `static getDerivedStateFromError()` {#static-getderivedstatefromerror}
@@ -353,7 +353,7 @@ class ErrorBoundary extends React.Component {
       return <h1>Something went wrong.</h1>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 ```
@@ -408,13 +408,13 @@ class ErrorBoundary extends React.Component {
       return <h1>Something went wrong.</h1>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 ```
 
 > Note
-> 
+>
 > In the event of an error, you can render a fallback UI with `componentDidCatch()` by calling `setState`, but this will be deprecated in a future release.
 > Use `static getDerivedStateFromError()` to handle fallback rendering instead.
 
