@@ -209,7 +209,7 @@ Du kannst ein String Literal als prop weitergeben. Die folgenden JSX-Ausdrücke 
 <MyComponent message={'hello world'} />
 ```
 
-When you pass a string literal, its value is HTML-unescaped. So these two JSX expressions are equivalent:
+Wenn du ein String Literal weitergibst, ist der Inhalt des HTML-unformatiert. Somit sind die folgenden beiden Ausdrücke gleich:
 
 ```js
 <MyComponent message="&lt;3" />
@@ -217,11 +217,11 @@ When you pass a string literal, its value is HTML-unescaped. So these two JSX ex
 <MyComponent message={'<3'} />
 ```
 
-This behavior is usually not relevant. It's only mentioned here for completeness.
+Normalerweise ist dieser Umstand nicht relevant. Es wird nur zum Zwecke der Vollständigkeit erwähnt. 
 
-### Props Default to "True" {#props-default-to-true}
+### Props standardmäßig auf "Wahr" {#props-default-to-true}
 
-If you pass no value for a prop, it defaults to `true`. These two JSX expressions are equivalent:
+Wenn du eine Prop ohne Inhalt weitergibst ist deren Wert standardmäßig `wahr`. Diese beiden JSX-Ausdrücke sind gleich:
 
 ```js
 <MyTextBox autocomplete />
@@ -229,11 +229,12 @@ If you pass no value for a prop, it defaults to `true`. These two JSX expression
 <MyTextBox autocomplete={true} />
 ```
 
-In general, we don't recommend using this because it can be confused with the [ES6 object shorthand](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015) `{foo}` which is short for `{foo: foo}` rather than `{foo: true}`. This behavior is just there so that it matches the behavior of HTML.
+Im Gesamten würden wir nicht empfehlen Dies so zu benutzen, da hier Verwechslungsgefahr mit der [ES6 object Abkürzung](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015), `{foo}` als Abkürzung für `{foo: foo}` im Gegensatz zu `{foo: true}`, besteht.
+Dieses Verhalten gibt es nur da es zum Verhalten von HTML passt. 
 
-### Spread Attributes {#spread-attributes}
+### Spread Attribute {#spread-attributes}
 
-If you already have `props` as an object, and you want to pass it in JSX, you can use `...` as a "spread" operator to pass the whole props object. These two components are equivalent:
+Solltest du bereits `props` als ein Objekt haben und möchtest es an JSX weitergeben, kannst du mit `...` einen "Aufteilungs"-Operator für das ganze Propsobjekt nutzen. Diese beiden Komponenten sind gleich:
 
 ```js{7}
 function App1() {
@@ -246,7 +247,7 @@ function App2() {
 }
 ```
 
-You can also pick specific props that your component will consume while passing all other props using the spread operator.
+Du kannst dir auch spezielle props aussuchen welche deine Komponente konsumiert und trotzdem alle anderen Props mit dem "Aufteilungs"-Operator weitergeben.
 
 ```js{2}
 const Button = props => {
