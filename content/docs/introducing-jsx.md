@@ -76,7 +76,7 @@ Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist 
 
 Nach dem Kompilieren werden JSX Ausdrücke als normale JavaScript-Funktionssaufrufe und als JavaScript-Objekte ausgewertet.
 
-Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehend, Variablen zugewiesen oder Argumente übergeben werden können oder auch ein Rückgabewert einer Funktion sein kann:
+Das bedeutet, dass du JSX innerhalb von `if`-Blöcken und `for`-Schleifen verwenden, Variablen zuweisen, als Argument entgegennehmen oder aus einer Funktion zurückgeben kannst:
 
 ```js{3,5}
 function getGreeting(user) {
@@ -138,7 +138,7 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-Standardmäßig [escaped](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, dass nicht explizit so implementiert wurde. Alles wird zu einem String konvertiert und danach erst gerendert. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
+Standardmäßig [escaped](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, was nicht explizit so implementiert wurde. Alles wird zu einem String konvertiert und danach erst gerendert. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
 
 ### JSX repräsentiert Objekte {#jsx-represents-objects}
 
@@ -162,7 +162,7 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` prüft erst die Eingabeparameter, um dich dabei zu unterstützen bugfrei zu programmieren, aber im Prinzip erstellt es ein Objekt wie dieses:
+`React.createElement()` prüft erst die Eingabeparameter, um dich dabei zu unterstützen fehlerfrei zu programmieren, aber im Prinzip erstellt es ein Objekt wie dieses:
 
 ```js
 // Hinweis: Dies ist eine vereinfachte Struktur
