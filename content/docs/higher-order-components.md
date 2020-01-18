@@ -163,57 +163,57 @@ function withSubscription(WrappedComponent, selectData) {
 }
 ```
 
-Note that a HOC doesn't modify the input component, nor does it use inheritance to copy its behavior. Rather, a HOC *composes* the original component by *wrapping* it in a container component. A HOC is a pure function with zero side-effects.
+Beachte, dass eine HOC die übergebene Komponente nicht modifiziert, des Weiteren findet auch keine Vererbung statt um dessen Verhalten zu kopieren. Stattdessen *setzt* eine HOC die ursprüngliche Komponente zusammen, in dem sie diese mit einer Container-Komponente *umschließt*. Eine HOC ist eine reine Funktion ohne Nebenwirkungen.
 
-And that's it! The wrapped component receives all the props of the container, along with a new prop, `data`, which it uses to render its output. The HOC isn't concerned with how or why the data is used, and the wrapped component isn't concerned with where the data came from.
+Das ist alles! Die umschlossene Komponente erhält alle Eigenschaften des Containers, zusammen mit einer neuen Eigenschaft, `data`, die für das Rendern des Outputs verwendet wird. Die HOC ist nicht dafür zuständig, das Wie oder Warum bei der Datenverwendung zu beantworten, ebenso wie die umschlossene Komponente nicht über die Herkunft der Daten zuständig ist.
 
-Because `withSubscription` is a normal function, you can add as many or as few arguments as you like. For example, you may want to make the name of the `data` prop configurable, to further isolate the HOC from the wrapped component. Or you could accept an argument that configures `shouldComponentUpdate`, or one that configures the data source. These are all possible because the HOC has full control over how the component is defined.
+Da `withSubscription` eine normale Funktion ist, kannst du beliebig viele, oder beliebig wenige Argumente übergeben. Zum Beispiel, du möchtest den Namen der `data` Eigenschaft konfigurierbar machen, um die HOC mehr von der umschlossenen Komponente zu isolieren. Oder du könntest ein Argument hinzufügen, welches `shouldComponentUpdate` konfiguriert, oder eines welches die Datenquelle konfiguriert. All das ist möglich, weil die HOC die volle Kontroll darübere hat, wie eine Komponente definiert wird.
 
-Like components, the contract between `withSubscription` and the wrapped component is entirely props-based. This makes it easy to swap one HOC for a different one, as long as they provide the same props to the wrapped component. This may be useful if you change data-fetching libraries, for example.
+Wie bei den Komponenten, ist die Abhängigkeit zwischen `withSubscription` und der umschlossenen Komponente rein Eigenschaftenbasiert. Dies ermöglicht einen einfachen Austausch einer bestehenden HOC durch eine andere, so lange diese die gleichen Eigenschaften an die umschlossene Komponente bereitstellen. Dies kann nützlich sein, wenn du zum Beispiel die Bibliothek für das Abrufen von Daten änderst.
 
-## Don't Mutate the Original Component. Use Composition. {#dont-mutate-the-original-component-use-composition}
+## Verändere nicht die usprüngliche Komponente. Verwende Komposition. {#dont-mutate-the-original-component-use-composition}
 
-Resist the temptation to modify a component's prototype (or otherwise mutate it) inside a HOC.
+Widerstehe der Versuchung den Prototype einer Komponente innerhalb einer HOC zu modifizieren (oder anderweitig zu verändern).
 
 ```js
 function logProps(InputComponent) {
   InputComponent.prototype.componentWillReceiveProps = function(nextProps) {
-    console.log('Current props: ', this.props);
-    console.log('Next props: ', nextProps);
+    console.log('Aktuelle Eigenschaften: ', this.props);
+    console.log('Neue Eigenschaften: ', nextProps);
   };
-  // The fact that we're returning the original input is a hint that it has
-  // been mutated.
+  // Die Tatsache, dass wir die originale Eingang-Komponente zurückgeben, ist ein Hinweis
+  // dass diese verändert wurde.
   return InputComponent;
 }
 
-// EnhancedComponent will log whenever props are received
+// EnhancedComponent wird bei jedem Erhalt der Eigenschaften in die Konsole loggen
 const EnhancedComponent = logProps(InputComponent);
 ```
 
-There are a few problems with this. One is that the input component cannot be reused separately from the enhanced component. More crucially, if you apply another HOC to `EnhancedComponent` that *also* mutates `componentWillReceiveProps`, the first HOC's functionality will be overridden! This HOC also won't work with function components, which do not have lifecycle methods.
+Es gibt einige Probleme hier. Zum einen kann die Eingang-Komponente nicht abseits der erweiterten Komponente wiederverwendet werden. Des Weiteren, wenn du eine andere HOC auf die `EnhancedComponent` anwendest die *ebenso* `componentWillReceiveProps` verändert, wird die erste Funktionalität der HOC überschrieben! Diese HOC kann auch nicht auf funktionale Komponenten angewandt werden, da diese keine Lifecycle-Methoden besitzen.
 
-Mutating HOCs are a leaky abstraction—the consumer must know how they are implemented in order to avoid conflicts with other HOCs.
+Verändernde HOCs sind eine schlecht isolierte Abstraktion - der Anwender muss über die Implementierungsdetails bescheidwissen, um Konflikte mit anderen HOCs zu vermeiden.
 
-Instead of mutation, HOCs should use composition, by wrapping the input component in a container component:
+Statt der Veränderung, sollte der Grundsatz der Komposition bei HOCs angewandt werden, in dem die Eingang-Komponente mit einer Container-Komponente umgeben wird:
 
 ```js
 function logProps(WrappedComponent) {
   return class extends React.Component {
     componentWillReceiveProps(nextProps) {
-      console.log('Current props: ', this.props);
-      console.log('Next props: ', nextProps);
+      console.log('Aktuelle Eigenschaften: ', this.props);
+      console.log('Neue Eigenschaften: ', nextProps);
     }
     render() {
-      // Wraps the input component in a container, without mutating it. Good!
+      // Umschließt die Eingang-Kompnente in ein Container, ohne diese zu verändern. Gut so!
       return <WrappedComponent {...this.props} />;
     }
   }
 }
 ```
 
-This HOC has the same functionality as the mutating version while avoiding the potential for clashes. It works equally well with class and function components. And because it's a pure function, it's composable with other HOCs, or even with itself.
+Diese HOC hat die gleiche Funktionalität wie die verändernde Version, jedoch ohne der potenziellen Gefahr für Konflikte. Es funktioniert gleich gut mit klassenbasierten und funktionalen Komponenten. Und da es eine reine Funktion ist, kann sie mit anderen HOCs, oder sogar mit sich selbst zusammengesetzt werden.
 
-You may have noticed similarities between HOCs and a pattern called **container components**. Container components are part of a strategy of separating responsibility between high-level and low-level concerns. Containers manage things like subscriptions and state, and pass props to components that handle things like rendering UI. HOCs use containers as part of their implementation. You can think of HOCs as parameterized container component definitions.
+Vielleicht sind dir die Gemeinsamkeiten zwischen HOCs und dem **Container Komponenten** Pattern aufgefallen. Container Komponenten sind ein Teil der Strategie, in der eine Trennung der Zuständigkeiten zwischen übergreifenden und untergeordneten Anliegen vorgenommen wird. Container verwalten Dinge wie Abonnements und Zustand, des Weiteren geben die Eigenschaften an Komponenten weiter, die für das Rendering der UI zuständig sind. HOCs verwenden Container als Teil der Implementierung. Du kannst HOCs mit einer parametrisierten Container-Komponenten Definition vergleichen.
 
 ## Convention: Pass Unrelated Props Through to the Wrapped Component {#convention-pass-unrelated-props-through-to-the-wrapped-component}
 
