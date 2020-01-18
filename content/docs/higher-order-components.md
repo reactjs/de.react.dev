@@ -314,60 +314,60 @@ function getDisplayName(WrappedComponent) {
 ```
 
 
-## Caveats {#caveats}
+## Vorbehalte {#caveats}
 
-Higher-order components come with a few caveats that aren't immediately obvious if you're new to React.
+Higher-Order Komponenten kommen mit einigen Vorbehalten, die nicht sofort ersichtlich sind wenn du dich erst mit React vertraut machst.
 
-### Don't Use HOCs Inside the render Method {#dont-use-hocs-inside-the-render-method}
+### Vermeide die Nutzung von HOCs innerhalb der Render-Methode {#dont-use-hocs-inside-the-render-method}
 
-React's diffing algorithm (called reconciliation) uses component identity to determine whether it should update the existing subtree or throw it away and mount a new one. If the component returned from `render` is identical (`===`) to the component from the previous render, React recursively updates the subtree by diffing it with the new one. If they're not equal, the previous subtree is unmounted completely.
+Der Differenzierungsalgorithmus von React (auch Abgleich genannt) nutzt die Identität der Komponente, um zu bestimmen, ob der existierende Teilbaum aktualisiert, oder weggeworfen werden soll und ob das Mounten eines neuen Teilbaums notwendig ist. Wenn die von der `render` Methode zurückgegebene Komponente identisch (`===`) zu der vorher zurückgegebenen Komponente ist, wird der Teilbaum rekursiv von React upgedated, in dem eine Differenzierung des alten Teilbaums mit dem neuen Teilbaum stattfindet. Wenn die beiden ungleich sind, wird der vorherige Teilbaum zur Gänze unmounted.
 
-Normally, you shouldn't need to think about this. But it matters for HOCs because it means you can't apply a HOC to a component within the render method of a component:
+Normalerweise, solltest du keine Gedanken darüber verlieren. Jedoch spielt dies eine wesentliche Rolle für HOCs, da dies bedeutet, dass du eine HOC auf eine Komponente innerhalb der Render-Methode einer Komponente nicht anwenden kannst:
 
 ```js
 render() {
-  // A new version of EnhancedComponent is created on every render
+  // Eine neue Version von EnhancedComponent wird bei jedem Render-Vorgang erstellt
   // EnhancedComponent1 !== EnhancedComponent2
   const EnhancedComponent = enhance(MyComponent);
-  // That causes the entire subtree to unmount/remount each time!
+  // Dies bewirkt dass jedesmal ein Unmounten/Remounten des ganzen Teilbaus stattfindet
   return <EnhancedComponent />;
 }
 ```
 
-The problem here isn't just about performance — remounting a component causes the state of that component and all of its children to be lost.
+Das Problem hier ist nicht nur die Performance - das Remounten einer Komponente führt zum Verlust des Zustandes sowohl bei der Komponente selbst, als auch bei all ihren Kind-Komponenten.
 
-Instead, apply HOCs outside the component definition so that the resulting component is created only once. Then, its identity will be consistent across renders. This is usually what you want, anyway.
+Stattdessen, solltest du die HOCs außerhalb der Definition einer Komponente anwenden, um sicherzustellen, dass die Komponente nur ein einziges Mal erstellt wird. Nur dann ist dessen Identität konsistent und übergreifend zwischen den einzelnen Rendervorgängen sichergestellt. Normalerweise ist dies sowieso das, was du willst.
 
-In those rare cases where you need to apply a HOC dynamically, you can also do it inside a component's lifecycle methods or its constructor.
+In den seltenen Fällen wo du eine HOC dynamisch anwenden möchtest, kannst du dies innerhalb der Lifecycle-Methoden einer Komponente oder im Konstruktor machen.
 
-### Static Methods Must Be Copied Over {#static-methods-must-be-copied-over}
+### Statische Methoden müssen kopiert werden {#static-methods-must-be-copied-over}
 
-Sometimes it's useful to define a static method on a React component. For example, Relay containers expose a static method `getFragment` to facilitate the composition of GraphQL fragments.
+Manchmal ist es nützlich eine statische Methode in einer React Komponente zu definieren. Zum Beispiel, Relay Kontainer stellen eine statische Methode `getFragment` zur Verfügung, um die Zusammensetzung der GraphQL Fragmente zu erleichtern.
 
-When you apply a HOC to a component, though, the original component is wrapped with a container component. That means the new component does not have any of the static methods of the original component.
+Wenn du jedoch eine HOC auf eine Komponente anwendest, wird die ursprüngliche Komponente mit einer Container-Komponente umgeben. Dies bedeutet, dass die neue Komponente keine der statischen Methoden der usprünglichen Komponente besitzt.
 
 ```js
-// Define a static method
+// Definiere eine statische Methode
 WrappedComponent.staticMethod = function() {/*...*/}
-// Now apply a HOC
+// Nun wende eine HOC an
 const EnhancedComponent = enhance(WrappedComponent);
 
-// The enhanced component has no static method
+// Die erweiterte Komponente hat keine statische Methode
 typeof EnhancedComponent.staticMethod === 'undefined' // true
 ```
 
-To solve this, you could copy the methods onto the container before returning it:
+Um dies zu lösen, kannst du die Methoden in den Container kopieren, bevor du diesen zurückgibst
 
 ```js
 function enhance(WrappedComponent) {
   class Enhance extends React.Component {/*...*/}
-  // Must know exactly which method(s) to copy :(
+  // Du musst genau wissen, welche Methode(n) du kopieren möchtest :(
   Enhance.staticMethod = WrappedComponent.staticMethod;
   return Enhance;
 }
 ```
 
-However, this requires you to know exactly which methods need to be copied. You can use [hoist-non-react-statics](https://github.com/mridgway/hoist-non-react-statics) to automatically copy all non-React static methods:
+Dennoch, dies erfordert dass du genau weißt welche Methoden kopiert werden müssen. Du kannst [hoist-non-react-statics](https://github.com/mridgway/hoist-non-react-statics) nutzen, um automatisch alle statische Methoden die nicht zu React gehören zu kopieren:
 
 ```js
 import hoistNonReactStatic from 'hoist-non-react-statics';
@@ -378,22 +378,22 @@ function enhance(WrappedComponent) {
 }
 ```
 
-Another possible solution is to export the static method separately from the component itself.
+Eine andere mögliche Lösung wäre das Exportieren der statischen Methode unabhängig von der Komponente.
 
 ```js
-// Instead of...
+// Statt...
 MyComponent.someFunction = someFunction;
 export default MyComponent;
 
-// ...export the method separately...
+// ...exportiere die Methode separat...
 export { someFunction };
 
-// ...and in the consuming module, import both
+// ...importiere beide in die gewünschte Komponente
 import MyComponent, { someFunction } from './MyComponent.js';
 ```
 
-### Refs Aren't Passed Through {#refs-arent-passed-through}
+### Refs werden nicht weitergeleitet {#refs-arent-passed-through}
 
-While the convention for higher-order components is to pass through all props to the wrapped component, this does not work for refs. That's because `ref` is not really a prop — like `key`, it's handled specially by React. If you add a ref to an element whose component is the result of a HOC, the ref refers to an instance of the outermost container component, not the wrapped component.
+Obwohl die Konvention für Higher-Order Komponente besagt, dass alle Eigenschaften an die umschlossene Komponente weiteregeleitet werden sollen, funktioniert dieser Ansatz für Refs nicht. Das kommt daher, weil `ref` nicht wirklich eine Eigenschaft ist - wie `key`, wird es besonders von React behandelt. Wenn du eine Ref zu einem Element hinzufügen möchtest, welches das Ergebnis einer HOC ist, wird das Ref auf die Instanz der äußersten Container-Komponente zeigen und nicht auf die umschlossene Komponente.
 
-The solution for this problem is to use the `React.forwardRef` API (introduced with React 16.3). [Learn more about it in the forwarding refs section](/docs/forwarding-refs.html).
+Die Lösung für dieses Problem ist die Verwendung von `React.forwardRef` API (eingeführt mit React 16.3). [Learn more about it in the forwarding refs section](/docs/forwarding-refs.html).
