@@ -215,23 +215,23 @@ Diese HOC hat die gleiche Funktionalität wie die verändernde Version, jedoch o
 
 Vielleicht sind dir die Gemeinsamkeiten zwischen HOCs und dem **Container Komponenten** Pattern aufgefallen. Container Komponenten sind ein Teil der Strategie, in der eine Trennung der Zuständigkeiten zwischen übergreifenden und untergeordneten Anliegen vorgenommen wird. Container verwalten Dinge wie Abonnements und Zustand, des Weiteren geben die Eigenschaften an Komponenten weiter, die für das Rendering der UI zuständig sind. HOCs verwenden Container als Teil der Implementierung. Du kannst HOCs mit einer parametrisierten Container-Komponenten Definition vergleichen.
 
-## Convention: Pass Unrelated Props Through to the Wrapped Component {#convention-pass-unrelated-props-through-to-the-wrapped-component}
+## Konvention: Übergeben von unzusammenhängenden Eigenschaften durch die umgschlossene Komponente {#convention-pass-unrelated-props-through-to-the-wrapped-component}
 
-HOCs add features to a component. They shouldn't drastically alter its contract. It's expected that the component returned from a HOC has a similar interface to the wrapped component.
+HOCs fügt Features zu einer Komponente hinzu. Diese sollten keine drastische Veränderungen an dessen Abhängigkeit vornehmen. Es wird erwartet, dass die von der HOC zurückgegebene Komponente ein ähnliches Interface besitzt, wie die umschlossene Komponente.
 
-HOCs should pass through props that are unrelated to its specific concern. Most HOCs contain a render method that looks something like this:
+HOCs sollten Eigenschaften durchleiten, die keine Bedeutung für dessen Zweck besitzen. Die meisten HOCs besitzen eine Render-Methode die folgend aussieht:
 
 ```js
 render() {
-  // Filter out extra props that are specific to this HOC and shouldn't be
-  // passed through
+  // Filtere die extra Eigenschaften raus, die spezifisch für diese HOC sind
+  // und nicht weitergeleitet werden sollen
   const { extraProp, ...passThroughProps } = this.props;
 
-  // Inject props into the wrapped component. These are usually state values or
-  // instance methods.
+  // Injiziere Eigeschaften in die umschlossene Komponente. In den meisten Fällen
+  // sind es Zustandswerte oder Instanzenmethoden
   const injectedProp = someStateOrInstanceMethod;
 
-  // Pass props to wrapped component
+  // Übergebe die Eigenschaften an die umschlossene Komponente
   return (
     <WrappedComponent
       injectedProp={injectedProp}
@@ -241,65 +241,65 @@ render() {
 }
 ```
 
-This convention helps ensure that HOCs are as flexible and reusable as possible.
+Diese Konvention hilft sicherzustellen, dass HOCs flexibel und wiederverwendbar sind.
 
-## Convention: Maximizing Composability {#convention-maximizing-composability}
+## Konvention: Maximierung der Zusammensetzbarkeit {#convention-maximizing-composability}
 
-Not all HOCs look the same. Sometimes they accept only a single argument, the wrapped component:
+Nicht alle HOCs sehen gleich aus. Manchmal nehmen diese nur ein einziges Argument an, die umschlossene Komponente:
 
 ```js
 const NavbarWithRouter = withRouter(Navbar);
 ```
 
-Usually, HOCs accept additional arguments. In this example from Relay, a config object is used to specify a component's data dependencies:
+Normalerweise, akzeptieren HOCs zusätzliche Argumente. In diesem Beispiel von Relay, wird ein Konfigurationsobjekt verwendet um die Datenabhängigkeiten einer Komponente zu definieren:
 
 ```js
 const CommentWithRelay = Relay.createContainer(Comment, config);
 ```
 
-The most common signature for HOCs looks like this:
+Die häufigste Signatur für HOCs sieht wie folgt aus:
 
 ```js
 // React Redux's `connect`
 const ConnectedComment = connect(commentSelector, commentActions)(CommentList);
 ```
 
-*What?!* If you break it apart, it's easier to see what's going on.
+*Was?!* Wenn man es auseinanderbricht, ist es ersichtlicher was hier passiert.
 
 ```js
-// connect is a function that returns another function
+// connect ist eine Funktion die eine andere Funktion zurückgibt
 const enhance = connect(commentListSelector, commentListActions);
-// The returned function is a HOC, which returns a component that is connected
-// to the Redux store
+// Die zurückgegebene Funktion ist eine HOC, die eine Komponente zurückgibt die
+// mit dem Redux Store verbunden ist
 const ConnectedComment = enhance(CommentList);
 ```
-In other words, `connect` is a higher-order function that returns a higher-order component!
+In anderen Worten, `connect` ist eine Higher-Order Funktion die eine Higher-Order Komponente zurückgibt!
 
-This form may seem confusing or unnecessary, but it has a useful property. Single-argument HOCs like the one returned by the `connect` function have the signature `Component => Component`. Functions whose output type is the same as its input type are really easy to compose together.
+Diese Form kann verwirrend oder unnötig erscheinen, es hat jedoch eine nützliche Eigenschaft. HOCs mit einzigem Argument, wie die, die von der `connect` Funktion zurückgegeben werden besitzen die Signatur `Component => Component`. Funktionen dessen Ausgabetyp dem Eingabetyp gleicht, können sehr einfach zusammengesetzt werden.
 
 ```js
-// Instead of doing this...
+// Anstatt folgendes zu machen...
 const EnhancedComponent = withRouter(connect(commentSelector)(WrappedComponent))
 
-// ... you can use a function composition utility
-// compose(f, g, h) is the same as (...args) => f(g(h(...args)))
+// ... kannst du ein Utility zur Zusammensetzung der Funktion nutzen
+// compose(f, g, h) ist gleichzusetzen mit (...args) => f(g(h(...args)))
 const enhance = compose(
-  // These are both single-argument HOCs
+  // Dies sind HOCs mit einem einzelnen Argument
   withRouter,
   connect(commentSelector)
 )
 const EnhancedComponent = enhance(WrappedComponent)
 ```
 
-(This same property also allows `connect` and other enhancer-style HOCs to be used as decorators, an experimental JavaScript proposal.)
+(Diese Eigenschaft ermöglicht die Verwendung von `connect` und anderen Enhancer-basierten HOCs als Dekoratoren, welche ein experimentelles JavaScript Entwurf darstellen.)
 
-The `compose` utility function is provided by many third-party libraries including lodash (as [`lodash.flowRight`](https://lodash.com/docs/#flowRight)), [Redux](https://redux.js.org/api/compose), and [Ramda](https://ramdajs.com/docs/#compose).
+Die `componse` Utility-Funktion wird von vielen Drittanbieter-Bibliotheken wie lodash (als [`lodash.flowRight`](https://lodash.com/docs/#flowRight)), [Redux](https://redux.js.org/api/compose) und [Ramda](https://ramdajs.com/docs/#compose) angeboten.
 
-## Convention: Wrap the Display Name for Easy Debugging {#convention-wrap-the-display-name-for-easy-debugging}
+## Konvention: Umschließe den Anzeigenamen für ein einfaches Debugging {#convention-wrap-the-display-name-for-easy-debugging}
 
-The container components created by HOCs show up in the [React Developer Tools](https://github.com/facebook/react-devtools) like any other component. To ease debugging, choose a display name that communicates that it's the result of a HOC.
+Die Container Komponenten di von HOCs erstellt werden, erscheinen in den [React Developer Tools](https://github.com/facebook/react-devtools) wie jede andere Komponente. Um das Debugging zu erleichtern, wähle einen Anzeigenamen aus, der mitteilt, dass es ein Ergebnis einer HOC ist.
 
-The most common technique is to wrap the display name of the wrapped component. So if your higher-order component is named `withSubscription`, and the wrapped component's display name is `CommentList`, use the display name `WithSubscription(CommentList)`:
+Das Umschließen des Anzeigenamens der umzuschließenden Komponente ist ein gebräuchlicher Ansatz. Wenn deine Higher-Order Komponente `withSubscription` heißt und der Name der umschlossenen Komponente ist `CommentList`, nutze `WithSubscription(CommentList)` als Anzeigenamen:
 
 ```js
 function withSubscription(WrappedComponent) {
