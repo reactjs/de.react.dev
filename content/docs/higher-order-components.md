@@ -34,7 +34,7 @@ class CommentList extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      // "DataSource" ist irgendeine globale Datenquellee
+      // "DataSource" ist irgendeine globale Datenquelle
       comments: DataSource.getComments()
     };
   }
