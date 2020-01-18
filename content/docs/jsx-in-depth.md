@@ -267,30 +267,31 @@ const App = () => {
 };
 ```
 
-In the example above, the `kind` prop is safely consumed and *is not* passed on to the `<button>` element in the DOM.
-All other props are passed via the `...other` object making this component really flexible. You can see that it passes an `onClick` and `children` props.
+Im obigen Beispiel wird die `kind`-Prop sicher ausgenommen und *wird nicht* zu dem `<button>`-Element im DOM weitergegeben.
+Alle anderen Props werden mit Hilfe des `...other`-Objekts weitergegeben, was die Komponente sehr flexibel macht. Man erkennt das eine `onClick` und eine `children` Prop weitergegeben werden.
 
-Spread attributes can be useful but they also make it easy to pass unnecessary props to components that don't care about them or to pass invalid HTML attributes to the DOM. We recommend using this syntax sparingly.  
+Spread-Attribute können sehr nützlich sein, sie machen es aber auch sehr einfach unnötige Props an Komponenten weiterzugeben, welche nicht auf sich oder darauf achten ob sie ungültige Attribute an den DOM weiterzugeben. Wir empfehlen diese Syntax mit Bedacht einzusetzen. 
 
-## Children in JSX {#children-in-jsx}
 
-In JSX expressions that contain both an opening tag and a closing tag, the content between those tags is passed as a special prop: `props.children`. There are several different ways to pass children:
+## Kindelemente in JSX {#children-in-jsx}
+
+In JSX-Ausdrücken, die sowohl einen öffnenden als auch einen schließenden Tag beinhalten, wird der Inhalt zwischen diesen Tags als eine spiezielle Prop weitergegeben: `props.children`. Es gibt verschiedene Wege um Kindelemente weiterzugeben:
 
 ### String Literals {#string-literals-1}
 
-You can put a string between the opening and closing tags and `props.children` will just be that string. This is useful for many of the built-in HTML elements. For example:
+Du kannst eine Zeichenkette zwischen den öffnenden und den schließenden Tags platzieren, dann würde `props.children` eben nur für diese Zeichenkette stehen. Dies ist nützlich für viele der inklusiven HTML-Elemente. Zum Beispiel:
 
 ```js
 <MyComponent>Hello world!</MyComponent>
 ```
 
-This is valid JSX, and `props.children` in `MyComponent` will simply be the string `"Hello world!"`. HTML is unescaped, so you can generally write JSX just like you would write HTML in this way:
+Hier handelt es sich um valides JSX und `props.children` wäre im `MyComponent` einfach nur die Zeichenkette `"Hello world!"`. HTML wird nicht ausgeschlossen, somit kannst du JSX generell einfach so schreiben wie du auch HTML auf diesem Wege schreiben würdest:
 
 ```html
 <div>This is valid HTML &amp; JSX at the same time.</div>
 ```
 
-JSX removes whitespace at the beginning and ending of a line. It also removes blank lines. New lines adjacent to tags are removed; new lines that occur in the middle of string literals are condensed into a single space. So these all render to the same thing:
+JSX entfernt den Weißraum am Anfang und am Ende einer Zeile. Außerdem entfernt es auch Leerzeilen. Neue Zeilen benachbart zu Tags werden entfernt; Neue Zeilen die in der Mitte von String Literals erscheinen werden in ein einzelnes Leerzeichen umgewandelt. Somit rendert alles Folgende zu dem selben Ergebnis:
 
 ```js
 <div>Hello World</div>
@@ -310,9 +311,9 @@ JSX removes whitespace at the beginning and ending of a line. It also removes bl
 </div>
 ```
 
-### JSX Children {#jsx-children}
+### JSX Kindelemente {#jsx-children}
 
-You can provide more JSX elements as the children. This is useful for displaying nested components:
+Du kannst mehrere JSX-Elemente als Kindelemente zur Verfügung stellen. Dies ist nützlich um verschachtelte Komponenten anzuzeigen:
 
 ```js
 <MyContainer>
@@ -321,7 +322,7 @@ You can provide more JSX elements as the children. This is useful for displaying
 </MyContainer>
 ```
 
-You can mix together different types of children, so you can use string literals together with JSX children. This is another way in which JSX is like HTML, so that this is both valid JSX and valid HTML:
+Es ist möglich verschiedene Typen von Kindelementen miteinander zu vermischen, somit kannst du String Literals zusammen mit JSX-Kindelementen nutzen. Dies ist eine weitere Gemeinsamkeit von JSX und HTML bei der das Folgende sowohl valides JSX als auch valides HTML darstellt:
 
 ```html
 <div>
@@ -333,13 +334,13 @@ You can mix together different types of children, so you can use string literals
 </div>
 ```
 
-A React component can also return an array of elements:
+Eine React-Komponente kann auch ein Array von Elementen zurückgeben:
 
 ```js
 render() {
-  // No need to wrap list items in an extra element!
+  // Es ist nicht nötig die Listelemente mit einem extra Element zu umhüllen!
   return [
-    // Don't forget the keys :)
+    // Die Keys nicht vergessen :)
     <li key="A">First item</li>,
     <li key="B">Second item</li>,
     <li key="C">Third item</li>,
