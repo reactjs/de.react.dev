@@ -199,9 +199,9 @@ function NumberDescriber(props) {
 
 Du kannst mehr über [bedingtes Rendering](/docs/conditional-rendering.html) und [Schleifen](/docs/lists-and-keys.html) in den entsprechenden Abschnitten erfahren.
 
-### String Literals {#string-literals}
+### String-Literals {#string-literals}
 
-Du kannst ein String Literal als prop weitergeben. Die folgenden JSX-Ausdrücke sind gleich:
+Du kannst ein String-Literal als prop weitergeben. Die folgenden JSX-Ausdrücke sind gleich:
 
 ```js
 <MyComponent message="hello world" />
@@ -209,7 +209,7 @@ Du kannst ein String Literal als prop weitergeben. Die folgenden JSX-Ausdrücke 
 <MyComponent message={'hello world'} />
 ```
 
-Wenn du ein String Literal weitergibst, ist der Inhalt des HTML-unformatiert. Somit sind die folgenden beiden Ausdrücke gleich:
+Wenn du ein String-Literal weitergibst, ist der Inhalt des HTML-unformatiert. Somit sind die folgenden beiden Ausdrücke gleich:
 
 ```js
 <MyComponent message="&lt;3" />
@@ -277,7 +277,7 @@ Spread-Attribute können sehr nützlich sein, sie machen es aber auch sehr einfa
 
 In JSX-Ausdrücken, die sowohl einen öffnenden als auch einen schließenden Tag beinhalten, wird der Inhalt zwischen diesen Tags als eine spiezielle Prop weitergegeben: `props.children`. Es gibt verschiedene Wege um Kindelemente weiterzugeben:
 
-### String Literals {#string-literals-1}
+### String-Literals {#string-literals-1}
 
 Du kannst eine Zeichenkette zwischen den öffnenden und den schließenden Tags platzieren, dann würde `props.children` eben nur für diese Zeichenkette stehen. Dies ist nützlich für viele der inklusiven HTML-Elemente. Zum Beispiel:
 
@@ -291,7 +291,7 @@ Hier handelt es sich um valides JSX und `props.children` wäre im `MyComponent` 
 <div>This is valid HTML &amp; JSX at the same time.</div>
 ```
 
-JSX entfernt den Weißraum am Anfang und am Ende einer Zeile. Außerdem entfernt es auch Leerzeilen. Neue Zeilen benachbart zu Tags werden entfernt; Neue Zeilen die in der Mitte von String Literals erscheinen werden in ein einzelnes Leerzeichen umgewandelt. Somit rendert alles Folgende zu dem selben Ergebnis:
+JSX entfernt den Weißraum am Anfang und am Ende einer Zeile. Außerdem entfernt es auch Leerzeilen. Neue Zeilen benachbart zu Tags werden entfernt; Neue Zeilen die in der Mitte von String-Literals erscheinen werden in ein einzelnes Leerzeichen umgewandelt. Somit rendert alles Folgende zu dem selben Ergebnis:
 
 ```js
 <div>Hello World</div>
@@ -322,7 +322,7 @@ Du kannst mehrere JSX-Elemente als Kindelemente zur Verfügung stellen. Dies ist
 </MyContainer>
 ```
 
-Es ist möglich verschiedene Typen von Kindelementen miteinander zu vermischen, somit kannst du String Literals zusammen mit JSX-Kindelementen nutzen. Dies ist eine weitere Gemeinsamkeit von JSX und HTML bei der das Folgende sowohl valides JSX als auch valides HTML darstellt:
+Es ist möglich verschiedene Typen von Kindelementen miteinander zu vermischen, somit kannst du String-Literals zusammen mit JSX-Kindelementen nutzen. Dies ist eine weitere Gemeinsamkeit von JSX und HTML bei der dasS Folgende sowohl valides JSX als auch valides HTML darstellt:
 
 ```html
 <div>
