@@ -348,9 +348,9 @@ render() {
 }
 ```
 
-### JavaScript Expressions as Children {#javascript-expressions-as-children}
+### JavaScript-Ausdrücke als Kindelemente {#javascript-expressions-as-children}
 
-You can pass any JavaScript expression as children, by enclosing it within `{}`. For example, these expressions are equivalent:
+Du kannst jeden JavaScript-Ausdruck als Kindelement weitergeben, indem du es mit `{}` umhüllst. Die folgenden Ausdrücke sind zum Beispiel gleich:
 
 ```js
 <MyComponent>foo</MyComponent>
@@ -358,7 +358,7 @@ You can pass any JavaScript expression as children, by enclosing it within `{}`.
 <MyComponent>{'foo'}</MyComponent>
 ```
 
-This is often useful for rendering a list of JSX expressions of arbitrary length. For example, this renders an HTML list:
+Dies zeigt sich oft als nützlich sobald du eine Liste von JSX-Ausdrücken mit unbestimmter Länge rendern möchtest. Das folgende Beispiel rendert eine HTML-Liste:
 
 ```js{2,9}
 function Item(props) {
