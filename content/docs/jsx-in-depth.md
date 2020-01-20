@@ -375,7 +375,7 @@ function TodoList() {
 }
 ```
 
-JavaScript expressions can be mixed with other types of children. This is often useful in lieu of string templates:
+JavaScript-Ausdrücke können mit anderen Typen von Kindelementen zusammen gemischt werden. Dies ist oft nützlich im Gegensatz zu String-Templates:
 
 ```js{2}
 function Hello(props) {
@@ -383,7 +383,7 @@ function Hello(props) {
 }
 ```
 
-### Functions as Children {#functions-as-children}
+### Funktionen als Kindelemente {#functions-as-children}
 
 Normally, JavaScript expressions inserted in JSX will evaluate to a string, a React element, or a list of those things. However, `props.children` works just like any other prop in that it can pass any sort of data, not just the sorts that React knows how to render. For example, if you have a custom component, you could have it take a callback as `props.children`:
 
