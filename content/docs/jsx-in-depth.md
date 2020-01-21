@@ -385,10 +385,10 @@ function Hello(props) {
 
 ### Funktionen als Kindelemente {#functions-as-children}
 
-Normally, JavaScript expressions inserted in JSX will evaluate to a string, a React element, or a list of those things. However, `props.children` works just like any other prop in that it can pass any sort of data, not just the sorts that React knows how to render. For example, if you have a custom component, you could have it take a callback as `props.children`:
+Normalerweise werden in JSX eingefügte JavaScript-Ausdrücke zu einer Zeichenkette, einem React-Element, oder einer Liste dieser Dinge ausgeführt. Wie dem auch sei, `props.children` funktioniert genau wie jede andere Prop, da es in der Lage ist jede Art von Daten weiterzugeben, nicht nur Solche bei denen React weiß wie es Diese rendern soll. Wenn du Beispiel eine eigene Komponente hast, kannst du Dieser eine Callback-Funktion als `props.children` übergeben: 
 
 ```js{4,13}
-// Calls the children callback numTimes to produce a repeated component
+// Ruft die Kindelement-Callback-Funktion numTimes-mal auf und produziert mehrmals eine Komponente
 function Repeat(props) {
   let items = [];
   for (let i = 0; i < props.numTimes; i++) {
