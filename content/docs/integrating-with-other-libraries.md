@@ -20,7 +20,7 @@ Um dies zu demonstrieren, skizzieren wir einen Wrapper für ein generisches jQue
 
 Wir werden eine [ref](/ docs / refs-and-the-dom.html) an das Root-DOM-Element anhängen. In `componentDidMount` erhalten wir einen Verweis darauf, damit wir ihn an das jQuery-Plugin übergeben können.
 
-Um zu verhindern, dass React das DOM nach dem Mounten berührt, geben wir ein leeres `<div />` von der `render()`-Methode zurück. Das `<div />`-Element hat keine Eigenschaften oder untergeordneten Elemente, daher hat React keinen Grund, es zu aktualisieren, sodass das jQuery-Plugin diesen Teil des DOM verwalten kann:
+Um zu verhindern, dass React das DOM nach dem Mounten berücksichtigt, geben wir ein leeres `<div />` von der `render()`-Methode zurück. Das `<div />`-Element hat keine Eigenschaften oder untergeordneten Elemente, daher hat React keinen Grund, es zu aktualisieren, sodass das jQuery-Plugin diesen Teil des DOM verwalten kann:
 
 ```js{3,4,8,12}
 class SomePlugin extends React.Component {
