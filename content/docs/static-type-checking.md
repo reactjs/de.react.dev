@@ -1,42 +1,42 @@
 ---
 id: static-type-checking
-title: Static Type Checking
+title: Statische Typprüfung
 permalink: docs/static-type-checking.html
 ---
 
-Static type checkers like [Flow](https://flow.org/) and [TypeScript](https://www.typescriptlang.org/) identify certain types of problems before you even run your code. They can also improve developer workflow by adding features like auto-completion. For this reason, we recommend using Flow or TypeScript instead of `PropTypes` for larger code bases.
+Statische Typprüfer, wie [Flow](https://flow.org/) und [TypeScript](https://www.typescriptlang.org/) erkennen bestimmte Arten von Problemen, bevor du überhaupt deinen Code ausführst. Sie können den Workflow bei der Entwicklung verbessern, indem zum Beispiel Features, wie die Autovervollständigung hinzugefügt werden. Aus diesem Grund empfehlen wir Flow oder Typescript für größere Codebasen, anstatt `PropTypes` zu verwenden.
 
 ## Flow {#flow}
 
-[Flow](https://flow.org/) is a static type checker for your JavaScript code. It is developed at Facebook and is often used with React. It lets you annotate the variables, functions, and React components with a special type syntax, and catch mistakes early. You can read an [introduction to Flow](https://flow.org/en/docs/getting-started/) to learn its basics.
+[Flow](https://flow.org/) ist ein statischer Typprüfer für deinen JavaScript Code. Es wird bei Facebook entwickelt und oft mit React verwendet. Es ermöglicht dir Variablen, Funktionen und React-Komponenten mit einer speziellen Typ-Syntax zu verseehen und so Fehler frühzeitig zu erkennen. Du kannst eine [Einführung in Flow](https://flow.org/en/docs/getting-started/) lesen um die Grundlagen zu lernen.
 
-To use Flow, you need to:
+Um Flow zu verwenden, musst du folgendes tun:
 
-* Add Flow to your project as a dependency.
-* Ensure that Flow syntax is stripped from the compiled code.
-* Add type annotations and run Flow to check them.
+* Füge Flow deinem Projekt als Abhängigkeit hinzu.
+* stelle sicher, dass doe Flow-Syntax aus kompiliertem Code entfernt wird.
+* Füge Typ-Anmerkungen hinzu und führe Flow aus, um diese zu überprüfen.
 
-We will explain these steps below in detail.
+Wir werden diese Schtitte weiter unten im Detail erklären.
 
-### Adding Flow to a Project {#adding-flow-to-a-project}
+### Flow einem Projekt hinzufügen {#adding-flow-to-a-project}
 
-First, navigate to your project directory in the terminal. You will need to run the following command:
+Navigiere zunächst im Terminal zu einem Projektverzeichnis. Du musst folgenden Befehl ausführen:
 
-If you use [Yarn](https://yarnpkg.com/), run:
+Wenn du [Yarn](https://yarnpkg.com/) verwendest, führe folgendes aus:
 
 ```bash
 yarn add --dev flow-bin
 ```
 
-If you use [npm](https://www.npmjs.com/), run:
+Wenn du [npm](https://www.npmjs.com/) verwendest, führe folgendes aus:
 
 ```bash
 npm install --save-dev flow-bin
 ```
 
-This command installs the latest version of Flow into your project.
+Dieser Befehl installiert in deinem Projekt die neuste Version von Flow.
 
-Now, add `flow` to the `"scripts"` section of your `package.json` to be able to use this from the terminal:
+Füge nun `flow` dem `"scripts"` Abschnitt deiner `package.json` hinzu, um es vom Terminal aus zu nutzen:
 
 ```js{4}
 {
@@ -49,21 +49,21 @@ Now, add `flow` to the `"scripts"` section of your `package.json` to be able to 
 }
 ```
 
-Finally, run one of the following commands:
+Abschließend, führe folgende Befehle aus:
 
-If you use [Yarn](https://yarnpkg.com/), run:
+Wenn du [Yarn](https://yarnpkg.com/) verwendest, führe folgendes aus:
 
 ```bash
 yarn run flow init
 ```
 
-If you use [npm](https://www.npmjs.com/), run:
+Wenn du [npm](https://www.npmjs.com/) verwendest, führe folgendes aus:
 
 ```bash
 npm run flow init
 ```
 
-This command will create a Flow configuration file that you will need to commit.
+Dieser Befehl erstellt eine Flow-Konfigurationsdatei, die du committen musst.
 
 ### Stripping Flow Syntax from the Compiled Code {#stripping-flow-syntax-from-the-compiled-code}
 
@@ -284,7 +284,7 @@ If you see no output, it means that it completed successfully.
 
 
 ### Type Definitions {#type-definitions}
-To be able to show errors and hints from other packages, the compiler relies on declaration files. A declaration file provides all the type information about a library. This enables us to use javascript libraries like those on npm in our project. 
+To be able to show errors and hints from other packages, the compiler relies on declaration files. A declaration file provides all the type information about a library. This enables us to use javascript libraries like those on npm in our project.
 
 There are two main ways to get declarations for a library:
 
@@ -324,7 +324,7 @@ Reason is developed at Facebook, and is used in some of its products like Messen
 
 ## Kotlin {#kotlin}
 
-[Kotlin](https://kotlinlang.org/) is a statically typed language developed by JetBrains. Its target platforms include the JVM, Android, LLVM, and [JavaScript](https://kotlinlang.org/docs/reference/js-overview.html). 
+[Kotlin](https://kotlinlang.org/) is a statically typed language developed by JetBrains. Its target platforms include the JVM, Android, LLVM, and [JavaScript](https://kotlinlang.org/docs/reference/js-overview.html).
 
 JetBrains develops and maintains several tools specifically for the React community: [React bindings](https://github.com/JetBrains/kotlin-wrappers) as well as [Create React Kotlin App](https://github.com/JetBrains/create-react-kotlin-app). The latter helps you start building React apps with Kotlin with no build configuration.
 
