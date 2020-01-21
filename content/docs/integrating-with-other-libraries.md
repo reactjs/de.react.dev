@@ -135,7 +135,7 @@ handleChange(e) {
 
 Abschließend müssen wir noch eine Sache erledigen. In React können sich Eigenschaften im Laufe der Zeit ändern. Beispielsweise kann die Komponente `<Chosen>` verschiedene untergeordnete Elemente erhalten, wenn sich der State der übergeordneten Komponente ändert. Dies bedeutet, dass es an Integrationspunkten wichtig ist, dass wir das DOM manuell aktualisieren, um auf Änderungen der Eigenschaften zu reagieren, da React das DOM nicht mehr für uns verwalten kann.
 
-Aus der Dokumentation von Chosen geht hervor, dass wir die jQuery `trigger()`-API verwenden können, um Änderungen am ursprünglichen DOM-Element zu melden. Wir überlassen es React, `this.props.children` in` <select> `zu aktualisieren, fügen aber auch eine `componentDidUpdate()`-Lebenszyklusmethode hinzu, die Chosen über Änderungen in der Liste der untergeordneten Elemente benachrichtigt:
+Aus der Dokumentation von Chosen geht hervor, dass wir die jQuery `trigger()`-API verwenden können, um Änderungen am ursprünglichen DOM-Element zu melden. Wir überlassen es React, `this.props.children` in `<select>` zu aktualisieren, fügen aber auch eine `componentDidUpdate()`-Lebenszyklusmethode hinzu, die Chosen über Änderungen in der Liste der untergeordneten Elemente benachrichtigt:
 
 ```js{2,3}
 componentDidUpdate(prevProps) {
