@@ -145,7 +145,7 @@ componentDidUpdate(prevProps) {
 }
 ```
 
-Auf diese Weise kann Chosen das DOM-Element aktualisieren, wenn sich die von React verwalteten `<select>` untergeordneten Elemente ändern.
+Auf diese Weise kann Chosen das DOM-Element aktualisieren, wenn sich die von React verwalteten, dem `<select>` untergeordneten Elemente ändern.
 
 Die vollständige Implementierung der `Chosen`-Komponente sieht folgendermaßen aus:
 
