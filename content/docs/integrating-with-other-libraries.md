@@ -10,7 +10,7 @@ React kann in jeder Webanwendung verwendet werden. Es kann in andere Anwendungen
 
 React kennt keine Änderungen am DOM außerhalb von React. Es ermittelt Aktualisierungen auf der Grundlage seiner eigenen internen Darstellung. Wenn dieselben DOM-Knoten von einer anderen Bibliothek bearbeitet werden, ist React verwirrt und kann nicht wiederhergestellt werden.
 
-Dies bedeutet nicht, dass es unmöglich oder sogar notwendig ist, React mit anderen Möglichkeiten zur Beeinflussung des DOM zu kombinieren. Du musst lediglich bedenken, was jeder tut.
+Dies bedeutet nicht, dass es unmöglich oder sogar zwangsläufig schwer ist, React mit anderen Möglichkeiten zur Beeinflussung des DOM zu kombinieren. Du musst lediglich bedenken, welche Folgen einzelne Möglichkeiten mit sich bringen.
 
 Der einfachste Weg, Konflikte zu vermeiden, besteht darin, zu verhindern, dass die React-Komponente aktualisiert wird. Du kannst dies tun, indem du Elemente renderst, für die React keinen Grund zum Aktualisieren hat, z. B. ein leeres `<div />`.
 
