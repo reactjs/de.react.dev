@@ -85,7 +85,7 @@ class Chosen extends React.Component {
 }
 ```
 
-Beachte, wie wir `<select>` in ein zusätzliches `<div>` eingewickelt haben. Dies ist notwendig, da Chosen ein weiteres DOM-Element direkt nach dem Knoten `<select>` anfügt, den wir an ihn übergeben haben. In Bezug auf React hat `<div>` jedoch immer nur ein einziges untergeordnetes Element. Auf diese Weise stellen wir sicher, dass React-Updates nicht mit dem von Chosen angehängten zusätzlichen DOM-Knoten in Konflikt stehen. Wenn du das DOM außerhalb von React Flow änderst, musst du sicherstellen, dass React keinen Grund hat, diese DOM-Knoten zu berühren.
+Beachte, wie wir `<select>` mit einem zusätzlichen `<div>` umschlossen haben. Dies ist notwendig, da Chosen ein weiteres DOM-Element direkt nach dem Knoten `<select>` anfügt, den wir an ihn übergeben haben. In Bezug auf React hat `<div>` jedoch immer nur ein einziges untergeordnetes Element. Auf diese Weise stellen wir sicher, dass React-Updates nicht mit dem von Chosen angehängten zusätzlichen DOM-Knoten in Konflikt stehen. Wenn du das DOM außerhalb von React Flow änderst, musst du sicherstellen, dass React keinen Grund hat, diese DOM-Knoten zu berücksichtigen.
 
 Als nächstes werden wir die Lebenszyklusmethoden implementieren. Wir müssen Chosen mit dem ref auf den `<select>`-Knoten in `componentDidMount` initialisieren und ihn in `componentWillUnmount` herunterreißen:
 
