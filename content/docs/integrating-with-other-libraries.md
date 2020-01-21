@@ -47,7 +47,7 @@ Um ein konkreteres Beispiel für diese Konzepte zu finden, schreiben wir einen m
 
 >**Hinweis:**
 >
->Nur weil es möglich ist, heißt das nicht, dass es der beste Ansatz für React-Apps ist. Wir empfehlen deinen, React-Komponenten zu verwenden, wenn du kannst. React-Komponenten lassen sich in React-Anwendungen leichter wiederverwenden und bieten häufig eine bessere Kontrolle über ihr Verhalten und Erscheinungsbild.
+>Nur weil es möglich ist, heißt das nicht, dass es der beste Ansatz für React-Apps ist. Wir empfehlen dir die Verwendung von React-Komponenten, wenn du die freie Wahl hast. React-Komponenten lassen sich in React-Anwendungen leichter wiederverwenden und bieten häufig eine bessere Kontrolle über ihr Verhalten und Erscheinungsbild.
 
 Schauen wir uns zunächst an, was Chosen mit dem DOM macht.
 
