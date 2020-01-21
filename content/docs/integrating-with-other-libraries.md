@@ -110,7 +110,7 @@ Beachte, dass React dem Feld `this.el` keine besondere Bedeutung zuweist. Es fun
 
 Dies reicht aus, um unsere Komponente rendern zu lassen, wir möchten jedoch auch über die Wertänderungen informiert werden. Dazu abonnieren wir das `change` jQuery-Event für das von Chosen verwaltete `<select>`.
 
-Wir werden `this.props.onChange` nicht direkt an Chosen übergeben, da sich die Requisiten der Komponente im Laufe der Zeit ändern können, und dies schließt Event-Handler ein. Stattdessen deklarieren wir eine `handleChange()`-Methode, die `this.props.onChange` aufruft und das jQuery-Events `change` abonniert:
+Wir werden `this.props.onChange` nicht direkt an Chosen übergeben, da sich die Eigenschaften der Komponente im Laufe der Zeit ändern können, und dies schließt Event-Handler ein. Stattdessen deklarieren wir eine `handleChange()`-Methode, die `this.props.onChange` aufruft und abonnieren damit das `change` jQuery-Event:
 
 ```js{5,6,10,14-16}
 componentDidMount() {
