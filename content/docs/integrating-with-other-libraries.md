@@ -12,7 +12,7 @@ React kennt keine Änderungen am DOM außerhalb von React. Es ermittelt Aktualis
 
 Dies bedeutet nicht, dass es unmöglich oder sogar zwangsläufig schwer ist, React mit anderen Möglichkeiten zur Beeinflussung des DOM zu kombinieren. Du musst lediglich bedenken, welche Folgen einzelne Möglichkeiten mit sich bringen.
 
-Der einfachste Weg, Konflikte zu vermeiden, besteht darin, zu verhindern, dass die React-Komponente aktualisiert wird. Du kannst dies tun, indem du Elemente renderst, für die React keinen Grund zum Aktualisieren hat, z. B. ein leeres `<div />`.
+Der einfachste Weg Konflikte zu vermeiden, besteht darin, zu verhindern, dass die React-Komponente aktualisiert wird. Du kannst dies tun, indem du Elemente renderst, für die React keinen Grund zum Aktualisieren hat, z. B. ein leeres `<div />`.
 
 ### Wie nähere du dich dem Problem {#how-to-approach-the-problem}
 
