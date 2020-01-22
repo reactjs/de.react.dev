@@ -39,7 +39,7 @@ class SomePlugin extends React.Component {
 }
 ```
 
-Beachte, dass wir sowohl `componentDidMount` als auch `componentWillUnmount` [Lebenszyklusmethoden](/docs/react-component.html#the-component-lifecycle) definiert haben. Viele jQuery-Plugins hängen Event-Listener an das DOM an, daher ist es wichtig, sie in "componentWillUnmount" zu entfernen. Wenn das Plugin keine Bereinigungsmethode bereitstellt, musst du wahrscheinlich eine eigene Methode bereitstellen. Denke daran, alle vom Plugin registrierten Event-Listener zu entfernen, um Speicherlecks zu vermeiden.
+Beachte, dass wir sowohl `componentDidMount` als auch `componentWillUnmount` [Lebenszyklusmethoden](/docs/react-component.html#the-component-lifecycle) definiert haben. Viele jQuery-Plugins hängen Event-Listener an das DOM an, daher ist es wichtig, sie in `componentWillUnmount` zu entfernen. Wenn das Plugin keine Bereinigungsmethode bereitstellt, musst du wahrscheinlich eine eigene Methode bereitstellen. Denke daran, alle vom Plugin registrierten Event-Listener zu entfernen, um Speicherlecks zu vermeiden.
 
 ### Integration mit dem jQuery Chosen-Plugin {#integrating-with-jquery-chosen-plugin}
 
