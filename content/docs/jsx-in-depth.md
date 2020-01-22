@@ -405,12 +405,12 @@ function ListOfTenThings() {
   );
 }
 ```
+ 
+Kindelemente, die zu einer Komponente weitergegeben werden, können alles sein, solange die Komponente die Kindelemente vor dem Rendering in etwas verwandelt was React versteht. Dieses Verfahren wird nicht sehr häufig angewand, aber es funktioniert, solltest du einmal die Grenzen des Machbaren in JSX etwas ausreizen wollen.
 
-Children passed to a custom component can be anything, as long as that component transforms them into something React can understand before rendering. This usage is not common, but it works if you want to stretch what JSX is capable of.
+### Boolean, Null, und Undefined werden ignoriert {#booleans-null-and-undefined-are-ignored}
 
-### Booleans, Null, and Undefined Are Ignored {#booleans-null-and-undefined-are-ignored}
-
-`false`, `null`, `undefined`, and `true` are valid children. They simply don't render. These JSX expressions will all render to the same thing:
+`false`, `null`, `undefined`, und `true` sind valide Kindelemente. Diese werden jedoch nicht gerendert. Die folgenden JSX-Ausdrücke rendern alle zum gleichen Ergebnis:
 
 ```js
 <div />
@@ -426,7 +426,7 @@ Children passed to a custom component can be anything, as long as that component
 <div>{true}</div>
 ```
 
-This can be useful to conditionally render React elements. This JSX renders the `<Header />` component only if `showHeader` is `true`:
+Dies ist nützlich um React-Elemente geknüpft an Bedingungen zu rendern. Das folgende JSX rendert die `<Header />`-Komponente nur wenn `showHeader` `true` ist:
 
 ```js{2}
 <div>
