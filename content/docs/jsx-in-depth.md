@@ -435,7 +435,7 @@ Dies ist nützlich um React-Elemente geknüpft an Bedingungen zu rendern. Das fo
 </div>
 ```
 
-One caveat is that some ["falsy" values](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), such as the `0` number, are still rendered by React. For example, this code will not behave as you might expect because `0` will be printed when `props.messages` is an empty array:
+Diese Regel gilt nur unter Vorbehalt, da ["falsy" Wertte](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), wie beispielsweise die Nummer `0`, trotzdem von React gerendert werden. Der folgende Code könnte sich zum Beispiel anders als erwartet verhalten, da hier `0` ausgegeben wird wenn `props.messages` ein leeres Array ist: 
 
 ```js{2}
 <div>
@@ -445,7 +445,7 @@ One caveat is that some ["falsy" values](https://developer.mozilla.org/en-US/doc
 </div>
 ```
 
-To fix this, make sure that the expression before `&&` is always boolean:
+Um dies zu beheben, stelle sicher das der Ausdruck vor `&&` immer ein boolscher Wert ist:
 
 ```js{2}
 <div>
@@ -455,7 +455,7 @@ To fix this, make sure that the expression before `&&` is always boolean:
 </div>
 ```
 
-Conversely, if you want a value like `false`, `true`, `null`, or `undefined` to appear in the output, you have to [convert it to a string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#String_conversion) first:
+Umgekehrt, solltest du Werte wie `false`, `true`, `null`, oder `undefined` ausgeben wollen, musst du Diese zuerst [in einen String umwandeln](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#String_conversion):
 
 ```js{2}
 <div>
