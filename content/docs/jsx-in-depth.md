@@ -94,7 +94,7 @@ function BlueDatePicker() {
 
 ### Nutzerdefinierte Komponenten müssen Kapitalisiert sein {#user-defined-components-must-be-capitalized}
 
-Sobald ein Elemententyp mit einem Kleinbuchstaben beginnt, bezieht sich Dieser auf einen bereits eingebauten Komponenten wie `<div>` oder `<span>`, welche `React.createElement`   als `'div'` oder `'span'` Zeichenkette übergeben werden. Typen die mit einem Großbuchstaben beginnen, wie z.B. `<Foo />`, kompilieren zu `React.createElement(Foo)` und beziehen sich auf eine Komponente, welche in deiner JavaScript-Datei eingebunden oder definiert wurde.
+Sobald ein Elemententyp mit einem Kleinbuchstaben beginnt, bezieht sich Dieser auf einen bereits eingebauten Komponenten wie `<div>` oder `<span>`, welche `React.createElement`   als `'div'` oder `'span'` String übergeben werden. Typen die mit einem Großbuchstaben beginnen, wie z.B. `<Foo />`, kompilieren zu `React.createElement(Foo)` und beziehen sich auf eine Komponente, welche in deiner JavaScript-Datei eingebunden oder definiert wurde.
 
 Wir empfehlen Komponenten mit einem Großbuchstaben beginnend zu benennen. Solltest du eine Komponente nutzen die mit einem Kleinbuchstaben beginnt, ordne Diese einer kapitalisierten Variable zu, bevor du sie in JSX nutzt.  
 
@@ -279,13 +279,13 @@ In JSX-Ausdrücken, die sowohl einen öffnenden als auch einen schließenden Tag
 
 ### String-Literals {#string-literals-1}
 
-Du kannst eine Zeichenkette zwischen den öffnenden und den schließenden Tags platzieren, dann würde `props.children` eben nur für diese Zeichenkette stehen. Dies ist nützlich für viele der inklusiven HTML-Elemente. Zum Beispiel:
+Du kannst einen String zwischen den öffnenden und den schließenden Tags platzieren, dann würde `props.children` eben nur für diesen String stehen. Dies ist nützlich für viele der inklusiven HTML-Elemente. Zum Beispiel:
 
 ```js
 <MyComponent>Hello world!</MyComponent>
 ```
 
-Hier handelt es sich um valides JSX und `props.children` wäre im `MyComponent` einfach nur die Zeichenkette `"Hello world!"`. HTML wird nicht ausgeschlossen, somit kannst du JSX generell einfach so schreiben wie du auch HTML auf diesem Wege schreiben würdest:
+Hier handelt es sich um valides JSX und `props.children` wäre im `MyComponent` einfach nur den String `"Hello world!"`. HTML wird nicht ausgeschlossen, somit kannst du JSX generell einfach so schreiben wie du auch HTML auf diesem Wege schreiben würdest:
 
 ```html
 <div>This is valid HTML &amp; JSX at the same time.</div>
@@ -385,7 +385,7 @@ function Hello(props) {
 
 ### Funktionen als Kindelemente {#functions-as-children}
 
-Normalerweise werden in JSX eingefügte JavaScript-Ausdrücke zu einer Zeichenkette, einem React-Element, oder einer Liste dieser Dinge ausgeführt. Wie dem auch sei, `props.children` funktioniert genau wie jede andere Prop, da es in der Lage ist jede Art von Daten weiterzugeben, nicht nur Solche bei denen React weiß wie es Diese rendern soll. Wenn du Beispiel eine eigene Komponente hast, kannst du Dieser eine Callback-Funktion als `props.children` übergeben: 
+Normalerweise werden in JSX eingefügte JavaScript-Ausdrücke zu einem String, einem React-Element, oder einer Liste dieser Dinge ausgeführt. Wie dem auch sei, `props.children` funktioniert genau wie jede andere Prop, da es in der Lage ist jede Art von Daten weiterzugeben, nicht nur Solche bei denen React weiß wie es Diese rendern soll. Wenn du Beispiel eine eigene Komponente hast, kannst du Dieser eine Callback-Funktion als `props.children` übergeben: 
 
 ```js{4,13}
 // Ruft die Kindelement-Callback-Funktion numTimes-mal auf und produziert mehrmals eine Komponente
