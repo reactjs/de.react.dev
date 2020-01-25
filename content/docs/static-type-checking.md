@@ -65,37 +65,37 @@ npm run flow init
 
 Dieser Befehl erstellt eine Flow-Konfigurationsdatei, die du committen musst.
 
-### Stripping Flow Syntax from the Compiled Code {#stripping-flow-syntax-from-the-compiled-code}
+### Entfernen der Flow-Syntax aus dem kompilierten Code {#stripping-flow-syntax-from-the-compiled-code}
 
-Flow extends the JavaScript language with a special syntax for type annotations. However, browsers aren't aware of this syntax, so we need to make sure it doesn't end up in the compiled JavaScript bundle that is sent to the browser.
+Flow erweitert die Sprache JavaScript mit einer speziellen Syntax für Typ-Annotationen. Diese Syntax ist Browsern jedoch nicht bekannt, darum müssen wir sicherstellen, dass sie nicht im kompilierten JavaScript-Bundle landet, welches an den Browser gesendet wird.
 
-The exact way to do this depends on the tools you use to compile JavaScript.
+Die genaue Vorgehensweise hängt von den Tools ab, die du zum kompilieren von JavaScript verwendest.
 
 #### Create React App {#create-react-app}
 
-If your project was set up using [Create React App](https://github.com/facebookincubator/create-react-app), congratulations! The Flow annotations are already being stripped by default so you don't need to do anything else in this step.
+Wenn dein Projekt mit [Create React App](https://github.com/facebookincubator/create-react-app) erstellt wurde, gratulieren wir dir! Die Flow-Annotationen werden bereits standardmäßig entfernt, so dass du nicht weiter tun musst.
 
 #### Babel {#babel}
 
->Note:
+>Hinweis:
 >
->These instructions are *not* for Create React App users. Even though Create React App uses Babel under the hood, it is already configured to understand Flow. Only follow this step if you *don't* use Create React App.
+>Diese Anweisungen sind *nicht* für Create React App Benutzer. Auch wenn Create React App unter der Haube Babel verwendet. Es ist schon so vorkonfiguriert, dass Flow verstanden wird. Also folge diesen Schritten nur, wenn du *nicht* Create React App verwendest.
 
-If you manually configured Babel for your project, you will need to install a special preset for Flow.
+Wenn du Babel für dein Projekt selbst eingerichtet hast, musst du spezielles Preset für Flow installieren.
 
-If you use Yarn, run:
+Wenn du Yarn verwendest, führe folgendes aus:
 
 ```bash
 yarn add --dev @babel/preset-flow
 ```
 
-If you use npm, run:
+Wenn du npm verwendest, führe folgendes aus:
 
 ```bash
 npm install --save-dev @babel/preset-flow
 ```
 
-Then add the `flow` preset to your [Babel configuration](https://babeljs.io/docs/usage/babelrc/). For example, if you configure Babel through `.babelrc` file, it could look like this:
+Füge dann das `flow`-Preset deiner [Babel Konfiguration](https://babeljs.io/docs/usage/babelrc/) hinzu. Wenn du zum Beispiel Babel durch eine `.babelrc`-Datei konfigurierst, könnte es so aussehen:
 
 ```js{3}
 {
@@ -106,40 +106,40 @@ Then add the `flow` preset to your [Babel configuration](https://babeljs.io/docs
 }
 ```
 
-This will let you use the Flow syntax in your code.
+Dadurch kannst du die Flow-Syntax in deinem Code verwenden.
 
->Note:
+>Hinweis:
 >
->Flow does not require the `react` preset, but they are often used together. Flow itself understands JSX syntax out of the box.
+>Flow erfordert nicht das `react`-Preset, jedoch werden sich auf zusammen verwendet. Flow selbst versteht die JSX-Syntax out of the box.
 
-#### Other Build Setups {#other-build-setups}
+#### Andere Build Einstellungen {#other-build-setups}
 
-If you don't use either Create React App or Babel, you can use [flow-remove-types](https://github.com/flowtype/flow-remove-types) to strip the type annotations.
+Wenn du weder Create React App, noch Babel verwendest, kannst du [flow-remove-types](https://github.com/flowtype/flow-remove-types) benutzen um die Typ-Annotationen zu entfernen.
 
-### Running Flow {#running-flow}
+### Ausführen von Flow {#running-flow}
 
-If you followed the instructions above, you should be able to run Flow for the first time.
+Wenn du die obigen Anweisungen befolgt hast, wirst du in der Lage sein Flow das erste Mal zu ausführen.
 
 ```bash
 yarn flow
 ```
 
-If you use npm, run:
+Wenn du npm verwendest, führe folgendes aus:
 
 ```bash
 npm run flow
 ```
 
-You should see a message like:
+Solltest du eine Nachricht sehen wie:
 
 ```
 No errors!
 ✨  Done in 0.17s.
 ```
 
-### Adding Flow Type Annotations {#adding-flow-type-annotations}
+### Hinzufügen von Flow-Typ-Annotationen {#adding-flow-type-annotations}
 
-By default, Flow only checks the files that include this annotation:
+Standardmäßig prüft Flow nur die Dateien, die diese Annotation enthalten:
 
 ```js
 // @flow
@@ -180,7 +180,7 @@ npx create-react-app my-app --template typescript
 
 You can also add it to an **existing Create React App project**, [as documented here](https://facebook.github.io/create-react-app/docs/adding-typescript).
 
->Note:
+>Hinweis:
 >
 >If you use Create React App, you can **skip the rest of this page**. It describes the manual setup which doesn't apply to Create React App users.
 
@@ -188,13 +188,13 @@ You can also add it to an **existing Create React App project**, [as documented 
 ### Adding TypeScript to a Project {#adding-typescript-to-a-project}
 It all begins with running one command in your terminal.
 
-If you use [Yarn](https://yarnpkg.com/), run:
+Wenn du [Yarn](https://yarnpkg.com/) verwendest, führe folgendes aus:
 
 ```bash
 yarn add --dev typescript
 ```
 
-If you use [npm](https://www.npmjs.com/), run:
+Wenn du [npm](https://yarnpkg.com/) verwendest, führe folgendes aus:
 
 ```bash
 npm install --save-dev typescript
@@ -216,13 +216,13 @@ Congrats! You've installed the latest version of TypeScript into your project. I
 ### Configuring the TypeScript Compiler {#configuring-the-typescript-compiler}
 The compiler is of no help to us until we tell it what to do. In TypeScript, these rules are defined in a special file called `tsconfig.json`. To generate this file:
 
-If you use [Yarn](https://yarnpkg.com/), run:
+Wenn du [Yarn](https://yarnpkg.com/) verwendest, führe folgendes aus:
 
 ```bash
 yarn run tsc --init
 ```
 
-If you use [npm](https://www.npmjs.com/), run:
+Wenn du [npm](https://yarnpkg.com/) verwendest, führe folgendes aus:
 
 ```bash
 npx tsc --init
