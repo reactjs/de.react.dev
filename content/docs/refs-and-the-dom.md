@@ -142,6 +142,7 @@ class CustomTextInput extends React.Component {
 
 **Darf das Attribut `ref` nicht für Funktionskomponenten verwenden**, da diese keine Instanzen haben:
 
+
 ```javascript{1,8,13}
 function MyFunctionComponent() {
   return <input />;
@@ -161,7 +162,7 @@ class Parent extends React.Component {
 }
 ```
 
-Du solltest die Komponente in eine Klasse konvertieren, wenn du einen Ref darauf benötigst, genau wie du es tust, wenn du Lebenszyklusmethoden oder -zustände benötigst.
+Wenn du zulassen möchtest, dass Benutzer eine Referenz zu deiner Funktionskomponente hinzufügen, kannst du [`forwardRef`](https://reactjs.org/docs/forwarding-refs.html) verwenden (möglicherweise in Verbindung mit [`useImperativeHandle`](/docs/hooks-reference.html#useimperativehandle)), oder du kannst die Komponente in eine Klasse konvertieren.
 
 Du kannst jedoch **das Attribut `ref` in einer Funktionskomponente verwenden**, solange du auf ein DOM-Element oder eine Klassenkomponente verweist:
 
