@@ -40,7 +40,11 @@ ReactDOM.render(
 
 Wenn du neugierig auf weitere Beispiele bist, bei denen JSX in Javascript konvertiert wird, dann probiere gerne den [online Babel-Compiler](babel://jsx-simple-example) aus.
 
+<<<<<<< HEAD
 Die Komponente kann der Funktion entweder als String, als Unterklasse von `React.Component` oder als zustandslose (engl. stateless) Komponente in Form einer einfachen Funktion zur Verfügung gestellt werden.
+=======
+The component can either be provided as a string, as a subclass of `React.Component`, or a plain function.
+>>>>>>> 4367566bddd06ed9dfbd6b1c3f45f9925e60b2c3
 
 Solltest du das häufige Tippen von `React.createElement` satt haben, ist ein gängiges Pattern, eine Kurzform zuzuweisen: 
 
