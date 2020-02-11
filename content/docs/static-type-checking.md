@@ -145,11 +145,11 @@ Standardmäßig prüft Flow nur die Dateien, die diese Annotation enthalten:
 // @flow
 ```
 
-Typically it is placed at the top of a file. Try adding it to some files in your project and run `yarn flow` or `npm run flow` to see if Flow already found any issues.
+In der Regel wird sie an den Anfang einer Datei geschrieben. Versuche sie zu ein paar Dateien hinzuzufügen und `yarn flow` oder `npm run flow` auszuführen, um zu schauen, ob Flow bereits irgendwelche Probleme gefunden hat.
 
-There is also [an option](https://flow.org/en/docs/config/options/#toc-all-boolean) to force Flow to check *all* files regardless of the annotation. This can be too noisy for existing projects, but is reasonable for a new project if you want to fully type it with Flow.
+Es gibt auch [eine Option](https://flow.org/en/docs/config/options/#toc-all-boolean), die Flow zwingt, *alle* Dateien unabhängig von der Annotation zu prüfen. Dies kann ein bisschen zu viel sein für bestehende Projekte, aber ist sinnvoll für neue Projekte, wenn du volle Typisierung mit Flow haben möchtest.
 
-Now you're all set! We recommend to check out the following resources to learn more about Flow:
+Jetzt bist du bereit! Wir empfehlen dir, die folgenden Quellen zu anzuschauen, um mehr über Flow zu erfahren:
 
 * [Flow Documentation: Type Annotations](https://flow.org/en/docs/types/)
 * [Flow Documentation: Editors](https://flow.org/en/docs/editors/)
@@ -158,35 +158,35 @@ Now you're all set! We recommend to check out the following resources to learn m
 
 ## TypeScript {#typescript}
 
-[TypeScript](https://www.typescriptlang.org/) is a programming language developed by Microsoft. It is a typed superset of JavaScript, and includes its own compiler. Being a typed language, TypeScript can catch errors and bugs at build time, long before your app goes live. You can learn more about using TypeScript with React [here](https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter).
+[TypeScript](https://www.typescriptlang.org/) ist eine Programmiersprache, die von Microsoft entwickelt wurde. Sie ist eine Superset von JavaScript und beinhaltet ihren eigenen Kompiler. Da es sich bei TypeScript um eine typisierte Sprache handelt, kann sie Fehler und Bugs zur Build-Zeit abfangen. Lange bevor deine Anwendung in Betrieb geht.Du kannst mehr über die Verwerdnung von TypeScript mit React [hier](https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter) lernen.
 
-To use TypeScript, you need to:
-* Add TypeScript as a dependency to your project
-* Configure the TypeScript compiler options
-* Use the right file extensions
-* Add definitions for libraries you use
+Um TypeScript zu benutzen, benötigst du folgendes:
++ Füge TypeScript als Abhängigkeit in deinem Projekt hinzu
+* Konfiguriere die Optionen des TypeScript-Kompilers
+* Benutze die rictige Dateiendung
+* Füge Definitionen für die Bibliotheken hinzu, die du verwendest
 
-Let's go over these in detail.
+Lass uns diese im Detail durchgehen.
 
-### Using TypeScript with Create React App {#using-typescript-with-create-react-app}
+### Verwenden von TypeScript mit Create React App {#using-typescript-with-create-react-app}
 
-Create React App supports TypeScript out of the box.
+Create React App unterstützt TypeScript out of the box.
 
-To create a **new project** with TypeScript support, run:
+Um ein **neues Projekt** mit TypeScript-Unterstützung zu erstellen, führe folgendes aus:
 
 ```bash
 npx create-react-app my-app --template typescript
 ```
 
-You can also add it to an **existing Create React App project**, [as documented here](https://facebook.github.io/create-react-app/docs/adding-typescript).
+Du kannst es auch zu einem **bestehenden Create React App Projekt** hinzufügen, [wie hier dokumentiert](https://facebook.github.io/create-react-app/docs/adding-typescript).
 
 >Hinweis:
 >
->If you use Create React App, you can **skip the rest of this page**. It describes the manual setup which doesn't apply to Create React App users.
+>Wenn du Create React App benutzt, **kannst du den Rest dieser Seite überspringen**. Er beschreibt die manuelle Einrichtung, die nicht für Create React App benutzer gilt.
 
 
-### Adding TypeScript to a Project {#adding-typescript-to-a-project}
-It all begins with running one command in your terminal.
+### Typescript einem Projekt hinzufügen {#adding-typescript-to-a-project}
+Es beginnt alles mit dem Ausführem von einem Befehl im Terminal.
 
 Wenn du [Yarn](https://yarnpkg.com/) verwendest, führe folgendes aus:
 
@@ -200,7 +200,7 @@ Wenn du [npm](https://yarnpkg.com/) verwendest, führe folgendes aus:
 npm install --save-dev typescript
 ```
 
-Congrats! You've installed the latest version of TypeScript into your project. Installing TypeScript gives us access to the `tsc` command. Before configuration, let's add `tsc` to the "scripts" section in our `package.json`:
+Gratulation! Du hast die neueste Version von TypeScript in deinem Projekt. Das Installieren von TypeScript gibt uns Zugriff auf den `tsc`-Befehl. Lass uns vor der Konfiguration `tsc` zum "scripts"-Abschnitt in unserer `package.json` hinzufügen:
 
 ```js{4}
 {
@@ -213,7 +213,7 @@ Congrats! You've installed the latest version of TypeScript into your project. I
 }
 ```
 
-### Configuring the TypeScript Compiler {#configuring-the-typescript-compiler}
+### Konfigurieren des TypeScript-Kompilers {#configuring-the-typescript-compiler}
 The compiler is of no help to us until we tell it what to do. In TypeScript, these rules are defined in a special file called `tsconfig.json`. To generate this file:
 
 Wenn du [Yarn](https://yarnpkg.com/) verwendest, führe folgendes aus:
@@ -228,12 +228,12 @@ Wenn du [npm](https://yarnpkg.com/) verwendest, führe folgendes aus:
 npx tsc --init
 ```
 
-Looking at the now generated `tsconfig.json`, you can see that there are many options you can use to configure the compiler. For a detailed description of all the options, check [here](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+Wenn du dir die jetzt genrierte `tsconfig.json` anschaust, siehst du, dass es viele Optionen für die Konfiguration des Kompilers gibt. Eine detailierte Beschreibung aller Optionen findest du [hier](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
-Of the many options, we'll look at `rootDir` and `outDir`. In its true fashion, the compiler will take in typescript files and generate javascript files. However we don't want to get confused with our source files and the generated output.
+Von den vielen Optionen werden wir uns `rootDir` und `outDir` ansehen. Im Grunde nimmt der Kompiler TypeScript-Dateien und generiert daraus JavaScript-Dateien. Wir wollen jedoch nicht drucheinander kommen mit unseren Quelldateien und den generierten Dateien.
 
-We'll address this in two steps:
-* Firstly, let's arrange our project structure like this. We'll place all our source code in the `src` directory.
+Wir werden dies in zwei Schritten angehen:
+* Lass uns als erstes unsere Projektstruktur wie folgt anlegen. Wir platzieren unseren Quellcode im `src`-Ordner.
 
 ```
 ├── package.json
@@ -242,7 +242,7 @@ We'll address this in two steps:
 └── tsconfig.json
 ```
 
-* Next, we'll tell the compiler where our source code is and where the output should go.
+* Als nächstes werden wir dem Kompiler beibringen wo unsere Quelldateien liegen und er die genrierten Dateien ablegen soll.
 
 ```js{6,7}
 // tsconfig.json
@@ -256,41 +256,40 @@ We'll address this in two steps:
   },
 }
 ```
+Großartig! Wen wir jetzt unser Build-Script ausführen, wird der Kompiler unser generiertes JavaScipt im `build`-Ordner ablegen. [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json) bietet eine `tsconfig.json` mit einer Menge guten Optionen zum Starten an.
 
-Great! Now when we run our build script the compiler will output the generated javascript to the `build` folder. The [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json) provides a `tsconfig.json` with a good set of rules to get you started.
+Generell möchtest du das generierte JavaScript nicht in deiner Versionskontrolle haben, stelle also sicher, dass du den Build-Ordner deiner `.gitignore` hinzugefügt hast.
 
-Generally, you don't want to keep the generated javascript in your source control, so be sure to add the build folder to your `.gitignore`.
+### Dateiendungen {#file-extensions}
+In React schreibst du meistens deine Komponenten in eine `.js`-Datei. In TypeScript haben wir 2 Dateiendungen:
 
-### File extensions {#file-extensions}
-In React, you most likely write your components in a `.js` file. In TypeScript we have 2 file extensions:
+`.ts` ist die standardmäßige Dateiendung, wobei `.tsx` eine spezielle Endung für Dateien, die `JSX` beinhalten, ist.
 
-`.ts` is the default file extension while `.tsx` is a special extension used for files which contain `JSX`.
+### Ausführen von TypeScript {#running-typescript}
 
-### Running TypeScript {#running-typescript}
-
-If you followed the instructions above, you should be able to run TypeScript for the first time.
+Wenn die obigen Anweisungen befolgt hast, solltest du in der Lage sein TypeScript zum ersten Mal auszuführen.
 
 ```bash
 yarn build
 ```
 
-If you use npm, run:
+Wenn du npm benutzt, führe folgendes aus:
 
 ```bash
 npm run build
 ```
 
-If you see no output, it means that it completed successfully.
+Wenn du keine Ausgabe sieht, bedeutet das, dass alles erfolgreich verlaufen ist.
 
 
-### Type Definitions {#type-definitions}
-To be able to show errors and hints from other packages, the compiler relies on declaration files. A declaration file provides all the type information about a library. This enables us to use javascript libraries like those on npm in our project.
+### Typ-Definitionen {#type-definitions}
+Um Fehler un Hinweise von anderen Paketen anzuzeigen, ist der Kompiler auf Deklarationsdateien angewiesen. Eine Deklarationsdatei liefert alle Typ-Informationen einer Bibliothek. Dies ermöglicht uns JavaScript-Bibliotheken, wie solche auf npm in unserem Projekt zu verwenden.
 
-There are two main ways to get declarations for a library:
+Es gibt im Wesentlichen zwei Möglichkeiten Deklarationen für eine Bibliothek zu erhalten:
 
-__Bundled__ - The library bundles its own declaration file. This is great for us, since all we need to do is install the library, and we can use it right away. To check if a library has bundled types, look for an `index.d.ts` file in the project. Some libraries will have it specified in their `package.json` under the `typings` or `types` field.
+__Bundled__ - Die Bibliothek beinhaltet ihre eigene Deklarationedatei. Das ist super für uns, da wir nur die Bibliothek installieren müssen und wir sie direkt benutzen können. Um zu prüfen ob eine Bibliothek Typen beinhaltet, halte im Projekt Ausschau nach einer `index.d.ts`-Datei. Manche Bibliotheken haben diese auch in ihrer `package.json` unter `typings` or `types` angegeben.
 
-__[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)__ - DefinitelyTyped is a huge repository of declarations for libraries that don't bundle a declaration file. The declarations are crowd-sourced and managed by Microsoft and open source contributors. React for example doesn't bundle its own declaration file. Instead we can get it from DefinitelyTyped. To do so enter this command in your terminal.
+__[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)__ - DefinitelyTyped ist ein großes Repository für Bibliotheken, die keine eigene Deklarationsdatei haben. Die Deklarationen sind crowd-sourced und werden von Microsoft und Open-Source-Mitwirkenden verwaltet. React zum Beipsiel hat keine eigene Deklarationsdatei. Stattdessen können wir sie von DefinitelyTyped bekommen. gib dazu diesen Befehl im Terminal ein.
 
 ```bash
 # yarn
@@ -301,7 +300,7 @@ npm i --save-dev @types/react
 ```
 
 __Local Declarations__
-Sometimes the package that you want to use doesn't bundle declarations nor is it available on DefinitelyTyped. In that case, we can have a local declaration file. To do this, create a `declarations.d.ts` file in the root of your source directory. A simple declaration could look like this:
+Manchmal beinhaltet das Paket, welches du nutzt, keine Deklarationen oder ist auf DefinitelyTyped verfügbar. In diesem Fall können wir eine lokale Deklarationsdatei haben. Erstelle dazu eine `declarations.d.ts`-Datei und dem Stammverzeichnis deines Quellordners. Eine einfache Deklaration könnte wie folgt aussehen:
 
 ```typescript
 declare module 'querystring' {
@@ -310,7 +309,7 @@ declare module 'querystring' {
 }
 ```
 
-You are now ready to code! We recommend to check out the following resources to learn more about TypeScript:
+Du bist jetzt bereit zu Coden! Wir empfehelen dir die folgenden Quellen zu besuchen um mehr über TypeScript zu lernen:
 
 * [TypeScript Documentation: Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 * [TypeScript Documentation: Migrating from Javascript](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)
@@ -318,16 +317,16 @@ You are now ready to code! We recommend to check out the following resources to 
 
 ## Reason {#reason}
 
-[Reason](https://reasonml.github.io/) is not a new language; it's a new syntax and toolchain powered by the battle-tested language, [OCaml](https://ocaml.org/). Reason gives OCaml a familiar syntax geared toward JavaScript programmers, and caters to the existing NPM/Yarn workflow folks already know.
+[Reason](https://reasonml.github.io/) ist keine neue Sprache; Es handelt sich um eine neue Syntax und Toolchain basierend auf der Sprache [OCaml](https://ocaml.org/). Reason gibt OCaml eine vertraute Syntax, die sich an JavaScript-Entwickler/innen richtet und den bestehenden NPM/Yarn-Workflow berücksichtigt, den man bereits kennt.
 
-Reason is developed at Facebook, and is used in some of its products like Messenger. It is still somewhat experimental but it has [dedicated React bindings](https://reasonml.github.io/reason-react/) maintained by Facebook and a [vibrant community](https://reasonml.github.io/docs/en/community.html).
+Reason wurde bei Facebook entwickelt und wird in einigen seiner Produkte wie dem Messenger verwendet. Es ist noch ein wenig experimentell, aber es hat [spezielle React-Bindings](https://reasonml.github.io/reason-react/), die von Facebook und einer [aktiven Community](https://reasonml.github.io/docs/en/community.html) gepflegt werden.
 
 ## Kotlin {#kotlin}
 
-[Kotlin](https://kotlinlang.org/) is a statically typed language developed by JetBrains. Its target platforms include the JVM, Android, LLVM, and [JavaScript](https://kotlinlang.org/docs/reference/js-overview.html).
+[Kotlin](https://kotlinlang.org/) ist von JetBrains entwickelte statisch typisierte Sprache. Zu ihren Zielplattformen zählt JVM, Android, LLVM und [JavaScript](https://kotlinlang.org/docs/reference/js-overview.html).
 
-JetBrains develops and maintains several tools specifically for the React community: [React bindings](https://github.com/JetBrains/kotlin-wrappers) as well as [Create React Kotlin App](https://github.com/JetBrains/create-react-kotlin-app). The latter helps you start building React apps with Kotlin with no build configuration.
+JetBrains entwickelt und pflegt verschiedenste Tools speziell für die React-Community: [React bindings](https://github.com/JetBrains/kotlin-wrappers) sowohl als auch [Create React Kotlin App](https://github.com/JetBrains/create-react-kotlin-app). Letzteres hilft dir dabei, ReactAnwendungen mit Kotlin ohne Build-Konfiguration zu verwenden.
 
-## Other Languages {#other-languages}
+## Andere Sprachen {#other-languages}
 
-Note there are other statically typed languages that compile to JavaScript and are thus React compatible. For example, [F#/Fable](https://fable.io/) with [elmish-react](https://elmish.github.io/react). Check out their respective sites for more information, and feel free to add more statically typed languages that work with React to this page!
+Beachte, dass es auch andere statisch typisierte Sprachen gibt, die nach JavaScript kompilieren und somit mit React kompatibel sind. Zum Beispiel [F#/Fable](https://fable.io/) mit [elmish-react](https://elmish.github.io/react). Schau dir die jeweiligen Seiten für mehr Informationen an und fühl dich frei dieser Seite weitere statisch typisierte Sprachen die mit React arbeiten hinzuzufügen!
