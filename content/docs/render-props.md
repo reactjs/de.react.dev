@@ -4,23 +4,23 @@ title: Render Props
 permalink: docs/render-props.html
 ---
 
-Der Begriff ["render prop"](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) bezieht sich bezieht sich auf eine Technik um Code zwischen React Komponenten auszutauschen. Hierzu nutzt man ein "prop" dessen Wert eine Funktion ist.
+Der Begriff ["render prop"](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) bezieht sich bezieht sich auf eine Technik um Code zwischen React-Komponenten auszutauschen. Hierzu nutzt man ein Prop dessen Wert eine Funktion ist.
 
-Eine Komponente mit einem "render prop" nimmt eine Funktion, welches ein React Element wiedergibt und ruft es auf, anstatt es selbstständig zu rendern.
+Eine Komponente mit einem "render prop" nimmt eine Funktion, die ein React Element zurückgibt und ruft sie auf, anstatt eine eigene zu Render-Logik zu implementieren.
 
 ```jsx
 <DataProvider render={data => (
-  <h1>Hello {data.target}</h1>
+  <h1>Hallo {data.target}</h1>
 )}/>
 ```
 
 Bibliotheken, welche "render props" benutzen sind: [React Router](https://reacttraining.com/react-router/web/api/Route/render-func), [Downshift](https://github.com/paypal/downshift) und [Formik](https://github.com/jaredpalmer/formik).
 
-In dieser Dokumentation wird besprochen wozu "render props" genutzt werden und wie Sie diese selbst nutzen können.
+In dieser Dokumentation wird besprochen wozu "render props" genutzt werden und wie du sie selbst nutzen kannst.
 
 ## Nutze Render Props für Cross-Cutting Concerns {#use-render-props-for-cross-cutting-concerns}
 
-Komponenten sind die primäre Einheit der Wiederverwendung von Code, aber es ist nicht immer direkt ersichtlich wie man den Status, bzw. die Verhaltensweise einer bestimmten Komponente mit einer anderen Koponente teilt, welche die gleichen Eigenschaften benötigt.
+Komponenten sind die Grundeinheit für Code-Wiederverwendung in React, aber es ist nicht immer direkt ersichtlich wie man den Status bzw. die Verhaltensweise einer bestimmten Komponente mit einer anderen Komponente teilt, welche die gleichen Eigenschaften benötigt.
 Im folgenden Beispiel, wird die Mausbewegung von einer Webapp überwacht:
 
 ```js
@@ -41,19 +41,19 @@ class MouseTracker extends React.Component {
   render() {
     return (
       <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
-        <h1>Bewege die Maus!</h1>
-        <p>Momentane Mausposition ist: ({this.state.x}, {this.state.y})</p>
+        <h1>Bewege die Maus umher!</h1>
+        <p>Die momentane Mausposition ist: ({this.state.x}, {this.state.y})</p>
       </div>
     );
   }
 }
 ```
 
-Während der Mauszeiger sich über dem Bildschirm bewegt, zeigt die Komponente seine (x, y) Koordinaten in einem `<p>`.
+Während der Mauszeiger sich über den Bildschirm bewegt, zeigt die Komponente seine (x, y) Koordinaten in einem `<p>`.
 
-Nun stellt sich eine Frage: Wie kann man dieses Verhalten auf eine andere Komponente übertragen? In anderen Worten: wenn eine andere Komponente die Position des Cursors kennen muss, kann das Verhalten so zusammenfasst werden, dass wir es mit der Komponente teilen können?
+Nun stellt sich eine Frage: Wie kann man dieses Verhalten auf eine andere Komponente übertragen? In anderen Worten: wenn eine andere Komponente die Position des Cursors kennen muss, kann das Verhalten so gekapselt werden, dass wir es mit der Komponente teilen können?
 
-Da Komponente die primäre Einheit der Wiederverwendung von Code in React sind, versuchen wir den Code ein wenig zu überarbeiten in dem wir eine `<Mouse>` Komponente nutzen, dass das Verhalten zusammenfasst, welches wir woanders erneut nutzen können.
+Da Komponenten die Grundeinheit der Code-Wiederverwendung in React sind, versuchen wir den Code ein wenig zu überarbeiten in dem wir eine `<Mouse>` Komponente nutzen, die das Verhalten kapselt, welches wir woanders erneut nutzen möchten.
 
 ```js
 // Die <Mouse> Komponente fasst das Verhalten zusammen, was wir benötigen...
@@ -76,7 +76,7 @@ class Mouse extends React.Component {
       <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
 
         {/* ...aber wie rendern wir etwas anderes als <p>? */}
-        <p>Momentane Mausposition ist: ({this.state.x}, {this.state.y})</p>
+        <p>Die momentane Mausposition ist: ({this.state.x}, {this.state.y})</p>
       </div>
     );
   }
@@ -86,7 +86,7 @@ class MouseTracker extends React.Component {
   render() {
     return (
       <div>
-        <h1>Bewege die Maus!</h1>
+        <h1>Bewege die Maus umher!</h1>
         <Mouse />
       </div>
     );
@@ -143,7 +143,7 @@ class MouseTracker extends React.Component {
   render() {
     return (
       <div>
-        <h1>Bewege die Maus!</h1>
+        <h1>Bewege die Maus umher!</h1>
         <MouseWithCat />
       </div>
     );
@@ -151,9 +151,9 @@ class MouseTracker extends React.Component {
 }
 ```
 
-Dieser Ansatz funktioniert für unseren spezifischen Nutzen, aber wir haben es noch nicht geschafft das Verhalten objektiv zusammenzufassen und wiederverwertbar zu machen. Wenn wir jetzt die Mausposition für einen anderen Nutzen benötigen, müssen wir eine neue Komponente erschaffen (z.B. mit einem anderen `<MouseWithCat>`) und für speziell diesen Nutzen rendern.
+Dieser Ansatz funktioniert für unseren spezifischen Nutzen, aber wir haben es noch nicht geschafft das Verhalten objektiv zusammenzufassen und wiederverwendbar zu machen. Wenn wir jetzt die Mausposition für einen anderen Nutzen benötigen, müssen wir eine neue Komponente erstellen (z.B. mit einem weiteren `<MouseWithCat>`) und für speziell diesen Nutzen rendern.
 
-Hier kommt das „render prop“ ins Spiel. Ansatt, dass wir ein `<Cat>` innerhalb der `<Mouse>` Komponente hard-coden und somit effektiv den gerenderten Output verändern, können wir `<Mouse>` mit einem Funktionsprop ausstatten, mit dem es dynamisch bestimmt was zu rendern ist – ein "render prop".
+Hier kommt das „render prop“ ins Spiel. Anstatt, dass wir ein `<Cat>` innerhalb der `<Mouse>` Komponente fest zu programmieren und ihren effektiven gerenderten Output zu verändern, können wir `<Mouse>` mit einem Funktions-Prop ausstatten, mit dem es dynamisch bestimmt was zu rendern ist – ein "render prop".
 
 
 ```js
@@ -186,7 +186,7 @@ class Mouse extends React.Component {
 
         {/*
           Anstatt statisch anzuzeigen was <Mouse> rendert,
-          nutzen wir den `render` Prop um dynamisch zu bestimmen was gerendert werden muss.
+          nutzen wir das `render`-Prop um dynamisch zu bestimmen was gerendert werden muss.
         */}
         {this.props.render(this.state)}
       </div>
@@ -198,7 +198,7 @@ class MouseTracker extends React.Component {
   render() {
     return (
       <div>
-        <h1>Bewege die Maus!</h1>
+        <h1>Bewege die Maus umher!</h1>
         <Mouse render={mouse => (
           <Cat mouse={mouse} />
         )}/>
@@ -208,17 +208,17 @@ class MouseTracker extends React.Component {
 }
 ```
 
-Anstatt die `<Mouse>` Komponente einfach zu klonen und etwas Anderes in die `render` Methode spezifisch zu hard-coden, verwenden wir ein `render` Prop, welches `<Mouse>` dynamisch nutzen und bestimmen kann, was es rendert.
+Anstatt die `<Mouse>` Komponente einfach zu klonen und etwas anderes in die `render`-Methode fest einzuprogrammieren, um einen bestimmten Anwendungsfall zu lösen, verwenden wir ein `render`-Prop, mit dem `<Mouse>` dynamisch bestimmen kann was es rendert.
 
-Genauer ausgedrückt, **ein „render prop“ ist ein Funktionsprop, dass eine Komponente nutzt, um zu wissen, was es rendern muss.**
+Genauer ausgedrückt, **ein „render prop“ ist ein Funktion-Prop, dass eine Komponente nutzt, um zu wissen was es rendern muss.**
 
-Diese Technik macht das gewünschte Verhalten übertragbar. Um das Verhalten zu erhalten, rendern wir eine `<Mouse>` mit einem `render` Prop, welches mitteilt, was es zu rendern hat. Selbstverständlich unter Berücksichtung der aktuellen (x, y) Koordinaten des Cursors.
+Diese Technik macht das gewünschte Verhalten übertragbar. Um das Verhalten zu erhalten, rendere eine `<Mouse>` mit einem `render`-Prop, welches ihr mitteilt, was sie mit dem aktuellen (x, y) Cursor rendern soll.
 
-Eine interessante Sache über „render props“: Man kann die meisten „[higher-order components](/docs/higher-order-components.html)“ (HOC) durch normale Komponenten mit einem "render prop" implementieren. Wenn Sie beispielsweise ein `withMouse` HOC anstelle einer `<Mouse>` Komponente nutzen möchten, können Sie dies einfach mit einer normalen `<Mouse>` mit "render prop" erstellen: 
+Eine interessante Sache über „render props“: Man kann die meisten „[higher-order components](/docs/higher-order-components.html)“ (HOC) durch normale Komponenten mit einem "render prop" implementieren. Wenn du beispielsweise eine `withMouse` HOC anstelle einer `<Mouse>` Komponente nutzen möchtest, kannst du einfach eine normale `<Mouse>` mit "render prop" erstellen:
 
 ```js
-// Wenn Sie wirklich ein HOC benötigen können Sie einfach
-// eines mit einer regulären Komponente mit "render prop" erstellen!
+// Wenn du aus irgendeinem Grund wirklich eine HOC willst, kannst du sie einfach
+// mit einer regulären Komponente mit einem "render prop" erstellen!
 function withMouse(Component) {
   return class extends React.Component {
     render() {
@@ -238,7 +238,7 @@ Ein render Prop zu nutzen hat somit auch den Vorteil, beide Strukturen nutzen zu
 
 Es ist wichtig sich zu merken, dass nur weil diese Struktur „render props“ heißt, es *nicht zwingend notwendig ist ein Prop namens `render` zu nutzen, um auch diese Struktur zu nutzen*. Tatsächlich ist [*jedes* Prop, welches eine Funktion ist, die auch eine Komponente nutzen kann, um zu wissen was zu rendern ist, technisch ein „render prop“](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce).
 
-Auch wenn das Beispiel oben ein `render` nutzt, könnten wir auch einfach ein `children` Prop nutzen!
+Auch wenn das Beispiel oben `render` nutzt, könnten wir auch einfach ein `children`-Prop nutzen!
 
 ```js
 <Mouse children={mouse => (
@@ -246,7 +246,7 @@ Auch wenn das Beispiel oben ein `render` nutzt, könnten wir auch einfach ein `c
 )}/>
 ```
 
-Merke! Das `children` Prop muss nicht in den Attributen im „JSX element“ gelistet sein. Stattdessen können sie es direkt *in* das element einfügen!
+Und merke, dass das `children`-Prop nicht unbedingt in der Liste der "Attribute" im JSX-Element genannt werden muss. Stattdessen kannst du es direkt *in* das Element einfügen!
 
 ```js
 <Mouse>
@@ -256,9 +256,9 @@ Merke! Das `children` Prop muss nicht in den Attributen im „JSX element“ gel
 </Mouse>
 ```
 
-Sie können sehen wie diese Technik in der [react-motion](https://github.com/chenglou/react-motion) API genutzt wird.
+Du kannst sehen wie diese Technik in der [react-motion](https://github.com/chenglou/react-motion) API genutzt wird.
 
-Da diese Technik ein wenig ungewöhnlich ist, möchten Sie wahrscheinlich explizit angeben das `children` eine Funktion in Ihren `propTypes` ist, wenn Sie eine API wie diese erstellen.
+Da diese Technik etwas ungewöhnlich ist, möchtest du wahrscheinlich explizit angeben, dass `children` eine Funktion in deinen `propTypes` ist, wenn du eine API wie diese erstellst.
 
 ```js
 Mouse.propTypes = {
@@ -268,11 +268,11 @@ Mouse.propTypes = {
 
 ## Vorbehalte {#caveats}
 
-### Seien Sie vorsichtig wenn Sie Render Props mit React.PureComponent nutzen {#be-careful-when-using-render-props-with-reactpurecomponent}
+### Sei vorsichtig wenn du render-Props mit React.PureComponent nutzt {#be-careful-when-using-render-props-with-reactpurecomponent}
 
-Bei der Nutzung eines render Props kann dieses die Vorteile negieren, welche vom [`React.PureComponent`](/docs/react-api.html#reactpurecomponent) kommen, sollten Sie die Funktion innerhalb der `render` Methode erstellen. Grund hierfür ist, dass der oberflächliche Prop Vergleich immer ein `false` für neue Props wiedergibt und jeder `render` in diesem Fall einen neuen Wert für den render Prop generiert.
+Bei der Nutzung eines render-Props kann dieses die Vorteile zunichte machen, welche vom [`React.PureComponent`](/docs/react-api.html#reactpurecomponent) kommen, solltest du die Funktion innerhalb der `render` Methode erstellen. Grund hierfür ist, dass der oberflächliche Prop Vergleich immer ein `false` für neue Props zurückgibt und jedes `render` in diesem Fall einen neuen Wert für das render-Prop generiert.
 
-Ein Beispiel: Sollten wir weiter mit unserer `<Mouse>` Komponente von oben arbeiten und `Mouse` erweitert, statt `React.Component`, `React.PureComponent` würde es folgendermaßen aussehen:
+Wenn wir zum Beispiel mit unserer `<Mouse>`-Komponente von oben fortfahren und `Mouse` statt `React.Component`, `React.PureComponent` nutzen würde, würde es folgendermaßen aussehen:
 
 ```js
 class Mouse extends React.PureComponent {
@@ -283,7 +283,7 @@ class MouseTracker extends React.Component {
   render() {
     return (
       <div>
-        <h1>Bewege die Maus!</h1>
+        <h1>Bewege die Maus umher!</h1>
 
         {/*
           Nicht gut! Der Wert des `render` Prop wird
@@ -298,9 +298,9 @@ class MouseTracker extends React.Component {
 }
 ```
 
-In diesem Beispiel wird jedes Mal, wenn `<MouseTracker>` rendert, eine neue Funktion mit dem Wert vom `<Mouse render>` Prop generiert, wodurch der Effekt von der `<Mouse>` erweiterten `React.PureComponent` negiert wird!
+In diesem Beispiel wird jedes Mal, wenn `<MouseTracker>` rendert, eine neue Funktion mit dem Wert vom `<Mouse render>`-Prop generiert, wodurch der Effekt von der `<Mouse>` erweiterten `React.PureComponent` zunichte gemacht wird!
 
-Um dieses Problem zu umgehen, können Sie manchmal das Prop als eine Instanz-Methode definieren, in etwa so:
+Um dieses Problem zu umgehen, kannst du manchmal das Prop als eine Instanz-Methode definieren, in etwa so:
 
 ```js
 class MouseTracker extends React.Component {
@@ -313,7 +313,7 @@ class MouseTracker extends React.Component {
   render() {
     return (
       <div>
-        <h1>Bewege die Maus!</h1>
+        <h1>Bewege die Maus umher!</h1>
         <Mouse render={this.renderTheCat} />
       </div>
     );
@@ -321,4 +321,4 @@ class MouseTracker extends React.Component {
 }
 ```
 
-In Fällen, in denen Sie das Prop nicht statisch definieren können (bspw., weil Sie es über den Props der Komponenten und/oder dem Zustand schließen müssen), sollte `<Mouse>` den `React.Component` stattdessen erweiten.
+In Fällen, in denen du das Prop nicht statisch definieren kannst (bspw., weil du es über die Props der Komponenten und/oder dem State schließen musst), sollte `<Mouse>` den `React.Component` stattdessen erweitern.
