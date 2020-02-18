@@ -234,7 +234,7 @@ Dieses Verhalten gibt es nur da es zum Verhalten von HTML passt.
 
 ### Spread Attribute {#spread-attributes}
 
-Solltest du bereits `props` als ein Objekt haben und möchtest es an JSX weitergeben, kannst du mit `...` einen "Aufteilungs"-Operator für das ganze Propsobjekt nutzen. Diese beiden Komponenten sind gleich:
+Solltest du bereits `props` als ein Objekt haben und möchtest es an JSX weitergeben, kannst du mit `...` einen "spread"-Operator für das ganze Props-Objekt nutzen. Diese beiden Komponenten sind gleich:
 
 ```js{7}
 function App1() {
