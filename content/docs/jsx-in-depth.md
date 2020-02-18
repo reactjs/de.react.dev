@@ -426,7 +426,7 @@ Kindelemente, die zu einer Komponente weitergegeben werden, können alles sein, 
 <div>{true}</div>
 ```
 
-Dies ist nützlich um React-Elemente geknüpft an Bedingungen zu rendern. Das folgende JSX rendert die `<Header />`-Komponente nur wenn `showHeader` `true` ist:
+Dies ist nützlich um React-Elemente, die an Bedingungen geknüpft sind zu rendern. Das folgende JSX rendert die `<Header />`-Komponente nur wenn `showHeader` `true` ist:
 
 ```js{2}
 <div>
