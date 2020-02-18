@@ -375,7 +375,7 @@ function TodoList() {
 }
 ```
 
-JavaScript-Ausdrücke können mit anderen Typen von Kindelementen zusammen gemischt werden. Dies ist oft nützlich im Gegensatz zu String-Templates:
+JavaScript-Ausdrücke können mit anderen Typen von Kindelementen vermischt werden. Dies ist oft nützlich im Gegensatz zu String-Templates:
 
 ```js{2}
 function Hello(props) {
