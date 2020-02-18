@@ -267,7 +267,7 @@ const App = () => {
 };
 ```
 
-Im obigen Beispiel wird die `kind`-Prop sicher ausgenommen und *wird nicht* zu dem `<button>`-Element im DOM weitergegeben.
+Im obigen Beispiel wird die `kind`-Prop sicher ausgenommen und *wird nicht* zum `<button>`-Element im DOM weitergegeben.
 Alle anderen Props werden mit Hilfe des `...other`-Objekts weitergegeben, was die Komponente sehr flexibel macht. Man erkennt das eine `onClick` und eine `children` Prop weitergegeben werden.
 
 Spread-Attribute können sehr nützlich sein, sie machen es aber auch sehr einfach unnötige Props an Komponenten weiterzugeben, welche nicht auf sich oder darauf achten ob sie ungültige Attribute an den DOM weiterzugeben. Wir empfehlen diese Syntax mit Bedacht einzusetzen. 
