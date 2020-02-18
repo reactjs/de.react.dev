@@ -291,7 +291,7 @@ Hier handelt es sich um valides JSX und `props.children` wäre im `MyComponent` 
 <div>This is valid HTML &amp; JSX at the same time.</div>
 ```
 
-JSX entfernt den Weißraum am Anfang und am Ende einer Zeile. Außerdem entfernt es auch Leerzeilen. Neue Zeilen benachbart zu Tags werden entfernt; Neue Zeilen die in der Mitte von String-Literals erscheinen werden in ein einzelnes Leerzeichen umgewandelt. Somit rendert alles Folgende zu dem selben Ergebnis:
+JSX entfernt den Leerzeichen am Anfang und am Ende einer Zeile. Außerdem entfernt es auch Leerzeilen. Neue Zeilen benachbart zu Tags werden entfernt; Neue Zeilen die in der Mitte von String-Literalen erscheinen werden in ein einzelnes Leerzeichen umgewandelt. Somit rendert alles Folgende zu dem selben Ergebnis:
 
 ```js
 <div>Hello World</div>
