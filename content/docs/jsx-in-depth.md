@@ -209,7 +209,7 @@ Du kannst ein String-Literal als prop weitergeben. Die folgenden JSX-Ausdrücke 
 <MyComponent message={'hello world'} />
 ```
 
-Wenn du ein String-Literal weitergibst, ist der Inhalt des HTML-unformatiert. Somit sind die folgenden beiden Ausdrücke gleich:
+Wenn du ein String-Literal weitergibst, ist sein Wert HTML-unformatiert. Somit sind die folgenden beiden Ausdrücke gleich:
 
 ```js
 <MyComponent message="&lt;3" />
