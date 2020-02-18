@@ -247,7 +247,7 @@ function App2() {
 }
 ```
 
-Du kannst dir auch spezielle props aussuchen welche deine Komponente konsumiert und trotzdem alle anderen Props mit dem "Aufteilungs"-Operator weitergeben.
+Du kannst dir auch spezielle Props aussuchen welche deine Komponente konsumiert und trotzdem alle anderen Props mit dem "spread"-Operator weitergeben.
 
 ```js{2}
 const Button = props => {
