@@ -435,7 +435,7 @@ Dies ist nützlich um React-Elemente geknüpft an Bedingungen zu rendern. Das fo
 </div>
 ```
 
-Diese Regel gilt nur unter Vorbehalt, da ["falsy" Wertte](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), wie beispielsweise die Nummer `0`, trotzdem von React gerendert werden. Der folgende Code könnte sich zum Beispiel anders als erwartet verhalten, da hier `0` ausgegeben wird wenn `props.messages` ein leeres Array ist: 
+Diese Regel gilt nur unter Vorbehalt, da ["falsy" Werte](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), wie beispielsweise die Nummer `0`, trotzdem von React gerendert werden. Der folgende Code könnte sich zum Beispiel anders als erwartet verhalten, da hier `0` ausgegeben wird wenn `props.messages` ein leeres Array ist: 
 
 ```js{2}
 <div>
