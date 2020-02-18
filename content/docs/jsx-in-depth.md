@@ -146,7 +146,7 @@ const components = {
 };
 
 function Story(props) {
-  // Falsch! Der JSX Typ darf kein Ausdruck sein.
+  // Falsch! Der JSX-Typ kann kein Ausdruck sein.
   return <components[props.storyType] story={props.story} />;
 }
 ```
