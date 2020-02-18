@@ -151,7 +151,7 @@ function Story(props) {
 }
 ```
 
-Um dies zu beheben weisen wir dem Typen zuerst eine kapitalisierte Variable zu:
+Um dies zu beheben, weisen wir zunächst den Typ einer großgeschriebenen Variable zu:
 
 ```js{10-12}
 import React from 'react';
