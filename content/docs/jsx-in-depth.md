@@ -385,7 +385,7 @@ function Hello(props) {
 
 ### Funktionen als Kindelemente {#functions-as-children}
 
-Normalerweise werden in JSX eingefügte JavaScript-Ausdrücke zu einem String, einem React-Element, oder einer Liste dieser Dinge ausgeführt. Wie dem auch sei, `props.children` funktioniert genau wie jede andere Prop, da es in der Lage ist jede Art von Daten weiterzugeben, nicht nur Solche bei denen React weiß wie es Diese rendern soll. Wenn du Beispiel eine eigene Komponente hast, kannst du Dieser eine Callback-Funktion als `props.children` übergeben: 
+Normalerweise werden die in JSX eingefügten JavaScript-Ausdrücke als String, einem React-Element, oder einer Liste dieser Dinge ausgegeben. Wie dem auch sei, `props.children` funktioniert genau wie jede andere Prop, da es in der Lage ist jede Art von Daten weiterzugeben, nicht nur Solche bei denen React weiß wie es Diese rendern soll. Wenn du zum Beispiel eine eigene Komponente hast, kannst du Dieser eine Callback-Funktion als `props.children` übergeben: 
 
 ```js{4,13}
 // Ruft die Kindelement-Callback-Funktion numTimes-mal auf und produziert mehrmals eine Komponente
