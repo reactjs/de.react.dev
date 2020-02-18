@@ -175,7 +175,7 @@ Es gibt verschiedene Wege um props in JSX zu nutzen.
 
 ### JavaScript-Ausdrücke als Props {#javascript-expressions-as-props}
 
-Man kann jeden JavaScript-Ausdruck als prop verwenden, indem du ihn mit `{}` ummantelst. Zum Beispiel im folgenden JSX:
+Man kann jeden JavaScript-Ausdruck als Prop verwenden, indem du ihn mit `{}` ummantelst. Zum Beispiel im folgenden JSX:
 
 ```js
 <MyComponent foo={1 + 2 + 3 + 4} />
