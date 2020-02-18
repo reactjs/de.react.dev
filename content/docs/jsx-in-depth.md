@@ -406,7 +406,7 @@ function ListOfTenThings() {
 }
 ```
  
-Kindelemente, die zu einer Komponente weitergegeben werden, können alles sein, solange die Komponente die Kindelemente vor dem Rendering in etwas verwandelt was React versteht. Dieses Verfahren wird nicht sehr häufig angewand, aber es funktioniert, solltest du einmal die Grenzen des Machbaren in JSX etwas ausreizen wollen.
+Kindelemente, die zu einer benutzerdefinierten Komponente weitergegeben werden, können alles sein, solange diese Komponente sie vor dem Rendern in etwas umwandelt, das React verstehen kann. Diese Verwendung ist nicht üblich, aber sie funktioniert, solltest du einmal die Möglichkeiten von JSX etwas ausreizen wollen.
 
 ### Boolean, Null, und Undefined werden ignoriert {#booleans-null-and-undefined-are-ignored}
 
