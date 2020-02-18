@@ -322,7 +322,7 @@ Du kannst mehrere JSX-Elemente als Kindelemente zur Verfügung stellen. Dies ist
 </MyContainer>
 ```
 
-Es ist möglich verschiedene Typen von Kindelementen miteinander zu vermischen, somit kannst du String-Literals zusammen mit JSX-Kindelementen nutzen. Dies ist eine weitere Gemeinsamkeit von JSX und HTML bei der das Folgende sowohl valides JSX als auch valides HTML darstellt:
+Es ist möglich verschiedene Typen von Kindelementen miteinander zu vermischen, somit kannst du String-Literale zusammen mit JSX-Kindelementen nutzen. Dies ist eine weitere Gemeinsamkeit von JSX und HTML bei der das Folgende sowohl valides JSX als auch valides HTML darstellt:
 
 ```html
 <div>
