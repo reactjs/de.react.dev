@@ -221,7 +221,7 @@ Normalerweise ist dieser Umstand nicht relevant. Es wird nur zum Zwecke der Voll
 
 ### Props standardmäßig auf "Wahr" {#props-default-to-true}
 
-Wenn du eine Prop ohne Inhalt weitergibst ist deren Wert standardmäßig `wahr`. Diese beiden JSX-Ausdrücke sind gleich:
+Wenn du eine Prop ohne Inhalt weitergibst ist deren Wert standardmäßig `true`. Diese beiden JSX-Ausdrücke sind gleich:
 
 ```js
 <MyTextBox autocomplete />
