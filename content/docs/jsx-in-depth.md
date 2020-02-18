@@ -285,7 +285,7 @@ Du kannst einen String zwischen den öffnenden und den schließenden Tags platzi
 <MyComponent>Hello world!</MyComponent>
 ```
 
-Hier handelt es sich um valides JSX und `props.children` wäre im `MyComponent` einfach nur den String `"Hello world!"`. HTML wird nicht ausgeschlossen, somit kannst du JSX generell einfach so schreiben wie du auch HTML auf diesem Wege schreiben würdest:
+Hier handelt es sich um valides JSX und `props.children` wäre in `MyComponent` einfach nur der String `"Hello world!"`. HTML wird nicht ausgeschlossen, somit kannst du JSX generell einfach so schreiben wie du auch HTML auf diesem Wege schreiben würdest:
 
 ```html
 <div>This is valid HTML &amp; JSX at the same time.</div>
