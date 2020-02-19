@@ -16,7 +16,7 @@ Um Flow zu verwenden, musst du folgendes tun:
 * Stelle sicher, dass der Flow-Syntax aus kompiliertem Code entfernt wird.
 * Füge Typ-Anmerkungen hinzu und führe Flow aus, um diese zu überprüfen.
 
-Wir werden diese Schtitte weiter unten im Detail erklären.
+Wir werden diese Schritte weiter unten im Detail erklären.
 
 ### Flow einem Projekt hinzufügen {#adding-flow-to-a-project}
 
