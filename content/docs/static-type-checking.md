@@ -4,7 +4,7 @@ title: Statische Typprüfung
 permalink: docs/static-type-checking.html
 ---
 
-Statische Typprüfer, wie [Flow](https://flow.org/) und [TypeScript](https://www.typescriptlang.org/) erkennen bestimmte Arten von Problemen, bevor du überhaupt deinen Code ausführst. Sie können den Workflow bei der Entwicklung verbessern, indem zum Beispiel Features, wie die Autovervollständigung hinzugefügt werden. Aus diesem Grund empfehlen wir Flow oder Typescript für größere Codebasen, anstatt `PropTypes` zu verwenden.
+Statische Typprüfer, wie [Flow](https://flow.org/) und [TypeScript](https://www.typescriptlang.org/) erkennen bestimmte Arten von Problemen, bevor der Code ausgeführt wird. Der Workflow bei der Entwicklung wird zum Beispiel durch Autovervollständigung verbessert. Daher empfehlen wir Flow oder Typescript für größere Codebasen, anstelle von `PropTypes`.
 
 ## Flow {#flow}
 
