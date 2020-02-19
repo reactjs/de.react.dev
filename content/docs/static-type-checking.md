@@ -8,7 +8,7 @@ Statische Typprüfer, wie [Flow](https://flow.org/) und [TypeScript](https://www
 
 ## Flow {#flow}
 
-[Flow](https://flow.org/) ist ein statischer Typprüfer für deinen JavaScript Code. Es wird bei Facebook entwickelt und oft mit React verwendet. Es ermöglicht dir Variablen, Funktionen und React-Komponenten mit einer speziellen Typ-Syntax zu verseehen und so Fehler frühzeitig zu erkennen. Du kannst eine [Einführung in Flow](https://flow.org/en/docs/getting-started/) lesen um die Grundlagen zu lernen.
+[Flow](https://flow.org/) ist ein statischer Typprüfer für deinen JavaScript Code. Er wird bei Facebook entwickelt und oft mit React verwendet. Er ermöglicht dir Variablen, Funktionen und React-Komponenten mit einer speziellen Typ-Syntax zu versehen und so Fehler frühzeitig zu erkennen. Du kannst die [Einführung in Flow](https://flow.org/en/docs/getting-started/) lesen um die Grundlagen zu lernen.
 
 Um Flow zu verwenden, musst du folgendes tun:
 
