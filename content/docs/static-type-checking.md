@@ -13,7 +13,7 @@ Statische Typprüfer, wie [Flow](https://flow.org/) und [TypeScript](https://www
 Um Flow zu verwenden, musst du folgendes tun:
 
 * Füge Flow deinem Projekt als Abhängigkeit hinzu.
-* stelle sicher, dass doe Flow-Syntax aus kompiliertem Code entfernt wird.
+* Stelle sicher, dass der Flow-Syntax aus kompiliertem Code entfernt wird.
 * Füge Typ-Anmerkungen hinzu und führe Flow aus, um diese zu überprüfen.
 
 Wir werden diese Schtitte weiter unten im Detail erklären.
