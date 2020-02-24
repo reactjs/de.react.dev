@@ -142,11 +142,7 @@ Als letzte Möglichkeit kannst du den Index eines Elements im Array als Schlüss
 
 Neuanordnungen können auch Probleme mit dem State von Komponenten verursachen, wenn Indizes als Schlüssel verwendet werden. Komponenteninstanzen werden basierend auf ihrem Schlüssel aktualisiert und wiederverwendet. Wenn der Schlüssel ein Index ist, wird er durch Verschieben eines Elements geändert. Infolgedessen kann der State von Komponenten für Dinge wie ungesteuerte Eingabefelder auf unerwartete Weise verwechselt und aktualisiert werden.
 
-<<<<<<< HEAD
 [Hier](codepen://reconciliation/index-used-as-key) findest du ein Codepen-Beispiel für Probleme, die durch die Verwendung von Indizes als Schlüssel verursacht werden können. [Hier] (codepen://reconciliation/no-index-used-as-key) findest du eine aktualisierte Version desselben Beispiels, in der gezeigt wird, wie durch die Nichtverwendung von Indizes als Schlüssel diese Probleme beim Neuordnen, Sortieren und Voranstellen behoben werden.
-=======
-Here is [an example of the issues that can be caused by using indexes as keys](codepen://reconciliation/index-used-as-key) on CodePen, and here is [an updated version of the same example showing how not using indexes as keys will fix these reordering, sorting, and prepending issues](codepen://reconciliation/no-index-used-as-key).
->>>>>>> 821e20726266bc8113353d0c2b6d885f82e584a8
 
 ## Kompromisse {#tradeoffs}
 
