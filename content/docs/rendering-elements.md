@@ -75,12 +75,7 @@ Du kannst es nachprüfen, indem du das [letzte Beispiel](codepen://rendering-ele
 
 ![DOM-Inspektor mit detaillierten Updates](../images/docs/granular-dom-updates.gif)
 
-<<<<<<< HEAD
-Obwohl wir jede Sekunde ein Element erstellen, das den kompletten UI Baum aktualisiert,
-wird nur der Text-Inhalt durch React DOM aktualisiert, dessen Inhalt sich wirklich geändert hat.
-=======
-Even though we create an element describing the whole UI tree on every tick, only the text node whose contents have changed gets updated by React DOM.
->>>>>>> 821e20726266bc8113353d0c2b6d885f82e584a8
+Obwohl wir jede Sekunde ein Element erstellen, das den kompletten UI Baum aktualisiert, wird nur der Text-Inhalt durch React DOM aktualisiert, dessen Inhalt sich wirklich geändert hat.
 
 Nach unserer Erfahrung macht es mehr Sinn darüber nachzudenken, wie die Benutzeroberfläche zu einem bestimmten Zeitpunkt aussieht, anstatt
 sich darüber Gedanken zu machen, wie sie sich im Laufe der Zeit verändert. Dieses Denken verhindert eine ganze Reihe von Fehlern.
