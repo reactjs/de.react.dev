@@ -6,7 +6,7 @@ permalink: docs/higher-order-components.html
 
 Eine Higher-Order-Komponente (HOC) ist eine fortgeschrittene Vorgehensweise für Wiederverwendung der Komponentenlogik in React. HOCs sind kein Teil der React API an sich. Sie sind ein Pattern welches sich aus der Kompositionseigenschaft von React ergibt.
 
-Konkret, **eine Higher-Order-Komponente ist eine Funktion, die eine Komponente übernimmt und eine neue Komponente zurückgibt.**
+Konkret ist **ein Higher-Order Component eine Funktion, die eine Komponente übernimmt und eine neue Komponente zurückgibt.**
 
 ```js
 const EnhancedComponent = higherOrderComponent(WrappedComponent);
@@ -14,7 +14,7 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 Während eine Komponente alle Props in UI umwandelt, wandelt die Higher-Order-Komponente eine Komponente in eine andere Komponente um.
 
-HOCs sind häufig in React-Bibliotheken von Drittanbietern anzutrefen, als Beispiele dafür könnten [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) von Redux und das [`createFragmentContainer`](http://facebook.github.io/relay/docs/en/fragment-container.html) von Relay herangeführt werden.
+HOCs finden sich häufig in React-Bibliotheken von Drittanbietern, als Beispiele dafür gelten [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) von Redux und [`createFragmentContainer`](http://facebook.github.io/relay/docs/en/fragment-container.html) von Relay.
 
 In diesem Dokument, werden wir erörtern, warum Higher-Order-Komponenten nützlich sind und wie du deine eigene schreiben kannst.
 
@@ -22,7 +22,7 @@ In diesem Dokument, werden wir erörtern, warum Higher-Order-Komponenten nützli
 
 > **Hinweis**
 >
-> Früher haben wir Mixins für die Handhabung von übergreifenden Belangen empfohlen. Seit dem haben wir begriffen, dass Mixins mehr Probleme als Nutzen bereiten. [Lese darüber](/blog/2016/07/13/mixins-considered-harmful.html) warum wir uns von Mixins abgewand haben und wie du deine existierende Komponenten umwandeln kannst.
+> Früher haben wir Mixins für die Handhabung von übergreifenden Belangen empfohlen. Seither hat sich allerdings herausgestellt, dass Mixins mehr Probleme als Nutzen bereiten. [Lese darüber](/blog/2016/07/13/mixins-considered-harmful.html) warum wir uns von Mixins abgewandt haben und wie du deine existierenden Komponenten umwandeln kannst.
 
 Komponenten sind die primäre Einheit der Quellcode-Wiederverwendbarkeit in React. Nichtsdestotrotz, wirst du feststellen, dass manche Patterns nicht immer für eine traditionelle Komponente geeignet sind.
 
