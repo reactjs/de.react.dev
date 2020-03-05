@@ -73,8 +73,6 @@ Die folgenden Werkzeuge bieten mehr Flexibilität und Freiheiten. Wir empfehlen 
 
 - **[Neutrino](https://neutrinojs.org/)** kombiniert die Stärke von [webpack](https://webpack.js.org/) mit der Einfachheit von Voreinstellungen und bringt eine Voreinstellung für [React Anwendungen](https://neutrinojs.org/packages/react/) und [React Komponenten](https://neutrinojs.org/packages/react-components/) mit.
 
-- **[nwb](https://github.com/insin/nwb)** ist besonders geeignet, um [React Komponenten auf npm zu veröffentlichen](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb). Es [kann auch benutzt werden](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb), um React Anwendungen zu erstellen.
-
 - **[Parcel](https://parceljs.org/)** ist ein schneller konfigurationsloser Bundler für Webanwendungen, der [mit React funktioniert](https://parceljs.org/recipes.html#react).
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** ist ein Framework für Server-Rendering. Es benötigt keine Konfiguration, bietet aber mehr Flexibilität als Next.js.

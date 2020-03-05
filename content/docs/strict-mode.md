@@ -91,9 +91,9 @@ Die Commit-Phase ist normalerweise sehr schnell, das Rendern kann jedoch langsam
 
 Renderphasen-Lifecycles umfassen die folgenden Klassenkomponenten-Methoden:
 * `constructor`
-* `componentWillMount`
-* `componentWillReceiveProps`
-* `componentWillUpdate`
+* `componentWillMount` (or `UNSAFE_componentWillMount`)
+* `componentWillReceiveProps` (or `UNSAFE_componentWillReceiveProps`)
+* `componentWillUpdate` (or `UNSAFE_componentWillUpdate`)
 * `getDerivedStateFromProps`
 * `shouldComponentUpdate`
 * `render`
