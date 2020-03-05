@@ -200,7 +200,7 @@ Wenn du React 16.3 oder höher verwendest, empfehlen wir in diesen Fällen die V
 
 Wenn du React 16.2 oder eine niedrigere Version verwendest oder mehr Flexibilität benötigst, als durch die Weiterleiten von Refs bereitgestellt wird, kannst du [diesen alternativen Ansatz](https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509) verwenden und einen Ref explizit als übergeben anders benanntes Prop.
 
-Wenn möglich, raten wir davon ab, DOM-Knoten freizulegen, dies kann jedoch eine nützliche Notluke sein. Beachte, dass du bei diesem Ansatz der untergeordneten Komponente Code hinzufügen musst. Wenn du absolut keine Kontrolle über die Implementierung der untergeordneten Komponente hast, kannst du als letzte Option [`findDOMNode ()`](/docs/react-dom.html#finddomnode) verwenden, dies wird jedoch in [`StrictMode`](/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage) nicht empfohlen und ist veraltet.
+Wenn möglich, raten wir davon ab, DOM-Knoten freizulegen, dies kann jedoch ein nützlicher Ausweg sein. Beachte, dass du bei diesem Ansatz der untergeordneten Komponente Code hinzufügen musst. Wenn du absolut keine Kontrolle über die Implementierung der untergeordneten Komponente hast, kannst du als letzte Option [`findDOMNode ()`](/docs/react-dom.html#finddomnode) verwenden, dies wird jedoch in [`StrictMode`](/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage) nicht empfohlen und ist veraltet.
 
 ### Callback Refs {#callback-refs}
 
