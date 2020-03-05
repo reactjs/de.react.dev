@@ -29,7 +29,7 @@ Anstatt beispielsweise die Methoden `open ()` und `close ()` in einer `Dialog` -
 
 ### Verwende Refs nicht zu häufig {#dont-overuse-refs}
 
-Deine erste Neigung könnte sein, Refs zu verwenden, um Dinge in deier App "geschehen zu lassen". Wenn dies der Fall ist, nehme dich einen Moment Zeit und überlege genauer, wo sich der Status in der Komponentenhierarchie befinden sollte. Oft wird klar, dass der richtige Ort, um diesen Zustand zu "besitzen", auf einer höheren Ebene in der Hierarchie liegt. Beispiele hierfür findest du im Handbuch [State anheben](/docs/lifting-state-up.html).
+Deine erste Intuition könnte sein, Refs zu verwenden, um Dinge in deiner App "geschehen zu lassen". Wenn dies der Fall ist, nehme dir einen Moment Zeit und überlege genauer, wo sich der Status in der Komponentenhierarchie befinden sollte. Oft wird klar, dass der richtige Ort, um diesen Zustand zu "besitzen", auf einer höheren Ebene in der Hierarchie liegt. Beispiele hierfür findest du im Handbuch [State anheben](/docs/lifting-state-up.html).
 
 > Hinweis
 >
