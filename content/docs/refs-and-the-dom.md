@@ -164,6 +164,7 @@ class Parent extends React.Component {
 
 Wenn du zulassen möchtest, dass Benutzer eine Referenz zu deiner Funktionskomponente hinzufügen, kannst du [`forwardRef`](https://reactjs.org/docs/forwarding-refs.html) verwenden (möglicherweise in Verbindung mit [`useImperativeHandle`](/docs/hooks-reference.html#useimperativehandle)), oder du kannst die Komponente in eine Klasse konvertieren.
 
+
 Du kannst jedoch **das Attribut `ref` in einer Funktionskomponente verwenden**, solange du auf ein DOM-Element oder eine Klassenkomponente verweist:
 
 ```javascript{2,3,6,13}
