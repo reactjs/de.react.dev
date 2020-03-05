@@ -11,7 +11,7 @@ redirect_from:
 permalink: docs/refs-and-the-dom.html
 ---
 
-Refs bieten eine Möglichkeit, auf DOM-Knotens oder React-Elemente zuzugreifen, die mit der Rendermethode erstellt wurden.
+Refs bieten eine Möglichkeit, auf DOM-Knoten oder React-Elemente zuzugreifen, die mit der Rendermethode erstellt wurden.
 
 Im typischen React-Datenfluss sind [Props](/docs/components-and-props.html) die einzige Möglichkeit, wie übergeordnete Komponenten mit ihren untergeordneten Komponenten interagieren. Um ein untergeordnetes Element zu ändern, rendere es mit neuen Props neu. Es gibt jedoch einige Fälle, in denen du ein untergeordnetes Element unbedingt außerhalb des typischen Datenflusses ändern musst. Das zu ändernde untergeordnete Element kann eine Instanz einer React-Komponente oder ein DOM-Element sein. In beiden Fällen bietet React eine Notluke.
 
