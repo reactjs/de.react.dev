@@ -36,8 +36,12 @@ React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du
 
 ### Online Spielwiesen {#online-playgrounds}
 
+<<<<<<< HEAD
 Wenn du ein bisschen mit React herum spielen möchtest, dann kannst du dafür online Code-Editoren benutzen.
 Probiere "Hallo Welt" auf [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) oder [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) aus.
+=======
+If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template), or [Stackblitz](https://stackblitz.com/fork/react).
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 Wenn du lieber deinen eigenen Editor verwenden möchtest, kannst du [diese HTML](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) Datei herunterladen, bearbeiten und mit deinem Browser anschauen. In dieser Datei wird eine langsame Codeumwandlung zur Laufzeit angewandt, daher empfehlen wir diese Datei nur für kleinere Demonstrationen und Verprobungen zu verwenden.
 
@@ -85,9 +89,13 @@ Wir empfehlen dir diesen [JavaScript-Überblick](https://developer.mozilla.org/e
 
 ### Praktisches Tutorial {#practical-tutorial}
 
+<<<<<<< HEAD
 Wenn du es lieber bevorzugst durch Übungen zu lernen, dann guck dir unser [praktisches Tutorial](/tutorial/tutorial.html) an. Dort werden wir das Spiel "tic-tac-toe" in React erstellen.
 Du wirst diesen Teil vielleicht überspringen wollen, da du keine Spiele erstellen willst, aber gib ihm wenigstens eine Chance. In diesem Tutorial lernst du grundlegende Techniken, die bei
 *allen* React Anwendungen Verwendung finden und dir ein tieferes Verständnis geben.
+=======
+If you prefer to **learn by doing,** check out our [practical tutorial](/tutorial/tutorial.html). In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you're not into building games -- but give it a chance. The techniques you'll learn in the tutorial are fundamental to building *any* React apps, and mastering it will give you a much deeper understanding.
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 ### Schritt für Schritt Leitfaden {#step-by-step-guide}
 

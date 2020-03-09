@@ -177,9 +177,15 @@ Widerstehe der Versuchung den Prototype einer Komponente innerhalb einer HOC zu 
 
 ```js
 function logProps(InputComponent) {
+<<<<<<< HEAD
   InputComponent.prototype.componentWillReceiveProps = function(nextProps) {
     console.log('Aktuelle Eigenschaften: ', this.props);
     console.log('Neue Eigenschaften: ', nextProps);
+=======
+  InputComponent.prototype.componentDidUpdate = function(prevProps) {
+    console.log('Current props: ', this.props);
+    console.log('Previous props: ', prevProps);
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
   };
   // Die Tatsache, dass wir die originale Eingang-Komponente zurückgeben, ist ein Hinweis
   // dass diese verändert wurde.
@@ -190,7 +196,11 @@ function logProps(InputComponent) {
 const EnhancedComponent = logProps(InputComponent);
 ```
 
+<<<<<<< HEAD
 Es gibt einige Probleme hier. Zum einen kann die Eingang-Komponente nicht abseits der erweiterten Komponente wiederverwendet werden. Des Weiteren, wenn du eine andere HOC auf die `EnhancedComponent` anwendest die *ebenso* `componentWillReceiveProps` verändert, wird die erste Funktionalität der HOC überschrieben! Diese HOC kann auch nicht auf funktionale Komponenten angewandt werden, da diese keine Lifecycle-Methoden besitzen.
+=======
+There are a few problems with this. One is that the input component cannot be reused separately from the enhanced component. More crucially, if you apply another HOC to `EnhancedComponent` that *also* mutates `componentDidUpdate`, the first HOC's functionality will be overridden! This HOC also won't work with function components, which do not have lifecycle methods.
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 Verändernde HOCs sind eine schlecht isolierte Abstraktion - der Anwender muss über die Implementierungsdetails bescheidwissen, um Konflikte mit anderen HOCs zu vermeiden.
 
@@ -199,9 +209,15 @@ Statt der Veränderung, sollte der Grundsatz der Komposition bei HOCs angewandt 
 ```js
 function logProps(WrappedComponent) {
   return class extends React.Component {
+<<<<<<< HEAD
     componentWillReceiveProps(nextProps) {
       console.log('Aktuelle Eigenschaften: ', this.props);
       console.log('Neue Eigenschaften: ', nextProps);
+=======
+    componentDidUpdate(prevProps) {
+      console.log('Current props: ', this.props);
+      console.log('Previous props: ', prevProps);
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
     }
     render() {
       // Umschließt die Eingang-Kompnente in ein Container, ohne diese zu verändern. Gut so!

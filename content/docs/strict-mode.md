@@ -103,10 +103,18 @@ Da die oben genannten Methoden möglicherweise mehrmals aufgerufen werden, ist e
 
 Der strikte Modus kann Nebenwirkungen nicht automatisch für dich erkennen, er kann dir jedoch helfen sie zu erkennen, indem er sie etwas deterministischer gestaltet. Dazu werden absichtlich die folgenden Methoden doppelt aufgerufen:
 
+<<<<<<< HEAD
 * Konstruktormethode für Klassenkomponenten
 * Die Render-Methode
 * setState Updater-Funktionen (das erste Argument)
 * Der statische Lifecycle von `getDerivedStateFromProps`
+=======
+* Class component `constructor` method
+* The `render` method
+* `setState` updater functions (the first argument)
+* The static `getDerivedStateFromProps` lifecycle
+* The `shouldComponentUpdate` method
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 > Hinweis:
 >

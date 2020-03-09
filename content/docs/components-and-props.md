@@ -44,7 +44,11 @@ class Welcome extends React.Component {
 
 Die beiden obrigen Komponenten sind aus der Sicht von React identisch.
 
+<<<<<<< HEAD
 Klassen haben noch ein paar zusätzliche Eigenschaften welche wir aber erst im [nächsten Abschnitt](/docs/state-and-lifecycle.html) besprechen. Bis dahin werden wir für die Funktionskomponenten wegen ihrer Übersichtlichkeit verwenden.
+=======
+Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 ## Eine Komponente rendern {#rendering-a-component}
 
@@ -60,7 +64,11 @@ Elemente können aber auch benutzerdefinierte Komponenten darstellen:
 const element = <Welcome name="Sara" />;
 ```
 
+<<<<<<< HEAD
 React übergibt, wenn es ein Element als benutzerdefinierte Komponente erkennt, alle JSX Attribute als ein einziges Objekt. Dies sind die sogenannten "props" (Eigenschaften).
+=======
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 Zum Beispiel rendert dieser Code "Hallo Sarah" auf die Seite:
 

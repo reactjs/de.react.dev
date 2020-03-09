@@ -26,6 +26,7 @@ void preventDefault()
 boolean isDefaultPrevented()
 void stopPropagation()
 boolean isPropagationStopped()
+void persist()
 DOMEventTarget target
 number timeStamp
 string type
@@ -68,12 +69,22 @@ React führt eine Normalisierung der Events durch, damit dessen Eigenschaften ko
 
 Folgende Eventhandler werden von einem Event in der Bubbling-Phase ausgelöst. Um ein Eventhandler für die Capture-Phase zu registrieren, muss `Capture` zum Eventnamen hinzugefügt werden; Beispiel: Anstatt `onClick`, würde man `onClickCapture` für das Handling des Events in der Capture-Phase benutzen.
 
+<<<<<<< HEAD
 - [Zwischenablage Events](#clipboard-events)
 - [Komposition Events](#composition-events)
 - [Tastatur Events](#keyboard-events)
 - [Fokus Events](#focus-events)
 - [Formular Events](#form-events)
 - [Maus Events](#mouse-events)
+=======
+- [Clipboard Events](#clipboard-events)
+- [Composition Events](#composition-events)
+- [Keyboard Events](#keyboard-events)
+- [Focus Events](#focus-events)
+- [Form Events](#form-events)
+- [Generic Events](#generic-events)
+- [Mouse Events](#mouse-events)
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 - [Pointer Events](#pointer-events)
 - [Auswahl Events](#selection-events)
 - [Touch Events](#touch-events)
@@ -174,14 +185,28 @@ DOMEventTarget relatedTarget
 Eventnamen:
 
 ```
-onChange onInput onInvalid onSubmit
+onChange onInput onInvalid onReset onSubmit 
 ```
 
 Für detaillierte Beschreibung des onChange Events, siehe [Formulare](/docs/forms.html).
 
 * * *
 
+<<<<<<< HEAD
 ### Maus Events {#mouse-events}
+=======
+### Generic Events {#generic-events}
+
+Event names:
+
+```
+onError onLoad
+```
+
+* * *
+
+### Mouse Events {#mouse-events}
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 Eventnamen:
 
