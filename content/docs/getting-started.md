@@ -36,12 +36,8 @@ React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du
 
 ### Online Spielwiesen {#online-playgrounds}
 
-<<<<<<< HEAD
 Wenn du ein bisschen mit React herum spielen möchtest, dann kannst du dafür online Code-Editoren benutzen.
-Probiere "Hallo Welt" auf [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) oder [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) aus.
-=======
-If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template), or [Stackblitz](https://stackblitz.com/fork/react).
->>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
+Probiere "Hallo Welt" auf [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) oder [Stackblitz](https://stackblitz.com/fork/react) aus.
 
 Wenn du lieber deinen eigenen Editor verwenden möchtest, kannst du [diese HTML](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) Datei herunterladen, bearbeiten und mit deinem Browser anschauen. In dieser Datei wird eine langsame Codeumwandlung zur Laufzeit angewandt, daher empfehlen wir diese Datei nur für kleinere Demonstrationen und Verprobungen zu verwenden.
 
