@@ -301,26 +301,13 @@ class Calculator extends React.Component {
 
 Unabhängig davon, welches Eingabefeld du bearbeitest, `this.state.temperature` und `this.state.scale` werden jetzt in `Calculator` aktualisiert. Bei einem der Eingabefelder wird der Wert unverändert übernommen, sodass alle Benutzereingaben erhalten bleiben und der andere Eingabewert immer auf dieser Basis neu berechnet wird.
 
-<<<<<<< HEAD
-Fassen wir nochmal zusammen, was passiert, wenn du ein Eingabefeld bearbeitest:
-=======
-* React calls the function specified as `onChange` on the DOM `<input>`. In our case, this is the `handleChange` method in the `TemperatureInput` component.
-* The `handleChange` method in the `TemperatureInput` component calls `this.props.onTemperatureChange()` with the new desired value. Its props, including `onTemperatureChange`, were provided by its parent component, the `Calculator`.
-* When it previously rendered, the `Calculator` had specified that `onTemperatureChange` of the Celsius `TemperatureInput` is the `Calculator`'s `handleCelsiusChange` method, and `onTemperatureChange` of the Fahrenheit `TemperatureInput` is the `Calculator`'s `handleFahrenheitChange` method. So either of these two `Calculator` methods gets called depending on which input we edited.
-* Inside these methods, the `Calculator` component asks React to re-render itself by calling `this.setState()` with the new input value and the current scale of the input we just edited.
-* React calls the `Calculator` component's `render` method to learn what the UI should look like. The values of both inputs are recomputed based on the current temperature and the active scale. The temperature conversion is performed here.
-* React calls the `render` methods of the individual `TemperatureInput` components with their new props specified by the `Calculator`. It learns what their UI should look like.
-* React calls the `render` method of the `BoilingVerdict` component, passing the temperature in Celsius as its props.
-* React DOM updates the DOM with the boiling verdict and to match the desired input values. The input we just edited receives its current value, and the other input is updated to the temperature after conversion.
->>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
-
 * React ruft die als `onChange` angegebene Funktion im DOM-Element `<input>` auf. In unserem Fall ist dies die `handleChange` Methode in der `TemperatureInput` Komponente.
 * Die `handleChange` Methode der `TemperatureInput` Komponente ruft `this.props.onTemperatureChange()` mit dem neuen gewünschten Wert auf. Ihre Props, einschließlich `onTemperatureChange`, wurden von der übergeordneten `Calculator` Komponente bereitgestellt.
 * Als die `Calculator` Komponente zuletzt gerendert wurde, hat sie festgelegt, dass `onTemperatureChange` der Celsius `TemperatureInput` Komponente ihre `handleCelsiusChange` Methode ist, und `onTemperatureChange` der Fahrenheit `TemperatureInput` Komponente ihre `handleFahrenheitChange` Methode. Eine dieser beiden Methoden von `Calculator` wird also aufgerufen, je nachdem welche Eingabe wir bearbeitet haben.
 * Innerhalb dieser Methoden fordert die `Calculator` Komponente React auf sich selbst erneut zu rendern, indem `this.setState()` mit dem neuen Eingabewert und der aktuellen Maßeinheit des gerade bearbeiteten Eingabefelds aufgerufen wird.
 * React ruft die Render-Methode der `Calculator` Komponente auf, um zu erfahren, wie die Benutzeroberfläche aussehen soll. Die Werte beider Eingabefelder werden basierend auf der aktuellen Temperatur und des aktiven Maßstabs neu berechnet. Die Temperaturkonvertierung wird an dieser Stelle durchgeführt.
 * React ruft die Render-Methoden der einzelnen `TemperatureInput` Komponenten mit ihren neuen, von `Calculcator` festgelegten Props auf. Es erfährt so, wie ihre Benutzeroberfläche aussehen soll.
-* React ruft die Render-Methode der `BoilingVerdict` Komponente auf und übergibt die Temperatur in Celsius als Prop.
+* React ruft die Render-Methode der `BoilingVerdict`-Komponente auf und übergibt die Temperatur in Celsius als Prop.
 * React DOM aktualisiert das DOM mit dem kochenden Ergebnis und den gewünschten Eingabewerten. Das gerade bearbeitete Eingabefeld erhält seinen aktuellen Wert und das andere Eingabefeld wird nach der Umrechnung auf die entsprechende Temperatur aktualisiert.
 
 Bei jedem Update werden dieselben Schritte durchlaufen, sodass die Eingabefelder synchron bleiben.
