@@ -42,9 +42,9 @@ class Welcome extends React.Component {
 }
 ```
 
-Die beiden obrigen Komponenten sind aus der Sicht von React identisch.
+Die beiden obigen Komponenten sind aus der Sicht von React identisch.
 
-Klassen haben noch ein paar zusätzliche Eigenschaften welche wir aber erst im [nächsten Abschnitt](/docs/state-and-lifecycle.html) besprechen. Bis dahin werden wir für die Funktionskomponenten wegen ihrer Übersichtlichkeit verwenden.
+Funktion- und Klassen-Komponenten haben beide noch ein paar zusätzliche Eigenschaften welche wir im [nächsten Abschnitt](/docs/state-and-lifecycle.html) besprechen.
 
 ## Eine Komponente rendern {#rendering-a-component}
 

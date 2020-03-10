@@ -177,7 +177,7 @@ const element = {
 
 Diese Objekte nennen sich "React elements". Stell sie dir als Beschreibung für das was du auf dem Bildschirm sehen willst, vor. React liest diese Objekte und verwendet sie um das DOM zu erstellen und es aktuell zu halten.
 
-Im nächsten Abschnitt gehen wir auf das Rendering von React-Elementen ins DOM ein.
+Im [nächsten Abschnitt](/docs/rendering-elements.html) gehen wir auf das Rendering von React-Elementen ins DOM ein.
 
 >**Tipp:**
 >

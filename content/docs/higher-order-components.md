@@ -177,9 +177,9 @@ Widerstehe der Versuchung den Prototype einer Komponente innerhalb einer HOC zu 
 
 ```js
 function logProps(InputComponent) {
-  InputComponent.prototype.componentWillReceiveProps = function(nextProps) {
-    console.log('Aktuelle Eigenschaften: ', this.props);
-    console.log('Neue Eigenschaften: ', nextProps);
+  InputComponent.prototype.componentDidUpdate = function(prevProps) {
+    console.log('Aktuelle Props: ', this.props);
+    console.log('Vorherige Props: ', prevProps);
   };
   // Die Tatsache, dass wir die originale Eingang-Komponente zurückgeben, ist ein Hinweis
   // dass diese verändert wurde.
@@ -199,9 +199,9 @@ Statt der Veränderung, sollte der Grundsatz der Komposition bei HOCs angewandt 
 ```js
 function logProps(WrappedComponent) {
   return class extends React.Component {
-    componentWillReceiveProps(nextProps) {
-      console.log('Aktuelle Eigenschaften: ', this.props);
-      console.log('Neue Eigenschaften: ', nextProps);
+    componentDidUpdate(nextProps) {
+      console.log('Aktuelle Props: ', this.props);
+      console.log('Neue Props: ', prevProps);
     }
     render() {
       // Umschließt die Eingang-Kompnente in ein Container, ohne diese zu verändern. Gut so!

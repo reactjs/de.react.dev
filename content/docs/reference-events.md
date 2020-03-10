@@ -26,6 +26,7 @@ void preventDefault()
 boolean isDefaultPrevented()
 void stopPropagation()
 boolean isPropagationStopped()
+void persist()
 DOMEventTarget target
 number timeStamp
 string type
@@ -73,6 +74,7 @@ Folgende Eventhandler werden von einem Event in der Bubbling-Phase ausgelöst. U
 - [Tastatur Events](#keyboard-events)
 - [Fokus Events](#focus-events)
 - [Formular Events](#form-events)
+- [Generische Events](#generic-events)
 - [Maus Events](#mouse-events)
 - [Pointer Events](#pointer-events)
 - [Auswahl Events](#selection-events)
@@ -174,10 +176,20 @@ DOMEventTarget relatedTarget
 Eventnamen:
 
 ```
-onChange onInput onInvalid onSubmit
+onChange onInput onInvalid onReset onSubmit 
 ```
 
 Für detaillierte Beschreibung des onChange Events, siehe [Formulare](/docs/forms.html).
+
+* * *
+
+### Generic Events {#generic-events}
+
+Event names:
+
+```
+onError onLoad
+```
 
 * * *
 
