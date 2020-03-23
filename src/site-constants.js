@@ -12,8 +12,12 @@ const urlRoot = 'https://de.reactjs.org';
 const version = '16.12.0';
 =======
 const urlRoot = 'https://reactjs.org';
+<<<<<<< HEAD
 const version = '16.13.0';
 >>>>>>> 2ab1ca5007a37ca509863a212293f1c6b26d0afc
+=======
+const version = '16.13.1';
+>>>>>>> 7e4f503d86bee08b88eed77a6c9d06077863a27c
 const babelURL = 'https://unpkg.com/babel-standalone@6.26.0/babel.min.js';
 
 export {babelURL, urlRoot, version};
