@@ -101,6 +101,7 @@ Renderphasen-Lifecycles umfassen die folgenden Klassenkomponenten-Methoden:
 
 Da die oben genannten Methoden möglicherweise mehrmals aufgerufen werden, ist es wichtig, dass sie keine Nebenwirkungen enthalten. Das Ignorieren dieser Regel kann zu einer Vielzahl von Problemen führen, einschließlich Speicherverlusten und ungültigem Anwendungsstatus. Leider kann es schwierig sein, diese Probleme zu erkennen, da sie oft nicht deterministisch sind.
 
+<<<<<<< HEAD
 Der strikte Modus kann Nebenwirkungen nicht automatisch für dich erkennen, er kann dir jedoch helfen sie zu erkennen, indem er sie etwas deterministischer gestaltet. Dazu werden absichtlich die folgenden Methoden doppelt aufgerufen:
 
 * `constructor`-Methode für Klassenkomponenten
@@ -108,6 +109,15 @@ Der strikte Modus kann Nebenwirkungen nicht automatisch für dich erkennen, er k
 * `setState` Updater-Funktionen (das erste Argument)
 * Der statische Lifecycle von `getDerivedStateFromProps`
 * Die `shouldComponentUpdate`-Methode
+=======
+Strict mode can't automatically detect side effects for you, but it can help you spot them by making them a little more deterministic. This is done by intentionally double-invoking the following functions:
+
+* Class component `constructor`, `render`, and `shouldComponent` methods
+* Class component static `getDerivedStateFromProps` method
+* Function component bodies
+* State updater functions (the first argument to `setState`)
+* Functions passed to `useState`, `useMemo`, or `useReducer`
+>>>>>>> 9e5a358cb24a665fc48615ae224f26a4f2191b32
 
 > Hinweis:
 >

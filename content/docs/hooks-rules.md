@@ -27,6 +27,8 @@ Durch das Befolgen dieser Regeln stellst du sicher, dass die State-behaftete Log
 
 Wir haben das ESLint-Plugin [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) veröffentlicht, das diese Regeln durchsetzt. Du kannst dieses Plugin folgendermaßen zu deinem Projekt hinzufügen, falls du es ausprobieren möchtest:
 
+This plugin is included by default in [Create React App](/docs/create-a-new-react-app.html#create-react-app).
+
 ```bash
 npm install eslint-plugin-react-hooks --save-dev
 ```
@@ -46,9 +48,13 @@ npm install eslint-plugin-react-hooks --save-dev
 }
 ```
 
+<<<<<<< HEAD
 Dieses Plugin ist standardmäßig in [Create React App](/docs/create-a-new-react-app.html#create-react-app) integriert.
 
 **Überspringe den Rest, wenn du direkt lernen möchtest wie man [seine eigenen Hooks](/docs/hooks-custom.html) schreibt.** Im Folgenden werden die Gründe für die oben genannten Regeln noch genauer erläutert.
+=======
+**You can skip to the next page explaining how to write [your own Hooks](/docs/hooks-custom.html) now.** On this page, we'll continue by explaining the reasoning behind these rules.
+>>>>>>> 9e5a358cb24a665fc48615ae224f26a4f2191b32
 
 ## Erklärung {#explanation}
 
