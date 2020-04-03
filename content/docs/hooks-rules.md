@@ -48,13 +48,7 @@ npm install eslint-plugin-react-hooks --save-dev
 }
 ```
 
-<<<<<<< HEAD
-Dieses Plugin ist standardmäßig in [Create React App](/docs/create-a-new-react-app.html#create-react-app) integriert.
-
 **Überspringe den Rest, wenn du direkt lernen möchtest wie man [seine eigenen Hooks](/docs/hooks-custom.html) schreibt.** Im Folgenden werden die Gründe für die oben genannten Regeln noch genauer erläutert.
-=======
-**You can skip to the next page explaining how to write [your own Hooks](/docs/hooks-custom.html) now.** On this page, we'll continue by explaining the reasoning behind these rules.
->>>>>>> 7e4f503d86bee08b88eed77a6c9d06077863a27c
 
 ## Erklärung {#explanation}
 
