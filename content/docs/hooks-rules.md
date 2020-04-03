@@ -48,7 +48,7 @@ npm install eslint-plugin-react-hooks --save-dev
 }
 ```
 
-**Überspringe den Rest, wenn du direkt lernen möchtest wie man [seine eigenen Hooks](/docs/hooks-custom.html) schreibt.** Im Folgenden werden die Gründe für die oben genannten Regeln noch genauer erläutert.
+**Du kannst den den Rest überspringen, wenn du direkt lernen möchtest wie man [seine eigenen Hooks](/docs/hooks-custom.html) schreibt.** Im Folgenden werden die Gründe für die oben genannten Regeln noch genauer erläutert.
 
 ## Erklärung {#explanation}
 
