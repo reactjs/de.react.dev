@@ -129,11 +129,7 @@ Wenn eine Funktions-Komponente bei Gleichbleiben von Props und State das gleiche
 
 Standardmäßig vergleicht es komplexe Objekte im Props-Objekt nur oberflächlich. Wenn du Kontrolle über den Vergleich haben möchtest, kannst du `React.memo` als zweites Argument eine benutzerdefinierte Vergleichsfunktion mitgeben.
 
-<<<<<<< HEAD
 `React.memo` betrifft nur Änderungen an den Props. Wenn deine Funktionskomponente, von `React.memo` umklammert ist,  eine [`useState`](/docs/hooks-state.html) oder [`useContext`](/docs/hooks-reference.html#usecontext) Hook in ihrer Implementierung hat, wird sie immer noch gerendert, wenn sich der State oder der Context ändert.
-=======
-`React.memo` only checks for prop changes. If your function component wrapped in `React.memo` has a [`useState`](/docs/hooks-state.html) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
->>>>>>> 9e5a358cb24a665fc48615ae224f26a4f2191b32
 
 Standardmäßig wird es nur oberflächlich komplexe Objekte im Props-Objekt vergleichen. Wenn du die Kontrolle über den Vergleich haben möchtest, kannst du auch eine benutzerdefinierte Vergleichsfunktion als zweites Argument angeben.
 
