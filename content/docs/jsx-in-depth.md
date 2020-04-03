@@ -42,8 +42,7 @@ zu:
 ```js
 React.createElement(
   'div',
-  {className: 'sidebar'},
-  null
+  {className: 'sidebar'}
 )
 ```
 
@@ -229,8 +228,7 @@ Wenn du eine Prop ohne Inhalt weitergibst ist deren Wert standardmäßig `true`.
 <MyTextBox autocomplete={true} />
 ```
 
-Im Gesamten würden wir nicht empfehlen Dies so zu benutzen, da hier Verwechslungsgefahr mit der [ES6 object Abkürzung](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015), `{foo}` als Abkürzung für `{foo: foo}` im Gegensatz zu `{foo: true}`, besteht.
-Dieses Verhalten gibt es nur da es zum Verhalten von HTML passt. 
+Im Gesamten würden wir nicht empfehlen Dies so zu benutzen, da hier Verwechslungsgefahr mit der [ES6 object Abkürzung](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015), `{foo}` als Abkürzung für `{foo: foo}` im Gegensatz zu `{foo: true}`, besteht. Dieses Verhalten gibt es nur da es zum Verhalten von HTML passt. 
 
 ### Spread Attribute {#spread-attributes}
 

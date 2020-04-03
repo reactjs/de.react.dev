@@ -152,7 +152,7 @@ class MyComponent extends React.Component {
     if (this.state.error) {
       return <h1>Ein Fehler wurde abgefangen.</h1>
     }
-    return <div onClick={this.handleClick}>Klick mich</div>
+    return <button onClick={this.handleClick}>Klick mich</button>
   }
 }
 ```

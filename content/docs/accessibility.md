@@ -378,7 +378,7 @@ Wir setzen hier Grundkentinsse in den [ARIA Rollen](https://www.w3.org/TR/wai-ar
 Jede Art von Widget hat ein spezielles Designpattern und sollte für User und deren Useragents wie folgt funktionieren:
 
 - [WAI-ARIA Konventionen - Designppatterns und Widgets](https://www.w3.org/TR/wai-aria-practices/#aria_ex)
-- [Heydon Pickering - ARIA Beispiele](https://heydonworks.com/practical_aria_examples/)
+- [Heydon Pickering - ARIA Beispiele](https://heydonworks.com/article/practical-aria-examples/)
 - [Inclusive Components](https://inclusive-components.design/)
 
 ## Andere wichtige Punkte {#other-points-for-consideration}

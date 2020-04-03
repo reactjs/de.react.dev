@@ -37,7 +37,7 @@ Dieses Element nennen wir "root" DOM Knoten. Alles innerhalb dieses Elements wir
 
 Anwendungen, die mit React gebaut worden, haben normalerweise nur einen root DOM Knoten. Wenn du React in eine bestehende Anwendung einfügst, kannst du aber soviele DOM Knoten haben, wie du möchtest.
 
-Um ein Element in den root DOM Knoten zu rendern, muss du nur beides an `ReactDOM.render()` übergeben:
+Um ein Element in den root DOM Knoten zu rendern, muss du nur beides an [`ReactDOM.render()`](/docs/react-dom.html#render) übergeben:
 
 `embed:rendering-elements/render-an-element.js`
 
@@ -50,7 +50,7 @@ Es wird "Hallo Welt" auf der Seite angezeigt.
 React Elemente sind [immuntable](https://en.wikipedia.org/wiki/Immutable_object) (unveränderbar). Wenn du einmal ein Element erstellt hast, kannst du dessen
 Kind-Elemente oder Attribute nicht mehr verändern. Eine Element kannst du dir vorstellen, wie ein einzelnes Bild eines Filmes: Es repräsentiert die Benutzeroberfläche (UI) zu einem bestimmten Zeitpunkt.
 
-Mit dem was wir bis jetzt erfahren haben, wissen wir nur, dass der einzige Weg um die Benutzeroberfläche zu Aktualisieren und neue Elemente zu erstellen, das Aufrufen von `ReactDOM.render()` ist.
+Mit dem was wir bis jetzt erfahren haben, wissen wir nur, dass der einzige Weg um die Benutzeroberfläche zu Aktualisieren und neue Elemente zu erstellen, das Aufrufen von [`ReactDOM.render()`](/docs/react-dom.html#render) ist.
 
 Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
@@ -58,11 +58,11 @@ Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
 [Auf CodePen ausprobieren](codepen://rendering-elements/update-rendered-element)
 
-Jede Sekunden wird `ReactDOM.render()` mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
+Jede Sekunden wird [`ReactDOM.render()`](/docs/react-dom.html#render) mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
 
 >**Hinweis:**
 >
->In der Praxis rufen die meisten React Anwendungen `ReactDOM.render()` nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt wird.
+>In der Praxis rufen die meisten React Anwendungen [`ReactDOM.render()`](/docs/react-dom.html#render) nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt wird.
 >
 >Wir empfehlen dir, Abschnitte nicht zu überspringen, da sie aufeinander aufbauen.
 
@@ -75,8 +75,7 @@ Du kannst es nachprüfen, indem du das [letzte Beispiel](codepen://rendering-ele
 
 ![DOM-Inspektor mit detaillierten Updates](../images/docs/granular-dom-updates.gif)
 
-Obwohl wir jede Sekunde ein Element erstellen, das den kompletten UI Baum aktualisiert,
-wird nur der Text-Inhalt durch React DOM aktualisiert, dessen Inhalt sich wirklich geändert hat.
+Obwohl wir jede Sekunde ein Element erstellen, das den kompletten UI Baum aktualisiert, wird nur der Text-Inhalt durch React DOM aktualisiert, dessen Inhalt sich wirklich geändert hat.
 
 Nach unserer Erfahrung macht es mehr Sinn darüber nachzudenken, wie die Benutzeroberfläche zu einem bestimmten Zeitpunkt aussieht, anstatt
 sich darüber Gedanken zu machen, wie sie sich im Laufe der Zeit verändert. Dieses Denken verhindert eine ganze Reihe von Fehlern.
