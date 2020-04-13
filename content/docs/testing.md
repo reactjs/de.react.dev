@@ -14,7 +14,11 @@ Es gibt einige Wege, React-Komponenten zu testen. Sie fallen in zwei Kategorien:
 * **Komponenten-Bäume rendern** in einer vereinfachten Test-Umgebung und sicherstellen, dass sie die erwarteten Ausgaben liefern.
 * **Eine komplette App ausführen** in einem realistischen Browser-Umgebung (auch bekannt als “Ende-zu-Ende”-Tests).
 
+<<<<<<< HEAD
 Dieses Dokumentationskapitel fokussiert sich auf Testing-Strategien für die erste Kategorie von Tests. Während volle Ende-zu-Ende-Tests nützlich sein können, um Regressionen an wichtigen Abläufen zu verhindern, befassen sie sich nicht direkt mit React-Komponenten und gehen über dieses Kapitel hinaus.
+=======
+This documentation section focuses on testing strategies for the first case. While full end-to-end tests can be very useful to prevent regressions to important workflows, such tests are not concerned with React components in particular, and are out of the scope of this section.
+>>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 ### Tradeoffs {#tradeoffs}
 
