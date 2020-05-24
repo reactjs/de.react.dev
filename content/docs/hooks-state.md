@@ -64,7 +64,7 @@ Der State startet mit `{ count: 0 }` und wir erhöhen `state.count`, wenn der Be
 
 ## Hooks und Funktionskomponenten {#hooks-and-function-components}
 
-Zur Erinnerung: In React sehen die Funktionskomponenten wie folgt aus:
+Zur Erinnerung: In React sehen die Funktionskomponenten so aus:
 
 ```js
 const Example = (props) => {
