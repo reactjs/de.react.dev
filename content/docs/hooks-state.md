@@ -179,7 +179,7 @@ In einer Klasse müssen wir `this.setState()` aufrufen, um den `count`-State zu 
   </button>
 ```
 
-In einer Funktion verfügen wir bereits über die `setCount` und `count` Variablen, so dass wir den Schlüsselwort `this` nicht benötigen:
+In einer Funktion haben wir bereits `setCount` und `count` als Variablen, so dass wir `this` nicht mehr benötigen:
 
 ```js{1}
   <button onClick={() => setCount(count + 1)}>
