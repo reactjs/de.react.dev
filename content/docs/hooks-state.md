@@ -203,7 +203,7 @@ Wir möchten nun **das Gelernte Zeile für Zeile zusammenfassen** um unseren Wis
  5:
  6:    return (
  7:      <div>
- 8:        <p>du hast mich {count} mal geklickt</p>
+ 8:        <p>Du hast mich {count} mal geklickt</p>
  9:        <button onClick={() => setCount(count + 1)}>
 10:         Klick mich
 11:        </button>
