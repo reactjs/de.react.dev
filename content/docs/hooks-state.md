@@ -154,7 +154,7 @@ Wir deklarieren eine State-Variable namens `count` und setzen sie auf `0`. React
 >
 >"Create" wäre nicht ganz zutreffend, da der State nur beim ersten Rendern der Komponente erstellt wird. Während der nachfolgenden Rendervorgänge stellt uns die `useState`-Funktion den aktuellen State bereit. Andernfalls wäre es überhaupt kein "state"! Es hat auch seinen Grund, weshalb die Namen der Hooks *immer* mit `use` beginnen. Die Gründe dafür werden wir später in den [Regeln von Hooks](/docs/hooks-rules.html) erfahren.
 
-## Lesen eines States {#reading-state}
+## Lesen des States {#reading-state}
 
 Um den aktuellen Zählerstand in einer Klasse anzeigen zulassen, dann lesen wir den Wert des Zählers über `this.state.count`:
 
