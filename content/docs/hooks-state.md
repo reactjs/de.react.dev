@@ -142,7 +142,7 @@ Da wir nun wissen, was der `useState` Hook macht, sollte unser Beispiel mehr Sin
 import React, { useState } from 'react';
 
 function Example() {
-  // Deklariere eine neue State Variable, die wir "count" nennen werden
+  // Deklariere eine neue State-Variable, die wir "count" nennen werden
   const [count, setCount] = useState(0);
 ```
 
