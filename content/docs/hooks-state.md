@@ -56,7 +56,7 @@ class Example extends React.Component {
 }
 ```
 
-Die State wird mit `{ count: 0 }` initialisiert. Über einen Klick auf den Button wird über den Aufruf `this.setState()` den Wert der State `state.count` inkrementiert. Nachfolgend werden wir auf der gesamten Seite Ausschnitte aus dieser Klasse verwenden.
+Der State startet mit `{ count: 0 }` und wir erhöhen `state.count`, wenn der Benutzer auf einen Button klickt, indem `this.setState()`aufgerufen wird. Nachfolgend werden wir auf der gesamten Seite Ausschnitte aus dieser Klasse verwenden.
 
 >Hinweis
 >
