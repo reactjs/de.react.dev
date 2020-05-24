@@ -19,7 +19,7 @@ function Example() {
 
   return (
     <div>
-      <p>du hast mich {count} mal geklickt</p>
+      <p>Du hast mich {count} mal geklickt</p>
       <button onClick={() => setCount(count + 1)}>
         Klick mich
       </button>
