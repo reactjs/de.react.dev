@@ -137,7 +137,7 @@ class Parent extends React.Component {
 }
 
 function Child() {
-  // Das Klick-Event auf diesen Butten wird zu dem Elternelement aufsteigen, 
+  // Das Klick-Event auf diesem Button wird zu dem Elternelement aufsteigen, 
   // da kein 'onClick'-Attribut definiert ist.
   return (
     <div className="modal">
