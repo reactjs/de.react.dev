@@ -232,7 +232,7 @@ Die Namen auf der linken Seite sind kein Bestandteil der React-API. Du kannst de
   const [fruit, setFruit] = useState('banane');
 ```
 
-Diese JavaScript-Syntax wird als ["Destrukturierende Array-Zuweisung"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring) bezeichnet. Dies bedeutet, dass wir zwei neue Variabeln `fruit` und `setFruit` erstellen, wobei `fruit` auf den ersten Wert gesetzt wird, der von den `useState`-Hook zurückgegeben wird, wogegen `setFruit` auf den zweiten Wert des Hooks gesetzt wird. Dies ist gleichwertig mit dem folgenden Code:
+Diese JavaScript-Syntax wird als ["Destrukturierende Array-Zuweisung"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring) bezeichnet. Dies bedeutet, dass wir zwei neue Variablen `fruit` und `setFruit` erstellen, wobei `fruit` auf den ersten Wert gesetzt wird, der von der `useState`-Hook zurückgegeben wird und `setFruit` auf den zweiten. Dies ist gleichwertig mit dem folgenden Code:
 
 ```js
   var fruitStateVariable = useState('banane'); // Gibt ein Tupel zurück
