@@ -240,7 +240,7 @@ Diese JavaScript-Syntax wird als ["Destrukturierende Array-Zuweisung"](https://d
   var setFruit = fruitStateVariable[1]; // Zweites Element im Tupel
 ```
 
-Bei der Deklaration einer State-Variable mithilfe von `useState` erhalten wir einen Tupel zurück — Indemfall ein Array mit zwei Elementen. Das erste Element ist der aktuelle Wert des States, Das zweite Element ist eine Funktion, mit der wir den Wert des States aktualisieren können. Die Verwendung von `[0]` und `[1]` um auf den Inhalt des Hooks zuzugreifen mag etwas verwirrend sein, dementsprechend verwenden wir die Array-Destrukturierung.
+Bei der Deklaration einer State-Variable mit Hilfe von `useState` erhalten wir einen Tupel zurück — ein Array mit zwei Werten. Der erste Wert ist der aktuelle des States, der zweite eine Funktion, mit der wir den Wert des States aktualisieren können. Die Verwendung von `[0]` und `[1]` um auf den Inhalt der Hook zuzugreifen mag etwas verwirrend sein, dementsprechend verwenden wir die Array-Destrukturierung.
 
 >Hinweis
 >
