@@ -83,7 +83,7 @@ class Modal extends React.Component {
     // die Modal-Kinder eingebunden wurden, d.h. die Kinder werden
     // in einem freistehenden DOM-Node eingebunden. Wenn eine Kind-
     // Komponente beim Einbinden voraussetzt direkt an den DOM-Baum
-    // angehängt zu werden, z.B. um einen Dom-Node zu messen oder wenn
+    // angehängt zu werden, z.B. um einen DOM-Knoten zu messen oder wenn
     // sie 'autoFocus' in einem Nachfahren nutzt, füge dem Modal den  
     // Status hinzu und rendere die Kinder-Komponenten nur, wenn das 
     // Modal in den DOM-Baum eingefügt ist. 
