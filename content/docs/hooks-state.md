@@ -98,7 +98,7 @@ function Example() {
 }
 ```
 
-**Was ist ein Hook?** Ein Hook ist eine spezielle Funktion, mit der du dich in React-Funktionalitäten "einhaken" kannst. Betrachten wir uns beispielsweise die `useState`-Funktion an, sie ist ein Hook, mit dem wir States zu einer zustandslosen Komponente hinzufügen können, so dass wir die sogenannte Funktionskomponente erhalten. Wir werden später weitere Hooks kennenlernen.
+**Was ist ein Hook?** Ein Hook ist eine spezielle Funktion, mit der du dich in React-Funktionalitäten "einhaken" kannst. Schauen wir uns beispielsweise die `useState`-Funktion an, sie ist ein Hook, mit dem wir States zu einer zustandslosen Komponente hinzufügen können, so dass wir die sogenannte Funktionskomponente erhalten. Wir werden später weitere Hooks kennenlernen.
 
 **Wann sollte ich einen Hook verwenden?** Falls du bereits eine zustandslose Komponente verwendest und später feststellst, dass du die Komponente um States erweitern musst, dann musstest du früher deine Komponente in eine Klassenkomponente umschreiben, dies ist nicht mehr nötig, da du jetzt Hooks verwenden kannst. Dies werden wir jetzt sofort tun!
 
