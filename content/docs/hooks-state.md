@@ -150,7 +150,7 @@ Wir deklarieren eine State-Variable namens `count` und setzen sie auf `0`. React
 
 >Hinweis
 >
->Mäglicherweise stellst du dir die nachfolgende Frage: Warum heißt die Hook `useState` an Stelle von `createState`?
+>Du fragst dich vielleicht: Warum heißt die Hook `useState` anstatt `createState`?
 >
 >"Create" wäre nicht ganz zutreffend, da der State nur beim ersten Rendern der Komponente erstellt wird. Während der nachfolgenden Rendervorgänge stellt uns die `useState`-Funktion den aktuellen State bereit. Andernfalls wäre es überhaupt kein "state"! Es hat auch seinen Grund, weshalb die Namen der Hooks *immer* mit `use` beginnen. Die Gründe dafür werden wir später in den [Regeln von Hooks](/docs/hooks-rules.html) erfahren.
 
