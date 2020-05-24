@@ -156,7 +156,7 @@ Wir deklarieren eine State-Variable namens `count` und setzen sie auf `0`. React
 
 ## Lesen des States {#reading-state}
 
-Um den aktuellen Zählerstand in einer Klasse anzeigen zulassen, dann lesen wir den Wert des Zählers über `this.state.count`:
+Wenn wir den aktuellen Zählerstand in einer Klasse anzeigen lassen wollen, lesen wir `this.state.count`:
 
 ```js
   <p>du hast mich {this.state.count} mal geklickt</p>
