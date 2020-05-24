@@ -246,7 +246,7 @@ Bei der Deklaration einer State-Variable mit Hilfe von `useState` erhalten wir e
 >
 >Möglicherweise fragst du dich, woher React nun weiß, welche Komponente es `useState` zuordnen muss, da wir so etwas wie `this` nicht an React weitergeben. Wir werden die Antwort auf [diese Frage](/docs/hooks-faq.html#how-does-react-associate-hook-calls-with-components), sowie zahlreiche andere Fragen in der FAQ-Sektion beantworten.
 
-### Tipp: Using Multiple State Variables {#tip-using-multiple-state-variables}
+### Tipp: Verwenden mehrerer State-Variablen {#tip-using-multiple-state-variables}
 
 Die Deklaration von State-Variablen als ein Tupel in der Form `[something, setSomething]` ist insofern praktisch, da es uns erlaubt die State-Variabeln *unterschiedliche* Namen zu geben, dies ist speziell Nützlich wenn man mehrere States verwenden möchte:
 
