@@ -73,7 +73,7 @@ const Example = (props) => {
 }
 ```
 
-oder wie folgt:
+oder so:
 
 ```js
 function Example(props) {
