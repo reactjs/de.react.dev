@@ -60,7 +60,7 @@ Der State startet mit `{ count: 0 }` und wir erhöhen `state.count`, wenn der Be
 
 >Hinweis
 >
->Du fragst dich vielleicht, warum wir hier einen Zähler anstelle eines realistischeren Beispiels verwenden. Damit wollen wir uns vorerst auf die API konzentrieren, während wir noch unsere ersten Schritte mit den Hooks machen.
+>Du fragst dich vielleicht, warum wir hier einen Zähler anstelle eines realistischeren Beispiels verwenden. Damit wollen wir uns vorerst auf die API konzentrieren, während wir noch unsere ersten Schritte mit Hooks machen.
 
 ## Hooks und Funktionskomponenten {#hooks-and-function-components}
 
@@ -108,7 +108,7 @@ function Example() {
 
 ## Deklarierung einer State-Variable {#declaring-a-state-variable}
 
-In einer Klasse initialisieren wir den `count` State auf `0` indem wir `this.state` auf `{ count: 0 }` im Konstruktor setzen:
+In einer Klasse initialisieren wir den `count`-State mit `0`, in dem wir `this.state` auf `{ count: 0 }` im Konstruktor setzen:
 
 ```js{4-6}
 class Example extends React.Component {
@@ -120,7 +120,7 @@ class Example extends React.Component {
   }
 ```
 
-In einer Funktionskomponente existiert das Schlüsselwort `this` nicht, wodurch wir `this.state` weder zuweisen noch lesen können. Stattdessen rufen wir den `useState` Hook direkt in unserer Komponente auf:
+In einer Funktionskomponente existiert das Schlüsselwort `this` nicht, wodurch wir `this.state` weder zuweisen noch lesen können. Stattdessen rufen wir die `useState`-Hook direkt in unserer Komponente auf:
 
 ```js{4,5}
 import React, { useState } from 'react';
@@ -212,9 +212,9 @@ Wir möchten nun **das Gelernte Zeile für Zeile zusammenfassen** um unseren Wis
 14:  }
 ```
 
-* **Zeile 1:** Wir importieren den `useState` Hook aus React, dadurch können wir einen lokalen State in einer Funktionskomponente halten.
+* **Zeile 1:** Wir importieren die `useState`-Hook aus React, dadurch können wir einen lokalen State in einer Funktionskomponente halten.
 * **Zeile 4:** Innerhalb der `Example`-Komponente deklarieren wir durch einen Aufruf des `useState`-Hooks eine neue State-Variable, die ein Tupel zurückgibt, dessen Inhalte wir dann Namen zuweisen. Wir nennen unsere Variable `count`, da sie die Anzahl der Button-Klicks enthält. Wir initialisieren Null, indem wir `0` als einziges Argument an `useState` geben. Die zweite Variable die zurückgegeben wird ist eine Funktion. Sie erlaubt uns den Wert von `count` zu aktualisieren, dementsprechend nennen wir sie `setCount`.
-* **Zeile 9:** Beim Klick auf den Button durch den User rufen wir `setCount` mit einem neuen Wert auf. React wird dann die `Example`-Komponente erneut rendern und ihr den neuen Wert für den `count`-State übergeben.
+* **Zeile 9:** Beim Klick durch einen User auf den Button rufen wir `setCount` mit einem neuen Wert auf. React wird dann die `Example`-Komponente erneut rendern und ihr den neuen Wert für den `count`-State übergeben.
 
 Auf den ersten Blick mag dies eine Menge sein. Überstürzte nichts! Wenn du dich in der Fülle der Informationen verlierst, dann schau dir am Besten den oben bereitgestellten Code nochmal genauer an und wiederhole die dargestellten Schritte von oben nach unten. Wir versprechen dir, dass wenn du versuchst zu "vergessen" wie der State in Klassen funktioniert und du den Code mit kühlem Kopf anschaust, es Sinn machen wird.
 
