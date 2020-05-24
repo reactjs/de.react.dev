@@ -248,7 +248,7 @@ Bei der Deklaration einer State-Variable mit Hilfe von `useState` erhalten wir e
 
 ### Tipp: Verwenden mehrerer State-Variablen {#tip-using-multiple-state-variables}
 
-Die Deklaration von State-Variablen als ein Tupel in der Form `[something, setSomething]` ist insofern praktisch, da es uns erlaubt die State-Variabeln *unterschiedliche* Namen zu geben, dies ist speziell Nützlich wenn man mehrere States verwenden möchte:
+Die Deklaration von State-Variablen als ein Tupel in der Form `[something, setSomething]` ist insofern praktisch, da es uns erlaubt den State-Variablen *unterschiedliche* Namen zu geben, dies ist nützlich wenn man mehrere States verwenden möchte:
 
 ```js
 function ExampleWithManyStates() {
