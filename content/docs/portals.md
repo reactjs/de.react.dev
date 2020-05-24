@@ -32,7 +32,7 @@ Manchmal ist es jedoch nützlich, ein Kind an einer anderen Position im DOM einz
 ```js{6}
 render() {
   // React erstellt *keinen* neuen Div. Es rendert die Kinder zu `domNode`.
-  // `domNode` ist jeder valide DOM-Node, unabhängig von seiner Position im DOM.
+  // `domNode` ist jeder valide DOM-Knoten, unabhängig von seiner Position im DOM.
   return ReactDOM.createPortal(
     this.props.children,
     domNode
