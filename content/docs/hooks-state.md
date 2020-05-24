@@ -166,7 +166,7 @@ In einer Funktion können wir `count` direkt verwenden:
 
 
 ```js
-  <p>du hast mich {count} mal geklickt</p>
+  <p>Du hast mich {count} mal geklickt</p>
 ```
 
 ## Aktualisierung eines States {#updating-state}
