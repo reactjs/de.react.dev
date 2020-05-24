@@ -4,7 +4,7 @@ title: Portale
 permalink: docs/portals.html
 ---
 
-Portale bieten eine erstklassige Möglichkeit, Kinder in einen DOM-Node zu rendern, der außerhalb der DOM-Hierarchie der Eltern-Komponente existiert.
+Portale bieten eine erstklassige Möglichkeit, Kinder in einen DOM-Knoten zu rendern, der außerhalb der DOM-Hierarchie der Eltern-Komponente existiert.
 
 ```js
 ReactDOM.createPortal(child, container)
