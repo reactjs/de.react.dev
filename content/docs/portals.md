@@ -14,7 +14,7 @@ Das erste Argument (`child`) ist ein beliebiges [renderbares React-Kind](/docs/r
 
 ## Verwendung {#usage}
 
-Wenn du ein Element aus der Render-Methode einer Komponente zurückgibst, wird es normalerweise als Kind des nächsten Eltern-Nodes in das DOM eingebunden:
+Wenn du ein Element aus der Render-Methode einer Komponente zurückgibst, wird es normalerweise als Kind des nächsten Eltern-Knotens in das DOM eingebunden:
 
 ```js{4,6}
 render() {
