@@ -171,7 +171,7 @@ In einer Funktion können wir `count` direkt verwenden:
 
 ## Aktualisieren des States {#updating-state}
 
-In einer Klasse müssen wir `this.setState()` aufrufen, um den `count` State zu aktualisieren:
+In einer Klasse müssen wir `this.setState()` aufrufen, um den `count`-State zu aktualisieren:
 
 ```js{1}
   <button onClick={() => this.setState({ count: this.state.count + 1 })}>
