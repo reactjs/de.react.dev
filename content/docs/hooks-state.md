@@ -220,7 +220,7 @@ Auf den ersten Blick mag dies eine Menge sein. Überstürzte nichts! Wenn du dic
 
 ### Tipp: Welche Bedeutung haben die eckigen Klammern? {#tip-what-do-square-brackets-mean}
 
-Möglicherweise sind dir die eckigen Klammern aufgefallen, die wir bei der deklaration der State-Variabeln verwendet haben:
+Möglicherweise sind dir die eckigen Klammern aufgefallen, die wir bei der Deklaration der State-Variablen verwendet haben:
 
 ```js
   const [count, setCount] = useState(0);
