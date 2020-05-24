@@ -273,7 +273,7 @@ Wir geben weitere Empfehlungen zur Aufspaltung unabhängiger State-Variablen die
 
 ## Nächste Schritte {#next-steps}
 
-Auf dieser Seite haben wir uns über einen der von React zur Verfügung gestellten Hooks, den sogenannten `useState` Hook informiert. Wir werden es gelegentlich auch als "State Hook" bezeichnen. Es ermöglicht uns die Funktionalität der Funktionskomponenten um States zu erweitern -- welches wir zum ersten Mal überhaupt getan haben!
+Auf dieser Seite haben wir uns über einen der von React zur Verfügung gestellten Hooks, den sogenannten `useState`-Hook. Wir werden es gelegentlich auch als "State Hook" bezeichnen. Es ermöglicht uns einen lokalen State zu einer React-Funktionskomponente hinzuzufügen -- welches wir zum ersten Mal überhaupt getan haben!
 
 Wir haben ebenfalls ein wenig mehr darüber erfahren, was Hooks überhaupt sind. Hooks sind Funktionen, mit denen man sich über Funktionskomponenten in React-Funktionalität "einhaken" kann. Ihr name beginnt immer mit `use`. Es gibt zahlreiche weitere Hooks, die wir noch nicht kennengelernt haben.
 
