@@ -65,7 +65,7 @@ Dies schließt das Event-Bubbling mit ein. Ein Event, das innerhalb eines Portal
 </html>
 ```
 
-Eine `Eltern`-Komponente in `#app-root`wäre in der Lage, ein unerreichtes, aufsteigendes Event aus dem Geschwister-Node `#modal-root` zu erreichen.
+Eine `Eltern`-Komponente in `#app-root` wäre in der Lage, ein unerreichtes, aufsteigendes Event aus dem Geschwister-Knoten `#modal-root` zu erreichen.
 
 ```js{28-31,42-49,53,61-63,70-71,74}
 // Diese beiden Container sind Geschwister im DOM
