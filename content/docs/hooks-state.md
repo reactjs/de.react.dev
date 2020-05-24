@@ -252,7 +252,7 @@ Die Deklaration von State-Variablen als ein Tupel in der Form `[something, setSo
 
 ```js
 function ExampleWithManyStates() {
-  // Deklaration von mehreren States-Variablen!
+  // Deklaration von mehreren State-Variablen!
   const [age, setAge] = useState(42);
   const [fruit, setFruit] = useState('banane');
   const [todos, setTodos] = useState([{ text: 'Hooks erlernen' }]);
