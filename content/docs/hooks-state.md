@@ -277,4 +277,4 @@ Auf dieser Seite haben wir uns über einen der von React zur Verfügung gestellt
 
 Wir haben ebenfalls ein wenig mehr darüber erfahren, was Hooks überhaupt sind. Hooks sind Funktionen, mit denen man sich über Funktionskomponenten in die React-Funktionalität "einhaken" kann. Ihr Name beginnt immer mit `use`. Es gibt zahlreiche weitere Hooks, die wir noch nicht kennengelernt haben.
 
-**Lasst uns nun fortfahren in dem wir uns den [nächsten Hook widmen: `useEffect`.](/docs/hooks-effect.html)** Es ermöglicht dir die Durchführung von Effekten innerhalb der Komponenten, dies ist vergleichbar mit den Lifecycle-Methoden, die man in Klassen verwendet.
+**Fahren wir nun fort mit der [nächsten Hook: `useEffect`.](/docs/hooks-effect.html)** Diese ermöglicht dir die Durchführung von Seiten-Effekten innerhalb von Komponenten und ähnelt den Lifecycle-Methoden in Klassen.
