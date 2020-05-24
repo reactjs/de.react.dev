@@ -275,6 +275,6 @@ Wir geben weitere Empfehlungen zur Aufspaltung unabhängiger State-Variablen die
 
 Auf dieser Seite haben wir uns über einen der von React zur Verfügung gestellten Hooks, den sogenannten `useState`-Hook. Wir werden es gelegentlich auch als "State Hook" bezeichnen. Es ermöglicht uns einen lokalen State zu einer React-Funktionskomponente hinzuzufügen -- welches wir zum ersten Mal überhaupt getan haben!
 
-Wir haben ebenfalls ein wenig mehr darüber erfahren, was Hooks überhaupt sind. Hooks sind Funktionen, mit denen man sich über Funktionskomponenten in React-Funktionalität "einhaken" kann. Ihr name beginnt immer mit `use`. Es gibt zahlreiche weitere Hooks, die wir noch nicht kennengelernt haben.
+Wir haben ebenfalls ein wenig mehr darüber erfahren, was Hooks überhaupt sind. Hooks sind Funktionen, mit denen man sich über Funktionskomponenten in die React-Funktionalität "einhaken" kann. Ihr Name beginnt immer mit `use`. Es gibt zahlreiche weitere Hooks, die wir noch nicht kennengelernt haben.
 
 **Lasst uns nun fortfahren in dem wir uns den [nächsten Hook widmen: `useEffect`.](/docs/hooks-effect.html)** Es ermöglicht dir die Durchführung von Effekten innerhalb der Komponenten, dies ist vergleichbar mit den Lifecycle-Methoden, die man in Klassen verwendet.
