@@ -189,7 +189,7 @@ In einer Funktion verfügen wir bereits über die `setCount` und `count` Variabl
 
 ## Zusammenfassung {#recap}
 
-Wir möchten nun **das Gelernte Zeile für Zeile zusammenfassen** um den Stand unseres Wissens zu überprüfen.
+Wir möchten nun **das Gelernte Zeile für Zeile zusammenfassen** um unseren Wissensstand zu prüfen.
 
 <!--
   I'm not proud of this line markup. Please somebody fix this.
