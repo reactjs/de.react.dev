@@ -214,7 +214,7 @@ Wir möchten nun **das Gelernte Zeile für Zeile zusammenfassen** um unseren Wis
 
 * **Zeile 1:** Wir importieren den `useState` Hook aus React, dadurch können wir einen lokalen State in einer Funktionskomponente halten.
 * **Zeile 4:** Innerhalb der `Example`-Komponente deklarieren wir durch einen Aufruf des `useState`-Hooks eine neue State-Variable, die ein Tupel zurückgibt, dessen Inhalte wir dann Namen zuweisen. Wir nennen unsere Variable `count`, da sie die Anzahl der Button-Klicks enthält. Wir initialisieren Null, indem wir `0` als einziges Argument an `useState` geben. Die zweite Variable die zurückgegeben wird ist eine Funktion. Sie erlaubt uns den Wert von `count` zu aktualisieren, dementsprechend nennen wir sie `setCount`.
-* **Zeile 9:** Beim Klick auf den Button durch den User rufen wir die `setCount` Methode mit einem neuen Wert auf. React wird dann die `Example`-Komponente erneut rendern und übergibt der Koponente den neuen Wert für die `count` State durch.
+* **Zeile 9:** Beim Klick auf den Button durch den User rufen wir `setCount` mit einem neuen Wert auf. React wird dann die `Example`-Komponente erneut rendern und ihr den neuen Wert für den `count`-State übergeben.
 
 Auf den ersten Blick mag dies eine Menge sein. Am besten überstürtzt du nichts! Wenn du dich in der Fülle der Informationen verlierst, dann schau dir am besten den oben bereitgestellten Code nochmal genauer an und wiederhole die dargestellten Schritte von oben nach unten. Wir versprechen dir, dass falls du versuchst den Umgang mit den "Klassen" zu vergessen, dass du dann die Hooks mit neuen Augen sehen wirst und dadurch wird dir vieles aufeinmal Sinn machen.
 
