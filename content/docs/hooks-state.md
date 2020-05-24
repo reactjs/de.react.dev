@@ -169,7 +169,7 @@ In einer Funktion können wir `count` direkt verwenden:
   <p>Du hast mich {count} mal geklickt</p>
 ```
 
-## Aktualisierung eines States {#updating-state}
+## Aktualisieren des States {#updating-state}
 
 In einer Klasse müssen wir `this.setState()` aufrufen, um den `count` State zu aktualisieren:
 
