@@ -269,7 +269,7 @@ In der obigen Komponente stehen uns `age`, `fruit`, und `todos` als lokale Varia
 
 Du brauchst **nicht** zahlreichen State-Variablen zu verwenden. Die Variablen können problemlos Arrays oder Objekte halten, dementsprechend kannst du zusammenhängende Daten gruppieren. Beachte aber, dass im Gegensatz zu der in Klassen verwendeten Funktion `this.setState` die Aktualisierung durch die Hooks etwas anders funktioniert, da die State-Variable *ersetzt* wird, anstatt sie mit dem bereits vorhandenen State zu verschmelzen.
 
-Wir geben weitere Empfehlungen zur Aufspaltung unabhängiger State-Variablen die du [in den FAQ](/docs/hooks-faq.html#should-i-use-one-or-many-state-variables) nachlesen kannst.
+Wir geben weitere Empfehlungen zur Aufteilung unabhängiger State-Variablen die du [in den FAQ](/docs/hooks-faq.html#should-i-use-one-or-many-state-variables) nachlesen kannst.
 
 ## Nächste Schritte {#next-steps}
 
