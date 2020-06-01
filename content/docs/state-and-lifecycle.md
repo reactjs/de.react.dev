@@ -418,15 +418,12 @@ Deshalb wird der State oft als lokal oder gekapselt bezeichnet. Er ist nur für 
 Eine Komponente kann sich aussuchen ob sie ihren State als Props weitergeben möchte:
 
 ```js
-<<<<<<< HEAD
 <h2>Es ist {this.state.date.toLocaleTimeString()}.</h2>
 ```
 
 Dies funktioniert auch für benutzerdefinierte Komponenten:
 
 ```js
-=======
->>>>>>> b4b59062e59d56da37274c6de1fa4a134d2d8f49
 <FormattedDate date={this.state.date} />
 ```
 
