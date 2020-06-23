@@ -371,11 +371,7 @@ function updateColorMap(colormap) {
 
 `updateColorMap` gibt nun ein neues Objekt zurück, statt das alte zu ändern. `Object.assign` ist ES6 und benötigt ein Polyfill.
 
-<<<<<<< HEAD
-Es gibt ein JavaScript-Propsal zur Unterstützung der [Object Spread-Syntax](https://github.com/sebmarkbage/ecmascript-rest-spread), um es leichter zu machen, Objekte ebenfalls zu updaten, ohne sie zu verändern.
-=======
-[Object spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) makes it easier to update objects without mutation as well:
->>>>>>> e548bd7e65086a8206fee46bd9e24b18b68bf045
+[Object Spread-Syntax](https://github.com/sebmarkbage/ecmascript-rest-spread), macht es einfacher, Objekte auch ohne Veränderung zu aktualisieren.
 
 ```js
 function updateColorMap(colormap) {
@@ -383,12 +379,8 @@ function updateColorMap(colormap) {
 }
 ```
 
-<<<<<<< HEAD
-Solltest du Create React App verwenden, sind sowohl `Object.assign` als auch die Object Spread-Syntax standardmäßig verfügbar. 
-=======
-This feature was added to JavaScript in ES2018. 
+Dieses Funktion wurde JavaScript in ES2018 hinzugefügt. 
 
-If you're using Create React App, both `Object.assign` and the object spread syntax are available by default.
->>>>>>> e548bd7e65086a8206fee46bd9e24b18b68bf045
+Solltest du Create React App verwenden, sind sowohl `Object.assign` als auch die Object Spread-Syntax standardmäßig verfügbar. 
 
 Wenn du mit tief verschachtelten Objekten zu tun hast, kann sich das Aktualisieren des unveränderbaren Objektes, verworren anfühlen. Wenn du auf dieses Problem stößt, schaue dir [Immer](https://github.com/mweststrate/immer) oder [immutability-helper](https://github.com/kolodny/immutability-helper) an. Mit diesen Bibliotheken kannst du gut lesbaren Code schreiben, ohne die Vorteile der Unveränderlichkeit (engl. immutability) zu verlieren.
