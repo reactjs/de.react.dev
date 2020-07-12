@@ -1,26 +1,26 @@
 ---
 id: faq-functions
-title: Passing Functions to Components
+title: Funktionen an Komponenten weitergeben
 permalink: docs/faq-functions.html
 layout: docs
 category: FAQ
 ---
 
-### How do I pass an event handler (like onClick) to a component? {#how-do-i-pass-an-event-handler-like-onclick-to-a-component}
+### Wie gebe ich einen Enventhandler (wie onClick) an eine Komponente weiter? {#how-do-i-pass-an-event-handler-like-onclick-to-a-component}
 
-Pass event handlers and other functions as props to child components:
+Wietergabe von Eventhandlern and andere Funktionen als Props von Unterkomponenten:
 
 ```jsx
 <button onClick={this.handleClick}>
 ```
 
-If you need to have access to the parent component in the handler, you also need to bind the function to the component instance (see below).
+Wenn Sie Zugang zur Oberkomponente im Handler benoetigen dann muessen Sie auch die Funktion zur Komponenten Instanz binden (siehe unten). 
 
-### How do I bind a function to a component instance? {#how-do-i-bind-a-function-to-a-component-instance}
+### Wie binde ich eine Funtion and eine Komponenteninstanz? {#how-do-i-bind-a-function-to-a-component-instance}
 
-There are several ways to make sure functions have access to component attributes like `this.props` and `this.state`, depending on which syntax and build steps you are using.
+Es gibt mehrere Moeglichkeiten um sicherzustellen dass Funktionen Zugang zu Komponenteneigenschaften haben wie `this.props` und `this.state`, abhaengig davon welche Syntax odder Build Schritte benutzt werden.
 
-#### Bind in Constructor (ES2015) {#bind-in-constructor-es2015}
+#### Binden mit Constructor (ES2015) {#bind-in-constructor-es2015}
 
 ```jsx
 class Foo extends Component {
@@ -37,7 +37,7 @@ class Foo extends Component {
 }
 ```
 
-#### Class Properties (Stage 3 Proposal) {#class-properties-stage-3-proposal}
+#### Klasseneigenschaften (vorgeschlagen fuer Stufe 3) {#class-properties-stage-3-proposal}
 
 ```jsx
 class Foo extends Component {
@@ -51,7 +51,7 @@ class Foo extends Component {
 }
 ```
 
-#### Bind in Render {#bind-in-render}
+#### Binden im Renderschritt {#bind-in-render}
 
 ```jsx
 class Foo extends Component {
@@ -64,11 +64,11 @@ class Foo extends Component {
 }
 ```
 
->**Note:**
+>**Hinweis:**
 >
->Using `Function.prototype.bind` in render creates a new function each time the component renders, which may have performance implications (see below).
+>Wenn `Function.prototype.bind` im Renderschritt benutzt wird, wird jedes mal ein eine neue Funktion erzeugt wenn die Komponente den Renderschritt durechlaueft. Dies kann Leistungseinbusen zur Folge haben (siehe unten).
 
-#### Arrow Function in Render {#arrow-function-in-render}
+#### Pfeilfunktion im Renderschritt {#arrow-function-in-render}
 
 ```jsx
 class Foo extends Component {
@@ -81,19 +81,19 @@ class Foo extends Component {
 }
 ```
 
->**Note:**
+>**Hinweis:**
 >
->Using an arrow function in render creates a new function each time the component renders, which may break optimizations based on strict identity comparison.
+>Wenn Pfeilfunktionen im Renderschritt benutzt werden, wird jedes Mal eine neue Funktion erzeugt wenn die Komponente den Renderschritt durchlaueft. Dies kann Optimierungen mit strengem Identitaetsvergleich zerstoeren.
 
-### Is it OK to use arrow functions in render methods? {#is-it-ok-to-use-arrow-functions-in-render-methods}
+### Ist es OK Pfeilfunktionen in Rendermethoden zu benutzen? {#is-it-ok-to-use-arrow-functions-in-render-methods}
 
-Generally speaking, yes, it is OK, and it is often the easiest way to pass parameters to callback functions.
+Allgemein gesagt ja, es ist OK, und es ist oft der einfachste Weg um Parameter and Callback Funktionen weiterzugeben.
 
-If you do have performance issues, by all means, optimize!
+Im Fall von Leistungsproblemen sollte man jedoch optimieren!
 
-### Why is binding necessary at all? {#why-is-binding-necessary-at-all}
+### Warum ist Binden ueberhaupt notwendig? {#why-is-binding-necessary-at-all}
 
-In JavaScript, these two code snippets are **not** equivalent:
+In JavaScript, sind diese beiden Code Stueckchen **nicht** equivalent:
 
 ```js
 obj.method();
