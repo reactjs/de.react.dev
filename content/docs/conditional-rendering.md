@@ -122,11 +122,7 @@ Während Variablen und `if` Ausdrücke einen guten Weg darstellen um eine Kompon
 
 ### Bedingung in JSX mit dem logischen && Operator {#inline-if-with-logical--operator}
 
-<<<<<<< HEAD
 Es können [beliebige Ausdrücke in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) verwendet werden, indem man sie in geschweifte Klammern schreibt. Das beinhaltet auch den logischen `&&` Operator aus JavaScript. Dieser kann beim bedingten Darstellen eines Elements sehr nützlich sein.
-=======
-You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
->>>>>>> ee75c297574468f888574aae2d9620d64bb5b5a1
 
 ```js{6-10}
 function Mailbox(props) {
