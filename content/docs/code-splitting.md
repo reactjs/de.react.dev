@@ -41,7 +41,7 @@ console.log(add(16, 26)); // 42
 >
 > Deine Bundles werden am Ende ganz anders aussehen als das hier.
 
-Wenn du [Create React App](https://github.com/facebookincubator/create-react-app), [Next.js](https://github.com/zeit/next.js/), [Gatsby](https://www.gatsbyjs.org/), oder ein ähnliches Tool benutzt, wirdt du ein Webpack-Setup haben welches sofort einsatzbereit ist um deine Anwendung zu
+Wenn du [Create React App](https://create-react-app.dev/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.org/), oder ein ähnliches Tool benutzt, wirst du ein Webpack-Setup haben welches sofort einsatzbereit ist um deine Anwendung zu
 bundlen.
 
 Wenn nicht, musst du das Bundling selbst einrichten. Siehe z. B. die Abschnitte
