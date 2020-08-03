@@ -14,11 +14,11 @@ category: FAQ
 <button onClick={this.handleClick}>
 ```
 
-Wenn du Zugang zur Oberkomponente im Handler benötigst, musst du auch die Funktion an die Komponenteninstanz binden (siehe unten). 
+Wenn du Zugang zur höher gelegenen Komponente im Handler benötigst, musst du auch die Funktion an die Komponenteninstanz binden (siehe unten).
 
 ### Wie binde ich eine Funktion an eine Komponenteninstanz? {#how-do-i-bind-a-function-to-a-component-instance}
 
-Es gibt mehrere Möglichkeiten um sicherzustellen, dass Funktionen Zugang zu Komponenteneigenschaften haben wie `this.props` und `this.state`, abhängig davon welche Syntax oder Build-Schritte benutzt werden.
+Es gibt mehrere Möglichkeiten um sicherzustellen, dass Funktionen Zugang zu Komponenteneigenschaften wie `this.props` und `this.state` haben, abhängig davon welche Syntax oder Build-Schritte benutzt werden.
 
 #### Binden im Konstruktor (ES2015) {#bind-in-constructor-es2015}
 
@@ -106,13 +106,13 @@ method();
 
 Methoden zu Binden trägt dazu bei, dass sich der zweite Code-Schnipsel auf die selbe Weise wie der erste verhält.
 
-Mit React muss man normalerweise nur die Methoden binden, die man an andere Komponenten *weitergeben* möchte. Zum Beispiel `<button onClick={this.handleClick}>` gibt `this.handleClick` weiter, und deshalb sollte es gebunden werden. Es ist jedoch nicht notwendig die `render` oder die Lifecycle-Methode zu binden: Wir geben diese Methoden nicht an Komponenten weiter.
+Mit React musst du normalerweise nur die Methoden binden, die du an andere Komponenten *weitergeben* möchtest. Zum Beispiel gibt `<button onClick={this.handleClick}>` `this.handleClick` weiter, und deshalb sollte es gebunden werden. Es ist jedoch nicht notwendig die `render` oder die Lifecycle-Methode zu binden: Wir geben diese Methoden nicht an Komponenten weiter.
 
 [Dieser Beitrag von Yehuda Katz](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) erklärt was Binden ist und wie Funktionen in JavaScript im Detail funktionieren.
 
 ### Warum wird meine Funktion jedes Mal aufgerufen, wenn die Komponente rendert?{#why-is-my-function-being-called-every-time-the-component-renders}
 
-Du musst aufpassen, dass du nicht _die Funktion aufrufst_ wenn du sie and die Komponente uebergibst:
+Du musst aufpassen, dass du nicht _die Funktion aufrufst_, wenn du sie and die Komponente übergibst:
 
 ```jsx
 render() {
@@ -121,7 +121,7 @@ render() {
 }
 ```
 
-Stattdessen *uebergebe die Funktion selbst* (ohne Klammer)
+Stattdessen *übergebe die Funktion selbst* (ohne Klammern)
 
 ```jsx
 render() {
@@ -130,7 +130,7 @@ render() {
 }
 ```
 
-### Wie uebergebe ich einen Parameter an einen Event-Handler oder Callback? {#how-do-i-pass-a-parameter-to-an-event-handler-or-callback}
+### Wie übergebe ich einen Parameter an einen Event-Handler oder Callback? {#how-do-i-pass-a-parameter-to-an-event-handler-or-callback}
 
 Du kannst eine Pfeilfunktion dazu benutzten, um einen Event-Handler zu umschließen und Parameter weiterzugeben:
 
@@ -138,13 +138,13 @@ Du kannst eine Pfeilfunktion dazu benutzten, um einen Event-Handler zu umschlie�
 <button onClick={() => this.handleClick(id)} />
 ```
 
-Dies ist identisch zum aufruf von `.bind`:
+Dies ist identisch zum Aufruf von `.bind`:
 
 ```jsx
 <button onClick={this.handleClick.bind(this, id)} />
 ```
 
-#### Beispiel: Weitergabe von Parametern mit Hilfe einer Pfeilfunktion{#example-passing-params-using-arrow-functions}
+#### Beispiel: Weitergabe von Parametern mit Hilfe von Pfeilfunktionen{#example-passing-params-using-arrow-functions}
 
 ```jsx
 const A = 65 // ASCII character code
@@ -178,9 +178,9 @@ class Alphabet extends React.Component {
 }
 ```
 
-#### Beispiel: Weitergabe von Parametern mit Hilfe von Dateneigenschaften{#example-passing-params-using-data-attributes}
+#### Beispiel: Weitergabe von Parametern mit Hilfe von data-Attributen{#example-passing-params-using-data-attributes}
 
-Alternativ können DOM-APIs dazu benutzt werden, Daten für Event-Handler zu speichern. Dies solltest du in betracht ziehen, wenn du eine grosse Anzahl von Elementen optimieren möchte oder einen Renderbaum benutzt der sich auf die Gleichheitsprüfung von React.PureComponent verlässt.
+Alternativ können DOM-APIs dazu benutzt werden, Daten für Event-Handler zu speichern. Dies solltest du in betracht ziehen, wenn du eine große Anzahl von Elementen optimieren möchte oder einen Renderbaum benutzt der sich auf die Gleichheitsprüfung von React.PureComponent verlässt.
 
 ```jsx
 const A = 65 // ASCII character code
@@ -222,15 +222,15 @@ class Alphabet extends React.Component {
 
 Wenn du einen Event-Handler wie `onClick` oder `onScroll` benutzt und verhindern möchtest, dass der Callback zu schnell ausgelöst wird, dann kannst du die Häufigkeit mit der der Callback ausgeführt wird einschränken.
 
-- **throttling**: Eingabewert wechselt basierend auf einem Zeitinterval (z.Bsp. [`_.throttle`](https://lodash.com/docs#throttle))
+- **throttling**: Eingabewert wechselt basierend auf einem Zeitinterval (z. Bsp. [`_.throttle`](https://lodash.com/docs#throttle))
 - **debouncing**: Veröffentlichung von Veränderungen nach einer gewissen Zeit der Inaktivität (z.Bsp. [`_.debounce`](https://lodash.com/docs#debounce))
-- **`requestAnimationFrame` throttling**: Eingabewert wechselt basierend auf [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) (z.Bsp. [`raf-schd`](https://github.com/alexreardon/raf-schd))
+- **`requestAnimationFrame` throttling**: Eingabewert wechselt basierend auf [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) (z. Bsp. [`raf-schd`](https://github.com/alexreardon/raf-schd))
 
 Siehe [diese Visualisierung](http://demo.nimius.net/debounce_throttle/) für einen Vergleich von `throttle` und `debounce` Funktionen.
 
 > Hinweis:
 >
-> `_.debounce`, `_.throttle` und `raf-schd` bieten eine `cancel`-Methode um verzögerte Callbacks zu löschen. Man sollte diese Methode entweder von `componentWillUnmount` aufrufen _oder_ prüfen und sicherstellen, dass die Komponente innerhalb der verzögerten Funktion gemountet ist.
+> `_.debounce`, `_.throttle` und `raf-schd` bieten eine `cancel`-Methode um verzögerte Callbacks zu löschen. Du solltest diese Methode entweder von `componentWillUnmount` aufrufen _oder_ prüfen und sicherstellen, dass die Komponente innerhalb der verzögerten Funktion gemountet ist.
 
 #### Throttle {#throttle}
 
@@ -304,11 +304,11 @@ class Searchbox extends React.Component {
 
 #### `requestAnimationFrame` throttling {#requestanimationframe-throttling}
 
-[`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) ist ein Weg um Funktion in eine Warteschlange zu stellen um sie dann vom Browser zum optimalen Zeitpunkt für die beste Renderleistung ausführen zu lassen. Eine Funktion, die mit `requestAnimationFrame` in die Warteschlange gestellt wird, wifr mit dem nächsten Bildwechsel ausgelöst. Der Browser bemüht sich sehr um 60 Bildwechsel pro Sekunde auszuführen (60 fps). Wenn der Browser dies nicht schafft, dann wir die Anzahl der Bildwechsel pro Sekunde auf natürliche Weise *begrenzt*. Zum Beispiel ist es möglich, dass ein Gerät nur 30 fps leisten kann, dann gibt es nur 30 Bildwechsel pro Sekunde. Der Einsatz von `requestAnimationFrame` zum Throttling ist ein hilfreicher Weg um zu verhindern, dass mehr als 60 Updates pro Sekunde ausgeführt werden. Wenn mehr als 100 Updates pro Sekunde ausgeführt werden erzeugt dies zusätzliche Arbeit für den Browser die der Benutzer sowieso nicht sehen kann.
+[`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) ist ein Weg um eine Funktion in eine Warteschlange zu stellen um sie dann vom Browser zum optimalen Zeitpunkt für die beste Renderleistung ausführen zu lassen. Eine Funktion, die mit `requestAnimationFrame` in die Warteschlange gestellt wird, wifr mit dem nächsten Bildwechsel ausgelöst. Der Browser bemüht sich sehr um 60 Bildwechsel pro Sekunde auszuführen (60 fps). Wenn der Browser dies nicht schafft, dann wir die Anzahl der Bildwechsel pro Sekunde auf natürliche Weise *begrenzt*. Zum Beispiel ist es möglich, dass ein Gerät nur 30 fps leisten kann, dann gibt es nur 30 Bildwechsel pro Sekunde. Der Einsatz von `requestAnimationFrame` zum Throttling ist ein hilfreicher Weg um zu verhindern, dass mehr als 60 Updates pro Sekunde ausgeführt werden. Wenn mehr als 100 Updates pro Sekunde ausgeführt werden erzeugt dies zusätzliche Arbeit für den Browser die der Benutzer sowieso nicht sehen kann.
 
 >**Hinweis:**
 >
->Wenn man dieses Verfahren anwendet wir nur der zuletzt aktivierte Wert beim Bildwechsel festgehalten. Du kannst ein Beispiel, wie diese Optimierung funktioniert auf [`MDN`](https://developer.mozilla.org/en-US/docs/Web/Events/scroll) sehen
+>Wenn du dieses Verfahren anwendest, wird nur der zuletzt aktivierte Wert beim Bildwechsel festgehalten. Du kannst ein Beispiel, wie diese Optimierung funktioniert auf [`MDN`](https://developer.mozilla.org/en-US/docs/Web/Events/scroll) sehen
 
 ```jsx
 import rafSchedule from 'raf-schd';
@@ -349,6 +349,6 @@ class ScrollListener extends React.Component {
 }
 ```
 
-#### Testen der Durchsatzratenbegrenzung {#testing-your-rate-limiting}
+#### Testen der Durchsatzratenbegrenzung (engl. rate limiting)  {#testing-your-rate-limiting}
 
 Um zu testen ob der durchsatzratenbegrenzte Code funktioniert ist es hilfreich, die Möglichkeit zu haben, die Zeit vorzuspulen. Wenn du [`jest`](https://facebook.github.io/jest/) benutzt kannst du [`mock timers`](https://facebook.github.io/jest/docs/en/timer-mocks.html) verwenden um die Zeit vorzuspulen. Wenn du `requestAnimationFrame` throttling benutzt, ist [`raf-stub`](https://github.com/alexreardon/raf-stub) ein hilfreiches Werkzeug um den Fortschritt der einzelnen Animation-Frames zu kontrollieren.
