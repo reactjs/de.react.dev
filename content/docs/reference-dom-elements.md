@@ -56,7 +56,12 @@ Das `onChange` Event verhält sich, wie es zu erwarten ist: wann immer sich das 
 
 ### selected {#selected}
 
+<<<<<<< HEAD
 Das Attribut `selected` wird von `<option>` Komponenten unterstützt. Du kannst es benutzen, um festzulegen, ob eine Komponente ausgewählt ist oder nicht. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. 
+=======
+If you want to mark an `<option>` as selected, reference the value of that option in the `value` of its `<select>` instead.
+Check out ["The select Tag"](/docs/forms.html#the-select-tag) for detailed instructions.
+>>>>>>> d16f1ee7958b5f80ef790265ba1b8711d4f228d6
 
 ### style {#style}
 
@@ -120,7 +125,11 @@ Wenn du `suppressHydrationWarning` auf `true` setzt, wird React dich nicht mehr 
 
 ### value {#value}
 
+<<<<<<< HEAD
 Das `value` Attribut wird  von `<input>` und `<textarea>` Komponenten unterstützt. Du kannst es benutzen, um den Wert einer Komponente zu setzen. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultValue` ist das unkontrollierte Äquivalent, welches den Wert der Komponente setzt, wenn sie erstmals gemounted wird.
+=======
+The `value` attribute is supported by `<input>`, `<select>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building controlled components. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
+>>>>>>> d16f1ee7958b5f80ef790265ba1b8711d4f228d6
 
 ## Alle unterstützen HTML Attribute {#all-supported-html-attributes}
 

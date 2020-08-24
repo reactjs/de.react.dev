@@ -2,6 +2,8 @@
 id: render-props
 title: Render Props
 permalink: docs/render-props.html
+prev: higher-order-components.html
+next: integrating-with-other-libraries.html
 ---
 
 Der Begriff ["render prop"](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) bezieht sich bezieht sich auf eine Technik um Code zwischen React-Komponenten auszutauschen. Hierzu nutzt man ein Prop dessen Wert eine Funktion ist.
