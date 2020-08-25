@@ -2,6 +2,8 @@
 id: error-boundaries
 title: Fehlergrenzen
 permalink: docs/error-boundaries.html
+prev: portals.html
+next: web-components.html
 ---
 
 In der Vergangenheit, führten JavaScript-Fehler in Komponenten zu einem fehlerhaften Zustand innerhalb von React, welcher ein [Auftreten](https://github.com/facebook/react/issues/4026) [kryptischer](https://github.com/facebook/react/issues/6895) [Fehlermeldungen](https://github.com/facebook/react/issues/8579) in den folgenden Render-Vorgängen verursachte. Diese Fehler wurden immer von einem zuvor aufgetretenen Fehler in der Anwendung verursacht, jedoch war seitens React keine Möglichkeit bereitgestellt, um mit Fehlern in Komponenten elegant umzugehen.
@@ -97,7 +99,7 @@ Du kannst auch die Dateinamen und Zeilennummern im Komponenten Stack-Trace sehen
 
 <img src="../images/docs/error-boundaries-stack-trace-line-numbers.png" style="max-width:100%" alt="Fehler der durch eine Fehlregrenze-Komponente abgefangen wurde, mit Angabe zur Zeilennummern">
 
-Wenn du Create React App nicht verwendest, kannst du [folgende Erweiterung](https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source) manuell zu deiner Babel-Konfiguration hinzufügen. Hinweis: Diese ist nur für den Einsatz während des Entwicklungsprozesses gedacht und **muss am Live-System deaktiviert werden**.
+Wenn du Create React App nicht verwendest, kannst du [folgende Erweiterung](https://www.npmjs.com/package/@babel/plugin-transform-react-jsx-source) manuell zu deiner Babel-Konfiguration hinzufügen. Bedenke, dass dies nur für den Einsatz während des Entwicklungsprozesses und **im Live-System deaktiviert werden muss**.
 
 > Hinweis
 >

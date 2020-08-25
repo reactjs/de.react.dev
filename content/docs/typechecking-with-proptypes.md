@@ -2,6 +2,8 @@
 id: typechecking-with-proptypes
 title: Typisierung mit PropTypes
 permalink: docs/typechecking-with-proptypes.html
+prev: jsx-in-depth.html
+next: static-type-checking.html
 redirect_from:
   - "docs/react-api.html#typechecking-with-proptypes"
 ---
@@ -30,7 +32,9 @@ Greeting.propTypes = {
 };
 ```
 
-`PropTypes` exportiert eine Reihe von Prüfern, die verwendet werden können, um sicherzustellen, dass die Daten, die du erhältst, gültig sind. In diesem Beispiel verwenden wir `PropTypes.string`. Wenn ein ungültiger Wert für einen Prop angegeben wird, wird eine Warnung in der JavaScript-Konsole angezeigt. Aus Performance-Gründen wird `propTypes` nur im Entwicklungsmodus geprüft.
+In diesem Beispiel verwenden wir eine Klassenkomponente, aber die gleiche Funktionalität könnte auch auf Funktionskomponenten angewendet werden, oder auf Komponenten, die durch [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo) oder [`React.forwardRef`](https://reactjs.org/docs/react-api.html#reactforwardref) erstellt wurden.
+
+`PropTypes` exportiert eine Reihe von Prüfern, die verwendet werden können, um sicherzustellen, dass die Daten die du erhältst gültig sind. In diesem Beispiel verwenden wir `PropTypes.string`. Wenn ein ungültiger Wert für ein Prop angegeben wird, wird eine Warnung in der JavaScript-Konsole angezeigt. Aus Performance-Gründen wird `propTypes` nur im Entwicklungsmodus geprüft.
 
 ### PropTypes {#proptypes}
 

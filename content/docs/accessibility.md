@@ -2,6 +2,8 @@
 id: accessibility
 title: Barrierefreiheit
 permalink: docs/accessibility.html
+prev: integrating-with-other-libraries.html
+next: code-splitting.html
 ---
 
 ## Warum Barrierefreiheit? {#why-accessibility}

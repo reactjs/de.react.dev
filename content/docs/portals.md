@@ -2,6 +2,8 @@
 id: portals
 title: Portale
 permalink: docs/portals.html
+prev: fragments.html
+next: error-boundaries.html
 ---
 
 Portale bieten eine erstklassige Möglichkeit, Kinder in einen DOM-Knoten zu rendern, der außerhalb der DOM-Hierarchie der Eltern-Komponente existiert.
