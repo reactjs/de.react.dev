@@ -56,12 +56,7 @@ Das `onChange` Event verhält sich, wie es zu erwarten ist: wann immer sich das 
 
 ### selected {#selected}
 
-<<<<<<< HEAD
-Das Attribut `selected` wird von `<option>` Komponenten unterstützt. Du kannst es benutzen, um festzulegen, ob eine Komponente ausgewählt ist oder nicht. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. 
-=======
-If you want to mark an `<option>` as selected, reference the value of that option in the `value` of its `<select>` instead.
-Check out ["The select Tag"](/docs/forms.html#the-select-tag) for detailed instructions.
->>>>>>> d16f1ee7958b5f80ef790265ba1b8711d4f228d6
+Setze den Wert des `value`-Attributs deines `<select>`-Elements, wenn du eine `<option>` als ausgewählt markieren willst. Eine ausführliche Bschreibung findest du unter ["Das Select-Tag"](/docs/forms.html#the-select-tag).
 
 ### style {#style}
 
