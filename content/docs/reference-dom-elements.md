@@ -125,11 +125,7 @@ Wenn du `suppressHydrationWarning` auf `true` setzt, wird React dich nicht mehr 
 
 ### value {#value}
 
-<<<<<<< HEAD
-Das `value` Attribut wird  von `<input>` und `<textarea>` Komponenten unterstützt. Du kannst es benutzen, um den Wert einer Komponente zu setzen. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultValue` ist das unkontrollierte Äquivalent, welches den Wert der Komponente setzt, wenn sie erstmals gemounted wird.
-=======
-The `value` attribute is supported by `<input>`, `<select>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building controlled components. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
->>>>>>> d16f1ee7958b5f80ef790265ba1b8711d4f228d6
+Das `value` Attribut wird  von `<input>` und `<textarea>` Komponenten unterstützt. Du kannst es benutzen, um den Wert einer Komponente zu setzen. Dies ist nützlich, um kontrollierte Komponenten zu erstellen. `defaultValue` ist das unkontrollierte Äquivalent, welches den Wert der Komponente setzt, wenn sie erstmals gemountet wird.
 
 ## Alle unterstützen HTML Attribute {#all-supported-html-attributes}
 
