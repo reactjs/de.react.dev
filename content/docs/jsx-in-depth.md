@@ -273,7 +273,7 @@ Spread-Attribute können sehr nützlich sein, sie machen es aber auch sehr einfa
 
 ## Kindelemente in JSX {#children-in-jsx}
 
-In JSX-Ausdrücken, die sowohl einen öffnenden als auch einen schließenden Tag beinhalten, wird der Inhalt zwischen diesen Tags als eine spiezielle Prop weitergegeben: `props.children`. Es gibt verschiedene Wege um Kindelemente weiterzugeben:
+In JSX-Ausdrücken, die sowohl einen öffnenden als auch einen schließenden Tag beinhalten, wird der Inhalt zwischen diesen Tags als eine spezielle Prop weitergegeben: `props.children`. Es gibt verschiedene Wege um Kindelemente weiterzugeben:
 
 ### String-Literals {#string-literals-1}
 
