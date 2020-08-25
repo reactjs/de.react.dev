@@ -10,15 +10,9 @@ Dieser Referenzleitfaden dokumentiert den `SyntheticEvent` Wrapper, welcher eine
 
 ## Übersicht {#overview}
 
-<<<<<<< HEAD
-Die Eventhandler stellen eine Instanz von `SyntheticEvent` dar, ein browserübergreifender Wrapper für das native Eventobjekt des Browsers. Das Interface ist identisch zu dem nativen Event des Browsers, inklusive `stopPropagation()` und `preventDefault()`. Eine Besonderheit von `SyntheticEvent` ist jedoch die identische Funktionsweise in allen Browsern.
+Deine Event-Handler werden Instanzen von `SyntheticEvent`,  einem browserübergreifender Wrapper für das native Event-Objekt des Browsers. Das Interface ist zu dem des Browsers nativen Event identisch, inklusive `stopPropagation()` und `preventDefault()`. Eine Besonderheit von `SyntheticEvent` ist jedoch die identische Funktionsweise in allen Browsern.
 
-Falls aus irgendeinem Grund der Zugriff auf das native Browser-Event notwendig ist, kann dieses mittels dem `nativeEvent`-Attribut abgerufen werden. Jedes `SyntheticEvent` Objekt hat folgende Attribute:
-=======
-Your event handlers will be passed instances of `SyntheticEvent`, a cross-browser wrapper around the browser's native event. It has the same interface as the browser's native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers. 
-
-If you find that you need the underlying browser event for some reason, simply use the `nativeEvent` attribute to get it. The synthetic events are different from, and do not map directly to, the browser's native events. For example in `onMouseLeave` `event.nativeEvent` will point to a `mouseout` event. The specific mapping is not part of the public API and may change at any time. Every `SyntheticEvent` object has the following attributes:
->>>>>>> d16f1ee7958b5f80ef790265ba1b8711d4f228d6
+Falls aus irgendeinem Grund der Zugriff auf das native Browser-Event notwendig ist, kann dieses mittels dem `nativeEvent`-Attribut abgerufen werden. Die Synthetic-Events unterscheiden sich von den nativen Events des Browsers und bilden diese nicht direkt ab. Zum Beispiel wird in `onMouseLeave` `event.nativeEvent` auf ein `mouseout`-Ereignis verweisen. Die spezifische Zuordnung ist nicht Teil der öffentlichen API und kann sich jederzeit ändern. Jedes `SyntheticEvent`-Objekt hat folgende Attribute:
 
 ```javascript
 boolean bubbles
@@ -155,7 +149,7 @@ boolean shiftKey
 number which
 ```
 
-The `key` property can take any of the values documented in the [DOM Level 3 Events spec](https://www.w3.org/TR/uievents-key/#named-key-attribute-values).
+Die Eigenschaft `key` kann jeden der in der [DOM Level 3 Events spec] (https://www.w3.org/TR/uievents-key/#named-key-attribute-values) dokumentierten Werte annehmen.
 
 * * *
 
