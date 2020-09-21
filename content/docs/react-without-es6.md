@@ -2,8 +2,6 @@
 id: react-without-es6
 title: React ohne ES6
 permalink: docs/react-without-es6.html
-prev: optimizing-performance.html
-next: react-without-jsx.html
 ---
 
 Normalerweise definiert man eine React-Komponente als eine einfache JavaScript-Klasse:
