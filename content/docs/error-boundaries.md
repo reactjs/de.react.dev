@@ -2,8 +2,6 @@
 id: error-boundaries
 title: Fehlergrenzen
 permalink: docs/error-boundaries.html
-prev: portals.html
-next: web-components.html
 ---
 
 In der Vergangenheit, führten JavaScript-Fehler in Komponenten zu einem fehlerhaften Zustand innerhalb von React, welcher ein [Auftreten](https://github.com/facebook/react/issues/4026) [kryptischer](https://github.com/facebook/react/issues/6895) [Fehlermeldungen](https://github.com/facebook/react/issues/8579) in den folgenden Render-Vorgängen verursachte. Diese Fehler wurden immer von einem zuvor aufgetretenen Fehler in der Anwendung verursacht, jedoch war seitens React keine Möglichkeit bereitgestellt, um mit Fehlern in Komponenten elegant umzugehen.

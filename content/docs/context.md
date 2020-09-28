@@ -2,8 +2,6 @@
 id: context
 title: Context
 permalink: docs/context.html
-prev: reconciliation.html
-next: fragments.html
 ---
 
 Context ermöglicht es, Daten durch den Komponentenbaum zu leiten, ohne die Props in jeder Schicht manuell zu übergeben.

@@ -2,8 +2,6 @@
 id: reconciliation
 title: Abgleich
 permalink: docs/reconciliation.html
-prev: react-without-jsx.html
-next: context.html
 ---
 
 React bietet eine deklarative API, sodass du dich nicht bei jeder Aktualisierung um die genauen Änderungen kümmern musst. Dies erleichtert das Erstellen von Anwendungen erheblich. Es ist jedoch möglicherweise nicht offensichtlich, wie dies in React implementiert ist. Dieser Artikel erklärt welche Entscheidungen wir in Reacts Vergleichsalgorithmus getroffen haben, damit Komponentenaktualisierungen vorhersehbar und gleichzeitig schnell genug für leistungsstarke Apps sind.
