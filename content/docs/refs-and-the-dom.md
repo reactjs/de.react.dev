@@ -1,13 +1,9 @@
 ---
 id: refs-and-the-dom
-<<<<<<< HEAD
 title: Refs und das DOM
+permalink: docs/refs-and-the-dom.html
 prev: static-type-checking.html
 next: uncontrolled-components.html
-=======
-title: Refs and the DOM
-permalink: docs/refs-and-the-dom.html
->>>>>>> 32e3c7a6f92cb6580eb38c047960805d5998c2ec
 redirect_from:
   - "docs/working-with-the-browser.html"
   - "docs/more-about-refs.html"
