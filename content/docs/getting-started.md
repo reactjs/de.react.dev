@@ -32,7 +32,7 @@ Diese Seite bietet dir einen Gesamtüberblick über die React Dokumentation und 
 
 ## Probiere React aus {#try-react}
 
-React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du kannst selbst entscheiden wie viel oder wie wenig du von React benutzen möchtest.** Die Links in diesem Abschnitt helfen dir beim Einstieg, dabei ist es ist egal ob du nur ein wenig Interaktivtät zu einer kleinen HTML-Seite hinzufügen, bestehende Anwendungen erweitern oder eine komplexere Anwendung bauen möchtest.
+React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du kannst selbst entscheiden, wie viel oder wie wenig du von React benutzen möchtest.** Die Links in diesem Abschnitt helfen dir beim Einstieg, dabei ist es ist egal ob du nur ein wenig Interaktivität zu einer kleinen HTML-Seite hinzufügen, bestehende Anwendungen erweitern oder eine komplexere Anwendung bauen möchtest.
 
 ### Online Spielwiesen {#online-playgrounds}
 
