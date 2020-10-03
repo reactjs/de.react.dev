@@ -34,16 +34,16 @@ Diese Seite bietet dir einen Gesamtüberblick über die React Dokumentation und 
 
 React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du kannst selbst entscheiden, wie viel oder wie wenig du von React benutzen möchtest.** Die Links in diesem Abschnitt helfen dir beim Einstieg, dabei ist es ist egal ob du nur ein wenig Interaktivität zu einer kleinen HTML-Seite hinzufügen, bestehende Anwendungen erweitern oder eine komplexere Anwendung bauen möchtest.
 
-### Online Spielwiesen {#online-playgrounds}
+### Online-Spielwiesen {#online-playgrounds}
 
-Wenn du ein bisschen mit React herum spielen möchtest, dann kannst du dafür online Code-Editoren benutzen.
+Wenn du ein bisschen mit React herumspielen möchtest, dann kannst du dafür online Code-Editoren benutzen.
 Probiere "Hallo Welt" auf [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) oder [Stackblitz](https://stackblitz.com/fork/react) aus.
 
-Wenn du lieber deinen eigenen Editor verwenden möchtest, kannst du [diese HTML](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) Datei herunterladen, bearbeiten und mit deinem Browser anschauen. In dieser Datei wird eine langsame Codeumwandlung zur Laufzeit angewandt, daher empfehlen wir diese Datei nur für kleinere Demonstrationen und Verprobungen zu verwenden.
+Wenn du lieber deinen eigenen Texteditor verwenden möchtest, kannst du [diese HTML-Datei](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) herunterladen, lokal bearbeiten und in deinem Browser anschauen. Die Datei führt eine langsame Codeumwandlung in der Laufzeit aus, daher würde wir sie nur für einfachere Demonstrationszwecke empfehlen.
 
 ### React zu einer Webseite hinzufügen {#add-react-to-a-website}
 
-Du kannst React innerhalb einer Minute zu einer HTML-Seite hinzufügen. Danach kannst du entweder die Präsenz von React immer mehr erweitern oder es nur für ein paar Bestandteile wie Formulare o. ä. benutzen.
+Du kannst [React in einer Minute zu einer beliebigen HTML-Seite hinzufügen](/docs/add-react-to-a-website.html). Danach kannst du entweder die React-Anteile deiner Applikation stetig erweitern, oder es nur für gewisse in sich geschlossene, dynamische Bestandteile benutzen (zum Beispiel für Formulare).
 
 ### Erstelle eine neue React App {#create-a-new-react-app}
 
