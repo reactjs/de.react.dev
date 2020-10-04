@@ -179,11 +179,11 @@ Vermeide Nebeneffekten (engl. side-effects) oder Subscriptions im Konstruktor. V
 >}
 >```
 >
->The problem is that it's both unnecessary (you can use `this.props.color` directly instead), and creates bugs (updates to the `color` prop won't be reflected in the state).
+>Das Problem ist, dass es sowohl unnötig ist (du kannst stattdessen `this.props.color` direkt verwenden), als auch Fehler erzeugt (Aktualisierungen des `color`-Prop werden nicht im State widergespiegelt).
 >
->**Only use this pattern if you intentionally want to ignore prop updates.** In that case, it makes sense to rename the prop to be called `initialColor` or `defaultColor`. You can then force a component to "reset" its internal state by [changing its `key`](/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key) when necessary.
+>**Verwende dieses Pattern nur, wenn du absichtlich Prop-Aktualisierungen ignorieren willst.** In diesem Fall ist es sinnvoll, das Prop in `initialColor` oder `defaultColor` umzubenennen. Du kannst dann eine Komponente zwingen, ihren internen State "zurückzusetzen", indem du [ihren `key`](/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key) wenn nötig änderst.
 >
->Read our [blog post on avoiding derived state](/blog/2018/06/07/you-probably-dont-need-derived-state.html) to learn about what to do if you think you need some state to depend on the props.
+>Lese unseren [Blog-Beitrag zur Vermeidung eines abgeleiteten State](/blog/2018/06/07/you-probably-dont-need-derived-state.html) um zu erfahren, was zu tun ist, wenn du glaubst, dass du einen State brauchst, der auf die Props angewiesen ist.
 
 
 * * *
