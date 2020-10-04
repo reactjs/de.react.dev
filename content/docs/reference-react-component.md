@@ -142,39 +142,39 @@ Wenn du mit dem Browser interagieren musst, tue dies innerhalb von `componentDid
 ```javascript
 constructor(props)
 ```
+**Wenn du den State nicht initialisierst und keine Methoden bindest, musst du keinen Konstruktor in deiner React-Komponente implementieren**
 
-**If you don't initialize state and you don't bind methods, you don't need to implement a constructor for your React component.**
+The Konstruktor wird vor dem mounten der React-Komponente aufgerufen. Wenn du den Konstruktor für eine `React.Component` Sub-Klasse implementierst, solltest du `super(props)` vor jeder anderen Anweisung im Konstruktor aufrufen.
+The constructor for a React component is called before it is mounted. When implementing the constructor for a `React.Component` subclass, you should call `super(props)` before any other statement. Andernfalls wird `this.props` im Konstruktor nicht definiert sein, was zu Fehlern führen kann.
 
-The constructor for a React component is called before it is mounted. When implementing the constructor for a `React.Component` subclass, you should call `super(props)` before any other statement. Otherwise, `this.props` will be undefined in the constructor, which can lead to bugs.
+Üblicherweise werden in React, Konstruktoren nur für zwei Sachen verwendet:
 
-Typically, in React constructors are only used for two purposes:
+* Initialisieren des [lokalen State](/docs/state-and-lifecycle.html), in dem `this.state` ein Objekt zugewiesen wird.
+* Um [Event-Handler](/docs/handling-events.html)-Methoden an eine Instanz zu binden.
 
-* Initializing [local state](/docs/state-and-lifecycle.html) by assigning an object to `this.state`.
-* Binding [event handler](/docs/handling-events.html) methods to an instance.
-
-You **should not call `setState()`** in the `constructor()`. Instead, if your component needs to use local state, **assign the initial state to `this.state`** directly in the constructor:
+Du solltest **`setState()` nicht im `constructor()` aurufen**. Stattdessen **weise `this.state` direkt im Konstruktor einen initialen State zu**, wenn deine Komponente einen lokalen State benötigt:
 
 ```js
 constructor(props) {
   super(props);
-  // Don't call this.setState() here!
+  // Rufe hier nicht this.setState() auf!
   this.state = { counter: 0 };
   this.handleClick = this.handleClick.bind(this);
 }
 ```
 
-Constructor is the only place where you should assign `this.state` directly. In all other methods, you need to use `this.setState()` instead.
+Der Konstruktur ist die einzige Stelle, an dem du `this.state` direkt einen Wert zuweisen solltest. In allen anderen Methoden solltest du stattdessen `this.setState()` aufrufen.
 
-Avoid introducing any side-effects or subscriptions in the constructor. For those use cases, use `componentDidMount()` instead.
+Vermeide Nebeneffekten (engl. side-effects) oder Subscriptions im Konstruktor. Verwende diese Anwendungsfälle stattdessen `componentDidMount()`.
 
->Note
+>Hinweis
 >
->**Avoid copying props into state! This is a common mistake:**
+>**Vermeide das Kopieren von Props in den State! Dies ist ein häufiger Fehler:**
 >
 >```js
 >constructor(props) {
 >  super(props);
->  // Don't do this!
+>  // Tue das nicht!
 >  this.state = { color: props.color };
 >}
 >```
