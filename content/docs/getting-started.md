@@ -36,20 +36,20 @@ React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du
 
 ### Online-Sandkasten {#online-playgrounds}
 
-Wenn du aus Interesse ein wenig mit React herumspielen möchtest, kannst du dafür online Code-Sandkasten benutzen.
+Wenn du aus Interesse ein wenig mit React herumspielen möchtest, kannst du dafür online Code-Sandkästen benutzen.
 Probiere dazu "Hallo Welt" auf [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) oder [Stackblitz](https://stackblitz.com/fork/react) aus.
 
 Wenn du lieber deinen eigenen Texteditor verwenden möchtest, kannst du [diese HTML-Datei](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) herunterladen, lokal bearbeiten und in deinem Browser aufrufen. Die Datei führt eine langsame Codeumwandlung in der Laufzeit aus, daher würden wir sie nur für einfachere Demonstrationszwecke empfehlen.
 
 ### Füge React zu einer Webseite hinzu {#add-react-to-a-website}
 
-Du kannst [React in einer Minute zu einer beliebigen HTML-Seite hinzufügen](/docs/add-react-to-a-website.html). Danach kannst du entweder die React-Anteile deiner Applikation stetig erweitern, oder es nur für gewisse in sich geschlossene, dynamische Bestandteile benutzen (zum Beispiel für Formulare).
+Du kannst [React in einer Minute zu einer beliebigen HTML-Seite hinzufügen](/docs/add-react-to-a-website.html). Danach kannst du entweder die React-Anteile deiner Anwendung stetig erweitern, oder es nur für gewisse in sich geschlossene, dynamische Bestandteile benutzen (zum Beispiel für Formulare).
 
 ### Erstelle eine neue React-App {#create-a-new-react-app}
 
 Am Besten fängst du ein neues React-Projekt mit [einer einfachen HTML Seite und ein paar Script-Tags an](/docs/add-react-to-a-website.html). Innerhalb einer Minute hast du alles fertig aufgesetzt!
 
-Wenn deine Anwendung wächst, wirst du womöglich ein stärker integriertes Setup in Betracht ziehen. Es gibt mehrere JavaScript-Werkzeugsammlungen, die wir für größere Anwendungen empfehlen können. Jede dieser Sammlungen kommt mit minimaler bis gar keiner Vorkonfiguration aus. Trotzdem wird sie dir den vollen Funktionsumfang des React-Ökosystems bieten. [Erfahre mehr darüber.](/docs/create-a-new-react-app.html) 
+Wenn deine Anwendung wächst, wirst du womöglich ein stärker integriertes Setup in Betracht ziehen. Es gibt mehrere JavaScript-Werkzeugsammlungen, die wir für größere Anwendungen empfehlen können. Jede dieser Sammlungen kommt mit minimaler bis gar keiner Vorkonfiguration aus. Trotzdem werden sie dir den vollen Funktionsumfang des React-Ökosystems bieten. [Erfahre mehr darüber.](/docs/create-a-new-react-app.html) 
 
 ## Lerne React {#learn-react}
 
