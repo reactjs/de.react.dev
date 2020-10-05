@@ -152,7 +152,24 @@ Das funktioniert, weil `true && ausdruck` in JavaScript immer zu `ausdruck` eval
 
 Wenn die Bedingung also `true` ergibt, wird das Element rechts neben dem `&&` angezeigt. Wenn sie hingegen `false` ergibt wird sie von React ignoriert und übersprungen.
 
+<<<<<<< HEAD
 ### In JSX eingebettetes If-Else mit dem bedingten Operator {#inline-if-else-with-conditional-operator}
+=======
+Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      { count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+
+### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+>>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 Eine andere Methode wie man Elemente bedingt in JSX eingebettet darstellen kann, ist die Nutzung des bedingten Operators [`bedingung ? true : false`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) aus JavaScript.
 
