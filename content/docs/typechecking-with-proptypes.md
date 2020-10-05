@@ -30,7 +30,7 @@ Greeting.propTypes = {
 };
 ```
 
-In diesem Beispiel verwenden wir eine Klassenkomponente, aber die gleiche Funktionalität könnte auch auf Funktionskomponenten angewendet werden, oder auf Komponenten, die durch [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo) oder [`React.forwardRef`](https://reactjs.org/docs/react-api.html#reactforwardref) erstellt wurden.
+In diesem Beispiel verwenden wir eine Klassenkomponente, aber die gleiche Funktionalität könnte auch auf Funktionskomponenten angewendet werden, oder auf Komponenten, die durch [`React.memo`](/docs/react-api.html#reactmemo) oder [`React.forwardRef`](/docs/react-api.html#reactforwardref) erstellt wurden.
 
 `PropTypes` exportiert eine Reihe von Prüfern, die verwendet werden können, um sicherzustellen, dass die Daten die du erhältst gültig sind. In diesem Beispiel verwenden wir `PropTypes.string`. Wenn ein ungültiger Wert für ein Prop angegeben wird, wird eine Warnung in der JavaScript-Konsole angezeigt. Aus Performance-Gründen wird `propTypes` nur im Entwicklungsmodus geprüft.
 
