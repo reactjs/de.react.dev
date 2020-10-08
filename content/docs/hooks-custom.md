@@ -1,16 +1,16 @@
 ---
 id: hooks-custom
-title: Building Your Own Hooks
+title: Erstelle deine eigenen Hooks
 permalink: docs/hooks-custom.html
 next: hooks-reference.html
 prev: hooks-rules.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*Hooks* sind ein neues Feature in React 16.8. Damit lassen sich State und andere React-Features verwenden, ohne dass eine Klasse benutzt werden muss.
 
-Building your own Hooks lets you extract component logic into reusable functions.
+Mithilfe eigener Hooks kann man Komponenten-Logik in wiederverwendbare Funktionen auslagern.
 
-When we were learning about [using the Effect Hook](/docs/hooks-effect.html#example-using-hooks-1), we saw this component from a chat application that displays a message indicating whether a friend is online or offline:
+Im Beispiel über das [Benutzen des Effect-Hooks](/docs/hooks-effect.html#example-using-hooks-1) haben wir die folgende Komponente aus einer Chat-Anwendung kennengelernt. Diese Komponente stellt mithilfe einer Nachricht den Online-Status eines Freundes dar:
 
 ```js{4-15}
 import React, { useState, useEffect } from 'react';
