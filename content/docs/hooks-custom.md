@@ -8,7 +8,7 @@ prev: hooks-rules.html
 
 *Hooks* sind ein neues Feature in React 16.8. Damit lassen sich State und andere React-Features verwenden, ohne dass eine Klasse benutzt werden muss.
 
-Mithilfe eigener Hooks kann man Komponenten-Logik in wiederverwendbare Funktionen auslagern.
+Mithilfe eigener Hooks kannst du Komponenten-Logik in wiederverwendbare Funktionen auslagern.
 
 Im Beispiel über das [Benutzen des Effect-Hooks](/docs/hooks-effect.html#example-using-hooks-1) haben wir die folgende Komponente aus einer Chat-Anwendung kennengelernt. Diese Komponente stellt mithilfe einer Nachricht den Online-Status eines Freundes dar:
 
@@ -36,7 +36,7 @@ function FriendStatus(props) {
 }
 ```
 
-Now let's say that our chat application also has a contact list, and we want to render names of online users with a green color. We could copy and paste similar logic above into our `FriendListItem` component but it wouldn't be ideal:
+Nehmen wir an, dass unsere Chat-Anwendung auch eine Kontaktliste hat und wir die Namen der User die online sind in grün rendern wollen. Wir könnten die Logik des Beispiels oben einfach in unsere `FriendListItem`-Komponente kopieren, aber das wäre nicht ideal:
 
 ```js{4-15}
 import React, { useState, useEffect } from 'react';
@@ -63,9 +63,9 @@ function FriendListItem(props) {
 }
 ```
 
-Instead, we'd like to share this logic between `FriendStatus` and `FriendListItem`.
+Stattdessen könnten wir diese Logik zwischen `FriendStatus` und `FriendListItem` teilen.
 
-Traditionally in React, we've had two popular ways to share stateful logic between components: [render props](/docs/render-props.html) and [higher-order components](/docs/higher-order-components.html). We will now look at how Hooks solve many of the same problems without forcing you to add more components to the tree.
+Bisher hatten wir bei React zwei Wege, um zustandsbezogene Logik zwischen zwei Komponenten zu teilen: [Render-Props](/docs/render-props.html) und [Higher-Order-Components](/docs/higher-order-components.html). Wir werden uns nun ansehen, wie Hooks viele der gleichen Probleme lösen und das, ohne neue Komponenten zum Komponenten-Baum hinzuzufügen.
 
 ## Extracting a Custom Hook {#extracting-a-custom-hook}
 
