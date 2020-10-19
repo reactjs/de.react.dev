@@ -181,4 +181,4 @@ Im [nächsten Abschnitt](/docs/rendering-elements.html) gehen wir auf das Render
 
 >**Tipp:**
 >
->Wir empfehlen das Verwenden der ["Babel" Sprachdefinition](https://babeljs.io/docs/editors) für den Editor deiner Wahl, sodass sowohl ES6 als auch JSX-Code vernünftig dargestellt werden kann.
+>Wir empfehlen das Verwenden der ["Babel" Sprachdefinition](https://babeljs.io/docs/en/next/editors) für den Editor deiner Wahl, sodass sowohl ES6 als auch JSX-Code vernünftig dargestellt werden kann.

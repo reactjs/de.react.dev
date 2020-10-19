@@ -6,8 +6,7 @@ permalink: docs/code-splitting.html
 
 ## Bundling {#bundling}
 
-Die meisten React Anwendungen werden ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammengeführt haben.
-Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bundle kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.
+Die meisten React Anwendungen werden ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammengeführt haben. Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bundle kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.
 
 #### Beispiel {#example}
 
@@ -44,34 +43,20 @@ console.log(add(16, 26)); // 42
 Wenn du [Create React App](https://create-react-app.dev/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.org/), oder ein ähnliches Tool benutzt, wirst du ein Webpack-Setup haben welches sofort einsatzbereit ist um deine Anwendung zu
 bundlen.
 
-Wenn nicht, musst du das Bundling selbst einrichten. Siehe z. B. die Abschnitte
-[Installation](https://webpack.js.org/guides/installation/) und
-[Erste Schritte](https://webpack.js.org/guides/getting-started/) in der
-Webpack-Dokumentation.
+Wenn nicht, musst du das Bundling selbst einrichten. Siehe z. B. die Abschnitte [Installation](https://webpack.js.org/guides/installation/) und [Erste Schritte](https://webpack.js.org/guides/getting-started/) in der Webpack-Dokumentation.
 
 ## Code-Splitting {#code-splitting}
 
-Bundling ist großartig, aber sobald deine Anwendung wächst, wird dein Bundle es auch.
-Insbesondere wenn du größere Bibliotheken von Drittanbietern einbeziehst. Du musst
-ein Auge auf den Code haben, den du im Bundle hast, damit du ihn nicht versehentlich
-so groß machst und deine Anwendung zu lange zum Laden benötigt.
+Bundling ist großartig, aber sobald deine Anwendung wächst, wird dein Bundle es auch. Insbesondere wenn du größere Bibliotheken von Drittanbietern einbeziehst. Du musst ein Auge auf den Code haben, den du im Bundle hast, damit du ihn nicht versehentlich so groß machst und deine Anwendung zu lange zum Laden benötigt.
 
-Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem
-voraus zu sein und mit dem "Splitten" (dt. aufteilen) deines Bundles zu beginnen.
-Code-Splitting ist eine Funktion, die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
-[factor-bundle](https://github.com/browserify/factor-bundle)). Durch sie werden mehrere Bundles erzeugt,
-die zur Laufzeit dynamisch geladen werden können.
+Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem voraus zu sein und mit dem "Splitten" (dt. aufteilen) deines Bundles zu beginnen. Code-Splitting ist eine Funktion, die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via [factor-bundle](https://github.com/browserify/factor-bundle)). Durch sie werden mehrere Bundles erzeugt, die zur Laufzeit dynamisch geladen werden können.
 
-Code-Splitting deiner Anwendung kann dir helfen genau die Dinge "lazy zu laden",
-die der Benutzer gerade benötigt, was die Performance deiner Anwendung drastisch
-verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, aber du hast
-das Laden von Code vermieden, den der Benutzer möglicherweise nie brauchen wird. Zusätzlich
-reduzierst du die Menge an Code beim initialen Laden.
+Code-Splitting deiner Anwendung kann dir helfen genau die Dinge "lazy zu laden", die der Benutzer gerade benötigt, was die Performance deiner Anwendung drastisch
+verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, aber du hast das Laden von Code vermieden, den der Benutzer möglicherweise nie brauchen wird. Zusätzlich reduzierst du die Menge an Code beim initialen Laden.
 
 ## `import()` {#import}
 
-Der beste Weg Code-Splitting in deiner Anwendung einzuführen, ist durch die dynamische
-`import()`-Syntax.
+Der beste Weg Code-Splitting in deiner Anwendung einzuführen, ist durch die dynamische `import()`-Syntax.
 
 **Vorher:**
 
@@ -91,14 +76,12 @@ import("./math").then(math => {
 
 Wenn Webpack auf diese Syntax stößt, fängt es automatisch mit dem Code-Splitting
 deiner Anwendung an. Wenn du Create-React-App verwendest, ist dies alles vorkonfiguriert
-und du kannst [direkt loslegen](https://create-react-app.dev/docs/code-splitting/).
+und du kannst [direkt loslegen]((https://create-react-app.dev/docs/code-splitting/).
 [Next.js](https://nextjs.org/docs/advanced-features/dynamic-import) unterstützt dies auch direkt out of the box.
 
-Wenn du Webpack selbst einrichtest, wirst du wahrschenlich Webpack's
-[Code-Splitting Leitfaden](https://webpack.js.org/guides/code-splitting/) lesen wollen. Deine Webpack-Konfiguration sollte in etwa [so aussehen](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
+Wenn du Webpack selbst einrichtest, wirst du wahrschenlich Webpack's [Code-Splitting Leitfaden](https://webpack.js.org/guides/code-splitting/) lesen wollen. Deine Webpack-Konfiguration sollte in etwa [so aussehen](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
 
-Wenn du [Babel](https://babeljs.io/) verwendest, müsstest du sicherstellen, dass Babel
-die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all das benötigst du [@babel/plugin-syntax-dynamic-import](https://classic.yarnpkg.com/en/package/@babel/plugin-syntax-dynamic-import).
+Wenn du [Babel](https://babeljs.io/) verwendest, müsstest du sicherstellen, dass Babel die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all das benötigst du [@babel/plugin-syntax-dynamic-import](https://classic.yarnpkg.com/en/package/@babel/plugin-syntax-dynamic-import).
 
 ## `React.lazy` {#reactlazy}
 
@@ -191,17 +174,11 @@ const MyComponent = () => (
 
 ## Routen basiertes Code-Splitting {#route-based-code-splitting}
 
-Die Entscheidung wo in deiner Anwendung Code-Splitting einzuführen ist, kann etwas schwierig sein.
-Du solltest sicherstellen, dass du Orte wählst, die die Bundles gleichmäßig splitten, aber nicht
-die Benutzererfahrung beeinträchtigen.
+Die Entscheidung wo in deiner Anwendung Code-Splitting einzuführen ist, kann etwas schwierig sein. Du solltest sicherstellen, dass du Orte wählst, die die Bundles gleichmäßig splitten, aber nicht die Benutzererfahrung beeinträchtigen.
 
-Ein guter Ausgangspunkt sind Routen. Die meisten Leute im Web sind es
-gewohnt Page-Transitions zu erstellen, die einige Zeit zum Laden benötigen.
-Sie neigen auch dazu, die gesamte Seite auf einmal neu zu rendern, so dass die Benutzer
-wahrscheinlich nicht gleichzeitig mit anderen Elementen auf der Seite interagieren.
+Ein guter Ausgangspunkt sind Routen. Die meisten Leute im Web sind es gewohnt Page-Transitions zu erstellen, die einige Zeit zum Laden benötigen. Sie neigen auch dazu, die gesamte Seite auf einmal neu zu rendern, so dass die Benutzer wahrscheinlich nicht gleichzeitig mit anderen Elementen auf der Seite interagieren.
 
-Hier ist ein Beispiel wie du ein routenbasiertes Code-Splitting in deiner Anwendung
-mit Hilfe von Bibliotheken, wie [React Router](https://reacttraining.com/react-router/) mit `React.lazy` einrichtest.
+Hier ist ein Beispiel wie du ein routenbasiertes Code-Splitting in deiner Anwendung mit Hilfe von Bibliotheken, wie [React Router](https://reacttraining.com/react-router/) mit `React.lazy` einrichtest.
 
 ```js
 import React, { Suspense, lazy } from 'react';
