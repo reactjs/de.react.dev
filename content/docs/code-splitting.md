@@ -40,56 +40,23 @@ console.log(add(16, 26)); // 42
 >
 > Deine Bundles werden am Ende ganz anders aussehen als das hier.
 
-<<<<<<< HEAD
 Wenn du [Create React App](https://create-react-app.dev/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.org/), oder ein ähnliches Tool benutzt, wirst du ein Webpack-Setup haben welches sofort einsatzbereit ist um deine Anwendung zu
 bundlen.
 
-Wenn nicht, musst du das Bundling selbst einrichten. Siehe z. B. die Abschnitte
-[Installation](https://webpack.js.org/guides/installation/) und
-[Erste Schritte](https://webpack.js.org/guides/getting-started/) in der
-Webpack-Dokumentation.
-=======
-If you're using [Create React App](https://create-react-app.dev/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.org/), or a similar tool, you will have a Webpack setup out of the box to bundle your app.
-
-If you aren't, you'll need to setup bundling yourself. For example, see the [Installation](https://webpack.js.org/guides/installation/) and [Getting Started](https://webpack.js.org/guides/getting-started/) guides on the Webpack docs.
->>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
+Wenn nicht, musst du das Bundling selbst einrichten. Siehe z. B. die Abschnitte [Installation](https://webpack.js.org/guides/installation/) und [Erste Schritte](https://webpack.js.org/guides/getting-started/) in der Webpack-Dokumentation.
 
 ## Code-Splitting {#code-splitting}
 
-<<<<<<< HEAD
-Bundling ist großartig, aber sobald deine Anwendung wächst, wird dein Bundle es auch.
-Insbesondere wenn du größere Bibliotheken von Drittanbietern einbeziehst. Du musst
-ein Auge auf den Code haben, den du im Bundle hast, damit du ihn nicht versehentlich
-so groß machst und deine Anwendung zu lange zum Laden benötigt.
+Bundling ist großartig, aber sobald deine Anwendung wächst, wird dein Bundle es auch. Insbesondere wenn du größere Bibliotheken von Drittanbietern einbeziehst. Du musst ein Auge auf den Code haben, den du im Bundle hast, damit du ihn nicht versehentlich so groß machst und deine Anwendung zu lange zum Laden benötigt.
 
-Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem
-voraus zu sein und mit dem "Splitten" (dt. aufteilen) deines Bundles zu beginnen.
-Code-Splitting ist eine Funktion, die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via
-[factor-bundle](https://github.com/browserify/factor-bundle)). Durch sie werden mehrere Bundles erzeugt,
-die zur Laufzeit dynamisch geladen werden können.
+Um zu vermeiden, dass du mit einem großen Bundle endest, ist es gut, dem Problem voraus zu sein und mit dem "Splitten" (dt. aufteilen) deines Bundles zu beginnen. Code-Splitting ist eine Funktion, die von Bundlern wie [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) und Browserify unterstützt wird (via [factor-bundle](https://github.com/browserify/factor-bundle)). Durch sie werden mehrere Bundles erzeugt, die zur Laufzeit dynamisch geladen werden können.
 
-Code-Splitting deiner Anwendung kann dir helfen genau die Dinge "lazy zu laden",
-die der Benutzer gerade benötigt, was die Performance deiner Anwendung drastisch
-verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, aber du hast
-das Laden von Code vermieden, den der Benutzer möglicherweise nie brauchen wird. Zusätzlich
-reduzierst du die Menge an Code beim initialen Laden.
+Code-Splitting deiner Anwendung kann dir helfen genau die Dinge "lazy zu laden", die der Benutzer gerade benötigt, was die Performance deiner Anwendung drastisch
+verbessern kann. Du hast zwar die Gesamtmenge an Code nicht verringert, aber du hast das Laden von Code vermieden, den der Benutzer möglicherweise nie brauchen wird. Zusätzlich reduzierst du die Menge an Code beim initialen Laden.
 
 ## `import()` {#import}
 
-Der beste Weg Code-Splitting in deiner Anwendung einzuführen, ist durch die dynamische
-`import()`-Syntax.
-=======
-Bundling is great, but as your app grows, your bundle will grow too. Especially if you are including large third-party libraries. You need to keep an eye on the code you are including in your bundle so that you don't accidentally make it so large that your app takes a long time to load.
-
-To avoid winding up with a large bundle, it's good to get ahead of the problem and start "splitting" your bundle. Code-Splitting is a feature
-supported by bundlers like [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) and Browserify (via [factor-bundle](https://github.com/browserify/factor-bundle)) which can create multiple bundles that can be dynamically loaded at runtime.
-
-Code-splitting your app can help you "lazy-load" just the things that are currently needed by the user, which can dramatically improve the performance of your app. While you haven't reduced the overall amount of code in your app, you've avoided loading code that the user may never need, and reduced the amount of code needed during the initial load.
-
-## `import()` {#import}
-
-The best way to introduce code-splitting into your app is through the dynamic `import()` syntax.
->>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
+Der beste Weg Code-Splitting in deiner Anwendung einzuführen, ist durch die dynamische `import()`-Syntax.
 
 **Vorher:**
 
