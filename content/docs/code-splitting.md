@@ -6,12 +6,7 @@ permalink: docs/code-splitting.html
 
 ## Bundling {#bundling}
 
-<<<<<<< HEAD
-Die meisten React Anwendungen werden ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammengeführt haben.
-Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bundle kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.
-=======
-Most React apps will have their files "bundled" using tools like [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) or [Browserify](http://browserify.org/). Bundling is the process of following imported files and merging them into a single file: a "bundle". This bundle can then be included on a webpage to load an entire app at once.
->>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
+Die meisten React Anwendungen werden ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammengeführt haben. Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bundle kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.
 
 #### Beispiel {#example}
 
@@ -112,24 +107,14 @@ import("./math").then(math => {
 });
 ```
 
-<<<<<<< HEAD
 Wenn Webpack auf diese Syntax stößt, fängt es automatisch mit dem Code-Splitting
 deiner Anwendung an. Wenn du Create-React-App verwendest, ist dies alles vorkonfiguriert
-und du kannst [direkt loslegen](https://create-react-app.dev/docs/code-splitting/).
+und du kannst [direkt loslegen]((https://create-react-app.dev/docs/code-splitting/).
 [Next.js](https://nextjs.org/docs/advanced-features/dynamic-import) unterstützt dies auch direkt out of the box.
 
-Wenn du Webpack selbst einrichtest, wirst du wahrschenlich Webpack's
-[Code-Splitting Leitfaden](https://webpack.js.org/guides/code-splitting/) lesen wollen. Deine Webpack-Konfiguration sollte in etwa [so aussehen](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
+Wenn du Webpack selbst einrichtest, wirst du wahrschenlich Webpack's [Code-Splitting Leitfaden](https://webpack.js.org/guides/code-splitting/) lesen wollen. Deine Webpack-Konfiguration sollte in etwa [so aussehen](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
 
-Wenn du [Babel](https://babeljs.io/) verwendest, müsstest du sicherstellen, dass Babel
-die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all das benötigst du [@babel/plugin-syntax-dynamic-import](https://classic.yarnpkg.com/en/package/@babel/plugin-syntax-dynamic-import).
-=======
-When Webpack comes across this syntax, it automatically starts code-splitting your app. If you're using Create React App, this is already configured for you and you can [start using it](https://create-react-app.dev/docs/code-splitting/) immediately. It's also supported out of the box in [Next.js](https://nextjs.org/docs/advanced-features/dynamic-import).
-
-If you're setting up Webpack yourself, you'll probably want to read Webpack's [guide on code splitting](https://webpack.js.org/guides/code-splitting/). Your Webpack config should look vaguely [like this](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
-
-When using [Babel](https://babeljs.io/), you'll need to make sure that Babel can parse the dynamic import syntax but is not transforming it. For that you will need [@babel/plugin-syntax-dynamic-import](https://classic.yarnpkg.com/en/package/@babel/plugin-syntax-dynamic-import).
->>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
+Wenn du [Babel](https://babeljs.io/) verwendest, müsstest du sicherstellen, dass Babel die Dynamic-Import-Syntax parsen kann, sie aber nicht transformiert. Für all das benötigst du [@babel/plugin-syntax-dynamic-import](https://classic.yarnpkg.com/en/package/@babel/plugin-syntax-dynamic-import).
 
 ## `React.lazy` {#reactlazy}
 
@@ -222,25 +207,11 @@ const MyComponent = () => (
 
 ## Routen basiertes Code-Splitting {#route-based-code-splitting}
 
-<<<<<<< HEAD
-Die Entscheidung wo in deiner Anwendung Code-Splitting einzuführen ist, kann etwas schwierig sein.
-Du solltest sicherstellen, dass du Orte wählst, die die Bundles gleichmäßig splitten, aber nicht
-die Benutzererfahrung beeinträchtigen.
+Die Entscheidung wo in deiner Anwendung Code-Splitting einzuführen ist, kann etwas schwierig sein. Du solltest sicherstellen, dass du Orte wählst, die die Bundles gleichmäßig splitten, aber nicht die Benutzererfahrung beeinträchtigen.
 
-Ein guter Ausgangspunkt sind Routen. Die meisten Leute im Web sind es
-gewohnt Page-Transitions zu erstellen, die einige Zeit zum Laden benötigen.
-Sie neigen auch dazu, die gesamte Seite auf einmal neu zu rendern, so dass die Benutzer
-wahrscheinlich nicht gleichzeitig mit anderen Elementen auf der Seite interagieren.
+Ein guter Ausgangspunkt sind Routen. Die meisten Leute im Web sind es gewohnt Page-Transitions zu erstellen, die einige Zeit zum Laden benötigen. Sie neigen auch dazu, die gesamte Seite auf einmal neu zu rendern, so dass die Benutzer wahrscheinlich nicht gleichzeitig mit anderen Elementen auf der Seite interagieren.
 
-Hier ist ein Beispiel wie du ein routenbasiertes Code-Splitting in deiner Anwendung
-mit Hilfe von Bibliotheken, wie [React Router](https://reacttraining.com/react-router/) mit `React.lazy` einrichtest.
-=======
-Deciding where in your app to introduce code splitting can be a bit tricky. You want to make sure you choose places that will split bundles evenly, but won't disrupt the user experience.
-
-A good place to start is with routes. Most people on the web are used to page transitions taking some amount of time to load. You also tend to be re-rendering the entire page at once so your users are unlikely to be interacting with other elements on the page at the same time.
-
-Here's an example of how to setup route-based code splitting into your app using libraries like [React Router](https://reacttraining.com/react-router/) with `React.lazy`.
->>>>>>> 4e6cee1f82737aa915afd87de0cd4a8393de3fc8
+Hier ist ein Beispiel wie du ein routenbasiertes Code-Splitting in deiner Anwendung mit Hilfe von Bibliotheken, wie [React Router](https://reacttraining.com/react-router/) mit `React.lazy` einrichtest.
 
 ```js
 import React, { Suspense, lazy } from 'react';
