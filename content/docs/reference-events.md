@@ -34,42 +34,11 @@ string type
 
 > Hinweis:
 >
-<<<<<<< HEAD
-> Ab der Version 0.14 führt die Rückgabe des Wertes `false` von einem Eventhandler nicht zu einer Unterbrechung der Eventkette. Stattdessen soll `e.stopPropagation()` oder `e.preventDefault()` explizit aufgerufen werden.
-
-### Event-Pooling {#event-pooling}
-
-Das  `SyntheticEvent` wird aus einem Event-Pool entnommen. Im konkreten Fall bedeutet dies, dass das Objekt welches das  `SyntheticEvent` repräsentiert, wiederverwendet wird und alle Eigenschafen nach dem Aufruf des Event-Callbacks nullifiziert werden. Diese Umsetzung bringt eine bessere Performance mit sich. Somit ist ein asynchroner Zugriff auf das Event nicht möglich.
-
-```javascript
-function onClick(event) {
-  console.log(event); // => nullifiziertes Objekt.
-  console.log(event.type); // => "Klick"
-  const eventType = event.type; // => "Klick"
-
-  setTimeout(function() {
-    console.log(event.type); // => null
-    console.log(eventType); // => "Klick"
-  }, 0);
-
-  // Dies wird nicht funktionieren. this.state.clickEvent wird nur null Werte beinhalten.
-  this.setState({clickEvent: event});
-
-  // Das Exportieren der Eigentschaften des Events ist trotzdem möglich.
-  this.setState({eventType: event.type});
-}
-```
-=======
-> As of v17, `e.persist()` doesn't do anything because the `SyntheticEvent` is no longer [pooled](/docs/legacy-event-pooling.html).
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
+> Ab v17, macht `e.persist()` nichts mehr, da `SyntheticEvent` nicht mehr [gepoolt](/docs/legacy-event-pooling.html) wird.
 
 > Hinweis:
 >
-<<<<<<< HEAD
-> Wenn ein asynchroner Zugriff notwendig ist, kann dies durch den Aufruf von `event.persist()` auf dem Eventobjekt erfolgen. Dies führt zu der Entfernung des syntethischen Events aus dem Eventpool und erlaubt die Verwendung der Eventreferenzen.
-=======
-> As of v0.14, returning `false` from an event handler will no longer stop event propagation. Instead, `e.stopPropagation()` or `e.preventDefault()` should be triggered manually, as appropriate.
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
+> Ab der Version 0.14 führt die Rückgabe des Wertes `false` von einem Eventhandler nicht zu einer Unterbrechung der Eventkette. Stattdessen soll `e.stopPropagation()` oder `e.preventDefault()` explizit aufgerufen werden.
 
 ## Unterstützte Events {#supported-events}
 
@@ -385,15 +354,11 @@ Eventnamen:
 onScroll
 ```
 
-<<<<<<< HEAD
-Eigenschaften:
-=======
->Note
+>Hinweis
 >
->Starting with React 17, the `onScroll` event **does not bubble** in React. This matches the browser behavior and prevents the confusion when a nested scrollable element fires events on a distant parent.
+>Beginnend mit React 17, wird das `onScroll`-Event **nicht mehr nach oben gegeben (bubbling)**. Dies entspricht dem Verhalten des Browsers und verhindert die Verwirrung, wenn ein verschachteltes scrollbares Element, Events auf einem entfernten übergeordneten Element auslöst.
 
-Properties:
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
+Eigenschaften:
 
 ```javascript
 number detail
