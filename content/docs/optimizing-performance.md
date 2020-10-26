@@ -43,8 +43,8 @@ Denke daran, dass das nur erforderlich ist, bevor du deine App deployst. Zum nor
 Wir bieten produktionsfertige Versionen von React und React DOM als Einzeldateien an:
 
 ```html
-<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
 Denke daran, dass nur React-Dateien, die mit `.production.min.js` enden, für die Produktionsumgebung geeignet sind.
@@ -74,11 +74,19 @@ Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du sollt
 Um den effizientesten Browserify-Produktions-Build zu bekommen, installiere ein paar Plugins:
 
 ```
+<<<<<<< HEAD
 # Falls du npm verwendest
 npm install --save-dev envify terser uglifyify 
 
 # Falls du Yarn verwendest
 yarn add --dev envify terser uglifyify 
+=======
+# If you use npm
+npm install --save-dev envify terser uglifyify
+
+# If you use Yarn
+yarn add --dev envify terser uglifyify
+>>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
 ```
 
 Um einen Produktions-Build zu erstellen, stelle sicher, dass du diese Transformer hinzufügst **(die Reihenfolge ist wichtig)**:
@@ -379,7 +387,11 @@ function updateColorMap(colormap) {
 }
 ```
 
+<<<<<<< HEAD
 Dieses Funktion wurde JavaScript in ES2018 hinzugefügt. 
+=======
+This feature was added to JavaScript in ES2018.
+>>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
 
 Solltest du Create React App verwenden, sind sowohl `Object.assign` als auch die Object Spread-Syntax standardmäßig verfügbar. 
 
