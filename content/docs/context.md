@@ -130,7 +130,7 @@ Das `defaultValue` Argument wird **nur** dann benützt, wenn eine Komponente kei
 
 Jedes Context-Objekt kommt mit einer Provider React Komponente, welche konsumierenden Komponenten erlaubt, die Veränderungen von Context zu abonnieren.
 
-Ein `value` Prop wird von konsumierenden Komponenten akzeptiert, welche von dem Provider abstammen. Ein Provider kann mit vielen Konsumenten verbunden sein. Provider können genestet werden, um tiefer im Baum liegende Werte zu überschreiben.
+Ein `value` Prop wird von konsumierenden Komponenten akzeptiert, welche vom Provider abstammen. Ein Provider kann mit vielen Konsumenten verbunden sein. Provider können genestet werden, um tiefer im Baum liegende Werte zu überschreiben.
 
 Alle Konsumenten, welche von dem Provider abstammen, werden neu gerendert, wenn sich das `value` Prop des Providers ändert. Die Verbreitung des Providers zu dessen abstammenden Konsumenten (einschließlich [`.contextType`](#classcontexttype) und [`useContext`](/docs/hooks-reference.html#usecontext)) hängt nicht von der `shouldComponentUpdate` Methode ab, weshalb der Konsument ein Update bekommt, auch wenn eine zuvorkommende Komponente aus dem Update ausbricht.
 

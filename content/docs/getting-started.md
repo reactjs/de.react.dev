@@ -37,7 +37,7 @@ React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du
 ### Online-Sandkasten {#online-playgrounds}
 
 Wenn du aus Interesse ein wenig mit React herumspielen möchtest, kannst du dafür online Code-Sandkästen benutzen.
-Probiere dazu "Hallo Welt" auf [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) oder [Stackblitz](https://stackblitz.com/fork/react) aus.
+Probiere dazu "Hallo Welt" auf [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) oder [Stackblitz](https://stackblitz.com/fork/react) aus.
 
 Wenn du lieber deinen eigenen Texteditor verwenden möchtest, kannst du [diese HTML-Datei](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) herunterladen, lokal bearbeiten und in deinem Browser aufrufen. Die Datei führt eine langsame Codeumwandlung in der Laufzeit aus, daher würden wir sie nur für einfachere Demonstrationszwecke empfehlen.
 
