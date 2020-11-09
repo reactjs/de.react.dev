@@ -12,11 +12,13 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
-Für diese Einführung sind keine Vorkenntnisse in Reach nötig.
+Für dieses Tutorial benötigst Du keine Vorkenntnisse in React.
 
 ## Bevor wir mit den Tutorial anfangen {#before-we-start-the-tutorial}
 
-Wir werden im Laufe dieses Tutorials ein Spiel programmieren. **Vielleicht möchtest du es überspringen, weil du keine Spiele programmieren willst -- aber gib es doch eine Chance.** Die Techniken die du in diesem Tutorial lernen wirst, sind fundamental um eine React-App zu erstellen, es zu meistern wird dir ein tiefes Verständnis von React geben.
+Wir werden im Laufe dieses Tutorials ein Spiel programmieren. **
+Vielleicht möchtest du es überspringen, weil du keine Spiele programmieren willst -- 
+aber gib es doch eine Chance.** Die Techniken die du in diesem Tutorial lernen wirst, sind fundamental um eine React-App zu erstellen, es zu meistern wird dir ein tiefes Verständnis von React geben.
 
 >Tipp
 >
@@ -578,24 +580,31 @@ Unveränderlichkeit macht komplexe Funktionalität einfacher zum Implementieren.
 
 #### Veränderung erkennen {#detecting-changes}
 
-Detecting changes in mutable objects is difficult because they are modified directly. This detection requires the mutable object to be compared to previous copies of itself and the entire object tree to be traversed.
+Veränderungen  in variablen Objekten zu erkennen ist schwierig, da sie direkt verändert werden.
+ Zur Erkennung müsste das variable Objekt mit seinen alten Kopien vergleichen werden --
+somit müsste der ganzen Objekt-Baum durchlaufen werden.
 
-Detecting changes in immutable objects is considerably easier. If the immutable object that is being referenced is different than the previous one, then the object has changed.
+Veränderungen in unveränderlichen Objekten zu erkennen ist deutlich leichter.
+Falls das unveränderliche Objekt auf ein anderes verwiesen wird, als das vorhergehende, so hat das Objekt sich verändert.
 
-#### Determining When to Re-render in React {#determining-when-to-re-render-in-react}
+#### Entscheiden wann Re-Rendern in React {#determining-when-to-re-render-in-react}
 
-The main benefit of immutability is that it helps you build _pure components_ in React. Immutable data can easily determine if changes have been made which helps to determine when a component requires re-rendering.
-
-You can learn more about `shouldComponentUpdate()` and how you can build *pure components* by reading [Optimizing Performance](/docs/optimizing-performance.html#examples).
+Der Hauptvorteil von Unveränderlichkeit ist, dass es Dir hilft _pure components_ in React zu entwickeln.
+ Unveränderbarer Daten können leicht entscheiden, ob Veränderungen gemacht worden sind
+ welche helfen zu entscheiden, ob eine Komponente re-rendered werden muss. 
+ 
+Du kannst mehr über `shouldComponentUpdate()` lernen und wie Du *pure components* entnwickelst, wenn Du das hier liest [Optimizing Performance](/docs/optimizing-performance.html#examples).
 
 ### Funktionskomponente {#function-components}
 
-We'll now change the Square to be a **function component**.
+Wir verändern nun die Square Komoponente zu einer  **function component/ Funktionskomponente**.
 
-In React, **function components** are a simpler way to write components that only contain a `render` method and don't have their own state. Instead of defining a class which extends `React.Component`, we can write a function that takes `props` as input and returns what should be rendered. Function components are less tedious to write than classes, and many components can be expressed this way.
+In React, **function components/Funktionskomponenten** sind ein leichterer Weg um Komponenten zu schreiben,
+ welche nur eine `render` Methode beinhalten und keinen eigenen Zustand / state haben.
+ Statt eine Klasse zu definieren, welche `React.Component` erweitert, können wir eine Funktion schreiben, welche `props` als Input nimmt und zurückgibt, was gerendert werden soll.
+ Funktionskomponenten sind weniger ermüdend zu schreiben als normale Klassen und viele Komponenten können mittels diesen Weges geschrieben werden.
 
-Replace the Square class with this function:
-
+Ersetze die Square Klasse mit diesem Code: 
 ```javascript
 function Square(props) {
   return (
@@ -606,19 +615,23 @@ function Square(props) {
 }
 ```
 
-We have changed `this.props` to `props` both times it appears.
+Wir haben `this.props` mit `props` ersetzt, beide Male wird es angezeigt.
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/QvvJOv?editors=0010)**
+**[Ganzen Quellcode bis zu diesem Punkt anschauen](https://codepen.io/gaearon/pen/QvvJOv?editors=0010)**
 
->Note
+>Notiz
 >
->When we modified the Square to be a function component, we also changed `onClick={() => this.props.onClick()}` to a shorter `onClick={props.onClick}` (note the lack of parentheses on *both* sides). In a class, we used an arrow function to access the correct `this` value, but in a function component we don't need to worry about `this`.
+>Als wir die Square Klasse zu einer Funktionskomponente verändert haben, haben wir auch `onClick={() => this.props.onClick()}`
+> zu einem kürzeren `onClick={props.onClick}` geändert (bemerke, dass die Klammern auf *beiden* Seiten fehlen).
+> In der Klasse haben wir eine Arrow Function benutzt, um den korrekten `this` Wert zu erhalten,
+> in einer Funktionskomponente brauchen wir uns keine Gedanken über `this` zu machen..
 
 ### Einen Zug machen {#taking-turns}
 
-We now need to fix an obvious defect in our tic-tac-toe game: the "O"s cannot be marked on the board.
+Nun müssen wir einen offensichtlichen Fehler in unserer Tic-Tac-Toe Anwendung beheben: Die "O"s können nicht auf dem Spielbord markiert werden.
 
-We'll set the first move to be "X" by default. We can set this default by modifying the initial state in our Board constructor:
+Wir setzen den ersten Zug standardmäßig auf "X" . 
+Wir können dies standardmäßig setzen, wenn wir den Initial State in unserem Board Constructor verändern:
 
 ```javascript{6}
 class Board extends React.Component {
@@ -631,7 +644,8 @@ class Board extends React.Component {
   }
 ```
 
-Each time a player moves, `xIsNext` (a boolean) will be flipped to determine which player goes next and the game's state will be saved. We'll update the Board's `handleClick` function to flip the value of `xIsNext`:
+Jedes Mal wenn ein Spieler einen Zug unternimmt, `xIsNext` (ein Boolean) wird geändert um den nächsten Spieler zu bestimmen und der Zustand / State des Spiels wird gespeichert.
+Wir aktualisieren die `handleClick` Funktion des Boards um den Wert von `xIsNext` zu flippen:
 
 ```javascript{3,6}
   handleClick(i) {
@@ -644,7 +658,8 @@ Each time a player moves, `xIsNext` (a boolean) will be flipped to determine whi
   }
 ```
 
-With this change, "X"s and "O"s can take turns. Let's also change the "status" text in Board's `render` so that it displays which player has the next turn:
+Mit dieser Änderung können "X"s und "O"s Spielzüge annehmen.
+Lasst uns ebenfalls den "status" text in der Boards `render` Funktion ändern, so dass es anzeigt, welcher Spieler als nächstes an der Reihe ist:
 
 ```javascript{2}
   render() {
@@ -654,7 +669,7 @@ With this change, "X"s and "O"s can take turns. Let's also change the "status" t
       // the rest has not changed
 ```
 
-After applying these changes, you should have this Board component:
+Nach dem wir diese Veränderungen angewandt haben, sollte die Board Komponent nun so aussehen:
 
 ```javascript{6,11-16,29}
 class Board extends React.Component {
@@ -715,7 +730,9 @@ class Board extends React.Component {
 
 ### Einen Gewinner verkünden {#declaring-a-winner}
 
-Now that we show which player's turn is next, we should also show when the game is won and there are no more turns to make. We can determine a winner by adding this helper function to the end of the file:
+Da wir nun den nächsten Spieler anzeigen können, 
+sollten wir ebenfalls anzeigen können, wann das Spiel gewonnen ist und and dass keine Züge mehr möglich sind.
+Wir können einen Gewinner bestimmen, in dem wir diese Helper-Funktion an das Ende der Datei schreiben:
 
 ```javascript
 function calculateWinner(squares) {
@@ -739,7 +756,9 @@ function calculateWinner(squares) {
 }
 ```
 
-We will call `calculateWinner(squares)` in the Board's `render` function to check if a player has won. If a player has won, we can display text such as "Winner: X" or "Winner: O". We'll replace the `status` declaration in Board's `render` function with this code:
+Wir werden `calculateWinner(squares)` in der Boards `render` Funktion aufrufen, um zu prüfen, ob ein Spieler gewonnen hat.
+Falls ein Spieler gewonnen hat, können wir beispielsweise folgenden Text anzeigen: "Winner: X" or "Winner: O". 
+Wir ersetzen die `status` Deklaration in der Boards `render` Funktion mit folgendem Code:
 
 ```javascript{2-8}
   render() {
@@ -773,19 +792,21 @@ We can now change the Board's `handleClick` function to return early by ignoring
 
 **[View the full code at this point](https://codepen.io/gaearon/pen/LyyXgK?editors=0010)**
 
-Congratulations! You now have a working tic-tac-toe game. And you've just learned the basics of React too. So *you're* probably the real winner here.
+Herzlichen Glückwunsch! Du hast nun ein funktionierendes Tic-Tac-Toe Spiel. 
+Dazu hast du noch die grundlegenden Techniken von React gelernt. Demnach bist *Du* wahrscheinlich der echte Gewinner hier.
 
 ## Zeitreisen hinzufügen {#adding-time-travel}
 
-As a final exercise, let's make it possible to "go back in time" to the previous moves in the game.
+Als abschließende Übung, lass uns eine "History" hinzufügen, um zu älteren Zügen im Spiel zurückzukommen.
 
 ### Einen Zug-Verlauf speichern {#storing-a-history-of-moves}
 
-If we mutated the `squares` array, implementing time travel would be very difficult.
+Falls wir das `squares` Array verändern würden, wäre eine Implementierung von Verlaufsspeicherung sehr schwierig..
 
-However, we used `slice()` to create a new copy of the `squares` array after every move, and [treated it as immutable](#why-immutability-is-important). This will allow us to store every past version of the `squares` array, and navigate between the turns that have already happened.
+Wie auch immer, wir verwendeten `slice()` um eine neue Kopie des `squares` Arrays nach jedem Zug zu erstellen, und [behandelten es wie ein Unveränderliches](#why-immutability-is-important). 
+Dies wird uns erlauben, jede ältere Version des `squares` Array zu speichern, und zwischen den Zügen zu springen, welche schon stattfanden.
 
-We'll store the past `squares` arrays in another array called `history`. The `history` array represents all board states, from the first to the last move, and has a shape like this:
+Wir werden die alten `squares` Arrays in einem andeeren Array `history` speichern. Das `history` Array repräsentiert alle Board Zustände / States, vom ersten bis zum letzten Zug und hat folgende Form:
 
 ```javascript
 history = [
@@ -817,15 +838,20 @@ history = [
 ]
 ```
 
-Now we need to decide which component should own the `history` state.
+Nun müssen wir entscheiden, welche Komponente den `history` Zustand/State beinhalten wird.
 
 ### Den State nochmal hochholen {#lifting-state-up-again}
 
-We'll want the top-level Game component to display a list of past moves. It will need access to the `history` to do that, so we will place the `history` state in the top-level Game component.
+Wir möchten dass die Top-Level-Game-Komponente eine Liste der bisherigen Züge anzeigt.
+Diese Liste braucht Zugriff auf `history` brauchen um dies zu tun.
+Demnach platzieren wir den `history` State in der Top-Level-Game-Komponente.
 
-Placing the `history` state into the Game component lets us remove the `squares` state from its child Board component. Just like we ["lifted state up"](#lifting-state-up) from the Square component into the Board component, we are now lifting it up from the Board into the top-level Game component. This gives the Game component full control over the Board's data, and lets it instruct the Board to render previous turns from the `history`.
+Das Platzieren der `history` State in die Game Komponente erlaubt uns das Entfernen des `squares` 
+States von dessen Child-Board-Komponenten. So wie wir das ["lifted state up"](#lifting-state-up) von der Square Komponente in die Board Komponente getätigt haben, 
+so liften wir dieses nun von der Board in die Top-Level Game Komponente.
+Die gibt der Game Komponente völlige Kontrolle über die Daten vom Board, und es weist das Board an, zu rendern zu den älteren Zügen aus der `history`.
 
-First, we'll set up the initial state for the Game component within its constructor:
+Als erstes setzen wir den Initial State für die Game Komponente in deren Constructor:
 
 ```javascript{2-10}
 class Game extends React.Component {
@@ -855,13 +881,16 @@ class Game extends React.Component {
 }
 ```
 
-Next, we'll have the Board component receive `squares` and `onClick` props from the Game component. Since we now have a single click handler in Board for many Squares, we'll need to pass the location of each Square into the `onClick` handler to indicate which Square was clicked. Here are the required steps to transform the Board component:
+Als nächstes haben wir die Board Komponente, welche die `squares` und `onClick` props erhält von der Game Komponente.
+Da wir nun einen Single-Click-Handler im Board für viele Squares haben,
+müssen wir die Position von jedem der Squares in den `onClick` Handler übergeben, um zu indizieren, welcher Square geklickt worden ist.
+Hier sind die benötigten Schritte, um die Board Komponente zu verändern:
 
-* Delete the `constructor` in Board.
-* Replace `this.state.squares[i]` with `this.props.squares[i]` in Board's `renderSquare`.
-* Replace `this.handleClick(i)` with `this.props.onClick(i)` in Board's `renderSquare`.
+* Lösche den `constructor` im Board.
+* Ersetze `this.state.squares[i]` mit `this.props.squares[i]` in der Board `renderSquare` Funktion.
+* Ersetze `this.handleClick(i)` mit `this.props.onClick(i)` in der Board `renderSquare` Funktion.
 
-The Board component now looks like this:
+Die Board Komponente sieht nun so aus:
 
 ```javascript{17,18}
 class Board extends React.Component {
@@ -919,7 +948,8 @@ class Board extends React.Component {
 }
 ```
 
-We'll update the Game component's `render` function to use the most recent history entry to determine and display the game's status:
+Wir aktualisieren die `render` Funktion in der Game Komponente
+um den aktuellsten histroy-Eintrag zu verwenden, um den aktuellen Game-Status zu bestimmen. 
 
 ```javascript{2-11,16-19,22}
   render() {
@@ -951,7 +981,8 @@ We'll update the Game component's `render` function to use the most recent histo
   }
 ```
 
-Since the Game component is now rendering the game's status, we can remove the corresponding code from the Board's `render` method. After refactoring, the Board's `render` function looks like this:
+Da die Game Komponente nun den Game Status rendert,  können wir den dazugehörigen Code aus der Board `render` Methode entfernen.
+Nach dem Refactoring sollte die `render` Funktion im Board so aussehen:
 
 ```js{1-4}
   render() {
@@ -977,7 +1008,9 @@ Since the Game component is now rendering the game's status, we can remove the c
   }
 ```
 
-Finally, we need to move the `handleClick` method from the Board component to the Game component. We also need to modify `handleClick` because the Game component's state is structured differently. Within the Game's `handleClick` method, we concatenate new history entries onto `history`.
+Als letztes müssen wir nun die `handleClick` Methode aus der Board Komponente in die Game Komponente verlagern.
+Wir müssen auch die `handleClick` verändern,da die State aus der Game Komponente eine andere Struktur hat.
+Mit der Game `handleClick` Methode konkatenieren wir die neuen history-Einträge in `history`.
 
 ```javascript{2-4,10-12}
   handleClick(i) {
@@ -999,26 +1032,28 @@ Finally, we need to move the `handleClick` method from the Board component to th
 
 >Note
 >
->Unlike the array `push()` method you might be more familiar with, the `concat()` method doesn't mutate the original array, so we prefer it.
+>Anders als bei der Array `push()` Methode, welche Du vielleicht eher kennst, verändert die `concat()` method doesn't das ursprüngliche Array,weshalb wir dieses bevorzugen.
 
-At this point, the Board component only needs the `renderSquare` and `render` methods. The game's state and the `handleClick` method should be in the Game component.
+An diesem Punkte benötigt die Bord Komponente nur die `renderSquare` und die `render` Methode. 
+Das Spiel-State und die `handleClick` Methode sollten sich in der Game Komponente befinden. 
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)**
+**[Den ganzen Quellcode an diesem Punkt anschauen](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)**
 
 ### Die letzten Züge anzeigen {#showing-the-past-moves}
 
-Since we are recording the tic-tac-toe game's history, we can now display it to the player as a list of past moves.
+Seit wir den Verlauf des Tic-Tac-Toes Spiel speichern, können wir diese dem Spieler als eine Liste der letzten Züge anzeigen.
 
-We learned earlier that React elements are first-class JavaScript objects; we can pass them around in our applications. To render multiple items in React, we can use an array of React elements.
+Wir haben vorhin gelernt, dass React Elemente first-class JavaScript Objekte sind; 
+Wir können diese in unserer Anwendung durchgeben. Um mehrere Sachen in React rendern zu können, können wir das Array aus den React Elementen verwenden.
 
-In JavaScript, arrays have a [`map()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) that is commonly used for mapping data to other data, for example:
+Arrays haben in Java-Script eine [`map()` Methode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) welche verwendet wird um Daten auf andere Daten zu mappen, wie zum Beispiel:
 
 ```js
 const numbers = [1, 2, 3];
 const doubled = numbers.map(x => x * 2); // [2, 4, 6]
 ``` 
 
-Using the `map` method, we can map our history of moves to React elements representing buttons on the screen, and display a list of buttons to "jump" to past moves.
+Das Verwenden der `map` Methode, we can map our history of moves to React elements representing buttons on the screen, and display a list of buttons to "jump" to past moves.
 
 Let's `map` over the `history` in the Game's `render` method:
 
