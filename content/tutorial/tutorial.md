@@ -1243,24 +1243,28 @@ If we click on any step in the game's history, the tic-tac-toe board should imme
 
 ### Zusammenfassung {#wrapping-up}
 
-Congratulations! You've created a tic-tac-toe game that:
+Glückwunsch! Du hast ein Tic-Tac-Toe-Spiel entwickelt welches:
 
-* Lets you play tic-tac-toe,
-* Indicates when a player has won the game,
-* Stores a game's history as a game progresses,
-* Allows players to review a game's history and see previous versions of a game's board.
+* Dir erlaubt Tic-Tac-Toe zu spielen,
+* Versteht, falls ein Spieler gewonnen hat,
+* Den Spielverlauf speichert,
+* Den Spielverlauf zu betrachten und alte Ansichten des Spiel-Boards zu sehen.
 
-Nice work! We hope you now feel like you have a decent grasp on how React works.
+Gute Arbeit! Wir hoffen, dass Du nun einen guten Überblick hast wie React funktioniert.
 
-Check out the final result here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**.
+Sieh dir das finale Ergebnis hier an: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**.
 
-If you have extra time or want to practice your new React skills, here are some ideas for improvements that you could make to the tic-tac-toe game which are listed in order of increasing difficulty:
+Falls Du noch Zeit hast oder an deinen React-Fähigkeiten arbeiten möchtest -- Hier sind ein paar Ideen für Verbesserungen welche Du in das Tic-Tac-Toe-Spiel implementieren könntest.
+Die Liste ist aufsteigend nach Schwierigkeit sortiert.
 
-1. Display the location for each move in the format (col, row) in the move history list.
-2. Bold the currently selected item in the move list.
-3. Rewrite Board to use two loops to make the squares instead of hardcoding them.
-4. Add a toggle button that lets you sort the moves in either ascending or descending order.
-5. When someone wins, highlight the three squares that caused the win.
-6. When no one wins, display a message about the result being a draw.
+1. Zeige die Position für jeden Zug im Format (col, row) in der Zug-Verlaufs-Liste.
+2. Markiere das ausgewählte Element in der Zug Liste fett.
+3. Schreibe das Board so, dass Du zwei Schleifen verwendest um die Quadrate in dem Bord zu erzeugen, anstatt sie zu hardcoden.
+4. Füge einen Toggle Button hinzu, welcher dir erlaubt die Züge in aufsteigender oder absteigender Ordnung zu sortieren.
+5. Falls jemand gewinnen sollte, markiere die 3 Gewinner-Kästchen.
+6. Falls keiner gewinnen sollte, soll eine Nachricht angezeigt werden, dass es ein Untentschieden ist.
 
-Throughout this tutorial, we touched on React concepts including elements, components, props, and state. For a more detailed explanation of each of these topics, check out [the rest of the documentation](/docs/hello-world.html). To learn more about defining components, check out the [`React.Component` API reference](/docs/react-component.html).
+Mit diesem Tutorial haben wir die Konzepte von React betrachtet, inkl. elements, components, props und state.
+Detailliertere Informationen zu diesen Themen findet man [im Rest der Dokumentation](/docs/hello-world.html)
+ 
+Um mehr über Komponenten herauszufinden, lohnt sich ein Blick in [`React.Component` API reference](/docs/react-component.html).
