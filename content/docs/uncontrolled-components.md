@@ -45,7 +45,7 @@ Wenn es immer noch nicht klar ist, welche Art von Komponente du für eine bestim
 
 ### Standardwerte {#default-values}
 
-Im React-Rendering-Lifecycle überschreibt das "value" Attribut für Formularelemente den Wert im DOM. Bei einer unkontrollierten Komponente möchte man häufig, dass React den Anfangswert angibt, wobei nachfolgende Aktualisierungen nicht kontrolliert werden. Um diesen Fall zu behandeln, kannst du anstelle von `value` ein `defaultValue` Attribut angeben.
+Im React-Rendering-Lifecycle überschreibt das `value` Attribut für Formularelemente den Wert im DOM. Bei einer unkontrollierten Komponente möchte man häufig, dass React den Anfangswert angibt, wobei nachfolgende Aktualisierungen nicht kontrolliert werden. Um diesen Fall zu behandeln, kannst du anstelle von `value` ein `defaultValue`-Attribut angeben.
 
 ```javascript{7}
 render() {

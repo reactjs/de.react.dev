@@ -320,7 +320,7 @@ Higher-Order Komponenten kommen mit einigen Vorbehalten, die nicht sofort ersich
 
 ### Vermeide die Nutzung von HOCs innerhalb der Render-Methode {#dont-use-hocs-inside-the-render-method}
 
-Der Differenzierungsalgorithmus von React (auch Abgleich genannt) nutzt die Identität der Komponente, um zu bestimmen, ob der existierende Teilbaum aktualisiert, oder weggeworfen werden soll und ob das Mounten eines neuen Teilbaums notwendig ist. Wenn die von der `render` Methode zurückgegebene Komponente identisch (`===`) zu der vorher zurückgegebenen Komponente ist, wird der Teilbaum rekursiv von React upgedated, in dem eine Differenzierung des alten Teilbaums mit dem neuen Teilbaum stattfindet. Wenn die beiden ungleich sind, wird der vorherige Teilbaum zur Gänze unmounted.
+Der Differenzierungsalgorithmus von React (auch [Abgleich (engl. Reconciliation)](/docs/reconciliation.html) genannt) nutzt die Identität der Komponente, um zu bestimmen, ob der existierende Teilbaum aktualisiert, oder weggeworfen werden soll und ob das Mounten eines neuen Teilbaums notwendig ist. Wenn die von der `render`-Methode zurückgegebene Komponente identisch (`===`) zu der vorher zurückgegebenen Komponente ist, wird der Teilbaum rekursiv von React geupdatet, in dem eine Differenzierung des alten Teilbaums mit dem neuen Teilbaum stattfindet. Wenn die beiden ungleich sind, wird der vorherige Teilbaum zur Gänze unmounted.
 
 Normalerweise, solltest du keine Gedanken darüber verlieren. Jedoch spielt dies eine wesentliche Rolle für HOCs, da dies bedeutet, dass du eine HOC auf eine Komponente innerhalb der Render-Methode einer Komponente nicht anwenden kannst:
 
