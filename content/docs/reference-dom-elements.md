@@ -129,9 +129,15 @@ Ab React 16 werden alle standardmäßigen oder [oder benutzerdefinierten](/blog/
 React hat dem DOM schon immer eine auf JavaScript ausgerichtete API zur Verfügung gestellt. Da React-Komponenten oft eigene und dem DOM zugehörige Props brauchen, verwendet React, wie die DOM-APIs, die `camelCase` Konvention:
 
 ```js
+<<<<<<< HEAD
 <div tabIndex="-1" />      // Genau wie node.tabIndex DOM-API
 <div className="Button" /> // Genau wie node.className DOM-API
 <input readOnly={true} />  // Genau wie node.readOnly DOM-API
+=======
+<div tabIndex={-1} />      // Just like node.tabIndex DOM API
+<div className="Button" /> // Just like node.className DOM API
+<input readOnly={true} />  // Just like node.readOnly DOM API
+>>>>>>> 5e437a10ed4e89cd5eaf990ce4f43e0857592b53
 ```
 
 Diese Props funktionieren ähnlich wie die entsprechenden HTML-Attribute mit Ausnahme von den untenstehenden Sonderfällen.

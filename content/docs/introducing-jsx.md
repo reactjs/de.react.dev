@@ -92,7 +92,7 @@ function getGreeting(user) {
 Benutze Anführungszeichen um string-Literale als Attribute zu verwenden:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <div tabIndex={0}></div>;
 ```
 
 Ebenfalls kannst du geschweifte Klammern verwenden, um JavaScript-Ausdrücke in ein Attribut einzubinden:
