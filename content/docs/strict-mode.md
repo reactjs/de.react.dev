@@ -120,7 +120,15 @@ Auf den ersten Blick scheint dieser Code nicht problematisch zu sein. Wenn `Shar
 
 Durch das absichtliche Doppelaufrufen von Methoden wie dem Komponentenkonstruktor erleichtert der strikte Modus das Erkennen solcher Muster.
 
+<<<<<<< HEAD
 ### Ermitteln der alten Context-API {#detecting-legacy-context-api}
+=======
+> Note:
+>
+> Starting with React 17, React automatically modifies the console methods like `console.log()` to silence the logs in the second call to lifecycle functions. However, it may cause undesired behavior in certain cases where [a workaround can be used](https://github.com/facebook/react/issues/20090#issuecomment-715927125).
+
+### Detecting legacy context API {#detecting-legacy-context-api}
+>>>>>>> 4fc709d0576d0f0f1f8ea8b6bb341a12944b5510
 
 Die ältere Context-API ist fehleranfällig und wird in einer zukünftigen Hauptversion entfernt. Sie funktioniert weiterhin für alle 16.x-Versionen, zeigt jedoch diese Warnmeldung im strikten Modus an:
 
