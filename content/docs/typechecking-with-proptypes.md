@@ -199,7 +199,11 @@ class Greeting extends React.Component {
 
 Die `defaultProps` werden verwendet, um sicherzustellen, dass `this.props.name` einen Wert hat, wenn er nicht von der übergeordneten Komponente angegeben wurde. Die Typüberprüfung von `propTypes` erfolgt nachdem `defaultProps` aufgelöst wurde, so dass die Typüberprüfung auch für die `defaultProps` gilt.
 
+<<<<<<< HEAD
 ### Funktionskomponenten
+=======
+### Function Components {#function-components}
+>>>>>>> 923629258fce174a89231c88c90805d9e5b0278d
 
 Wenn du Funktionskomponenten bei der regulären Entwicklung verwendest, solltest du vielleicht einige kleine Änderungen vornehmen, damit PropTypes richtig angewendet werden können. 
 
