@@ -55,8 +55,8 @@ Wenn deine Anwendung wächst, wirst du womöglich ein stärker integriertes Setu
 
 React zieht Anfänger mit allen möglichen Hintergründen an, alle mit ihrem eigenen Lernstil. Hoffentlich findest du diese Abschnitte hilfreich, ob du nun eher einen theoretischen oder einen praktischen Ansatz bevorzugst.
 
-* Wenn du eher anhand von praktischen Übungen lernst, dann fange mit unserem [praktischen Tutorial](/tutorial/tutorial.html) an.
-* Wenn du vorzugsweise Konzepte Schritt für Schritt lernst, fange mit unserem [Leitfaden zu den Hauptkonzepten](/docs/hello-world.html) an.
+* Wenn du eher anhand von praktischen Übungen lernst, dann fang mit unserem [praktischen Tutorial](/tutorial/tutorial.html) an.
+* Wenn du vorzugsweise Konzepte Schritt für Schritt lernst, fang mit unserem [Leitfaden zu den Hauptkonzepten](/docs/hello-world.html) an.
 
 Wie auch jede andere ungewohnte Technologie, hat auch React eine gewisse Lernkurve. Mit etwas Übung und Geduld wirst du *definitiv* den Dreh herausbekommen!
 
