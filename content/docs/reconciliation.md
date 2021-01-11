@@ -27,7 +27,11 @@ Beim Vergleichen ("diffing") zweier Bäume betrachtet React zuerst die beiden Wu
 
 Wenn die Wurzelelemente unterschiedliche Typen haben, entfernt React den alten Baum und erstellt den neuen Baum von Grund auf neu. Ein Wechsel von `<a>` nach `<img>` oder von `<Article>` nach `<Comment>` oder von `<Button>` nach `<div>` führt zu einer vollständigen Neuerstellung.
 
+<<<<<<< HEAD
 Beim Entfernen eines Baumes werden alte DOM-Knoten gelöscht. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillUnmount()`. Beim Aufbau eines neuen Baums werden neue DOM-Knoten in das DOM eingefügt. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillMount()` und dann `componentDidMount()`. Jeder mit dem alten Baum verknüpfte State geht verloren.
+=======
+When tearing down a tree, old DOM nodes are destroyed. Component instances receive `componentWillUnmount()`. When building up a new tree, new DOM nodes are inserted into the DOM. Component instances receive `UNSAFE_componentWillMount()` and then `componentDidMount()`. Any state associated with the old tree is lost.
+>>>>>>> 82b8c9f2ab094eb7b0268029ab72fc99ffcadaf6
 
 Alle Komponenten unterhalb der Wurzel werden ebenfalls geunmountet und ihr State wird gelöscht. Zum Beispiel beim Vergleichen von:
 
@@ -43,7 +47,17 @@ Alle Komponenten unterhalb der Wurzel werden ebenfalls geunmountet und ihr State
 
 Dies entfernt den alten `Counter` und mountet einen neuen.
 
+<<<<<<< HEAD
 ### DOM-Elemente desselben Typs {#dom-elements-of-the-same-type}
+=======
+>Note:
+>
+>These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>
+>- `UNSAFE_componentWillMount()`
+
+### DOM Elements Of The Same Type {#dom-elements-of-the-same-type}
+>>>>>>> 82b8c9f2ab094eb7b0268029ab72fc99ffcadaf6
 
 Beim Vergleich von zwei React-DOM-Elementen desselben Typs überprüft React die Attribute von beiden, behält denselben zugrunde liegenden DOM-Knoten bei und aktualisiert nur die geänderten Attribute. Zum Beispiel:
 
@@ -69,11 +83,26 @@ Nach der Behandlung des DOM-Knotens kehrt React zu den Kind-Knoten zurück.
 
 ### Komponentenelemente desselben Typs {#component-elements-of-the-same-type}
 
+<<<<<<< HEAD
 Wenn eine Komponente aktualisiert wird, bleibt die Instanz unverändert, sodass der State renderübergreifend beibehalten wird. React aktualisiert die Props der zugrunde liegenden Komponenteninstanz so, dass sie mit dem neuen Element übereinstimmen, und ruft `componentWillReceiveProps()` und `componentWillUpdate()` auf der zugrunde liegenden Instanz auf.
+=======
+When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element, and calls `UNSAFE_componentWillReceiveProps()`, `UNSAFE_componentWillUpdate()` and `componentDidUpdate()` on the underlying instance.
+>>>>>>> 82b8c9f2ab094eb7b0268029ab72fc99ffcadaf6
 
 Als nächstes wird die `render()`-Methode aufgerufen und der Vergleichsalgorithmus rekursiv auf das vorherige und das neue Ergebnis angewendet.
 
+<<<<<<< HEAD
 ### Auf Kind-Elementen rekursieren {#recursing-on-children}
+=======
+>Note:
+>
+>These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>
+>- `UNSAFE_componentWillUpdate()`
+>- `UNSAFE_componentWillReceiveProps()`
+
+### Recursing On Children {#recursing-on-children}
+>>>>>>> 82b8c9f2ab094eb7b0268029ab72fc99ffcadaf6
 
 Standardmäßig durchläuft React bei einer Rekursion der Kind-Elemente eines DOM-Knotens beide Listen von Kind-Elementen gleichzeitig und generiert eine Mutation, wenn ein Unterschied besteht.
 
