@@ -27,7 +27,7 @@ Beim Vergleichen ("diffing") zweier Bäume betrachtet React zuerst die beiden Wu
 
 Wenn die Wurzelelemente unterschiedliche Typen haben, entfernt React den alten Baum und erstellt den neuen Baum von Grund auf neu. Ein Wechsel von `<a>` nach `<img>` oder von `<Article>` nach `<Comment>` oder von `<Button>` nach `<div>` führt zu einer vollständigen Neuerstellung.
 
-Beim Entfernen eines Baumes werden alte DOM-Knoten gelöscht. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillUnmount()`. Beim Aufbau eines neuen Baums werden neue DOM-Knoten in das DOM eingefügt. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillMount()` und dann `componentDidMount()`. Jeder mit dem alten Baum verknüpfte State geht verloren.
+Beim Entfernen eines Baumes werden alte DOM-Knoten gelöscht. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillUnmount()`. Beim Aufbau eines neuen Baums werden neue DOM-Knoten in das DOM eingefügt. Komponenteninstanzen erhalten den Befehl zum Ausführen von `UNSAFE_componentWillMount()` und dann `componentDidMount()`. Jeder mit dem alten Baum verknüpfte State geht verloren.
 
 Alle Komponenten unterhalb der Wurzel werden ebenfalls geunmountet und ihr State wird gelöscht. Zum Beispiel beim Vergleichen von:
 
@@ -41,7 +41,11 @@ Alle Komponenten unterhalb der Wurzel werden ebenfalls geunmountet und ihr State
 </span>
 ```
 
-Dies entfernt den alten `Counter` und mountet einen neuen.
+>Note:
+>
+>Diese Methoden gelten als veraltet und du solltest sie in neuem Code [vermeiden](/blog/2018/03/27/update-on-async-rendering.html):
+>
+>- `UNSAFE_componentWillMount()`
 
 ### DOM-Elemente desselben Typs {#dom-elements-of-the-same-type}
 
@@ -69,9 +73,16 @@ Nach der Behandlung des DOM-Knotens kehrt React zu den Kind-Knoten zurück.
 
 ### Komponentenelemente desselben Typs {#component-elements-of-the-same-type}
 
-Wenn eine Komponente aktualisiert wird, bleibt die Instanz unverändert, sodass der State renderübergreifend beibehalten wird. React aktualisiert die Props der zugrunde liegenden Komponenteninstanz so, dass sie mit dem neuen Element übereinstimmen, und ruft `componentWillReceiveProps()` und `componentWillUpdate()` auf der zugrunde liegenden Instanz auf.
+Wenn eine Komponente aktualisiert wird, bleibt die Instanz unverändert, sodass der State renderübergreifend beibehalten wird. React aktualisiert die Props der zugrunde liegenden Komponenteninstanz so, dass sie mit dem neuen Element übereinstimmen, und ruft `UNSAFE_componentWillReceiveProps()`, `UNSAFE_componentWillUpdate()` und `componentDidUpdate()` auf der zugrunde liegenden Instanz auf.
 
 Als nächstes wird die `render()`-Methode aufgerufen und der Vergleichsalgorithmus rekursiv auf das vorherige und das neue Ergebnis angewendet.
+
+>Note:
+>
+>Diese Methoden gelten als veraltet und du solltest sie in neuem Code [vermeiden](/blog/2018/03/27/update-on-async-rendering.html):
+>
+>- `UNSAFE_componentWillUpdate()`
+>- `UNSAFE_componentWillReceiveProps()`
 
 ### Auf Kind-Elementen rekursieren {#recursing-on-children}
 
