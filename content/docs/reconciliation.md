@@ -27,11 +27,7 @@ Beim Vergleichen ("diffing") zweier Bäume betrachtet React zuerst die beiden Wu
 
 Wenn die Wurzelelemente unterschiedliche Typen haben, entfernt React den alten Baum und erstellt den neuen Baum von Grund auf neu. Ein Wechsel von `<a>` nach `<img>` oder von `<Article>` nach `<Comment>` oder von `<Button>` nach `<div>` führt zu einer vollständigen Neuerstellung.
 
-<<<<<<< HEAD
-Beim Entfernen eines Baumes werden alte DOM-Knoten gelöscht. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillUnmount()`. Beim Aufbau eines neuen Baums werden neue DOM-Knoten in das DOM eingefügt. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillMount()` und dann `componentDidMount()`. Jeder mit dem alten Baum verknüpfte State geht verloren.
-=======
-When tearing down a tree, old DOM nodes are destroyed. Component instances receive `componentWillUnmount()`. When building up a new tree, new DOM nodes are inserted into the DOM. Component instances receive `UNSAFE_componentWillMount()` and then `componentDidMount()`. Any state associated with the old tree is lost.
->>>>>>> 82b8c9f2ab094eb7b0268029ab72fc99ffcadaf6
+Beim Entfernen eines Baumes werden alte DOM-Knoten gelöscht. Komponenteninstanzen erhalten den Befehl zum Ausführen von `componentWillUnmount()`. Beim Aufbau eines neuen Baums werden neue DOM-Knoten in das DOM eingefügt. Komponenteninstanzen erhalten den Befehl zum Ausführen von `UNSAFE_componentWillMount()` und dann `componentDidMount()`. Jeder mit dem alten Baum verknüpfte State geht verloren.
 
 Alle Komponenten unterhalb der Wurzel werden ebenfalls geunmountet und ihr State wird gelöscht. Zum Beispiel beim Vergleichen von:
 
@@ -45,9 +41,6 @@ Alle Komponenten unterhalb der Wurzel werden ebenfalls geunmountet und ihr State
 </span>
 ```
 
-<<<<<<< HEAD
-### DOM-Elemente desselben Typs {#dom-elements-of-the-same-type}
-=======
 >Note:
 >
 >Diese Methoden gelten als veraltet und du solltest sie in neuem Code [vermeiden](/blog/2018/03/27/update-on-async-rendering.html):
