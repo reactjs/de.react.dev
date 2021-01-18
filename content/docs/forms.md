@@ -31,7 +31,7 @@ Wir können beides kombinieren, indem wir den React-State zur alleinigen "source
 
 Wenn wir zum Beispiel das vorherige Formular-Beispiel nehmen und den eingegbenen Namen, wenn er abgeschickt wird, loggen, dann können wir das Formular als kontrollierte Komponente schreiben:
 
-```javascript{4,10-12,24}
+```javascript{4,10-12,21,24}
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
