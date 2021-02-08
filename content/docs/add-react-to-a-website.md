@@ -54,8 +54,8 @@ Als nächstes fügen wir direkt vor dem schließenden `</body>` Tag drei `<scrip
 
   <!-- React laden. -->
   <!-- Hinweis: Wenn du die Seite bereitstellen willst, ersetze "development.js" mit "production.min.js". -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 
   <!-- Unsere React Komponente laden. -->
   <script src="like_button.js"></script>
@@ -69,13 +69,13 @@ Die ersten zwei Tags laden React. Der dritte läd deinen Komponenten Code.
 
 Erstelle eine Datei mit dem Namen `like_button.js` und speichere sie neben deiner HTML Seite.
 
-Öffne **[den Starter Code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** und füge Sie in die Datei ein, die du erstellt hast.
+Öffne **[den Starter Code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** und füge Sie in die Datei ein, die du erstellt hast.
 
 >Tipp
 >
 >Dieser Code definiert eine React Komponente mit dem Namen `LikeButton`. Mach dir keine Sorgen, falls du das noch nicht verstehst -- Wir werden die Bausteine von React später in unserem [hands-on Tutorial](/tutorial/tutorial.html) und dem [Leitfaden der Hauptkonzepte](/docs/hello-world.html) behandeln. Jetzt wollen wir sie erstmal im Browser angezeigt bekommen!
 
-Nach **[dem Starter Code](https://cdn.rawgit.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, füge zwei Zeilen am Ende von `like_button.js` an:
+Nach **[dem Starter Code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, füge zwei Zeilen am Ende von `like_button.js` an:
 
 ```js{3,4}
 // ... Der Start Code, den du gerade eingefügt hast ...
@@ -115,8 +115,8 @@ Bevor du deine Webseite für die Produktionsumgebung deployst, denke daran, dass
 Falls du bereits die Anwendungsscripts minifiziert hast, **ist deine Seite fertig für die Produktionsumgebung**, sobald du sichergestellt hast, dass das bereitgestellte HTML die Versionen von React lädt, die auf `production.min.js` enden:
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Falls du deine Skripte nicht minifizierst, wird [hier wird ein möglicher Weg zur Minifizierung](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3) gezeigt. 
@@ -149,7 +149,7 @@ return (
 
 Diese zwei Codebeispiele sind äquivalent. Obwohl **JSX [komplett optional](/docs/react-without-jsx.html) ist**, finden es viele Leute beim Schreiben von UI Code hilfreich -- sowohl mit React als auch mit anderen Bibliotheken.
 
-Du kannst JSX mit [diesem Online Konverter](https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2%2Cstage-3&prettier=true&targets=Node-6.12&version=6.26.0&envVersion=) ausprobieren.
+Du kannst JSX mit [diesem Online Konverter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3) ausprobieren.
 
 ### Schnell JSX ausprobieren {#quickly-try-jsx}
 
@@ -183,7 +183,7 @@ Herzlichen Glückwunsch! Du hast gerade ein **JSX Setup** eingerichtet, das **f�
 Erzeuge einen Ordner mit dem Namen `src` und führe folgenden Befehl aus:
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >Hinweis
@@ -194,7 +194,7 @@ npx babel --watch src --out-dir . --presets react-app/prod
 
 Du brauchst nicht darauf zu warten, dass der Befehl fertig ausgeführt wird -- er startet einen automatisierten Watcher für JSX.
 
-Wenn du jetzt eine Datei unter `src/like_button.js` mit diesem **[JSX Starter Code](https://cdn.rawgit.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)** erstellst, wird der Watcher eine präprozessierte `like_button.js` mit einfachem JavaScript Code erstellen, der im Browser ausgeführt werden kann.
+Wenn du jetzt eine Datei unter `src/like_button.js` mit diesem **[JSX Starter Code](https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js)** erstellst, wird der Watcher eine präprozessierte `like_button.js` mit einfachem JavaScript Code erstellen, der im Browser ausgeführt werden kann. Wenn Sie die Quelldatei mit JSX bearbeiten, wird das Bauen der Datei automatisch erneut ausgeführt.
 
 Zusätzlich kannst du durch diesen Ansatz moderne JavaScript Syntax Funktionalitäten wie Klassen verwenden, ohne dass dein Code in alten Browsern nicht funktionieren würde.
 

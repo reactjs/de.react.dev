@@ -39,7 +39,7 @@ Das React Team empfiehlt bevorzugt diese Lösungen:
 
 [Create React App](https://github.com/facebookincubator/create-react-app) ist eine komfortable Umgebung, um **React zu lernen** und ist der beste Weg, mit **einer neuen [Single Page](/docs/glossary.html#single-page-application) Anwendung** in React zu beginnen.
 
-Es setzt deine Entwicklungsumgebung so auf, dass du die neuesten JavaScript Features benutzen kannst, eine angenehme Entwicklererfahrung zur Verfügung hast und deine Anwendung für die Produktionsumgebung optimiert ist. Du benötigst dafür Node >= 6 und npm >= 5.2 auf deinem Computer. Um ein Projekt zu erstellen, führen diese Befehle aus:
+Es setzt deine Entwicklungsumgebung so auf, dass du die neuesten JavaScript Features benutzen kannst, eine angenehme Entwicklungserfahrung zur Verfügung hast und deine Anwendung für die Produktionsumgebung optimiert ist. Du benötigst dafür [Node >= 8.10 und npm >= 5.6](https://nodejs.org/en/) auf deinem Computer. Um ein Projekt zu erstellen, führen diese Befehle aus:
 
 ```bash
 npx create-react-app meine-anwendung
@@ -53,7 +53,7 @@ npm start
 
 Create React App handhabt weder Backend-Logik noch Datenbanken; es erzeugt einfach nur eine Frontend Build Pipeline, so dass du es mit jedem gewünschten Backend verwenden kannst. Unter der Haube verwendet es [Babel](https://babeljs.io/) und [webpack](https://webpack.js.org/), aber darüber musst du nichts wissen.
 
-Wenn du bereit bist auf die Produktionsumgebung zu deployen, führe `npm run build` aus. Dies erstellt einen optimierten Build für deine Anwendung im `build` Ordner. Du kannst mehr über Create React App [in der README](https://github.com/facebookincubator/create-react-app#create-react-app--) und dem [Benutzerhandbuch](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#table-of-contents) erfahren.
+Wenn du bereit bist auf die Produktionsumgebung zu deployen, führe `npm run build` aus. Dies erstellt einen optimierten Build für deine Anwendung im `build` Ordner. Du kannst mehr über Create React App [in der README](https://github.com/facebookincubator/create-react-app#create-react-app--) und dem [Benutzerhandbuch](https://facebook.github.io/create-react-app/) erfahren.
 
 ### Next.js {#nextjs}
 
@@ -73,7 +73,7 @@ Die folgenden Werkzeuge bieten mehr Flexibilität und Freiheiten. Wir empfehlen 
 
 - **[Neutrino](https://neutrinojs.org/)** kombiniert die Stärke von [webpack](https://webpack.js.org/) mit der Einfachheit von Voreinstellungen und bringt eine Voreinstellung für [React Anwendungen](https://neutrinojs.org/packages/react/) und [React Komponenten](https://neutrinojs.org/packages/react-components/) mit.
 
-- **[nwb](https://github.com/insin/nwb)** ist besonders geeignet, um [React Komponenten auf npm zu veröffentlichen](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb). Es [kann auch benutzt werden](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb), um React Anwendungen zu erstellen.
+- **[Nx](https://nx.dev/react)** ist ein Toolkit für Full-Stack Monorepo Entwicklung, mit integrierter Unterstützung für React, Next.js, [Express](https://expressjs.com/) und mehr.
 
 - **[Parcel](https://parceljs.org/)** ist ein schneller konfigurationsloser Bundler für Webanwendungen, der [mit React funktioniert](https://parceljs.org/recipes.html#react).
 

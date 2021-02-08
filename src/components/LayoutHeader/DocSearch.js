@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * @emails react-core
  * @flow
@@ -22,8 +22,8 @@ class DocSearch extends Component<{}, State> {
     // eslint-disable-next-line no-undef
     if (window.docsearch) {
       window.docsearch({
-        apiKey: '36221914cce388c46d0420343e0bb32e',
-        indexName: 'react',
+        apiKey: 'd21123d56e66993085aa485a29b4ec35',
+        indexName: 'reactjs_de',
         inputSelector: '#algolia-doc-search',
       });
     } else {
@@ -44,7 +44,6 @@ class DocSearch extends Component<{}, State> {
           alignItems: 'center',
           paddingLeft: '0.25rem',
           paddingRight: '0.25rem',
-
           [media.lessThan('expandedSearch')]: {
             justifyContent: 'flex-end',
             marginRight: 10,
@@ -56,6 +55,7 @@ class DocSearch extends Component<{}, State> {
           // },
           [media.greaterThan('expandedSearch')]: {
             minWidth: 100,
+            width: 'calc(100% / 5)',
           },
         }}>
         <input

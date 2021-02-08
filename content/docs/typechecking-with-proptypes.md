@@ -1,18 +1,18 @@
 ---
 id: typechecking-with-proptypes
-title: Typechecking With PropTypes
+title: Typisierung mit PropTypes
 permalink: docs/typechecking-with-proptypes.html
 redirect_from:
   - "docs/react-api.html#typechecking-with-proptypes"
 ---
 
-> Note:
+> Hinweis:
 >
-> `React.PropTypes` has moved into a different package since React v15.5. Please use [the `prop-types` library instead](https://www.npmjs.com/package/prop-types).
+> `React.PropTypes` ist seit React v15.5 in ein anderes Paket umgezogen. Bitte benutze stattdessen [die `prop-types`-Bibliothek](https://www.npmjs.com/package/prop-types).
 >
->We provide [a codemod script](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) to automate the conversion.
+>Wir stellen [ein Codemod-Skript](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) zur Verfügung, um die Konvertierung zu automatisieren.
 
-As your app grows, you can catch a lot of bugs with typechecking. For some applications, you can use JavaScript extensions like [Flow](https://flow.org/) or [TypeScript](https://www.typescriptlang.org/) to typecheck your whole application. But even if you don't use those, React has some built-in typechecking abilities. To run typechecking on the props for a component, you can assign the special `propTypes` property:
+Wenn deine Anwendung wächst, kannst du viele Bugs mit einer Typprüfung abfangen. Für einige Anwendungen lassen sich JavaScript-Erweiterungen wie [Flow](https://flow.org/) oder [TypeScript](https://www.typescriptlang.org/) verwenden, um die gesamte Anwendung zu überprüfen. Aber selbst wenn du diese nicht verwendest, hat React einige eingebaute Fähigkeiten zur Überprüfung von Typen. Um die Typprüfung an den Props für eine Komponente durchzuführen, kannst du die spezielle Eigenschaft `propTypes` zuweisen:
 
 ```javascript
 import PropTypes from 'prop-types';
@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 class Greeting extends React.Component {
   render() {
     return (
-      <h1>Hello, {this.props.name}</h1>
+      <h1>Hallo, {this.props.name}</h1>
     );
   }
 }
@@ -30,18 +30,20 @@ Greeting.propTypes = {
 };
 ```
 
-`PropTypes` exports a range of validators that can be used to make sure the data you receive is valid. In this example, we're using `PropTypes.string`. When an invalid value is provided for a prop, a warning will be shown in the JavaScript console. For performance reasons, `propTypes` is only checked in development mode.
+In diesem Beispiel verwenden wir eine Klassenkomponente, aber die gleiche Funktionalität könnte auch auf Funktionskomponenten angewendet werden, oder auf Komponenten, die durch [`React.memo`](/docs/react-api.html#reactmemo) oder [`React.forwardRef`](/docs/react-api.html#reactforwardref) erstellt wurden.
+
+`PropTypes` exportiert eine Reihe von Prüfern, die verwendet werden können, um sicherzustellen, dass die Daten die du erhältst gültig sind. In diesem Beispiel verwenden wir `PropTypes.string`. Wenn ein ungültiger Wert für ein Prop angegeben wird, wird eine Warnung in der JavaScript-Konsole angezeigt. Aus Performance-Gründen wird `propTypes` nur im Entwicklungsmodus geprüft.
 
 ### PropTypes {#proptypes}
 
-Here is an example documenting the different validators provided:
+Hier ist ein Beispiel, das die verschiedenen verfügbaren Validatoren dokumentiert:
 
 ```javascript
 import PropTypes from 'prop-types';
 
 MyComponent.propTypes = {
-  // You can declare that a prop is a specific JS type. By default, these
-  // are all optional.
+  // Du kannst eine Prop als einen bestimmten JS-Typ deklarieren.
+  // Standardmäßig sind alle diese Optionen optional.
   optionalArray: PropTypes.array,
   optionalBool: PropTypes.bool,
   optionalFunc: PropTypes.func,
@@ -50,50 +52,60 @@ MyComponent.propTypes = {
   optionalString: PropTypes.string,
   optionalSymbol: PropTypes.symbol,
 
-  // Anything that can be rendered: numbers, strings, elements or an array
-  // (or fragment) containing these types.
+  // Alles, was gerendert werden kann: Zahlen, Zeichenketten, Elemente 
+  // oder ein Array (oder Fragment), das diese Typen enthält.
   optionalNode: PropTypes.node,
 
-  // A React element.
+  // Ein React-Element.
   optionalElement: PropTypes.element,
 
-  // You can also declare that a prop is an instance of a class. This uses
-  // JS's instanceof operator.
+  // Ein React-Element-Typ (z.B. MyComponent).
+  optionalElementType: PropTypes.elementType,
+
+  // Du kannst auch deklarieren, dass ein Prop, eine Instanz einer Klasse ist. 
+  // Dies verwendet JS's instanceOf-Operator.
   optionalMessage: PropTypes.instanceOf(Message),
 
-  // You can ensure that your prop is limited to specific values by treating
-  // it as an enum.
+  // Du kannst sicherstellen, dass deine Prop auf bestimmte Werte beschränkt 
+  // ist, indem du sie als Enum behandelst.
   optionalEnum: PropTypes.oneOf(['News', 'Photos']),
 
-  // An object that could be one of many types
+  // Ein Objekt, das eines von vielen Typen sein könnte.
   optionalUnion: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.instanceOf(Message)
   ]),
 
-  // An array of a certain type
+  // Ein Array eines bestimmten Typs.
   optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
 
-  // An object with property values of a certain type
+  // Ein Objekt mit Eigenschaftswerten eines bestimmten Typs.
   optionalObjectOf: PropTypes.objectOf(PropTypes.number),
 
-  // An object taking on a particular shape
+  // Ein Objekt, das eine bestimmte Form annimmt.
   optionalObjectWithShape: PropTypes.shape({
     color: PropTypes.string,
     fontSize: PropTypes.number
   }),
+  
+  // Ein Objekt mit Warnungen zu zusätzlichen Eigenschaften.
+  optionalObjectWithStrictShape: PropTypes.exact({
+    name: PropTypes.string,
+    quantity: PropTypes.number
+  }),   
 
-  // You can chain any of the above with `isRequired` to make sure a warning
-  // is shown if the prop isn't provided.
+  // Alle der oben genannten Möglichkeiten lassen sich mit `isRequired` 
+  // verketten, um sicherzustellen, dass eine Warnung ausgegeben wird, 
+  // wenn die Prop nicht vorhanden ist.
   requiredFunc: PropTypes.func.isRequired,
 
-  // A value of any data type
+  // Ein erforderlicher Wert eines beliebigen Datentyps.
   requiredAny: PropTypes.any.isRequired,
 
-  // You can also specify a custom validator. It should return an Error
-  // object if the validation fails. Don't `console.warn` or throw, as this
-  // won't work inside `oneOfType`.
+  // Du kannst auch einen benutzerdefinierten Validierer angeben. 
+  // Es sollte ein Error-Objekt zurückgeben, wenn die Validierung fehlschlägt.
+  // Verzichte auf `console.warn` oder throw, da dies in `oneOfType` nicht funktioniert.
   customProp: function(props, propName, componentName) {
     if (!/matchme/.test(props[propName])) {
       return new Error(
@@ -103,11 +115,11 @@ MyComponent.propTypes = {
     }
   },
 
-  // You can also supply a custom validator to `arrayOf` and `objectOf`.
-  // It should return an Error object if the validation fails. The validator
-  // will be called for each key in the array or object. The first two
-  // arguments of the validator are the array or object itself, and the
-  // current item's key.
+  // Du kannst auch einen benutzerdefinierten Validierer für `arrayOf` 
+  // und `objectOf` liefern. Es sollte ein Error-Objekt zurückgeben, wenn die 
+  // Validierung fehlschlägt. Der Validator wird für jeden Schlüssel im Array 
+  // oder Objekt aufgerufen. Die ersten beiden Argumente des Prüfers sind das 
+  // Array oder Objekt selbst und der Schlüssel des aktuellen Elements.
   customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
     if (!/matchme/.test(propValue[key])) {
       return new Error(
@@ -119,16 +131,16 @@ MyComponent.propTypes = {
 };
 ```
 
-### Requiring Single Child {#requiring-single-child}
+### Einzelnes Kind (Child) anfordern {#requiring-single-child}
 
-With `PropTypes.element` you can specify that only a single child can be passed to a component as children.
+Mit `PropTypes.element` kannst du festlegen, dass nur ein einzelnes Kind (Child) an eine Komponente als Children übergeben werden kann.
 
 ```javascript
 import PropTypes from 'prop-types';
 
 class MyComponent extends React.Component {
   render() {
-    // This must be exactly one element or it will warn.
+    // Dies muss genau ein Element sein, sonst erscheint eine Warnung.
     const children = this.props.children;
     return (
       <div>
@@ -143,45 +155,90 @@ MyComponent.propTypes = {
 };
 ```
 
-### Default Prop Values {#default-prop-values}
+### Standard Prop Werte {#default-prop-values}
 
-You can define default values for your `props` by assigning to the special `defaultProps` property:
+Du kannst Standardwerte für deine `Props` definieren, indem du sie der speziellen Eigenschaft `defaultProps` zuweist:
 
 ```javascript
 class Greeting extends React.Component {
   render() {
     return (
-      <h1>Hello, {this.props.name}</h1>
+      <h1>Hallo, {this.props.name}</h1>
     );
   }
 }
 
-// Specifies the default values for props:
+// Gibt die Standardwerte für Props an:
 Greeting.defaultProps = {
-  name: 'Stranger'
+  name: 'Fremder'
 };
 
-// Renders "Hello, Stranger":
+// Rendert "Hallo, Fremder":
 ReactDOM.render(
   <Greeting />,
   document.getElementById('example')
 );
 ```
 
-If you are using a Babel transform like [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/) , you can also declare `defaultProps` as static property within a React component class. This syntax has not yet been finalized though and will require a compilation step to work within a browser. For more information, see the [class fields proposal](https://github.com/tc39/proposal-class-fields).
+Wenn du eine Babel-Transformation wie [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/) verwendest, kannst du auch `defaultProps` als statische Eigenschaft innerhalb einer React-Komponentenklasse deklarieren. Diese Syntax ist jedoch noch nicht finalisiert und erfordert einen Kompilierungsschritt, um in einem Browser zu funktionieren. Weitere Informationen findest du in der [Vorschau der Klassenfelder](https://github.com/tc39/proposal-class-fields).
+
 
 ```javascript
 class Greeting extends React.Component {
   static defaultProps = {
-    name: 'stranger'
+    name: 'Fremder'
   }
 
   render() {
     return (
-      <div>Hello, {this.props.name}</div>
+      <div>Hallo, {this.props.name}</div>
     )
   }
 }
 ```
 
-The `defaultProps` will be used to ensure that `this.props.name` will have a value if it was not specified by the parent component. The `propTypes` typechecking happens after `defaultProps` are resolved, so typechecking will also apply to the `defaultProps`.
+Die `defaultProps` werden verwendet, um sicherzustellen, dass `this.props.name` einen Wert hat, wenn er nicht von der übergeordneten Komponente angegeben wurde. Die Typüberprüfung von `propTypes` erfolgt nachdem `defaultProps` aufgelöst wurde, so dass die Typüberprüfung auch für die `defaultProps` gilt.
+
+### Funktionskomponenten {#function-components}
+
+Wenn du Funktionskomponenten bei der regulären Entwicklung verwendest, solltest du vielleicht einige kleine Änderungen vornehmen, damit PropTypes richtig angewendet werden können. 
+
+Nehmen wir an, du hast eine Komponente wie diese:
+
+```javascript
+export default function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+```
+
+Um PropTypes hinzuzufügen, kannst du die Komponente vor dem Export in eine separate Funktion auslagern, etwa so:
+
+```javascript
+function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+
+export default HelloWorldComponent
+```
+
+Dann kannst du PropTypes direkt zu `HelloWorldComponent` hinzufügen:
+
+```javascript
+import PropTypes from 'prop-types'
+
+function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+
+HelloWorldComponent.propTypes = {
+  name: PropTypes.string
+}
+
+export default HelloWorldComponent
+```

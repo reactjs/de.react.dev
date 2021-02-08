@@ -1,125 +1,120 @@
 ---
 id: optimizing-performance
-title: Optimizing Performance
+title: Performance-Optimierung
 permalink: docs/optimizing-performance.html
 redirect_from:
   - "docs/advanced-performance.html"
 ---
 
-Internally, React uses several clever techniques to minimize the number of costly DOM operations required to update the UI. For many applications, using React will lead to a fast user interface without doing much work to specifically optimize for performance. Nevertheless, there are several ways you can speed up your React application.
+Intern verwendet React mehrere clevere Techniken, um die Anzahl kostspieliger DOM-Vorgänge zu minimieren, die nötig sind, um die Benutzeroberfläche zu aktualisieren. Für viele Anwendungen führt React zu einer schnellen Benutzeroberfläche, ohne dass die Performance mit viel Aufwand optimiert werden muss. Trotzdem gibt es mehrere Möglichkeiten, wie du deine React-Anwendung noch schneller machen kannst.
 
-## Use the Production Build {#use-the-production-build}
+## Benutze den Produktions-Build {#use-the-production-build}
 
-If you're benchmarking or experiencing performance problems in your React apps, make sure you're testing with the minified production build.
+Falls du Benchmarking betreibst oder Performance-Probleme in deinen React-Apps feststellst, stelle sicher, dass du sie mit dem minifizierten Produktions-Build testest.
 
-By default, React includes many helpful warnings. These warnings are very useful in development. However, they make React larger and slower so you should make sure to use the production version when you deploy the app.
+Standardmäßig enthält React viele hilfreiche Warnungen. Diese Warnungen sind während des Entwickelns sehr nützlich. Allerdings machen sie React größer und langsamer, weshalb du beim Deployen darauf achten solltest, die Produktions-Version zu verwenden.
 
-If you aren't sure whether your build process is set up correctly, you can check it by installing [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi). If you visit a site with React in production mode, the icon will have a dark background:
+Falls du nicht sicher bist, ob dein Build-Prozess korrekt eingerichtet ist, kannst du ihn überprüfen, indem du die [React Developer Tools für Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) installierst. Wenn du eine Seite mit React im Produktions-Modus besuchst, hat das Icon einen dunklen Hintergrund:
 
-<img src="../images/docs/devtools-prod.png" style="max-width:100%" alt="React DevTools on a website with production version of React">
+<img src="../images/docs/devtools-prod.png" style="max-width:100%" alt="React DevTools auf einer Webseite mit React im Produktions-Modus">
 
-If you visit a site with React in development mode, the icon will have a red background:
+Wenn du eine Seite mit React im Entwickler-Modus besuchst, hat das Icon einen roten Hintergrund:
 
-<img src="../images/docs/devtools-dev.png" style="max-width:100%" alt="React DevTools on a website with development version of React">
+<img src="../images/docs/devtools-dev.png" style="max-width:100%" alt="React DevTools auf einer Webseite mit React im Entwickler-Modus">
 
-It is expected that you use the development mode when working on your app, and the production mode when deploying your app to the users.
+Der Entwickler-Modus sollte benutzt werden, während du an der App arbeitest, und der Produktions-Modus, wenn du die Webseite deployst.
 
-You can find instructions for building your app for production below.
+Weiter unten findest du eine Anleitung, wie du die Produktions-Version deiner App erstellst.
 
 ### Create React App {#create-react-app}
 
-If your project is built with [Create React App](https://github.com/facebookincubator/create-react-app), run:
+Falls dein Projekt mit [Create React App](https://github.com/facebookincubator/create-react-app) erstellt wurde, führe Folgendes aus:
 
 ```
 npm run build
 ```
 
-This will create a production build of your app in the `build/` folder of your project.
+Damit wird im `build/`-Ordner deines Projekts ein Produktions-Build deiner App erstellt. 
 
-Remember that this is only necessary before deploying to production. For normal development, use `npm start`.
+Denke daran, dass das nur erforderlich ist, bevor du deine App deployst. Zum normalen Entwickeln benutze `npm start`.
 
-### Single-File Builds {#single-file-builds}
+### Einzeldatei-Builds {#single-file-builds}
 
-We offer production-ready versions of React and React DOM as single files:
+Wir bieten produktionsfertige Versionen von React und React DOM als Einzeldateien an:
 
 ```html
-<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
-Remember that only React files ending with `.production.min.js` are suitable for production.
+Denke daran, dass nur React-Dateien, die mit `.production.min.js` enden, für die Produktionsumgebung geeignet sind.
 
 ### Brunch {#brunch}
 
-For the most efficient Brunch production build, install the [`uglify-js-brunch`](https://github.com/brunch/uglify-js-brunch) plugin:
+Um den effizientesten Brunch-Produktions-Build zu bekommen, installiere das [`terser-brunch`](https://github.com/brunch/terser-brunch)-Plugin:
 
+```bash
+# Falls du npm verwendest
+npm install --save-dev terser-brunch
+
+# Falls du Yarn verwendest
+yarn add --dev terser-brunch
 ```
-# If you use npm
-npm install --save-dev uglify-js-brunch
 
-# If you use Yarn
-yarn add --dev uglify-js-brunch
-```
-
-Then, to create a production build, add the `-p` flag to the `build` command:
+Um dann einen Produktions-Build zu erstellen, füge zum `build`-Befehl das `-p`-Flag hinzu:
 
 ```
 brunch build -p
 ```
 
-Remember that you only need to do this for production builds. You shouldn't pass the `-p` flag or apply this plugin in development, because it will hide useful React warnings and make the builds much slower.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest das `-p`-Flag oder dieses Plugin nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### Browserify {#browserify}
 
-For the most efficient Browserify production build, install a few plugins:
+Um den effizientesten Browserify-Produktions-Build zu bekommen, installiere ein paar Plugins:
 
 ```
-# If you use npm
-npm install --save-dev envify uglify-js uglifyify 
+# Falls du npm verwendest
+npm install --save-dev envify terser uglifyify 
 
-# If you use Yarn
-yarn add --dev envify uglify-js uglifyify 
+# Falls du Yarn verwendest
+yarn add --dev envify terser uglifyify 
 ```
 
-To create a production build, make sure that you add these transforms **(the order matters)**:
+Um einen Produktions-Build zu erstellen, stelle sicher, dass du diese Transformer hinzufügst **(die Reihenfolge ist wichtig)**:
 
-* The [`envify`](https://github.com/hughsk/envify) transform ensures the right build environment is set. Make it global (`-g`).
-* The [`uglifyify`](https://github.com/hughsk/uglifyify) transform removes development imports. Make it global too (`-g`).
-* Finally, the resulting bundle is piped to [`uglify-js`](https://github.com/mishoo/UglifyJS2) for mangling ([read why](https://github.com/hughsk/uglifyify#motivationusage)).
+* Der [`envify`](https://github.com/hughsk/envify)-Transformer stellt sicher, dass die richtige Build-Umgebung gesetzt wird. Benutze ihn global (`-g`).
+* Der [`uglifyify`](https://github.com/hughsk/uglifyify)-Transformer entfernt Entwickler-Importe. Benutze auch ihn global (`-g`).
+* Schließlich wird das so entstandene Bundle an [`terser`](https://github.com/terser-js/terser) geleitet, wo es "gemangled" wird ([lies warum](https://github.com/hughsk/uglifyify#motivationusage)).
 
-For example:
+Zum Beispiel:
 
 ```
 browserify ./index.js \
   -g [ envify --NODE_ENV production ] \
   -g uglifyify \
-  | uglifyjs --compress --mangle > ./bundle.js
+  | terser --compress --mangle > ./bundle.js
 ```
 
->**Note:**
->
->The package name is `uglify-js`, but the binary it provides is called `uglifyjs`.<br>
->This is not a typo.
-
-Remember that you only need to do this for production builds. You shouldn't apply these plugins in development because they will hide useful React warnings, and make the builds much slower.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest diese Plugins nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### Rollup {#rollup}
 
-For the most efficient Rollup production build, install a few plugins:
+Um den effizientesten Rollup-Produktions-Build zu bekommen, installiere ein paar Plugins:
 
+```bash
+# Falls du npm benutzt
+npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-terser
+
+# Falls du Yarn benutzt
+yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-terser
 ```
-# If you use npm
-npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify 
 
-# If you use Yarn
-yarn add --dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify 
-```
+Um einen Produktions-Build zu kreieren, stelle sicher, dass du diese Plugins hinzufügst **(die Reihenfolge ist wichtig)**:
 
-To create a production build, make sure that you add these plugins **(the order matters)**:
-
-* The [`replace`](https://github.com/rollup/rollup-plugin-replace) plugin ensures the right build environment is set.
-* The [`commonjs`](https://github.com/rollup/rollup-plugin-commonjs) plugin provides support for CommonJS in Rollup.
-* The [`uglify`](https://github.com/TrySound/rollup-plugin-uglify) plugin compresses and mangles the final bundle.
+* Das [`replace`](https://github.com/rollup/rollup-plugin-replace)-Plugin stellt sicher, dass die richtige Build-Umgebung gesetzt wird. 
+* Das [`commonjs`](https://github.com/rollup/rollup-plugin-commonjs)-Plugin bietet CommonJS-Unterstützung in Rollup.
+* Das [`terser`](https://github.com/TrySound/rollup-plugin-terser-Plugin komprimiert und "mangled" das finale Bundle.
 
 ```js
 plugins: [
@@ -128,109 +123,95 @@ plugins: [
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
   require('rollup-plugin-commonjs')(),
-  require('rollup-plugin-uglify')(),
+  require('rollup-plugin-terser')(),
   // ...
 ]
 ```
 
-For a complete setup example [see this gist](https://gist.github.com/Rich-Harris/cb14f4bc0670c47d00d191565be36bf0).
+Siehe dir ein komplettes Setup-Beispiel [in diesem Gist](https://gist.github.com/Rich-Harris/cb14f4bc0670c47d00d191565be36bf0) an.
 
-Remember that you only need to do this for production builds. You shouldn't apply the `uglify` plugin or the `replace` plugin with `'production'` value in development because they will hide useful React warnings, and make the builds much slower.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest das `terser`-Plugin oder das `replace`-Plugin mit `'production'` nicht während der Entwicklung verwenden, da sie nützliche React-Warnungen verbergen und die Builds viel langsamer machen.
 
 ### webpack {#webpack}
 
->**Note:**
+>**Hinweis:**
 >
->If you're using Create React App, please follow [the instructions above](#create-react-app).<br>
->This section is only relevant if you configure webpack directly.
+>Falls du Create React App verwendest, folge bitte den [Anweisungen weiter oben](#create-react-app).<br>
+>Dieser Abschnitt ist nur relevant, wenn du webpack direkt konfigurierst.
 
-For the most efficient webpack production build, make sure to include these plugins in your production configuration:
+Webpack v4+ minified deinen Code standardmäßig im `production`-Modus.
 
 ```js
-new webpack.DefinePlugin({
-  'process.env.NODE_ENV': JSON.stringify('production')
-}),
-new webpack.optimize.UglifyJsPlugin()
+const TerserPlugin = require('terser-webpack-plugin');
+
+module.exports = {
+  mode: 'production',
+  optimization: {
+    minimizer: [new TerserPlugin({ /* additional options here */ })],
+  },
+};
 ```
 
-You can learn more about this in [webpack documentation](https://webpack.js.org/guides/production-build/).
+Mehr Informationen darüber findest du in der [webpack-Dokumentation](https://webpack.js.org/guides/production/).
 
-Remember that you only need to do this for production builds. You shouldn't apply `UglifyJsPlugin` or `DefinePlugin` with `'production'` value in development because they will hide useful React warnings, and make the builds much slower.
+Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest `TerserPlugin` nicht während der Entwicklung verwenden, da es nützliche React-Warnungen verbergen wird und die Builds viel langsamer macht.
 
-## Profiling Components with the Chrome Performance Tab {#profiling-components-with-the-chrome-performance-tab}
+## Komponenten-Profiling mit dem Chrome Performance-Tab {#profiling-components-with-the-chrome-performance-tab}
 
-In the **development** mode, you can visualize how components mount, update, and unmount, using the performance tools in supported browsers. For example:
+Im **Entwickler**-Modus kannst du in unterstützten Browsern mit den Performance-Tools visualisieren, wie Komponenten gemountet, upgedatet und geunmountet werden. Zum Beispiel:
 
 <center><img src="../images/blog/react-perf-chrome-timeline.png" style="max-width:100%" alt="React components in Chrome timeline" /></center>
 
-To do this in Chrome:
+In Chrome geht das so:
 
-1. Temporarily **disable all Chrome extensions, especially React DevTools**. They can significantly skew the results!
+1. Deaktiviere vorübergehend **alle Chrome-Erweiterungen, insbesondere React DevTools**. Sie können die Ergebnisse deutlich verzerren!
 
-2. Make sure you're running the application in the development mode.
+2. Stelle sicher, dass du die Anwendung im Entwickler-Modus ausführst.
 
-3. Open the Chrome DevTools **[Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool)** tab and press **Record**.
+3. Öffne das Chrome DevTools **[Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool)**-Tab und klicke auf **Record**.
 
-4. Perform the actions you want to profile. Don't record more than 20 seconds or Chrome might hang.
+4. Führe die Aktionen aus, die du profilen möchtest. Nehme nicht länger als 20 Sekunden auf, um zu verhindern, dass Chrome sich aufhängt. 
 
-5. Stop recording.
+5. Stoppe die Aufnahme.
 
-6. React events will be grouped under the **User Timing** label.
+6. React-Events werden unter dem **User Timing**-Label zusammengefasst.
 
-For a more detailed walkthrough, check out [this article by Ben Schwarz](https://calibreapp.com/blog/2017-11-28-debugging-react/).
+Für eine detailliertere Anleitung schaue dir [diesen Artikel von Ben Schwarz](https://calibreapp.com/blog/react-performance-profiling-optimization) an.
 
-Note that **the numbers are relative so components will render faster in production**. Still, this should help you realize when unrelated UI gets updated by mistake, and how deep and how often your UI updates occur.
+Beachte, dass **diese Zahlen relativ sind und Komponenten in der Produktionsumgebung schneller rendern werden**. Trotzdem sollten sie dir dabei helfen, zu erkennen, wenn voneinander unabhängige UI-Elemente aus Versehen geupdatet werden, und wie tief und wie oft deine UI-Updates stattfinden.
 
-Currently Chrome, Edge, and IE are the only browsers supporting this feature, but we use the standard [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) so we expect more browsers to add support for it.
+Momentan sind Chrome, Edge und IE die einzigen Browser, die dieses Feature unterstützten, aber wir verwenden die Standard-[User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), weshalb wir annehmen, dass mehr Browser es unterstützen werden.
 
-## Profiling Components with the DevTools Profiler {#profiling-components-with-the-devtools-profiler}
+## Komponenten-Profiling mit dem DevTools-Profiler {#profiling-components-with-the-devtools-profiler}
 
-`react-dom` 16.5+ and `react-native` 0.57+ provide enhanced profiling capabilities in DEV mode with the React DevTools Profiler.
-An overview of the Profiler can be found in the blog post ["Introducing the React Profiler"](/blog/2018/09/10/introducing-the-react-profiler.html).
-A video walkthrough of the profiler is also [available on YouTube](https://www.youtube.com/watch?v=nySib7ipZdk).
+`react-dom` 16.5+ und `react-native` 0.57+ bieten erweiterte Profiling-Funktionen im DEV-Modus mit dem React DevTools-Profiler.
+Eine Übersicht über den Profiler gibt es im Blog-Post ["Vorstellung des React Profilers"](/blog/2018/09/10/introducing-the-react-profiler.html).
+Es gibt auch eine Video-Anleitung zum Profiler [auf YouTube](https://www.youtube.com/watch?v=nySib7ipZdk).
 
-If you haven't yet installed the React DevTools, you can find them here:
+Falls du die React DevTools noch nicht installiert hast, kannst du sie hier finden:
 
-- [Chrome Browser Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-- [Firefox Browser Extension](https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/)
-- [Standalone Node Package](https://www.npmjs.com/package/react-devtools)
+- [Chrome Browser-Erweiterung](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+- [Firefox Browser-Erweiterung](https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/)
+- [Eigenständiges Node-Package](https://www.npmjs.com/package/react-devtools)
 
-> Note
+> Hinweis
 >
-> A production profiling bundle of `react-dom` is also available as `react-dom/profiling`.
-> Read more about how to use this bundle at [fb.me/react-profiling](https://fb.me/react-profiling)
+> Ein Produktions-Profiling-Bundle von `react-dom` ist auch als `react-dom/profiling` verfügbar.
+> Lese mehr über die Verwendung dieses Bundles auf [fb.me/react-profiling](https://fb.me/react-profiling).
 
-## Virtualize Long Lists {#virtualize-long-lists}
+## Virtualisiere lange Listen {#virtualize-long-lists}
 
-If your application renders long lists of data (hundreds or thousands of rows), we recommended using a technique known as "windowing". This technique only renders a small subset of your rows at any given time, and can dramatically reduce the time it takes to re-render the components as well as the number of DOM nodes created.
+Falls deine Anwendung lange Datenlisten (mit Hunderten oder Tausenden von Zeilen) rendert, empfehlen die Verwendung einer Technik, die als "Windowing" bekannt ist. Diese Technik rendert zu jedem Zeitpunkt nur eine kleine Teilmenge deiner Zeilen. Dadurch kannst du sowohl die Zeit, die benötigt wird, um die Komponenten erneut zu rendern, als auch die Anzahl der erstellten DOM-Knoten drastisch reduzieren.
 
-[react-window](https://react-window.now.sh/) and [react-virtualized](https://bvaughn.github.io/react-virtualized/) are popular windowing libraries. They provide several reusable components for displaying lists, grids, and tabular data. You can also create your own windowing component, like [Twitter did](https://medium.com/@paularmstrong/twitter-lite-and-high-performance-react-progressive-web-apps-at-scale-d28a00e780a3), if you want something more tailored to your application's specific use case.
+[react-window](https://react-window.now.sh/) und [react-virtualized](https://bvaughn.github.io/react-virtualized/) sind beliebte Windowing-Bibliotheken. Sie bieten eine Anzahl an wiederverwendbaren Komonenten, um Listen, Grids und Datentabellen anzuzeigen. Falls du etwas möchtest, das spezifischer auf deine Anwendung zugeschnitten ist, kannst du auch deine eigene Windowing-Komponente erstellen, wie [Twitter es getan hat](https://medium.com/@paularmstrong/twitter-lite-and-high-performance-react-progressive-web-apps-at-scale-d28a00e780a3).
 
-## Avoid Reconciliation {#avoid-reconciliation}
+## Abgleiche vermeiden {#avoid-reconciliation}
 
-React builds and maintains an internal representation of the rendered UI. It includes the React elements you return from your components. This representation lets React avoid creating DOM nodes and accessing existing ones beyond necessity, as that can be slower than operations on JavaScript objects. Sometimes it is referred to as a "virtual DOM", but it works the same way on React Native.
+React baut und pflegt eine interne Repräsentation der gerenderten Benutzeroberfläche. Sie beinhaltet die React-Elemente, die deine Komponenten zurückgeben. Diese Repräsentation erlaubt es React, zu vermeiden, neue DOM-Knoten zu erstellen oder auf bereits existierende zuzugreifen, wenn dies nicht nötig ist, da dies langsamer sein kann als Operationen an JavaScript-Objekten. Man spricht manchmal vom "virtuellen DOM", aber in React Native funktioniert es auf die gleiche Weise.
 
-When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM.
+Wenn Props oder State einer Komponente sich verändern, entscheidet React, ob ein tatsächliches DOM-Update nötig ist, indem es das neu ausgegebene Element mit dem zuvor gerenderten abgleicht. Wenn sie unterschiedlich sind, aktualisiert React das DOM.
 
-You can now visualize these re-renders of the virtual DOM with React DevTools:
-
-- [Chrome Browser Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-- [Firefox Browser Extension](https://addons.mozilla.org/en-GB/firefox/addon/react-devtools/)
-- [Standalone Node Package](https://www.npmjs.com/package/react-devtools)
-
-In the developer console select the **Highlight Updates** option in the **React** tab:
-
-<center><img src="../images/blog/devtools-highlight-updates.png" style="max-width:100%; margin-top:10px;" alt="How to enable highlight updates" /></center>
-
-Interact with your page and you should see colored borders momentarily appear around any components that have re-rendered. This lets you spot re-renders that were not necessary. You can learn more about this React DevTools feature from this [blog post](https://blog.logrocket.com/make-react-fast-again-part-3-highlighting-component-updates-6119e45e6833) from [Ben Edelstein](https://blog.logrocket.com/@edelstein).
-
-Consider this example:
-
-<center><img src="../images/blog/highlight-updates-example.gif" style="max-width:100%; margin-top:20px;" alt="React DevTools Highlight Updates example" /></center>
-
-Note that when we're entering a second todo, the first todo also flashes on the screen on every keystroke. This means it is being re-rendered by React together with the input. This is sometimes called a "wasted" render. We know it is unnecessary because the first todo content has not changed, but React doesn't know this.
-
-Even though React only updates the changed DOM nodes, re-rendering still takes some time. In many cases it's not a problem, but if the slowdown is noticeable, you can speed all of this up by overriding the lifecycle function `shouldComponentUpdate`, which is triggered before the re-rendering process starts. The default implementation of this function returns `true`, leaving React to perform the update:
+Obwohl React nur DOM-Knoten aktualisiert, die sich verändert haben, braucht das erneute Rendern etwas Zeit. In vielen Fällen ist das kein Problem, doch wenn die Verlangsamung sich bemerkbar macht, kannst du den Prozess beschleunigen, indem du die Lifecycle-Funktion `shouldComponentUpdate`, die vor jedem erneuten Rendern ausgelöst wird, überschreibst. Die Standard-Implementierung dieser Funktion gibt `true` zurück und lässt React somit das Update durchführen:
 
 ```javascript
 shouldComponentUpdate(nextProps, nextState) {
@@ -238,27 +219,27 @@ shouldComponentUpdate(nextProps, nextState) {
 }
 ```
 
-If you know that in some situations your component doesn't need to update, you can return `false` from `shouldComponentUpdate` instead, to skip the whole rendering process, including calling `render()` on this component and below.
+Wenn du weißt, dass deine Komponente in manchen Fällen kein Update benötigt, kannst du stattdessen `false` von `shouldComponentUpdate` zurückgeben lassen, um den kompletten Rendering-Prozess zu überspringen, einschließlich des Aufrufs der `render()`-Funktion auf diese und die darunterliegenden Komponenten.
 
-In most cases, instead of writing `shouldComponentUpdate()` by hand, you can inherit from [`React.PureComponent`](/docs/react-api.html#reactpurecomponent). It is equivalent to implementing `shouldComponentUpdate()` with a shallow comparison of current and previous props and state.
+In den meisten Fällen kannst du [`React.PureComponent`](/docs/react-api.html#reactpurecomponent) verwenden, statt `shouldComponentUpdate()` von Hand zu schreiben. Es ist äquivalent zur Implementierung von `shouldComponentUpdate()` mit einem flachen Vergleich von alten und neuen Props und State.
 
-## shouldComponentUpdate In Action {#shouldcomponentupdate-in-action}
+## shouldComponentUpdate in Aktion {#shouldcomponentupdate-in-action}
 
-Here's a subtree of components. For each one, `SCU` indicates what `shouldComponentUpdate` returned, and `vDOMEq` indicates whether the rendered React elements were equivalent. Finally, the circle's color indicates whether the component had to be reconciled or not.
+Hier ist ein Teilbaum von Komponenten. Für jede Komponente gibt `SCU` an, was `shouldComponentUpdate` zurückgegeben hat, und `vDOMEq` gibt an, ob die gerenderten React-Elemente übereinstimmen. Die Farbe des Kreises zeigt schließlich, ob eine Komponente abgeglichen werden musste oder nicht.
 
 <figure><img src="../images/docs/should-component-update.png" style="max-width:100%" /></figure>
 
-Since `shouldComponentUpdate` returned `false` for the subtree rooted at C2, React did not attempt to render C2, and thus didn't even have to invoke `shouldComponentUpdate` on C4 and C5.
+Da `shouldComponentUpdate` für den von C2 ausgehenden Teilbaum `false` zurückgegeben hat, hat React nicht versucht, C2 zu rendern, und musste somit für C4 und C5 nicht einmal `shouldComponentUpdate` aufrufen.
 
-For C1 and C3, `shouldComponentUpdate` returned `true`, so React had to go down to the leaves and check them. For C6 `shouldComponentUpdate` returned `true`, and since the rendered elements weren't equivalent React had to update the DOM.
+Für C1 und C3 hat `shouldComponentUpdate` `true` zurückgegeben, wodurch React zu den Blättern weiterwandern musste, um diese zu überprüfen. Für C6 hat `shouldComponentUpdate` `true` zurückgegeben, und da die gerenderten Elemente nicht übereinstimmten, musste React das DOM updaten.
 
-The last interesting case is C8. React had to render this component, but since the React elements it returned were equal to the previously rendered ones, it didn't have to update the DOM.
+Der letze interessante Fall ist C8. React musste diese Komponente rendern, aber da die zurückgegebenen React-Elemente keinen Unterschied zu den zuvor gerenderten hatte, musste es das DOM nicht updaten.
 
-Note that React only had to do DOM mutations for C6, which was inevitable. For C8, it bailed out by comparing the rendered React elements, and for C2's subtree and C7, it didn't even have to compare the elements as we bailed out on `shouldComponentUpdate`, and `render` was not called.
+Beachte, dass React nur für C6 das DOM verändern musste, was unvermeidlich war. C8 war nach dem Vergleich der gerenderten React-Elemente abgehakt, und für C7 sowie den Teilbaum von C2 musste nicht einmal ein Vergleich stattfinden, da der Prozess hier schon nach `shouldComponentUpdate` abgehakt war und somit `render` nicht aufgerufen werden musste.
 
-## Examples {#examples}
+## Beispiele {#examples}
 
-If the only way your component ever changes is when the `props.color` or the `state.count` variable changes, you could have `shouldComponentUpdate` check that:
+Wenn deine Komponente sich ausschließlich dann verändert, wenn die `props.color`- oder die `state.count`-Variable sich verändert, sollte `shouldComponentUpdate` dies überprüfen: 
 
 ```javascript
 class CounterButton extends React.Component {
@@ -289,7 +270,7 @@ class CounterButton extends React.Component {
 }
 ```
 
-In this code, `shouldComponentUpdate` is just checking if there is any change in `props.color` or `state.count`. If those values don't change, the component doesn't update. If your component got more complex, you could use a similar pattern of doing a "shallow comparison" between all the fields of `props` and `state` to determine if the component should update. This pattern is common enough that React provides a helper to use this logic - just inherit from `React.PureComponent`. So this code is a simpler way to achieve the same thing:
+In diesem Code überprüft `shouldComponentUpdate` lediglich, ob es eine Veränderung in `props.color` oder `state.count` gegeben hat. Wenn diese Werte sich nicht verändern, wird die Komponente nicht aktualisiert. Für den Fall, dass deine Komponente komplexer wird, könntest du ein ähnliches Muster verwenden, indem du einen "flachen Vergleich" zwischen allen Feldern von `props` und `state` machst, um festzustellen, ob die Komponente aktualisiert werden soll. Dieses Muster ist häufig genug, dass React einen Helfer zur Verfügung stellt, um diese Logik zu verwenden - durch Vererbung von `React.PureComponent`. Dieser Code ist ein einfacherer Weg, dasselbe zu erreichen:
 
 ```js
 class CounterButton extends React.PureComponent {
@@ -310,9 +291,9 @@ class CounterButton extends React.PureComponent {
 }
 ```
 
-Most of the time, you can use `React.PureComponent` instead of writing your own `shouldComponentUpdate`. It only does a shallow comparison, so you can't use it if the props or state may have been mutated in a way that a shallow comparison would miss.
+In den meisten Fällen kannst du `React.PureComponent` verwenden, statt dein eigenes `shouldComponentUpdate` zu schreiben. Es führt nur einen flachen Vergleich durch, also kannst du `React.PureComponent` nicht benutzen, wenn Props oder State sich auf eine Weise verändert haben, die ein flacher Vergleich übersehen würde.
 
-This can be a problem with more complex data structures. For example, let's say you want a `ListOfWords` component to render a comma-separated list of words, with a parent `WordAdder` component that lets you click a button to add a word to the list. This code does *not* work correctly:
+Das kann bei komplexen Datenstrukturen ein Problem sein. Lass uns z. B. sagen, du möchtest eine `ListOfWords`-Komponente, die eine komma-separierte Wörterliste rendert, mit einer Eltern-`WorldAdder`-Komponente, die dich einen Button klicken lässt, um ein Wort zur Liste zu addieren. Dieser Code funktioniert **nicht** korrekt:
 
 ```javascript
 class ListOfWords extends React.PureComponent {
@@ -331,7 +312,7 @@ class WordAdder extends React.Component {
   }
 
   handleClick() {
-    // This section is bad style and causes a bug
+    // Dieser Abschnitt hat einen schlechten Stil und ruft einen Bug hervor
     const words = this.state.words;
     words.push('marklar');
     this.setState({words: words});
@@ -348,11 +329,11 @@ class WordAdder extends React.Component {
 }
 ```
 
-The problem is that `PureComponent` will do a simple comparison between the old and new values of `this.props.words`. Since this code mutates the `words` array in the `handleClick` method of `WordAdder`, the old and new values of `this.props.words` will compare as equal, even though the actual words in the array have changed. The `ListOfWords` will thus not update even though it has new words that should be rendered.
+Das Problem ist, dass `PureComponent` einen einfachen Vergleich zwischen den alten und neuen Werten von `this.props.words` durchführt. Da dieser Code das `words`-Array in der `handleClick`-Methode von `WordAdder` mutiert, wird ein Vergleich der alten und neuen Werte von `this.props.words` diese als gleich befinden, obwohl die tatsächlichen Wörter im Array sich verändert haben. Die `ListOfWords`-Komponente wird daher nicht upgedatet, obwohl sie neue Wörter enthält und gerendert werden sollte.
 
-## The Power Of Not Mutating Data {#the-power-of-not-mutating-data}
+## Die Macht, Daten nicht zu mutieren {#the-power-of-not-mutating-data}
 
-The simplest way to avoid this problem is to avoid mutating values that you are using as props or state. For example, the `handleClick` method above could be rewritten using `concat` as:
+Der einfachste Weg, dieses Problem zu umgehen, besteht darin, die Veränderung von Werten zu vermeiden, die du als Props oder State verwendest. Zum Beispiel könnte die `handleClick`-Methode von oben unter Verwendung von `concat` wie folgt umgeschrieben werden:
 
 ```javascript
 handleClick() {
@@ -362,7 +343,7 @@ handleClick() {
 }
 ```
 
-ES6 supports a [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) for arrays which can make this easier. If you're using Create React App, this syntax is available by default.
+ES6 unterstützt die [Spread-Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) für Arrays, was das erleichtern kann. Solltest du Create React App verwenden, ist diese Syntax standardmäßig verfügbar.
 
 ```js
 handleClick() {
@@ -372,7 +353,7 @@ handleClick() {
 };
 ```
 
-You can also rewrite code that mutates objects to avoid mutation, in a similar way. For example, let's say we have an object named `colormap` and we want to write a function that changes `colormap.right` to be `'blue'`. We could write:
+Du kannst auch Code, der Objekte verändert, in ähnlicher Weise umschreiben. Lass uns z. B. sagen, wir haben ein Objekt namens `colormap` und möchten eine Funktion schreiben, die `colormap.blue` in `blue` umändert. Wir könnten schreiben:
 
 ```js
 function updateColorMap(colormap) {
@@ -380,7 +361,7 @@ function updateColorMap(colormap) {
 }
 ```
 
-To write this without mutating the original object, we can use [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) method:
+Um dies zu schreiben, ohne das Original-Objekt zu verändern, können wir die [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)-Methode verwenden:
 
 ```js
 function updateColorMap(colormap) {
@@ -388,9 +369,9 @@ function updateColorMap(colormap) {
 }
 ```
 
-`updateColorMap` now returns a new object, rather than mutating the old one. `Object.assign` is in ES6 and requires a polyfill.
+`updateColorMap` gibt nun ein neues Objekt zurück, statt das alte zu ändern. `Object.assign` ist ES6 und benötigt ein Polyfill.
 
-There is a JavaScript proposal to add [object spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) to make it easier to update objects without mutation as well:
+[Object Spread-Syntax](https://github.com/sebmarkbage/ecmascript-rest-spread), macht es einfacher, Objekte auch ohne Veränderung zu aktualisieren.
 
 ```js
 function updateColorMap(colormap) {
@@ -398,38 +379,8 @@ function updateColorMap(colormap) {
 }
 ```
 
-If you're using Create React App, both `Object.assign` and the object spread syntax are available by default.
+Dieses Funktion wurde JavaScript in ES2018 hinzugefügt. 
 
-## Using Immutable Data Structures {#using-immutable-data-structures}
+Solltest du Create React App verwenden, sind sowohl `Object.assign` als auch die Object Spread-Syntax standardmäßig verfügbar. 
 
-[Immutable.js](https://github.com/facebook/immutable-js) is another way to solve this problem. It provides immutable, persistent collections that work via structural sharing:
-
-* *Immutable*: once created, a collection cannot be altered at another point in time.
-* *Persistent*: new collections can be created from a previous collection and a mutation such as set. The original collection is still valid after the new collection is created.
-* *Structural Sharing*: new collections are created using as much of the same structure as the original collection as possible, reducing copying to a minimum to improve performance.
-
-Immutability makes tracking changes cheap. A change will always result in a new object so we only need to check if the reference to the object has changed. For example, in this regular JavaScript code:
-
-```javascript
-const x = { foo: 'bar' };
-const y = x;
-y.foo = 'baz';
-x === y; // true
-```
-
-Although `y` was edited, since it's a reference to the same object as `x`, this comparison returns `true`. You can write similar code with immutable.js:
-
-```javascript
-const SomeRecord = Immutable.Record({ foo: null });
-const x = new SomeRecord({ foo: 'bar' });
-const y = x.set('foo', 'baz');
-const z = x.set('foo', 'bar');
-x === y; // false
-x === z; // true
-```
-
-In this case, since a new reference is returned when mutating `x`, we can use a reference equality check `(x === y)` to verify that the new value stored in `y` is different than the original value stored in `x`.
-
-Two other libraries that can help use immutable data are [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) and [immutability-helper](https://github.com/kolodny/immutability-helper).
-
-Immutable data structures provide you with a cheap way to track changes on objects, which is all we need to implement `shouldComponentUpdate`. This can often provide you with a nice performance boost.
+Wenn du mit tief verschachtelten Objekten zu tun hast, kann sich das Aktualisieren des unveränderbaren Objektes, verworren anfühlen. Wenn du auf dieses Problem stößt, schaue dir [Immer](https://github.com/mweststrate/immer) oder [immutability-helper](https://github.com/kolodny/immutability-helper) an. Mit diesen Bibliotheken kannst du gut lesbaren Code schreiben, ohne die Vorteile der Unveränderlichkeit (engl. immutability) zu verlieren.

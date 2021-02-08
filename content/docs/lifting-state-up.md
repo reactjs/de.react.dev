@@ -301,15 +301,13 @@ class Calculator extends React.Component {
 
 Unabhängig davon, welches Eingabefeld du bearbeitest, `this.state.temperature` und `this.state.scale` werden jetzt in `Calculator` aktualisiert. Bei einem der Eingabefelder wird der Wert unverändert übernommen, sodass alle Benutzereingaben erhalten bleiben und der andere Eingabewert immer auf dieser Basis neu berechnet wird.
 
-Fassen wir nochmal zusammen, was passiert, wenn du ein Eingabefeld bearbeitest:
-
 * React ruft die als `onChange` angegebene Funktion im DOM-Element `<input>` auf. In unserem Fall ist dies die `handleChange` Methode in der `TemperatureInput` Komponente.
 * Die `handleChange` Methode der `TemperatureInput` Komponente ruft `this.props.onTemperatureChange()` mit dem neuen gewünschten Wert auf. Ihre Props, einschließlich `onTemperatureChange`, wurden von der übergeordneten `Calculator` Komponente bereitgestellt.
 * Als die `Calculator` Komponente zuletzt gerendert wurde, hat sie festgelegt, dass `onTemperatureChange` der Celsius `TemperatureInput` Komponente ihre `handleCelsiusChange` Methode ist, und `onTemperatureChange` der Fahrenheit `TemperatureInput` Komponente ihre `handleFahrenheitChange` Methode. Eine dieser beiden Methoden von `Calculator` wird also aufgerufen, je nachdem welche Eingabe wir bearbeitet haben.
 * Innerhalb dieser Methoden fordert die `Calculator` Komponente React auf sich selbst erneut zu rendern, indem `this.setState()` mit dem neuen Eingabewert und der aktuellen Maßeinheit des gerade bearbeiteten Eingabefelds aufgerufen wird.
 * React ruft die Render-Methode der `Calculator` Komponente auf, um zu erfahren, wie die Benutzeroberfläche aussehen soll. Die Werte beider Eingabefelder werden basierend auf der aktuellen Temperatur und des aktiven Maßstabs neu berechnet. Die Temperaturkonvertierung wird an dieser Stelle durchgeführt.
 * React ruft die Render-Methoden der einzelnen `TemperatureInput` Komponenten mit ihren neuen, von `Calculcator` festgelegten Props auf. Es erfährt so, wie ihre Benutzeroberfläche aussehen soll.
-* React ruft die Render-Methode der `BoilingVerdict` Komponente auf und übergibt die Temperatur in Celsius als Prop.
+* React ruft die Render-Methode der `BoilingVerdict`-Komponente auf und übergibt die Temperatur in Celsius als Prop.
 * React DOM aktualisiert das DOM mit dem kochenden Ergebnis und den gewünschten Eingabewerten. Das gerade bearbeitete Eingabefeld erhält seinen aktuellen Wert und das andere Eingabefeld wird nach der Umrechnung auf die entsprechende Temperatur aktualisiert.
 
 Bei jedem Update werden dieselben Schritte durchlaufen, sodass die Eingabefelder synchron bleiben.
@@ -322,6 +320,6 @@ Beim Anheben des State muss mehr Code geschrieben werden als bei einer so genann
 
 Wenn etwas aus den Props oder dem State abgeleitet werden kann, sollte es wahrscheinlich nicht im State sein. Anstatt `celsiusValue` und `fahrenheitValue` zu speichern, speichern wir nur die zuletzt bearbeitete Temperatur und deren Maßeinheit. Der Wert der anderen Eingabefelder kann in der Methode `render()` immer daraus berechnet werden. Auf diese Weise können wir das andere Feld löschen oder Rundungen anwenden, ohne dass dabei die Genauigkeit der Benutzereingaben verloren geht.
 
-Wenn in der Benutzeroberfläche etwas nicht stimmt, kannst du die Props mithilfe der [React Developer Tools](https://github.com/facebook/react-devtools) überprüfen und den Komponenten-Baum nach oben durchgehen, bis du die für die Aktualisierung des State verantwortliche Komponente findest. So kannst du Fehler bis zu ihrer Quelle zurückverfolgen:
+Wenn in der Benutzeroberfläche etwas nicht stimmt, kannst du die Props mithilfe der [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) überprüfen und den Komponenten-Baum nach oben durchgehen, bis du die für die Aktualisierung des State verantwortliche Komponente findest. So kannst du Fehler bis zu ihrer Quelle zurückverfolgen:
 
 <img src="../images/docs/react-devtools-state.gif" alt="State in React DevTools überwachen" max-width="100%" height="100%">

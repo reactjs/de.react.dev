@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * @emails react-core
  * @flow
@@ -69,8 +69,8 @@ function ErrorResult(props: {|code: ?string, msg: string|}) {
   if (!code) {
     return (
       <p>
-        When you encounter an error, you'll receive a link to this page for that
-        specific error and we'll show you the full error text.
+        Wenn dir ein Error begegnet, bekommst du einen Link zu dieser Seite
+        für den spezifischen Error und wir zeigen Dir den kompletten Text des Errors.
       </p>
     );
   }
@@ -78,7 +78,7 @@ function ErrorResult(props: {|code: ?string, msg: string|}) {
   return (
     <div>
       <p>
-        <b>The full text of the error you just encountered is:</b>
+        <b>Der komplette Text des Errors, der dir gerade begegnet ist, ist:</b>
       </p>
       <code>
         <b>{urlify(errorMsg)}</b>

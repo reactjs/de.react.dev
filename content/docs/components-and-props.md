@@ -30,7 +30,7 @@ function Welcome(props) {
 }
 ```
 
-Diese Funktion is eine gültige React-Komponente, da sie ein einziges "props"- (engl. kurz für properties) Objekt mit Daten akzeptiert und ein React-Element zurückgibt. Wir nennen dies "Funktionskomponenten", weil es buchstäblich  JavaScript-Funktionen sind.
+Diese Funktion ist eine gültige React-Komponente, da sie ein einziges "props"- (engl. kurz für properties) Objekt mit Daten akzeptiert und ein React-Element zurückgibt. Wir nennen dies "Funktionskomponenten", weil es buchstäblich  JavaScript-Funktionen sind.
 
 Du kannst ebenfalls [ES6-Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) benutzen um Komponenten zu definieren:
 
@@ -42,9 +42,9 @@ class Welcome extends React.Component {
 }
 ```
 
-Die beiden obrigen Komponenten sind aus der Sicht von React identisch.
+Die beiden obigen Komponenten sind aus der Sicht von React identisch.
 
-Klassen haben noch ein paar zusätzliche Eigenschaften welche wir aber erst im [nächsten Abschnitt](/docs/state-and-lifecycle.html) besprechen. Bis dahin werden wir für die Funktionskomponenten wegen ihrer Übersichtlichkeit verwenden.
+Funktion- und Klassen-Komponenten haben beide noch ein paar zusätzliche Eigenschaften, welche wir im [nächsten Abschnitt](/docs/state-and-lifecycle.html) besprechen.
 
 ## Eine Komponente rendern {#rendering-a-component}
 
@@ -233,7 +233,7 @@ function Comment(props) {
 
 [Auf CodePen ausprobieren](codepen://components-and-props/extracting-components-continued)
 
-Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche, wie `Button`, `Panel` oder `Avatar` öfters verwendet werden oder ähnlich komplex wie `App`, `FeedStory` oder `Comment` sind, gute Kandidaten für wiederverwendbare Komponenten sind.
+Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche (`Button`, `Panel`, `Avatar`) öfters verwendet wird oder es ist für sich allein komplex genug ist (`App`, `FeedStory`, `Comment`), dies gute Kandidaten für wiederverwendbare Komponenten sind.
 
 ## Props sind Read-Only {#props-are-read-only}
 

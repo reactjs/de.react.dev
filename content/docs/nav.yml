@@ -1,13 +1,15 @@
 - title: Installation
   items:
     - id: getting-started
-      title: Erste SChritte
+      title: Erste Schritte
     - id: add-react-to-a-website
       title: React einer Webseite hinzufügen
     - id: create-a-new-react-app
       title: Erstelle eine React-App
     - id: cdn-links
       title: CDN Links
+    - id: release-channels
+      title: Release Kanäle
 - title: Hauptkonzepte
   isOrdered: true
   items:
@@ -20,9 +22,9 @@
     - id: components-and-props
       title: Komponenten and Props
     - id: state-and-lifecycle
-      title: State and Lifecycle
+      title: State und Lifecycle
     - id: handling-events
-      title: Handling Events
+      title: Handhabung von Events
     - id: conditional-rendering
       title: Conditional Rendering
     - id: lists-and-keys
@@ -30,15 +32,15 @@
     - id: forms
       title: Formulare
     - id: lifting-state-up
-      title: Lifting State Up
+      title: State anheben
     - id: composition-vs-inheritance
-      title: Composition vs Inheritance
+      title: Komposition vs. Vererbung
     - id: thinking-in-react
       title: Thinking In React
-- title: Advanced Guides
+- title: Fortgeschrittene Anleitungen
   items:
     - id: accessibility
-      title: Accessibility
+      title: Zugänglichkeit
     - id: code-splitting
       title: Code-Splitting
     - id: context
@@ -56,9 +58,11 @@
     - id: jsx-in-depth
       title: JSX im Detail
     - id: optimizing-performance
-      title: Optimizing Performance
+      title: Performance optimieren
     - id: portals
       title: Portals
+    - id: profiler
+      title: Profiler
     - id: react-without-es6
       title: React ohne ES6
     - id: react-without-jsx
@@ -96,43 +100,62 @@
       title: SyntheticEvent
     - id: test-utils
       title: Test Utilities
-    - id: shallow-renderer
-      title: Shallow Renderer
     - id: test-renderer
       title: Test Renderer
     - id: javascript-environment-requirements
       title: Anforderungen an die JavaScript-Umgebung
     - id: glossary
       title: Glossar
-- title: Hooks (Neu)
+- title: Hooks
   isOrdered: true
   items:
-      - id: hooks-intro
-        title: Einführung in Hooks
-      - id: hooks-overview
-        title: Hooks auf einen Blick
-      - id: hooks-state
-        title: Benutzen der State Hook
-      - id: hooks-effect
-        title: Benutzen der Effect Hook
-      - id: hooks-rules
-        title: Regeln von Hooks
-      - id: hooks-custom
-        title: Eigene Hooks bauen
-      - id: hooks-reference
-        title: Hooks API Referenz
-      - id: hooks-faq
-        title: Hooks FAQ
+    - id: hooks-intro
+      title: Einführung in Hooks
+    - id: hooks-overview
+      title: Hooks auf einen Blick
+    - id: hooks-state
+      title: Benutzen der State Hook
+    - id: hooks-effect
+      title: Benutzen der Effect Hook
+    - id: hooks-rules
+      title: Regeln von Hooks
+    - id: hooks-custom
+      title: Eigene Hooks bauen
+    - id: hooks-reference
+      title: Hooks API Referenz
+    - id: hooks-faq
+      title: Hooks FAQ
+- title: Testing
+  items:
+    - id: testing
+      title: Testing Overview
+    - id: testing-recipes
+      title: Testing Recipes
+    - id: testing-environments
+      title: Testing Environments
+- title: Concurrent Mode (Experimental)
+  isOrdered: true
+  items:
+    - id: concurrent-mode-intro
+      title: Introducing Concurrent Mode
+    - id: concurrent-mode-suspense
+      title: Suspense for Data Fetching
+    - id: concurrent-mode-patterns
+      title: Concurrent UI Patterns
+    - id: concurrent-mode-adoption
+      title: Adopting Concurrent Mode
+    - id: concurrent-mode-reference
+      title: Concurrent Mode API Reference
 - title: Mithelfen
   items:
-  - id: how-to-contribute
-    title: Wie man mithilft
-  - id: codebase-overview
-    title: Codebasis Übersicht
-  - id: implementation-notes
-    title: Implementierungs Hinweise
-  - id: design-principles
-    title: Design Prinzipien
+    - id: how-to-contribute
+      title: Wie man mithilft
+    - id: codebase-overview
+      title: Codebasis Übersicht
+    - id: implementation-notes
+      title: Implementierungs Hinweise
+    - id: design-principles
+      title: Design Prinzipien
 - title: FAQ
   items:
     - id: faq-ajax
@@ -148,6 +171,6 @@
     - id: faq-structure
       title: Dateistruktur
     - id: faq-versioning
-      title: Versioning Policy
+      title: Versionierungsrichtlinie
     - id: faq-internals
-      title: Virtual DOM und Internals
+      title: Virtuelles DOM und Internes

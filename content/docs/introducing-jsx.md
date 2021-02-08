@@ -74,9 +74,9 @@ Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist 
 
 ### JSX ist auch ein Ausdruck {#jsx-is-an-expression-too}
 
-Nach dem Kompilieren werden JSX Ausdrücke normale JavaScript-Funktionssaufrufe und als JavaScript-Objekte ausgewertet.
+Nach dem Kompilieren werden JSX Ausdrücke als normale JavaScript-Funktionssaufrufe und als JavaScript-Objekte ausgewertet.
 
-Das bedeutet, dass JSX innerhalb von  `if`-Blöcken und `for`-Schleifen stehen, Variablen zugewiesen, als Argument übergeben oder Rückgabewert einer Funktion sein kann:
+Das bedeutet, dass du JSX innerhalb von `if`-Blöcken und `for`-Schleifen verwenden, Variablen zuweisen, als Argument entgegennehmen oder aus einer Funktion zurückgeben kannst:
 
 ```js{3,5}
 function getGreeting(user) {
@@ -95,7 +95,7 @@ Benutze Anführungszeichen um string-Literale als Attribute zu verwenden:
 const element = <div tabIndex="0"></div>;
 ```
 
-Ebenfalls kannst du geschweifte Klammern verwenden um JavaScript-Ausdrücke in ein Attribut einzubinden:
+Ebenfalls kannst du geschweifte Klammern verwenden, um JavaScript-Ausdrücke in ein Attribut einzubinden:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
@@ -138,7 +138,7 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-Standardmäßig [escaped](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, dass nicht explizit so implementiert wurde. Alles wird zu einem String konvertiert und danach erst gerendert. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
+Standardmäßig [escaped](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) React DOM jeden in JSX eingebetteten Wert vor dem Darstellen. Damit wird sichergestellt, dass niemals etwas in die Anwendung gelangt, was nicht explizit so implementiert wurde. Alles wird zu einem String konvertiert und danach erst gerendert. Das hilft [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting)-Attakten vorzubeugen.
 
 ### JSX repräsentiert Objekte {#jsx-represents-objects}
 
@@ -162,7 +162,7 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` prüft erst die Eingabeparameter, um dich dabei zu unterstützen bugfrei zu programmieren, aber im Prinzip erstellt es ein Objekt wie dieses:
+`React.createElement()` prüft erst die Eingabeparameter, um dich dabei zu unterstützen fehlerfrei zu programmieren, aber im Prinzip erstellt es ein Objekt wie dieses:
 
 ```js
 // Hinweis: Dies ist eine vereinfachte Struktur
@@ -177,9 +177,8 @@ const element = {
 
 Diese Objekte nennen sich "React elements". Stell sie dir als Beschreibung für das was du auf dem Bildschirm sehen willst, vor. React liest diese Objekte und verwendet sie um das DOM zu erstellen und es aktuell zu halten.
 
-Im nächsten Abschnitt gehen wir auf das Rendering von React-Elementen ins DOM ein.
+Im [nächsten Abschnitt](/docs/rendering-elements.html) gehen wir auf das Rendering von React-Elementen ins DOM ein.
 
 >**Tipp:**
 >
-
->Wir empfehlen das Verwenden der ["Babel" Sprachdefinition](https://babeljs.io/docs/editors) für den Editor deiner Wahl, sodass sowohl ES6 als auch JSX-Code vernünftig dargestellt werden kann. Diese Webseite nutzt das [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/)-Farbschema, welches mit Babel kompatibel ist.
+>Wir empfehlen das Verwenden der ["Babel" Sprachdefinition](https://babeljs.io/docs/en/next/editors) für den Editor deiner Wahl, sodass sowohl ES6 als auch JSX-Code vernünftig dargestellt werden kann.
