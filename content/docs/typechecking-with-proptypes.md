@@ -201,7 +201,7 @@ Die `defaultProps` werden verwendet, um sicherzustellen, dass `this.props.name` 
 
 ### Funktionskomponenten {#function-components}
 
-Wenn du Funktionskomponenten bei der regulären Entwicklung verwendest, solltest du vielleicht einige kleine Änderungen vornehmen, damit PropTypes richtig angewendet werden können. 
+Wenn du Funktionskomponenten bei deiner regulären Entwicklung verwendest, solltest du vielleicht einige kleine Änderungen vornehmen, damit PropTypes richtig angewendet werden können. 
 
 Nehmen wir an, du hast eine Komponente wie diese:
 
