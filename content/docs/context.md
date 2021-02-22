@@ -6,7 +6,11 @@ permalink: docs/context.html
 
 Context ermöglicht es, Daten durch den Komponentenbaum zu leiten, ohne die Props in jeder Schicht manuell zu übergeben.
 
+<<<<<<< HEAD
 In einer typischen React-Anwendung werden Daten top-down (Elternkomponente zurKindkomponente) durch Props übergeben. Für bestimmte Arten von Props (z.B. lokale Einstellungen, UI Theme), welche von vielen Komponenten innerhalb der Anwendung benötigt werden kann dies sehr umständlich werden. Mit Hilfe von Context ist es möglich, solche Werte zwischen Komponenten zu teilen, ohne diese explizit als Prop durch alle Schichten des Baumes zu geben. 
+=======
+In a typical React application, data is passed top-down (parent to child) via props, but such usage can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
+>>>>>>> adfa67ad01b7e4c6114921cdf12e9e4cf1a1c786
 
 
 - [Wann Context verwendet werden soll](#when-to-use-context)
@@ -83,7 +87,11 @@ Mit dieser Veränderung muss nur die obereste Seitenkomponente über die Verwend
 
 Diese *inversion of control* (engl. für Umkehrung der Steuerung) macht den Code, durch das Reduzieren der Anzahl an überreichten Props durch die Anwendung und durch die Steigerung der Kontrolle der Root-Komponenten, in vielen Fällen sauberer. Jedoch ist das nicht in jedem Fall die richtige Entscheidung: durch das Schieben der Komplexität höher in den Baum, werden diese Higher-Level-Komponenten komplizierter und erzwingen die Lower-Level-Komponenten flexibler als erwünscht zu sein.
 
+<<<<<<< HEAD
 Du bist nicht auf ein einzelnes Kind für eine Komponente beschränkt. Du kannst mehrere Kinder durchgeben, sogar mehrere seperate Slots für Kinder haben, [wie hier dokumentiert wird](/docs/composition-vs-inheritance.html#containment):
+=======
+This *inversion of control* can make your code cleaner in many cases by reducing the amount of props you need to pass through your application and giving more control to the root components. Such inversion, however, isn't the right choice in every case; moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible than you may want.
+>>>>>>> adfa67ad01b7e4c6114921cdf12e9e4cf1a1c786
 
 
 ```js
@@ -120,7 +128,11 @@ const MyContext = React.createContext(defaultValue);
 
 Erstellt ein Context-Objekt. Wenn React eine Komponente rendert, die dieses Context-Objekt abonniert hat, wird es den aktuellen Context-Wert des am meisten übereinstimmenden `Providers`, welcher im Baum oberhalb des Wertes ist, lesen.
 
+<<<<<<< HEAD
 Das `defaultValue` Argument wird **nur** dann benützt, wenn eine Komponente keinen übereinstimmenden Provider im Baum oberhalb hat. Das kann für das isolierte Testen von Komponenten, ohne sie umwickeln zu müssen, hilfreich sein. Beachte: `undefined` als übergebener Providerwert verursacht nicht, dass `defaultValue` von konsumierenden Komponenten verwendet wird.
+=======
+The `defaultValue` argument is **only** used when a component does not have a matching Provider above it in the tree. This default value can be helpful for testing components in isolation without wrapping them. Note: passing `undefined` as a Provider value does not cause consuming components to use `defaultValue`.
+>>>>>>> adfa67ad01b7e4c6114921cdf12e9e4cf1a1c786
 
 ### `Context.Provider` {#contextprovider}
 
@@ -164,7 +176,11 @@ class MyClass extends React.Component {
 MyClass.contextType = MyContext;
 ```
 
+<<<<<<< HEAD
 Das `contextType` Prop einer Klasse kann mit [`React.createContext()`](#reactcreatecontext) ein Context-Objekt zugewiesen werden. Das lässt dich den nahestehensten aktuellen Wert des Context-Types, welcher `this.context` verwendet, konsumieren. Du kannst auf das in jeder Lifecycle-Methode, inklusive der Render-Funktion verweisen.
+=======
+The `contextType` property on a class can be assigned a Context object created by [`React.createContext()`](#reactcreatecontext). Using this property lets you consume the nearest current value of that Context type using `this.context`. You can reference this in any of the lifecycle methods including the render function.
+>>>>>>> adfa67ad01b7e4c6114921cdf12e9e4cf1a1c786
 
 > Beachte:
 >
@@ -190,7 +206,11 @@ class MyClass extends React.Component {
 </MyContext.Consumer>
 ```
 
+<<<<<<< HEAD
 Eine React-Komponente die Context-Veränderungen abonniert hat. Das lässt dich einen Context innerhalb einer [Funktions-Komponente](/docs/components-and-props.html#function-and-class-components) abonnieren.
+=======
+A React component that subscribes to context changes. Using this component lets you subscribe to a context within a [function component](/docs/components-and-props.html#function-and-class-components).
+>>>>>>> adfa67ad01b7e4c6114921cdf12e9e4cf1a1c786
 
 Benötigt eine [Funktion als Kind](/docs/render-props.html#using-props-other-than-render). Diese Funktion erhält den aktuellen Context-Wert und gibt einen React-Knoten zurück. Das der Funktion übergebende `value` Argument wird mit dem `value` Prop des nahestehensten Provider von diesem Context im Baum darüber übereinstimmen. Falls es keinen Provider für diesen Context im Baum oberhalb gibt, wird das `value` Argument mit dem `defaultValue`, welches `createContext()` übergeben wurde, übereinstimmen.
 
