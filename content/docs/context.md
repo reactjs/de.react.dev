@@ -6,8 +6,7 @@ permalink: docs/context.html
 
 Context ermöglicht es, Daten durch den Komponentenbaum zu leiten, ohne die Props in jeder Schicht manuell zu übergeben.
 
-In einer typischen React-Anwendung werden Daten top-down (Elternkomponente zurKindkomponente) durch Props übergeben. Für bestimmte Arten von Props (z.B. lokale Einstellungen, UI Theme), welche von vielen Komponenten innerhalb der Anwendung benötigt werden kann dies sehr umständlich werden. Mit Hilfe von Context ist es möglich, solche Werte zwischen Komponenten zu teilen, ohne diese explizit als Prop durch alle Schichten des Baumes zu geben. 
-
+In einer typischen React-Anwendung werden Daten top-down (Elternkomponente zur Kindkomponente) durch Props übergeben. Für bestimmte Arten von Props (z.B. lokale Einstellungen, UI Theme), welche von vielen Komponenten innerhalb der Anwendung benötigt werden kann dies sehr umständlich werden. Mit Hilfe von Context ist es möglich, solche Werte zwischen Komponenten zu teilen, ohne diese explizit als Prop durch alle Schichten des Baumes zu geben. 
 
 - [Wann Context verwendet werden soll](#when-to-use-context)
 - [Bevor du Context verwendest](#before-you-use-context)
@@ -85,7 +84,6 @@ Diese *inversion of control* (engl. für Umkehrung der Steuerung) macht den Code
 
 Du bist nicht auf ein einzelnes Kind für eine Komponente beschränkt. Du kannst mehrere Kinder durchgeben, sogar mehrere seperate Slots für Kinder haben, [wie hier dokumentiert wird](/docs/composition-vs-inheritance.html#containment):
 
-
 ```js
 function Page(props) {
   const user = props.user;
@@ -106,7 +104,7 @@ function Page(props) {
 }
 ```
 
-Dieses Muster ist für viele Fälle ausreichend, in denen man ein Kind von seinen unmittelbaren Eltern entkoppeln möchte. Du kannst es noch einen Schritt mit "[render props](/docs/render-props.html)" weitertreiben, wenn das Kind mit dem Elternteil vor dem Rendern kommunizieren muss.
+Dieses Pattern ist für viele Fälle ausreichend, in denen man ein Kind von seinen unmittelbaren Eltern entkoppeln möchte. Du kannst es noch einen Schritt mit "[render props](/docs/render-props.html)" weitertreiben, wenn das Kind mit dem Elternteil vor dem Rendern kommunizieren muss.
 
 Manchmal jedoch müssen die gleichen Daten von vielen Komponenten im Baum auf verschiedenen Schichten erreichbar sein. Mit Context kannst du solche Daten und dessen Veränderungen zu allen nachfolgenden Komponenten "broadcasten". Gängige Beispiele, bei denen das Verwenden von Context einfacher ist als eine der Alternativen inkludieren das Managen von aktuellen lokalen Daten, Theme oder Daten Cache.
 
@@ -192,11 +190,11 @@ class MyClass extends React.Component {
 
 Eine React-Komponente die Context-Veränderungen abonniert hat. Das lässt dich einen Context innerhalb einer [Funktions-Komponente](/docs/components-and-props.html#function-and-class-components) abonnieren.
 
-Benötigt eine [Funktion als Kind](/docs/render-props.html#using-props-other-than-render). Diese Funktion erhält den aktuellen Context-Wert und gibt einen React-Knoten zurück. Das der Funktion übergebende `value` Argument wird mit dem `value` Prop des nahestehensten Provider von diesem Context im Baum darüber übereinstimmen. Falls es keinen Provider für diesen Context im Baum oberhalb gibt, wird das `value` Argument mit dem `defaultValue`, welches `createContext()` übergeben wurde, übereinstimmen.
+Benötigt eine [Funktion als Kind (engl. function as a child)](/docs/render-props.html#using-props-other-than-render). Diese Funktion erhält den aktuellen Context-Wert und gibt einen React-Knoten zurück. Das der Funktion übergebende `value` Argument wird mit dem `value` Prop des nahestehensten Provider von diesem Context im Baum darüber übereinstimmen. Falls es keinen Provider für diesen Context im Baum oberhalb gibt, wird das `value` Argument mit dem `defaultValue`, welches `createContext()` übergeben wurde, übereinstimmen.
 
 > Hinweis
 > 
-> Für nähere Informationen über das 'Funkion als Kind' Muster, siehe [render props](/docs/render-props.html).
+> Für nähere Informationen über das 'function as a child' Pattern, siehe [render Props](/docs/render-props.html).
 
 ### `Context.displayName` {#contextdisplayname}
 
