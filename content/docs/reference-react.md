@@ -127,7 +127,7 @@ const MyComponent = React.memo(function MyComponent(props) {
 
 Wenn deine Komponente das gleiche Ergebnis mit den gleichen Props liefert, kannst du es mit `React.memo` umschließen um in einigen Fällen die Performance zu verbessern, in dem sich das Ergebnis gemerkt wird. Das bedeutet, dass React das Rendern der Komponente überspringt und stattdessen das zuletzt gerenderte Ergebnis wiederverwendet.
 
-`React.memo` betrifft nur Änderungen von Props. Wenn deine Funktionskomponente von `React.memo` umschloßen ist, eine [`useState`](/docs/hooks-state.html) oder [`useContext`](/docs/hooks-reference.html#usecontext) Hook in ihrer Implementierung hat, wird sie immer noch gerendert, wenn sich der State oder der Context ändert.
+`React.memo` betrifft nur Änderungen von Props. Wenn deine Funktionskomponente von `React.memo` umschloßen ist, eine [`useState`](/docs/hooks-state.html), [`useReducer`](/docs/hooks-reference.html#usereducer) oder [`useContext`](/docs/hooks-reference.html#usecontext) Hook in ihrer Implementierung hat, wird sie immer noch gerendert, wenn sich der State oder der Context ändert.
 
 Standardmäßig wird es nur oberflächlich komplexe Objekte im Props-Objekt vergleichen. Wenn du die Kontrolle über den Vergleich haben möchtest, kannst du auch eine benutzerdefinierte Vergleichsfunktion als zweites Argument angeben.
 
