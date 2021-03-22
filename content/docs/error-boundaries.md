@@ -71,7 +71,11 @@ Schau dir [folgendes Beispiel für die Deklaration und Nutzung einer Fehlergrenz
 
 ## Wo platziert man Fehlergrenzen {#where-to-place-error-boundaries}
 
+<<<<<<< HEAD
 Über die Granularität der Fehlergrenzen kannst du frei entscheiden. Du kannst die top-level Route-Komponenten umschließen, um dem User eine "Etwas ist schiefgelaufen" Meldung anzuzeigen, diese Variante wird oft von serverseitigen Frameworks zur Fehlerbehandlung eingesetzt. Du kannst aber auch individuelle Widgets mit einer Fehlergrenze umschließen, um zu verhindern, dass diese den Rest der Anwendung zum Absturz bringen.
+=======
+The granularity of error boundaries is up to you. You may wrap top-level route components to display a “Something went wrong” message to the user, just like how server-side frameworks often handle crashes. You may also wrap individual widgets in an error boundary to protect them from crashing the rest of the application.
+>>>>>>> df2fbde3b52336229eee550debd692184c427691
 
 
 ## Neues Verhalten für nicht abgefangene Fehlermeldungen {#new-behavior-for-uncaught-errors}
@@ -130,7 +134,11 @@ Fehlergrenzen fangen **keine** Fehler innerhalb der Event-Handler ab.
 
 React braucht keine Fehlergrenzen um sich von Fehlern innerhalb von Event-Handlern zu erholen. Im Gegensatz zu Render- und Lifecycle-Methoden finden Event-Handler nicht während des Renderings statt. Das heißt, im Falle eines Fehlers weiß React noch immer, was angezeigt werden soll.
 
+<<<<<<< HEAD
 Wenn du einen Fehler innerhalb von Event-Handlern abfangen möchtest, nutze das normale `try` / `catch` JavaScript-Statement:
+=======
+If you need to catch an error inside an event handler, use the regular JavaScript `try` / `catch` statement:
+>>>>>>> df2fbde3b52336229eee550debd692184c427691
 
 ```js{9-13,17-20}
 class MyComponent extends React.Component {
