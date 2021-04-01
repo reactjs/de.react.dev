@@ -18,7 +18,7 @@ Für dieses Tutorial benötigst Du keine Vorkenntnisse in React.
 
 Wir werden im Laufe dieses Tutorials ein Spiel programmieren. **
 Vielleicht möchtest du es überspringen, weil du keine Spiele programmieren willst -- 
-aber gib es doch eine Chance.** Die Techniken die du in diesem Tutorial lernen wirst, sind fundamental um eine React-App zu erstellen, es zu meistern wird dir ein tiefes Verständnis von React geben.
+aber gib es doch eine Chance.** Die Techniken, die du in diesem Tutorial lernen wirst, sind fundamental um eine React-App zu erstellen, es zu meistern wird dir ein tiefes Verständnis von React geben.
 
 >Tipp
 >
@@ -580,31 +580,32 @@ Unveränderlichkeit macht komplexe Funktionalität einfacher zum Implementieren.
 
 #### Veränderung erkennen {#detecting-changes}
 
-Veränderungen  in variablen Objekten zu erkennen ist schwierig, da sie direkt verändert werden.
- Zur Erkennung müsste das variable Objekt mit seinen alten Kopien vergleichen werden --
+Veränderungen in variablen Objekten zu erkennen ist schwierig, da sie direkt verändert werden.
+ Zur Erkennung müsste das variable Objekt mit seinen alten Kopien verglichen werden --
 somit müsste der ganzen Objekt-Baum durchlaufen werden.
 
 Veränderungen in unveränderlichen Objekten zu erkennen ist deutlich leichter.
-Falls das unveränderliche Objekt auf ein anderes verwiesen wird, als das vorhergehende, so hat das Objekt sich verändert.
+Falls das unveränderliche Objekt, auf das verwiesen wird, ein anderes ist als das vorhergehende, dann hat sich das Objekt verändert.
 
-#### Entscheiden wann Re-Rendern in React {#determining-when-to-re-render-in-react}
+#### Entscheiden, wann neu gerendert werden soll {#determining-when-to-re-render-in-react}
 
 Der Hauptvorteil von Unveränderlichkeit ist, dass es Dir hilft _pure components_ in React zu entwickeln.
- Unveränderbarer Daten können leicht entscheiden, ob Veränderungen gemacht worden sind
- welche helfen zu entscheiden, ob eine Komponente re-rendered werden muss. 
+Durch unveränderbare Daten kann leicht ermittelt werden, ob Veränderungen gemacht worden sind, 
+was hilft zu entscheiden, ob eine Komponente neu gerendert werden muss. 
  
-Du kannst mehr über `shouldComponentUpdate()` lernen und wie Du *pure components* entnwickelst, wenn Du das hier liest [Optimizing Performance](/docs/optimizing-performance.html#examples).
+Du kannst mehr über `shouldComponentUpdate()` lernen und wie Du *pure components* entwickelst, wenn Du das hier liest [Optimizing Performance](/docs/optimizing-performance.html#examples).
 
-### Funktionskomponente {#function-components}
+### Funktionskomponenten {#function-components}
 
-Wir verändern nun die Square Komoponente zu einer  **function component/ Funktionskomponente**.
+Wir verändern nun die Square-Komponente zu einer **Funktionskomponente**.
 
-In React, **function components/Funktionskomponenten** sind ein leichterer Weg um Komponenten zu schreiben,
- welche nur eine `render` Methode beinhalten und keinen eigenen Zustand / state haben.
+In React sind **Funktionskomponenten** ein leichterer Weg, um Komponenten zu schreiben,
+ welche nur eine `render`-Methode beinhalten und keinen eigenen Zustand haben.
  Statt eine Klasse zu definieren, welche `React.Component` erweitert, können wir eine Funktion schreiben, welche `props` als Input nimmt und zurückgibt, was gerendert werden soll.
  Funktionskomponenten sind weniger ermüdend zu schreiben als normale Klassen und viele Komponenten können mittels diesen Weges geschrieben werden.
 
-Ersetze die Square Klasse mit diesem Code: 
+Ersetze die Square-Klasse mit diesem Code: 
+
 ```javascript
 function Square(props) {
   return (
@@ -615,23 +616,20 @@ function Square(props) {
 }
 ```
 
-Wir haben `this.props` mit `props` ersetzt, beide Male wird es angezeigt.
+Wir haben alle vorkommenden `this.props` mit `props` ersetzt.
 
 **[Ganzen Quellcode bis zu diesem Punkt anschauen](https://codepen.io/gaearon/pen/QvvJOv?editors=0010)**
 
 >Notiz
 >
->Als wir die Square Klasse zu einer Funktionskomponente verändert haben, haben wir auch `onClick={() => this.props.onClick()}`
-> zu einem kürzeren `onClick={props.onClick}` geändert (bemerke, dass die Klammern auf *beiden* Seiten fehlen).
-> In der Klasse haben wir eine Arrow Function benutzt, um den korrekten `this` Wert zu erhalten,
-> in einer Funktionskomponente brauchen wir uns keine Gedanken über `this` zu machen..
+> Als wir die Square-Klasse zu einer Funktionskomponente verändert haben, haben wir auch `onClick={() => this.props.onClick()}` zu einem kürzeren `onClick={props.onClick}` geändert (bemerke, dass die Klammern auf *beiden* Seiten fehlen). In der Klasse haben wir eine Pfeilfunktion benutzt, um den korrekten `this` Wert zu erhalten, in einer Funktionskomponente müssen wir uns keine Gedanken über `this` machen..
 
 ### Einen Zug machen {#taking-turns}
 
-Nun müssen wir einen offensichtlichen Fehler in unserer Tic-Tac-Toe Anwendung beheben: Die "O"s können nicht auf dem Spielbord markiert werden.
+Nun müssen wir einen offensichtlichen Fehler in unserer Tic-Tac-Toe Anwendung beheben: Die "O"s können nicht auf dem Spielfeld markiert werden.
 
 Wir setzen den ersten Zug standardmäßig auf "X" . 
-Wir können dies standardmäßig setzen, wenn wir den Initial State in unserem Board Constructor verändern:
+Wir können diesen Zug standardmäßig setzen, indem wir den Grundzustand in unserem Board-Konstruktor verändern:
 
 ```javascript{6}
 class Board extends React.Component {
@@ -644,8 +642,8 @@ class Board extends React.Component {
   }
 ```
 
-Jedes Mal wenn ein Spieler einen Zug unternimmt, `xIsNext` (ein Boolean) wird geändert um den nächsten Spieler zu bestimmen und der Zustand / State des Spiels wird gespeichert.
-Wir aktualisieren die `handleClick` Funktion des Boards um den Wert von `xIsNext` zu flippen:
+Jedes Mal wenn ein Spieler einen Zug unternimmt, wird `xIsNext` (ein Boolean) geändert, um den nächsten Spieler zu bestimmen und der Zustand des Spiels wird gespeichert.
+Wir aktualisieren die `handleClick`-Funktion des Boards, um den Wert von `xIsNext` umzudrehen:
 
 ```javascript{3,6}
   handleClick(i) {
@@ -658,8 +656,8 @@ Wir aktualisieren die `handleClick` Funktion des Boards um den Wert von `xIsNext
   }
 ```
 
-Mit dieser Änderung können "X"s und "O"s Spielzüge annehmen.
-Lasst uns ebenfalls den "status" text in der Boards `render` Funktion ändern, so dass es anzeigt, welcher Spieler als nächstes an der Reihe ist:
+Durch diese Änderung wechseln sich "X"s und "O"s ab.
+Lasst uns ebenfalls den "status"-Text in Boards `render`-Funktion ändern, so dass sie anzeigt, welcher Spieler als nächstes an der Reihe ist:
 
 ```javascript{2}
   render() {
@@ -669,7 +667,7 @@ Lasst uns ebenfalls den "status" text in der Boards `render` Funktion ändern, s
       // the rest has not changed
 ```
 
-Nach dem wir diese Veränderungen angewandt haben, sollte die Board Komponent nun so aussehen:
+Nachdem wir diese Veränderungen angewandt haben, sollte die Board-Komponent nun so aussehen:
 
 ```javascript{6,11-16,29}
 class Board extends React.Component {
@@ -730,9 +728,7 @@ class Board extends React.Component {
 
 ### Einen Gewinner verkünden {#declaring-a-winner}
 
-Da wir nun den nächsten Spieler anzeigen können, 
-sollten wir ebenfalls anzeigen können, wann das Spiel gewonnen ist und and dass keine Züge mehr möglich sind.
-Wir können einen Gewinner bestimmen, in dem wir diese Helper-Funktion an das Ende der Datei schreiben:
+Da wir nun den nächsten Spieler anzeigen können, sollten wir ebenfalls anzeigen, wann das Spiel gewonnen ist und dass keine Züge mehr möglich sind. Wir können einen Gewinner bestimmen, indem wir diese Helfer-Funktion an das Ende der Datei schreiben:
 
 ```javascript
 function calculateWinner(squares) {
@@ -756,9 +752,9 @@ function calculateWinner(squares) {
 }
 ```
 
-Wir werden `calculateWinner(squares)` in der Boards `render` Funktion aufrufen, um zu prüfen, ob ein Spieler gewonnen hat.
+Wir werden `calculateWinner(squares)` in Boards `render`-Funktion aufrufen, um zu prüfen, ob ein Spieler gewonnen hat.
 Falls ein Spieler gewonnen hat, können wir beispielsweise folgenden Text anzeigen: "Winner: X" or "Winner: O". 
-Wir ersetzen die `status` Deklaration in der Boards `render` Funktion mit folgendem Code:
+Wir ersetzen die `status`-Deklaration in Boards `render`-Funktion mit folgendem Code:
 
 ```javascript{2-8}
   render() {
@@ -790,23 +786,23 @@ We can now change the Board's `handleClick` function to return early by ignoring
   }
 ```
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/LyyXgK?editors=0010)**
+**[Den ganzen Quellcode an diesem Punkt anschauen](https://codepen.io/gaearon/pen/LyyXgK?editors=0010)**
 
 Herzlichen Glückwunsch! Du hast nun ein funktionierendes Tic-Tac-Toe Spiel. 
 Dazu hast du noch die grundlegenden Techniken von React gelernt. Demnach bist *Du* wahrscheinlich der echte Gewinner hier.
 
 ## Zeitreisen hinzufügen {#adding-time-travel}
 
-Als abschließende Übung, lass uns eine "History" hinzufügen, um zu älteren Zügen im Spiel zurückzukommen.
+Lass uns als abschließende Übung eine "Versionsgeschichte" hinzufügen, um zu älteren Zügen im Spiel zurückzukommen.
 
 ### Einen Zug-Verlauf speichern {#storing-a-history-of-moves}
 
-Falls wir das `squares` Array verändern würden, wäre eine Implementierung von Verlaufsspeicherung sehr schwierig..
+Hätten wir das `squares`-Array veränderbar gemacht, wäre die Implementierung einer Versionsgeschichte sehr schwierig..
 
-Wie auch immer, wir verwendeten `slice()` um eine neue Kopie des `squares` Arrays nach jedem Zug zu erstellen, und [behandelten es wie ein Unveränderliches](#why-immutability-is-important). 
-Dies wird uns erlauben, jede ältere Version des `squares` Array zu speichern, und zwischen den Zügen zu springen, welche schon stattfanden.
+Wir verwendeten jedoch `slice()`, um eine neue Kopie des `squares`-Arrays nach jedem Zug zu erstellen und [behandelten den Array als unveränderbar](#why-immutability-is-important). 
+Dies erlaubt uns, jede ältere Version des `squares`-Array zu speichern, und zwischen den Zügen zu springen, welche schon stattfanden.
 
-Wir werden die alten `squares` Arrays in einem andeeren Array `history` speichern. Das `history` Array repräsentiert alle Board Zustände / States, vom ersten bis zum letzten Zug und hat folgende Form:
+Wir werden die alten `squares`-Arrays in einem anderen Array mit dem Namen `history` speichern. Das `history`-Array repräsentiert alle Zustände des Spielfelds, vom ersten bis zum letzten Zug und hat folgende Form:
 
 ```javascript
 history = [
@@ -838,20 +834,17 @@ history = [
 ]
 ```
 
-Nun müssen wir entscheiden, welche Komponente den `history` Zustand/State beinhalten wird.
+Nun müssen wir entscheiden, welche Komponente den `history`-Zustand beinhalten wird.
 
 ### Den State nochmal hochholen {#lifting-state-up-again}
 
-Wir möchten dass die Top-Level-Game-Komponente eine Liste der bisherigen Züge anzeigt.
-Diese Liste braucht Zugriff auf `history` brauchen um dies zu tun.
-Demnach platzieren wir den `history` State in der Top-Level-Game-Komponente.
+Wir möchten, dass die oberste Komponente, `Game`, eine Liste der bisherigen Züge anzeigt.
+Um dies zu tun, benötigt diese Liste Zugriff auf `history`.
+Deshalb platzieren wir den `history`-Zustand in der obersten Komponente, `Game`.
 
-Das Platzieren der `history` State in die Game Komponente erlaubt uns das Entfernen des `squares` 
-States von dessen Child-Board-Komponenten. So wie wir das ["lifted state up"](#lifting-state-up) von der Square Komponente in die Board Komponente getätigt haben, 
-so liften wir dieses nun von der Board in die Top-Level Game Komponente.
-Die gibt der Game Komponente völlige Kontrolle über die Daten vom Board, und es weist das Board an, zu rendern zu den älteren Zügen aus der `history`.
+Das Platzieren des `history`-Zustandes in der `Game`-Komponente erlaubt uns das Entfernen des `squares`-Zustandes von dessen Unterkomponente `Board`. So wie wir den Zustand von der `Square`-Komponente in die `Board`-Komponente ["angehoben haben"](#lifting-state-up), so heben wir diesen nun von der `Board` in die `Game`-Komponente. Das gibt der `Game`-Komponente völlige Kontrolle über die Daten des Boards und lässt sie das Board anweisen, frühere Züge aus der `history` zu rendern.
 
-Als erstes setzen wir den Initial State für die Game Komponente in deren Constructor:
+Als erstes setzen wir den Grundzustand für die Game-Komponente in deren KonstruKtor:
 
 ```javascript{2-10}
 class Game extends React.Component {
@@ -881,16 +874,14 @@ class Game extends React.Component {
 }
 ```
 
-Als nächstes haben wir die Board Komponente, welche die `squares` und `onClick` props erhält von der Game Komponente.
-Da wir nun einen Single-Click-Handler im Board für viele Squares haben,
-müssen wir die Position von jedem der Squares in den `onClick` Handler übergeben, um zu indizieren, welcher Square geklickt worden ist.
-Hier sind die benötigten Schritte, um die Board Komponente zu verändern:
+Als nächstes haben wir die Board-Komponente, welche die `squares` und `onClick`-props von der Game-Komponente erhält .
+Da wir nun einen einzigen Klick-Handler im Board für viele Squares haben, müssen wir die Position von jedem Square in den `onClick`-Handler übergeben, um anzugeben, welches Square geklickt worden ist. Hier sind die benötigten Schritte, um die Board-Komponente zu verändern:
 
 * Lösche den `constructor` im Board.
-* Ersetze `this.state.squares[i]` mit `this.props.squares[i]` in der Board `renderSquare` Funktion.
-* Ersetze `this.handleClick(i)` mit `this.props.onClick(i)` in der Board `renderSquare` Funktion.
+* Ersetze `this.state.squares[i]` mit `this.props.squares[i]` in der Board `renderSquare`-Funktion.
+* Ersetze `this.handleClick(i)` mit `this.props.onClick(i)` in der Board `renderSquare`-Funktion.
 
-Die Board Komponente sieht nun so aus:
+Die Board-Komponente sieht nun so aus:
 
 ```javascript{17,18}
 class Board extends React.Component {
@@ -948,8 +939,7 @@ class Board extends React.Component {
 }
 ```
 
-Wir aktualisieren die `render` Funktion in der Game Komponente
-um den aktuellsten histroy-Eintrag zu verwenden, um den aktuellen Game-Status zu bestimmen. 
+Wir aktualisieren die `render`-Funktion in der Game-Komponente, um den letzten Eintrag der Versionsgeschichte zu verwenden und den aktuellen Spielzustand anzuzeigen. 
 
 ```javascript{2-11,16-19,22}
   render() {
@@ -981,8 +971,7 @@ um den aktuellsten histroy-Eintrag zu verwenden, um den aktuellen Game-Status zu
   }
 ```
 
-Da die Game Komponente nun den Game Status rendert,  können wir den dazugehörigen Code aus der Board `render` Methode entfernen.
-Nach dem Refactoring sollte die `render` Funktion im Board so aussehen:
+Da die Game-Komponente nun den Spielzustand rendert, können wir den dazugehörigen Code aus Boards `render`-Methode entfernen. Nach dem Veränderung sollte die `render`-Funktion im Board so aussehen:
 
 ```js{1-4}
   render() {
@@ -1008,9 +997,9 @@ Nach dem Refactoring sollte die `render` Funktion im Board so aussehen:
   }
 ```
 
-Als letztes müssen wir nun die `handleClick` Methode aus der Board Komponente in die Game Komponente verlagern.
-Wir müssen auch die `handleClick` verändern,da die State aus der Game Komponente eine andere Struktur hat.
-Mit der Game `handleClick` Methode konkatenieren wir die neuen history-Einträge in `history`.
+Als letztes müssen wir nun die `handleClick`-Methode aus der Board-Komponente in die Game-Komponente verlagern.
+Wir müssen `handleClick` auch verändern, da der Zustand der Game-Komponente eine andere Struktur hat.
+In der `handleClick`-Methode von Game fügen wir die neuen Einträge der Versionsgeschichte der bestehenden `history` hinzu.
 
 ```javascript{2-4,10-12}
   handleClick(i) {
@@ -1032,30 +1021,29 @@ Mit der Game `handleClick` Methode konkatenieren wir die neuen history-Einträge
 
 >Note
 >
->Anders als bei der Array `push()` Methode, welche Du vielleicht eher kennst, verändert die `concat()` method doesn't das ursprüngliche Array,weshalb wir dieses bevorzugen.
+>Anders als die Array `push()`-Methode, welche Du vielleicht eher kennst, verändert die `concat()`-Methode den ursprünglichen Array nicht, weshalb wir diese bevorzugen.
 
-An diesem Punkte benötigt die Bord Komponente nur die `renderSquare` und die `render` Methode. 
-Das Spiel-State und die `handleClick` Methode sollten sich in der Game Komponente befinden. 
+An diesem Punkte benötigt die Board-Komponente nur noch die `renderSquare` und `render` -Methoden. 
+Der Spielzustand und die `handleClick`-Methode sollten sich in der Game-Komponente befinden. 
 
 **[Den ganzen Quellcode an diesem Punkt anschauen](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)**
 
 ### Die letzten Züge anzeigen {#showing-the-past-moves}
 
-Seit wir den Verlauf des Tic-Tac-Toes Spiel speichern, können wir diese dem Spieler als eine Liste der letzten Züge anzeigen.
+Seit wir den Verlauf des Tic-Tac-Toes Spiel speichern, können wir diesen dem Spieler als eine Liste der letzten Züge anzeigen.
 
-Wir haben vorhin gelernt, dass React Elemente first-class JavaScript Objekte sind; 
-Wir können diese in unserer Anwendung durchgeben. Um mehrere Sachen in React rendern zu können, können wir das Array aus den React Elementen verwenden.
+Wir haben vorhin gelernt, dass React-Elemente erstklassige JavaScript-Objekte sind; wir können diese in unserer Anwendung herumbewegen. Um mehrere Elemente in React rendern zu können, können wir einen Array an React-Elementen verwenden.
 
-Arrays haben in Java-Script eine [`map()` Methode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) welche verwendet wird um Daten auf andere Daten zu mappen, wie zum Beispiel:
+Arrays haben in JavaScript eine [`map()`-Methode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), welche verwendet wird um Daten auf andere Daten zu mappen, wie zum Beispiel:
 
 ```js
 const numbers = [1, 2, 3];
 const doubled = numbers.map(x => x * 2); // [2, 4, 6]
 ``` 
 
-Das Verwenden der `map` Methode, we can map our history of moves to React elements representing buttons on the screen, and display a list of buttons to "jump" to past moves.
+Durch das Verwenden der `map`-Methode können wir den Verlauf unserer Züge auf React-Elemente abbilden, die Buttons auf dem Bildschirm darstellen und eine Liste von Buttons anzeigen, um zu vergangenen Zügen zu "springen".
 
-Let's `map` over the `history` in the Game's `render` method:
+Lass und über die `history` in Games `render`-Methode mappen.
 
 ```javascript{6-15,34}
   render() {
@@ -1248,7 +1236,7 @@ Glückwunsch! Du hast ein Tic-Tac-Toe-Spiel entwickelt welches:
 * Dir erlaubt Tic-Tac-Toe zu spielen,
 * Versteht, falls ein Spieler gewonnen hat,
 * Den Spielverlauf speichert,
-* Den Spielverlauf zu betrachten und alte Ansichten des Spiel-Boards zu sehen.
+* Den Spielverlauf zu betrachten und alte Ansichten des Spielbretts aufzurufen.
 
 Gute Arbeit! Wir hoffen, dass Du nun einen guten Überblick hast wie React funktioniert.
 
@@ -1258,9 +1246,9 @@ Falls Du noch Zeit hast oder an deinen React-Fähigkeiten arbeiten möchtest -- 
 Die Liste ist aufsteigend nach Schwierigkeit sortiert.
 
 1. Zeige die Position für jeden Zug im Format (col, row) in der Zug-Verlaufs-Liste.
-2. Markiere das ausgewählte Element in der Zug Liste fett.
-3. Schreibe das Board so, dass Du zwei Schleifen verwendest um die Quadrate in dem Bord zu erzeugen, anstatt sie zu hardcoden.
-4. Füge einen Toggle Button hinzu, welcher dir erlaubt die Züge in aufsteigender oder absteigender Ordnung zu sortieren.
+2. Markiere das ausgewählte Element in der Zugliste fett.
+3. Schreibe Board so, dass Du zwei Schleifen verwendest um die Quadrate im Spielbrett zu erzeugen, anstatt sie zu hardcoden.
+4. Füge einen Umschalt-Button hinzu, welcher dir erlaubt die Züge in aufsteigender oder absteigender Ordnung zu sortieren.
 5. Falls jemand gewinnen sollte, markiere die 3 Gewinner-Kästchen.
 6. Falls keiner gewinnen sollte, soll eine Nachricht angezeigt werden, dass es ein Untentschieden ist.
 
