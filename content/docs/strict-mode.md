@@ -58,7 +58,11 @@ Da Objekt-Refs größtenteils als Ersatz für String-Refs hinzugefügt wurden, w
 
 React hat in der Vergangenheit `findDOMNode` unterstützt um den Baum nach einem DOM-Knoten zu durchsuchen, der einer Klasseninstanz zugeordnet ist. Normalerweise benötigst du dies nicht, da du einen Verweis [direkt an einen DOM-Knoten anhängen](/docs/refs-and-the-dom.html#creating-refs) kannst.
 
+<<<<<<< HEAD
 `findDOMNode` kann auch für Klassenkomponenten verwendet werden, was jedoch ein Bruch in den Abstraktionsebenen war, da es einem übergeordnet Element erlaubte das Rendern bestimmter untergeordneter Elemente zu fordern. Es entsteht ein Refactoring-Risiko, bei dem du die Implementierungsdetails einer Komponente nicht ändern kannst, da ein übergeordnetes Element möglicherweise in den DOM-Knoten greift. `findDOMNode` gibt nur das erste untergeordnete Element zurück. Bei Verwendung von Fragments kann eine Komponente jedoch mehrere DOM-Knoten rendern. findDOMNode ist eine einmalige Lese-API. Es gab dir nur eine Antwort, als du danach gefragt hast. Wenn eine untergeordnete Komponente einen anderen Knoten darstellt, kann diese Änderung nicht verarbeitet werden. Daher funktioniert `findDOMNode` nur, wenn Komponenten immer einen einzelnen DOM-Knoten zurückgeben, der sich nie ändert.
+=======
+`findDOMNode` can also be used on class components but this was breaking abstraction levels by allowing a parent to demand that certain children were rendered. It creates a refactoring hazard where you can't change the implementation details of a component because a parent might be reaching into its DOM node. `findDOMNode` only returns the first child, but with the use of Fragments, it is possible for a component to render multiple DOM nodes. `findDOMNode` is a one time read API. It only gave you an answer when you asked for it. If a child component renders a different node, there is no way to handle this change. Therefore `findDOMNode` only worked if components always return a single DOM node that never changes.
+>>>>>>> 49fd7d5f115378e3663b049f108a2d29b31290c8
 
 Du kannst dies stattdessen explizit machen, indem du einen Verweis an deine benutzerdefinierte Komponente übergibst und diesen mithilfe der [Ref-Weiterleitung](/docs/forwarding-refs.html#forwarding-refs-to-dom-components) an das DOM weiterleitest.
 
