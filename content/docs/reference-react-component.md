@@ -194,11 +194,11 @@ Vermeide Nebeneffekten (engl. side-effects) oder Subscriptions im Konstruktor. V
 componentDidMount()
 ```
 
-`componentDidMount()` is invoked immediately after a component is mounted (inserted into the tree). Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
+`componentDidMount()` wird unmittelbar nach dem Mounten einer Komponente (Einfügen in den Baum) aufgerufen. Initialisierungen, die DOM-Knoten erfordern, sollten hier stattfinden. Wenn du Daten von einem entfernten Endpunkt laden musst, ist dies ein guter Ort, um die Netzwerkanfragen zu instanziieren.
 
-This method is a good place to set up any subscriptions. If you do that, don't forget to unsubscribe in `componentWillUnmount()`.
+Diese Methode ist ein guter Ort, um etwaige Subscriptions zu tätigen. Wenn du das tust, vergiss sie nicht in `componentWillUnmount()` zu unsubscriben.
 
-You **may call `setState()` immediately** in `componentDidMount()`. It will trigger an extra rendering, but it will happen before the browser updates the screen. This guarantees that even though the `render()` will be called twice in this case, the user won't see the intermediate state. Use this pattern with caution because it often causes performance issues. In most cases, you should be able to assign the initial state in the `constructor()` instead. It can, however, be necessary for cases like modals and tooltips when you need to measure a DOM node before rendering something that depends on its size or position.
+Du **kannst `setState()` sofort** in `componentDidMount()` aufrufen. Dies wird ein zusätzliches Rendering auslösen, aber es wird geschehen, bevor der Browser den Bildschirm aktualisiert. Das garantiert, dass, obwohl `render()` in diesem Fall zweimal aufgerufen wird, der Benutzer den State dazwischen nicht sieht. Verwende dieses Patterm mit Vorsicht, da es oft zu Performancenproblemen führt. In den meisten Fällen solltest du stattdessen den intialen State im `constructor()` zuweisen. Es kann jedoch für Fälle wie Modals und Tooltips notwendig sein, wenn du einen DOM-Knoten messen musst, bevor du etwas renderst, das von dessen Größe oder Position abhängt.
 
 * * *
 
@@ -208,26 +208,26 @@ You **may call `setState()` immediately** in `componentDidMount()`. It will trig
 componentDidUpdate(prevProps, prevState, snapshot)
 ```
 
-`componentDidUpdate()` is invoked immediately after updating occurs. This method is not called for the initial render.
+Die Methode `componentDidUpdate()` wird unmittelbar nach dem Aktualisieren aufgerufen. Beim ersten Rendering wird diese Methode nicht aufgerufen.
 
-Use this as an opportunity to operate on the DOM when the component has been updated. This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed).
+Nutze dies als Gelegenheit, auf dem DOM zu operieren, wenn die Komponente aktualisiert wurde. Dies ist auch ein guter Ort, um Netzwerkanfragen durchzuführen, solange du die aktuellen Props mit den vorherigen Props vergleichst (z. B. ist eine Netzwerkanfrage möglicherweise nicht mehr erforderlich, wenn sich die Props nicht geändert haben).
 
 ```js
 componentDidUpdate(prevProps) {
-  // Typical usage (don't forget to compare props):
+  // Typische Anwendung (vergiss nicht, die Props miteinander zu vergleichen)
   if (this.props.userID !== prevProps.userID) {
     this.fetchData(this.props.userID);
   }
 }
 ```
 
-You **may call `setState()` immediately** in `componentDidUpdate()` but note that **it must be wrapped in a condition** like in the example above, or you'll cause an infinite loop. It would also cause an extra re-rendering which, while not visible to the user, can affect the component performance. If you're trying to "mirror" some state to a prop coming from above, consider using the prop directly instead. Read more about [why copying props into state causes bugs](/blog/2018/06/07/you-probably-dont-need-derived-state.html).
+Du **kannst `setState()` sofort** in `componentDidUpdate()` aufrufen, aber beachte, dass **es mit einer Bedingung umschlossen sein muss**, wie im obigen Beispiel, oder du verursachst eine Endlosschleife. Es würde auch ein zusätzliches Re-Rendering verursachen, das zwar für den Benutzer nicht sichtbar ist, aber die Performance der Komponente beeinträchtigen kann. Wenn du versuchst, einen State auf ein von oben kommendes Prop zu "spiegeln", solltest du stattdessen das Prop direkt verwenden. Lese hier mehr darüber [warum das Kopieren von Props in den State Fehler verursacht](/blog/2018/06/07/you-probably-dont-need-derived-state.html).
 
-If your component implements the `getSnapshotBeforeUpdate()` lifecycle (which is rare), the value it returns will be passed as a third "snapshot" parameter to `componentDidUpdate()`. Otherwise this parameter will be undefined.
+Wenn deine Komponente den `getSnapshotBeforeUpdate()` Lifecycle implementiert (was selten vorkommt), wird der Wert, den sie zurückgibt, als dritter "Snapshot"-Parameter an `componentDidUpdate()` übergeben. Andernfalls wird dieser Parameter undefined sein.
 
-> Note
+> Hinweis
 >
-> `componentDidUpdate()` will not be invoked if [`shouldComponentUpdate()`](#shouldcomponentupdate) returns false.
+> `componentDidUpdate()` wird nicht aufgerufen, wenn [`shouldComponentUpdate()`](#shouldcomponentupdate) false zurückgibt.
 
 * * *
 
@@ -237,15 +237,16 @@ If your component implements the `getSnapshotBeforeUpdate()` lifecycle (which is
 componentWillUnmount()
 ```
 
-`componentWillUnmount()` is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in `componentDidMount()`.
+`componentWillUnmount()` wird unmittelbar vor dem Unmounten und Entfernen einer Komponente aufgerufen.
+Führe in dieser Methode alle notwendigen Bereinigungen durch, wie z. B. das Ungültigmachen von Timern, das Abbrechen von Netzwerkanfragen oder das Aufräumen von Subscriptions, die in `componentDidMount()` erstellt wurden.
 
-You **should not call `setState()`** in `componentWillUnmount()` because the component will never be re-rendered. Once a component instance is unmounted, it will never be mounted again.
+Du **solltest `setState()` nicht** in `componentWillUnmount()` aufrufen, da die Komponente niemals neu gerendert wird. Sobald eine Komponenteninstanz geunmountet ist, wird sie nie wieder gemountet.
 
 * * *
 
 ### Selten genutzte Lifecycle Methods {#rarely-used-lifecycle-methods}
 
-The methods in this section correspond to uncommon use cases. They're handy once in a while, but most of your components probably don't need any of them. **You can see most of the methods below on [this lifecycle diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) if you click the "Show less common lifecycles" checkbox at the top of it.**
+Die Methoden in diesem Abschnitt beziehen sich auf seltene Anwendungsfälle. Sie sind hin und wieder praktisch, aber die meisten deiner Komponenten benötigen wahrscheinlich keine von ihnen. **Die meisten der unten aufgeführten Methoden kannst du in [diesem Lifecyclediagramm] (https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) sehen, wenn du oben auf die Checkbox "Weniger gebräuchliche Lifecycles anzeigen" klickst.**
 
 
 ### `shouldComponentUpdate()` {#shouldcomponentupdate}
@@ -323,7 +324,7 @@ Only use error boundaries for recovering from unexpected exceptions; **don't try
 
 For more details, see [*Error Handling in React 16*](/blog/2017/07/26/error-handling-in-react-16.html).
 
-> Note
+> Hinweis
 >
 > Error boundaries only catch errors in the components **below** them in the tree. An error boundary can’t catch an error within itself.
 
@@ -358,7 +359,7 @@ class ErrorBoundary extends React.Component {
 }
 ```
 
-> Note
+> Hinweis
 >
 > `getDerivedStateFromError()` is called during the "render" phase, so side-effects are not permitted.
 For those use cases, use `componentDidCatch()` instead.
@@ -419,7 +420,7 @@ On development, the errors will bubble up to `window`, this means that any `wind
 
 On production, instead, the errors will not bubble up, which means any ancestor error handler will only receive errors not explicitly caught by `componentDidCatch()`.
 
-> Note
+> Hinweis
 >
 > In the event of an error, you can render a fallback UI with `componentDidCatch()` by calling `setState`, but this will be deprecated in a future release.
 > Use `static getDerivedStateFromError()` to handle fallback rendering instead.
@@ -436,7 +437,7 @@ The lifecycle methods below are marked as "legacy". They still work, but we don'
 UNSAFE_componentWillMount()
 ```
 
-> Note
+> Hinweis
 >
 > This lifecycle was previously named `componentWillMount`. That name will continue to work until version 17. Use the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles) to automatically update your components.
 
@@ -454,11 +455,11 @@ This is the only lifecycle method called on server rendering.
 UNSAFE_componentWillReceiveProps(nextProps)
 ```
 
-> Note
+> Hinweis
 >
 > This lifecycle was previously named `componentWillReceiveProps`. That name will continue to work until version 17. Use the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles) to automatically update your components.
 
-> Note:
+> Hinweis:
 >
 > Using this lifecycle method often leads to bugs and inconsistencies
 >
@@ -482,7 +483,7 @@ React doesn't call `UNSAFE_componentWillReceiveProps()` with initial props durin
 UNSAFE_componentWillUpdate(nextProps, nextState)
 ```
 
-> Note
+> Hinweis
 >
 > This lifecycle was previously named `componentWillUpdate`. That name will continue to work until version 17. Use the [`rename-unsafe-lifecycles` codemod](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles) to automatically update your components.
 
@@ -492,7 +493,7 @@ Note that you cannot call `this.setState()` here; nor should you do anything els
 
 Typically, this method can be replaced by `componentDidUpdate()`. If you were reading from the DOM in this method (e.g. to save a scroll position), you can move that logic to `getSnapshotBeforeUpdate()`.
 
-> Note
+> Hinweis
 >
 > `UNSAFE_componentWillUpdate()` will not be invoked if [`shouldComponentUpdate()`](#shouldcomponentupdate) returns false.
 
