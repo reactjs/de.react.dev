@@ -244,7 +244,7 @@ Du **solltest `setState()` nicht** in `componentWillUnmount()` aufrufen, da die 
 
 * * *
 
-### Selten genutzte Lifecycle Methods {#rarely-used-lifecycle-methods}
+### Selten genutzte Lifecycle Methoden {#rarely-used-lifecycle-methods}
 
 Die Methoden in diesem Abschnitt beziehen sich auf seltene Anwendungsfälle. Sie sind hin und wieder praktisch, aber die meisten deiner Komponenten benötigen wahrscheinlich keine von ihnen. **Die meisten der unten aufgeführten Methoden kannst du in [diesem Lifecyclediagramm] (https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) sehen, wenn du oben auf die Checkbox "Weniger gebräuchliche Lifecycles anzeigen" klickst.**
 
@@ -255,17 +255,17 @@ Die Methoden in diesem Abschnitt beziehen sich auf seltene Anwendungsfälle. Sie
 shouldComponentUpdate(nextProps, nextState)
 ```
 
-Use `shouldComponentUpdate()` to let React know if a component's output is not affected by the current change in state or props. The default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior.
+Verwende `shouldComponentUpdate()`, um React wissen zu lassen, ob die Ausgabe einer Komponente nicht von der aktuellen Änderung des States oder der Props betroffen ist. Das Standardverhalten ist, dass bei jeder State-Veränderung neu gerendert wird, und in den allermeisten Fällen solltest du dich auf dieses verlassen.
 
-`shouldComponentUpdate()` is invoked before rendering when new props or state are being received. Defaults to `true`. This method is not called for the initial render or when `forceUpdate()` is used.
+`shouldComponentUpdate()` wird vor dem Rendern aufgerufen, wenn neue Props oder State empfangen werden. Der Standardwert ist `true`. Diese Methode wird nicht für das erste Rendering aufgerufen oder wenn `forceUpdate()` verwendet wird.
 
-This method only exists as a **[performance optimization](/docs/optimizing-performance.html).** Do not rely on it to "prevent" a rendering, as this can lead to bugs. **Consider using the built-in [`PureComponent`](/docs/react-api.html#reactpurecomponent)** instead of writing `shouldComponentUpdate()` by hand. `PureComponent` performs a shallow comparison of props and state, and reduces the chance that you'll skip a necessary update.
+Diese Methode existiert nur als **[Performance-Optimierung](/docs/optimizing-performance.html).** Verlasse dich nicht darauf, damit ein Rendering zu "verhindern", da dies zu Fehlern führen kann. **Ziehe in Betracht, die eingebaute [`PureComponent`](/docs/react-api.html#reactpurecomponent)** zu verwenden, anstatt `shouldComponentUpdate()` von Hand zu schreiben. `PureComponent` führt einen oberflächlichen (engl. shallow) Vergleich von Props und State durch und verringert die Wahrscheinlichkeit, dass du eine notwendige Aktualisierung überspringst.
 
-If you are confident you want to write it by hand, you may compare `this.props` with `nextProps` and `this.state` with `nextState` and return `false` to tell React the update can be skipped. Note that returning `false` does not prevent child components from re-rendering when *their* state changes.
+Wenn du dir sicher bist, dass du es von Hand schreiben willst, kannst du `this.props` mit `nextProps` und `this.state` mit `nextState` vergleichen und `false` zurückgeben, um React mitzuteilen, dass die Aktualisierung übersprungen werden kann. Beachte, dass die Rückgabe von `false` nicht verhindert, dass untergeordnete Komponenten neu gerendert werden, wenn sich *ihr* State ändert.
 
-We do not recommend doing deep equality checks or using `JSON.stringify()` in `shouldComponentUpdate()`. It is very inefficient and will harm performance.
+Wir raten davon ab, tiefe Gleichheitsprüfungen durchzuführen oder `JSON.stringify()` in `shouldComponentUpdate()` zu verwenden. Das ist sehr ineffizient und schadet der Performance.
 
-Currently, if `shouldComponentUpdate()` returns `false`, then [`UNSAFE_componentWillUpdate()`](#unsafe_componentwillupdate), [`render()`](#render), and [`componentDidUpdate()`](#componentdidupdate) will not be invoked. In the future React may treat `shouldComponentUpdate()` as a hint rather than a strict directive, and returning `false` may still result in a re-rendering of the component.
+Wenn `shouldComponentUpdate()` `false` zurückgibt, werden derzeit [`UNSAFE_componentWillUpdate()`](#unsafe_componentwillupdate), [`render()`](#render) und [`componentDidUpdate()`](#componentdidupdate) nicht aufgerufen. In Zukunft wird React `shouldComponentUpdate()` möglicherweise eher als Tipp anstatt als strikte Anweisung behandeln, und die Rückgabe von `false` kann immer noch zu einem erneuten Rendering der Komponente führen.
 
 * * *
 
