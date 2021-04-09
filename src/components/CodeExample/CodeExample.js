@@ -1,10 +1,23 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * @flow
+ */
+
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 import {colors, media} from 'theme';
 import CodeEditor from '../CodeEditor/CodeEditor';
 
-class CodeExample extends Component {
+type Props = {|
+  children: React$Node,
+  code: boolean,
+  containerNodeID: string,
+  id: string,
+  loaded: boolean,
+|};
+
+class CodeExample extends Component<Props> {
   render() {
     const {children, code, id, containerNodeID, loaded} = this.props;
     return (
@@ -61,17 +74,11 @@ class CodeExample extends Component {
         {loaded ? (
           <CodeEditor code={code} containerNodeID={containerNodeID} />
         ) : (
-          <h4>Loading code example...</h4>
+          <h4>Lade Code-Beispiel...</h4>
         )}
       </div>
     );
   }
 }
-
-CodeExample.propTypes = {
-  children: PropTypes.node,
-  code: PropTypes.string.isRequired,
-  loaded: PropTypes.bool.isRequired,
-};
 
 export default CodeExample;

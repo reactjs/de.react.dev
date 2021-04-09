@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * @emails react-core
  */
@@ -21,7 +21,7 @@ const Acknowlegements = ({data, location}) => (
         <div css={sharedStyles.articleLayout.content}>
           <Header>Acknowledgements</Header>
           <TitleAndMetaTags
-            ogUrl={`${urlRoot}/acknowledgements.html`}
+            canonicalUrl={`${urlRoot}/acknowledgements.html`}
             title="React - Acknowledgements"
           />
 
@@ -54,10 +54,10 @@ const Acknowlegements = ({data, location}) => (
               </li>
               <li>
                 <a href="https://christopheraue.net/">Christopher Aue</a> for
-                letting us use the <a href="http://reactjs.com/">reactjs.com</a>{' '}
-                domain name and the{' '}
-                <a href="https://twitter.com/reactjs">@reactjs</a> username on
-                Twitter.
+                letting us use the{' '}
+                <a href="https://reactjs.com/">reactjs.com</a> domain name and
+                the <a href="https://twitter.com/reactjs">@reactjs</a> username
+                on Twitter.
               </li>
               <li>
                 <a href="https://github.com/ProjectMoon">ProjectMoon</a> for
@@ -72,7 +72,7 @@ const Acknowlegements = ({data, location}) => (
               <li>
                 <a href="https://github.com/voronianski">Dmitri Voronianski</a>{' '}
                 for letting us use the{' '}
-                <a href="https://labs.voronianski.com/oceanic-next-color-scheme/">
+                <a href="https://labs.voronianski.dev/oceanic-next-color-scheme/">
                   Oceanic Next
                 </a>{' '}
                 color scheme on this website.

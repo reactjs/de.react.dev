@@ -10,6 +10,16 @@ redirect_from:
 
 Videos dedicated to the discussion of React and the React ecosystem.
 
+### React Conf 2019 {#react-conf-2019}
+
+A playlist of videos from React Conf 2019.
+<iframe title="React Conf 2019" width="650" height="366" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLPxbbTqCLbGHPxZpw4xj_Wwg8-fdNxJRh" frameborder="0" allowfullscreen></iframe>
+
+### React Conf 2018 {#react-conf-2018}
+
+A playlist of videos from React Conf 2018.
+<iframe title="React Conf 2018" width="650" height="366" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLPxbbTqCLbGE5AihOSExAa4wUM-P42EIJ" frameborder="0" allowfullscreen></iframe>
+
 ### React.js Conf 2017 {#reactjs-conf-2017}
 
 A playlist of videos from React.js Conf 2017.
@@ -53,8 +63,7 @@ Facebook engineers Bill Fisher and Jing Chen talk about Flux and React at Forwar
 ### Going Big with React {#going-big-with-react}
 
 Areeb Malik investigates how React performs in a high stress situation, and how it helped his team build safe code on a massive scale - (2014 - 0h31m).
-[![going big with React](https://i.vimeocdn.com/video/481670116_650.jpg)]
-
+<iframe title="Areeb Malik : Going big with React" width="650" height="366" src="https://www.youtube-nocookie.com/embed/9qcBlN6-qwY" frameborder="0" allowfullscreen></iframe>
 
 ### Rethinking Best Practices {#rethinking-best-practices}
 

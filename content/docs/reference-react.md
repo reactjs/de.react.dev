@@ -13,43 +13,42 @@ redirect_from:
   - "docs/top-level-api-zh-CN.html"
 ---
 
-`React` is the entry point to the React library. If you load React from a `<script>` tag, these top-level APIs are available on the `React` global. If you use ES6 with npm, you can write `import React from 'react'`. If you use ES5 with npm, you can write `var React = require('react')`.
+`React` ist der Zugangspunkt zur React-Bibliothek. Falls du React von einem `<script>`-Tag heraus lädst, sind diese Top-Level APIs im globalen `React`-Objekt verfügbar. Solltest du ES6 mit npm verwenden, kannst du `import React from 'react'` schreiben. Wenn du ES5 mit npm verwendest, kannst du `var React = require('react')` schreiben.
 
-## Overview {#overview}
+## Übersicht {#overview}
 
-### Components {#components}
+### Komponenten {#components}
 
-React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React components can be defined by subclassing `React.Component` or `React.PureComponent`.
+Mit React-Komponenten kann die Benutzeroberfläche in unabhängige, wiederverwendbare Bestandteile aufgeteilt werden, die jeweils isoliert betrachtet werden können. React-Komponenten können als Unterklassen von `React.Component` oder `React.PureComponent` definiert werden.
 
  - [`React.Component`](#reactcomponent)
  - [`React.PureComponent`](#reactpurecomponent)
 
-If you don't use ES6 classes, you may use the `create-react-class` module instead. See [Using React without ES6](/docs/react-without-es6.html) for more information.
+Solltest du keine ES6-Klassen benutzen, kannst du stattdessen das `create-react-class`-Modul verwenden. Siehe [React ohne ES6](/docs/react-without-es6.html) für mehr Informationen.
 
-React components can also be defined as functions which can be wrapped:
+React-Komponenten können auch als Funktionen definiert werden, die ummantelt werden können:
 
 - [`React.memo`](#reactmemo)
 
-### Creating React Elements {#creating-react-elements}
+### React-Elemente erstellen {#creating-react-elements}
 
-We recommend [using JSX](/docs/introducing-jsx.html) to describe what your UI should look like. Each JSX element is just syntactic sugar for calling [`React.createElement()`](#createelement). You will not typically invoke the following methods directly if you are using JSX.
-
+Um zu beschreiben, wie die Benutzeroberfläche aussehen soll, empfehlen wir, [JSX](/docs/introducing-jsx.html) zu verwenden. Ein JSX-Element ist eine alternative Schreibweise für das Aufrufen von [`React.createElement()`](#createelement). Wenn du JSX verwendest, rufst du die folgenden Methoden normalerweise nicht direkt auf:
 - [`createElement()`](#createelement)
 - [`createFactory()`](#createfactory)
 
-See [Using React without JSX](/docs/react-without-jsx.html) for more information.
+Siehe [React ohne JSX](/docs/react-without-jsx.html) für mehr Informationen.
 
-### Transforming Elements {#transforming-elements}
+### Elemente verändern {#transforming-elements}
 
-`React` provides several APIs for manipulating elements:
+`React` stellt mehrere APIs zur Verfügung, um Elemente zu manipulieren:
 
 - [`cloneElement()`](#cloneelement)
 - [`isValidElement()`](#isvalidelement)
 - [`React.Children`](#reactchildren)
 
-### Fragments {#fragments}
+### Fragmente {#fragments}
 
-`React` also provides a component for rendering multiple elements without a wrapper.
+`React` stellt auch eine Komponente zu Verfügung, mit der mehrere Elemente ohne Wrapper gerendert werden können:
 
 - [`React.Fragment`](#reactfragment)
 
@@ -60,20 +59,20 @@ See [Using React without JSX](/docs/react-without-jsx.html) for more information
 
 ### Suspense {#suspense}
 
-Suspense lets components "wait" for something before rendering. Today, Suspense only supports one use case: [loading components dynamically with `React.lazy`](/docs/code-splitting.html#reactlazy). In the future, it will support other use cases like data fetching.
+Mit Suspense können Komponenten vor dem Rendern auf etwas "warten". Momentan unterstützt Suspense nur einen Anwendungsfall: [Komponenten dynamisch laden mit `React.lazy`](/docs/code-splitting.html#reactlazy). In Zukunft wird es auch andere Anwendungsfälle wie z.B. das Abrufen von Daten unterstützen.
 
 - [`React.lazy`](#reactlazy)
 - [`React.Suspense`](#reactsuspense)
 
 ### Hooks {#hooks}
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class. Hooks have a [dedicated docs section](/docs/hooks-intro.html) and a separate API reference:
+*Hooks* sind neu in React 16.8. Sie erlauben die Verwendung von State und anderen React-Features ohne Klassen. Hooks haben einen [eigenen Bereich in der Dokumentation](/docs/hooks-intro.html) und eine eigene API-Referenz:
 
-- [Basic Hooks](/docs/hooks-reference.html#basic-hooks)
+- [Grundlegende Hooks](/docs/hooks-reference.html#basic-hooks)
   - [`useState`](/docs/hooks-reference.html#usestate)
   - [`useEffect`](/docs/hooks-reference.html#useeffect)
   - [`useContext`](/docs/hooks-reference.html#usecontext)
-- [Additional Hooks](/docs/hooks-reference.html#additional-hooks)
+- [Weitere Hooks](/docs/hooks-reference.html#additional-hooks)
   - [`useReducer`](/docs/hooks-reference.html#usereducer)
   - [`useCallback`](/docs/hooks-reference.html#usecallback)
   - [`useMemo`](/docs/hooks-reference.html#usememo)
@@ -84,11 +83,11 @@ Suspense lets components "wait" for something before rendering. Today, Suspense 
 
 * * *
 
-## Reference {#reference}
+## Referenz {#reference}
 
 ### `React.Component` {#reactcomponent}
 
-`React.Component` is the base class for React components when they are defined using [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes):
+`React.Component` ist die Basis-Klasse für React-Komponenten, die mit [ES6-Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definiert werden:
 
 ```javascript
 class Greeting extends React.Component {
@@ -98,21 +97,21 @@ class Greeting extends React.Component {
 }
 ```
 
-See the [React.Component API Reference](/docs/react-component.html) for a list of methods and properties related to the base `React.Component` class.
+Unter [React.Component API-Referenz](/docs/react-component.html) gibt es eine Liste der Methoden und Eigenschaften, die sich auf die `React.Component`-Basisklasse beziehen.
 
 * * *
 
 ### `React.PureComponent` {#reactpurecomponent}
 
-`React.PureComponent` is similar to [`React.Component`](#reactcomponent). The difference between them is that [`React.Component`](#reactcomponent) doesn't implement [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate), but `React.PureComponent` implements it with a shallow prop and state comparison. 
+`React.PureComponent` ähnelt [`React.Component`](#reactcomponent), unterscheidet sich aber dahingehend, dass [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) von  [`React.Component`](#reactcomponent) nicht implementiert wird, während `React.PureComponent` es durch das oberflächliche Vergleichen von Props und State implementiert.
 
-If your React component's `render()` function renders the same result given the same props and state, you can use `React.PureComponent` for a performance boost in some cases.
+Wenn die `render()`-Funktion einer React-Komponente bei Gleichbleiben von Props und State das gleiche Ergebnis rendert, kann die Nutzung von `React.PureComponent` in manchen Fällen die Performance verbessern.
 
-> Note
+> Hinweis
 >
-> `React.PureComponent`'s `shouldComponentUpdate()` only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences. Only extend `PureComponent` when you expect to have simple props and state, or use [`forceUpdate()`](/docs/react-component.html#forceupdate) when you know deep data structures have changed. Or, consider using [immutable objects](https://facebook.github.io/immutable-js/) to facilitate fast comparisons of nested data.
+> `shouldComponentUpdate()` von `React.PureComponent` vergleicht Objekte nur oberflächlich. Falls diese komplexe Datenstrukturen enthalten, könnte es für tiefer gelegene Unterschiede zu falschen Negativbefunden kommen. Benutze `PureComponent` nur dann, wenn Props und State einfach sind, oder verwende [`forceUpdate()`](/docs/react-component.html#forceupdate) wenn du weißt, dass tiefergelegene Datenstrukturen sich verändert haben. Oder überlege dir, [unveränderliche (immutable) Objekte](https://facebook.github.io/immutable-js/) zu verwenden, um das schnelle Vergleichen geschachtelter Daten zu erleichtern.
 >
-> Furthermore, `React.PureComponent`'s `shouldComponentUpdate()` skips prop updates for the whole component subtree. Make sure all the children components are also "pure".
+> Darüber hinaus überspringt `shouldComponentUpdate()` von `React.PureComponent` den kompletten der Komponente untergeordneten Teilbaum. Es sollte also sichergestellt werden, dass alle Kind-Komponenten auch "pur" sind.
 
 * * *
 
@@ -120,35 +119,36 @@ If your React component's `render()` function renders the same result given the 
 
 ```javascript
 const MyComponent = React.memo(function MyComponent(props) {
-  /* render using props */
+  /* rendere mit Props */
 });
 ```
 
-`React.memo` is a [higher order component](/docs/higher-order-components.html). It's similar to [`React.PureComponent`](#reactpurecomponent) but for function components instead of classes.
+`React.memo` ist eine [Higher-Order-Komponente](/docs/higher-order-components.html).
 
-If your function component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
+Wenn deine Komponente das gleiche Ergebnis mit den gleichen Props liefert, kannst du es mit `React.memo` umschließen um in einigen Fällen die Performance zu verbessern, in dem sich das Ergebnis gemerkt wird. Das bedeutet, dass React das Rendern der Komponente überspringt und stattdessen das zuletzt gerenderte Ergebnis wiederverwendet.
 
-By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
+`React.memo` betrifft nur Änderungen von Props. Wenn deine Funktionskomponente von `React.memo` umschloßen ist, eine [`useState`](/docs/hooks-state.html), [`useReducer`](/docs/hooks-reference.html#usereducer) oder [`useContext`](/docs/hooks-reference.html#usecontext) Hook in ihrer Implementierung hat, wird sie immer noch gerendert, wenn sich der State oder der Context ändert.
+
+Standardmäßig wird es nur oberflächlich komplexe Objekte im Props-Objekt vergleichen. Wenn du die Kontrolle über den Vergleich haben möchtest, kannst du auch eine benutzerdefinierte Vergleichsfunktion als zweites Argument angeben.
 
 ```javascript
 function MyComponent(props) {
-  /* render using props */
+  /* rendere mit Props */
 }
 function areEqual(prevProps, nextProps) {
   /*
-  return true if passing nextProps to render would return
-  the same result as passing prevProps to render,
-  otherwise return false
+  Gib 'true' zurück, wenn nextProps das gleiche Ergebnis rendern würde 
+  wie prevProps, ansonsten gib 'false' zurück
   */
 }
 export default React.memo(MyComponent, areEqual);
 ```
 
-This method only exists as a **[performance optimization](/docs/optimizing-performance.html).** Do not rely on it to "prevent" a render, as this can lead to bugs.
+Diese Methode existiert nur zur **[Performance-Optimierung](/docs/optimizing-performance.html).** Verlasse dich nicht auf sie, um das Rendern zu "verhindern", da dadurch Bugs entstehen können.
 
-> Note
+> Hinweis
 >
-> Unlike the [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) method on class components, the `areEqual` function returns `true` if the props are equal and `false` if the props are not equal. This is the inverse from `shouldComponentUpdate`.
+> Im Gegensatz zur [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate)-Methode in Klassen-Komponenten gibt die `areEqual`-Funktion `true` zurück, wenn die Props gleich sind und `false`, wenn die Props unterschiedlich sind, also genau andersherum als `shouldComponentUpdate`.
 
 * * *
 
@@ -162,9 +162,9 @@ React.createElement(
 )
 ```
 
-Create and return a new [React element](/docs/rendering-elements.html) of the given type. The type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
+Erzeugt und gibt ein neues [React-Element](/docs/rendering-elements.html) eines bestimmten Typs zurück. Das Typ-Argument kann entweder ein Tag-Name als String (z.B. `'div'` oder `'span'`), ein  [React-Komponenten](/docs/components-and-props.html)-Typ  (eine Klasse oder eine Funktion) oder ein [React-Fragment](#reactfragment)-Typ sein.
 
-Code written with [JSX](/docs/introducing-jsx.html) will be converted to use `React.createElement()`. You will not typically invoke `React.createElement()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
+In [JSX](/docs/introducing-jsx.html) geschriebener Code wird konvertiert, um `React.createElement()` zu benutzen. Wenn du JSX verwendest, rufst du `React.createElement()` normalerweise nicht direkt auf. Siehe [React ohne JSX](/docs/react-without-jsx.html) für mehr Informationen.
 
 * * *
 
@@ -178,17 +178,19 @@ React.cloneElement(
 )
 ```
 
-Clone and return a new React element using `element` as the starting point. The resulting element will have the original element's props with the new props merged in shallowly. New children will replace existing children. `key` and `ref` from the original element will be preserved.
+Klone und gebe ein neues React-Element mit `element` als Ausgangspunkt zurück. Das resultierende Element hat die Props des ursprünglichen Elements, in die die neuen Props oberflächlich eingefügt werden. Neue Kinder ersetzen die existierenden Kinder. `key` und `ref` des ursprünglichen Elements bleiben erhalten.
 
-`React.cloneElement()` is almost equivalent to:
+`React.cloneElement()` ist fast äquivalent zu:
+
 
 ```js
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
 
-However, it also preserves `ref`s. This means that if you get a child with a `ref` on it, you won't accidentally steal it from your ancestor. You will get the same `ref` attached to your new element.
+Zudem bleiben auch `ref`s erhalten. Das bedeutet, dass bei einem Kindelement mit einer `ref` nicht versehentlich die Referenz vom Elternelement übertragen wird. Das Kindelement erhält die gleiche `ref`, verknüpft mit dem neuen Element.
 
-This API was introduced as a replacement of the deprecated `React.addons.cloneWithProps()`.
+Diese API wurde als Ersatz für das veraltete `React.addons.cloneWithProps()` eingeführt.
+
 
 * * *
 
@@ -198,11 +200,11 @@ This API was introduced as a replacement of the deprecated `React.addons.cloneWi
 React.createFactory(type)
 ```
 
-Return a function that produces React elements of a given type. Like [`React.createElement()`](#createElement), the type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
+Gibt eine Funktion zurück, die React-Elemente eines bestimmten Typs erzeugt. Wie bei [`React.createElement()`](#createelement) kann das Typ-Argument entweder ein Tag-Name als String (z.B. `'div'` oder `'span'`), ein  [React-Komponenten](/docs/components-and-props.html)-Typ (eine Klasse oder eine Funktion) oder ein [React-Fragment](#reactfragment)-Typ sein.
 
-This helper is considered legacy, and we encourage you to either use JSX or use `React.createElement()` directly instead.
+Dieser Helfer gilt als veraltet, und wir empfehlen, entweder JSX oder `React.createElement()` direkt zu verwenden.
 
-You will not typically invoke `React.createFactory()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
+Wenn du JSX verwendest, rufst du `React.createFactory()` normalerweise nicht direkt auf. Siehe [React ohne JSX](/docs/react-without-jsx.html) für mehr Informationen.
 
 * * *
 
@@ -212,13 +214,13 @@ You will not typically invoke `React.createFactory()` directly if you are using 
 React.isValidElement(object)
 ```
 
-Verifies the object is a React element. Returns `true` or `false`.
+Überprüft, ob das Objekt ein React-Element ist. Gibt `true` oder `false` zurück.
 
 * * *
 
 ### `React.Children` {#reactchildren}
 
-`React.Children` provides utilities for dealing with the `this.props.children` opaque data structure.
+`React.Children` bietet Hilfsmittel, um mit der eher undurchschaubaren Datenstruktur von `this.props.children` umzugehen.
 
 #### `React.Children.map` {#reactchildrenmap}
 
@@ -226,11 +228,11 @@ Verifies the object is a React element. Returns `true` or `false`.
 React.Children.map(children, function[(thisArg)])
 ```
 
-Invokes a function on every immediate child contained within `children` with `this` set to `thisArg`. If `children` is an array it will be traversed and the function will be called for each child in the array. If children is `null` or `undefined`, this method will return `null` or `undefined` rather than an array.
+Ruft für jedes unmittelbare Kind aus `children` eine Funktion auf, bei der `this` auf `thisArg` gesetzt ist. Wenn `children` ein Array ist, wird dieses durchlaufen und die Funktion wird für jedes Kind im Array aufgerufen. Falls `children` `null` oder `undefined` ist, gibt diese Methode statt einem Array `null` oder `undefined` zurück.
 
-> Note
+> Hinweis
 >
-> If `children` is a `Fragment` it will be treated as a single child and not traversed.
+> Falls `children` ein `Fragment` ist, wird es wie ein einziges Kind behandelt und nicht durchlaufen.
 
 #### `React.Children.forEach` {#reactchildrenforeach}
 
@@ -238,7 +240,7 @@ Invokes a function on every immediate child contained within `children` with `th
 React.Children.forEach(children, function[(thisArg)])
 ```
 
-Like [`React.Children.map()`](#reactchildrenmap) but does not return an array.
+Wie [`React.Children.map()`](#reactchildrenmap), gibt jedoch kein Array zurück.
 
 #### `React.Children.count` {#reactchildrencount}
 
@@ -246,7 +248,7 @@ Like [`React.Children.map()`](#reactchildrenmap) but does not return an array.
 React.Children.count(children)
 ```
 
-Returns the total number of components in `children`, equal to the number of times that a callback passed to `map` or `forEach` would be invoked.
+Gibt die Gesamtzahl der Komponenten in `children` zurück, und gleicht der Anzahl der Callbacks, die mit der `map`- oder `forEach`-Methode aufgerufen werden würden.
 
 #### `React.Children.only` {#reactchildrenonly}
 
@@ -254,11 +256,11 @@ Returns the total number of components in `children`, equal to the number of tim
 React.Children.only(children)
 ```
 
-Verifies that `children` has only one child (a React element) and returns it. Otherwise this method throws an error.
+Überprüft, ob `children` nur ein Kind (ein React-Element) hat und gibt es zurück. Ansonsten wirft diese Methode einen Fehler.
 
-> Note:
+> Hinweis:
 >
->`React.Children.only()` does not accept the return value of [`React.Children.map()`](#reactchildrenmap) because it is an array rather than a React element.
+>`React.Children.only()` akzeptiert nicht den Rückgabewert von [`React.Children.map()`](#reactchildrenmap), da dieser ein Array ist und kein React-Element.
 
 #### `React.Children.toArray` {#reactchildrentoarray}
 
@@ -266,82 +268,89 @@ Verifies that `children` has only one child (a React element) and returns it. Ot
 React.Children.toArray(children)
 ```
 
-Returns the `children` opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of children in your render methods, especially if you want to reorder or slice `this.props.children` before passing it down.
+Gibt die eher undurchschaubare `children`-Datenstruktur als flaches Array zurück, wobei jedem Kind ein Key zugeordnet ist. Nützlich, falls in render-Methoden Kinder-Ansammlungen manipuliert werden sollen, insbesondere beim Umordnen oder Slicen von `this.props.children`, bevor diese weitergegeben werden.
 
-> Note:
+> Hinweis:
 >
-> `React.Children.toArray()` changes keys to preserve the semantics of nested arrays when flattening lists of children. That is, `toArray` prefixes each key in the returned array so that each element's key is scoped to the input array containing it.
+> `React.Children.toArray()` ändert Keys, um die Semantik verschachtelter Arrays zu erhalten, während Listen von Kindern geflattet werden. Das bedeutet, dass `toArray` ein Präfix vor jeden Key des zurückgegebenen Arrays setzt, damit der Key jedes Elements dem Input-Array, dem es angehört, zugeordnet ist.
 
 * * *
 
 ### `React.Fragment` {#reactfragment}
 
-The `React.Fragment` component lets you return multiple elements in a `render()` method without creating an additional DOM element:
+Die `React.Fragment`-Komponente erlaubt dir, mehrere Elemente in einer `render()`-Methode zurückzugeben, ohne ein zusätzliches DOM-Element zu kreieren:
 
 ```javascript
 render() {
   return (
     <React.Fragment>
-      Some text.
-      <h2>A heading</h2>
+      Irgendein Text.
+      <h2>Eine Überschrift</h2>
     </React.Fragment>
   );
 }
 ```
 
-You can also use it with the shorthand `<></>` syntax. For more information, see [React v16.2.0: Improved Support for Fragments](/blog/2017/11/28/react-v16.2.0-fragment-support.html).
+Du kannst auch die Kurzschreibweise `<></>` verwenden. Für mehr Informationen siehe [React v16.2.0: Verbesserte Unterstützung für Fragmente](/blog/2017/11/28/react-v16.2.0-fragment-support.html).
 
+* * *
 
 ### `React.createRef` {#reactcreateref}
 
-`React.createRef` creates a [ref](/docs/refs-and-the-dom.html) that can be attached to React elements via the ref attribute.
+`React.createRef` erstellt eine [Referenz](/docs/refs-and-the-dom.html), die über das `ref`-Attribut an React-Elemente angehängt werden kann.
 `embed:16-3-release-blog-post/create-ref-example.js`
+
+* * *
 
 ### `React.forwardRef` {#reactforwardref}
 
-`React.forwardRef` creates a React component that forwards the [ref](/docs/refs-and-the-dom.html) attribute it receives to another component below in the tree. This technique is not very common but is particularly useful in two scenarios:
+`React.forwardRef` erstellt eine React-Komponente, die das [ref](/docs/refs-and-the-dom.html)-Attribut, das sie erhält, an eine ihr in der Baumstruktur untergeordnete Komponente weitergibt. Diese Technik ist nicht sehr verbreitet, ist jedoch in zwei Fällen besonders nützlich:
 
-* [Forwarding refs to DOM components](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
-* [Forwarding refs in higher-order-components](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
+* [Refs an DOM-Komponenten weitergeben](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
+* [Refs and Higher-Order-Komponenten weitergeben](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
 
-`React.forwardRef` accepts a rendering function as an argument. React will call this function with `props` and `ref` as two arguments. This function should return a React node.
+`React.forwardRef` akzeptiert eine render-Funktion als Argument. React ruft diese Funktion mit den zwei Argumenten `props` und `ref` auf und sollte einen React-Knoten zurückgeben.
 
 `embed:reference-react-forward-ref.js`
 
-In the above example, React passes a `ref` given to `<FancyButton ref={ref}>` element as a second argument to the rendering function inside the `React.forwardRef` call. This rendering function passes the `ref` to the `<button ref={ref}>` element.
+Im obigen Beispiel übergibt React eine `ref`, die dem `<FancyButton ref={ref}>`-Element gegeben wurde, als zweites Argument an die render-Funktion innerhalb des `React.forwardRef`-Aufrufs. Diese render-Funktion gibt die `ref` an das `<button ref={ref}>`-Element weiter.
 
-As a result, after React attaches the ref, `ref.current` will point directly to the `<button>` DOM element instance.
+Dadurch zeigt `ref.current` direkt auf die `<button>`-DOM-Element-Instanz, nachdem React die `ref` eingefügt hat.
 
-For more information, see [forwarding refs](/docs/forwarding-refs.html).
+Für mehr Informationen siehe [Refs weitergeben](/docs/forwarding-refs.html).
+
+* * *
 
 ### `React.lazy` {#reactlazy}
 
-`React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren't used during the initial render.
+`React.lazy()` lässt dich eine Komponente definieren, die dynamisch geladen wird. Das hilft, die Bundlegröße zu reduzieren, indem das Laden von Komponenten, die im ursprünglichen Render nicht benutzt werden, verzögert wird.
 
-You can learn how to use it from our [code splitting documentation](/docs/code-splitting.html#reactlazy). You might also want to check out [this article](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) explaining how to use it in more detail.
+In unserer [Code-Splitting-Dokumentation](/docs/code-splitting.html#reactlazy) kannst du lernen, wie es benutzt wird. Du kannst auch [diesen Artikel](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) lesen, in dem die Verwendung im Detail erläutert wird.
 
 ```js
-// This component is loaded dynamically
+// Diese Komponente wird dynamisch geladen
 const SomeComponent = React.lazy(() => import('./SomeComponent'));
 ```
 
-Note that rendering `lazy` components requires that there's a `<React.Suspense>` component higher in the rendering tree. This is how you specify a loading indicator.
+Beachte, dass das Rendern von `lazy`-Komponenten ein `<React.Suspense>` weiter oben im Rendering-Baum benötigt. Damit wird ein Lade-Indikator bestimmt.
 
-> **Note**
+> **Hinweis**
 >
-> Using `React.lazy`with dynamic import requires Promises to be available in the JS environment. This requires a polyfill on IE11 and below.
+> Die Verwendung von `React.lazy` mit dynamischen Imports setzt voraus, dass in der JS-Umgebung `Promises` verfügbar sind. Hierzu braucht man ein Polyfill für IE11 und darunter.
+
+* * *
 
 ### `React.Suspense` {#reactsuspense}
 
-`React.Suspense` let you specify the loading indicator in case some components in the tree below it are not yet ready to render. Today, lazy loading components is the **only** use case supported by `<React.Suspense>`:
+`React.Suspense` lässt dich den Lade-Indikator bestimmen, der angezeigt wird, falls einige Komponenten weiter unten im Rendering-Baum noch nicht render-bereit sind. Momentan ist das Laden von `lazy`-Komponenten der **einzige** Anwendungsfall, den `<React.Suspense>` unterstützt:
 
 ```js
-// This component is loaded dynamically
+// Diese Komponente wird dynamisch geladen
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
 function MyComponent() {
   return (
-    // Displays <Spinner> until OtherComponent loads
+    // Zeigt <Spinner>, bis OtherComponent geladen ist
     <React.Suspense fallback={<Spinner />}>
       <div>
         <OtherComponent />
@@ -351,10 +360,10 @@ function MyComponent() {
 }
 ```
 
-It is documented in our [code splitting guide](/docs/code-splitting.html#reactlazy). Note that `lazy` components can be deep inside the `Suspense` tree -- it doesn't have to wrap every one of them. The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use `lazy()` wherever you want to do code splitting.
+Das ist in unserem [Code-Splitting-Guide](/docs/code-splitting.html#reactlazy) dokumentiert. Beachte, dass sich `lazy`-Komponenten tief im `Suspense`-Baum befinden können -- es muss nicht jede einzelne davon ummantelt werden. Es wird empfohlen, `<Suspense>` dort zu verwenden, wo ein Lade-Indikator angezeigt werden soll, und `lazy(`) dort zu verwenden, wo Code-Splitting stattfinden soll.
 
-While this is not supported today, in the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](/blog/2018/11/27/react-16-roadmap.html).
+Wir planen, mit `Suspense` zukünftig weitere, bisher noch nicht unterstützte, Anwendungsfälle wie z.B. das Abrufen von Daten abzudecken. Mehr Informationen gibt es in [unserer Roadmap](/blog/2018/11/27/react-16-roadmap.html).
 
->Note:
+> Hinweis:
 >
->`React.lazy()` and `<React.Suspense>` are not yet supported by `ReactDOMServer`. This is a known limitation that will be resolved in the future.
+>`React.lazy()` und `<React.Suspense>` werden noch nicht von `ReactDOMServer` unterstützt. Diese Einschränkung ist bekannt und wird in Zukunft gelöst.

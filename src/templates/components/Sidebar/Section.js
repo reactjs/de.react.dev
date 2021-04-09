@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * @emails react-core
  */
@@ -40,7 +40,8 @@ class Section extends React.Component {
             cssProps={{
               [media.greaterThan('small')]: {
                 color: isActive ? colors.text : colors.subtle,
-
+                paddingRight: 7,
+                paddingLeft: 7,
                 ':hover': {
                   color: colors.text,
                 },
@@ -81,10 +82,7 @@ class Section extends React.Component {
                   ? activeItemId === item.id
                   : isItemActive(location, item),
                 item: section.isOrdered
-                  ? {
-                      ...item,
-                      title: `${index + 1}. ${item.title}`,
-                    }
+                  ? {...item, title: `${index + 1}. ${item.title}`}
                   : item,
                 location,
                 onLinkClick,

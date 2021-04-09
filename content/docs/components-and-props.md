@@ -1,6 +1,6 @@
 ---
 id: components-and-props
-title: Components and Props
+title: Komponenten und Props
 permalink: docs/components-and-props.html
 redirect_from:
   - "docs/reusable-components.html"
@@ -16,90 +16,91 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+Komponenten erlauben dir deine Benutzeroberfläche in unabhängige, wiederverwendbare Teile aufzubrechen und jeden als isoliert zu betrachten. Diese Seite bietet dir eine Einführung in die Idee hinter Komponenten. Du kannst eine [detailierte Komponentenbeschreibung in der API Referenz](/docs/react-component.html) finden.
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+Vom Konzept her sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren beliebige Eingaben ("props" genannnt) und geben React-Elemente zurück, welche beschreiben was auf dem Bildschirm angezeigt werden soll.
 
-## Function and Class Components {#function-and-class-components}
+## Funktions- und Klassenkomponenten {#function-and-class-components}
 
-The simplest way to define a component is to write a JavaScript function:
+Der einfachste Weg eine Komponente zu definieren, ist eine JavaScript-Funktion zu schreiben:
 
 ```js
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>Hallo {props.name}</h1>;
 }
 ```
 
-This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
+Diese Funktion ist eine gültige React-Komponente, da sie ein einziges "props"- (engl. kurz für properties) Objekt mit Daten akzeptiert und ein React-Element zurückgibt. Wir nennen dies "Funktionskomponenten", weil es buchstäblich  JavaScript-Funktionen sind.
 
-You can also use an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component:
+Du kannst ebenfalls [ES6-Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) benutzen um Komponenten zu definieren:
 
 ```js
 class Welcome extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return <h1>Hallo {this.props.name}</h1>;
   }
 }
 ```
 
-The above two components are equivalent from React's point of view.
+Die beiden obigen Komponenten sind aus der Sicht von React identisch.
 
-Classes have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html). Until then, we will use function components for their conciseness.
+Funktion- und Klassen-Komponenten haben beide noch ein paar zusätzliche Eigenschaften, welche wir im [nächsten Abschnitt](/docs/state-and-lifecycle.html) besprechen.
 
-## Rendering a Component {#rendering-a-component}
+## Eine Komponente rendern {#rendering-a-component}
 
-Previously, we only encountered React elements that represent DOM tags:
+Bis jetzt haben wir nur React-Elemente kennengelernt, die DOM-Tags repräsentiert haben:
 
 ```js
 const element = <div />;
 ```
 
-However, elements can also represent user-defined components:
+Elemente können aber auch benutzerdefinierte Komponenten darstellen:
 
 ```js
 const element = <Welcome name="Sara" />;
 ```
 
-When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
+React übergibt, wenn es ein Element als benutzerdefinierte Komponente erkennt, alle JSX Attribute als ein einziges Objekt. Dies sind die sogenannten "props" (Eigenschaften).
 
-For example, this code renders "Hello, Sara" on the page:
+Zum Beispiel rendert dieser Code "Hallo Sarah" auf die Seite:
 
 ```js{1,5}
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>Hallo {props.name}</h1>;
 }
 
-const element = <Welcome name="Sara" />;
+const element = <Welcome name="Sarah" />;
 ReactDOM.render(
   element,
   document.getElementById('root')
 );
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+[Auf CodePen ausprobieren](codepen://components-and-props/rendering-a-component)
 
-Let's recap what happens in this example:
+Fassen wir mal zusammen, was in diesem Beispiel passiert:
 
-1. We call `ReactDOM.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+1. Wir rufen `ReactDOM.render()` mit dem React-Element `<Welcome name="Sarah" />` auf.
+2. React ruft die `Welcome` Komponente mit den Eigenschaften (props) `{name: 'Sarah'}` auf.
+3. Unsere `Welcome`-Komponente gibt als Ergebnis `<h1>Hallo Sarah</h1>` zurück.
+4. React aktualsiert effizient das DOM um `<h1>Hallo Sarah</h1>` abzugleichen.
 
->**Note:** Always start component names with a capital letter.
+>**Hinweis:** Beginne den Namen von Komponenten immer mit einem Großbuchstaben.
 >
->React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
+>React behandelt Komponenten, die mit Kleinbuchstaben beginnen, als DOM-Tags. Zum Beispiel stellt `<div />` ein HTML div-Tag dar, `<Welcome />` hingegen ist eine Komponente und erfordert, dass `Welcome` im Scope ist.
 >
->To learn more about the reasoning behind this convention, please read [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
+>Bitte lese [JSX im Detail](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized), um mehr über diese Konvention zu erfahren.
 
-## Composing Components {#composing-components}
+## Komponenten zusammensetzen {#composing-components}
 
-Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+Komponenten können bei ihrer Ausgabe auf andere Komponenten verweisen.
+So können wir für jedes Detaillevel die selben abstrahierten Komponenten wiederverwenden. Denn sowohl Buttons, Formulare als auch Screens, werden in React-Apps allgemein als Komponenten bezeichnet.
 
-For example, we can create an `App` component that renders `Welcome` many times:
+Zum Beispiel können wir die `App` Komponente mehrmals `Welcome` rendern lassen:
 
 ```js{8-10}
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+  return <h1>Hallo {props.name}</h1>;
 }
 
 function App() {
@@ -118,15 +119,15 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/composing-components)
+[Auf CodePen ausprobieren](codepen://components-and-props/composing-components)
 
-Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
+Typischerweise haben neue React-Apps eine einzige `App` Komponente an erste Stelle. Wenn du aber React in ein bestehendes Projekt integrierst, fängst du wahrscheinlich von unten nach oben (bottom-up) an und erstellst Komponenten wie `Button`, dabei arbeitest dich Schritt für Schritt die View-Hierarchie nach oben.
 
-## Extracting Components {#extracting-components}
+## Komponenten auslagern {#extracting-components}
 
-Don't be afraid to split components into smaller components.
+Hab keine Angst vor dem Aufteilen von Komponenten in kleinere Komponenten.
 
-For example, consider this `Comment` component:
+Nehmen wir mal als Beispiel diese `Comment`-Komponente:
 
 ```js
 function Comment(props) {
@@ -152,13 +153,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+[Auf CodePen ausprobieren](codepen://components-and-props/extracting-components)
 
-It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
+Diese Komponente nimmt `author` (ein Objekt), `text` (ein String), und `date` (ein date-Objekt) als Props entgegen und beschreibt einen Kommentar auf einer Social Media Webseite.
 
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
+Aufgrund der Verschachtelung könnte diese Komponente schwer abänderbar sein, außerdem ist es auch schwierig einzelne Teile davon wiederzuverwenden. Lass uns doch mal ein paar Komponenten daraus ziehen.
 
-First, we will extract `Avatar`:
+Als erstes werden wir `Avatar` auslagern:
 
 ```js{3-6}
 function Avatar(props) {
@@ -171,11 +172,11 @@ function Avatar(props) {
 }
 ```
 
-The `Avatar` doesn't need to know that it is being rendered inside a `Comment`. This is why we have given its prop a more generic name: `user` rather than `author`.
+Der `Avatar` muss nicht wissen, dass er in innerhalb von `Comment` gerendert wird. Darum geben wir dem prop einen gebräuchlicheren namen als: `author` und nennen es `user`.
 
-We recommend naming props from the component's own point of view rather than the context in which it is being used.
+Wir empfehlen props nicht nach dem Kontext in dem sie verwenden werden, sondern aus dem sie kommen zu benennen.
 
-We can now simplify `Comment` a tiny bit:
+Wir können nun `Comment` ein bisschen vereinfachen:
 
 ```js{5}
 function Comment(props) {
@@ -197,8 +198,7 @@ function Comment(props) {
   );
 }
 ```
-
-Next, we will extract a `UserInfo` component that renders an `Avatar` next to the user's name:
+Als nächstes werden wir eine `UserInfo` Komponente extrahieren, welche einen `Avatar` neben den Namen des Benutzers rendert:
 
 ```js{3-8}
 function UserInfo(props) {
@@ -213,7 +213,7 @@ function UserInfo(props) {
 }
 ```
 
-This lets us simplify `Comment` even further:
+Dadurch können wir `Comment` weiter vereinfachen:
 
 ```js{4}
 function Comment(props) {
@@ -231,13 +231,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+[Auf CodePen ausprobieren](codepen://components-and-props/extracting-components-continued)
 
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be a reusable component.
+Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche (`Button`, `Panel`, `Avatar`) öfters verwendet wird oder es ist für sich allein komplex genug ist (`App`, `FeedStory`, `Comment`), dies gute Kandidaten für wiederverwendbare Komponenten sind.
 
-## Props are Read-Only {#props-are-read-only}
+## Props sind Read-Only {#props-are-read-only}
 
-Whether you declare a component [as a function or a class](#function-and-class-components), it must never modify its own props. Consider this `sum` function:
+Es ist egal, ob eine Komponente [als Funktion oder Klasse](#function-and-class-components) deklariert wird, sie darf nie ihre eigenen props verändern. Schauen wir uns mal diese `sum` Funktion an:
 
 ```js
 function sum(a, b) {
@@ -245,9 +245,9 @@ function sum(a, b) {
 }
 ```
 
-Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
+Solch eine Funktion wird als ["pure"](https://en.wikipedia.org/wiki/Pure_function) bezeichnet, da sie nicht ihre Eingaben ändert und immer das gleiche Ergbenis für die gleichen Eingaben zurückgibt.
 
-In contrast, this function is impure because it changes its own input:
+Im Umkehrschluss ist diese Funktion keine "pure function", sondern "impure", da sie ihre eigenen Eingaben ändert:
 
 ```js
 function withdraw(account, amount) {
@@ -255,8 +255,8 @@ function withdraw(account, amount) {
 }
 ```
 
-React is pretty flexible but it has a single strict rule:
+React ist sehr flexibel, es gibt aber eine strikte Regeln:
 
-**All React components must act like pure functions with respect to their props.**
+**Alle React-Komponenten müssen sich im Bezug auf ihre Props, als sogenannte "pure functions" verhalten.**
 
-Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
+Natürlich sind Anwendungen dynamisch und ändern ihre Benutzeroberfläche über die Zeit. Im [nächsten Abschnitt](/docs/state-and-lifecycle.html) werden wir das "state" Konzept vorstellen. React-Komponenten reagieren auf Benutzereingaben, Netzwerkantworten und vieles mehr, dabei erlaubt uns der State (Zustand), die Ausgabe einer Komponente über die Zeit zu ändern.

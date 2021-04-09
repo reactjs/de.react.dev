@@ -1,27 +1,27 @@
 ---
 id: test-utils
-title: Test Utilities
+title: Test-Utilities
 permalink: docs/test-utils.html
 layout: docs
 category: Reference
 ---
 
-**Importing**
+**Import**
 
 ```javascript
 import ReactTestUtils from 'react-dom/test-utils'; // ES6
-var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
+var ReactTestUtils = require('react-dom/test-utils'); // ES5 mit npm
 ```
 
-## Overview {#overview}
+## Übersicht {#overview}
 
-`ReactTestUtils` makes it easy to test React components in the testing framework of your choice. At Facebook we use [Jest](https://facebook.github.io/jest/) for painless JavaScript testing. Learn how to get started with Jest through the Jest website's [React Tutorial](http://facebook.github.io/jest/docs/en/tutorial-react.html#content).
+`ReactTestUtils` bieten eine einfache Möglichkeit, React-Komponenten in einem Test-Framework deiner Wahl zu testen. Bei Facebook benutzen wir [Jest](https://facebook.github.io/jest/) für schmerzfreie Javascript-Tests. Du kannst das [React-Tutorial](https://jestjs.io/docs/tutorial-react) auf Jest's Webseite besuchen, um Jest zu lernen.
 
-> Note:
+> Hinweis:
 >
-> We recommend using [`react-testing-library`](https://git.io/react-testing-library) which is designed to enable and encourage writing tests that use your components as the end users do.
+> Wir empfehlen die Verwendung der [React Testing Library](https://testing-library.com/react), die konzipiert wurde, um das Schreiben von Tests zu ermöglichen, in denen Komponenten auf die gleiche Weise verwendet werden wie von Endnutzern.
 >
-> Alternatively, Airbnb has released a testing utility called [Enzyme](http://airbnb.io/enzyme/), which makes it easy to assert, manipulate, and traverse your React Components' output.
+> Alternativ dazu gibt es von Airbnb eine Test-Utility namens [Enzyme](https://airbnb.io/enzyme/), mit der auf einfache Weise die Ausgabe von React-Komponenten zugesichert (asserted), manipuliert und durchlaufen werden kann.
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -40,30 +40,30 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
  - [`renderIntoDocument()`](#renderintodocument)
  - [`Simulate`](#simulate)
 
-## Reference {#reference}
+## Referenz {#reference}
 
 ### `act()` {#act}
 
-To prepare a component for assertions, wrap the code rendering it and performing updates inside an `act()` call. This makes your test run closer to how React works in the browser.
+Um eine Komponente für Assertionen vorzubereiten, setze den Code, der sie rendert und aktualisiert, in einen `act()`-Aufruf. Damit läuft der Test so ähnlich ab, wie React auch im Browser funktioniert.
 
->Note
+> Hinweis
 >
->If you use `react-test-renderer`, it also provides an `act` export that behaves the same way.
+> Falls du `react-test-renderer` verwendest, kannst du dessen `act`-Export verwenden, der sich gleich verhält.
 
-For example, let's say we have this `Counter` component:
+Stelle dir als Beispiel vor, du hast diese `Counter`-Komponente:
 
 ```js
-class App extends React.Component {
+class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {count: 0};
     this.handleClick = this.handleClick.bind(this);
   }
   componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Du hast ${this.state.count} Mal geklickt`;
   }
   componentDidUpdate() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Du hast ${this.state.count} Mal geklickt`;
   }
   handleClick() {
     this.setState(state => ({
@@ -73,9 +73,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p>You clicked {this.state.count} times</p>
+        <p>Du hast {this.state.count} Mal geklickt</p>
         <button onClick={this.handleClick}>
-          Click me
+          Klick mich
         </button>
       </div>
     );
@@ -83,7 +83,7 @@ class App extends React.Component {
 }
 ```
 
-Here is how we can test it:
+So können wir sie testen:
 
 ```js{3,20-22,29-31}
 import React from 'react';
@@ -103,26 +103,28 @@ afterEach(() => {
   container = null;
 });
 
-it('can render and update a counter', () => {
-  // Test first render and componentDidMount
+it('kann einen Counter rendern und updaten', () => {
+  // Erstes Rendern und componentDidMount testen
   act(() => {
     ReactDOM.render(<Counter />, container);
   });
   const button = container.querySelector('button');
   const label = container.querySelector('p');
-  expect(label.textContent).toBe('You clicked 0 times');
-  expect(document.title).toBe('You clicked 0 times');
+  expect(label.textContent).toBe('Du hast 0 Mal geklickt');
+  expect(document.title).toBe('Du hast 0 Mal geklickt');
 
-  // Test second render and componentDidUpdate
+  // Zweites Rendern und componentDidUpdate testen
   act(() => {
     button.dispatchEvent(new MouseEvent('click', {bubbles: true}));
   });
-  expect(label.textContent).toBe('You clicked 1 times');
-  expect(document.title).toBe('You clicked 1 times');
+  expect(label.textContent).toBe('Du hast 1 Mal geklickt');
+  expect(document.title).toBe('Du hast 1 Mal geklickt');
 });
 ```
 
-Don't forget that dispatching DOM events only works when the DOM container is added to the `document`. You can use a helper like [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) to reduce the boilerplate code.
+- Vergiss nicht, dass das Abschicken von DOM-Events nur funktioniert, wenn der DOM-Container zum `document` hinzugefügt wurde. Du kannst [`React Testing Library`](https://testing-library.com/react) zur Hilfe nehmen, um Boilerplate-Code zu reduzieren.
+
+- Das [`recipes`](/docs/testing-recipes.html) Dokument enthält mehr Details dazu, wie sich `act()` verhält, mit Beispiele und Anwendungsgebieten.
 
 * * *
 
@@ -135,11 +137,11 @@ mockComponent(
 )
 ```
 
-Pass a mocked component module to this method to augment it with useful methods that allow it to be used as a dummy React component. Instead of rendering as usual, the component will become a simple `<div>` (or other tag if `mockTagName` is provided) containing any provided children.
+Übergebe dieser Methode ein gemocktes Komponenten-Modul, um es mit nützlichen Methoden zu erweitern, mit denen es als Dummy-React-Komponente verwendet werden kann. Anstatt wie üblich zu rendern, wird die Komponente zu einem einfachen `<div>` (oder zu einem anderen `Tag`, falls `mockTagName` angegeben wurde), das die ihr übergegebenen Children-Elemente enthält.
 
-> Note:
+> Hinweis:
 >
-> `mockComponent()` is a legacy API. We recommend using [shallow rendering](/docs/test-utils.html#shallow-rendering) or [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
+> `mockComponent()` ist eine veraltete API. Wir empfehlen, stattdessen [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) zu verwenden.
 
 * * *
 
@@ -149,7 +151,7 @@ Pass a mocked component module to this method to augment it with useful methods 
 isElement(element)
 ```
 
-Returns `true` if `element` is any React element.
+Gibt `true` zurück, falls `element` ein React-Element ist.
 
 * * *
 
@@ -162,7 +164,7 @@ isElementOfType(
 )
 ```
 
-Returns `true` if `element` is a React element whose type is of a React `componentClass`.
+Gibt `true` zurück, falls `element` ein React-Element vom Typ React `componentClass` ist.
 
 * * *
 
@@ -172,7 +174,7 @@ Returns `true` if `element` is a React element whose type is of a React `compone
 isDOMComponent(instance)
 ```
 
-Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
+Gibt `true` zurück, falls `instance` eine DOM-Komponente (z. B. ein `<div>` oder `<span>`) ist.
 
 * * *
 
@@ -182,7 +184,7 @@ Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
 isCompositeComponent(instance)
 ```
 
-Returns `true` if `instance` is a user-defined component, such as a class or a function.
+Gibt `true` zurück, falls `instance` eine benutzerdefinierte Komponente, z. B. eine Klasse oder Funktion, ist.
 
 * * *
 
@@ -195,7 +197,7 @@ isCompositeComponentWithType(
 )
 ```
 
-Returns `true` if `instance` is a component whose type is of a React `componentClass`.
+Gibt `true` zurück, falls `instance` eine Komponente vom Typ React `componentClass` ist.
 
 * * *
 
@@ -208,7 +210,7 @@ findAllInRenderedTree(
 )
 ```
 
-Traverse all components in `tree` and accumulate all components where `test(component)` is `true`. This is not that useful on its own, but it's used as a primitive for other test utils.
+Durchläuft alle Komponenten in `tree` und sammelt alle Komponenten, bei denen `test(component)` `true` ist. Das ist für sich allein genommen nicht besonders nützlich, wird aber als Primitive für andere Test-Utilities verwendet.
 
 * * *
 
@@ -221,7 +223,7 @@ scryRenderedDOMComponentsWithClass(
 )
 ```
 
-Finds all DOM elements of components in the rendered tree that are DOM components with the class name matching `className`.
+Findet alle DOM-Elemente von Komponenten im gerenderten Baum, bei denen der Klassennamen der Komponenten mit `className` übereinstimmt.
 
 * * *
 
@@ -234,7 +236,7 @@ findRenderedDOMComponentWithClass(
 )
 ```
 
-Like [`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass) but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.
+Verhält sich wie [`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass), erwartet aber genau ein Resultat und gibt dieses zurück. Gibt einen Fehler aus, falls es mehr oder weniger als eine Übereinstimmung gibt.
 
 * * *
 
@@ -247,7 +249,7 @@ scryRenderedDOMComponentsWithTag(
 )
 ```
 
-Finds all DOM elements of components in the rendered tree that are DOM components with the tag name matching `tagName`.
+Findet alle DOM-Elemente von Komponenten im gerenderten Baum, bei denen der Tagname der Komponenten mit `tagName` übereinstimmt.
 
 * * *
 
@@ -260,7 +262,7 @@ findRenderedDOMComponentWithTag(
 )
 ```
 
-Like [`scryRenderedDOMComponentsWithTag()`](#scryrendereddomcomponentswithtag) but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.
+Verhält sich wie [`scryRenderedDOMComponentsWithTag()`](#scryrendereddomcomponentswithtag), erwartet aber genau ein Resultat und gibt dieses zurück. Gibt einen Fehler aus, falls es mehr oder weniger als eine Übereinstimmung gibt.
 
 * * *
 
@@ -273,7 +275,7 @@ scryRenderedComponentsWithType(
 )
 ```
 
-Finds all instances of components with type equal to `componentClass`.
+Findet alle Instanzen von Komponenten, deren Typ mit `componentClass` übereinstimmt.
 
 * * *
 
@@ -286,7 +288,7 @@ findRenderedComponentWithType(
 )
 ```
 
-Same as [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) but expects there to be one result and returns that one result, or throws exception if there is any other number of matches besides one.
+Verhält sich wie [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype), erwartet aber genau ein Resultat und gibt dieses zurück. Gibt einen Fehler aus, falls es mehr oder weniger als eine Übereinstimmung gibt.
 
 ***
 
@@ -296,20 +298,20 @@ Same as [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) bu
 renderIntoDocument(element)
 ```
 
-Render a React element into a detached DOM node in the document. **This function requires a DOM.** It is effectively equivalent to:
+Rendert ein React-Element in einen separaten DOM-Knoten im Dokument. **Diese Funktion benötigt ein DOM.** Effektiv ist sie äquivalent zu:
 
 ```js
 const domContainer = document.createElement('div');
 ReactDOM.render(element, domContainer);
 ```
 
-> Note:
+> Hinweis:
 >
-> You will need to have `window`, `window.document` and `window.document.createElement` globally available **before** you import `React`. Otherwise React will think it can't access the DOM and methods like `setState` won't work.
+> `window`, `window.document` und `window.document.createElement` müssen global verfügbar sein, **bevor** du `React` importierst. Ansonsten denkt React, dass es nicht auf das DOM zugreifen kann, und Methoden wie `setState` werden nicht funktionieren.
 
 * * *
 
-## Other Utilities {#other-utilities}
+## Andere Utilities {#other-utilities}
 
 ### `Simulate` {#simulate}
 
@@ -320,11 +322,11 @@ Simulate.{eventName}(
 )
 ```
 
-Simulate an event dispatch on a DOM node with optional `eventData` event data.
+Simuliere das Abschicken eines Events auf einen DOM-Knoten mit optionalen `eventData`-Eventdaten.
 
-`Simulate` has a method for [every event that React understands](/docs/events.html#supported-events).
+`Simulate` hat eine Methode für [jedes Event, das React versteht](/docs/events.html#supported-events).
 
-**Clicking an element**
+**Ein Element anklicken**
 
 ```javascript
 // <button ref={(node) => this.button = node}>...</button>
@@ -332,18 +334,18 @@ const node = this.button;
 ReactTestUtils.Simulate.click(node);
 ```
 
-**Changing the value of an input field and then pressing ENTER.**
+**Den Wert eines Input-Feldes verändern und dann ENTER drücken**
 
 ```javascript
 // <input ref={(node) => this.textInput = node} />
 const node = this.textInput;
-node.value = 'giraffe';
+node.value = 'Giraffe';
 ReactTestUtils.Simulate.change(node);
 ReactTestUtils.Simulate.keyDown(node, {key: "Enter", keyCode: 13, which: 13});
 ```
 
-> Note
+> Hinweis
 >
-> You will have to provide any event property that you're using in your component (e.g. keyCode, which, etc...) as React is not creating any of these for you.
+> Du musst jede Event-Eigenschaft angeben, die du in deiner Komponente verwendest (z. B. keyCode, which, etc.), da React keine davon für dich erstellt.
 
 * * *

@@ -3,35 +3,36 @@ id: cdn-links
 title: CDN Links
 permalink: docs/cdn-links.html
 prev: create-a-new-react-app.html
-next: hello-world.html
+next: release-channels.html
 ---
 
-Both React and ReactDOM are available over a CDN.
+React und ReactDOM sind beide über CDNs verfügbar.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 ```
 
-The versions above are only meant for development, and are not suitable for production. Minified and optimized production versions of React are available at:
+Diese beiden Versionen sind nur zu Entwicklung angedacht und nicht für den Live-Einsatz in Produktivsystemen.
+Für diesen Gebrauch haben wir extra verkleinerte und optimierte Versionen von React bereitgestellt:
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
-To load a specific version of `react` and `react-dom`, replace `16` with the version number.
+Ersetze `17` mit einer gültigen Versionsnummer um eine bestimmte Version von `react` oder `react-dom` zu laden.
 
-### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
+### Warum das `crossorigin` Attribut? {#why-the-crossorigin-attribute}
 
-If you serve React from a CDN, we recommend to keep the [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) attribute set:
+Wir empfehlen dir, wenn du React von einem CDN beziehst, dass du das [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) gesetzt lässt oder setzt:
 
 ```html
 <script crossorigin src="..."></script>
 ```
 
-We also recommend to verify that the CDN you are using sets the `Access-Control-Allow-Origin: *` HTTP header:
+Wir empfehlen außerdem zu überprüfen ob das verwendete CDN den `Access-Control-Allow-Origin: *` HTTP header gesetzt hat:
 
 ![Access-Control-Allow-Origin: *](../images/docs/cdn-cors-header.png)
 
-This enables a better [error handling experience](/blog/2017/07/26/error-handling-in-react-16.html) in React 16 and later.
+Dies ermöglicht dir ab React 16 eine bessere [Fehlerbehandlung](/blog/2017/07/26/error-handling-in-react-16.html).

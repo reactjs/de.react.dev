@@ -16,9 +16,7 @@ Für dieses Tutorial benötigst Du keine Vorkenntnisse in React.
 
 ## Bevor wir mit den Tutorial anfangen {#before-we-start-the-tutorial}
 
-Wir werden im Laufe dieses Tutorials ein Spiel programmieren. **
-Vielleicht möchtest du es überspringen, weil du keine Spiele programmieren willst -- 
-aber gib es doch eine Chance.** Die Techniken, die du in diesem Tutorial lernen wirst, sind fundamental um eine React-App zu erstellen, es zu meistern wird dir ein tiefes Verständnis von React geben.
+Wir werden im Laufe dieses Tutorials ein Spiel programmieren. ** Vielleicht möchtest du es überspringen, weil du keine Spiele programmieren willst -- aber gib es doch eine Chance.** Die Techniken, die du in diesem Tutorial lernen wirst, sind fundamental um eine React-App zu erstellen, es zu meistern wird dir ein tiefes Verständnis von React geben.
 
 >Tipp
 >
@@ -33,15 +31,13 @@ Dieses Tutorial ist in mehreren Sektionen aufgeteilt:
 
 Du musst nicht alle Abschnitte des Tutorials direkt abschließen um einen Mehrwert aus dem Tutorial zu gewinnen. Komme so weit du kannst, selbst wenn es nur ein oder zwei Abschnitte sind.
 
-Es ist völlig in Ordnung Code während du das Tutorial machst zu kopieren, jedoch empfehlen wir dir selbst den Code zu schreiben. Das hilft dir effektivier die Informationen zu verinnerlichen und ein besseres Verständnis für die Techniken zu gewinnen.
-
 ### Was werden wir erstellen? {#what-are-we-building}
 
 In diesem Tutorial werden wir dir zeigen, wie du ein interaktives Tic-Tac-Toe-Spiel mit React bauen kannst.
 
 Du kannst das Ziel unseres Projektes hier einsehen: **[Finales Ergebnis](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Sollte der Code keinen Sinn für dich ergeben oder du dich mit dem Syntax nicht auskennst, kein Problem! Das Ziel dieses Tutorials ist es, dir zu helfen React und seinen Syntax zu verstehen.
 
-Wir empfehlen dir, dass du dir das Tic-Tac-Toe anschaust, bevor du mit dem Tutorial weitermachst. Eines der Features, die du bemerken wirst, ist, dass rechts vom Spielbrett eine numerierte Liste ist. Diese Liste zeigt alle vergangenen getätigten Züge und wird mit dem Fortschreiten des Spiels aktualisiert.
+Wir empfehlen dir, dass du dir das Tic-Tac-Toe anschaust, bevor du mit dem Tutorial weitermachst. Eines der Features, die du bemerken wirst, ist, dass rechts vom Spielbrett eine nummerierte Liste ist. Diese Liste zeigt alle getätigten Züge an und wird mit dem Fortschreiten des Spiels aktualisiert.
 
 Du kannst das Tic-Tac-Toe-Spiel schließen, sobald du dich damit vertraut gemacht hast. Wir werden in diesem Tutorial mit einem einfacheren Template beginnen. Im nächsten Schritt helfen wir dir alles einzurichten, damit du anfangen kannst, das Spiel zu bauen.
 
@@ -122,7 +118,7 @@ Wir empfehlen dir [diese Anweisungen](https://babeljs.io/docs/editors/) durchzug
 
 ### Hilfe, ich hänge fest! {#help-im-stuck}
 
-Wenn du nicht mehr weiterkommst, schau am Besten in die [Community-Support-Ressourcen](/community/support.html). Im speziellen ist der [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) ein guter Weg um schnell Antworten und Hilfestellungen zu bekommen. Solltest du keine Antwort bekommen, oder weiterhin festhängen, erstelle ein Issue-Ticket und wir werden dir raushelfen.
+Wenn du nicht mehr weiterkommst, schau am Besten in die [Community-Support-Ressourcen](/community/support.html). Im speziellen ist der [Reactiflux Chat](https://discord.gg/reactiflux) ein guter Weg um schnell Antworten und Hilfestellungen zu bekommen. Solltest du keine Antwort bekommen, oder weiterhin festhängen, erstelle ein Issue-Ticket und wir werden dir raushelfen.
 
 ## Übersicht {#overview}
 
@@ -174,7 +170,7 @@ JSX hat den vollen Funktionsumfang von JavaScript. Du kannst jeden JavaScript-Au
 
 Die `ShoppingList`-Kompontente von oben stellt nur eingebaute DOM-Komponenten wie `<div />` und `<li />` dar. Dennoch kannst du auch jede Art von React-Komponente zusammenstellen und darstellen. Wir können jetzt zum Beispiel auf die Shopping-Liste immer referenzieren indem wir `<ShoppingList />` schreiben. Jede React-Komponente ist abgekapselt und kann unabhängig voneinander operieren; Das erlaubt es dir komplexe Benutzeroberflächen aus einzelnen Komponenten zu kreieren.
 
-## Betrachten des Basiscodes {#inspecting-the-starter-code}
+### Betrachten des Basiscodes {#inspecting-the-starter-code}
 
 Wenn du an dem Tutorial **in deinem Browser** arbeitest, öffne diesen Code in einem neuen Tab: **[Basiscode](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Wenn du an dem Tutorial **lokal** arbeitest, öffne stattdessen `src/index.js` in deinem Projektverzeichnis (du hast diese Datei bereits während des [Setups](#setup-option-2-local-development-environment) erstellt).
 
@@ -182,8 +178,8 @@ Dieser Basiscode ist die Grundlage auf der wir bauen. Wir haben bereits das CSS 
 
 Bei genauer Betrachtung des Codes wirst du sehen, dass wir drei React-Kompontente haben:
 
-* Square
-* Board
+* Square (folgend auch Quadrat genannt)
+* Board (folgend auch Spielbrett genannt)
 * Game
 
 Die "Square"-Komponente stellt einen einzelnen `<button>` dar und das Spielbrett "Board" besitzt 9 davon. Die "Game"-Komponente besitzt ein "board" mit Platzhalter-Werten welche wir später modifizieren werden. Derzeit gibt es keine interaktiven Komponente.
@@ -192,6 +188,8 @@ Die "Square"-Komponente stellt einen einzelnen `<button>` dar und das Spielbrett
 
 Um einen ersten Schritt wagen zu können, werden wir erstmal probieren Daten von der "Board"-Komponente in die "Square"-Komponente weiterzugeben.
 
+Wir empfehlen dir, während du das Tutorial durcharbeitesst, den Code von Hand einzutippen, statt ihn kopieren und einzufügen. Dies hilft dir, dein Gedächtnis zu trainieren und ein besseres Verständnis zu entwickeln.
+
 In der `renderSquare`-Methode vom "Board", ändere den Code um einen prop namens `value` zum "Square" weiterzureichen:
 
 ```js{3}
@@ -199,6 +197,7 @@ class Board extends React.Component {
   renderSquare(i) {
     return <Square value={i} />;
   }
+}
 ```
 
 Passe die `render`-Methode von "Square" an, indem du `{/* TODO */}` mit `{this.props.value}` ersetzt, sodass es den Wert anzeigen kann:
@@ -244,7 +243,7 @@ class Square extends React.Component {
 }
 ```
 
-Klicken wir nun unser Quadrat, meldet der Browser sich mit einem PopUp.
+Klicken wir nun unser Quadrat, meldet der Browser sich mit einem PopUp-Fenster.
 
 >Hinweis
 >
@@ -296,7 +295,7 @@ class Square extends React.Component {
 Jetzt werden wir die `render`-Methode von "Square" anpassen, um den aktuellen State darzustellen sobald es geklickt wird:
 
 * Ersetze `this.props.value` mit `this.state.value` im `<button>`-Tag.
-* Ersetze den `() => alert()` Event-Handler mit `() => this.setState({value: 'X'})`.
+* Ersetze den `onClick={...}` Event-Handler mit `() => this.setState({value: 'X'})`.
 * Füge`className` und `onClick` props auf zwei separate Zeilen um die Lesbarkeit zu verbessern.
 
 Nachdem wir diese Änderungen gemacht haben wird der `<button>`-Tag der von der `render`-Methode von "Square" zurückgegeben wird wie folgt aussehen:
@@ -337,7 +336,7 @@ Die React Devtools Erweiterung für [Chrome](https://chrome.google.com/webstore/
 
 Die React-DevTools ermöglichen es dir Props und State deiner React Komponente anzuschauen.
 
-Nach dem installieren der React DevTools kannst du mit Rechtsklick auf ein jedes Element der Seite im Kontextmenü mit "untersuchen" die Developer Tools öffnen. Ein React-Tab taucht dann als letztes ganz rechts auf.
+Nach dem installieren der React DevTools kannst du mit Rechtsklick auf ein jedes Element der Seite im Kontextmenü mit "untersuchen" die Developer Tools öffnen. Ein React-Tab ("⚛️ Components" und "⚛️ Profiler") taucht dann als letztes ganz rechts auf. Verwende "⚛️ Components", um den Komponentenbaum zu untersuchen.
 
 **Jedoch sind noch ein paar Zusatzschritte notwendig um es mit CodePen benutzen zu können:**
 
@@ -354,12 +353,14 @@ Jetzt haben wir die Basis-Blöcke für unser Tic-Tac-Toe-Spiel. Um das Spiel zu 
 
 Zurzeit verwaltet jede Quadrat-Komponente seinen eigenen Spiel-State. Um herauszufinden, ob es einen Gewinner gibt, werden wir die Werte jedes der 9 Quadrate an einem Ort verwalten.
 
-Man könnte denken, dass man jedes Quadrat zu seinem aktuellen Zustand (engl. state) befragen sollte. Dieser Weg ist zwar eine mögliche Herangehensweise in React, wir raten jedoch davon ab, da dies zu unverständlichen Code führt, der mehr Bugs haben kann und  schwer überarbeitbar ist.
-Anstelle dessen ist die beste Herangehensweise den aktuellen Zustand in die Spielbrett-Elternkomponente zu speichern statt in jedem Quadrat selbst. Die Spielbrett-Komponente kann jedem Quadrat durch props mitteilen, was sie anzeigen sollen, [genau wie wir Zahlen an die Quadrate mitgegeben haben](#passing-data-through-props).
+Man könnte denken, dass man jedes Quadrat zu seinem aktuellen State befragen sollte. Dieser Weg ist zwar eine mögliche Herangehensweise in React, wir raten jedoch davon ab, da dies zu unverständlichen Code führt, der mehr Bugs haben kann und  schwer überarbeitbar ist.
+Anstelle dessen ist die beste Herangehensweise den aktuellen State in die Board-Elternkomponente zu speichern statt in jedem Quadrat selbst. Die Board-Komponente kann jedem Quadrat durch props mitteilen, was sie anzeigen sollen, [genau wie wir Zahlen an die Quadrate mitgegeben haben](#passing-data-through-props).
 
 **Um Daten in mehreren Kindelementen zu sammeln oder um zwei Komponente miteinader kommunizieren zu lassen, musst du einen geteilten State in einer Elternkomponente definieren. Die Elternkomponente kann den State zurück an die Kinder mittels props weiterreichen. So können Kindkomponente und ihre Elternkomponente miteinander in Synchronisation gehalten werden**
 
-Den State in die Elternkomponente hochzubringen ist ein häufiges Vorkommen, wenn React-Komponente überarbeitet werden -- Lass uns diese Möglichkeit nutzen und es ausprobieren. Wir fügen einen Konstruktor zum Spielbrett hinzu und setzen den initialen State zu einem array mit 9 nulls. Diese 9 nulls korrespondieren dann mit den 9 Quadraten.
+Das Anheben des States in eine übergeordnete Komponente ist üblich, wenn React-Komponenten refactored werden -- lassen uns diese Gelegenheit nutzen, um es auszuprobieren.
+
+Füge dem Board einen Konstruktor hinzu und setze den initialen State zu einem Array mit 9 null Einträgen, die den 9 Quadraten entsprechen:
 
 ```javascript{2-7}
 class Board extends React.Component {
@@ -373,35 +374,9 @@ class Board extends React.Component {
   renderSquare(i) {
     return <Square value={i} />;
   }
-
-  render() {
-    const status = 'Next player: X';
-
-    return (
-      <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
-  }
-}
 ```
 
-Wenn wir später das Spielbrett füllen, wird das Spielbrett so aussieht:
+Wenn wir das Spielfeld später ausfüllen, wird das Array `this.state.squares` in etwa so aussehen:
 
 ```javascript
 [
@@ -419,9 +394,9 @@ Die `renderSquare`-Methode sieht aktuell so aus:
   }
 ```
 
-Am Anfang haben wir vom Spielbrett [`value` als prop weitergegeben](#passing-data-through-props) um die Nummern 0 bis 8 in jedem Quadrat anzuzeigen. In einem weiteren vorherigen Schritt haben wir die Zahlen dann mit einem "X", [bestimmt durch den State der Quadrate](#making-an-interactive-component), ersetzt. Deshalb ignoriert das Quadrat gerade den als prop übermittelten `value`.
+Am Anfang haben wir vom Board [`value` als Prop weitergegeben](#passing-data-through-props) um die Nummern 0 bis 8 in jedem Quadrat anzuzeigen. In einem weiteren vorherigen Schritt haben wir die Zahlen dann mit einem "X", [bestimmt durch den State der Quadrate](#making-an-interactive-component), ersetzt. Deshalb ignoriert das Quadrat gerade den als prop übermittelten `value`.
 
-Wir werden jetzt den prop-Weitergeben-Mechanismus wieder verwenden. Wir werden das Spielbrett so anpassen, dass es jedem einzelnen Quadrat seinem aktuellen Zustand (`'X'`, `'O'`, oder `null`) mitteilt. Wir haben bereits das `squares` array im Konstruktor des Spielbretts definiert und werden nun die `renderSquare`-Methode anpassen, sodass diese davon liest:
+Wir werden jetzt den Machanismus zur Weitergabe von Props wieder verwenden. Wir werden das Spielbrett so anpassen, dass es jedem einzelnen Quadrat seinem aktuellen State (`'X'`, `'O'`, oder `null`) mitteilt. Wir haben bereits das `squares` Array im Konstruktor des Boards definiert und werden nun die `renderSquare`-Methode anpassen, sodass diese davon liest:
 
 ```javascript{2}
   renderSquare(i) {
@@ -431,11 +406,11 @@ Wir werden jetzt den prop-Weitergeben-Mechanismus wieder verwenden. Wir werden d
 
 **[Schau dir den vollständigen Code bis zu diesem Punkt an](https://codepen.io/gaearon/pen/gWWQPY?editors=0010)**
 
-Jedes Quadrat erhält nun `value` als prop, welches entweder den Wert `'X'`, `'O'`, oder `null` für leere Quadrate enthält. 
+Jedes Quadrat erhält nun `value` als prop, welches entweder den Wert `'X'`, `'O'`, oder `null` für leere Quadrate enthält.
 
-Als nächstes müssen wir das Verhalten ändern, wenn ein Quadrat geklickt wird. Die Spielbrett-Komponente verwaltet bereits welche Quadrate gefüllt sind. Wir brauchen jetzt einen Weg für die Quadrate den state im Spielbrett anzupassen. Da state als private Variable in der Komponente definiert ist, können wir es nicht direkt vom Quadrat aktualisieren.
+Als nächstes müssen wir das Verhalten ändern, wenn ein Quadrat geklickt wird. Die Board-Komponente verwaltet bereits welche Quadrate gefüllt sind. Wir brauchen jetzt einen Weg für die Quadrate den State im Board anzupassen. Da der State als private Variable in der Komponente definiert ist, können wir es nicht direkt vom Quadrat aktualisieren.
 
-Um die Privatsphäre des Spielbretts zu wahren, müssen wir eine Funktion vom Spielbrett runter in die Quadrate mitgeben. Diese Funktion wird dann aufgerufen, wenn ein Quadrat geklickt wird. Dafür ändern wir `renderSquare` im Spielbrett ab: 
+Stattdessen übergeben wir eine Funktion vom Board an das Quadrat und lassen Square diese aufrufen, wenn ein Quadrat angeklickt wird. Wir ändern die Methode "renderSquare" im Board in:
 
 ```javascript{5}
   renderSquare(i) {
@@ -450,15 +425,15 @@ Um die Privatsphäre des Spielbretts zu wahren, müssen wir eine Funktion vom Sp
 
 >Hinweis
 >
->Wir spalten das zurückgegebene Element in mehrere Zeilen wegen der Lesbarkeit auf und haben Klammern hinzugefügt, damit JavaScript kein Semikolon hinter das `return` setzt und somit unseren Code zerstört
+>Wir haben das zurückgegebene Element aus Gründen der Lesbarkeit in mehrere Zeilen aufgeteilt und Klammern hinzugefügt, damit JavaScript kein Semikolon nach `return` einfügt und unseren Code kaputt macht
 
-Jetzt geben wir zwei props vom Spielbrett zum Quadrat: `value` und `onClick`. Der `onClick`-prop ist eine Funktion, die vom Quadrat immer aufgerufen wird, wenn es geklickt wird. Dafür machen wir folgende Änderungen im Quadrat:
+Jetzt geben wir zwei Props von Board zu Square: `value` und `onClick`. Der `onClick`-Prop ist eine Funktion, die von Square immer aufgerufen wird, wenn es geklickt wird. Dafür machen wir folgende Änderungen in Square:
 
 * Ersetzen von `this.state.value` mit `this.props.value` in der `render`-Methode vom Quadrat.
-* Ersetzen von `this.setState()` mit `this.props.onClick()` in der `render`-Methode vom Quadrat. 
-* Löschen des `constructor` im Quadrat, da das Quadrat nicht mehr den Zustand des Spiels verfolgen muss
+* Ersetzen von `this.setState()` mit `this.props.onClick()` in der `render`-Methode vom Quadrat.
+* Löschen des `constructor` in Square, da Square nicht mehr den State des Spiels verfolgen muss
 
-Nach diesen Änderungen sieht unsere Quadrat-Komponente so aus:
+Nach diesen Änderungen sieht unsere Square-Komponente so aus:
 
 ```javascript{1,2,6,8}
 class Square extends React.Component {
@@ -475,13 +450,13 @@ class Square extends React.Component {
 }
 ```
 
-Wenn ein Quadrat geklickt wird, die vom Spielbrett bereitgestellte `onClick`-Funktion wird aufgerufen. Nachfolgend ist eine Zusammenfassung, wie das funktioniert:
+Wenn ein Quadrat geklickt wird, wird die vom Board bereitgestellte `onClick`-Funktion aufgerufen. Nachfolgend ist eine Zusammenfassung, wie das funktioniert:
 
 1. Die `onClick`-prop der im DOM eingebauten `<button>`-Komponente teilt React mit, einen Event Listener zu installieren.
 2. Wenn ein Button geklickt wird ruft React den `onClick` Event Handler auf, der in der `render()`-Methode des Quadrats definiert ist.
 3. Der Event Handler ruft `this.props.onClick()` auf. Die `onClick`-prop des Quadrats wurde vom Spielbrett spezifiziert.
 4. Da das Spielbrett `onClick={() => this.handleClick(i)}` dem Quadrat übergeben hat, ruft das Quadrat `this.handleClick(i)` auf, wenn es geklickt wird.
-5. Wir haben `handleClick()` noch nicht definiert, daher crasht unser Code noch.
+5. Wir haben die Methode `handleClick()` noch nicht definiert, daher stürzt unser Code ab. Wenn du jetzt auf ein Quadrat klickst, solltest du einen roten Fehlerbildschirm sehen, der etwas sagt wie "this.handleClick is not a function".
 
 >Hinweis
 >
@@ -542,11 +517,11 @@ class Board extends React.Component {
 
 **[Schau dir den vollständigen Code bis zu dieser Stelle an](https://codepen.io/gaearon/pen/ybbQJX?editors=0010)**
 
-Nach diesen Änderungen sind wir wieder in der Lage die Quadrate zu füllen, wenn wir diese klicken. Jedoch wird jetzt der Zustand im Spielbrett anstelle jedes einzelnen Quadrats gespeichert. Wenn das Spielbrett seinen Zustand ändert, wird automatisch die Quadrat-Komponente neu-gerendert. Den Zustand aller Quadrate im Spielbrett zu speichern gibt uns auch die Möglichkeit den Gewinner zu bestimmen.
+Nach diesen Änderungen sind wir wieder in der Lage die Quadrate zu füllen, wenn wir diese klicken. Jedoch wird jetzt der State im Spielbrett anstelle jedes einzelnen Quadrats gespeichert. Wenn das Spielbrett seinen State ändert, wird automatisch die Quadrat-Komponente neu-gerendert. Den State aller Quadrate im Spielbrett zu speichern gibt uns auch die Möglichkeit den Gewinner zu bestimmen.
 
 Dadurch, dass die Quadrate nicht mehr ihren eigenen state verwalten, erhalten die Quadrate die Werte vom Spielbrett und informieren die Spielbrett-Komponente, wenn sie geklickt wurden. Im React-Jargon, die Quadrate sind nun **kontrollierte Komponente** (engl. **controlled components**). Das Spielbrett hat volle Kontrolle über sie.
 
-Ist dir aufgefallen, wie wir in `handleClick` die Methode `.slice()` aufgerufen haben, um jedes mal eine neue Kopie vom `squares`-Array zu erzeugen? Wir werden im nächsten Abschnitt erklären, warum wir eine Kopie vom `squares`-Array erzeugen.     
+Ist dir aufgefallen, wie wir in `handleClick` die Methode `.slice()` aufgerufen haben, um jedes mal eine neue Kopie vom `squares`-Array zu erzeugen? Wir werden im nächsten Abschnitt erklären, warum wir eine Kopie vom `squares`-Array erzeugen.
 
 ### Warum ist Unveränderlichkeit (engl. Immutability) wichtig {#why-immutability-is-important}
 
@@ -576,7 +551,7 @@ Das Endresultat ist das gleiche, aber dadurch, dass du nicht direkt die Daten (o
 
 #### Komplexe Funktionalitäten werden Einfach {#complex-features-become-simple}
 
-Unveränderlichkeit macht komplexe Funktionalität einfacher zum Implementieren. Weiter unten in diesem Tutorial werden wir eine "Zeitreisen"- (engl. time travel) Funktionalität einbauen, die es uns erlaubt Einsicht in die Tic-Tac-Toe-Spielhistorie zu gewinnen und zu vorherigen Zügen zurückzuspringen. Diese Funktionalität ist nicht nur für Spiele geeignet -- die Möglichkeit bestimmte Aktionen rückgängig zu machen und wiederherzustellen ist eine häufige Anforderung für Anwendungen. Das Vermeiden vom direkten Abändern der Daten ermöglicht uns die alten Zustände intakt zu lassen und diese zu einem späteren Zeitpunkt wieder zu verwenden. 
+Unveränderlichkeit macht komplexe Funktionalität einfacher zum Implementieren. Weiter unten in diesem Tutorial werden wir eine "Zeitreisen"- (engl. time travel) Funktionalität einbauen, die es uns erlaubt Einsicht in die Tic-Tac-Toe-Spielhistorie zu gewinnen und zu vorherigen Zügen zurückzuspringen. Diese Funktionalität ist nicht nur für Spiele geeignet -- die Möglichkeit bestimmte Aktionen rückgängig zu machen und wiederherzustellen ist eine häufige Anforderung für Anwendungen. Das Vermeiden vom direkten Abändern der Daten ermöglicht uns die alten Zustände intakt zu lassen und diese zu einem späteren Zeitpunkt wieder zu verwenden.
 
 #### Veränderung erkennen {#detecting-changes}
 
@@ -584,15 +559,12 @@ Veränderungen in variablen Objekten zu erkennen ist schwierig, da sie direkt ve
  Zur Erkennung müsste das variable Objekt mit seinen alten Kopien verglichen werden --
 somit müsste der ganzen Objekt-Baum durchlaufen werden.
 
-Veränderungen in unveränderlichen Objekten zu erkennen ist deutlich leichter.
-Falls das unveränderliche Objekt, auf das verwiesen wird, ein anderes ist als das vorhergehende, dann hat sich das Objekt verändert.
+Veränderungen in unveränderlichen Objekten zu erkennen ist deutlich leichter. Falls das unveränderliche Objekt, auf das verwiesen wird, ein anderes ist als das vorhergehende, dann hat sich das Objekt verändert.
 
 #### Entscheiden, wann neu gerendert werden soll {#determining-when-to-re-render-in-react}
 
-Der Hauptvorteil von Unveränderlichkeit ist, dass es Dir hilft _pure components_ in React zu entwickeln.
-Durch unveränderbare Daten kann leicht ermittelt werden, ob Veränderungen gemacht worden sind, 
-was hilft zu entscheiden, ob eine Komponente neu gerendert werden muss. 
- 
+Der Hauptvorteil von Unveränderlichkeit ist, dass es Dir hilft _pure components_ in React zu entwickeln. Durch unveränderbare Daten kann leicht ermittelt werden, ob Veränderungen gemacht worden sind, was hilft zu entscheiden, ob eine Komponente neu gerendert werden muss.
+
 Du kannst mehr über `shouldComponentUpdate()` lernen und wie Du *pure components* entwickelst, wenn Du das hier liest [Optimizing Performance](/docs/optimizing-performance.html#examples).
 
 ### Funktionskomponenten {#function-components}
@@ -600,11 +572,11 @@ Du kannst mehr über `shouldComponentUpdate()` lernen und wie Du *pure component
 Wir verändern nun die Square-Komponente zu einer **Funktionskomponente**.
 
 In React sind **Funktionskomponenten** ein leichterer Weg, um Komponenten zu schreiben,
- welche nur eine `render`-Methode beinhalten und keinen eigenen Zustand haben.
+ welche nur eine `render`-Methode beinhalten und keinen eigenen State haben.
  Statt eine Klasse zu definieren, welche `React.Component` erweitert, können wir eine Funktion schreiben, welche `props` als Input nimmt und zurückgibt, was gerendert werden soll.
  Funktionskomponenten sind weniger ermüdend zu schreiben als normale Klassen und viele Komponenten können mittels diesen Weges geschrieben werden.
 
-Ersetze die Square-Klasse mit diesem Code: 
+Ersetze die Square-Klasse mit diesem Code:
 
 ```javascript
 function Square(props) {
@@ -620,16 +592,16 @@ Wir haben alle vorkommenden `this.props` mit `props` ersetzt.
 
 **[Ganzen Quellcode bis zu diesem Punkt anschauen](https://codepen.io/gaearon/pen/QvvJOv?editors=0010)**
 
->Notiz
+>Hinweis
 >
-> Als wir die Square-Klasse zu einer Funktionskomponente verändert haben, haben wir auch `onClick={() => this.props.onClick()}` zu einem kürzeren `onClick={props.onClick}` geändert (bemerke, dass die Klammern auf *beiden* Seiten fehlen). In der Klasse haben wir eine Pfeilfunktion benutzt, um den korrekten `this` Wert zu erhalten, in einer Funktionskomponente müssen wir uns keine Gedanken über `this` machen..
+>Als wir die Square-Klasse zu einer Funktionskomponente verändert haben, haben wir auch `onClick={() => this.props.onClick()}` zu einem kürzeren `onClick={props.onClick}` geändert (bemerke, dass die Klammern auf *beiden* Seiten fehlen).
 
 ### Einen Zug machen {#taking-turns}
 
 Nun müssen wir einen offensichtlichen Fehler in unserer Tic-Tac-Toe Anwendung beheben: Die "O"s können nicht auf dem Spielfeld markiert werden.
 
-Wir setzen den ersten Zug standardmäßig auf "X" . 
-Wir können diesen Zug standardmäßig setzen, indem wir den Grundzustand in unserem Board-Konstruktor verändern:
+Wir setzen den ersten Zug standardmäßig auf "X" .
+Wir können diesen Zug standardmäßig setzen, indem wir den initialen State in unserem Board-Konstruktor verändern:
 
 ```javascript{6}
 class Board extends React.Component {
@@ -642,7 +614,7 @@ class Board extends React.Component {
   }
 ```
 
-Jedes Mal wenn ein Spieler einen Zug unternimmt, wird `xIsNext` (ein Boolean) geändert, um den nächsten Spieler zu bestimmen und der Zustand des Spiels wird gespeichert.
+Jedes Mal wenn ein Spieler einen Zug unternimmt, wird `xIsNext` (ein Boolean) geändert, um den nächsten Spieler zu bestimmen und den State des Spiels zu speichern.
 Wir aktualisieren die `handleClick`-Funktion des Boards, um den Wert von `xIsNext` umzudrehen:
 
 ```javascript{3,6}
@@ -656,8 +628,9 @@ Wir aktualisieren die `handleClick`-Funktion des Boards, um den Wert von `xIsNex
   }
 ```
 
-Durch diese Änderung wechseln sich "X"s und "O"s ab.
-Lasst uns ebenfalls den "status"-Text in Boards `render`-Funktion ändern, so dass sie anzeigt, welcher Spieler als nächstes an der Reihe ist:
+Durch diese Änderung wechseln sich "X"s und "O"s ab. Versuchs!
+
+Lass uns ebenfalls den "status"-Text in Boards `render`-Funktion ändern, so dass sie anzeigt, welcher Spieler als nächstes an der Reihe ist:
 
 ```javascript{2}
   render() {
@@ -667,7 +640,7 @@ Lasst uns ebenfalls den "status"-Text in Boards `render`-Funktion ändern, so da
       // the rest has not changed
 ```
 
-Nachdem wir diese Veränderungen angewandt haben, sollte die Board-Komponent nun so aussehen:
+Nachdem wir diese Veränderungen angewandt haben, sollte die Board-Komponente nun so aussehen:
 
 ```javascript{6,11-16,29}
 class Board extends React.Component {
@@ -752,9 +725,9 @@ function calculateWinner(squares) {
 }
 ```
 
-Wir werden `calculateWinner(squares)` in Boards `render`-Funktion aufrufen, um zu prüfen, ob ein Spieler gewonnen hat.
-Falls ein Spieler gewonnen hat, können wir beispielsweise folgenden Text anzeigen: "Winner: X" or "Winner: O". 
-Wir ersetzen die `status`-Deklaration in Boards `render`-Funktion mit folgendem Code:
+Bei einem Array mit 9 Quadraten prüft diese Funktion, ob es einen Gewinner gibt, und gibt entsprechend `'X'`, `'O'` oder `null` zurück.
+
+Wir werden `calculateWinner(squares)` in der `render`-Funktion des Boards aufrufen, um zu prüfen, ob ein Spieler gewonnen hat. Falls ein Spieler gewonnen hat, können wir beispielsweise folgenden Text anzeigen: "Winner: X" or "Winner: O". Wir ersetzen die `status`-Deklaration in der `render`-Funktion des Boards mit folgendem Code:
 
 ```javascript{2-8}
   render() {
@@ -767,10 +740,9 @@ Wir ersetzen die `status`-Deklaration in Boards `render`-Funktion mit folgendem 
     }
 
     return (
-      // the rest has not changed
+      // Der Rest hat sich nicht verändert
 ```
-
-We can now change the Board's `handleClick` function to return early by ignoring a click if someone has won the game or if a Square is already filled:
+Wir können nun die Funktion `handleClick` des Boards so ändern, dass sie vorzeitig zurückkehrt, indem wir einen Klick ignorieren, wenn jemand das Spiel gewonnen hat oder wenn ein Feld bereits gefüllt ist:
 
 ```javascript{3-5}
   handleClick(i) {
@@ -834,17 +806,17 @@ history = [
 ]
 ```
 
-Nun müssen wir entscheiden, welche Komponente den `history`-Zustand beinhalten wird.
+Nun müssen wir entscheiden, welche Komponente den `history`-State beinhalten wird.
 
 ### Den State nochmal hochholen {#lifting-state-up-again}
 
 Wir möchten, dass die oberste Komponente, `Game`, eine Liste der bisherigen Züge anzeigt.
 Um dies zu tun, benötigt diese Liste Zugriff auf `history`.
-Deshalb platzieren wir den `history`-Zustand in der obersten Komponente, `Game`.
+Deshalb platzieren wir den `history`-State in der obersten Komponente, `Game`.
 
-Das Platzieren des `history`-Zustandes in der `Game`-Komponente erlaubt uns das Entfernen des `squares`-Zustandes von dessen Unterkomponente `Board`. So wie wir den Zustand von der `Square`-Komponente in die `Board`-Komponente ["angehoben haben"](#lifting-state-up), so heben wir diesen nun von der `Board` in die `Game`-Komponente. Das gibt der `Game`-Komponente völlige Kontrolle über die Daten des Boards und lässt sie das Board anweisen, frühere Züge aus der `history` zu rendern.
+Das Platzieren des `history`-States in der `Game`-Komponente erlaubt uns das Entfernen des `squares`-States von dessen Unterkomponente `Board`. So wie wir den State von der `Square`-Komponente in die `Board`-Komponente ["angehoben haben"](#lifting-state-up), so heben wir diesen nun von der `Board` in die `Game`-Komponente. Das gibt der `Game`-Komponente völlige Kontrolle über die Daten des Boards und lässt sie das Board anweisen, frühere Züge aus der `history` zu rendern.
 
-Als erstes setzen wir den Grundzustand für die Game-Komponente in deren KonstruKtor:
+Als erstes setzen wir den initialen State für die Game-Komponente in deren KonstruKtor:
 
 ```javascript{2-10}
 class Game extends React.Component {
@@ -874,7 +846,7 @@ class Game extends React.Component {
 }
 ```
 
-Als nächstes haben wir die Board-Komponente, welche die `squares` und `onClick`-props von der Game-Komponente erhält .
+Als nächstes haben wir die Board-Komponente, welche die `squares` und `onClick`-Props von der Game-Komponente erhält.
 Da wir nun einen einzigen Klick-Handler im Board für viele Squares haben, müssen wir die Position von jedem Square in den `onClick`-Handler übergeben, um anzugeben, welches Square geklickt worden ist. Hier sind die benötigten Schritte, um die Board-Komponente zu verändern:
 
 * Lösche den `constructor` im Board.
@@ -939,7 +911,7 @@ class Board extends React.Component {
 }
 ```
 
-Wir aktualisieren die `render`-Funktion in der Game-Komponente, um den letzten Eintrag der Versionsgeschichte zu verwenden und den aktuellen Spielzustand anzuzeigen. 
+Wir aktualisieren die `render`-Funktion in der Game-Komponente, um den letzten Eintrag der Versionshistorie zu verwenden und den aktuellen Spielzustand anzuzeigen.
 
 ```javascript{2-11,16-19,22}
   render() {
@@ -998,7 +970,7 @@ Da die Game-Komponente nun den Spielzustand rendert, können wir den dazugehöri
 ```
 
 Als letztes müssen wir nun die `handleClick`-Methode aus der Board-Komponente in die Game-Komponente verlagern.
-Wir müssen `handleClick` auch verändern, da der Zustand der Game-Komponente eine andere Struktur hat.
+Wir müssen `handleClick` auch verändern, da der State der Game-Komponente eine andere Struktur hat.
 In der `handleClick`-Methode von Game fügen wir die neuen Einträge der Versionsgeschichte der bestehenden `history` hinzu.
 
 ```javascript{2-4,10-12}
@@ -1023,8 +995,8 @@ In der `handleClick`-Methode von Game fügen wir die neuen Einträge der Version
 >
 >Anders als die Array `push()`-Methode, welche Du vielleicht eher kennst, verändert die `concat()`-Methode den ursprünglichen Array nicht, weshalb wir diese bevorzugen.
 
-An diesem Punkte benötigt die Board-Komponente nur noch die `renderSquare` und `render` -Methoden. 
-Der Spielzustand und die `handleClick`-Methode sollten sich in der Game-Komponente befinden. 
+An diesem Punkte benötigt die Board-Komponente nur noch die `renderSquare` und `render` -Methoden.
+Der Spielzustand und die `handleClick`-Methode sollten sich in der Game-Komponente befinden.
 
 **[Den ganzen Quellcode an diesem Punkt anschauen](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)**
 
@@ -1039,7 +1011,7 @@ Arrays haben in JavaScript eine [`map()`-Methode](https://developer.mozilla.org/
 ```js
 const numbers = [1, 2, 3];
 const doubled = numbers.map(x => x * 2); // [2, 4, 6]
-``` 
+```
 
 Durch das Verwenden der `map`-Methode können wir den Verlauf unserer Züge auf React-Elemente abbilden, die Buttons auf dem Bildschirm darstellen und eine Liste von Buttons anzeigen, um zu vergangenen Zügen zu "springen".
 
@@ -1088,7 +1060,7 @@ Lass und über die `history` in Games `render`-Methode mappen.
 
 **[View the full code at this point](https://codepen.io/gaearon/pen/EmmGEa?editors=0010)**
 
-For each move in the tic-tac-toes's game's history, we create a list item `<li>` which contains a button `<button>`. The button has a `onClick` handler which calls a method called `this.jumpTo()`. We haven't implemented the `jumpTo()` method yet. For now, we should see a list of the moves that have occurred in the game and a warning in the developer tools console that says:
+For each move in the tic-tac-toe game's history, we create a list item `<li>` which contains a button `<button>`. The button has a `onClick` handler which calls a method called `this.jumpTo()`. We haven't implemented the `jumpTo()` method yet. For now, we should see a list of the moves that have occurred in the game and a warning in the developer tools console that says:
 
 >  Warning:
 >  Each child in an array or iterator should have a unique "key" prop. Check the render method of "Game".
@@ -1254,5 +1226,5 @@ Die Liste ist aufsteigend nach Schwierigkeit sortiert.
 
 Mit diesem Tutorial haben wir die Konzepte von React betrachtet, inkl. elements, components, props und state.
 Detailliertere Informationen zu diesen Themen findet man [im Rest der Dokumentation](/docs/hello-world.html)
- 
+
 Um mehr über Komponenten herauszufinden, lohnt sich ein Blick in [`React.Component` API reference](/docs/react-component.html).
