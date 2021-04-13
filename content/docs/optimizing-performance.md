@@ -156,37 +156,7 @@ Mehr Informationen darüber findest du in der [webpack-Dokumentation](https://we
 
 Denke daran, dass du das nur für die Produktionsumgebung machen musst. Du solltest `TerserPlugin` nicht während der Entwicklung verwenden, da es nützliche React-Warnungen verbergen wird und die Builds viel langsamer macht.
 
-<<<<<<< HEAD
-## Komponenten-Profiling mit dem Chrome Performance-Tab {#profiling-components-with-the-chrome-performance-tab}
-
-Im **Entwickler**-Modus kannst du in unterstützten Browsern mit den Performance-Tools visualisieren, wie Komponenten gemountet, upgedatet und geunmountet werden. Zum Beispiel:
-
-<center><img src="../images/blog/react-perf-chrome-timeline.png" style="max-width:100%" alt="React components in Chrome timeline" /></center>
-
-In Chrome geht das so:
-
-1. Deaktiviere vorübergehend **alle Chrome-Erweiterungen, insbesondere React DevTools**. Sie können die Ergebnisse deutlich verzerren!
-
-2. Stelle sicher, dass du die Anwendung im Entwickler-Modus ausführst.
-
-3. Öffne das Chrome DevTools **[Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool)**-Tab und klicke auf **Record**.
-
-4. Führe die Aktionen aus, die du profilen möchtest. Nehme nicht länger als 20 Sekunden auf, um zu verhindern, dass Chrome sich aufhängt. 
-
-5. Stoppe die Aufnahme.
-
-6. React-Events werden unter dem **User Timing**-Label zusammengefasst.
-
-Für eine detailliertere Anleitung schaue dir [diesen Artikel von Ben Schwarz](https://calibreapp.com/blog/react-performance-profiling-optimization) an.
-
-Beachte, dass **diese Zahlen relativ sind und Komponenten in der Produktionsumgebung schneller rendern werden**. Trotzdem sollten sie dir dabei helfen, zu erkennen, wenn voneinander unabhängige UI-Elemente aus Versehen geupdatet werden, und wie tief und wie oft deine UI-Updates stattfinden.
-
-Momentan sind Chrome, Edge und IE die einzigen Browser, die dieses Feature unterstützten, aber wir verwenden die Standard-[User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API), weshalb wir annehmen, dass mehr Browser es unterstützen werden.
-
 ## Komponenten-Profiling mit dem DevTools-Profiler {#profiling-components-with-the-devtools-profiler}
-=======
-## Profiling Components with the DevTools Profiler {#profiling-components-with-the-devtools-profiler}
->>>>>>> 968f09159512b59afd5246a928789ae52592c923
 
 `react-dom` 16.5+ und `react-native` 0.57+ bieten erweiterte Profiling-Funktionen im DEV-Modus mit dem React DevTools-Profiler.
 Eine Übersicht über den Profiler gibt es im Blog-Post ["Vorstellung des React Profilers"](/blog/2018/09/10/introducing-the-react-profiler.html).
@@ -203,16 +173,7 @@ Falls du die React DevTools noch nicht installiert hast, kannst du sie hier find
 > Ein Produktions-Profiling-Bundle von `react-dom` ist auch als `react-dom/profiling` verfügbar.
 > Lese mehr über die Verwendung dieses Bundles auf [fb.me/react-profiling](https://fb.me/react-profiling).
 
-<<<<<<< HEAD
-## Virtualisiere lange Listen {#virtualize-long-lists}
-=======
-> Note
->
-> Before React 17, we use the standard [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) to profile components with the chrome performance tab. 
-> For a more detailed walkthrough, check out [this article by Ben Schwarz](https://calibreapp.com/blog/react-performance-profiling-optimization).
-
-## Virtualize Long Lists {#virtualize-long-lists}
->>>>>>> 968f09159512b59afd5246a928789ae52592c923
+## Virtualisieren von langen Listen {#virtualize-long-lists}
 
 Falls deine Anwendung lange Datenlisten (mit Hunderten oder Tausenden von Zeilen) rendert, empfehlen die Verwendung einer Technik, die als "Windowing" bekannt ist. Diese Technik rendert zu jedem Zeitpunkt nur eine kleine Teilmenge deiner Zeilen. Dadurch kannst du sowohl die Zeit, die benötigt wird, um die Komponenten erneut zu rendern, als auch die Anzahl der erstellten DOM-Knoten drastisch reduzieren.
 
