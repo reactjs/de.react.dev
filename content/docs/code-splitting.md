@@ -43,7 +43,11 @@ console.log(add(16, 26)); // 42
 Wenn du [Create React App](https://create-react-app.dev/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.org/), oder ein ähnliches Tool benutzt, wirst du ein Webpack-Setup haben welches sofort einsatzbereit ist um deine Anwendung zu
 bundlen.
 
+<<<<<<< HEAD
 Wenn nicht, musst du das Bundling selbst einrichten. Siehe z. B. die Abschnitte [Installation](https://webpack.js.org/guides/installation/) und [Erste Schritte](https://webpack.js.org/guides/getting-started/) in der Webpack-Dokumentation.
+=======
+If you aren't, you'll need to set up bundling yourself. For example, see the [Installation](https://webpack.js.org/guides/installation/) and [Getting Started](https://webpack.js.org/guides/getting-started/) guides on the Webpack docs.
+>>>>>>> 5119600cf6f7a5dcbd4d2cc23f6b4ff55d2969b2
 
 ## Code-Splitting {#code-splitting}
 
