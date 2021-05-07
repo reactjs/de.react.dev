@@ -199,9 +199,9 @@ Dies lässt uns wissen, ob der *aktuell ausgewählte* Freund online ist. Wenn wi
 
 Benutzerdefinierte Hooks bieten die Flexibilität die es vorher nicht gab und zwar Logik zwischen React-Komponenten zu teilen. Du kannst benutzerdefinierte Hooks schreiben, die eine breite Palette von Anwendungsfällen abdecken, wie z. B. Formularverarbeitung, Animation, Abonnements, Timer und wahrscheinlich noch viele mehr, die wir nicht berücksichtigt haben. Darüber hinaus kannst Hooks erstellen, die genauso einfach zu bedienen sind wie die eingebauten Funktionen von React.
 
-Try to resist adding abstraction too early. Now that function components can do more, it's likely that the average function component in your codebase will become longer. This is normal -- don't feel like you *have to* immediately split it into Hooks. But we also encourage you to start spotting cases where a custom Hook could hide complex logic behind a simple interface, or help untangle a messy component.
+Versuche nicht zu früh Abstraktionsebenen hinzuzufügen. Jetzt, wo Funktionskomponenten mehr können, ist es wahrscheinlich, dass die durchschnittliche Funktionskomponente in deiner Codebase länger wird. Das ist vollkommen normal und heißt nicht, dass du sie sofort in Hooks herunterbrechen *musst*. Trotzdem solltest du damit anzufangen, Fälle zu erkennen, in denen ein benutzerdefinierter Hook komplexe Logik hinter einer einfachen Schnittstelle verstecken könnte oder dabei hilft, eine unübersichtliche Komponente zu entwirren.
 
-For example, maybe you have a complex component that contains a lot of local state that is managed in an ad-hoc way. `useState` doesn't make centralizing the update logic any easier so you might prefer to write it as a [Redux](https://redux.js.org/) reducer:
+Vielleicht hast du zum Beispiel eine komplexe Komponente, die eine Menge lokaler Zustände enthält, die ad-hoc verwaltet werden. Mit `useState` wird die Zentralisierung der Aktualisierungslogik nicht einfacher, so dass du sie vielleicht lieber als [Redux](https://redux.js.org/)-Reducer schreiben:
 
 ```js
 function todosReducer(state, action) {
@@ -218,9 +218,9 @@ function todosReducer(state, action) {
 }
 ```
 
-Reducers are very convenient to test in isolation, and scale to express complex update logic. You can further break them apart into smaller reducers if necessary. However, you might also enjoy the benefits of using React local state, or might not want to install another library.
+Reducer sind sehr einfach isoliert zu testen und eignen sich dazu, komplexe Aktualisierungslogik auszudrücken. Du kannst sie bei Bedarf weiter in kleinere Reducer aufteilen. Vielleicht genießt du aber auch die Vorteile der Verwendung des lokalen States von React oder willst einfach keine weitere Bibliothek installieren.
 
-So what if we could write a `useReducer` Hook that lets us manage the *local* state of our component with a reducer? A simplified version of it might look like this:
+Was wäre, wenn wir einen `useReducer`-Hook schreiben könnten, der uns den *lokalen* Zustand unserer Komponente mit einem Reducer verwalten lässt? Eine vereinfachte Version davon könnte wie folgt aussehen:
 
 ```js
 function useReducer(reducer, initialState) {
@@ -235,7 +235,7 @@ function useReducer(reducer, initialState) {
 }
 ```
 
-Now we could use it in our component, and let the reducer drive its state management:
+Jetzt könnten wir den Hook in unserer Komponente verwenden und den Reducer ihren Zustand verwalten lassen:
 
 ```js{2}
 function Todos() {
@@ -249,4 +249,4 @@ function Todos() {
 }
 ```
 
-The need to manage local state with a reducer in a complex component is common enough that we've built the `useReducer` Hook right into React. You'll find it together with other built-in Hooks in the [Hooks API reference](/docs/hooks-reference.html).
+Die Bedarf, den lokalen Zustand einer komplexen Komponente mit einem Reducer zu verwalten, ist so hoch, dass wir den `useReducer`-Hook direkt in React eingebaut haben. Du findest ihn zusammen mit anderen Standard-Hooks in der [Hooks-API-Referenz](/docs/hooks-reference.html).
