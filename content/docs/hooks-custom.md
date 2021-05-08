@@ -63,9 +63,9 @@ function FriendListItem(props) {
 }
 ```
 
-Stattdessen könnten wir diese Logik zwischen `FriendStatus` und `FriendListItem` teilen.
+Stattdessen möchten wir diese Logik zwischen `FriendStatus` und `FriendListItem` teilen.
 
-Bisher hatten wir bei React zwei Wege, um zustandsbezogene Logik zwischen zwei Komponenten zu teilen: [Render-Props](/docs/render-props.html) und [Higher-Order-Components](/docs/higher-order-components.html). Wir werden uns nun ansehen, wie Hooks viele der gleichen Probleme lösen und das, ohne neue Komponenten zum Komponenten-Baum hinzuzufügen.
+Bisher hatten wir bei React zwei Wege, um zustandsbezogene (engl. stateful) Logik zwischen zwei Komponenten zu teilen: [Render-Props](/docs/render-props.html) und [Higher-Order-Components](/docs/higher-order-components.html). Wir werden uns nun ansehen, wie Hooks viele der gleichen Probleme lösen und das, ohne neue Komponenten zum Komponenten-Baum hinzuzufügen.
 
 ## Extrahieren eines benutzerdefinierten Hooks {#extracting-a-custom-hook}
 
@@ -148,13 +148,13 @@ function FriendListItem(props) {
 
 **Teilen zwei Komponenten, die den selben Hook verwenden, ihren Zustand?** Nein. Benutzerdefinierte Hooks sind ein Mechanismus zur Wiederverwendung von *Zustandslogik* (z. B. Einrichten eines Abonnements und Speichern des aktuellen Werts), aber jedes Mal, wenn du einen benutzerdefinierten Hook verwendest, sind alle Zustände und Effekte innerhalb des Hooks vollständig isoliert.
 
-**Wie erhält ein benutzerdefinierter Hook einen isolierten Zustand?** Jeder *Aufruf* eines Hooks erhält einen isolierten Zustand. Weil wir `useFriendStatus` direkt aufrufen, ruft unsere Komponente aus Reacts Sicht nur `useState` und `useEffect` auf. Und wie wir [schon](/docs/hooks-state.html#tip-using-multiple-state-variables) [früher](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns) gelernt haben, können wir `useState` und `useEffect` viele Male in einer Komponente aufrufen, und sie werden völlig unabhängig voneinander sein.
+**Wie erhält ein benutzerdefinierter Hook einen isolierten State?** Jeder *Aufruf* eines Hooks erhält einen isolierten State. Weil wir `useFriendStatus` direkt aufrufen, ruft unsere Komponente aus Reacts Sicht nur `useState` und `useEffect` auf. Und wie wir [schon](/docs/hooks-state.html#tip-using-multiple-state-variables) [früher](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns) gelernt haben, können wir `useState` und `useEffect` viele Male in einer Komponente aufrufen, und sie werden völlig unabhängig voneinander sein.
 
 ### Tipp: Informationen zwischen Hooks weitergeben {#tip-pass-information-between-hooks}
 
 Da Hooks Funktionen sind, können wir Information zwischen ihnen weitergeben.
 
-Um dies zu veranschaulichen, verwenden wir eine andere Komponente aus unserem hypothetischen Chat-Beispiel. Die Komponente ist eine Auswahl für Empfänger von Chatnachrichten, die anzeigt, ob der aktuell ausgewählte Freund online ist:
+Um dies zu veranschaulichen, verwenden wir eine andere Komponente aus unserem hypothetischen Chat-Beispiel. Sie ist eine Empfänger-Auswahl von Chatnachrichten, die anzeigt, ob der aktuell ausgewählte Freund online ist:
 
 ```js{8-9,13}
 const friendList = [
@@ -185,23 +185,23 @@ function ChatRecipientPicker() {
 }
 ```
 
-Wir behalten die aktuell ausgewählte Freund-ID in der State-Variablen `recipientID` und aktualisieren sie, wenn der Benutzer einen anderen Freund im `<select>`-Element auswählt.
+Wir behalten die aktuell ausgewählte Freund-ID in der State-Variable `recipientID` und aktualisieren sie, wenn der Benutzer einen anderen Freund im `<select>`-Element auswählt.
 
-Da der Hook `useState`-Hook den neuesten Wert der State-Variablen `recipientID` liefert, können wir ihn als Argument an unseren benutzerdefinierten Hook "useFriendStatus" übergeben:
+Da der `useState`-Hook den neuesten Wert der State-Variable `recipientID` liefert, können wir ihn als Argument an unseren benutzerdefinierten Hook "useFriendStatus" übergeben:
 
 ```js
   const [recipientID, setRecipientID] = useState(1);
   const isRecipientOnline = useFriendStatus(recipientID);
 ```
 
-Dies lässt uns wissen, ob der *aktuell ausgewählte* Freund online ist. Wenn wir einen anderen Freund auswählen und damit die State-Variable `recipientID` aktualisieren, wird unser `useFriendStatus` Hook den zuvor ausgewählten Freund abmelden und den Status des neu ausgewählten Freundes abonnieren.
+Dies lässt uns wissen, ob der *aktuell ausgewählte* Freund online ist. Wenn wir einen anderen Freund auswählen und damit die State-Variable `recipientID` aktualisieren, wird unser `useFriendStatus`-Hook den zuvor ausgewählten Freund abmelden und den Status des neu ausgewählten Freundes abonnieren.
 ## `useYourImagination()` {#useyourimagination}
 
-Benutzerdefinierte Hooks bieten die Flexibilität die es vorher nicht gab und zwar Logik zwischen React-Komponenten zu teilen. Du kannst benutzerdefinierte Hooks schreiben, die eine breite Palette von Anwendungsfällen abdecken, wie z. B. Formularverarbeitung, Animation, Abonnements, Timer und wahrscheinlich noch viele mehr, die wir nicht berücksichtigt haben. Darüber hinaus kannst Hooks erstellen, die genauso einfach zu bedienen sind wie die eingebauten Funktionen von React.
+Benutzerdefinierte Hooks bieten eine Flexibilität die es vorher nicht gab und zwar Logik zwischen React-Komponenten zu teilen. Du kannst benutzerdefinierte Hooks schreiben, die eine breite Palette von Anwendungsfällen abdecken, wie z. B. Formularverarbeitung, Animation, Abonnements, Timer und wahrscheinlich noch viele mehr, die wir nicht berücksichtigt haben. Darüber hinaus kannst du Hooks erstellen, die genauso einfach zu bedienen sind wie die eingebauten Funktionen von React.
 
 Versuche nicht zu früh Abstraktionsebenen hinzuzufügen. Jetzt, wo Funktionskomponenten mehr können, ist es wahrscheinlich, dass die durchschnittliche Funktionskomponente in deiner Codebase länger wird. Das ist vollkommen normal und heißt nicht, dass du sie sofort in Hooks herunterbrechen *musst*. Trotzdem solltest du damit anzufangen, Fälle zu erkennen, in denen ein benutzerdefinierter Hook komplexe Logik hinter einer einfachen Schnittstelle verstecken könnte oder dabei hilft, eine unübersichtliche Komponente zu entwirren.
 
-Vielleicht hast du zum Beispiel eine komplexe Komponente, die eine Menge lokaler Zustände enthält, die ad-hoc verwaltet werden. Mit `useState` wird die Zentralisierung der Aktualisierungslogik nicht einfacher, so dass du sie vielleicht lieber als [Redux](https://redux.js.org/)-Reducer schreiben:
+Vielleicht hast du zum Beispiel eine komplexe Komponente, die eine Menge lokaler States enthält, die ad-hoc verwaltet werden. Mit `useState` wird die Zentralisierung der Aktualisierungslogik nicht einfacher, so dass du sie vielleicht lieber als [Redux](https://redux.js.org/)-Reducer schreiben:
 
 ```js
 function todosReducer(state, action) {
@@ -220,7 +220,7 @@ function todosReducer(state, action) {
 
 Reducer sind sehr einfach isoliert zu testen und eignen sich dazu, komplexe Aktualisierungslogik auszudrücken. Du kannst sie bei Bedarf weiter in kleinere Reducer aufteilen. Vielleicht genießt du aber auch die Vorteile der Verwendung des lokalen States von React oder willst einfach keine weitere Bibliothek installieren.
 
-Was wäre, wenn wir einen `useReducer`-Hook schreiben könnten, der uns den *lokalen* Zustand unserer Komponente mit einem Reducer verwalten lässt? Eine vereinfachte Version davon könnte wie folgt aussehen:
+Was wäre, wenn wir einen `useReducer`-Hook schreiben könnten, der uns den *lokalen* State unserer Komponente mit einem Reducer verwalten lässt? Eine vereinfachte Version davon könnte wie folgt aussehen:
 
 ```js
 function useReducer(reducer, initialState) {
@@ -235,7 +235,7 @@ function useReducer(reducer, initialState) {
 }
 ```
 
-Jetzt könnten wir den Hook in unserer Komponente verwenden und den Reducer ihren Zustand verwalten lassen:
+Jetzt können wir den Hook in unserer Komponente verwenden und den Reducer ihren State verwalten lassen:
 
 ```js{2}
 function Todos() {
@@ -249,4 +249,4 @@ function Todos() {
 }
 ```
 
-Die Bedarf, den lokalen Zustand einer komplexen Komponente mit einem Reducer zu verwalten, ist so hoch, dass wir den `useReducer`-Hook direkt in React eingebaut haben. Du findest ihn zusammen mit anderen Standard-Hooks in der [Hooks-API-Referenz](/docs/hooks-reference.html).
+Die Notwendigkeit, den lokalen State einer komplexen Komponente mit einem Reducer zu verwalten, ist so häufig, dass wir den `useReducer`-Hook direkt in React eingebaut haben. Du findest ihn zusammen mit anderen Standard-Hooks in der [Hooks-API-Referenz](/docs/hooks-reference.html).
