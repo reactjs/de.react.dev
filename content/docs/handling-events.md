@@ -17,7 +17,7 @@ Zum Beispiel dieses HTML:
 
 ```html
 <button onclick="activateLasers()">
-  Aktiviere Laser
+  Activate Lasers
 </button>
 ```
 
@@ -25,7 +25,7 @@ ist in React ein wenig anders:
 
 ```js{1}
 <button onClick={activateLasers}>
-  Aktiviere Laser
+  Activate Lasers
 </button>
 ```
 
@@ -110,7 +110,7 @@ class LoggingButton extends React.Component {
   render() {
     return (
       <button onClick={this.handleClick}>
-        Submit
+        Click me
       </button>
     );
   }
@@ -131,7 +131,7 @@ class LoggingButton extends React.Component {
     // Diese Syntax stellt sicher, dass `this` innerhalb von handleClick gebunden ist.
     return (
       <button onClick={() => this.handleClick()}>
-        Submit
+        Click me
       </button>
     );
   }
