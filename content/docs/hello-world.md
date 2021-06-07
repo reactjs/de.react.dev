@@ -49,10 +49,8 @@ und nicht das Gefühl haben, React und JavaScript gleichzeitig zu lernen.
 
 >**Hinweis:**
 >
->Dieser Leitfaden benutzt in den Beispielen gelegentlich neuere JavaScript Syntaxen. Solltest in den letzten Jahren nicht mit JavaSscript
->gearbeitet haben, helfen dir diese [3 Punkte](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) wieder ein wenig auf die Sprünge zu kommen.
+>Dieser Leitfaden benutzt in den Beispielen gelegentlich neuere JavaScript Syntaxen. Solltest in den letzten Jahren nicht mit JavaSscript gearbeitet haben, helfen dir [diese drei Punkte](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) wieder ein wenig auf die Sprünge zu kommen.
 
 ## Auf geht's! {#lets-get-started}
 
-Wenn du ein wenig hinuter scrollst findest du über dem Seitenende
-den Link [zum nächsten Kapitel](/docs/introducing-jsx.html) des Leitfadens.
+Wenn du ein wenig hinuter scrollst findest du über dem Seitenende den Link [zum nächsten Kapitel](/docs/introducing-jsx.html) des Leitfadens.

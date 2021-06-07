@@ -297,7 +297,7 @@ Die `componse` Utility-Funktion wird von vielen Drittanbieter-Bibliotheken wie l
 
 ## Konvention: Umschließe den Anzeigenamen für ein einfaches Debugging {#convention-wrap-the-display-name-for-easy-debugging}
 
-Die Container Komponenten di von HOCs erstellt werden, erscheinen in den [React Developer Tools](https://github.com/facebook/react-devtools) wie jede andere Komponente. Um das Debugging zu erleichtern, wähle einen Anzeigenamen aus, der mitteilt, dass es ein Ergebnis einer HOC ist.
+Die Container Komponenten die von HOCs erstellt werden, erscheinen in den [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) wie jede andere Komponente. Um das Debugging zu erleichtern, wähle einen Anzeigenamen aus, der mitteilt, dass es ein Ergebnis einer HOC ist.
 
 Das Umschließen des Anzeigenamens der umzuschließenden Komponente ist ein gebräuchlicher Ansatz. Wenn deine Higher-Order Komponente `withSubscription` heißt und der Name der umschlossenen Komponente ist `CommentList`, nutze `WithSubscription(CommentList)` als Anzeigenamen:
 
