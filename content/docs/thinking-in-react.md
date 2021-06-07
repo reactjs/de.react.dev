@@ -84,11 +84,7 @@ Um deine Benutzeroberfläche interaktiv zu machen, musst du in der Lage sein, Ä
 
 Um deine Anwendung korrekt zu erstellen, musst du zunächst an den minimalen Satz von veränderbaren **states** denken, die deine Anwendung benötigt. Der Schlüssel dazu ist[DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Finde die absolut minimale Darstellung des **states**, den deine Anwendung benötigt und berechne bei Bedarf alles andere, was du benötigst. Wenn du beispielsweise eine TODO-Liste erstellst, nutze einfach einen Array für die TODO-Elemente; nutze keine separate **state**-Variable für die Anzahl der Elemente. Möchtest du die Anzahl an TODO-Elementen darstellen, nimm einfach die Länge des TODO-Arrays.
 
-<<<<<<< HEAD
 Denke an alle Daten in unserer Beispielanwendung. Wir haben:
-=======
-Think of all the pieces of data in our example application. We have:
->>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
 
   * die ursprüngliche Liste der Produkte
   * den vom Benutzer eingegebenen Suchtext
