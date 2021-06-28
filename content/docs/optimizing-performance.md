@@ -175,11 +175,7 @@ Falls du die React DevTools noch nicht installiert hast, kannst du sie hier find
 
 ## Virtualisieren von langen Listen {#virtualize-long-lists}
 
-<<<<<<< HEAD
 Falls deine Anwendung lange Datenlisten (mit Hunderten oder Tausenden von Zeilen) rendert, empfehlen die Verwendung einer Technik, die als "Windowing" bekannt ist. Diese Technik rendert zu jedem Zeitpunkt nur eine kleine Teilmenge deiner Zeilen. Dadurch kannst du sowohl die Zeit, die benötigt wird, um die Komponenten erneut zu rendern, als auch die Anzahl der erstellten DOM-Knoten drastisch reduzieren.
-=======
-If your application renders long lists of data (hundreds or thousands of rows), we recommend using a technique known as "windowing". This technique only renders a small subset of your rows at any given time, and can dramatically reduce the time it takes to re-render the components as well as the number of DOM nodes created.
->>>>>>> 25f756d8e3800afb032cb31ce3626d6134e31e38
 
 [react-window](https://react-window.now.sh/) und [react-virtualized](https://bvaughn.github.io/react-virtualized/) sind beliebte Windowing-Bibliotheken. Sie bieten eine Anzahl an wiederverwendbaren Komonenten, um Listen, Grids und Datentabellen anzuzeigen. Falls du etwas möchtest, das spezifischer auf deine Anwendung zugeschnitten ist, kannst du auch deine eigene Windowing-Komponente erstellen, wie [Twitter es getan hat](https://medium.com/@paularmstrong/twitter-lite-and-high-performance-react-progressive-web-apps-at-scale-d28a00e780a3).
 
