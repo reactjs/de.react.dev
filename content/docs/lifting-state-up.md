@@ -318,7 +318,11 @@ Es sollte eine einzige "Quelle der Wahrheit" für alle Daten geben, die sich in 
 
 Beim Anheben des State muss mehr Code geschrieben werden als bei einer so genannten "bidirektionalen Bindung" (two-way binding). Der Vorteil ist jedoch, dass weniger Arbeit erfoderlich ist, um Fehler zu finden und zu isolieren. Da jeder State in einer Komponente "lebt" und nur diese Komponente ihn ändern kann, ist der Spielraum für Fehler stark eingeschränkt. Darüber hinaus kannst du jegliche benutzerdefinierte Logik implementieren, um Benutzereingaben abzulehnen oder umzuwandeln.
 
+<<<<<<< HEAD
 Wenn etwas aus den Props oder dem State abgeleitet werden kann, sollte es wahrscheinlich nicht im State sein. Anstatt `celsiusValue` und `fahrenheitValue` zu speichern, speichern wir nur die zuletzt bearbeitete Temperatur und deren Maßeinheit. Der Wert der anderen Eingabefelder kann in der Methode `render()` immer daraus berechnet werden. Auf diese Weise können wir das andere Feld löschen oder Rundungen anwenden, ohne dass dabei die Genauigkeit der Benutzereingaben verloren geht.
+=======
+When you see something wrong in the UI, you can use [React Developer Tools](https://github.com/facebook/react/tree/main/packages/react-devtools) to inspect the props and move up the tree until you find the component responsible for updating the state. This lets you trace the bugs to their source:
+>>>>>>> 0bb0303fb704147452a568472e968993f0729c28
 
 Wenn in der Benutzeroberfläche etwas nicht stimmt, kannst du die Props mithilfe der [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) überprüfen und den Komponenten-Baum nach oben durchgehen, bis du die für die Aktualisierung des State verantwortliche Komponente findest. So kannst du Fehler bis zu ihrer Quelle zurückverfolgen:
 
