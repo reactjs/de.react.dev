@@ -159,7 +159,7 @@ Du kannst JSX in deinem Projekt am schnellsten ausprobieren, indem du diesen `<s
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
-Jetzt kannst JSX in jedem `<script>` Tag verwenden, indem du diesem ein `type="text/babel"` Attribut hinzufügst. Hier kannst du [eine Besipiel HTML Datei mit JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) herunterladen und mit ihr experimentieren.
+Jetzt kannst JSX in jedem `<script>` Tag verwenden, indem du diesem ein `type="text/babel"` Attribut hinzufügst. Hier kannst du [eine Besipiel HTML Datei mit JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) herunterladen und mit ihr experimentieren.
 
 Um zu lernen und einfache Demos zu bauen ist dieser Ansatz ausreichend. Allerdings macht er deine Webseite langsam und **ist nicht für die Produktionsumgebung geeignet**. Wenn du bereit bist weiter zu machen, entferne den neuen `<script>` Tag und das `type="text/babel"`, das du eben hinzugefügt hast. Im nächsten Abschnitt wirst du stattdessen einen JSX Präprozessor aufsetzen, der alle deine `<script>` Tags automatisch konvertiert.
 

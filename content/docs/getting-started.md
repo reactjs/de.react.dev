@@ -39,7 +39,7 @@ React wurde von Anfang an für eine schrittweise Einführung entwickelt und **du
 Wenn du aus Interesse ein wenig mit React herumspielen möchtest, kannst du dafür online Code-Sandkästen benutzen.
 Probiere dazu "Hallo Welt" auf [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) oder [Stackblitz](https://stackblitz.com/fork/react) aus.
 
-Wenn du lieber deinen eigenen Texteditor verwenden möchtest, kannst du [diese HTML-Datei](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) herunterladen, lokal bearbeiten und in deinem Browser aufrufen. Die Datei führt eine langsame Codeumwandlung in der Laufzeit aus, daher würden wir sie nur für einfachere Demonstrationszwecke empfehlen.
+Wenn du lieber deinen eigenen Texteditor verwenden möchtest, kannst du [diese HTML-Datei](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) herunterladen, lokal bearbeiten und in deinem Browser aufrufen. Die Datei führt eine langsame Codeumwandlung in der Laufzeit aus, daher würden wir sie nur für einfachere Demonstrationszwecke empfehlen.
 
 ### Füge React zu einer Webseite hinzu {#add-react-to-a-website}
 
@@ -123,7 +123,7 @@ Der [React Blog](/blog/) ist die offizielle Quelle für Neuigkeiten des React-Te
 
 Du kannst auch unserem Account, [@reactjs](https://twitter.com/reactjs), auf Twitter folgen. Du würdest aber nichts wichtiges verpassen, wenn du nur den Blog liest.
 
-Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst aber eine detailierte Liste aller Änderungen in der [CHANGELOG.md, im React Repository finden](https://github.com/facebook/react/blob/master/CHANGELOG.md), genauso wie auf der [Releases-Seite](https://github.com/facebook/react/releases).
+Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst aber eine detailierte Liste aller Änderungen in der [`CHANGELOG.md`, im React Repository finden](https://github.com/facebook/react/blob/main/CHANGELOG.md), genauso wie auf der [Releases-Seite](https://github.com/facebook/react/releases).
 
 ## Versionierte Dokumentation {#versioned-documentation}
 
