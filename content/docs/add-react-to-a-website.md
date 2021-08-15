@@ -123,11 +123,7 @@ Falls du deine Skripte nicht minifizierst, wird [hier wird ein möglicher Weg zu
 
 ## Optional: Benutze React mit JSX {#optional-try-react-with-jsx}
 
-<<<<<<< HEAD
-In den obigen Beispielen haben wir nur Funktionalitäten verwendet, die von Browsern nativ unterstützt werden. Deswegen haben wir einen Methodenaufruf in JavaScript benutzt, um React zu sagen, was angezeigt werden soll:
-=======
-In the examples above, we only relied on features that are natively supported by browsers. This is why we used a JavaScript function call to tell React what to display:
->>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
+In den Beispielen haben wir nur Funktionalitäten verwendet, die von Browsern nativ unterstützt werden. Deswegen haben wir einen Methodenaufruf in JavaScript benutzt, um React zu sagen, was angezeigt werden soll:
 
 ```js
 const e = React.createElement;
