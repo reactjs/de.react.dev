@@ -258,7 +258,11 @@ Wir werden dies in zwei Schritten angehen:
 ```
 Großartig! Wen wir jetzt unser Build-Script ausführen, wird der Kompiler unser generiertes JavaScipt im `build`-Ordner ablegen. [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter/blob/main/tsconfig.json) bietet eine `tsconfig.json` mit einer Menge guten Optionen zum Starten an.
 
+<<<<<<< HEAD
 Generell möchtest du das generierte JavaScript nicht in deiner Versionskontrolle haben, stelle also sicher, dass du den Build-Ordner deiner `.gitignore` hinzugefügt hast.
+=======
+Great! Now when we run our build script the compiler will output the generated javascript to the `build` folder. The [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json) provides a `tsconfig.json` with a good set of rules to get you started.
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 ### Dateiendungen {#file-extensions}
 In React schreibst du meistens deine Komponenten in eine `.js`-Datei. In TypeScript haben wir 2 Dateiendungen:

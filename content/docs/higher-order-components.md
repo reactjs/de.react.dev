@@ -14,7 +14,11 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 Während eine Komponente alle Props in UI umwandelt, wandelt die Higher-Order-Komponente eine Komponente in eine andere Komponente um.
 
+<<<<<<< HEAD
 HOCs finden sich häufig in React-Bibliotheken von Drittanbietern, als Beispiele dafür gelten [`connect`](https://github.com/reduxjs/react-redux/blob/main/docs/api/connect.md#connect) von Redux und [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer) von Relay.
+=======
+HOCs are common in third-party React libraries, such as Redux's [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) and Relay's [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer).
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 In diesem Dokument, werden wir erörtern, warum Higher-Order-Komponenten nützlich sind und wie du deine eigene schreiben kannst.
 
@@ -297,7 +301,11 @@ Die `componse` Utility-Funktion wird von vielen Drittanbieter-Bibliotheken wie l
 
 ## Konvention: Umschließe den Anzeigenamen für ein einfaches Debugging {#convention-wrap-the-display-name-for-easy-debugging}
 
+<<<<<<< HEAD
 Die Container Komponenten die von HOCs erstellt werden, erscheinen in den [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) wie jede andere Komponente. Um das Debugging zu erleichtern, wähle einen Anzeigenamen aus, der mitteilt, dass es ein Ergebnis einer HOC ist.
+=======
+The container components created by HOCs show up in the [React Developer Tools](https://github.com/facebook/react/tree/main/packages/react-devtools) like any other component. To ease debugging, choose a display name that communicates that it's the result of a HOC.
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 Das Umschließen des Anzeigenamens der umzuschließenden Komponente ist ein gebräuchlicher Ansatz. Wenn deine Higher-Order Komponente `withSubscription` heißt und der Name der umschlossenen Komponente ist `CommentList`, nutze `WithSubscription(CommentList)` als Anzeigenamen:
 
