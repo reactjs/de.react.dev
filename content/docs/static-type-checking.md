@@ -256,7 +256,7 @@ Wir werden dies in zwei Schritten angehen:
   },
 }
 ```
-Großartig! Wen wir jetzt unser Build-Script ausführen, wird der Kompiler unser generiertes JavaScipt im `build`-Ordner ablegen. [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter/blob/main/tsconfig.json) bietet eine `tsconfig.json` mit einer Menge guten Optionen zum Starten an.
+Großartig! Wen wir jetzt unser Build-Script ausführen, wird der Kompiler unser generiertes JavaScipt im `build`-Ordner ablegen. [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json) bietet eine `tsconfig.json` mit einer Menge guten Optionen zum Starten an.
 
 Generell möchtest du das generierte JavaScript nicht in deiner Versionskontrolle haben, stelle also sicher, dass du den Build-Ordner deiner `.gitignore` hinzugefügt hast.
 

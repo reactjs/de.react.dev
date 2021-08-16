@@ -14,7 +14,7 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 Während eine Komponente alle Props in UI umwandelt, wandelt die Higher-Order-Komponente eine Komponente in eine andere Komponente um.
 
-HOCs finden sich häufig in React-Bibliotheken von Drittanbietern, als Beispiele dafür gelten [`connect`](https://github.com/reduxjs/react-redux/blob/main/docs/api/connect.md#connect) von Redux und [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer) von Relay.
+HOCs finden sich häufig in React-Bibliotheken von Drittanbietern, als Beispiele dafür gelten [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) von Redux und [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer) von Relay.
 
 In diesem Dokument, werden wir erörtern, warum Higher-Order-Komponenten nützlich sind und wie du deine eigene schreiben kannst.
 
@@ -297,7 +297,7 @@ Die `componse` Utility-Funktion wird von vielen Drittanbieter-Bibliotheken wie l
 
 ## Konvention: Umschließe den Anzeigenamen für ein einfaches Debugging {#convention-wrap-the-display-name-for-easy-debugging}
 
-Die Container Komponenten die von HOCs erstellt werden, erscheinen in den [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) wie jede andere Komponente. Um das Debugging zu erleichtern, wähle einen Anzeigenamen aus, der mitteilt, dass es ein Ergebnis einer HOC ist.
+Die Container Komponenten die von HOCs erstellt werden, erscheinen in den [React Developer Tools](https://github.com/facebook/react/tree/main/packages/react-devtools) wie jede andere Komponente. Um das Debugging zu erleichtern, wähle einen Anzeigenamen aus, der mitteilt, dass es ein Ergebnis einer HOC ist.
 
 Das Umschließen des Anzeigenamens der umzuschließenden Komponente ist ein gebräuchlicher Ansatz. Wenn deine Higher-Order Komponente `withSubscription` heißt und der Name der umschlossenen Komponente ist `CommentList`, nutze `WithSubscription(CommentList)` als Anzeigenamen:
 

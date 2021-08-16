@@ -123,7 +123,7 @@ Falls du deine Skripte nicht minifizierst, wird [hier wird ein möglicher Weg zu
 
 ## Optional: Benutze React mit JSX {#optional-try-react-with-jsx}
 
-In den obigen Beispielen haben wir nur Funktionalitäten verwendet, die von Browsern nativ unterstützt werden. Deswegen haben wir einen Methodenaufruf in JavaScript benutzt, um React zu sagen, was angezeigt werden soll:
+In den Beispielen haben wir nur Funktionalitäten verwendet, die von Browsern nativ unterstützt werden. Deswegen haben wir einen Methodenaufruf in JavaScript benutzt, um React zu sagen, was angezeigt werden soll:
 
 ```js
 const e = React.createElement;
