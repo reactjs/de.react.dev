@@ -14,11 +14,7 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 Während eine Komponente alle Props in UI umwandelt, wandelt die Higher-Order-Komponente eine Komponente in eine andere Komponente um.
 
-<<<<<<< HEAD
-HOCs finden sich häufig in React-Bibliotheken von Drittanbietern, als Beispiele dafür gelten [`connect`](https://github.com/reduxjs/react-redux/blob/main/docs/api/connect.md#connect) von Redux und [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer) von Relay.
-=======
-HOCs are common in third-party React libraries, such as Redux's [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) and Relay's [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer).
->>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
+HOCs finden sich häufig in React-Bibliotheken von Drittanbietern, als Beispiele dafür gelten [`connect`](https://github.com/reduxjs/react-redux/blob/master/docs/api/connect.md#connect) von Redux und [`createFragmentContainer`](https://relay.dev/docs/v10.1.3/fragment-container/#createfragmentcontainer) von Relay.
 
 In diesem Dokument, werden wir erörtern, warum Higher-Order-Komponenten nützlich sind und wie du deine eigene schreiben kannst.
 
