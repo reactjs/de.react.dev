@@ -46,13 +46,13 @@ React.createElement(
 )
 ```
 
-Wenn du ausprobieren möchtest wie dein JSX zu welchem JavaScript konvertiert, kannst du [den Online-Babel-Compiler](babel://jsx-simple-example) nutzen.
+Wenn du ausprobieren möchtest, wie dein JSX zu welchem JavaScript konvertiert, kannst du [den Online-Babel-Compiler](babel://jsx-simple-example) nutzen.
 
 ## Den React Elementen-Typ spezifizieren {#specifying-the-react-element-type}
 
 Der erste Teil eines JSX-Tags gibt den Typen des React-Elements an. 
 
-Kapitalisierte Typen geben an dass der JSX-Tag sich auf einen React-Komponenten bezieht. Solche Tags werden in eine direkte Referenz der benannten Variablen kompiliert, folglich muss sich `Foo` auch im entsprechenden Namensraum befinden, wenn du den JSX `<Foo />`-Ausdruck nutzt.
+Kapitalisierte Typen geben an, dass der JSX-Tag sich auf einen React-Komponenten bezieht. Solche Tags werden in eine direkte Referenz der benannten Variablen kompiliert, folglich muss sich `Foo` auch im entsprechenden Namensraum befinden, wenn du den JSX `<Foo />`-Ausdruck nutzt.
 
 
 ### React muss sich im Namensraum befinden {#react-must-be-in-scope}
@@ -75,7 +75,7 @@ Wenn du keinen JavaScript-Bundler nutzt und React via `<script>`-Tag lädst, dan
 
 ### Die Punkt-Notation als JSX-Typen nutzen {#using-dot-notation-for-jsx-type}
 
-Es ist möglich einen React-Komponenten via Punkt-Notation innerhalb des JSX zu referenzieren. Dies ist besonders bequem wenn du mehrere React-Komponenten aus einem Modul exportierst. Wenn zum Beispiel `MyComponents.DatePicker` eine Komponente ist, kannst du Diese direkt im JSX wie folgt nutzen:
+Es ist möglich einen React-Komponenten via Punkt-Notation innerhalb des JSX zu referenzieren. Dies ist besonders bequem, wenn du mehrere React-Komponenten aus einem Modul exportierst. Wenn zum Beispiel `MyComponents.DatePicker` eine Komponente ist, kannst du Diese direkt im JSX wie folgt nutzen:
 
 ```js{10}
 import React from 'react';
@@ -93,9 +93,9 @@ function BlueDatePicker() {
 
 ### Nutzerdefinierte Komponenten müssen Kapitalisiert sein {#user-defined-components-must-be-capitalized}
 
-Sobald ein Elemententyp mit einem Kleinbuchstaben beginnt, bezieht sich Dieser auf einen bereits eingebauten Komponenten wie `<div>` oder `<span>`, welche `React.createElement`   als `'div'` oder `'span'` String übergeben werden. Typen die mit einem Großbuchstaben beginnen, wie z.B. `<Foo />`, kompilieren zu `React.createElement(Foo)` und beziehen sich auf eine Komponente, welche in deiner JavaScript-Datei eingebunden oder definiert wurde.
+Sobald ein Elemententyp mit einem Kleinbuchstaben beginnt, bezieht sich Dieser auf einen bereits eingebauten Komponenten wie `<div>` oder `<span>`, welche `React.createElement`   als `'div'` oder `'span'` String übergeben werden. Typen, die mit einem Großbuchstaben beginnen, wie z.B. `<Foo />`, kompilieren zu `React.createElement(Foo)` und beziehen sich auf eine Komponente, welche in deiner JavaScript-Datei eingebunden oder definiert wurde.
 
-Wir empfehlen Komponenten mit einem Großbuchstaben beginnend zu benennen. Solltest du eine Komponente nutzen die mit einem Kleinbuchstaben beginnt, ordne Diese einer kapitalisierten Variable zu, bevor du sie in JSX nutzt.  
+Wir empfehlen Komponenten mit einem Großbuchstaben beginnend zu benennen. Solltest du eine Komponente nutzen, die mit einem Kleinbuchstaben beginnt, ordne Diese einer kapitalisierten Variable zu, bevor du sie in JSX nutzt.  
 
 Folgender Code würde zum Beispiel nicht wie erwartet laufen:
 
@@ -109,7 +109,7 @@ function hello(props) {
 }
 
 function HelloWorld() {
-  // Falsch! React denkt das <hello /> ein HTML-Tag ist, weil es nicht mit einem Großbuchstaben beginnt:
+  // Falsch! React denkt, dass <hello /> ein HTML-Tag ist, weil es nicht mit einem Großbuchstaben beginnt:
   return <hello toWhat="World" />;
 }
 ```
@@ -126,14 +126,14 @@ function Hello(props) {
 }
 
 function HelloWorld() {
-  // Richtig! React weiß dass <Hello /> eine Komponente ist, weil sie mit einem Großbuchstaben beginnt.
+  // Richtig! React weiß, dass <Hello /> eine Komponente ist, weil sie mit einem Großbuchstaben beginnt.
   return <Hello toWhat="World" />;
 }
 ```
 
 ### Den Typen zur Laufzeit bestimmen {#choosing-the-type-at-runtime}
 
-Das Nutzen eines generellen Ausdrucks als React Elementtyp ist nicht möglich. Solltest du dennoch einen generellen Ausdruck zur Bezeichnung eines Elementtyps nutzen wollen, weiße Diesem vorher einer kapitalisierten Variablen zu. Dieser Fall tritt häufig ein wenn du eine Komponente abhängig von einer `prop` rendern willst: 
+Das Nutzen eines generellen Ausdrucks als React Elementtyp ist nicht möglich. Solltest du dennoch einen generellen Ausdruck zur Bezeichnung eines Elementtyps nutzen wollen, weise diesen vorher einer kapitalisierten Variablen zu. Dieser Fall tritt häufig ein, wenn du eine Komponente abhängig von einer `prop` rendern willst: 
 
 ```js{10,11}
 import React from 'react';
@@ -150,7 +150,7 @@ function Story(props) {
 }
 ```
 
-Um dies zu beheben, weisen wir zunächst den Typ einer großgeschriebenen Variable zu:
+Um dies zu beheben, weisen wir zunächst den Typ einer großgeschriebenen Variablen zu:
 
 ```js{10-12}
 import React from 'react';
@@ -182,7 +182,7 @@ Man kann jeden JavaScript-Ausdruck als Prop verwenden, indem du ihn mit `{}` umm
 
 Für `MyComponent` wird der Inhalt von `props.foo` 10 sein, da der Ausdruck `1 + 2 + 3 + 4` ausgeführt wird.
 
-`if`-Anweisungen und `for`-Schleifen sind keine Ausdrücke in JavaScript, können also nicht direkt in JSX genutzt werden. Du kannst Diese stattdessen wie im folgenden Beispiel umsetzen:
+`if`-Anweisungen und `for`-Schleifen sind keine Ausdrücke in JavaScript, können also nicht direkt in JSX genutzt werden. Du kannst diese stattdessen wie im folgenden Beispiel umsetzen:
 
 ```js{3-7}
 function NumberDescriber(props) {
@@ -220,7 +220,7 @@ Normalerweise ist dieser Umstand nicht relevant. Es wird nur zum Zwecke der Voll
 
 ### Props standardmäßig auf "Wahr" {#props-default-to-true}
 
-Wenn du eine Prop ohne Inhalt weitergibst ist deren Wert standardmäßig `true`. Diese beiden JSX-Ausdrücke sind gleich:
+Wenn du eine Prop ohne Inhalt weitergibst, ist deren Wert standardmäßig `true`. Diese beiden JSX-Ausdrücke sind gleich:
 
 ```js
 <MyTextBox autocomplete />
@@ -228,7 +228,7 @@ Wenn du eine Prop ohne Inhalt weitergibst ist deren Wert standardmäßig `true`.
 <MyTextBox autocomplete={true} />
 ```
 
-Im Gesamten würden wir nicht empfehlen Dies so zu benutzen, da hier Verwechslungsgefahr mit der [ES6 object Abkürzung](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015), `{foo}` als Abkürzung für `{foo: foo}` im Gegensatz zu `{foo: true}`, besteht. Dieses Verhalten gibt es nur da es zum Verhalten von HTML passt. 
+Im Gesamten würden wir nicht empfehlen dies so zu benutzen, da hier Verwechslungsgefahr mit der [ES6 object Abkürzung](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015), `{foo}` als Abkürzung für `{foo: foo}` im Gegensatz zu `{foo: true}`, besteht. Dieses Verhalten gibt es nur, da es zum Verhalten von HTML passt. 
 
 ### Spread Attribute {#spread-attributes}
 
@@ -245,7 +245,7 @@ function App2() {
 }
 ```
 
-Du kannst dir auch spezielle Props aussuchen welche deine Komponente konsumiert und trotzdem alle anderen Props mit dem "spread"-Operator weitergeben.
+Du kannst dir auch spezielle Props aussuchen, welche deine Komponente konsumiert und trotzdem alle anderen Props mit dem "spread"-Operator weitergeben.
 
 ```js{2}
 const Button = props => {
@@ -266,9 +266,9 @@ const App = () => {
 ```
 
 Im obigen Beispiel wird die `kind`-Prop sicher ausgenommen und *wird nicht* zum `<button>`-Element im DOM weitergegeben.
-Alle anderen Props werden mit Hilfe des `...other`-Objekts weitergegeben, was die Komponente sehr flexibel macht. Man erkennt das eine `onClick` und eine `children` Prop weitergegeben werden.
+Alle anderen Props werden mit Hilfe des `...other`-Objekts weitergegeben, was die Komponente sehr flexibel macht. Man erkennt, dass eine `onClick` und eine `children` Prop weitergegeben werden.
 
-Spread-Attribute können sehr nützlich sein, sie machen es aber auch sehr einfach unnötige Props an Komponenten weiterzugeben, welche nicht auf sich oder darauf achten ob sie ungültige Attribute an den DOM weiterzugeben. Wir empfehlen diese Syntax mit Bedacht einzusetzen. 
+Spread-Attribute können sehr nützlich sein, sie machen es aber auch sehr einfach unnötige Props an Komponenten weiterzugeben, welche nicht auf sich oder darauf achten, ob sie ungültige Attribute an den DOM weitergeben. Wir empfehlen diese Syntax mit Bedacht einzusetzen. 
 
 
 ## Kindelemente in JSX {#children-in-jsx}
@@ -283,13 +283,13 @@ Du kannst einen String zwischen den öffnenden und den schließenden Tags platzi
 <MyComponent>Hello world!</MyComponent>
 ```
 
-Hier handelt es sich um valides JSX und `props.children` wäre in `MyComponent` einfach nur der String `"Hello world!"`. HTML wird nicht ausgeschlossen, somit kannst du JSX generell einfach so schreiben wie du auch HTML auf diesem Wege schreiben würdest:
+Hier handelt es sich um valides JSX und `props.children` wäre in `MyComponent` einfach nur der String `"Hello world!"`. HTML wird nicht ausgeschlossen, somit kannst du JSX generell einfach so schreiben, wie du auch HTML auf diesem Wege schreiben würdest:
 
 ```html
 <div>This is valid HTML &amp; JSX at the same time.</div>
 ```
 
-JSX entfernt den Leerzeichen am Anfang und am Ende einer Zeile. Außerdem entfernt es auch Leerzeilen. Neue Zeilen benachbart zu Tags werden entfernt; Neue Zeilen die in der Mitte von String-Literalen erscheinen werden in ein einzelnes Leerzeichen umgewandelt. Somit rendert alles Folgende zu dem selben Ergebnis:
+JSX entfernt Leerzeichen am Anfang und am Ende einer Zeile. Außerdem entfernt es auch Leerzeilen. Neue Zeilen benachbart zu Tags werden entfernt; Neue Zeilen, die in der Mitte von String-Literalen erscheinen, werden in ein einzelnes Leerzeichen umgewandelt. Somit rendert alles Folgende zu dem selben Ergebnis:
 
 ```js
 <div>Hello World</div>
@@ -356,7 +356,7 @@ Du kannst jeden JavaScript-Ausdruck als Kindelement weitergeben, indem du es mit
 <MyComponent>{'foo'}</MyComponent>
 ```
 
-Dies zeigt sich oft als nützlich sobald du eine Liste von JSX-Ausdrücken mit unbestimmter Länge rendern möchtest. Das folgende Beispiel rendert eine HTML-Liste:
+Dies erweist sich oft als nützlich, sobald du eine Liste von JSX-Ausdrücken mit unbestimmter Länge rendern möchtest. Das folgende Beispiel rendert eine HTML-Liste:
 
 ```js{2,9}
 function Item(props) {
@@ -383,7 +383,7 @@ function Hello(props) {
 
 ### Funktionen als Kindelemente {#functions-as-children}
 
-Normalerweise werden die in JSX eingefügten JavaScript-Ausdrücke als String, einem React-Element, oder einer Liste dieser Dinge ausgegeben. Wie dem auch sei, `props.children` funktioniert genau wie jede andere Prop, da es in der Lage ist jede Art von Daten weiterzugeben, nicht nur Solche bei denen React weiß wie es Diese rendern soll. Wenn du zum Beispiel eine eigene Komponente hast, kannst du Dieser eine Callback-Funktion als `props.children` übergeben: 
+Normalerweise werden die in JSX eingefügten JavaScript-Ausdrücke als String, als React-Element, oder als Liste dieser Dinge ausgegeben. In jedem Fall funktioniert `props.children` genau wie jede andere Prop, da es in der Lage ist jede Art von Daten weiterzugeben, nicht nur Solche bei denen React weiß, wie es diese rendern soll. Wenn du zum Beispiel eine eigene Komponente hast, kannst du dieser eine Callback-Funktion als `props.children` übergeben: 
 
 ```js{4,13}
 // Ruft die Kindelement-Callback-Funktion numTimes-mal auf und produziert mehrmals eine Komponente
@@ -408,7 +408,7 @@ Kindelemente, die zu einer benutzerdefinierten Komponente weitergegeben werden, 
 
 ### Boolean, Null, und Undefined werden ignoriert {#booleans-null-and-undefined-are-ignored}
 
-`false`, `null`, `undefined`, und `true` sind valide Kindelemente. Diese werden jedoch nicht gerendert. Die folgenden JSX-Ausdrücke rendern alle zum gleichen Ergebnis:
+`false`, `null`, `undefined` und `true` sind valide Kindelemente. Diese werden jedoch nicht gerendert. Die folgenden JSX-Ausdrücke rendern alle zum gleichen Ergebnis:
 
 ```js
 <div />
@@ -424,7 +424,7 @@ Kindelemente, die zu einer benutzerdefinierten Komponente weitergegeben werden, 
 <div>{true}</div>
 ```
 
-Dies ist nützlich um React-Elemente, die an Bedingungen geknüpft sind zu rendern. Das folgende JSX rendert die `<Header />`-Komponente nur wenn `showHeader` `true` ist:
+Dies ist nützlich um React-Elemente, die an Bedingungen geknüpft sind, zu rendern. Das folgende JSX rendert die `<Header />`-Komponente nur wenn `showHeader` `true` ist:
 
 ```js{2}
 <div>
@@ -453,7 +453,7 @@ Um dies zu beheben, stelle sicher das der Ausdruck vor `&&` immer ein boolscher 
 </div>
 ```
 
-Umgekehrt, solltest du Werte wie `false`, `true`, `null`, oder `undefined` ausgeben wollen, musst du Diese zuerst [in einen String umwandeln](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#String_conversion):
+Umgekehrt, solltest du Werte wie `false`, `true`, `null`, oder `undefined` ausgeben wollen, musst du diese zuerst [in einen String umwandeln](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#String_conversion):
 
 ```js{2}
 <div>
