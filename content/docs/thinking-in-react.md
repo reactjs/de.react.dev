@@ -39,13 +39,9 @@ Aber woher weißt du, was eine eigene Komponente sein sollte? Verwende einfach d
 
 Da du einem Benutzer häufig ein JSON Datenmodell präsentieren wirst, wirst du feststellen, dass, falls dein Datenmodell korrekt aufgebaut wurde, deine Benutzeroberfläche (und damit auch deine Komponentenstruktur) gut dazu zusammenpasst. Das liegt daran, dass Benutzeroberfläche und Datenmodell tendenziell der gleichen *Informationsarchitektur* folgen, was bedeutet, dass es oft trivial ist, deine Benutzeroberfläche in Komponenten aufzuteilen. Zerlege sie einfach in Komponenten, die genau ein Stück deines Datenmodells darstellen.
 
-![Diagram showing nesting of components](../images/blog/thinking-in-react-components.png)
+![Diagram welches verschachtelte Komponenten zeigt](../images/blog/thinking-in-react-components.png)
 
-<<<<<<< HEAD
-Du siehst hier, dass wir fünf Komponenten in unserer einfachen Anwendung haben. Wir haben die Daten, die von jeder Komponente repräsentiert werden, kursiv dargestellt.
-=======
-You'll see here that we have five components in our app. We've italicized the data each component represents. The numbers in the image correspond to the numbers below.
->>>>>>> a11c2534062bd79cc1e6e34db0e149f928df35bb
+Du siehst hier, dass wir fünf Komponenten in unserer einfachen Anwendung haben. Wir haben die Daten, die von jeder Komponente repräsentiert werden, kursiv dargestellt. Die Zahlen im Bild entsprechen den folgenden Zahlen.
 
   1. **`FilterableProductTable` (orange):** enthält das gesamte Beispiel
   2. **`SearchBar` (blau):** empfängt alle *Benutzereingaben*
