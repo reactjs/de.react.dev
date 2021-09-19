@@ -48,8 +48,7 @@ Wird ein optionaler Callback zur Verfügung gestellt, wird dieser ausgeführt na
 >
 > `ReactDOM.render()` verändert nicht den Container-Knoten (es werden nur die untergeordneten Container Elemente modifiziert). Es kann möglich sein, eine Komponente in einen existierenden DOM Knoten einzufügen ohne die bereits existierenden untergeordneten Elemente zu überschreiben.
 >
-> `ReactDOM.render()` gibt aktuell eine Referenz zur Wurzel `ReactComponent`-Instanz zurück. Nichtsdestotrotz ist der Gebrauch dieses Rückgabewerts historisch bedingt und sollte vermieden werden, da in zukünftigen Versionen von React das Rendern von Komponenten in einigen Fällen asynchron erfolgen kann. Solltest du eine Referenz zur Instanz der Wurzel `ReactComponent` benötigen, sieht die bevorzugte Lösung vor, ein [callback ref](/docs/more-about-refs.html#the-ref-callback-attribute) des Wurzel-Elements hinzuzufügen.
-
+> `ReactDOM.render()` gibt aktuell eine Referenz zur Root `ReactComponent`-Instanz zurück. Nichtsdestotrotz ist der Gebrauch dieses Rückgabewerts historisch bedingt und sollte vermieden werden, da in zukünftigen Versionen von React das Rendern von Komponenten in einigen Fällen asynchron erfolgen kann. Solltest du eine Referenz zur Instanz der Wurzel `ReactComponent` benötigen, sieht die bevorzugte Lösung vor, ein [callback ref](/docs/refs-and-the-dom.html#callback-refs) des Wurzel-Elements hinzuzufügen.
 >
 > Die Nutzung von `ReactDOM.render()` um eine auf dem Server gerenderte Komponente zu hydrieren ist veraltet und wird in React 17 entfernt. Nutze stattdessen [`hydrate()`](#hydrate).
 
