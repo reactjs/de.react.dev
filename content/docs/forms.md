@@ -270,7 +270,7 @@ Da `setState()` automatisch [die einzelne Teile in den aktuellen State überfüh
 
 ## Gesteuerte Null-Wert-Eingaben {#controlled-input-null-value}
 
-Das Angeben eines `value`-Prop auf einer [kontrollierten Komponente(/docs/forms.html#controlled-components) verhindert, dass der Benutzer den Eingabewert ändern kann, es sei denn, du wünscht es. Wenn du einen Wert angegeben hast, aber das Eingabefeld noch editierbar ist, hast du möglicherweise versehentlich `value` auf `undefiniert` oder `null` gesetzt.
+Das Angeben eines `value`-Prop auf einer [kontrollierten Komponente](/docs/forms.html#controlled-components) verhindert, dass der Benutzer den Eingabewert verändern kann, es sei denn, du wünschst es. Wenn du einen Wert angegeben hast, aber das Eingabefeld noch editierbar ist, hast du möglicherweise versehentlich `value` auf `undefined` oder `null` gesetzt.
 
 Der folgende Code demonstriert dies. (Das Eingabefeld ist zuerst gesperrt, wird aber nach einer kurzen Verzögerung editierbar.)
 

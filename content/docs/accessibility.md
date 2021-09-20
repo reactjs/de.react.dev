@@ -228,8 +228,7 @@ class Parent extends React.Component {
 this.inputElement.current.focus();
 ```
 
-Falls du einen Higher-Order-Component nutzt empfiehtl es sich die [Referenz zum umschlossenen Component weiterzugeben](/docs/forwarding-refs.html) indem du die `forwardRef` React-Funktion nutzt.
-Sollte ein Third-Party-HOC diese Technik nicht implentiert haben kannst du das oben verwendete Pattern als einen Fallback nutzen.  
+Falls du eine [HOC](/docs/higher-order-components.html) nutzt empfiehlt es sich die [Referenz zur umschlossenen Komponente weiterzugeben](/docs/forwarding-refs.html) indem du die `forwardRef` React-Funktion nutzt. Sollte eine Drittanbieter HOC diese Technik nicht implementiert haben kannst du das oben verwendete Pattern als einen Fallback nutzen.  
 
 Ein gutes Fokus-Beispielt ist das [react-aria-modal](https://github.com/davidtheclark/react-aria-modal). Dies ist ein relativ rares Beispiel eines vollständig barrierefreiem Modal-Fenster. Hier wird der initiale Fokus auf den Abbrechen Button gesetzt (Um den User davon abzuhalten versehentlich die Success-Action zu aktivieren) und der Fokus kann nicht aus dem Modal-Fenster springen. Nachdem das Modal geschlossen wird wird der Fokus wieder zurück auf das Element gesetzt welches das Modal-Fenster getriggered hat. 
 
