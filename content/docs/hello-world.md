@@ -19,7 +19,7 @@ Es wird eine Überschrift mit dem Text "Hallo, Welt!" auf der Seite dargestellt.
 
 **[Auf CodePen ausprobieren](codepen://hello-world)**
 
-Klicke auf den Link um das obrige Beispiel in einen Online-Editor zu öffnen.
+Klicke auf den Link um das obige Beispiel in einen Online-Editor zu öffnen.
 Mache soviele Änderungen wie du magst, spiel ein bisschen mit dem Code rum und schaue was es für Auswirkungen auf die Seite hat.
 Die meisten Seiten in diesem Leitfaden besitzen änderbare Beispiele wie dieses.
 
@@ -49,7 +49,7 @@ und nicht das Gefühl haben, React und JavaScript gleichzeitig zu lernen.
 
 >**Hinweis:**
 >
->Dieser Leitfaden benutzt in den Beispielen gelegentlich neuere JavaScript Syntaxen. Solltest in den letzten Jahren nicht mit JavaSscript gearbeitet haben, helfen dir [diese drei Punkte](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) wieder ein wenig auf die Sprünge zu kommen.
+>Dieser Leitfaden benutzt in den Beispielen gelegentlich neuere JavaScript Syntaxen. Solltest in den letzten Jahren nicht mit JavaScript gearbeitet haben, helfen dir [diese drei Punkte](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) wieder ein wenig auf die Sprünge zu kommen.
 
 ## Auf geht's! {#lets-get-started}
 
