@@ -21,7 +21,7 @@ const FeedbackForm = () => {
         Ist diese Seite hilfreich?
         <button
           css={[sharedStyles.articleLayout.feedbackButton, {marginLeft: '6px'}]}
-          aria-label="Yes"
+          aria-label="Ja"
           onClick={e => {
             e.preventDefault();
             trackCustomEvent({
@@ -44,7 +44,7 @@ const FeedbackForm = () => {
         </button>
         <button
           css={[sharedStyles.articleLayout.feedbackButton, {marginLeft: '3px'}]}
-          aria-label="No"
+          aria-label="Nein"
           onClick={e => {
             e.preventDefault();
             trackCustomEvent({
