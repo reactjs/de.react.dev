@@ -453,7 +453,7 @@ Deque Systems bietet [aXe-core](https://github.com/dequelabs/axe-core) für auto
 
 [The Accessibility Engine](https://www.deque.com/products/axe/), oder aXe, ist eine Browser-Erweiterung basierend auf `aXe-core`, die einen Inspektor für Barrierefreiheit bereitstellt.
 
-Außerdem kannst du das [react-axe](https://github.com/dylanb/react-axe)-Modul nutzen, um die Ergebnisse dieser Barrierefreiheitskontrollen während der Entwicklung direkt in der Konsole auszugeben.
+Außerdem kannst du das [@axe-core/react](https://github.com/dequelabs/axe-core-npm/tree/develop/packages/react) Modul nutzen, um die Ergebnisse dieser Barrierefreiheitskontrollen während der Entwicklung direkt in der Konsole auszugeben.
 
 #### WebAIM WAVE {#webaim-wave}
 
