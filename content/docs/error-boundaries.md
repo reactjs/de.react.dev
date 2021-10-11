@@ -62,7 +62,11 @@ Die Fehlergrenze kann wie eine reguläre Komponente genutzt werden:
 
 Fehlergrenzen funktionieren wie das `catch {}` in JavaScript, nur für Komponenten. Die Definition der Fehlergrenze als Klassenkomponente ist Voraussetzung. In der Praxis wirst du wahrscheinlich die Fehlergrenze-Komponente ein einziges mal deklarieren und diese dann durchgehend in deiner Anwendung benutzen.
 
+<<<<<<< HEAD
 Beachte dass **Fehlergrenzen nur Fehler in den Komponenten abfangen, die sich im Komponenten-Baum unter der Fehlergrenze befinden**. Eine Fehlergrenze kann keine Fehler abfangen, die innerhalb der Fehlergrenze selbst aufgetreten sind. Wenn die Fehlergrenze den in ihr aufgetretenen Fehler nicht verarbeiten kann, wird dieser zur nächstgelegenen Fehlergrenze nach oben weitergereicht. Dies ist ebenso ähnlich der Funktionalität eines `catch {}` Blocks in JavaScript.
+=======
+Note that **error boundaries only catch errors in the components below them in the tree**. An error boundary can’t catch an error within itself. If an error boundary fails trying to render the error message, the error will propagate to the closest error boundary above it. This, too, is similar to how the `catch {}` block works in JavaScript.
+>>>>>>> 9b3c3f4e613440baf2e2f1775be65dac8c08ab5f
 
 ## Live Demo {#live-demo}
 

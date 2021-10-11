@@ -137,7 +137,11 @@ Bisher haben wir eine Anwendung entwickelt, die in Abhängigkeit von **props** u
 
 React macht diesen Datenfluss explizit, um es leicht verständlich zu machen, wie dein Programm funktioniert, aber es erfordert ein wenig mehr Tippen als herkömmliches **Two-Way-Binding** (Daten fließen in beide Richtungen).
 
+<<<<<<< HEAD
 Wenn du in der aktuellen Version des Beispiels versuchst, das Auswahlfeld anzuklicken, wirst du feststellen, dass React deine Eingabe ignoriert. Dies ist beabsichtigt, da wir den `value` **prop** des `input`s so eingestellt haben, dass er immer gleich des **state** ist, der von `FilterableProductTable` übergeben wird.
+=======
+If you try to type or check the box in the previous version of the example (step 4), you'll see that React ignores your input. This is intentional, as we've set the `value` prop of the `input` to always be equal to the `state` passed in from `FilterableProductTable`.
+>>>>>>> 9b3c3f4e613440baf2e2f1775be65dac8c08ab5f
 
 Lass uns darüber nachdenken, was wir erreichen wollen. Wir möchten sicherstellen, dass wir bei jeder Änderung des Formulars durch den Benutzer den **states** aktualisieren, um die Benutzereingaben widerzuspiegeln. Da Komponenten nur ihren eigenen **state** aktualisieren sollten, leitet `FilterableProductTable` Callbacks an `SearchBar` weiter, die ausgelöst werden, wenn **state** aktualisiert werden soll. Wir können den `onChange` Event auf die Eingabefelder anwenden, um darüber informiert zu werden. Die von `FilterableProductTable` übergebenen Callbacks rufen `setState()` auf und die Anwendung wird aktualisiert.
 
