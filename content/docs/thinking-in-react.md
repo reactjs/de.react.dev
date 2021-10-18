@@ -72,11 +72,7 @@ Du kannst von oben nach unten (top-down) oder von unten nach oben (bottom-up) vo
 
 Am Ende dieses Schrittes steht dir eine Ansammlung von wiederverwendbaren Komponenten zur Verfügung, die dein Datenmodell darstellt. Die Komponenten haben jeweils nur eine `render()` Methode, da es sich um eine statische Version deiner Anwendung handelt. Die Komponente an der Spitze der Hierarchie (`FilterableProductTable`) nimmt dein Datenmodell als Prop. Wenn du eine Änderung an deinem zugrunde liegenden Datenmodell vornimmst und `ReactDOM.render()` erneut aufrufst, wird die Benutzeroberfläche aktualisiert. Es ist leicht zu erkennen, wie deine Benutzeroberfläche aktualisiert wird und wo Änderungen vorgenommen werden können, da nichts kompliziertes vor sich geht. React's **One-Way-Data Flow** (Daten fließen nur in eine Richtung) (auch *One-Way-Binding* genannt) hält alles modular und schnell.
 
-<<<<<<< HEAD
-Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in die [React docs](/docs/).
-=======
-Refer to the [React docs](/docs/getting-started.html) if you need help executing this step.
->>>>>>> 4133943e718a77f11627888db2f59f6cb7a73403
+Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in die [React docs](/docs/getting-started.html).
 
 ### Ein kurzer Einschub: Props vs State {#a-brief-interlude-props-vs-state}
 
