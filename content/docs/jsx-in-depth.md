@@ -232,7 +232,7 @@ Im Gesamten würden wir nicht empfehlen dies so zu benutzen, da hier Verwechslun
 
 ### Spread Attribute {#spread-attributes}
 
-Solltest du bereits `props` als ein Objekt haben und möchtest es an JSX weitergeben, kannst du mit `...` einen "spread"-Operator für das ganze Props-Objekt nutzen. Diese beiden Komponenten sind gleich:
+Solltest du bereits `props` als ein Objekt haben und es in JSX weitergeben, kannst du mit `...` einen "spread"-Operator für das ganze Props-Objekt nutzen. Diese beiden Komponenten sind gleich:
 
 ```js{7}
 function App1() {
@@ -245,7 +245,7 @@ function App2() {
 }
 ```
 
-Du kannst dir auch spezielle Props aussuchen, welche deine Komponente konsumiert und trotzdem alle anderen Props mit dem "spread"-Operator weitergeben.
+Du kannst dir auch spezielle Props aussuchen, welche deine Komponente aufnimmt und trotzdem alle anderen Props mit dem "spread"-Operator weitergeben.
 
 ```js{2}
 const Button = props => {
