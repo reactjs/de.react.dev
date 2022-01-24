@@ -33,11 +33,7 @@ function MyDiv(props) {
 }
 ```
 
-<<<<<<< HEAD
 **Gut:** Mit dem Spread-Operator kannst du Variablen aus den Props herausziehen und die verbleibenden Props in eine Variable einfügen.
-=======
-**Good:** The spread syntax can be used to pull variables off props, and put the remaining props into a variable.
->>>>>>> 69bd27a3d558d6633e4f0adc61ecb8bb3d5f2edf
 
 ```js
 function MyDiv(props) {
