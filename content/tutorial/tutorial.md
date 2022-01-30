@@ -235,7 +235,7 @@ Zu erst werden wir den Button-Tag, der von der `render()`-Methode der "Square"-K
 class Square extends React.Component {
   render() {
     return (
-      <button className="square" onClick={function() { alert('Klick'); }}>
+      <button className="square" onClick={function() { console.log('click'); }}>
         {this.props.value}
       </button>
     );
@@ -243,7 +243,7 @@ class Square extends React.Component {
 }
 ```
 
-Klicken wir nun unser Quadrat, meldet der Browser sich mit einem PopUp-Fenster.
+Wenn du jetzt auf ein Quadrat klickst, solltest du in der devtools-Konsole deinses Browsers 'click' sehen.
 
 >Hinweis
 >
@@ -253,7 +253,7 @@ Klicken wir nun unser Quadrat, meldet der Browser sich mit einem PopUp-Fenster.
 >class Square extends React.Component {
 >  render() {
 >    return (
->      <button className="square" onClick={() => alert('Klick')}>
+>      <button className="square" onClick={() => console.log('click')}>
 >        {this.props.value}
 >      </button>
 >    );
@@ -261,7 +261,7 @@ Klicken wir nun unser Quadrat, meldet der Browser sich mit einem PopUp-Fenster.
 >}
 >```
 >
->Wenn du `onClick={() => alert('click')}` betrachtest, kannst du feststellen, dass wir *eine Funktion* im `onClick`-Prop mitgeben. Es wird nur mit einem Klick ausgelöst. `() =>` zu vergessen und anstelle dessen `onClick={alert('click')}` zu schreiben, ist ein häufiger Fehler und führt dazu, dass alert jedes Mal aufgerufen wird, wenn die Komponente neurendert.
+>Wenn du `onClick={() => alert('click')}` betrachtest, kannst du feststellen, dass wir *eine Funktion* im `onClick`-Prop mitgeben. React ruft diese Function nach einem Klick auf. `() =>` zu vergessen und stattdessen `onClick={alert('click')}` zu schreiben, ist ein häufiger Fehler und führt dazu, dass alert jedes Mal aufgerufen wird, wenn die Komponente neu rendert.
 
 Als nächstes möchten wir, dass die "Square"-Kompontente sich daran "erinnern" kann, dass sie geklickt worden ist und schreiben ein X rein. Damit Komponenten sich an Dinge "erinnern" können, brauchen sie einen **state**.
 
@@ -280,7 +280,7 @@ class Square extends React.Component {
 
   render() {
     return (
-      <button className="square" onClick={() => alert('Klick')}>
+      <button className="square" onClick={() => console.log('click')}>
         {this.props.value}
       </button>
     );
@@ -452,9 +452,9 @@ class Square extends React.Component {
 
 Wenn ein Quadrat geklickt wird, wird die vom Board bereitgestellte `onClick`-Funktion aufgerufen. Nachfolgend ist eine Zusammenfassung, wie das funktioniert:
 
-1. Die `onClick`-prop der im DOM eingebauten `<button>`-Komponente teilt React mit, einen Event Listener zu installieren.
-2. Wenn ein Button geklickt wird ruft React den `onClick` Event Handler auf, der in der `render()`-Methode des Quadrats definiert ist.
-3. Der Event Handler ruft `this.props.onClick()` auf. Die `onClick`-prop des Quadrats wurde vom Spielbrett spezifiziert.
+1. Das `onClick`-Prop der eingebauten DOM `<button>`-Komponente weist React an, einen Click-Event-Listener einzurichten.
+2. Wenn ein Button geklickt wird, ruft React den `onClick`-Event-Handler auf, der in der `render()`-Methode des Quadrats definiert ist.
+3. Der Event-Handler ruft `this.props.onClick()` auf. Das `onClick`-Prop des Quadrats wurde vom Spielbrett festgelegt.
 4. Da das Spielbrett `onClick={() => this.handleClick(i)}` dem Quadrat übergeben hat, ruft das Quadrat `this.handleClick(i)` auf, wenn es geklickt wird.
 5. Wir haben die Methode `handleClick()` noch nicht definiert, daher stürzt unser Code ab. Wenn du jetzt auf ein Quadrat klickst, solltest du einen roten Fehlerbildschirm sehen, der etwas sagt wie "this.handleClick is not a function".
 
@@ -525,7 +525,7 @@ Ist dir aufgefallen, wie wir in `handleClick` die Methode `.slice()` aufgerufen 
 
 ### Warum ist Unveränderlichkeit (engl. Immutability) wichtig {#why-immutability-is-important}
 
-Im vorherigen Code-Beispiel haben wir empfohlen, `.slice()` zu verwenden um eine Kopie vom `squares`-Array zu erzeugen anstelle direkt das existierende Array zu modifizieren. Nun besprechen wir Unveränderlichkeit (engl. Immutability) und warum Unveränderlichkeit wichtig ist zu lernen.
+Im vorangegangenen Codebeispiel haben wir vorgeschlagen, eine Kopie des Arrays `squares` mit der Methode `slice()` zu erstellen, anstatt das bestehende Array zu verändern. Wir werden nun die Unveränderlichkeit (engl. Immutability) besprechen und warum es wichtig ist, Unveränderlichkeit zu lernen.
 
 Es gibt prinzipiell zwei Herangehensweisen Daten verändern. Die erste ist, die Daten *abzuändern* (engl. *mutate*) indem man den Wert direkt überschreibt. Der zweite Weg ist, den alten Datensatz durch eine neue Kopie zu ersetzen und die Änderungen der Kopie zuzuweisen.
 
@@ -1060,6 +1060,8 @@ Lass und über die `history` in Games `render`-Methode mappen.
 
 **[View the full code at this point](https://codepen.io/gaearon/pen/EmmGEa?editors=0010)**
 
+As we iterate through `history` array, `step` variable refers to the current `history` element value, and `move` refers to the current `history` element index. We are only interested in `move` here, hence `step` is not getting assigned to anything.
+
 For each move in the tic-tac-toe game's history, we create a list item `<li>` which contains a button `<button>`. The button has a `onClick` handler which calls a method called `this.jumpTo()`. We haven't implemented the `jumpTo()` method yet. For now, we should see a list of the moves that have occurred in the game and a warning in the developer tools console that says:
 
 >  Warning:
@@ -1160,6 +1162,8 @@ Next, we'll define the `jumpTo` method in Game to update that `stepNumber`. We a
     // this method has not changed
   }
 ```
+
+Notice in `jumpTo` method, we haven't updated `history` property of the state. That is because state updates are merged or in more simple words React will update only the properties mentioned in `setState` method leaving the remaining state as that is. For more info **[see the documentation](/docs/state-and-lifecycle.html#state-updates-are-merged)**.
 
 We will now make a few changes to the Game's `handleClick` method which fires when you click on a square.
 

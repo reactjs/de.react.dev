@@ -123,7 +123,7 @@ Falls du deine Skripte nicht minifizierst, wird [hier wird ein möglicher Weg zu
 
 ## Optional: Benutze React mit JSX {#optional-try-react-with-jsx}
 
-In den obigen Beispielen haben wir nur Funktionalitäten verwendet, die von Browsern nativ unterstützt werden. Deswegen haben wir einen Methodenaufruf in JavaScript benutzt, um React zu sagen, was angezeigt werden soll:
+In den Beispielen haben wir nur Funktionalitäten verwendet, die von Browsern nativ unterstützt werden. Deswegen haben wir einen Methodenaufruf in JavaScript benutzt, um React zu sagen, was angezeigt werden soll:
 
 ```js
 const e = React.createElement;
@@ -149,7 +149,7 @@ return (
 
 Diese zwei Codebeispiele sind äquivalent. Obwohl **JSX [komplett optional](/docs/react-without-jsx.html) ist**, finden es viele Leute beim Schreiben von UI Code hilfreich -- sowohl mit React als auch mit anderen Bibliotheken.
 
-Du kannst JSX mit [diesem Online Konverter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3) ausprobieren.
+Du kannst JSX mit [diesem Online Konverter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7) ausprobieren.
 
 ### Schnell JSX ausprobieren {#quickly-try-jsx}
 
@@ -159,7 +159,7 @@ Du kannst JSX in deinem Projekt am schnellsten ausprobieren, indem du diesen `<s
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
-Jetzt kannst JSX in jedem `<script>` Tag verwenden, indem du diesem ein `type="text/babel"` Attribut hinzufügst. Hier kannst du [eine Besipiel HTML Datei mit JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) herunterladen und mit ihr experimentieren.
+Jetzt kannst JSX in jedem `<script>` Tag verwenden, indem du diesem ein `type="text/babel"` Attribut hinzufügst. Hier kannst du [eine Besipiel HTML Datei mit JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) herunterladen und mit ihr experimentieren.
 
 Um zu lernen und einfache Demos zu bauen ist dieser Ansatz ausreichend. Allerdings macht er deine Webseite langsam und **ist nicht für die Produktionsumgebung geeignet**. Wenn du bereit bist weiter zu machen, entferne den neuen `<script>` Tag und das `type="text/babel"`, das du eben hinzugefügt hast. Im nächsten Abschnitt wirst du stattdessen einen JSX Präprozessor aufsetzen, der alle deine `<script>` Tags automatisch konvertiert.
 

@@ -178,11 +178,11 @@ Die Entscheidung wo in deiner Anwendung Code-Splitting einzuführen ist, kann et
 
 Ein guter Ausgangspunkt sind Routen. Die meisten Leute im Web sind es gewohnt Page-Transitions zu erstellen, die einige Zeit zum Laden benötigen. Sie neigen auch dazu, die gesamte Seite auf einmal neu zu rendern, so dass die Benutzer wahrscheinlich nicht gleichzeitig mit anderen Elementen auf der Seite interagieren.
 
-Hier ist ein Beispiel wie du ein routenbasiertes Code-Splitting in deiner Anwendung mit Hilfe von Bibliotheken, wie [React Router](https://reacttraining.com/react-router/) mit `React.lazy` einrichtest.
+Hier ist ein Beispiel wie du ein routenbasiertes Code-Splitting in deiner Anwendung mit Hilfe von Bibliotheken, wie [React Router](https://reactrouter.com/) mit `React.lazy` einrichtest.
 
 ```js
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
@@ -190,10 +190,10 @@ const About = lazy(() => import('./routes/About'));
 const App = () => (
   <Router>
     <Suspense fallback={<div>Lade...</div>}>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </Suspense>
   </Router>
 );

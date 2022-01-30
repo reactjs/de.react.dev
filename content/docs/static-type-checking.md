@@ -311,15 +311,15 @@ declare module 'querystring' {
 
 Du bist jetzt bereit zu Coden! Wir empfehelen dir die folgenden Quellen zu besuchen um mehr über TypeScript zu lernen:
 
-* [TypeScript Documentation: Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-* [TypeScript Documentation: Migrating from Javascript](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)
+* [TypeScript Documentation: Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+* [TypeScript Documentation: Migrating from JavaScript](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)
 * [TypeScript Documentation: React and Webpack](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
 
-## Reason {#reason}
+## ReScript {#rescript}
 
-[Reason](https://reasonml.github.io/) ist keine neue Sprache; Es handelt sich um eine neue Syntax und Toolchain basierend auf der Sprache [OCaml](https://ocaml.org/). Reason gibt OCaml eine vertraute Syntax, die sich an JavaScript-Entwickler/innen richtet und den bestehenden NPM/Yarn-Workflow berücksichtigt, den man bereits kennt.
+[ReScript](https://rescript-lang.org/) ist eine typisierte Sprache, welche zu zu JavaScript kompliliert. Einige der Kernfunktionen sind eine garantierte 100%ige Typabdeckung, erstklassige JSX-Unterstützung und [dedizierte React-Bindings](https://rescript-lang.org/docs/react/latest/introduction), um die Integration in bestehende JS / TS React-Codebases zu ermöglichen.
 
-Reason wurde bei Facebook entwickelt und wird in einigen seiner Produkte wie dem Messenger verwendet. Es ist noch ein wenig experimentell, aber es hat [spezielle React-Bindings](https://reasonml.github.io/reason-react/), die von Facebook und einer [aktiven Community](https://reasonml.github.io/docs/en/community.html) gepflegt werden.
+Mehr Infos zur Integration von ReScript in deine bestehende JS / React Codebasis findest du [hier](https://rescript-lang.org/docs/manual/latest/installation#integrate-into-an-existing-js-project).
 
 ## Kotlin {#kotlin}
 

@@ -17,7 +17,7 @@ Zum Beispiel dieses HTML:
 
 ```html
 <button onclick="activateLasers()">
-  Aktiviere Laser
+  Activate Lasers
 </button>
 ```
 
@@ -25,31 +25,31 @@ ist in React ein wenig anders:
 
 ```js{1}
 <button onClick={activateLasers}>
-  Aktiviere Laser
+  Activate Lasers
 </button>
 ```
 
 Ein weiterer Unterschied ist, dass `false` nicht zurückgegeben werden kann, um das Standardverhalten von React zu unterbinden. Es muss explizit `preventDefault` aufgerufen werden. Um beispielsweise das Aufrufen eines Links in einfachem HTML zu verhindern, kannst du folgendes schreiben:
 
 ```html
-<a href="#" onclick="console.log('Der Link wurde geklickt.'); return false">
-  Klick mich
-</a>
+<form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form>
 ```
 
 In React könnte es stattdessen so aussehen:
 
-```js{2-5,8}
-function ActionLink() {
-  function handleClick(e) {
+```js{3}
+function Form() {
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log('Der Link wurde geklickt.');
+    console.log('You clicked submit.');
   }
 
   return (
-    <a href="#" onClick={handleClick}>
-      Klick mich
-    </a>
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
 ```
@@ -71,15 +71,15 @@ class Toggle extends React.Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
     }));
   }
 
   render() {
     return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'AN' : 'AUS'}
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
       </button>
     );
   }
@@ -104,13 +104,13 @@ class LoggingButton extends React.Component {
   // Diese Syntax stellt sicher, dass `this` innerhalb von handleClick gebunden ist.
   // Warnung: Dies ist *experimentelle* Syntax.
   handleClick = () => {
-    console.log('this ist:', this);
+    console.log('this is:', this);
   }
 
   render() {
     return (
       <button onClick={this.handleClick}>
-        Klick mich
+        Click me
       </button>
     );
   }
@@ -131,7 +131,7 @@ class LoggingButton extends React.Component {
     // Diese Syntax stellt sicher, dass `this` innerhalb von handleClick gebunden ist.
     return (
       <button onClick={() => this.handleClick()}>
-        Klick mich
+        Click me
       </button>
     );
   }

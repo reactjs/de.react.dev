@@ -180,7 +180,7 @@ ReactDOM.render(
 );
 ```
 
-Wenn du eine Babel-Transformation wie [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties/) verwendest, kannst du auch `defaultProps` als statische Eigenschaft innerhalb einer React-Komponentenklasse deklarieren. Diese Syntax ist jedoch noch nicht finalisiert und erfordert einen Kompilierungsschritt, um in einem Browser zu funktionieren. Weitere Informationen findest du in der [Vorschau der Klassenfelder](https://github.com/tc39/proposal-class-fields).
+Wenn du eine Babel-Transformation wie [plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties/) (vorher _plugin-transform-class-properties_), verwendest, kannst du auch `defaultProps` als statische Eigenschaft innerhalb einer React-Komponentenklasse deklarieren. Diese Syntax ist jedoch noch nicht finalisiert und erfordert einen Kompilierungsschritt, um in einem Browser zu funktionieren. Weitere Informationen findest du in der [Vorschau der Klassenfelder](https://github.com/tc39/proposal-class-fields).
 
 
 ```javascript

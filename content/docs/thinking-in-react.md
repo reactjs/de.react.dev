@@ -39,9 +39,9 @@ Aber woher weißt du, was eine eigene Komponente sein sollte? Verwende einfach d
 
 Da du einem Benutzer häufig ein JSON Datenmodell präsentieren wirst, wirst du feststellen, dass, falls dein Datenmodell korrekt aufgebaut wurde, deine Benutzeroberfläche (und damit auch deine Komponentenstruktur) gut dazu zusammenpasst. Das liegt daran, dass Benutzeroberfläche und Datenmodell tendenziell der gleichen *Informationsarchitektur* folgen, was bedeutet, dass es oft trivial ist, deine Benutzeroberfläche in Komponenten aufzuteilen. Zerlege sie einfach in Komponenten, die genau ein Stück deines Datenmodells darstellen.
 
-![Component diagram](../images/blog/thinking-in-react-components.png)
+![Diagram welches verschachtelte Komponenten zeigt](../images/blog/thinking-in-react-components.png)
 
-Du siehst hier, dass wir fünf Komponenten in unserer einfachen Anwendung haben. Wir haben die Daten, die von jeder Komponente repräsentiert werden, kursiv dargestellt.
+Du siehst hier, dass wir fünf Komponenten in unserer einfachen Anwendung haben. Wir haben die Daten, die von jeder Komponente repräsentiert werden, kursiv dargestellt. Die Zahlen im Bild entsprechen den folgenden Zahlen.
 
   1. **`FilterableProductTable` (orange):** enthält das gesamte Beispiel
   2. **`SearchBar` (blau):** empfängt alle *Benutzereingaben*
@@ -72,7 +72,7 @@ Du kannst von oben nach unten (top-down) oder von unten nach oben (bottom-up) vo
 
 Am Ende dieses Schrittes steht dir eine Ansammlung von wiederverwendbaren Komponenten zur Verfügung, die dein Datenmodell darstellt. Die Komponenten haben jeweils nur eine `render()` Methode, da es sich um eine statische Version deiner Anwendung handelt. Die Komponente an der Spitze der Hierarchie (`FilterableProductTable`) nimmt dein Datenmodell als Prop. Wenn du eine Änderung an deinem zugrunde liegenden Datenmodell vornimmst und `ReactDOM.render()` erneut aufrufst, wird die Benutzeroberfläche aktualisiert. Es ist leicht zu erkennen, wie deine Benutzeroberfläche aktualisiert wird und wo Änderungen vorgenommen werden können, da nichts kompliziertes vor sich geht. React's **One-Way-Data Flow** (Daten fließen nur in eine Richtung) (auch *One-Way-Binding* genannt) hält alles modular und schnell.
 
-Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in die [React docs](/docs/).
+Wenn du Hilfe bei der Ausführung dieses Schrittes benötigst, schaue einfach in die [React docs](/docs/getting-started.html).
 
 ### Ein kurzer Einschub: Props vs State {#a-brief-interlude-props-vs-state}
 
@@ -137,7 +137,7 @@ Bisher haben wir eine Anwendung entwickelt, die in Abhängigkeit von **props** u
 
 React macht diesen Datenfluss explizit, um es leicht verständlich zu machen, wie dein Programm funktioniert, aber es erfordert ein wenig mehr Tippen als herkömmliches **Two-Way-Binding** (Daten fließen in beide Richtungen).
 
-Wenn du in der aktuellen Version des Beispiels versuchst, das Auswahlfeld anzuklicken, wirst du feststellen, dass React deine Eingabe ignoriert. Dies ist beabsichtigt, da wir den `value` **prop** des `input`s so eingestellt haben, dass er immer gleich des **state** ist, der von `FilterableProductTable` übergeben wird.
+Wenn du versuchst, das Kästchen in der vorherigen Version des Beispiels (Schritt 4) einzugeben oder zu markieren, wirst du sehen, dass React deine Eingabe ignoriert. Dies ist beabsichtigt, da wir das `value`-Prop des `input` so eingestellt haben, dass es immer gleich dem `state` ist, der von `filterableProductTable` übergeben wurde.
 
 Lass uns darüber nachdenken, was wir erreichen wollen. Wir möchten sicherstellen, dass wir bei jeder Änderung des Formulars durch den Benutzer den **states** aktualisieren, um die Benutzereingaben widerzuspiegeln. Da Komponenten nur ihren eigenen **state** aktualisieren sollten, leitet `FilterableProductTable` Callbacks an `SearchBar` weiter, die ausgelöst werden, wenn **state** aktualisiert werden soll. Wir können den `onChange` Event auf die Eingabefelder anwenden, um darüber informiert zu werden. Die von `FilterableProductTable` übergebenen Callbacks rufen `setState()` auf und die Anwendung wird aktualisiert.
 

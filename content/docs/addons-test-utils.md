@@ -21,7 +21,7 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 mit npm
 >
 > Wir empfehlen die Verwendung der [React Testing Library](https://testing-library.com/react), die konzipiert wurde, um das Schreiben von Tests zu ermöglichen, in denen Komponenten auf die gleiche Weise verwendet werden wie von Endnutzern.
 >
-> Alternativ dazu gibt es von Airbnb eine Test-Utility namens [Enzyme](https://airbnb.io/enzyme/), mit der auf einfache Weise die Ausgabe von React-Komponenten zugesichert (asserted), manipuliert und durchlaufen werden kann.
+> Für React-Versionen <= 16 macht es die [Enzyme](https://airbnb.io/enzyme/) Bibliothek einfach, die Ausgabe deiner React-Komponenten zu prüfen, zu manipulieren und zu durchlaufen.
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -141,7 +141,7 @@ mockComponent(
 
 > Hinweis:
 >
-> `mockComponent()` ist eine veraltete API. Wir empfehlen, stattdessen [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) zu verwenden.
+> `mockComponent()` ist eine veraltete API. Wir empfehlen, stattdessen [`jest.mock()`](https://jestjs.io/docs/tutorial-react-native#mock-native-modules-using-jestmock) zu verwenden.
 
 * * *
 

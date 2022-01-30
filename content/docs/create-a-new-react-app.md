@@ -39,7 +39,7 @@ Das React Team empfiehlt bevorzugt diese Lösungen:
 
 [Create React App](https://github.com/facebookincubator/create-react-app) ist eine komfortable Umgebung, um **React zu lernen** und ist der beste Weg, mit **einer neuen [Single Page](/docs/glossary.html#single-page-application) Anwendung** in React zu beginnen.
 
-Es richtet deine Entwicklungsumgebung so ein, dass du die neuesten JavaScript-Funktionen nutzen kannst, bietet ein besseres Entwicklungserlebnis und optimiert deine App für die Produktion. Du benötigst dafür [Node >= 10.16 and npm >= 5.6](https://nodejs.org/en/) auf deinem Computer. Um ein Projekt zu erstellen, führe folgende Befehle aus:
+Es richtet deine Entwicklungsumgebung so ein, dass du die neuesten JavaScript-Funktionen nutzen kannst, bietet ein besseres Entwicklungserlebnis und optimiert deine App für die Produktion. Du benötigst dafür [Node >= 14.0.0 und npm >= 5.6](https://nodejs.org/en/) auf deinem Computer. Um ein Projekt zu erstellen, führe folgende Befehle aus:
 
 ```bash
 npx create-react-app meine-anwendung
@@ -75,7 +75,7 @@ Die folgenden Werkzeuge bieten mehr Flexibilität und Freiheiten. Wir empfehlen 
 
 - **[Nx](https://nx.dev/react)** ist ein Toolkit für Full-Stack Monorepo Entwicklung, mit integrierter Unterstützung für React, Next.js, [Express](https://expressjs.com/) und mehr.
 
-- **[Parcel](https://parceljs.org/)** ist ein schneller konfigurationsloser Bundler für Webanwendungen, der [mit React funktioniert](https://parceljs.org/recipes.html#react).
+- **[Parcel](https://parceljs.org/)** ist ein schneller konfigurationsloser Bundler für Webanwendungen, der [mit React funktioniert](https://parceljs.org/recipes/react/).
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** ist ein Framework für Server-Rendering. Es benötigt keine Konfiguration, bietet aber mehr Flexibilität als Next.js.
 
