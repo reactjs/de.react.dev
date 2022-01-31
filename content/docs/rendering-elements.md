@@ -60,11 +60,7 @@ Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
 `embed:rendering-elements/update-rendered-element.js`
 
-<<<<<<< HEAD
-[Auf CodePen ausprobieren](codepen://rendering-elements/update-rendered-element)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
->>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)
 
 Jede Sekunden wird [`ReactDOM.render()`](/docs/react-dom.html#render) mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
 
@@ -79,11 +75,7 @@ Jede Sekunden wird [`ReactDOM.render()`](/docs/react-dom.html#render) mit Hilfe 
 React DOM vergleicht das vorherige und jetztige Element und dessen Kindelemente miteinander.
 Um das DOM in den gewünschten Zustand zu bringen, werden nur die Elemente im DOM aktualisiert, die wirklich eine Änderung beinhalten.
 
-<<<<<<< HEAD
-Du kannst es nachprüfen, indem du das [letzte Beispiel](codepen://rendering-elements/update-rendered-element) mit den Browser-Werkzeugen aufrufst:
-=======
-You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
->>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
+Du kannst es nachprüfen, indem du das [letzte Beispiel](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) mit den Browser-Werkzeugen aufrufst:
 
 ![DOM-Inspektor mit detaillierten Updates](../images/docs/granular-dom-updates.gif)
 
