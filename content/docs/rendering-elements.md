@@ -41,11 +41,7 @@ Um ein Element in den root-DOM-Knoten zu rendern, muss du nur beides an [`ReactD
 
 `embed:rendering-elements/render-an-element.js`
 
-<<<<<<< HEAD
-[Auf CodePen ausprobieren](codepen://rendering-elements/render-an-element)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
->>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)
 
 Es wird "Hallo Welt" auf der Seite angezeigt.
 
