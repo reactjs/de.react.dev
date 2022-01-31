@@ -243,11 +243,7 @@ function Comment(props) {
 }
 ```
 
-<<<<<<< HEAD
-[Auf CodePen ausprobieren](codepen://components-and-props/extracting-components-continued)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
->>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)
 
 Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche (`Button`, `Panel`, `Avatar`) öfters verwendet wird oder es ist für sich allein komplex genug ist (`App`, `FeedStory`, `Comment`), dies gute Kandidaten für wiederverwendbare Komponenten sind.
 
