@@ -17,11 +17,7 @@ ReactDOM.render(
 
 Es wird eine Überschrift mit dem Text "Hallo, Welt!" auf der Seite dargestellt.
 
-<<<<<<< HEAD
-**[Auf CodePen ausprobieren](codepen://hello-world)**
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
->>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
+**[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
 
 Klicke auf den Link um das obige Beispiel in einen Online-Editor zu öffnen.
 Mache soviele Änderungen wie du magst, spiel ein bisschen mit dem Code rum und schaue was es für Auswirkungen auf die Seite hat.
