@@ -76,7 +76,11 @@ ReactDOM.render(
 );
 ```
 
+<<<<<<< HEAD
 [Auf CodePen ausprobieren](codepen://components-and-props/rendering-a-component)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
+>>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
 
 Fassen wir mal zusammen, was in diesem Beispiel passiert:
 
@@ -119,7 +123,11 @@ ReactDOM.render(
 );
 ```
 
+<<<<<<< HEAD
 [Auf CodePen ausprobieren](codepen://components-and-props/composing-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
+>>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
 
 Typischerweise haben neue React-Apps eine einzige `App` Komponente an erste Stelle. Wenn du aber React in ein bestehendes Projekt integrierst, fängst du wahrscheinlich von unten nach oben (bottom-up) an und erstellst Komponenten wie `Button`, dabei arbeitest dich Schritt für Schritt die View-Hierarchie nach oben.
 
@@ -153,7 +161,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Auf CodePen ausprobieren](codepen://components-and-props/extracting-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
+>>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
 
 Diese Komponente nimmt `author` (ein Objekt), `text` (ein String), und `date` (ein date-Objekt) als Props entgegen und beschreibt einen Kommentar auf einer Social Media Webseite.
 
@@ -231,7 +243,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Auf CodePen ausprobieren](codepen://components-and-props/extracting-components-continued)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
+>>>>>>> 5f0549c86e7a9c0774e66687d1bc0118a681eb9d
 
 Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche (`Button`, `Panel`, `Avatar`) öfters verwendet wird oder es ist für sich allein komplex genug ist (`App`, `FeedStory`, `Comment`), dies gute Kandidaten für wiederverwendbare Komponenten sind.
 
