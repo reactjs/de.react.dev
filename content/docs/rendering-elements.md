@@ -41,11 +41,7 @@ Um ein Element in den root-DOM-Knoten zu rendern, muss du nur beides an [`ReactD
 
 `embed:rendering-elements/render-an-element.js`
 
-<<<<<<< HEAD
-[Auf CodePen ausprobieren](codepen://rendering-elements/render-an-element)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
->>>>>>> 20f0fe280f3c122df7541256b983c46e21e33b20
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)
 
 Es wird "Hallo Welt" auf der Seite angezeigt.
 
@@ -60,11 +56,7 @@ Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
 `embed:rendering-elements/update-rendered-element.js`
 
-<<<<<<< HEAD
-[Auf CodePen ausprobieren](codepen://rendering-elements/update-rendered-element)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
->>>>>>> 20f0fe280f3c122df7541256b983c46e21e33b20
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)
 
 Jede Sekunden wird [`ReactDOM.render()`](/docs/react-dom.html#render) mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
 
@@ -79,11 +71,7 @@ Jede Sekunden wird [`ReactDOM.render()`](/docs/react-dom.html#render) mit Hilfe 
 React DOM vergleicht das vorherige und jetztige Element und dessen Kindelemente miteinander.
 Um das DOM in den gewünschten Zustand zu bringen, werden nur die Elemente im DOM aktualisiert, die wirklich eine Änderung beinhalten.
 
-<<<<<<< HEAD
-Du kannst es nachprüfen, indem du das [letzte Beispiel](codepen://rendering-elements/update-rendered-element) mit den Browser-Werkzeugen aufrufst:
-=======
-You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
->>>>>>> 20f0fe280f3c122df7541256b983c46e21e33b20
+Du kannst es nachprüfen, indem du das [letzte Beispiel](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) mit den Browser-Werkzeugen aufrufst:
 
 ![DOM-Inspektor mit detaillierten Updates](../images/docs/granular-dom-updates.gif)
 
