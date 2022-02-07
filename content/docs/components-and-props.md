@@ -123,11 +123,7 @@ ReactDOM.render(
 );
 ```
 
-<<<<<<< HEAD
-[Auf CodePen ausprobieren](codepen://components-and-props/composing-components)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
->>>>>>> 20f0fe280f3c122df7541256b983c46e21e33b20
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)
 
 Typischerweise haben neue React-Apps eine einzige `App` Komponente an erste Stelle. Wenn du aber React in ein bestehendes Projekt integrierst, fängst du wahrscheinlich von unten nach oben (bottom-up) an und erstellst Komponenten wie `Button`, dabei arbeitest dich Schritt für Schritt die View-Hierarchie nach oben.
 
@@ -161,11 +157,7 @@ function Comment(props) {
 }
 ```
 
-<<<<<<< HEAD
-[Auf CodePen ausprobieren](codepen://components-and-props/extracting-components)
-=======
-**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
->>>>>>> 20f0fe280f3c122df7541256b983c46e21e33b20
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)
 
 Diese Komponente nimmt `author` (ein Objekt), `text` (ein String), und `date` (ein date-Objekt) als Props entgegen und beschreibt einen Kommentar auf einer Social Media Webseite.
 
