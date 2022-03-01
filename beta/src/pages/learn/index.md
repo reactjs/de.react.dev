@@ -324,7 +324,6 @@ function MyButton() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
-    setCount(count + 1);
   }
 
   return (
@@ -339,10 +338,11 @@ React will call your component function again. This time, `count` will be `1`. T
 
 If you render the same component multiple times, each will get its own state. Try clicking each button separately:
 
-<Sandpack>
+First, import [`useState`](/reference/usestate) from React:
 
-```js
+```js {1,4}
 import { useState } from 'react';
+```
 
 function MyButton() {
   const [count, setCount] = useState(0);
