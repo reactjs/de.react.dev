@@ -2,7 +2,7 @@
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
 
-const request = require('request-promise');
+const axios = require('axios');
 
 const errorCodesUrl =
   'https://raw.githubusercontent.com/facebook/react/main/scripts/error-codes/codes.json';
@@ -11,7 +11,7 @@ exports.sourceNodes = async ({actions}) => {
   const {createNode} = actions;
 
   try {
-    const jsonString = await request(errorCodesUrl);
+    const jsonString = await axios.get(errorCodesUrl);
 
     createNode({
       id: 'error-codes',
@@ -19,7 +19,7 @@ exports.sourceNodes = async ({actions}) => {
       parent: 'ERRORS',
       internal: {
         type: 'ErrorCodesJson',
-        contentDigest: jsonString,
+        contentDigest: JSON.stringify(jsonString.data),
       },
     });
   } catch (error) {
