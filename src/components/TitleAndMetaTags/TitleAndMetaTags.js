@@ -11,7 +11,8 @@ import {urlRoot} from 'site-constants';
 // $FlowFixMe This is a valid path
 import languages from '../../../content/languages.yml';
 
-const defaultDescription = 'Eine JavaScript Bibliothek zum Erstellen von Benutzeroberflächen';
+const defaultDescription =
+  'Eine JavaScript Bibliothek zum Erstellen von Benutzeroberflächen';
 
 type Props = {
   title: string,
