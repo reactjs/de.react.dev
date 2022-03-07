@@ -15355,11 +15355,7 @@ url-parse-lax@^3.0.0:
 url-parse@^1.1.8, url-parse@^1.4.3:
   version "1.5.10"
   resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.10.tgz#9d3c2f736c1d75dd3bd2be507dcc111f1e2ea9c1"
-<<<<<<< HEAD
-  integrity "sha1-nTwvc2wddd070r5QfcwRHx4uqcE= sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ=="
-=======
   integrity sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==
->>>>>>> a08e1fd4b574a4d2d55e292af9eb01d55a526303
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
