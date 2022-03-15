@@ -46,6 +46,26 @@ CSS-Klassen sind üblicherweise besser für die Performance als Inline-Styles.
 
 _Beachte, dass dies keine Funktionalität von React ist, sondern durch Bibliotheken von Dritten bereitgestellt wird._ React hat keine Meinung dazu, wie Styles definiert werden; im Zweifel ist es ein guter Anfang, die Styles wie gewohnt in separaten `*.css`-Dateien zu definieren und mittels [`className`](/docs/dom-elements.html#classname) zu verwenden.
 
+### Was sind CSS-Module {#what-are-css-modules}
+
+Ein CSS-Modul ist eine CSS-Datei, in der alle Klassen standardmäßig lokal festgelegt sind.<br />
+Bei der Verwendung werden diese Klassen durch eindeutige IDs ersetzt. 
+Dadurch wird garantiert, dass alle Klassen eindeutig sind und es zu keinen Namenskonflikten kommt.
+
+```css
+/* style.module.css */
+.className {
+  color: green;
+}
+```
+```jsx
+import styles from "./style.module.css";
+
+render() {
+  return <span className={styles.className}>Menü</span>
+}
+```
+
 ### Kann ich in React Animationen verwenden? {#can-i-do-animations-in-react}
 
 React kann für Animationen verwendet werden. Siehe dazu z.B. [React Transition Group](https://reactcommunity.org/react-transition-group/) und [React Motion](https://github.com/chenglou/react-motion), [React Spring](https://github.com/react-spring/react-spring) oder [Framer Motion](https://framer.com/motion).
