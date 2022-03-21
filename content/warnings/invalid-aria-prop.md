@@ -8,4 +8,8 @@ Die Warnung `invalid-aria-prop` wird angezeigt, wenn du versuchst ein DOM Elemen
 
 1. Wenn du denkst, das Attribut ist korrekt und existiert, prüfe die verwendete Schreibweise. `aria-labelledby` und `aria-activedescendant` werden oft falsch geschrieben.
 
+<<<<<<< HEAD
 2. React kennt das Attribut noch nicht. Dieser Fall wird vermutlich in einer zukünftigen Version behoben. React entfernt allerdings alle unbekannten Attribute, daher werden sie trotz Nutzung nicht im DOM eingefügt.
+=======
+2. React does not yet recognize the attribute you specified. This will likely be fixed in a future version of React.
+>>>>>>> 1e3b023d3192c36a2da7b72389debee2f0e0e8b0
