@@ -173,11 +173,17 @@ Greeting.defaultProps = {
   name: 'Fremder'
 };
 
+<<<<<<< HEAD
 // Rendert "Hallo, Fremder":
 ReactDOM.render(
   <Greeting />,
   document.getElementById('example')
 );
+=======
+// Renders "Hello, Stranger":
+const root = ReactDOM.createRoot(document.getElementById('example')); 
+root.render(<Greeting />);
+>>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 ```
 
 Wenn du eine Babel-Transformation wie [plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties/) (vorher _plugin-transform-class-properties_), verwendest, kannst du auch `defaultProps` als statische Eigenschaft innerhalb einer React-Komponentenklasse deklarieren. Diese Syntax ist jedoch noch nicht finalisiert und erfordert einen Kompilierungsschritt, um in einem Browser zu funktionieren. Weitere Informationen findest du in der [Vorschau der Klassenfelder](https://github.com/tc39/proposal-class-fields).
