@@ -33,11 +33,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-<<<<<<< HEAD
-Wir fügen das gesamte `listItems`-Array in ein `<ul>`-Element und [rendern es in das DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
-=======
-Then, we can include the entire `listItems` array inside a `<ul>` element:
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Dann können wir das gesamte `listItems`-Array in ein `<ul>`-Element schreiben:
 
 ```javascript{2}
 <ul>{listItems}</ul>
@@ -188,11 +184,7 @@ Eine gute Faustregel ist, dass Elemente innerhalb von `map()` einen Key benötig
 
 ### Keys müssen nur bei Geschwistern eindeutig sein {#keys-must-only-be-unique-among-siblings}
 
-<<<<<<< HEAD
-Keys, die in einem Array verwendet werden, sollten eindeutig unter ihren Geschwistern sein. Global müssen sie dies jedoch nicht. Man kann somit die gleichen Keys in zwei verschiedenen Arrays verwenden:
-=======
-Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
->>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
+Keys, die in einem Array verwendet werden, sollten untereinander eindeutig sein. Global müssen sie es jedoch nicht. Man kann somit die gleichen Keys in zwei verschiedenen Arrays verwenden:
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
