@@ -354,14 +354,9 @@ Beachte, dass das Rendern von `lazy`-Komponenten ein `<React.Suspense>` weiter o
 
 ### `React.Suspense` {#reactsuspense}
 
-`React.Suspense` lässt dich den Lade-Indikator bestimmen, der angezeigt wird, falls einige Komponenten weiter unten im Rendering-Baum noch nicht render-bereit sind. Momentan ist das Laden von `lazy`-Komponenten der **einzige** Anwendungsfall, den `<React.Suspense>` unterstützt:
-=======
-### `React.Suspense` {#reactsuspense}
+`React.Suspense` lässt dich den Lade-Indikator bestimmen, der angezeigt wird, falls einige Komponenten weiter unten im Rendering-Baum noch nicht render-bereit sind. In the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](/blog/2018/11/27/react-16-roadmap.html).
 
-`React.Suspense` lets you specify the loading indicator in case some components in the tree below it are not yet ready to render. In the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](/blog/2018/11/27/react-16-roadmap.html).
-
-Today, lazy loading components is the **only** use case supported by `<React.Suspense>`:
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Momentan ist das Laden von `lazy`-Komponenten der **einzige** Anwendungsfall, den `<React.Suspense>` unterstützt:
 
 ```js
 // Diese Komponente wird dynamisch geladen
@@ -381,13 +376,6 @@ function MyComponent() {
 
 Das ist in unserem [Code-Splitting-Guide](/docs/code-splitting.html#reactlazy) dokumentiert. Beachte, dass sich `lazy`-Komponenten tief im `Suspense`-Baum befinden können -- es muss nicht jede einzelne davon ummantelt werden. Es wird empfohlen, `<Suspense>` dort zu verwenden, wo ein Lade-Indikator angezeigt werden soll, und `lazy(`) dort zu verwenden, wo Code-Splitting stattfinden soll.
 
-<<<<<<< HEAD
-Wir planen, mit `Suspense` zukünftig weitere, bisher noch nicht unterstützte, Anwendungsfälle wie z.B. das Abrufen von Daten abzudecken. Mehr Informationen gibt es in [unserer Roadmap](/blog/2018/11/27/react-16-roadmap.html).
-
-> Hinweis:
->
->`React.lazy()` und `<React.Suspense>` werden noch nicht von `ReactDOMServer` unterstützt. Diese Einschränkung ist bekannt und wird in Zukunft gelöst.
-=======
 > Note
 > 
 > For content that is already shown to the user, switching back to a loading indicator can be disorienting. It is sometimes better to show the "old" UI while the new UI is being prepared. To do this, you can use the new transition APIs [`startTransition`](#starttransition) and [`useTransition`](/docs/hooks-reference.html#usetransition) to mark updates as transitions and avoid unexpected fallbacks.
@@ -414,4 +402,3 @@ React.startTransition(callback)
 > Updates in a transitions will not show a fallback for re-suspended content, allowing the user to continue interacting while rendering the update.
 >
 > `React.startTransition` does not provide an `isPending` flag. To track the pending status of a transition see [`React.useTransition`](/docs/hooks-reference.html#usetransition).
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
