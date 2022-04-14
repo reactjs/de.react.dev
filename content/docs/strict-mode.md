@@ -13,11 +13,8 @@ permalink: docs/strict-mode.html
 Du kannst den strikten Modus für jeden Teil deiner Anwendung aktivieren. Zum Beispiel:
 `embed:strict-mode/enabling-strict-mode.js`
 
-In the above example, strict mode checks will *not* be run against the `Header` and `Footer` components. However, `ComponentOne` and `ComponentTwo`, as well as all of their descendants, will have the checks.
-
-<<<<<<< HEAD
 Im obigen Beispiel werden Prüfungen des strikten Modus *nicht* für die Komponenten `Header` und `Footer` ausgeführt. `ComponentOne` und `ComponentTwo` sowie alle ihre Nachkommen haben jedoch die Prüfungen.
-=======
+
 `StrictMode` currently helps with:
 * [Identifying components with unsafe lifecycles](#identifying-unsafe-lifecycles)
 * [Warning about legacy string ref API usage](#warning-about-legacy-string-ref-api-usage)
@@ -25,7 +22,6 @@ Im obigen Beispiel werden Prüfungen des strikten Modus *nicht* für die Kompone
 * [Detecting unexpected side effects](#detecting-unexpected-side-effects)
 * [Detecting legacy context API](#detecting-legacy-context-api)
 * [Detecting unsafe effects](#detecting-unsafe-effects)
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
 StrictMode hilft derzeit bei:
 
@@ -132,13 +128,9 @@ Durch das absichtliche Doppelaufrufen von Methoden wie dem Komponentenkonstrukto
 
 > Hinweis:
 >
-<<<<<<< HEAD
-> Beginnend mit React 17 werden Konsolenmethoden wie `console.log()` automatisch modifiziert, um die Logs beim zweiten Aufruf von Lifecycle-Methoden zu unterdrücken. Es kann jedoch in bestimmten Fällen zu unerwünschtem Verhalten führen, in denen [ein Workaround verwendet werden kann](https://github.com/facebook/react/issues/20090#issuecomment-715927125).
-=======
-> In React 17, React automatically modifies the console methods like `console.log()` to silence the logs in the second call to lifecycle functions. However, it may cause undesired behavior in certain cases where [a workaround can be used](https://github.com/facebook/react/issues/20090#issuecomment-715927125).
+> In React 17 werden Konsolenmethoden wie `console.log()` automatisch modifiziert, um die Logs beim zweiten Aufruf von Lifecycle-Methoden zu unterdrücken. Es kann jedoch in bestimmten Fällen zu unerwünschtem Verhalten führen, in denen [ein Workaround verwendet werden kann](https://github.com/facebook/react/issues/20090#issuecomment-715927125).
 >
 > Starting from React 18, React does not suppress any logs. However, if you have React DevTools installed, the logs from the second call will appear slightly dimmed. React DevTools also offers a setting (off by default) to suppress them completely.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
 ### Ermitteln der alten Context-API {#detecting-legacy-context-api}
 
@@ -146,11 +138,7 @@ Die ältere Context-API ist fehleranfällig und wird in einer zukünftigen Haupt
 
 ![](../images/blog/warn-legacy-context-in-strict-mode.png)
 
-<<<<<<< HEAD
 Lies die [Dokumentation zur neuen Context-API](/docs/context.html), um dir die Migration auf die neue Version zu erleichtern.
-=======
-Read the [new context API documentation](/docs/context.html) to help migrate to the new version.
-
 
 ### Ensuring reusable state {#ensuring-reusable-state}
 
@@ -198,4 +186,3 @@ When the component unmounts, effects are destroyed as normal:
 
 For help supporting common issues, see:
   - [How to support Reusable State in Effects](https://github.com/reactwg/react-18/discussions/18)
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
