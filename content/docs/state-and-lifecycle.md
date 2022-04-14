@@ -10,11 +10,7 @@ next: handling-events.html
 
 Diese Seite stellt das Konzept von States und Lifecycles in einer React-Komponente vor. Hier kannst du eine [detailiertere API Referenz für Komponenten](/docs/react-component.html) finden.
 
-<<<<<<< HEAD
-Schauen wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. Im Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg kennengelernt, das UI zu aktualisieren. Wir rufen `ReactDOM.render()` auf, um die gerenderte Ausgabe zu ändern:
-=======
-Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `root.render()` to change the rendered output:
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Schauen wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. Im Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg kennengelernt, das UI zu aktualisieren. Wir rufen `root.render()` auf, um die gerenderte Ausgabe zu ändern:
 
 ```js{10}
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -298,11 +294,7 @@ Jetzt tickt die Uhr jede Sekunde.
 
 Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge die Methoden aufgerufen werden:
 
-<<<<<<< HEAD
-1) Wenn `Clock` an `ReactDOM.render()` gegeben wird, ruft React den Konstruktor der `Clock` Komponente auf. Da `Clock` die aktuelle Uhrzeit anzeigen muss, initialisiert es `this.state` mit einem Objekt, welches die aktuelle Uhrzeit enthält. Wir werden diesen State später aktualisieren.
-=======
-1) When `<Clock />` is passed to `root.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+1) Wenn `<Clock />` an `root.render()` gegeben wird, ruft React den Konstruktor der `Clock` Komponente auf. Da `Clock` die aktuelle Uhrzeit anzeigen muss, initialisiert es `this.state` mit einem Objekt, welches die aktuelle Uhrzeit enthält. Wir werden diesen State später aktualisieren.
 
 2) React ruft dann die `render()` Methode der `Clock` Komponente auf. So weiß React, was auf dem Bildschirm angezeigt werden soll. Dann aktualisiert React das DOM entsprechend der gerenderten Ausgabe von `Clock`.
 
