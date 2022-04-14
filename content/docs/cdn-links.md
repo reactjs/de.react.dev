@@ -21,11 +21,7 @@ Für diesen Gebrauch haben wir extra verkleinerte und optimierte Versionen von R
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 ```
 
-<<<<<<< HEAD
-Ersetze `17` mit einer gültigen Versionsnummer um eine bestimmte Version von `react` oder `react-dom` zu laden.
-=======
-To load a specific version of `react` and `react-dom`, replace `18` with the version number.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Ersetze `18` mit einer gültigen Versionsnummer um eine bestimmte Version von `react` oder `react-dom` zu laden.
 
 ### Warum das `crossorigin` Attribut? {#why-the-crossorigin-attribute}
 
