@@ -37,11 +37,7 @@ Dieses Element nennen wir "root"-DOM-Knoten. Alles innerhalb dieses Elements wir
 
 Anwendungen, die mit React gebaut worden, haben normalerweise nur einen root-DOM-Knoten. Wenn du React in eine bestehende Anwendung einfügst, kannst du aber soviele DOM-Knoten haben, wie du möchtest.
 
-<<<<<<< HEAD
-Um ein Element in den root-DOM-Knoten zu rendern, muss du nur beides an [`ReactDOM.render()`](/docs/react-dom.html#render) übergeben:
-=======
-To render a React element, first pass the DOM element to [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot), then pass the React element to `root.render()`:
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Um ein Element in den root-DOM-Knoten zu rendern, muss du zuerst das DOM-Element an [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot) übergeben und danach an `root.render()`:
 
 `embed:rendering-elements/render-an-element.js`
 
@@ -54,11 +50,7 @@ Es wird "Hallo Welt" auf der Seite angezeigt.
 React-Elemente sind [immuntable](https://en.wikipedia.org/wiki/Immutable_object) (unveränderbar). Wenn du einmal ein Element erstellt hast, kannst du dessen
 Kind-Elemente oder Attribute nicht mehr verändern. Eine Element kannst du dir vorstellen wie ein einzelnes Bild eines Filmes: Es repräsentiert die Benutzeroberfläche (UI) zu einem bestimmten Zeitpunkt.
 
-<<<<<<< HEAD
-Mit dem was wir bis jetzt erfahren haben, wissen wir nur, dass der einzige Weg um die Benutzeroberfläche zu Aktualisieren und neue Elemente zu erstellen, das Aufrufen von [`ReactDOM.render()`](/docs/react-dom.html#render) ist.
-=======
-With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `root.render()`.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Mit unserem bisherigen Wissen besteht die einzige Möglichkeit, die Benutzeroberfläche zu aktualisieren, darin, ein neues Element zu erstellen und es an `root.render()` zu übergeben.
 
 Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
@@ -66,19 +58,11 @@ Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
 [Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)
 
-<<<<<<< HEAD
-Jede Sekunden wird [`ReactDOM.render()`](/docs/react-dom.html#render) mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
-=======
-It calls [`root.render()`](/docs/react-dom.html#render) every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Jede Sekunden wird [`root.render()`](/docs/react-dom.html#render) mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
 
 >**Hinweis:**
 >
-<<<<<<< HEAD
->In der Praxis rufen die meisten React-Anwendungen [`ReactDOM.render()`](/docs/react-dom.html#render) nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt wird.
-=======
->In practice, most React apps only call `root.render()` once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+>In der Praxis rufen die meisten React-Anwendungen `root.render()` nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt wird.
 >
 >Wir empfehlen dir, Abschnitte nicht zu überspringen, da sie aufeinander aufbauen.
 
