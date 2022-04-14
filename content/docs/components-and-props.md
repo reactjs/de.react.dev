@@ -69,21 +69,19 @@ function Welcome(props) {
   return <h1>Hallo {props.name}</h1>;
 }
 
-const element = <Welcome name="Sarah" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+const element = <Welcome name="Sara" />;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(element);
 ```
 
 [Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)
 
 Fassen wir mal zusammen, was in diesem Beispiel passiert:
 
-1. Wir rufen `ReactDOM.render()` mit dem React-Element `<Welcome name="Sarah" />` auf.
-2. React ruft die `Welcome` Komponente mit den Eigenschaften (props) `{name: 'Sarah'}` auf.
-3. Unsere `Welcome`-Komponente gibt als Ergebnis `<h1>Hallo Sarah</h1>` zurück.
-4. React aktualsiert effizient das DOM um `<h1>Hallo Sarah</h1>` abzugleichen.
+1. Wir rufen `root.render()` mit dem React-Element `<Welcome name="Sara" />` auf.
+2. React ruft die `Welcome` Komponente mit den Props `{name: 'Sara'}` auf.
+3. Unsere `Welcome`-Komponente gibt als Ergebnis `<h1>Hallo Sara</h1>` zurück.
+4. React aktualsiert effizient das DOM um `<h1>Hallo Sara</h1>` abzugleichen.
 
 >**Hinweis:** Beginne den Namen von Komponenten immer mit einem Großbuchstaben.
 >
@@ -112,11 +110,6 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
 [Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)

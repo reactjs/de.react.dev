@@ -43,8 +43,8 @@ Denke daran, dass das nur erforderlich ist, bevor du deine App deployst. Zum nor
 Wir bieten produktionsfertige Versionen von React und React DOM als Einzeldateien an:
 
 ```html
-<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 ```
 
 Denke daran, dass nur React-Dateien, die mit `.production.min.js` enden, für die Produktionsumgebung geeignet sind.
@@ -172,6 +172,11 @@ Falls du die React DevTools noch nicht installiert hast, kannst du sie hier find
 >
 > Ein Produktions-Profiling-Bundle von `react-dom` ist auch als `react-dom/profiling` verfügbar.
 > Lese mehr über die Verwendung dieses Bundles auf [fb.me/react-profiling](https://fb.me/react-profiling).
+
+> Note
+>
+> Before React 17, we use the standard [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) to profile components with the chrome performance tab.
+> For a more detailed walkthrough, check out [this article by Ben Schwarz](https://calibreapp.com/blog/react-performance-profiling-optimization).
 
 ## Virtualisieren von langen Listen {#virtualize-long-lists}
 
