@@ -85,15 +85,7 @@ Wenn du [Babel](https://babeljs.io/) verwendest, müsstest du sicherstellen, das
 
 ## `React.lazy` {#reactlazy}
 
-<<<<<<< HEAD
-> Hinweis:
->
-> `React.lazy` und Suspense sind noch nicht für das serverseitige Rendering verfügbar. Wenn du Code-Splitting von deiner serverseitig gerenderten Anwendung durchführen möchtest, empfehlen wir dir [Loadable Components](https://github.com/gregberge/loadable-components). Es gibt einen schönen [Leitfaden für das Bundle-Splitting mit serverseitigem Rendern](https://loadable-components.com/docs/server-side-rendering/).
-
 Mit der Funktion `React.lazy` kannst du einen dynamischen Import als reguläre Komponente rendern.
-=======
-The `React.lazy` function lets you render a dynamic import as a regular component.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
 **Before:**
 
@@ -151,10 +143,8 @@ function MyComponent() {
 }
 ```
 
-<<<<<<< HEAD
-### Fehlergrenzen {#error-boundaries}
-=======
 ### Avoiding fallbacks {#avoiding-fallbacks}
+
 Any component may suspend as a result of rendering, even components that were already shown to the user. In order for screen content to always be consistent, if an already shown component suspends, React has to hide its tree up to the closest `<Suspense>` boundary. However, from the user's perspective, this can be disorienting.
 
 Consider this tab switcher:
@@ -200,8 +190,7 @@ function handleTabSelect(tab) {
 
 Here, you tell React that setting tab to `'comments'` is not an urgent update, but is a [transition](/docs/react-api.html#transitions) that may take some time. React will then keep the old UI in place and interactive, and will switch to showing `<Comments />` when it is ready. See [Transitions](/docs/react-api.html#transitions) for more info.
 
-### Error boundaries {#error-boundaries}
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+### Fehlergrenzen {#error-boundaries}
 
 Wenn das andere Modul nicht lädt (z. B. aufgrund eines Netzwerkausfalls), löst es einen Fehler aus. Du kannst diese Fehler behandeln, um eine schönere Benutzererfahrung zu bieten und die Wiederherstellung mit [Fehlergrenzen](/docs/error-boundaries.html) zu verwalten. Sobald du deine Fehlergrenze erstellt hast, kannst du sie überall oberhalb deinen Lazy-Komponenten verwenden, um einen Fehlerstatus anzuzeigem, wenn ein Netzwerkfehler vorliegt.
 
