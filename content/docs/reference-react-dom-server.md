@@ -41,11 +41,7 @@ ReactDOMServer.renderToString(element)
 
 Rendert ein React-Element initial als HTML. React gibt einen HTML-String zurück. Du kannst diese Methode verwenden, um HTML auf dem Server zu generieren und beim ersten Request das Markup zurückzusenden, damit die Seite schneller lädt und Suchmaschinen zu SEO-Zwecken deine Seiten crawlen können.
 
-<<<<<<< HEAD
-Wenn du auf einen Knoten, der bereits dieses server-gerenderte Markup hat, [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) aufrufst, wird React das Markup behalten und nur Eventhandler hinzufügen. Das ermöglicht ein sehr schnelles erstes Laden der Seite.
-=======
-If you call [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Wenn du auf einen Knoten, der bereits dieses server-gerenderte Markup hat, [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) aufrufst, wird React das Markup behalten und nur Eventhandler hinzufügen. Das ermöglicht ein sehr schnelles erstes Laden der Seite.
 
 * * *
 
@@ -57,11 +53,7 @@ ReactDOMServer.renderToStaticMarkup(element)
 
 Ähnlich wie [`renderToString`](#rendertostring), außer dass es keine extra React-internen DOM-Attribute wie z. B. `data-reactroot` generiert. Das ist nützlich, wenn du React dazu verwenden willst, eine einfache statische Seite zu generieren, denn ohne diese extra Attribute können einige Bytes gespart werden.
 
-<<<<<<< HEAD
-Falls du planst, auf dem Client React zu benutzten, um das Markup interaktiv zu gestalten, solltest du diese Methode nicht benutzen. Verwende stattdessen [`renderToString`](#rendertostring) auf dem Server und [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) auf dem Client.
-=======
-If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToString`](#rendertostring) on the server and [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on the client.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Falls du planst, auf dem Client React zu benutzten, um das Markup interaktiv zu gestalten, solltest du diese Methode nicht benutzen. Verwende stattdessen [`renderToString`](#rendertostring) auf dem Server und [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) auf dem Client.
 
 * * *
 
@@ -151,11 +143,7 @@ ReactDOMServer.renderToNodeStream(element)
 Rendert ein React-Element initial als HTML. Gibt einen [Readable stream](https://nodejs.org/api/stream.html#stream_readable_streams) zurück, dessen Ausgabe ein HTML-String ist. 
 Die HTML-Ausgabe dieses Streams ist exakt die gleiche wie die von [`ReactDOMServer.renderToString`](#rendertostring). Du kannst diese Methode verwenden, um HTML auf dem Server zu generieren und beim ersten Request das Markup zurückzusenden, damit die Seite schneller lädt und Suchmaschinen zu SEO-Zwecken deine Seiten crawlen können.
 
-<<<<<<< HEAD
-Wenn du auf einen Knoten, der bereits dieses server-gerenderte Markup hat, [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) aufrufst, wird React das Markup behalten und nur Eventhandler hinzufügen. Das ermöglicht ein sehr schnelles erstes Laden der Seite.
-=======
-If you call [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Wenn du auf einen Knoten, der bereits dieses server-gerenderte Markup hat, [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) aufrufst, wird React das Markup behalten und nur Eventhandler hinzufügen. Das ermöglicht ein sehr schnelles erstes Laden der Seite.
 
 > Hinweis:
 >
@@ -175,11 +163,7 @@ ReactDOMServer.renderToStaticNodeStream(element)
 
 Die HTML-Ausgabe dieses Streams ist exakt die gleiche wie die von  [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup).
 
-<<<<<<< HEAD
-Falls du planst, auf dem Client React zu benutzten, um das Markup interaktiv zu gestalten, solltest du diese Methode nicht benutzen. Verwende stattdessen [`renderToNodeStream`](#rendertonodestream) auf dem Server und [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) auf dem Client.
-=======
-If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToNodeStream`](#rendertonodestream) on the server and [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) on the client.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Falls du planst, auf dem Client React zu benutzten, um das Markup interaktiv zu gestalten, solltest du diese Methode nicht benutzen. Verwende stattdessen [`renderToNodeStream`](#rendertonodestream) auf dem Server und [`ReactDOM.hydrateRoot()`](/docs/react-dom-client.html#hydrateroot) auf dem Client.
 
 > Hinweis:
 >
