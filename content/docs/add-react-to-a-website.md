@@ -52,17 +52,10 @@ Als nächstes fügen wir direkt vor dem schließenden `</body>` Tag drei `<scrip
 ```html{5,6,9}
   <!-- ... anderes HTML ... -->
 
-<<<<<<< HEAD
   <!-- React laden. -->
   <!-- Hinweis: Wenn du die Seite bereitstellen willst, ersetze "development.js" mit "production.min.js". -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-=======
-  <!-- Load React. -->
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
   <!-- Unsere React Komponente laden. -->
   <script src="like_button.js"></script>
@@ -84,24 +77,15 @@ Erstelle eine Datei mit dem Namen `like_button.js` und speichere sie neben deine
 
 Nach **[dem Starter Code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, füge zwei Zeilen am Ende von `like_button.js` an:
 
-<<<<<<< HEAD
-```js{3,4}
-// ... Der Start Code, den du gerade eingefügt hast ...
-=======
 ```js{3,4,5}
-// ... the starter code you pasted ...
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+// ... Der Start Code, den du gerade eingefügt hast ...
 
 const domContainer = document.querySelector('#like_button_container');
 const root = ReactDOM.createRoot(domContainer);
 root.render(e(LikeButton));
 ```
 
-<<<<<<< HEAD
-Diese zwei Codezeilen finden den von uns zu unserem HTML hinzugefügten `<div>` Container aus dem ersten Schritt und zeigen dann unsere React Komponente mit dem "Like" Button darin an.
-=======
-These three lines of code find the `<div>` we added to our HTML in the first step, create a React app with it, and then display our "Like" button React component inside of it.
->>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
+Diese drei Codezeilen finden den `<div>` Container aus dem ersten Schritt und zeigen dann unsere React Komponente mit dem "Like" Button darin an.
 
 ### Das ist alles! {#thats-it}
 
