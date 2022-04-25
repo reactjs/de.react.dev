@@ -192,7 +192,7 @@ class Chosen extends React.Component {
 
 Dank der Flexibilität von [`createRoot()`](/docs/react-dom-client.html#createRoot) kann React in andere Anwendungen eingebettet werden.
 
-Obwohl React häufig beim Start zum Laden einer einzelnen Root-React-Komponente in das DOM verwendet wird, kann `root.render()` auch für unabhängige Teile der Benutzeroberfläche, die so klein wie eine Schaltfläche oder so groß wie eine Schaltfläche sein können, mehrmals aufgerufen werden eine App.
+Obwohl React üblicherweise beim Start verwendet wird, um eine einzelne React-Root-Komponente in das DOM zu laden, kann `createRoot()` auch mehrfach für unabhängige Teile der Benutzeroberfläche aufgerufen werden, die so klein wie ein Button oder so groß wie eine App sein können.
 
 Genau so wird React bei Facebook eingesetzt. Auf diese Weise können wir Anwendungen in React Stück für Stück schreiben und sie mit unseren vorhandenen servergenerierten Vorlagen und anderem clientseitigen Code kombinieren.
 
