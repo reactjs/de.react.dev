@@ -64,13 +64,13 @@ React übergibt, wenn es ein Element als benutzerdefinierte Komponente erkennt, 
 
 Zum Beispiel rendert dieser Code "Hallo Sarah" auf die Seite:
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Hallo {props.name}</h1>;
 }
 
-const element = <Welcome name="Sara" />;
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const element = <Welcome name="Sara" />;
 root.render(element);
 ```
 

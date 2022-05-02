@@ -25,7 +25,11 @@ Wir wollen in diesem Abschnitt zeigen, wie man einer existierenden HTML Seite ei
 
 Es sind keine komplizierten Werkzeuge oder Installationen nötig -- **Um diesem Abschnitt zu folgen, brauchst du nur eine Internetverbindung und eine Minute deiner Zeit.**
 
+<<<<<<< HEAD
 Optional: [Komplettes Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+=======
+Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)
+>>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 
 ### Schritt 1: Einen DOM Container dem HTML hinzufügen {#step-1-add-a-dom-container-to-the-html}
 
@@ -75,7 +79,11 @@ Erstelle eine Datei mit dem Namen `like_button.js` und speichere sie neben deine
 >
 >Dieser Code definiert eine React Komponente mit dem Namen `LikeButton`. Mach dir keine Sorgen, falls du das noch nicht verstehst -- Wir werden die Bausteine von React später in unserem [hands-on Tutorial](/tutorial/tutorial.html) und dem [Leitfaden der Hauptkonzepte](/docs/hello-world.html) behandeln. Jetzt wollen wir sie erstmal im Browser angezeigt bekommen!
 
+<<<<<<< HEAD
 Nach **[dem Starter Code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, füge zwei Zeilen am Ende von `like_button.js` an:
+=======
+After **[the starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, add three lines to the bottom of `like_button.js`:
+>>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 
 ```js{3,4,5}
 // ... Der Start Code, den du gerade eingefügt hast ...
@@ -95,7 +103,11 @@ Sieh dir die nächsten Abschnitte an, um mehr Tipps zu erhalten, wie du React in
 
 **[Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
+<<<<<<< HEAD
 **[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+=======
+**[Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
+>>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 
 ### Tipp: Verwende Komponeten wieder {#tip-reuse-a-component}
 
@@ -103,7 +115,11 @@ Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anz
 
 [Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
+<<<<<<< HEAD
 [Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+=======
+[Download the full example (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/279839cb9891bd41802ebebc5365e9dec08eeb9f.zip)
+>>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 
 >Hinweis
 >
