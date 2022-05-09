@@ -9,9 +9,14 @@ next: introducing-jsx.html
 Das wohl kleinste React-Beispiel sieht wie folgt aus:
 
 ```jsx
+<<<<<<< HEAD
 ReactDOM
   .createRoot(document.getElementById('root'))
   .render(<h1>Hallo, Welt!</h1>);
+=======
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<h1>Hello, world!</h1>);
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 ```
 
 Es wird eine Überschrift mit dem Text "Hallo, Welt!" auf der Seite dargestellt.

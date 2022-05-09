@@ -66,7 +66,11 @@ Beachte dass **Fehlergrenzen nur Fehler in den Komponenten abfangen, die sich im
 
 ## Live Demo {#live-demo}
 
+<<<<<<< HEAD
 Schau dir [folgendes Beispiel für die Deklaration und Nutzung einer Fehlergrenze](https://codepen.io/gaearon/pen/wqvxGa?editors=0010) mit [React 16](/blog/2017/09/26/react-v16.0.html) an.
+=======
+Check out [this example of declaring and using an error boundary](https://codepen.io/gaearon/pen/wqvxGa?editors=0010).
+>>>>>>> 26a870e1c6e232062b760d37620d85802750e985
 
 
 ## Wo platziert man Fehlergrenzen {#where-to-place-error-boundaries}

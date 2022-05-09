@@ -251,20 +251,22 @@ Du kannst so viele isolierte Komponenten haben, wie du möchtest, und sie mit `R
 
 Below, we will create a Backbone view called `ParagraphView`. It will override Backbone's `render()` function to render a React `<Paragraph>` component into the DOM element provided by Backbone (`this.el`). Here, too, we are using [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot):
 
-```js{1,5,8-9,13}
+```js{7,11,15}
 function Paragraph(props) {
   return <p>{props.text}</p>;
 }
 
 const ParagraphView = Backbone.View.extend({
+  initialize(options) {
+    this.reactRoot = ReactDOM.createRoot(this.el);
+  },
   render() {
     const text = this.model.get('text');
-    this.root = ReactDOM.createRoot(this.el);
-    this.root.render(<Paragraph text={text} />);
+    this.reactRoot.render(<Paragraph text={text} />);
     return this;
   },
   remove() {
-    this.root.unmount();
+    this.reactRoot.unmount();
     Backbone.View.prototype.remove.call(this);
   }
 });
