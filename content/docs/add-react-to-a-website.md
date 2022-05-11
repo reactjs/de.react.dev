@@ -25,7 +25,7 @@ Wir wollen in diesem Abschnitt zeigen, wie man einer existierenden HTML Seite ei
 
 Es sind keine komplizierten Werkzeuge oder Installationen nötig -- **Um diesem Abschnitt zu folgen, brauchst du nur eine Internetverbindung und eine Minute deiner Zeit.**
 
-Optional: [Komplettes Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+Optional: [Komplettes Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)
 
 ### Schritt 1: Einen DOM Container dem HTML hinzufügen {#step-1-add-a-dom-container-to-the-html}
 
@@ -95,7 +95,7 @@ Sieh dir die nächsten Abschnitte an, um mehr Tipps zu erhalten, wie du React in
 
 **[Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
-**[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+**[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
 
 ### Tipp: Verwende Komponeten wieder {#tip-reuse-a-component}
 
@@ -103,7 +103,7 @@ Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anz
 
 [Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
-[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/279839cb9891bd41802ebebc5365e9dec08eeb9f.zip)
 
 >Hinweis
 >
