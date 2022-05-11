@@ -35,17 +35,9 @@ function Greeting(props) {
   return <GuestGreeting />;
 }
 
-<<<<<<< HEAD
-ReactDOM.render(
-  // Probiere mal isLoggedIn={true} aus:
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
-);
-=======
 const root = ReactDOM.createRoot(document.getElementById('root')); 
 // Try changing to isLoggedIn={true}:
 root.render(<Greeting isLoggedIn={false} />);
->>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 ```
 
 **[Auf CodePen ausprobieren](codepen://conditional-rendering/conditional-rendering)**
