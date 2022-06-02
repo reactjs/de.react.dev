@@ -147,7 +147,7 @@ cd ~/path/to/your/project
 yarn link react react-dom
 ```
 
-Jedes Mal, wenn du `yarn build` im React-Ordner ausführst, erscheinen die aktualisierten Versionen in den `node_modules` deines Projekts. Du kannst dann dein Projekt neu builden, um deine Änderungen auszuprobieren.
+Jedes Mal, wenn du `yarn build` im React-Ordner ausführst, erscheinen die aktualisierten Versionen in den `node_modules` deines Projekts. Du kannst dann dein Projekt neu builden um deine Änderungen auszuprobieren.
 
 Wenn noch ein Package fehlt (z.B. wenn du `react-dom/server` in deinem Projekt verwendest), kannst du jederzeit einen vollständigen Build mit `yarn build` durchführen. Beachte, dass die Ausführung von `yarn build` ohne Optionen sehr lange dauert.
 
