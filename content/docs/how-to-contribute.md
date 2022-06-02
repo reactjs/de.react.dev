@@ -68,7 +68,7 @@ Wenn du nur einen Fehler behebst, kannst du auch gleich einen Pull Request einre
 
 ### Dein erster Pull Request {#your-first-pull-request}
 
-Du arbeitest an deiner ersten Pull Request? In dieser kostenlosen Video-Serie lernst du mehr dazu:
+Du arbeitest an deinem ersten Pull Request? In dieser kostenlosen Video-Serie lernst du mehr dazu:
 
 **[Wie du zu einem Open-Source-Projekt auf GitHub beiträgst](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)**
 
