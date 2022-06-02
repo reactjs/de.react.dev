@@ -21,7 +21,7 @@ Die gesamte Arbeit an React findet direkt auf [GitHub](https://github.com/facebo
 
 ### Semantic Versioning {#semantic-versioning}
 
-React folgt dem [semantic versioning](https://semver.org/). Wir veröffentlichen Patch-Versionen für kritische Fehlerbehebungen, Minor-Versionen für neue Funktionen oder nicht-essentielle Änderungen, und Major-Versionen für alle funktionsgefährdenden Änderungen. Wenn wir funktionsgefährdende Änderungen vornehmen, geben wir in einer Minor-Version auch Warnungen über die Abschaffung von Funktionen heraus, damit unsere Benutzer von den bevorstehenden Änderungen erfahren und ihren Code im Voraus migrieren können. Erfahre mehr über unser Engagement für Stabilität und inkrementelle Migration in [unserer Versioning Policy](/docs/faq-versioning.html).
+React folgt dem [semantic versioning](https://semver.org/). Wir veröffentlichen Patch-Versionen für kritische Fehlerbehebungen, Minor-Versionen für neue Funktionen oder nicht-essentielle Änderungen, und Major-Versionen für alle funktionsgefährdenden Änderungen. Wenn wir funktionsgefährdende Änderungen vornehmen, geben wir in einer Minor-Version auch Warnungen über die Abschaffung von Funktionen heraus, damit unsere Benutzer von den bevorstehenden Änderungen erfahren und ihren Code im Voraus migrieren können. Erfahre mehr über unser Engagement für Stabilität und inkrementelle Migration in [unserer Versionierung](/docs/faq-versioning.html).
 
 Jede wichtige Änderung wird in der [changelog file](https://github.com/facebook/react/blob/main/CHANGELOG.md) dokumentiert.
 
