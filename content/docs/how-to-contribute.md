@@ -97,7 +97,7 @@ Das Kernteam ist auf der Suche nach Pull Requests. Wir prüfen deine Pull Reques
 
 ### Contributor License Agreement (CLA) {#contributor-license-agreement-cla}
 
-Damit wir deine Pull Request akzeptieren können, musst du eine CLA einreichen. Das musst du nur einmal machen. Wenn du das also schon für ein anderes Open-Source-Projekt von Facebook gemacht hast, kannst du loslegen. Wenn du zum ersten Mal eine Pull Request einreichst, lass uns einfach wissen, dass du den CLA ausgefüllt hast, damit wir ihn mit deinem GitHub-Benutzernamen abgleichen können.
+Damit wir deinen Pull Request akzeptieren können, musst du eine CLA einreichen. Das musst du nur einmal machen. Wenn du das also schon für ein anderes Open-Source-Projekt von Facebook gemacht hast, kannst du loslegen. Wenn du zum ersten Mal einen Pull Request einreichst, lass uns einfach wissen, dass du den CLA ausgefüllt hast, damit wir ihn mit deinem GitHub-Benutzernamen abgleichen können.
 
 **[Fülle deine CLA hier aus.](https://code.facebook.com/cla)**
 
