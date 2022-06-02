@@ -78,7 +78,7 @@ Wenn du dich entscheidest, ein Problem zu beheben, sieh bitte im Kommentar-Threa
 
 Wenn jemand ein Problem meldet, sich aber mehr als zwei Wochen lang nicht darum kümmert, ist es in Ordnung, es zu übernehmen, aber du solltest trotzdem einen Kommentar hinterlassen.
 
-### Eine Pull Request senden {#sending-a-pull-request}
+### Einen Pull Request senden {#sending-a-pull-request}
 
 Das Kernteam ist auf der Suche nach Pull Requests. Wir prüfen deine Pull Request und mergen sie entweder zusammen, fordern Änderungen an ihr an oder schließen sie mit einer Erklärung. Bei API-Änderungen müssen wir möglicherweise unsere internen Anwendungen auf Facebook.com anpassen, was zu einer gewissen Verzögerung führen kann. Wir werden unser Bestes tun, um dich während des gesamten Prozesses mit Updates und Feedback zu versorgen.
 
