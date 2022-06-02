@@ -66,7 +66,7 @@ Wenn du vorhast, die öffentliche API zu ändern oder nicht-triviale Änderungen
 
 Wenn du nur einen Fehler behebst, kannst du auch gleich einen Pull Request einreichen, aber wir empfehlen dir trotzdem, ein Issue zu erstellen, in dem du genau beschreibst, was du beheben willst. Das ist hilfreich für den Fall, dass wir eine bestimmte Korrektur nicht akzeptieren, aber das Problem im Auge behalten wollen.
 
-### Deine erste Pull Request {#your-first-pull-request}
+### Dein erster Pull Request {#your-first-pull-request}
 
 Du arbeitest an deiner ersten Pull Request? In dieser kostenlosen Video-Serie lernst du mehr dazu:
 
