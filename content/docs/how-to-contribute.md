@@ -64,7 +64,7 @@ Es gibt auch [eine aktive Gemeinschaft von React-Nutzern auf der Chat-Plattform 
 
 Wenn du vorhast, die öffentliche API zu ändern oder nicht-triviale Änderungen an der Implementierung vorzunehmen, empfehlen wir dir, ein [issue einzureichen](https://github.com/facebook/react/issues/new). Auf diese Weise können wir uns über deinen Vorschlag einigen, bevor du einen größeren Aufwand betreibst.
 
-Wenn du nur einen Fehler behebst, kannst du auch gleich eine Pull Request einreichen, aber wir empfehlen dir trotzdem, ein Issue einzureichen, in dem du genau beschreibst, was du beheben willst. Das ist hilfreich für den Fall, dass wir eine bestimmte Korrektur nicht akzeptieren, aber das Problem im Auge behalten wollen.
+Wenn du nur einen Fehler behebst, kannst du auch gleich einen Pull Request einreichen, aber wir empfehlen dir trotzdem, ein Issue zu erstellen, in dem du genau beschreibst, was du beheben willst. Das ist hilfreich für den Fall, dass wir eine bestimmte Korrektur nicht akzeptieren, aber das Problem im Auge behalten wollen.
 
 ### Deine erste Pull Request {#your-first-pull-request}
 
