@@ -275,10 +275,10 @@ Das Angeben eines `value`-Prop auf einer [kontrollierten Komponente](/docs/forms
 Der folgende Code demonstriert dies. (Das Eingabefeld ist zuerst gesperrt, wird aber nach einer kurzen Verzögerung editierbar.)
 
 ```javascript
-ReactDOM.render(<input value="hi" />, mountNode);
+ReactDOM.createRoot(mountNode).render(<input value="hi" />);
 
 setTimeout(function() {
-  ReactDOM.render(<input value={null} />, mountNode);
+  ReactDOM.createRoot(mountNode).render(<input value={null} />);
 }, 1000);
 
 ```

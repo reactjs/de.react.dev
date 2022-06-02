@@ -59,7 +59,7 @@ Flaches Rendering hat derzeit die Einschränkung, dass refs nicht unterstützt w
 
 Du kannst dir den shallowRenderer als den "Ort" vorstellen an dem die zu testende Komponente gerendert wird, und du daraus die Ausgabe der Komponente entnehmen kannst.
 
-`shallowRenderer.render()` ist ähnlich wie [`ReactDOM.render()`](/docs/react-dom.html#render), nur dass es kein DOM benötigt und nur einen Level tief rendert. Das bedeutet, dass du Komponenten abgegrenzt testen kannst, unabhängig davon wie die Kind-Komponenten implementiert sind.
+`shallowRenderer.render()` ist ähnlich wie [`root.render()`](/docs/react-dom-client.html#createroot), nur dass es kein DOM benötigt und nur einen Level tief rendert. Das bedeutet, dass du Komponenten abgegrenzt testen kannst, unabhängig davon wie die Kind-Komponenten implementiert sind.
 
 ### `shallowRenderer.getRenderOutput()` {#shallowrenderergetrenderoutput}
 

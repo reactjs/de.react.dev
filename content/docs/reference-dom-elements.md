@@ -116,7 +116,7 @@ Im Normalfall gibt es eine Warnung, wenn ein Element mit Kindern ebenfalls als `
 
 Wenn du serverseitiges Rendering für React benutzt, gibt es im Normalfall eine Warnung, wenn der Server und der Client unterschiedliche Inhalte rendern. Allerdings ist es in seltenen Fällen sehr schwierig oder gar unmöglich eine exakte Übereinstimmung zu garantieren. Beispielsweise Timestamps können zwischen Server und Client voneinander abweichen.
 
-Wenn du `suppressHydrationWarning` auf `true` setzt, wird React dich nicht mehr über nicht übereinstimmende Attribute und Inhalte des Elementes warnen. Dies funktioniert allerdings nur eine Stufe tief und soll lediglich in ganz bestimmten Fällen wenn es wirklich notwendig ist genutzt werden. Du kannst mehr über dieses Feature in der [`ReactDOM.hydrate()` Dokumentation](/docs/react-dom.html#hydrate) erfahren.
+Wenn du `suppressHydrationWarning` auf `true` setzt, wird React dich nicht mehr über nicht übereinstimmende Attribute und Inhalte des Elementes warnen. Dies funktioniert allerdings nur eine Stufe tief und soll lediglich in ganz bestimmten Fällen wenn es wirklich notwendig ist genutzt werden. Du kannst mehr über dieses Feature in der [`ReactDOM.hydrateRoot()` Dokumentation](/docs/react-dom-client.html#hydrateroot) erfahren.
 
 ### value {#value}
 

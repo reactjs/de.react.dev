@@ -22,10 +22,10 @@ npm install react-dom
 
 ```js
 // Importing a specific API:
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 // Importing all APIs together:
-import * as ReactDOM from 'react';
+import * as ReactDOMClient from 'react-dom/client';
 ```
 
 </PackageImport>
@@ -38,9 +38,13 @@ ReactDOM supports all popular browsers, including Internet Explorer 9 and above.
 
 ## Exports {/*exports*/}
 
-<YouWillLearnCard title="render" path="/reference/render">
+<YouWillLearnCard title="render" path="/apis/render">
 
-Renders a piece of JSX ("React element") into a browser DOM container node.
+Displays a React component inside a browser DOM node.
+
+```js
+render(<App />, document.getElementById('root'));
+```
 
 </YouWillLearnCard>
 

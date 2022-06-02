@@ -35,11 +35,9 @@ function Greeting(props) {
   return <GuestGreeting />;
 }
 
-ReactDOM.render(
-  // Probiere mal isLoggedIn={true} aus:
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(<Greeting isLoggedIn={false} />);
 ```
 
 **[Auf CodePen ausprobieren](codepen://conditional-rendering/conditional-rendering)**
@@ -110,10 +108,8 @@ class LoginControl extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <LoginControl />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<LoginControl />);
 ```
 
 **[Auf CodePen ausprobieren](codepen://conditional-rendering/element-variable)**
@@ -140,10 +136,9 @@ function Mailbox(props) {
 }
 
 const messages = ['React', 'Re: React', 'Re:Re: React'];
-ReactDOM.render(
-  <Mailbox unreadMessages={messages} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Mailbox unreadMessages={messages} />);
 ```
 
 **[Auf CodePen ausprobieren](codepen://conditional-rendering/inline-if-else-with-logical-operator)**
@@ -159,7 +154,7 @@ render() {
   const count = 0;
   return (
     <div>
-      { count && <h1>Messages: {count}</h1>}
+      {count && <h1>Messages: {count}</h1>}
     </div>
   );
 }
@@ -244,10 +239,8 @@ class Page extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Page />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Page />);
 ```
 
 **[Auf CodePen ausprobieren](codepen://conditional-rendering/preventing-component-rendering)**

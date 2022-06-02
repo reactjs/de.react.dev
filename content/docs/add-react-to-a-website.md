@@ -25,7 +25,7 @@ Wir wollen in diesem Abschnitt zeigen, wie man einer existierenden HTML Seite ei
 
 Es sind keine komplizierten Werkzeuge oder Installationen nötig -- **Um diesem Abschnitt zu folgen, brauchst du nur eine Internetverbindung und eine Minute deiner Zeit.**
 
-Optional: [Komplettes Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+Optional: [Komplettes Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)
 
 ### Schritt 1: Einen DOM Container dem HTML hinzufügen {#step-1-add-a-dom-container-to-the-html}
 
@@ -54,8 +54,8 @@ Als nächstes fügen wir direkt vor dem schließenden `</body>` Tag drei `<scrip
 
   <!-- React laden. -->
   <!-- Hinweis: Wenn du die Seite bereitstellen willst, ersetze "development.js" mit "production.min.js". -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
   <!-- Unsere React Komponente laden. -->
   <script src="like_button.js"></script>
@@ -77,14 +77,15 @@ Erstelle eine Datei mit dem Namen `like_button.js` und speichere sie neben deine
 
 Nach **[dem Starter Code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, füge zwei Zeilen am Ende von `like_button.js` an:
 
-```js{3,4}
+```js{3,4,5}
 // ... Der Start Code, den du gerade eingefügt hast ...
 
 const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(e(LikeButton), domContainer);
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(LikeButton));
 ```
 
-Diese zwei Codezeilen finden den von uns zu unserem HTML hinzugefügten `<div>` Container aus dem ersten Schritt und zeigen dann unsere React Komponente mit dem "Like" Button darin an.
+Diese drei Codezeilen finden den `<div>` Container aus dem ersten Schritt und zeigen dann unsere React Komponente mit dem "Like" Button darin an.
 
 ### Das ist alles! {#thats-it}
 
@@ -94,7 +95,7 @@ Sieh dir die nächsten Abschnitte an, um mehr Tipps zu erhalten, wie du React in
 
 **[Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
-**[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+**[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
 
 ### Tipp: Verwende Komponeten wieder {#tip-reuse-a-component}
 
@@ -102,7 +103,7 @@ Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anz
 
 [Öffne den ganzen Beispiel Source Code](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
-[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/279839cb9891bd41802ebebc5365e9dec08eeb9f.zip)
 
 >Hinweis
 >
@@ -115,8 +116,8 @@ Bevor du deine Webseite für die Produktionsumgebung deployst, denke daran, dass
 Falls du bereits die Anwendungsscripts minifiziert hast, **ist deine Seite fertig für die Produktionsumgebung**, sobald du sichergestellt hast, dass das bereitgestellte HTML die Versionen von React lädt, die auf `production.min.js` enden:
 
 ```js
-<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Falls du deine Skripte nicht minifizierst, wird [hier wird ein möglicher Weg zur Minifizierung](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3) gezeigt. 
