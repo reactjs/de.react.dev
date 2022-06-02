@@ -33,7 +33,7 @@ Code, der in `main` landet, muss mit der letzten stabilen Version kompatibel sei
 
 ### Feature Flags {#feature-flags}
 
-Um den `main` branch in einem veröffentlichungsfähigen Zustand zu halten, müssen Änderungen und experimentelle Funktionen hinter einem Feature-Flag gesperrt werden.
+Um den `main`-Branch in einem veröffentlichungsfähigen Zustand zu halten, müssen Änderungen und experimentelle Funktionen hinter einem Feature-Flag gesperrt werden.
 
 Feature-Flags werden in [`packages/shared/ReactFeatureFlags.js`](https://github.com/facebook/react/blob/main/packages/shared/ReactFeatureFlags.js) definiert. Einige Builds von React können unterschiedliche Sets von Feature-Flags aktivieren; zum Beispiel kann der React Native Build anders konfiguriert sein als React DOM. Diese Flags sind in [`packages/shared/forks`](https://github.com/facebook/react/tree/main/packages/shared/forks) zu finden. Feature-Flags werden von Flow statisch typisiert, so dass du `yarn flow` ausführen kannst, um zu bestätigen, dass du alle notwendigen Dateien aktualisiert hast.
 
