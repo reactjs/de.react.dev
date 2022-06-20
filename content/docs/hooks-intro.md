@@ -29,8 +29,13 @@ Die neue Funktion `useState` ist der erste Hook, mit dem wir uns beschäftigen w
 
 >Hinweis
 >
+<<<<<<< HEAD
 >React 16.8.0 ist das erste Release, welches Hooks unterstützt. Beim Upgrade nicht vergessen, alle Pakete inklusive React DOM zu aktualisieren. React Native wird mit der nächsten stabilen Version Hooks unterstützen.
 >React Native unterstützt Hooks seit [dem 0.59 Release von React Native](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059).
+=======
+>React 16.8.0 is the first release to support Hooks. When upgrading, don't forget to update all packages, including React DOM.
+>React Native has supported Hooks since [the 0.59 release of React Native](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059).
+>>>>>>> df2673d1b6ec0cc6657fd58690bbf30fa1e6e0e6
 
 ## Videoeinführung {#video-introduction}
 
@@ -96,7 +101,11 @@ Um diese Probleme zu lösen, **lassen Hooks dich mehr React-Features ohne Klasse
 
 Wir wissen, dass React Entwickler darauf fokussiert sind, Produkte auszuliefern und haben daher keine Zeit sich jede neuveröffentlichte API anzueignen. Hooks sind sehr neu und es könnte besser sein, mit dem Erlernen oder Einführen zu warten, bis es mehr Beispiele und Tutorials gibt.
 
+<<<<<<< HEAD
 Wir verstehen zudem, dass die Hürde, eine neue Primitive zu React hinzuzufügen, extrem hoch ist. Für neugierige Leser haben wir einen [detaillierten RFC](https://github.com/reactjs/rfcs/pull/68) erstellt, welcher die Motivation detaillierter beschreibt und außerdem weitere Perspektive zu spezifischen Designentscheidungen und verwandter Stand der Technik bietet.
+=======
+We also understand that the bar for adding a new primitive to React is extremely high. For curious readers, we have prepared a [detailed RFC](https://github.com/reactjs/rfcs/pull/68) that dives into the motivation with more details, and provides extra perspective on the specific design decisions and related prior art.
+>>>>>>> df2673d1b6ec0cc6657fd58690bbf30fa1e6e0e6
 
 **Entscheidend ist, dass Hooks Seite an Seite mit dem existierendem Code funktionieren, so dass du sie nach und nach einführen kannst.** Es gibt keine Eile zu Hooks zu migrieren. Wir empfehlen Abstand von "großen Umschreibungen" zu nehmen. Dies gilt erst recht für existierende, komplexe Klassen-Komponenten. Es verlangt eine leichte Änderung der Denkweise um mit "Denken in Hooks" zu starten. Laut unserer Erfahrung ist es besser das Benutzen von Hooks zuerst in neuen und unkritischen Komponenten zu proben. Darüberhinaus sollte sichergestellt sein, dass jedes Teammitglied sich mit ihnen wohlfühlt. Nachdem du Hooks ausprobiert, sei Willkommen [dein Feedback](https://github.com/facebook/react/issues/new), egal ob positiv oder negativ, an uns heranzureichen.
 
