@@ -21,7 +21,7 @@ Im obigen Beispiel werden Prüfungen des strikten Modus *nicht* für die Kompone
 * [Warning about deprecated findDOMNode usage](#warning-about-deprecated-finddomnode-usage)
 * [Detecting unexpected side effects](#detecting-unexpected-side-effects)
 * [Detecting legacy context API](#detecting-legacy-context-api)
-* [Detecting unsafe effects](#detecting-unsafe-effects)
+* [Ensuring reusable state](#ensuring-reusable-state)
 
 StrictMode hilft derzeit bei:
 
@@ -179,6 +179,14 @@ When the component unmounts, effects are destroyed as normal:
   * Layout effects are destroyed.
   * Effect effects are destroyed.
 ```
+
+Unmounting and remounting includes:
+
+- `componentDidMount`
+- `componentWillUnmount`
+- `useEffect`
+- `useLayoutEffect`
+- `useInsertionEffect`
 
 > Note:
 >

@@ -183,7 +183,7 @@ Herzlichen Glückwunsch! Du hast gerade ein **JSX Setup** eingerichtet, das **f�
 
 Erzeuge einen Ordner mit dem Namen `src` und führe folgenden Befehl aus:
 
-```
+```console
 npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
