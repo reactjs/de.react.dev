@@ -157,13 +157,7 @@ class SayHello extends React.Component {
 }
 ```
 
-<<<<<<< HEAD
-Bitte beachte, dass die obige Syntax **experimentell** ist und sich die Syntax möglicherweise ändert oder der Vorschlag nicht in die Sprache eingebaut wird.
-
-Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
-=======
-You also have a few other options:
->>>>>>> c1c3d1db304adfa5446accb0312e60d515188414
+Du hast auch einige andere Möglichkeiten:
 
 * Binde Methoden im Konstruktor.
 * Verwende Pfeilfunktionen, z.B. `onClick={(e) => this.handleClick(e)}`.
