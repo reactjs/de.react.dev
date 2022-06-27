@@ -131,7 +131,13 @@ var SayHello = createReactClass({
 });
 ```
 
+<<<<<<< HEAD
 Das bedeutet, dass ES6-Klassen mit etwas mehr Code für Event-Handler geliefert werden, aber die Leistung bei großen Anwendungen etwas besser ist.
+=======
+This means writing ES6 classes comes with a little more boilerplate code for event handlers, but the upside is slightly better performance in large applications.
+
+If the boilerplate code is too unattractive to you, you may use [ES2022 Class Properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) syntax:
+>>>>>>> c1c3d1db304adfa5446accb0312e60d515188414
 
 Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den **experimentellen** Syntaxvorschlag [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) mit Babel aktivieren:
 
@@ -141,11 +147,16 @@ class SayHello extends React.Component {
     super(props);
     this.state = {message: 'Hallo!'};
   }
+<<<<<<< HEAD
   // WARNUNG: Diese Syntax ist experimentell!
   // Die Verwendung eines Pfeils bindet hier die Methode:
+=======
+  
+  // Using an arrow here binds the method:
+>>>>>>> c1c3d1db304adfa5446accb0312e60d515188414
   handleClick = () => {
     alert(this.state.message);
-  }
+  };
 
   render() {
     return (
@@ -157,9 +168,13 @@ class SayHello extends React.Component {
 }
 ```
 
+<<<<<<< HEAD
 Bitte beachte, dass die obige Syntax **experimentell** ist und sich die Syntax möglicherweise ändert oder der Vorschlag nicht in die Sprache eingebaut wird.
 
 Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
+=======
+You also have a few other options:
+>>>>>>> c1c3d1db304adfa5446accb0312e60d515188414
 
 * Binde Methoden im Konstruktor.
 * Verwende Pfeilfunktionen, z.B. `onClick={(e) => this.handleClick(e)}`.
