@@ -133,7 +133,7 @@ var SayHello = createReactClass({
 
 Das bedeutet, dass ES6-Klassen mit etwas mehr Code für Event-Handler geliefert werden, aber die Leistung bei großen Anwendungen etwas besser ist.
 
-Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du den **experimentellen** Syntaxvorschlag [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) mit Babel aktivieren:
+Wenn der Boilerplate-Code für dich zu unattraktiv ist, kannst du die [ES2022 Class Properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) Syntax benutzen:
 
 ```javascript
 class SayHello extends React.Component {
@@ -141,11 +141,11 @@ class SayHello extends React.Component {
     super(props);
     this.state = {message: 'Hallo!'};
   }
-  // WARNUNG: Diese Syntax ist experimentell!
+
   // Die Verwendung eines Pfeils bindet hier die Methode:
   handleClick = () => {
     alert(this.state.message);
-  }
+  };
 
   render() {
     return (
@@ -157,9 +157,7 @@ class SayHello extends React.Component {
 }
 ```
 
-Bitte beachte, dass die obige Syntax **experimentell** ist und sich die Syntax möglicherweise ändert oder der Vorschlag nicht in die Sprache eingebaut wird.
-
-Wenn du lieber auf Nummer sicher gehen möchtest, hast du einige Möglichkeiten:
+Du hast auch einige andere Möglichkeiten:
 
 * Binde Methoden im Konstruktor.
 * Verwende Pfeilfunktionen, z.B. `onClick={(e) => this.handleClick(e)}`.
