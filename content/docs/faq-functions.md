@@ -37,11 +37,7 @@ class Foo extends Component {
 }
 ```
 
-<<<<<<< HEAD
-#### Klasseneigenschaften (vorgeschlagen für Stufe 3) {#class-properties-stage-3-proposal}
-=======
-#### Class Properties (ES2022) {#class-properties-es2022}
->>>>>>> c1c3d1db304adfa5446accb0312e60d515188414
+#### Klasseneigenschaften (ES2022) {#class-properties-es2022}
 
 ```jsx
 class Foo extends Component {
