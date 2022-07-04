@@ -261,9 +261,9 @@ function ThemedButton() {
 Dieses Beispiel wurde für Hooks von einem früheren Beispiel im [fortgeschrittenen Guide zum Kontext](/docs/context.html) abgeändert, wo sich weitere Informationen darüber finden, wann und wie man Context verwenden kann.
 
 
-## Additional Hooks {#additional-hooks}
+## Zusätzliche Hooks {#additional-hooks}
 
-The following Hooks are either variants of the basic ones from the previous section, or only needed for specific edge cases. Don't stress about learning them up front.
+Die folgenden Hooks sind entweder Varianten der grundlegenden Hooks aus dem vorigen Abschnitt oder werden nur für bestimmte Sonderfälle benötigt. Es besteht also kein Grund, sie im Voraus zu lernen.
 
 ### `useReducer` {#usereducer}
 
@@ -271,11 +271,11 @@ The following Hooks are either variants of the basic ones from the previous sect
 const [state, dispatch] = useReducer(reducer, initialArg, init);
 ```
 
-An alternative to [`useState`](#usestate). Accepts a reducer of type `(state, action) => newState`, and returns the current state paired with a `dispatch` method. (If you're familiar with Redux, you already know how this works.)
+Eine Alternative zu [`useState`](#usestate). Akzeptiert einen Reducer vom Typ `(state, action) => newState`, und gibt den aktuellen State zusammen mit einer `dispatch`-Methode zurück. (Wenn du mit Redux vertraut bist, weißt du bereits, wie das funktioniert.)
 
-`useReducer` is usually preferable to `useState` when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. `useReducer` also lets you optimize performance for components that trigger deep updates because [you can pass `dispatch` down instead of callbacks](/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down).
+`useReducer` ist in der Regel besser als `useState`, wenn man eine komplexe Statelogik hat, die mehrere Teilwerte umfasst, oder wenn der nächste State vom vorherigen abhängt.  Mit `useReducer` lässt sich auch die Leistung für Komponenten optimieren, die tiefe Aktualisierungen auslösen, weil [man `dispatch` anstelle von Callbacks weitergeben kann](/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down).
 
-Here's the counter example from the [`useState`](#usestate) section, rewritten to use a reducer:
+Hier ist das Beispiel eines Counters aus dem Abschnitt [`useState`](#usestate), umgeschrieben mithilfe eines Reducers:
 
 ```js
 const initialState = {count: 0};
@@ -295,7 +295,7 @@ function Counter() {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
-      Count: {state.count}
+      Aktueller Wert: {state.count}
       <button onClick={() => dispatch({type: 'decrement'})}>-</button>
       <button onClick={() => dispatch({type: 'increment'})}>+</button>
     </>
@@ -303,13 +303,13 @@ function Counter() {
 }
 ```
 
->Note
+>Hinweis
 >
->React guarantees that `dispatch` function identity is stable and won't change on re-renders. This is why it's safe to omit from the `useEffect` or `useCallback` dependency list.
+>React garantiert, dass die Identität der Funktion `dispatch` stabil ist und sich bei erneuten Renderings nicht ändert.  Deshalb kann die Funktion problemlos aus der Liste der Abhängigkeiten des useEffect oder useCallback auslassen werden.
 
-#### Specifying the initial state {#specifying-the-initial-state}
+#### Festlegen des initialen States {#specifying-the-initial-state}
 
-There are two different ways to initialize `useReducer` state. You may choose either one depending on the use case. The simplest way is to pass the initial state as a second argument:
+Es gibt zwei verschiedene Möglichkeiten, den State von `useReducer` zu initialisieren. Je nach Anwendungsfall kann man eine der beiden Möglichkeiten wählen. Der einfachste Weg ist die Übergabe des Ausgangszustands als zweites Argument:
 
 ```js{3}
   const [state, dispatch] = useReducer(
@@ -318,15 +318,15 @@ There are two different ways to initialize `useReducer` state. You may choose ei
   );
 ```
 
->Note
+>Hinweis
 >
->React doesn’t use the `state = initialState` argument convention popularized by Redux. The initial value sometimes needs to depend on props and so is specified from the Hook call instead. If you feel strongly about this, you can call `useReducer(reducer, undefined, reducer)` to emulate the Redux behavior, but it's not encouraged.
+>React verwendet nicht die Konvention `state = initialState`, die durch Redux populär wurde. Der Anfangswert muss manchmal von den Props abhängen und wird daher stattdessen beim Hook-Aufruf angegeben. Wenn dir das wichtig ist, kannst du `useReducer(reducer, undefined, reducer)` aufrufen, um das Redux-Verhalten nachzuahmen, aber das ist nicht empfehlenswert.
 
-#### Lazy initialization {#lazy-initialization}
+#### Verzögerte Initialisierung {#lazy-initialization}
 
-You can also create the initial state lazily. To do this, you can pass an `init` function as the third argument. The initial state will be set to `init(initialArg)`.
+Man kann den initialen Wert auch verzögert erstellen. Dafür muss man eine `init`-Funktion als drittes Argument übergeben. Der initiale State wird dann auf `init(initialArg)` gesetzt.
 
-It lets you extract the logic for calculating the initial state outside the reducer. This is also handy for resetting the state later in response to an action:
+Hierdurch wird die Logik, um den initialen State zu kalkulieren, aus dem Reducer ausgelagert. Das ist auch dann nützlich, wenn der State später in Reaktion auf eine Handlung zurückgesetzt werden soll:
 
 ```js{1-3,11-12,19,24}
 function init(initialCount) {
@@ -350,10 +350,10 @@ function Counter({initialCount}) {
   const [state, dispatch] = useReducer(reducer, initialCount, init);
   return (
     <>
-      Count: {state.count}
+      Aktueller Wert: {state.count}
       <button
         onClick={() => dispatch({type: 'reset', payload: initialCount})}>
-        Reset
+        Zurücksetzen
       </button>
       <button onClick={() => dispatch({type: 'decrement'})}>-</button>
       <button onClick={() => dispatch({type: 'increment'})}>+</button>
@@ -362,11 +362,11 @@ function Counter({initialCount}) {
 }
 ```
 
-#### Bailing out of a dispatch {#bailing-out-of-a-dispatch}
+#### Abbruch des Dispatch {#bailing-out-of-a-dispatch}
 
-If you return the same value from a Reducer Hook as the current state, React will bail out without rendering the children or firing effects. (React uses the [`Object.is` comparison algorithm](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
+Wenn du vom Reducer-Hook denselben Wert zurückgibst wie der aktuelle State, wird React den Vorgang abbrechen, ohne die Kinder zu rendern oder Effekte auszulösen. (React benutzt den [`Object.is` Vergleichsalgorithmus](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
 
-Note that React may still need to render that specific component again before bailing out. That shouldn't be a concern because React won't unnecessarily go "deeper" into the tree. If you're doing expensive calculations while rendering, you can optimize them with `useMemo`.
+Beachte, dass React diese spezielle Komponente möglicherweise noch einmal rendern muss, bevor es den Vorgang abbricht. Das sollte kein Problem sein, da React nicht unnötig "tiefer" in den Baum eindringt. Wenn du während des Renderns umfangreiche Berechnungen durchführst, kannst du diese mit `useMemo` optimieren.
 
 ### `useCallback` {#usecallback}
 
@@ -379,17 +379,17 @@ const memoizedCallback = useCallback(
 );
 ```
 
-Returns a [memoized](https://en.wikipedia.org/wiki/Memoization) callback.
+Gibt einen [memoisierten](https://en.wikipedia.org/wiki/Memoization) Callback zurück.
 
-Pass an inline callback and an array of dependencies. `useCallback` will return a memoized version of the callback that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders (e.g. `shouldComponentUpdate`).
+Übergib ein Inline-Callback und ein Array von Abhängigkeiten. `useCallback` wird eine memoisierte Version des Callbacks zurückgeben, die sich nur dann ändert, wenn sich eine der Abhängigkeiten geändert hat. Das ist nützlich, um Callbacks an optimierte Kindkomponenten zu übergeben, die sich auf gleichbleibende Referenzen verlassen, um unnötigem Rendern vorzubeugen (e.g. `shouldComponentUpdate`).
 
-`useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`.
+`useCallback(fn, deps)` ist gleichbedeutend mit `useMemo(() => fn, deps)`.
 
-> Note
+> Hinweis
 >
-> The array of dependencies is not passed as arguments to the callback. Conceptually, though, that's what they represent: every value referenced inside the callback should also appear in the dependencies array. In the future, a sufficiently advanced compiler could create this array automatically.
+> Das Array der Abhängigkeiten wird nicht als Argument an den Callback übergeben. Konzeptionell ist es jedoch genau das: Jeder Wert, auf den innerhalb des Callbacks verwiesen wird, sollte auch im Array der Abhängigkeiten erscheinen. In Zukunft könnte ein ausreichend fortgeschrittener Compiler dieses Array automatisch erstellen.
 >
-> We recommend using the [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) rule as part of our [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. It warns when dependencies are specified incorrectly and suggests a fix.
+> Wir empfehlen, die [`exhaustive-deps`](https://github.com/facebook/react/issues/14920)-Regel als Teil unseres [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation)-Packages zu benutzen. Es warnt, wenn Abhängigkeiten falsch angegeben sind, und schlägt eine Korrektur vor.
 
 ### `useMemo` {#usememo}
 
@@ -397,57 +397,57 @@ Pass an inline callback and an array of dependencies. `useCallback` will return 
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
-Returns a [memoized](https://en.wikipedia.org/wiki/Memoization) value.
+Gibt einen [memoisierten](https://en.wikipedia.org/wiki/Memoization) Wert zurück.
 
-Pass a "create" function and an array of dependencies. `useMemo` will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.
+Übergib eine "create"-Funktion und ein Array von Abhängigkeiten. `useMemo` wird den memoisierten Wert nur dann neu berechnen, wenn sich eine der Abhängigkeiten geändert hat. Diese Optimierung hilft dabei, aufwendige Berechnungen bei jedem Rendern zu vermeiden.
 
-Remember that the function passed to `useMemo` runs during rendering. Don't do anything there that you wouldn't normally do while rendering. For example, side effects belong in `useEffect`, not `useMemo`.
+Beachte, dass die Funktion, die an `useMemo` übergeben wird, während des Renderns abläuft. Vermeide es, dort irgendetwas zu tun, was du normalerweise während des Renderns tun würdest. Seiteneffekte zum Beispiel gehören in einen `useEffect`, nicht in `useMemo`.
 
-If no array is provided, a new value will be computed on every render.
+Wenn kein Array angegeben wird, wird der Wert bei jedem Rendern berechnet.
 
-**You may rely on `useMemo` as a performance optimization, not as a semantic guarantee.** In the future, React may choose to "forget" some previously memoized values and recalculate them on next render, e.g. to free memory for offscreen components. Write your code so that it still works without `useMemo` — and then add it to optimize performance.
+**Du könntest dich auf `useMemo` als Leistungsoptimierung verlassen, anstatt es als semantische Garantie anzusehen.** In der Zukunft könnte React sich dafür entscheiden, einige zuvor memoisierte Werte zu "vergessen" und sie beim nächsten Rendern neu zu berechnen, z.B. um Speicher für Offscreen-Komponenten freizugeben. Schreibe deinen Code deshalb so, dass er auch ohne `useMemo` funktioniert - und dann füge ihn hinzu, um die Leistung zu optimieren.
 
-> Note
+> Hinweis
 >
-> The array of dependencies is not passed as arguments to the function. Conceptually, though, that's what they represent: every value referenced inside the function should also appear in the dependencies array. In the future, a sufficiently advanced compiler could create this array automatically.
+> Das Array der Abhängigkeiten wird nicht als Argument an die Funktion übergeben. Konzeptionell ist es jedoch genau das: Jeder Wert, auf den innerhalb der Funktion verwiesen wird, sollte auch im Array der Abhängigkeiten erscheinen. In Zukunft könnte ein ausreichend fortgeschrittener Compiler dieses Array automatisch erstellen.
 >
-> We recommend using the [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) rule as part of our [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. It warns when dependencies are specified incorrectly and suggests a fix.
+> Wir empfehlen, die [`exhaustive-deps`](https://github.com/facebook/react/issues/14920)-Regel als Teil unseres [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation)-Packages zu benutzen. Es warnt, wenn Abhängigkeiten falsch angegeben sind, und schlägt eine Korrektur vor.
+>
 
 ### `useRef` {#useref}
 
 ```js
 const refContainer = useRef(initialValue);
 ```
+`useRef` gibt ein veränderbares ref-Objekt zurück, dessen Eigenschaft `.current` mit dem übergebenen Argument (`initialValue`) initialisiert wird. Das zurückgegebene Objekt bleibt während der gesamten Lebensdauer der Komponente bestehen.
 
-`useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`). The returned object will persist for the full lifetime of the component.
-
-A common use case is to access a child imperatively:
+Ein häufiger Anwendungsfall ist der imperative Zugriff auf ein Kind:
 
 ```js
 function TextInputWithFocusButton() {
   const inputEl = useRef(null);
   const onButtonClick = () => {
-    // `current` points to the mounted text input element
+    // `current` zeigt auf das gemountete Texteingabeelement
     inputEl.current.focus();
   };
   return (
     <>
       <input ref={inputEl} type="text" />
-      <button onClick={onButtonClick}>Focus the input</button>
+      <button onClick={onButtonClick}>Fokussiere das Inputfeld</button>
     </>
   );
 }
 ```
 
-Essentially, `useRef` is like a "box" that can hold a mutable value in its `.current` property.
+Im Wesentlichen ist `useRef` wie eine "Box", die einen veränderbaren Wert in ihrer Eigenschaft `.current` enthalten kann.
 
-You might be familiar with refs primarily as a way to [access the DOM](/docs/refs-and-the-dom.html). If you pass a ref object to React with `<div ref={myRef} />`, React will set its `.current` property to the corresponding DOM node whenever that node changes.
+Du kennst refs vielleicht in erster Linie als eine Möglichkeit, [auf das DOM zuzugreifen](/docs/refs-and-the-dom.html). Wenn du ein ref-Objekt an React mit `<div ref={myRef} />` übergibst, wird React dessen Eigenschaft `.current` auf den entsprechenden DOM-Knoten setzen, sobald sich dieser ändert.
 
-However, `useRef()` is useful for more than the `ref` attribute. It's [handy for keeping any mutable value around](/docs/hooks-faq.html#is-there-something-like-instance-variables) similar to how you'd use instance fields in classes.
+`useRef()` ist jedoch nicht nur für das `ref`-Attribut nützlich. Es ist [praktisch, um einen veränderlichen Wert zu behalten](/docs/hooks-faq.html#is-there-something-like-instance-variables), ähnlich wie man Instanzfelder in Klassen verwenden würde.
 
-This works because `useRef()` creates a plain JavaScript object. The only difference between `useRef()` and creating a `{current: ...}` object yourself is that `useRef` will give you the same ref object on every render.
+Das funktioniert, weil `useRef()` ein einfaches JavaScript-Objekt erzeugt. Der einzige Unterschied zwischen `useRef()` und der Erstellung eines `{current: ...}`-Objekts ist, dass `useRef` bei jedem Rendering das gleiche ref-Objekt erzeugt.
 
-Keep in mind that `useRef` *doesn't* notify you when its content changes. Mutating the `.current` property doesn't cause a re-render. If you want to run some code when React attaches or detaches a ref to a DOM node, you may want to use a [callback ref](/docs/hooks-faq.html#how-can-i-measure-a-dom-node) instead.
+Beachte, dass `useRef` dich *nicht* benachrichtigt, wenn sich sein Inhalt ändert. Die Änderung der `.current`-Eigenschaft führt nicht zu einem erneuten Rendern. Wenn du einen Code ausführen möchtest, sobald React einen ref an einen DOM-Knoten anhängt oder abnimmt, solltest du stattdessen einen [callback ref](/docs/hooks-faq.html#how-can-i-measure-a-dom-node) verwenden.
 
 
 ### `useImperativeHandle` {#useimperativehandle}
@@ -455,8 +455,7 @@ Keep in mind that `useRef` *doesn't* notify you when its content changes. Mutati
 ```js
 useImperativeHandle(ref, createHandle, [deps])
 ```
-
-`useImperativeHandle` customizes the instance value that is exposed to parent components when using `ref`. As always, imperative code using refs should be avoided in most cases. `useImperativeHandle` should be used with [`forwardRef`](/docs/react-api.html#reactforwardref):
+`useImperativeHandle` passt den Instanzwert an, der bei der Verwendung von `ref` für übergeordnete Komponenten sichtbar ist. Wie immer sollte imperativer Code mit Refs in den meisten Fällen vermieden werden. `useImperativeHandle` sollte mit [`forwardRef`](/docs/react-api.html#reactforwardref) verwendet werden:
 
 ```js
 function FancyInput(props, ref) {
@@ -471,21 +470,22 @@ function FancyInput(props, ref) {
 FancyInput = forwardRef(FancyInput);
 ```
 
-In this example, a parent component that renders `<FancyInput ref={inputRef} />` would be able to call `inputRef.current.focus()`.
+In diesem Beispiel wäre eine übergeordnete Komponente, die `<FancyInput ref={inputRef} />` rendert, in der Lage, `inputRef.current.focus()` aufzurufen.
 
 ### `useLayoutEffect` {#uselayouteffect}
 
-The signature is identical to `useEffect`, but it fires synchronously after all DOM mutations. Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.
+Die Signatur dieses Hooks ist identisch mit `useEffect`, aber er wird synchron nach allen DOM-Mutationen ausgelöst. Verwende ihn, um das Layout aus dem DOM zu lesen und synchron neu zu rendern. Aktualisierungen, die innerhalb von `useLayoutEffect` geplant sind, werden synchron vorgenommen, bevor der Browser die Chance hat zu malen.
 
-Prefer the standard `useEffect` when possible to avoid blocking visual updates.
+Bevorzuge, wenn möglich, den Standard `useEffect`, um zu vermeiden, dass visuelle Aktualisierungen blockiert werden.
 
-> Tip
+> Tipp
 >
-> If you're migrating code from a class component, note `useLayoutEffect` fires in the same phase as `componentDidMount` and `componentDidUpdate`. However, **we recommend starting with `useEffect` first** and only trying `useLayoutEffect` if that causes a problem.
+> Wenn du Code von einer Klassenkomponente migrierst, beachte, dass `useLayoutEffect` in der gleichen Phase ausgelöst wird wie `componentDidMount` und `componentDidUpdate`. **Wir empfehlen aber, zuerst mit `useEffect` zu beginnen** und `useLayoutEffect` nur dann auszuprobieren, wenn dies ein Problem verursacht.
 >
->If you use server rendering, keep in mind that *neither* `useLayoutEffect` nor `useEffect` can run until the JavaScript is downloaded. This is why React warns when a server-rendered component contains `useLayoutEffect`. To fix this, either move that logic to `useEffect` (if it isn't necessary for the first render), or delay showing that component until after the client renders (if the HTML looks broken until `useLayoutEffect` runs).
+> Wenn du Server-Rendering verwendest, beachte, dass *weder* `useLayoutEffect` noch `useEffect` ausgeführt werden können, bis das JavaScript heruntergeladen ist. Aus diesem Grund warnt React, wenn eine vom Server gerenderte Komponente `useLayoutEffect` enthält. Um dies zu beheben, verschiebe entweder diese Logik zu `useEffect` (wenn sie für das erste Rendern nicht notwendig ist), oder verzögere die Anzeige dieser Komponente bis nach dem Rendern des Clients (wenn das HTML kaputt aussieht, bis `useLayoutEffect` läuft).
 >
->To exclude a component that needs layout effects from the server-rendered HTML, render it conditionally with `showChild && <Child />` and defer showing it with `useEffect(() => { setShowChild(true); }, [])`. This way, the UI doesn't appear broken before hydration.
+> Um eine Komponente, die Layout-Effekte benötigt, von dem vom Server gerenderten HTML auszuschließen, rendere sie bedingt mit `showChild && <Child />` und verzögere ihre Anzeige mit `useEffect(() => { setShowChild(true); }, [])`. Auf diese Weise erscheint die Benutzeroberfläche vor der Hydration nicht beschädigt.
+>
 
 ### `useDebugValue` {#usedebugvalue}
 
@@ -493,9 +493,9 @@ Prefer the standard `useEffect` when possible to avoid blocking visual updates.
 useDebugValue(value)
 ```
 
-`useDebugValue` can be used to display a label for custom hooks in React DevTools.
+`useDebugValue` kann verwendet werden, um ein Label für eigene Hooks in den React DevTools anzuzeigen.
 
-For example, consider the `useFriendStatus` custom Hook described in ["Building Your Own Hooks"](/docs/hooks-custom.html):
+Betrachten wir zum Beispiel den benutzerdefinierten Hook `useFriendStatus`, der in ["Eigene Hooks bauen"](/docs/hooks-custom.html) beschrieben wird:
 
 ```js{6-8}
 function useFriendStatus(friendID) {
@@ -503,25 +503,25 @@ function useFriendStatus(friendID) {
 
   // ...
 
-  // Show a label in DevTools next to this Hook
-  // e.g. "FriendStatus: Online"
+  // Zeige ein Label in den DevTools neben diesem Hook an
+  // z.B. "FriendStatus: Online"
   useDebugValue(isOnline ? 'Online' : 'Offline');
 
   return isOnline;
 }
 ```
 
-> Tip
+> Tipp
 >
-> We don't recommend adding debug values to every custom Hook. It's most valuable for custom Hooks that are part of shared libraries.
+> Wir empfehlen nicht, Debug-Werte zu jedem eigenen Hook hinzuzufügen. Dies ist am nützlichsten für eigene Hooks, die Teil von gemeinsam genutzten Libraries sind.
 
-#### Defer formatting debug values {#defer-formatting-debug-values}
+#### Aufschieben der Formatierung von Debug-Werten {#defer-formatting-debug-values}
 
-In some cases formatting a value for display might be an expensive operation. It's also unnecessary unless a Hook is actually inspected.
+In einigen Fällen kann die Formatierung eines Wertes für die Anzeige ein aufwendiger Vorgang sein. Sie ist auch unnötig, es sei denn, ein Hook wird tatsächlich inspiziert.
 
-For this reason `useDebugValue` accepts a formatting function as an optional second parameter. This function is only called if the Hooks are inspected. It receives the debug value as a parameter and should return a formatted display value.
+Aus diesem Grund akzeptiert `useDebugValue` eine Formatierungsfunktion als optionalen zweiten Parameter. Diese Funktion wird nur aufgerufen, wenn die Hooks inspiziert werden. Sie erhält den Debug-Wert als Parameter und sollte einen formatierten Anzeigewert zurückgeben.
 
-For example a custom Hook that returned a `Date` value could avoid calling the `toDateString` function unnecessarily by passing the following formatter:
+Ein eigener Hook, der einen `Date`-Wert zurückgegeben hat, könnte beispielsweise den unnötigen Aufruf der `toDateString`-Funktion vermeiden, indem er den folgenden Formatierer übergibt:
 
 ```js
 useDebugValue(date, date => date.toDateString());
@@ -533,20 +533,20 @@ useDebugValue(date, date => date.toDateString());
 const deferredValue = useDeferredValue(value);
 ```
 
-`useDeferredValue` accepts a value and returns a new copy of the value that will defer to more urgent updates. If the current render is the result of an urgent update, like user input, React will return the previous value and then render the new value after the urgent render has completed.
+`useDeferredValue` akzeptiert einen Wert und gibt eine neue Kopie des Wertes zurück, die auf dringendere Aktualisierungen warten wird. Wenn das aktuelle Rendering das Ergebnis einer dringenden Aktualisierung ist, wie z.B. einer Benutzereingabe, gibt React den vorherigen Wert zurück und rendert dann den neuen Wert, nachdem das dringende Rendering abgeschlossen ist.
 
-This hook is similar to user-space hooks which use debouncing or throttling to defer updates. The benefits to using `useDeferredValue` is that React will work on the update as soon as other work finishes (instead of waiting for an arbitrary amount of time), and like [`startTransition`](/docs/react-api.html#starttransition), deferred values can suspend without triggering an unexpected fallback for existing content.
+Dieser Hook ähnelt den User-Space-Hooks, die durch Entprellung (engl. debouncing) oder Drosselung Aktualisierungen aufschieben. Der Vorteil der Verwendung von `useDeferredValue` ist, dass React an der Aktualisierung arbeitet, sobald andere Arbeiten beendet sind (anstatt auf eine beliebige Zeitspanne zu warten), und wie [`startTransition`](/docs/react-api.html#starttransition) können aufgeschobene Werte ausgesetzt werden, ohne einen unerwarteten Fallback für bestehende Inhalte auszulösen.
 
-#### Memoizing deferred children {#memoizing-deferred-children}
-`useDeferredValue` only defers the value that you pass to it. If you want to prevent a child component from re-rendering during an urgent update, you must also memoize that component with [`React.memo`](/docs/react-api.html#reactmemo) or [`React.useMemo`](/docs/hooks-reference.html#usememo):
+#### Memoisierte aufgeschobene Kinder {#memoizing-deferred-children}
+`useDeferredValue` verschiebt nur den Wert, den man übergibt. Wenn du verhindern willst, dass eine untergeordnete Komponente während einer dringenden Aktualisierung neu gerendert wird, musst du diese Komponente auch mit [`React.memo`](/docs/react-api.html#reactmemo) oder [`React.useMemo`](/docs/hooks-reference.html#usememo) memoisieren:
 
 ```js
 function Typeahead() {
   const query = useSearchQuery('');
   const deferredQuery = useDeferredValue(query);
 
-  // Memoizing tells React to only re-render when deferredQuery changes,
-  // not when query changes.
+  // Memoisierung weist React an, nur neu zu rendern, wenn sich deferredQuery ändert, 
+  // und nicht, wenn sich die Abfrage ändert.
   const suggestions = useMemo(() =>
     <SearchSuggestions query={deferredQuery} />,
     [deferredQuery]
@@ -563,7 +563,7 @@ function Typeahead() {
 }
 ```
 
-Memoizing the children tells React that it only needs to re-render them when `deferredQuery` changes and not when `query` changes. This caveat is not unique to `useDeferredValue`, and it's the same pattern you would use with similar hooks that use debouncing or throttling.
+Die Kinder zu memoisieren sagt React, dass sie nur neu gerendert werden müssen, wenn sich `deferredQuery` ändert, und nicht, wenn sich `query` ändert. Dieser Vorbehalt gilt nicht nur für `useDeferredValue`, sondern auch für ähnliche Hooks, die Entprellung (engl. debouncing) oder Drosselung verwenden.
 
 ### `useTransition` {#usetransition}
 
@@ -571,9 +571,9 @@ Memoizing the children tells React that it only needs to re-render them when `de
 const [isPending, startTransition] = useTransition();
 ```
 
-Returns a stateful value for the pending state of the transition, and a function to start it.
+Gibt einen zustandsbezogenen Wert für den anstehenden Zustand des Übergangs und eine Funktion zum Starten des Übergangs zurück.
 
-`startTransition` lets you mark updates in the provided callback as transitions:
+Mit `startTransition` können Aktualisierungen in dem angegebenen Callback als Übergänge markiert werden:
 
 ```js
 startTransition(() => {
@@ -581,7 +581,7 @@ startTransition(() => {
 })
 ```
 
-`isPending` indicates when a transition is active to show a pending state:
+`isPending` markiert, wenn ein Übergang aktiv ist, um einen schwebenden Zustand anzuzeigen:
 
 ```js
 function App() {
@@ -603,11 +603,11 @@ function App() {
 }
 ```
 
-> Note:
+> Hinweis:
 >
-> Updates in a transition yield to more urgent updates such as clicks.
+> Aktualisierungen in einer Übergangsphase führen zu dringlicheren Aktualisierungen wie etwa Klicks.
 >
-> Updates in a transitions will not show a fallback for re-suspended content. This allows the user to continue interacting with the current content while rendering the update.
+> Bei Aktualisierungen in Übergängen wird kein Fallback für wieder ausgesetzte Inhalte angezeigt. Dadurch kann der Benutzer weiterhin mit dem aktuellen Inhalt interagieren, während die Aktualisierung gerendert wird.
 
 ### `useId` {#useid}
 
@@ -615,38 +615,38 @@ function App() {
 const id = useId();
 ```
 
-`useId` is a hook for generating unique IDs that are stable across the server and client, while avoiding hydration mismatches.
+`useId` ist ein Hook für die Erzeugung eindeutiger IDs, die auf dem Server und dem Client stabil sind, während sie gleichzeitig Hydrationsabweichungen vermeiden.
 
-> Note
+> Hinweis
 >
-> `useId` is **not** for generating [keys in a list](/docs/lists-and-keys.html#keys). Keys should be generated from your data.
+> `useId` dient **nicht** zum Erzeugen von [Keys in einer Liste](/docs/lists-and-keys.html#keys). Keys sollten aus den Daten generiert werden.
 
-For a basic example, pass the `id` directly to the elements that need it:
+In diesem einfachen Beispiel wird die `id` direkt an diejenigen Elemente übergeben, die sie benötigen:
 
 ```js
 function Checkbox() {
   const id = useId();
   return (
     <>
-      <label htmlFor={id}>Do you like React?</label>
+      <label htmlFor={id}>Magst du React?</label>
       <input id={id} type="checkbox" name="react"/>
     </>
   );
 };
 ```
 
-For multiple IDs in the same component, append a suffix using the same `id`:
+Bei mehreren IDs in derselben Komponente kann man ein Suffix mit derselben `id` anhängen:
 
 ```js
 function NameFields() {
   const id = useId();
   return (
     <div>
-      <label htmlFor={id + '-firstName'}>First Name</label>
+      <label htmlFor={id + '-firstName'}>Vorname</label>
       <div>
         <input id={id + '-firstName'} type="text" />
       </div>
-      <label htmlFor={id + '-lastName'}>Last Name</label>
+      <label htmlFor={id + '-lastName'}>Nachname</label>
       <div>
         <input id={id + '-lastName'} type="text" />
       </div>
@@ -655,11 +655,12 @@ function NameFields() {
 }
 ```
 
-> Note:
+> Hinweis:
 > 
-> `useId` generates a string that includes the `:` token. This helps ensure that the token is unique, but is not supported in CSS selectors or APIs like `querySelectorAll`.
+> `useId` erzeugt eine Zeichenfolge, die das Token ":" enthält. Dies hilft sicherzustellen, dass das Token eindeutig ist, wird aber in CSS-Selektoren oder APIs wie `querySelectorAll` nicht unterstützt.
 > 
-> `useId` supports an `identifierPrefix` to prevent collisions in multi-root apps. To configure, see the options for [`hydrateRoot`](/docs/react-dom-client.html#hydrateroot) and [`ReactDOMServer`](/docs/react-dom-server.html).
+> `useId` unterstützt einen `identifierPrefix`, um Kollisionen in Anwendungen mit mehreren Roots zu verhindern. Zur Konfiguration siehe die Optionen für [`hydrateRoot`](/docs/react-dom-client.html#hydrateroot) und [`ReactDOMServer`](/docs/react-dom-server.html).
+> 
 
 ## Library Hooks {#library-hooks}
 
