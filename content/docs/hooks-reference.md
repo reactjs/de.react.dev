@@ -31,69 +31,67 @@ Wenn Hooks neu für dich sind, schau dir zuerst [den Überblick](/docs/hooks-ove
   - [`useSyncExternalStore`](#usesyncexternalstore)
   - [`useInsertionEffect`](#useinsertioneffect)
 
-## Basic Hooks {#basic-hooks}
+## Grundlegende Hooks {#basic-hooks}
 
 ### `useState` {#usestate}
 
 ```js
 const [state, setState] = useState(initialState);
 ```
+Gibt einen zustandsbezogenen (engl. stateful) Wert zurück und eine Funktion, um diesen zu aktualisieren.
 
-Returns a stateful value, and a function to update it.
+Während des initialen Renderns ist der zurückgegebene State (`state`) derselbe Wert, der als erstes Argument (`initialState`) übergeben wird.
 
-During the initial render, the returned state (`state`) is the same as the value passed as the first argument (`initialState`).
-
-The `setState` function is used to update the state. It accepts a new state value and enqueues a re-render of the component.
+Die Funktion `setState` wird verwendet, um den State zu aktualisieren. Sie akzeptiert einen neuen Wert für den State und veranlasst ein erneutes Rendern der Komponente.
 
 ```js
 setState(newState);
 ```
 
-During subsequent re-renders, the first value returned by `useState` will always be the most recent state after applying updates.
+Bei jedem folgenden erneuten Rendern ist der erste Wert, der von `useState` zurückgegeben wird, immer derjenige Wert, auf den als letztes aktualisiert wurde.
 
->Note
+> Hinweis
 >
->React guarantees that `setState` function identity is stable and won't change on re-renders. This is why it's safe to omit from the `useEffect` or `useCallback` dependency list.
+>React garantiert, dass die Identität der `setState`-Funktion stabil ist und sie sich auch bei erneutem Rendern nicht ändert. Deshalb kann die Funktion problemlos aus der Liste der Abhängigkeiten des `useEffect` oder `useCallback` auslassen werden.
 
-#### Functional updates {#functional-updates}
+#### Aktualisieren mithilfe einer Funktion {#functional-updates}
 
-If the new state is computed using the previous state, you can pass a function to `setState`. The function will receive the previous value, and return an updated value. Here's an example of a counter component that uses both forms of `setState`:
+Wenn der neue State mithilfe des vorherigen States ermittelt werden soll, kannst du eine Funktion an `setState` übergeben. Diese Funktion erhält den vorherigen Wert und gibt den aktualisierten Wert zurück. Das folgende Beispiel einer Counter-Komponente nutzt beide Formen von `setState`:
 
 ```js
 function Counter({initialCount}) {
   const [count, setCount] = useState(initialCount);
   return (
     <>
-      Count: {count}
-      <button onClick={() => setCount(initialCount)}>Reset</button>
+      Aktueller Wert: {count}
+      <button onClick={() => setCount(initialCount)}>Zurücksetzen</button>
       <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
       <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
     </>
   );
 }
 ```
+Die Buttons "+" und "-" nutzen eine Funktion, weil der aktualisierte Wert auf dem vorherigen beruht. Der "Zurücksetzen"-Button dagegen benutzt die normale Form, weil er den Zähler immer auf den initialen Wert zurücksetzt.
 
-The "+" and "-" buttons use the functional form, because the updated value is based on the previous value. But the "Reset" button uses the normal form, because it always sets the count back to the initial value.
+Wenn die Aktualisierungsfunktion exakt denselben Wert wie der aktuelle State zurückgibt, wird das folgende erneute Rendern vollständig übersprungen.
 
-If your update function returns the exact same value as the current state, the subsequent rerender will be skipped completely.
-
-> Note
+> Hinweis
 >
-> Unlike the `setState` method found in class components, `useState` does not automatically merge update objects. You can replicate this behavior by combining the function updater form with object spread syntax:
+> Anders als die `setState`-Methode in Klassenkomponenten führt `useState` aktualisierte Objekte nicht automatisch zusammen. Du kannst dieses Verhalten nachahmen, indem du die Aktualisierung mithilfe einer Funktion mit der spread-Syntax für Objekte verbindest:
 >
 > ```js
 > const [state, setState] = useState({});
 > setState(prevState => {
->   // Object.assign would also work
+>   // Object.assign würde auch funktionieren
 >   return {...prevState, ...updatedValues};
 > });
 > ```
 >
-> Another option is `useReducer`, which is more suited for managing state objects that contain multiple sub-values.
+> Eine andere Option ist `useReducer`, was sich aber eher eignet, wenn man State-Objekte verwaltet, die mehrere Teilwerte enthalten.
 
-#### Lazy initial state {#lazy-initial-state}
+#### Fauler initialer State {#lazy-initial-state}
 
-The `initialState` argument is the state used during the initial render. In subsequent renders, it is disregarded. If the initial state is the result of an expensive computation, you may provide a function instead, which will be executed only on the initial render:
+Das `initialState`-Argument ist derjenige State, der während des initialen Renderns benutzt wird. Bei nachfolgendem Rendern wird er nicht beachtet. Wenn der initiale State das Ergebnis einer aufwendigen Berechnung ist, kannst Du stattdessen auch eine Funktion angeben, die nur beim ersten Rendern ausgeführt wird:
 
 ```js
 const [state, setState] = useState(() => {
@@ -102,71 +100,71 @@ const [state, setState] = useState(() => {
 });
 ```
 
-#### Bailing out of a state update {#bailing-out-of-a-state-update}
+#### Abbruch der State-Aktualisierung {#bailing-out-of-a-state-update}
 
-If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects. (React uses the [`Object.is` comparison algorithm](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
+Wenn du einen State Hook auf den gleichen Wert wie den aktuellen aktualisierst, wird React den Vorgang abbrechen, ohne die Kinder zu rendern oder Effekte auszulösen. (React benutzt den [`Object.is`-Vergleichsalgorithmus](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
 
-Note that React may still need to render that specific component again before bailing out. That shouldn't be a concern because React won't unnecessarily go "deeper" into the tree. If you're doing expensive calculations while rendering, you can optimize them with `useMemo`.
+Beachte, dass React diese spezielle Komponente möglicherweise noch einmal rendern muss, bevor es den Vorgang abbricht. Das sollte kein Problem sein, da React nicht unnötig "tiefer" in den Baum eindringt. Wenn du während des Renderns umfangreiche Berechnungen durchführst, kannst du diese mit `useMemo` optimieren.
 
-#### Batching of state updates {#batching-of-state-updates}
+#### Bündeln von State-Aktualisierungen {#batching-of-state-updates}
 
-React may group several state updates into a single re-render to improve performance. Normally, this improves performance and shouldn't affect your application's behavior.
+React kann mehrere State-Aktualisierungen in einem einzigen erneuten Rendern zusammenfassen, um die Leistung zu verbessern. Normalerweise verbessert dies die Leistung und sollte keine Auswirkungen auf das Verhalten der Anwendung haben.
 
-Before React 18, only updates inside React event handlers were batched. Starting with React 18, [batching is enabled for all updates by default](/blog/2022/03/08/react-18-upgrade-guide.html#automatic-batching). Note that React makes sure that updates from several *different* user-initiated events -- for example, clicking a button twice -- are always processed separately and do not get batched. This prevents logical mistakes.
+Vor React 18 wurden nur Aktualisierungen innerhalb von React-Event-Handlern gebündelt. Seit React 18 [ist die gebündelte Verarbeitung für alle Aktualisierungen standardmäßig aktiviert](/blog/2022/03/08/react-18-upgrade-guide.html#automatic-batching). Beachte, dass React sicherstellt, dass Aktualisierungen von mehreren *verschiedenen* benutzerinitiierten Ereignissen - z.B. zweimaliges Klicken auf eine Schaltfläche - immer separat verarbeitet und nicht zusammengeführt werden. Dies verhindert logische Fehler.
 
-In the rare case that you need to force the DOM update to be applied synchronously, you may wrap it in [`flushSync`](/docs/react-dom.html#flushsync). However, this can hurt performance so do this only where needed.
+In dem seltenen Fall, dass du die synchrone Anwendung der DOM-Aktualisierung erzwingen musst, kannst du sie in [`flushSync`](/docs/react-dom.html#flushsync) verpacken. Dies kann jedoch die Leistung beeinträchtigen, weshalb du dies nur bei Bedarf tun solltest.
 
 ### `useEffect` {#useeffect}
 
 ```js
 useEffect(didUpdate);
 ```
+Akzeptiert eine Funktion, die imperativen Code enthält, der möglicherweise auch einen Effekt hat.
 
-Accepts a function that contains imperative, possibly effectful code.
+Innerhalb des Hauptteils von funktionalen Komponenten (in React als _render phase_ bezeichnet) sind Mutationen, Abonnements, Timer, das Loggen (engl. logging) und andere Nebeneffekte nicht erlaubt. Dies hätte nämlich verwirrende Fehler und Ungereimtheiten in der UI zur Folge.
 
-Mutations, subscriptions, timers, logging, and other side effects are not allowed inside the main body of a function component (referred to as React's _render phase_). Doing so will lead to confusing bugs and inconsistencies in the UI.
+Benutze stattdessen `useEffect`. Die Funktion, die an `useEffect` übergeben wird, wird ausgeführt, nachdem das Rendern an den Bildschirm übertragen worden ist. Effekte sind also die Möglichkeit, aus der rein funktionalen Welt von React in die imperative Welt zu entfliehen.
 
-Instead, use `useEffect`. The function passed to `useEffect` will run after the render is committed to the screen. Think of effects as an escape hatch from React's purely functional world into the imperative world.
+Standardmäßig werden die Effekte nach jedem abgeschlossenen Rendern ausgeführt, aber du kannst festlegen, dass sie nur ausgelöst werden, [wenn sich bestimmte Werte geändert haben](#conditionally-firing-an-effect).
 
-By default, effects run after every completed render, but you can choose to fire them [only when certain values have changed](#conditionally-firing-an-effect).
+#### Bereinigung eines Effekts {#cleaning-up-an-effect}
 
-#### Cleaning up an effect {#cleaning-up-an-effect}
+Effekte erzeugen häufig Ressourcen, die bereinigt werden müssen, bevor die Komponente den Bildschirm verlässt, wie etwa ein Abonnement oder eine Timer-ID. Zu diesem Zweck kann die an `useEffect` übergebene Funktion eine Aufräumfunktion zurückgeben. Zum Beispiel, um ein Abonnement zu erstellen:
 
-Often, effects create resources that need to be cleaned up before the component leaves the screen, such as a subscription or timer ID. To do this, the function passed to `useEffect` may return a clean-up function. For example, to create a subscription:
 
 ```js
 useEffect(() => {
   const subscription = props.source.subscribe();
   return () => {
-    // Clean up the subscription
+    // Bereinigen des Abonnements
     subscription.unsubscribe();
   };
 });
 ```
 
-The clean-up function runs before the component is removed from the UI to prevent memory leaks. Additionally, if a component renders multiple times (as they typically do), the **previous effect is cleaned up before executing the next effect**. In our example, this means a new subscription is created on every update. To avoid firing an effect on every update, refer to the next section.
+Die Aufräumfunktion wird ausgeführt, bevor die Komponente aus der Benutzeroberfläche entfernt wird, um Speicherprobleme zu vermeiden. Wenn eine Komponente mehrfach gerendert wird (was in der Regel der Fall ist), wird außerdem der **vorherige Effekt bereinigt, bevor der nächste Effekt ausgeführt wird**. In unserem Beispiel bedeutet dies, dass bei jeder Aktualisierung ein neues Abonnement erstellt wird. Um zu vermeiden, dass bei jeder Aktualisierung ein Effekt ausgelöst wird, schau Dir den nächsten Abschnitt an.
 
-#### Timing of effects {#timing-of-effects}
+#### Zeitlicher Ablauf der Effekte {#timing-of-effects}
 
-Unlike `componentDidMount` and `componentDidUpdate`, the function passed to `useEffect` fires **after** layout and paint, during a deferred event. This makes it suitable for the many common side effects, like setting up subscriptions and event handlers, because most types of work shouldn't block the browser from updating the screen.
+Im Gegensatz zu `componentDidMount` und `componentDidUpdate` wird die Funktion, die an `useEffect` übergeben wird, **nach** dem Layouten und Malen (engl. paint), während eines verzögerten Ereignisses, ausgelöst. Deshalb ist `useEffect` geeignet für die vielen häufigen Nebeneffekte, wie die Einrichtung von Abonnements und Event Handlern, weil die meisten dieser Arbeiten den Browser nicht dabei blockieren sollten, den Bildschirm zu aktualisieren.
 
-However, not all effects can be deferred. For example, a DOM mutation that is visible to the user must fire synchronously before the next paint so that the user does not perceive a visual inconsistency. (The distinction is conceptually similar to passive versus active event listeners.) For these types of effects, React provides one additional Hook called [`useLayoutEffect`](#uselayouteffect). It has the same signature as `useEffect`, and only differs in when it is fired.
+Allerdings können nicht alle Auswirkungen aufgeschoben werden. So muss beispielsweise eine DOM-Mutation, die für den Benutzer sichtbar ist, synchron vor dem nächsten Malvorgang erfolgen, damit der Benutzer keine visuelle Inkonsistenz wahrnimmt. (Die Unterscheidung ist konzeptionell ähnlich wie die zwischen passiven und aktiven Event Listenern).  Für diese Arten von Effekten bietet React einen zusätzlichen Hook namens [`useLayoutEffect`](#uselayouteffect). Er hat die gleiche Signatur wie `useEffect` und unterscheidet sich nur darin, wann er ausgelöst wird.
 
-Additionally, starting in React 18, the function passed to `useEffect` will fire synchronously **before** layout and paint when it's the result of a discrete user input such as a click, or when it's the result of an update wrapped in [`flushSync`](/docs/react-dom.html#flushsync). This behavior allows the result of the effect to be observed by the event system, or by the caller of [`flushSync`](/docs/react-dom.html#flushsync).
+Zusätzlich wird ab React 18 die Funktion, die an `useEffect` übergeben wird, synchron **vor** dem Layouten und dem Malen ausgelöst, wenn sie das Ergebnis einer diskreten Benutzereingabe wie einem Klick ist, oder wenn sie das Ergebnis einer Aktualisierung ist, die in [`flushSync`](/docs/react-dom.html#flushsync) verpackt ist. Dieses Verhalten ermöglicht es, dass das Ergebnis des Effekts vom Ereignissystem oder vom Aufrufer von [`flushSync`](/docs/react-dom.html#flushsync) beobachtet werden kann.
 
-> Note
+> Hinweis
 > 
-> This only affects the timing of when the function passed to `useEffect` is called - updates scheduled inside these effects are still deferred. This is different than [`useLayoutEffect`](#uselayouteffect), which fires the function and processes the updates inside of it immediately.
+> Dies wirkt sich nur auf den Zeitpunkt aus, zu dem die an `useEffect` übergebene Funktion aufgerufen wird - Aktualisierungen, die innerhalb dieser Effekte geplant sind, werden weiterhin aufgeschoben. Darin liegt der Unterschied zu [`useLayoutEffect`](#uselayouteffect), wo die Funktion ausgelöst und die Aktualisierungen innerhalb der Funktion sofort verarbeitet werden.
 
-Even in cases where `useEffect` is deferred until after the browser has painted, it's guaranteed to fire before any new renders. React will always flush a previous render's effects before starting a new update.
+Sogar in Fällen, in denen `useEffect` aufgeschoben wird, bis der Browser gezeichnet hat, ist garantiert, dass es vor jedem neuen Rendering ausgelöst wird. React wird immer die Effekte eines vorherigen Renderings löschen, bevor eine neue Aktualisierung gestartet wird.
 
-#### Conditionally firing an effect {#conditionally-firing-an-effect}
+#### Bedingte Auslösung eines Effekts {#conditionally-firing-an-effect}
 
-The default behavior for effects is to fire the effect after every completed render. That way an effect is always recreated if one of its dependencies changes.
+Standardmäßig wird der Effekt nach jedem abgeschlossenen Rendering ausgelöst. Auf diese Weise wird ein Effekt immer neu erstellt, wenn sich eine seiner Abhängigkeiten ändert.
 
-However, this may be overkill in some cases, like the subscription example from the previous section. We don't need to create a new subscription on every update, only if the `source` prop has changed.
+In manchen Fällen kann dies jedoch zu viel sein, wie im Beispiel des Abonnements aus dem vorherigen Abschnitt. Wir müssen nicht bei jeder Aktualisierung ein neues Abonnement erstellen, sondern nur dann, wenn sich die `source` prop geändert hat.
 
-To implement this, pass a second argument to `useEffect` that is the array of values that the effect depends on. Our updated example now looks like this:
+Um dies zu implementieren, kannst du ein zweites Argument an `useEffect` übergeben, welches das Array derjenigen Werte ist, von denen der Effekt abhängt. Unser aktualisiertes Beispiel sieht nun wie folgt aus:
 
 ```js
 useEffect(
@@ -180,20 +178,20 @@ useEffect(
 );
 ```
 
-Now the subscription will only be recreated when `props.source` changes.
+Jetzt wird das Abonnement nur neu erstellt, wenn sich `props.source` ändert.
 
->Note
+>Hinweis
 >
->If you use this optimization, make sure the array includes **all values from the component scope (such as props and state) that change over time and that are used by the effect**. Otherwise, your code will reference stale values from previous renders. Learn more about [how to deal with functions](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) and what to do when the [array values change too often](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often).
+> Wenn du diese Optimierung verwendest, musst du sicherstellen, dass das Array **alle Werte aus dem Geltungsbereich der Komponente (z. B. Props und State) enthält, die sich im Laufe der Zeit ändern und die vom Effekt verwendet werden**. Andernfalls verweist der Code auf veraltete Werte aus früheren Renderings. Lerne mehr darüber, [wie man mit Funktionen umgeht](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) und was zu tun ist, wenn sich [die Werte des Arrays zu oft ändern](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often).
 >
->If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array (`[]`) as a second argument. This tells React that your effect doesn't depend on *any* values from props or state, so it never needs to re-run. This isn't handled as a special case -- it follows directly from how the dependencies array always works.
+> Wenn du einen Effekt nur einmal ausführen und aufräumen willst (beim Erstellen und Löschen), kannst du ein leeres Array (`[]`) als zweites Argument übergeben. Dies teilt React mit, dass der Effekt nicht von *irgendwelchen* Werten von Props oder State abhängt, so dass er nie wieder ausgeführt werden muss. Dies wird nicht als Sonderfall behandelt - es ergibt sich direkt daraus, wie das Abhängigkeits-Array immer funktioniert.
 >
->If you pass an empty array (`[]`), the props and state inside the effect will always have their initial values. While passing `[]` as the second argument is closer to the familiar `componentDidMount` and `componentWillUnmount` mental model, there are usually [better](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [solutions](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) to avoid re-running effects too often. Also, don't forget that React defers running `useEffect` until after the browser has painted, so doing extra work is less of a problem.
+> Wenn man ein leeres Array (`[]`) übergibt, haben die Props und der State innerhalb des Effekts immer ihre initialen Werte. Während die Übergabe von `[]` als zweites Argument dem bekannten mentalen Modell von `componentDidMount` und `componentWillUnmount` näher kommt, gibt es normalerweise [bessere](/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [Lösungen](/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often), um eine zu häufige Wiederholung der Effekte zu vermeiden. Man sollte auch nicht vergessen, dass React die Ausführung von `useEffect` aufschiebt, bis der Browser gezeichnet hat, so dass zusätzlicher Aufwand weniger ein Problem darstellt.
 >
 >
->We recommend using the [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) rule as part of our [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. It warns when dependencies are specified incorrectly and suggests a fix.
+> Wir empfehlen, die [`exhaustive-deps`](https://github.com/facebook/react/issues/14920)-Regel als Teil unseres [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation)-Packages zu benutzen. Es warnt, wenn Abhängigkeiten falsch angegeben sind, und schlägt eine Korrektur vor.
 
-The array of dependencies is not passed as arguments to the effect function. Conceptually, though, that's what they represent: every value referenced inside the effect function should also appear in the dependencies array. In the future, a sufficiently advanced compiler could create this array automatically.
+Das Array der Abhängigkeiten wird nicht als Argument an die Effektfunktion übergeben. Konzeptionell ist es jedoch genau das: Jeder Wert, auf den innerhalb der Effektfunktion verwiesen wird, sollte auch im Array der Abhängigkeiten erscheinen. In Zukunft könnte ein ausreichend fortgeschrittener Compiler dieses Array automatisch erstellen.
 
 ### `useContext` {#usecontext}
 
@@ -201,25 +199,25 @@ The array of dependencies is not passed as arguments to the effect function. Con
 const value = useContext(MyContext);
 ```
 
-Accepts a context object (the value returned from `React.createContext`) and returns the current context value for that context. The current context value is determined by the `value` prop of the nearest `<MyContext.Provider>` above the calling component in the tree.
+Akzeptiert ein Kontextobjekt (den von `React.createContext` zurückgegebenen Wert) und gibt den aktuellen Kontextwert für diesen Kontext zurück. Der aktuelle Kontextwert wird durch die `value`-prop des nächstgelegenen `<MyContext.Provider>` oberhalb der aufrufenden Komponente im Baum bestimmt.
 
-When the nearest `<MyContext.Provider>` above the component updates, this Hook will trigger a rerender with the latest context `value` passed to that `MyContext` provider. Even if an ancestor uses [`React.memo`](/docs/react-api.html#reactmemo) or [`shouldComponentUpdate`](/docs/react-component.html#shouldcomponentupdate), a rerender will still happen starting at the component itself using `useContext`.
+Sobald sich der nächstgelegene `<MyContext.Provider>` oberhalb der Komponente aktualisiert, löst dieser Hook ein erneutes Rendering mit dem neuesten Kontext-`value` aus, der an den `MyContext`-Provider übergeben worden ist. Auch, wenn ein Vorfahre [`React.memo`](/docs/react-api.html#reactmemo) benutzt oder [`shouldComponentUpdate`](/docs/react-component.html#shouldcomponentupdate), wird ein erneutes Rendering immer noch von der Komponente selbst ausgehend unter Verwendung von `useContext` erfolgen.
 
-Don't forget that the argument to `useContext` must be the *context object itself*:
+Das Argument für `useContext` muss dabei das *Kontextobjekt selbst* sein:
 
- * **Correct:** `useContext(MyContext)`
- * **Incorrect:** `useContext(MyContext.Consumer)`
- * **Incorrect:** `useContext(MyContext.Provider)`
+ * **Korrekt:** `useContext(MyContext)`
+ * **Inkorrekt:** `useContext(MyContext.Consumer)`
+ * **Inkorrekt:** `useContext(MyContext.Provider)`
 
-A component calling `useContext` will always re-render when the context value changes. If re-rendering the component is expensive, you can [optimize it by using memoization](https://github.com/facebook/react/issues/15156#issuecomment-474590693).
+Eine Komponente, die `useContext` aufruft, wird immer neu gerendert, wenn sich der Kontextwert ändert. Wenn ein erneutes Rendering aufwendig is, kann man es [mithilfe von Memoisierung optimieren](https://github.com/facebook/react/issues/15156#issuecomment-474590693).
 
->Tip
+>Tipp
 >
->If you're familiar with the context API before Hooks, `useContext(MyContext)` is equivalent to `static contextType = MyContext` in a class, or to `<MyContext.Consumer>`.
+>Wenn du mit der Kontext-API vor Hooks vertraut bist, ist `useContext(MyContext)` gleichbedeutend mit `static contextType = MyContext` in einer Klasse, oder mit `<MyContext.Consumer>`.
 >
->`useContext(MyContext)` only lets you *read* the context and subscribe to its changes. You still need a `<MyContext.Provider>` above in the tree to *provide* the value for this context.
+> Mit `useContext(MyContext)` kann man den Kontext nur *lesen* und auf dessen Änderungen hören. Man benötigt immer noch einen `<MyContext.Provider>` weiter oben im Baum, um den Wert für diesen Kontext *bereitzustellen*.
 
-**Putting it together with Context.Provider**
+**Zusammenstellung mit Context.Provider**
 ```js{31-36}
 const themes = {
   light: {
@@ -255,12 +253,12 @@ function ThemedButton() {
 
   return (
     <button style={{ background: theme.background, color: theme.foreground }}>
-      I am styled by theme context!
+      Ich bin gestylt mithilfe des theme-Kontextes!
     </button>
   );
 }
 ```
-This example is modified for hooks from a previous example in the [Context Advanced Guide](/docs/context.html), where you can find more information about when and how to use Context.
+Dieses Beispiel wurde für Hooks von einem früheren Beispiel im [fortgeschrittenen Guide zum Kontext](/docs/context.html) abgeändert, wo sich weitere Informationen darüber finden, wann und wie man Context verwenden kann.
 
 
 ## Additional Hooks {#additional-hooks}
