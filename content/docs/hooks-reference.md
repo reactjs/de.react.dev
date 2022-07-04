@@ -664,7 +664,7 @@ function NameFields() {
 
 ## Library Hooks {#library-hooks}
 
-The following Hooks are provided for library authors to integrate libraries deeply into the React model, and are not typically used in application code.
+Die folgenden Hooks sind für Autoren von Libraries vorgesehen, um diese tief in das React-Modell zu integrieren, und werden normalerweise nicht im Anwendungscode verwendet.
 
 ### `useSyncExternalStore` {#usesyncexternalstore}
 
@@ -672,20 +672,20 @@ The following Hooks are provided for library authors to integrate libraries deep
 const state = useSyncExternalStore(subscribe, getSnapshot[, getServerSnapshot]);
 ```
 
-`useSyncExternalStore` is a hook recommended for reading and subscribing from external data sources in a way that's compatible with concurrent rendering features like selective hydration and time slicing.
+`useSyncExternalStore` ist ein Hook, der für das Lesen und Abonnieren von externen Datenquellen empfohlen wird, und zwar in einer Weise, die mit gleichzeitigen Rendering-Funktionen wie selektiver Hydration und Time-Slicing kompatibel ist.
 
-This method returns the value of the store and accepts three arguments:
-- `subscribe`: function to register a callback that is called whenever the store changes.
-- `getSnapshot`: function that returns the current value of the store.
-- `getServerSnapshot`: function that returns the snapshot used during server rendering.
+Diese Methode gibt den Wert des Speichers (engl. store) zurück und nimmt drei Argumente entgegen:
+- `subscribe`: Funktion, um einen Callback zu registrieren, der immer dann aufgerufen wird, wenn sich der Speicher ändert.
+- `getSnapshot`: Funktion, die den aktuellen Wert des Speichers zurückgibt.
+- `getServerSnapshot`: Funktion, die den beim Server-Rendering verwendeten Snapshot zurückgibt.
 
-The most basic example simply subscribes to the entire store:
+Das einfachste Beispiel ist das Abonnement des gesamten Speichers:
 
 ```js
 const state = useSyncExternalStore(store.subscribe, store.getSnapshot);
 ```
 
-However, you can also subscribe to a specific field:
+Man kann aber auch ein bestimmtes Feld abonnieren:
 
 ```js
 const selectedField = useSyncExternalStore(
@@ -694,7 +694,7 @@ const selectedField = useSyncExternalStore(
 );
 ```
 
-When server rendering, you must serialize the store value used on the server, and provide it to `useSyncExternalStore`. React will use this snapshot during hydration to prevent server mismatches:
+Beim serverseitigen Rendering muss man den auf dem Server verwendeten Speicherwert serialisieren und an `useSyncExternalStore` übergeben. React verwendet diesen Snapshot während der Hydration, um serverseitige Fehlanpassungen zu vermeiden:
 
 ```js
 const selectedField = useSyncExternalStore(
@@ -704,13 +704,13 @@ const selectedField = useSyncExternalStore(
 );
 ```
 
-> Note:
+> Hinweis:
 >
-> `getSnapshot` must return a cached value. If getSnapshot is called multiple times in a row, it must return the same exact value unless there was a store update in between.
+> `getSnapshot` muss einen zwischengespeicherten Wert zurückgeben. Wenn getSnapshot mehrmals hintereinander aufgerufen wird, muss es genau denselben Wert zurückgeben, es sei denn, es wurde zwischendurch eine Speicheraktualisierung vorgenommen.
 > 
-> A shim is provided for supporting multiple React versions published as `use-sync-external-store/shim`. This shim will prefer `useSyncExternalStore` when available, and fallback to a user-space implementation when it's not.
+> Für die Unterstützung mehrerer React-Versionen wird ein Verbindungsstück (engl. shim) zur Verfügung gestellt, der als `use-sync-external-store/shim` veröffentlicht wird. Dieses Verbindungsstück wird `useSyncExternalStore` bevorzugen, wenn es verfügbar ist, und auf eine User-Space-Implementierung zurückgreifen, wenn es nicht verfügbar ist.
 > 
-> As a convenience, we also provide a version of the API with automatic support for memoizing the result of getSnapshot published as `use-sync-external-store/with-selector`.
+> Zur Vereinfachung bieten wir auch eine Version der API mit automatischer Unterstützung für die Memoisierung des Ergebnisses von getSnapshot, das als `use-sync-external-store/with-selector` veröffentlicht wird.
 
 ### `useInsertionEffect` {#useinsertioneffect}
 
@@ -718,8 +718,8 @@ const selectedField = useSyncExternalStore(
 useInsertionEffect(didUpdate);
 ```
 
-The signature is identical to `useEffect`, but it fires synchronously _before_ all DOM mutations. Use this to inject styles into the DOM before reading layout in [`useLayoutEffect`](#uselayouteffect). Since this hook is limited in scope, this hook does not have access to refs and cannot schedule updates.
+Die Signatur dieses Hooks ist identisch mit `useEffect`, aber er feuert synchron _vor_ allen DOM-Mutationen. Verwende ihn, um Styling in das DOM zu injizieren, bevor das Layout in [`useLayoutEffect`](#uselayouteffect) gelesen wird. Da der Geltungsbereich dieses Hooks begrenzt ist, hat er keinen Zugriff auf refs und kann keine Aktualisierungen planen.
 
-> Note:
+> Hinweis:
 >
-> `useInsertionEffect` should be limited to css-in-js library authors. Prefer [`useEffect`](#useeffect) or [`useLayoutEffect`](#uselayouteffect) instead.
+> `useInsertionEffect` sollte beschränkt sein auf Autoren von CSS-in-JS-Libraries. Ziehe ihm stattdessen [`useEffect`](#useeffect) oder [`useLayoutEffect`](#uselayouteffect) vor.
