@@ -1,22 +1,22 @@
 ---
 id: hooks-reference
-title: Hooks API Reference
+title: Hooks API Referenz
 permalink: docs/hooks-reference.html
 prev: hooks-custom.html
 next: hooks-faq.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*Hooks* sind ein neues Feature in React 16.8. Damit lassen sich State und andere React Features nutzen, ohne dass eine Klasse geschrieben werden muss.
 
-This page describes the APIs for the built-in Hooks in React.
+Diese Seite beschreibt die APIs für die bereits in React implementierten Hooks.
 
-If you're new to Hooks, you might want to check out [the overview](/docs/hooks-overview.html) first. You may also find useful information in the [frequently asked questions](/docs/hooks-faq.html) section.
+Wenn Hooks neu für dich sind, schau dir zuerst [den Überblick](/docs/hooks-overview.html) an. Nützliche Informationen findest du außerdem in den [häufig gestellten Fragen](/docs/hooks-faq.html).
 
-- [Basic Hooks](#basic-hooks)
+- [Grundlegende Hooks](#basic-hooks)
   - [`useState`](#usestate)
   - [`useEffect`](#useeffect)
   - [`useContext`](#usecontext)
-- [Additional Hooks](#additional-hooks)
+- [Zusätzliche Hooks](#additional-hooks)
   - [`useReducer`](#usereducer)
   - [`useCallback`](#usecallback)
   - [`useMemo`](#usememo)
