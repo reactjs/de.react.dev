@@ -169,8 +169,4 @@ Bei Facebook verwenden wir React in tausenden von Komponenten, und wir haben kei
 
 Props und Komposition geben dir all die Flexibilität, die du brauchst um das Aussehen und Verhalten einer Komponente auf explizite und sichere Art anzupassen. Denk daran, dass Komponenten beliebige Props akzeptieren können, inklusive primitiver Werte, React-Elementen oder Funktionen.
 
-<<<<<<< HEAD
 Wenn du Funktionalität, die nicht UI-bezogen ist, zwischen Komponenten wiederverwenden möchtest, empfehlen wir dir diese in ein separates JavaScript-Modul auszulagern. Die Komponenten können dieses importieren und die Funktion, das Objekt oder eine Klasse nutzen, ohne sie zu erweitern.
-=======
-If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or class, without extending it.
->>>>>>> c7d858947f832d1ba4e78caebc391fd964ff6de6
