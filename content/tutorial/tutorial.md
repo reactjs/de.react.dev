@@ -41,11 +41,11 @@ Wir empfehlen dir, dass du dir das Tic-Tac-Toe-Spiel anschaust, bevor du mit dem
 
 Du kannst das Tic-Tac-Toe-Spiel schließen, sobald du dich damit vertraut gemacht hast. Wir werden in diesem Tutorial mit einem einfacheren Template beginnen. Im nächsten Schritt helfen wir dir alles einzurichten, damit du anfangen kannst, das Spiel zu erstellen.
 
-### Vorraussetzungen {#prerequisites}
+### Voraussetzungen {#prerequisites}
 
-Wir nehmen an, dass du bereits HTML und JavaScript ein wenig kennst, aber selbst wenn du vorher eine andere Sprache erlernt hast, solltest du in der Lage sein, folgen zu können. Desweiteren nehmen wir ebenfalls an, dass dir die Programmierkonzepte wie Funktionen, Objekte, Arrays und in geringerem Maße auch Klassen ein Begriff sind.
+Wir nehmen an, dass du bereits ein wenig mit HTML und JavaScript vertraut bist. Selbst wenn du vorher eine andere Sprache erlernt hast, solltest du trotzdem in der Lage sein, folgen zu können. Des Weiteren nehmen wir an, dass dir Programmierkonzepte wie Funktionen, Objekte, Arrays und in geringerem Maße auch Klassen ein Begriff sind.
 
-Wenn du die Grundlagen von JavaScript noch einmal wiederholen möchtest, empfehlen wir dir [dieses Handbuch](https://developer.mozilla.org/de/docs/Web/JavaScript/Eine_Wiedereinfuehrung_in_JavaScript) zu lesen. Behalte in Erinnerung, dass wir auch Features von ES6 nutzen werden -- eine aktuellere Version von JavaScript. In diesem Tutorial verwenden wir unteranderem die sogenannte [arrow-Funktion](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen), [Klasses](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Klassen), [`let`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/let), und [`const`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/const) Ausdrücke. Schaue dir [Babel REPL](babel://es5-syntax-example) an, um zu sehen, in was ES6-Features kompiliert werden.
+Wenn du die Grundlagen von JavaScript noch einmal wiederholen möchtest, empfehlen wir dir [dieses Handbuch](https://developer.mozilla.org/de/docs/Web/JavaScript/Eine_Wiedereinfuehrung_in_JavaScript) zu lesen. Beachte, dass wir auch Features von ES6 nutzen werden -- eine aktuelle Version von JavaScript. In diesem Tutorial verwenden wir unter anderem die sogenannte [arrow-Funktion](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen), [Klassen](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Klassen), [`let`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/let), und [`const`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/const) Ausdrücke. Schaue dir [Babel REPL](babel://es5-syntax-example) an, um zu sehen, in was ES6-Code kompiliert wird.
 
 ## Setup für das Tutorial {#setup-for-the-tutorial}
 
