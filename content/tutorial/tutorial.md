@@ -33,13 +33,13 @@ Du musst nicht sofort alle Abschnitte abschließen, um einen Mehrwert aus dem Tu
 
 ### Was werden wir erstellen? {#what-are-we-building}
 
-In diesem Tutorial werden wir dir zeigen, wie du ein interaktives Tic-Tac-Toe-Spiel mit React bauen kannst.
+In diesem Tutorial werden wir dir zeigen, wie du ein interaktives Tic-Tac-Toe-Spiel mit React erstellen kannst.
 
-Du kannst das Ziel unseres Projektes hier einsehen: **[Finales Ergebnis](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Sollte der Code keinen Sinn für dich ergeben oder du dich mit dem Syntax nicht auskennst, kein Problem! Das Ziel dieses Tutorials ist es, dir zu helfen React und seinen Syntax zu verstehen.
+Hier kannst du sehen, was wir erstellen werden: **[Finales Ergebnis](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. Sollte der Code keinen Sinn für dich ergeben oder solltest du dich mit der Syntax nicht auskennen, kein Problem! Das Ziel dieses Tutorials ist es, dir zu helfen React und dessen Syntax zu verstehen.
 
-Wir empfehlen dir, dass du dir das Tic-Tac-Toe anschaust, bevor du mit dem Tutorial weitermachst. Eines der Features, die du bemerken wirst, ist, dass rechts vom Spielbrett eine nummerierte Liste ist. Diese Liste zeigt alle getätigten Züge an und wird mit dem Fortschreiten des Spiels aktualisiert.
+Wir empfehlen dir, dass du dir das Tic-Tac-Toe-Spiel anschaust, bevor du mit dem Tutorial weitermachst. Eines der Features, die du bemerken wirst, ist, dass sich rechts vom Spielbrett eine nummerierte Liste befindet. Diese Liste zeigt alle getätigten Züge an und wird mit dem Spielfortschritt aktualisiert.
 
-Du kannst das Tic-Tac-Toe-Spiel schließen, sobald du dich damit vertraut gemacht hast. Wir werden in diesem Tutorial mit einem einfacheren Template beginnen. Im nächsten Schritt helfen wir dir alles einzurichten, damit du anfangen kannst, das Spiel zu bauen.
+Du kannst das Tic-Tac-Toe-Spiel schließen, sobald du dich damit vertraut gemacht hast. Wir werden in diesem Tutorial mit einem einfacheren Template beginnen. Im nächsten Schritt helfen wir dir alles einzurichten, damit du anfangen kannst, das Spiel zu erstellen.
 
 ### Vorraussetzungen {#prerequisites}
 
