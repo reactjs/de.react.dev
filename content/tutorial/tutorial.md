@@ -14,22 +14,22 @@ redirect_from:
 
 Für dieses Tutorial benötigst Du keine Vorkenntnisse in React.
 
-## Bevor wir mit den Tutorial anfangen {#before-we-start-the-tutorial}
+## Bevor wir mit dem Tutorial anfangen {#before-we-start-the-tutorial}
 
-Wir werden im Laufe dieses Tutorials ein Spiel programmieren. ** Vielleicht möchtest du es überspringen, weil du keine Spiele programmieren willst -- aber gib es doch eine Chance.** Die Techniken, die du in diesem Tutorial lernen wirst, sind fundamental um eine React-App zu erstellen, es zu meistern wird dir ein tiefes Verständnis von React geben.
+Wir werden im Laufe dieses Tutorials ein kleines Spiel programmieren. ** Vielleicht neigst du dazu, es zu überspringen, weil du keine Spiele programmieren willst -- aber gib ihm doch eine Chance.** Die Techniken, die du in diesem Tutorial lernen wirst, sind notwendig um eine React-App zu erstellen. Wenn du das Tutorial bewältigst, wird dir das ein tiefes Verständnis von React geben.
 
 >Tipp
 >
->Dieses Tutorial ist gestaltet für jene, die **learn by doing** bevorzugen. Solltest du es be bevorzugen, die Konzepte von grundauf zu lernen, schau doch auf unsere [Schritt für Schritt Anleitung](/docs/hello-world.html). Das Anleitung und das Tutorial können für dich ergänzend sein.
+>Dieses Tutorial ist gestaltet für jene, die **learn by doing** bevorzugen. Solltest du es bevorzugen, die Konzepte von Grund auf zu lernen, schau doch in unsere [Schritt für Schritt Anleitung](/docs/hello-world.html). Das Tutorial und die Anleitung ergänzen sich gegenseitig.
 
-Dieses Tutorial ist in mehreren Sektionen aufgeteilt:
+Dieses Tutorial ist in mehrere Abschnitte aufgeteilt:
 
-* Das [Setup für das Tutorial](#setup-for-the-tutorial) gibt dir **eine Basis** um das Tutorial zu verfolgen.
-* Die [Übersicht](#overview) bringt dir die **Fundamente** von React bei: Komponenten, Props und State.
-* [Das Spiel fertigstellen](#completing-the-game) zeigt dir **die am häufigsten vorkommenen Techniken** bei der Entwicklung mit React.
+* Das [Setup für das Tutorial](#setup-for-the-tutorial) gibt dir **einen Ausgangspunkt** um das Tutorial durchzuführen.
+* Die [Übersicht](#overview) bringt dir die **Grundlagen** von React bei: Components, Props und State.
+* [Das Spiel fertigstellen](#completing-the-game) zeigt dir **die am häufigsten vorkommenden Techniken** während der Entwicklung mit React.
 * [Zeitreisen hinzufügen](#adding-time-travel) gibt dir **einen tieferen Einblick** in die einzigartigen Stärken von React.
 
-Du musst nicht alle Abschnitte des Tutorials direkt abschließen um einen Mehrwert aus dem Tutorial zu gewinnen. Komme so weit du kannst, selbst wenn es nur ein oder zwei Abschnitte sind.
+Du musst nicht sofort alle Abschnitte abschließen, um einen Mehrwert aus dem Tutorial zu ziehen. Versuche so weit zu kommen, wie du kannst, selbst wenn es nur ein oder zwei Abschnitte sind.
 
 ### Was werden wir erstellen? {#what-are-we-building}
 
