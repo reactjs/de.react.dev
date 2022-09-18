@@ -49,76 +49,76 @@ Wenn du die Grundlagen von JavaScript noch einmal wiederholen möchtest, empfehl
 
 ## Setup für das Tutorial {#setup-for-the-tutorial}
 
-Es gibt zwei Möglichkeiten um das Tutorial zu absolvieren: Entweder du schreibst den Code direkt im Browser oder du erstellst dir Lokal eine Entwicklungsumgebung.
+Es gibt zwei Möglichkeiten, das Tutorial durchzuführen: Entweder du schreibst den Code direkt im Browser oder du richtest dir eine lokale Entwicklungsumgebung ein.
 
 ### Möglichkeit 1: Code direkt im Browser schreiben {#setup-option-1-write-code-in-the-browser}
 
-Das ist der schnellste Weg um direkt anfangen zu können.
+Das ist der schnellste Weg um direkt anfangen zu können!
 
-Zuerst öffnest du diesen **[Basiscode](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in einem neuen Tab. Im neuen Tab solltest du ein leeres Tic-Tac-Toe-Spielbrett und etwas React-Code sehen können. Den React-Code werden wir innerhalb dieses Tutorials bearbeiten.
+Zuerst öffnest du diesen **[Einstiegscode](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in einem neuen Tab. Im neuen Tab solltest du ein leeres Tic-Tac-Toe-Spielbrett und React-Code sehen können. Den React-Code werden wir innerhalb dieses Tutorials bearbeiten.
 
-Von hier aus kannst du auch die andere Option überspringen und direkt zum Abschnitt [Übersicht](#overview) springen um eine Übersicht über React zu erhalten.
+Jetzt kannst du die zweite Setup-Option überspringen und direkt zum Abschnitt [Übersicht](#overview) springen, um eine Übersicht über React zu erhalten.
 
 ### Möglichkeit 2: Lokale Entwicklungsumgebung {#setup-option-2-local-development-environment}
 
-Das ist komplett optional und nicht für dieses Tutorial benötigt!
+Das ist komplett optional und für dieses Tutorial nicht notwendig!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Anleitung um lokal in deinem bevorzugten Editor mit dem Tutorial weiterzumachen</b></summary>
+<summary><b>Optional: Anleitung um lokal in deinem bevorzugten Texteditor mit dem Tutorial weiterzumachen</b></summary>
 
-Dieses Setup benötigt mehr initialen Aufwand, ermöglicht dir jedoch, das Tutorial in einem Editor deiner Wahl zu vollführen. Folgende Schritte sind dafür notwendig:
+Dieses Setup benötigt mehr initialen Aufwand, ermöglicht dir jedoch, das Tutorial in einem Editor deiner Wahl durchzuführen. Folgende Schritte sind dafür notwendig:
 
-1. Stelle sicher, dass du die aktuelle Version von [Node.js](https://nodejs.org/de/) installiert hast.
-2.Folge den [Installationsanweisungen zum erstellen einer React App](/docs/create-a-new-react-app.html#create-react-app) um ein neues Projekt zu erstellen.
+1. Stelle sicher, dass du eine aktuelle Version von [Node.js](https://nodejs.org/de/) installiert hast.
+2. Folge den [Installationsanweisungen für Create React App](/docs/create-a-new-react-app.html#create-react-app) um ein neues Projekt zu erstellen.
 
 ```bash
 npx create-react-app meine-app
 ```
 
-3. Lösche alle Dateien innerhalb vom `src/`-Ordner des neuen Projektes. 
+3. Lösche alle Dateien innerhalb des `src/`-Ordners des neuen Projektes. 
 
 > Hinweis:
 >
->**Lösche nicht den gesamten `src`-Ordner sondern lediglich die Dateien innerhalb des Verzeichnisses.** Wir werden den Standard-Quellcode in den nächsten Schritten ersetzen.
+>**Lösche nicht den gesamten `src`-Ordner sondern lediglich die Dateien innerhalb des Verzeichnisses.** Wir werden die Standard-Quellcode-Dateien im nächsten Schritt mit Beispielen für dieses Projekt ersetzen.
 
 ```bash
 cd meine-app
 cd src
 
-# Wenn du Mac oder Linux benutzt:
+# Wenn du einen Mac oder Linux benutzt:
 rm -f *
 
-# Oder wenn du auf Windows unterwegs bist:
+# Oder wenn du Windows nutzt:
 del *
 
-# Danach wechsle zurück zum Projekt-Verzeichnis
+# Wechsle danach zurück zum Projekt-Verzeichnis
 cd ..
 ```
 
-4. Füge eine Datei mit dem Namen `index.css` in den `src/`-Ordner mit [diesem CSS-Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+4. Füge eine Datei mit dem Namen `index.css` in den `src/`-Ordner mit [diesem CSS-Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100) ein.
 
-5. Füge eine Datei mit dem Namen `index.js` in den `src/`-Ordner mit [diesem JS-Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
+5. Füge eine Datei mit dem Namen `index.js` in den `src/`-Ordner mit [diesem JS-Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010) ein.
 
 6. Schreibe diese drei Zeilen an den Anfang von `index.js` im `src/`-Ordner:
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 ```
 
-Wenn du jetzt `npm start` in deinem Projektverzeichnis ausführst und dann im Browser `http://localhost:3000` aufrufst, Solltest du ein leeres Tic-Tac-Toe-Feld sehen.
+Wenn du jetzt `npm start` in deinem Projektverzeichnis ausführst und dann im Browser `http://localhost:3000` aufrufst, solltest du ein leeres Tic-Tac-Toe-Feld sehen.
 
-Wir empfehlen dir [diese Anweisungen](https://babeljs.io/docs/editors/) durchzugehen um Syntax-Highlighting für deinen Editor zu konfigurieren.
+Wir empfehlen dir [diese Anweisungen](https://babeljs.io/docs/editors/) zu befolgen, um Syntax-Highlighting für deinen Editor zu konfigurieren.
 
 </details>
 
 ### Hilfe, ich hänge fest! {#help-im-stuck}
 
-Wenn du nicht mehr weiterkommst, schau am Besten in die [Community-Support-Ressourcen](/community/support.html). Im speziellen ist der [Reactiflux Chat](https://discord.gg/reactiflux) ein guter Weg um schnell Antworten und Hilfestellungen zu bekommen. Solltest du keine Antwort bekommen, oder weiterhin festhängen, erstelle ein Issue-Ticket und wir werden dir raushelfen.
+Wenn du nicht mehr weiterkommst, schau am besten in die [Community-Support-Ressourcen](/community/support.html). Insbesondere ist der [Reactiflux Chat](https://discord.gg/reactiflux) ein guter Weg um schnell Hilfe zu bekommen. Solltest du keine Antwort bekommen, oder weiterhin festhängen, erstelle ein Issue-Ticket und wir werden dich unterstützen.
 
 ## Übersicht {#overview}
 
