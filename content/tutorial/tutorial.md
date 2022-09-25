@@ -170,19 +170,19 @@ JSX hat den vollen Funktionsumfang von JavaScript. Du kannst *jeden* JavaScript-
 
 Die `ShoppingList`-Kompontente von oben stellt nur native DOM-Komponenten wie `<div />` und `<li />` dar. Dennoch kannst du auch eigene  React-Komponenten zusammenstellen und darstellen. Wir können jetzt zum Beispiel immer auf die Shopping-Liste verweisen indem wir `<ShoppingList />` schreiben. Jede React-Komponente ist abgekapselt und kann eigenständig operieren; das erlaubt dir, komplexe Benutzeroberflächen aus einfachen Komponenten zu kreieren.
 
-### Betrachten des Basiscodes {#inspecting-the-starter-code}
+### Untersuchen des Einstiegscodes {#inspecting-the-starter-code}
 
-Wenn du an dem Tutorial **in deinem Browser** arbeitest, öffne diesen Code in einem neuen Tab: **[Basiscode](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Wenn du an dem Tutorial **lokal** arbeitest, öffne stattdessen `src/index.js` in deinem Projektverzeichnis (du hast diese Datei bereits während des [Setups](#setup-option-2-local-development-environment) erstellt).
+Wenn du an dem Tutorial **in deinem Browser** arbeitest, öffne diesen Code in einem neuen Tab: **[Einstiegscode](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Wenn du **lokal** an dem Tutorial arbeitest, öffne stattdessen `src/index.js` in deinem Projektverzeichnis (du hast diese Datei bereits während des [Setups](#setup-option-2-local-development-environment) angelegt).
 
-Dieser Basiscode ist die Grundlage auf der wir bauen. Wir haben bereits das CSS vorbereitet, sodass du dich nur auf das Lernen von React fokussieren und das Tic-Tac-Toe-Spiel programmieren kannst.
+Dieser Einstiegscode ist die Grundlage auf der wir aufbauen. Wir haben bereits den CSS-Code vorbereitet, sodass du dich nur auf das Lernen von React und das Programmieren des Tic-Tac-Toe-Spiels fokussieren musst.
 
-Bei genauer Betrachtung des Codes wirst du sehen, dass wir drei React-Kompontente haben:
+Beim Betrachten des Codes wirst du feststellen, dass wir drei React-Kompontenten haben:
 
-* Square (folgend auch Quadrat genannt)
-* Board (folgend auch Spielbrett genannt)
-* Game
+* Square (Quadrat)
+* Board (Spielbrett)
+* Game (Spiel)
 
-Die "Square"-Komponente stellt einen einzelnen `<button>` dar und das Spielbrett "Board" besitzt 9 davon. Die "Game"-Komponente besitzt ein "board" mit Platzhalter-Werten welche wir später modifizieren werden. Derzeit gibt es keine interaktiven Komponente.
+Die Square-Komponente visualisiert einen einzelnen `<button>` und das Board visualisiert 9 Quadrate. Die Game-Komponente visualisiert ein Spielbrett mit Platzhalter-Werten, welche wir später modifizieren werden. Derzeit gibt es keine interaktiven Komponenten.
 
 ### Daten über props weitergeben {#passing-data-through-props}
 
