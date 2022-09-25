@@ -122,13 +122,13 @@ Wenn du nicht mehr weiterkommst, schau am besten in die [Community-Support-Resso
 
 ## Übersicht {#overview}
 
-Da du jetzt alles vorbereitet hast, lass uns erstmal einen Überblick über React gewinnen!
+Da du jetzt alles vorbereitet hast, lass uns erstmal einen Überblick über React bekommen!
 
 ### Was ist React? {#what-is-react}
 
-React ist eine deklarative, effiziente und flexible JavaScript-Bibliothek für das erstellen von Benutzerschnittstellen. Es erlaubt dir komplexe Oberflächen aus kleinen isolierten Code-Schnipseln, sogenannte "Komponente" (engl. components), zu komponieren.
+React ist eine deklarative, effiziente und flexible JavaScript-Bibliothek für das Erstellen von Benutzeroberflächen. Es ermöglicht dir, komplexe Oberflächen aus kleinen isolierten Code-Schnipseln, sogenannten "Komponenten" (engl. components), zusammenzustellen.
 
-React hat ein paar unterschiedliche Arten von Komponenten, aber wir beginnen mit `React.Component` Subklassen:
+React bietet ein paar unterschiedliche Arten von Komponenten an, aber wir beginnen mit den `React.Component` Subklassen:
 
 ```javascript
 class ShoppingList extends React.Component {
@@ -149,11 +149,11 @@ class ShoppingList extends React.Component {
 // Anwendungsbeispiel: <ShoppingList name="Mark" />
 ```
 
-Wir kommen zu den merkwürdigen XML-ähnlichen Tags gleich. Wir nutzen Komponenten um React zu sagen, was wir angezeigt haben wollen. Wenn sich die Daten ändern wird React effizient die Komponenten aktualisieren und neu darstellen.
+Wir kommen bald zu den merkwürdigen XML-ähnlichen Tags. Wir nutzen Komponenten um React mitzuteilen, was wir dargestellt haben wollen. Wenn sich unsere Daten ändern wird React die Komponenten effizient aktualisieren und neu darstellen.
 
-In unserem Beispiel ist ShoppingList eine **React Komponenten-Klasse** bzw. ein **React Komponententyp**. Eine Komponente nimmt Parameter, sogenannte `props` (kurz für engl. "properties" - Eigenschaften) entgegen und gibt eine Darstellungs-Hierarchie via der `render` Methode zurück.
+In unserem Beispiel ist ShoppingList eine **React Komponenten-Klasse** bzw. ein **React Komponententyp**. Eine Komponente nimmt Parameter, sogenannte `props` (kurz für engl. "properties" - Eigenschaften) entgegen und gibt über die `render`-Methode eine Darstellungs-Hierarchie zurück.
 
-Die `render`-Methode gibt eine *Beschreibung* von dem zurück, was auf dem Bilschirm zu sehen sein wird. React nimmt diese Beschreibung und zeigt dann das Ergebnis an. Genauergesagt gibt `render` ein **React-Element** zurück, welches eine leichtgewichtige Beschreibung des Darzustellenden ist. Die meisten React-Entwickler nutzen einen speziellen Syntax namens "JSX" welches es leichter macht, solche Strukturen zu schreiben. Der `<div />`-Syntax wird während der Laufzeit zu `React.createElement('div')` transformiert. Das Beispiel oben entspricht daher:
+Die `render`-Methode gibt eine *Beschreibung* von dem zurück, was du auf dem Bildschirm sehen willst. React nimmt diese Beschreibung und zeigt das Ergebnis an. Genauergesagt gibt `render` ein **React-Element** zurück, welches eine leichtgewichtige Beschreibung von dem ist, was dargestellt werden soll. Die meisten React-Entwickler nutzen eine spezielle Syntax namens "JSX" welche es leichter macht, solche Strukturen zu schreiben. Die `<div />`-Syntax wird während des Builds in ein `React.createElement('div')` umgewandelt. Das Beispiel oben entspricht:
 
 ```javascript
 return React.createElement('div', {className: 'shopping-list'},
@@ -162,13 +162,13 @@ return React.createElement('div', {className: 'shopping-list'},
 );
 ```
 
-[See full expanded version.](babel://tutorial-expanded-version)
+[Gesamtes Beispiel anzeigen.](babel://tutorial-expanded-version)
 
-Wenn du mehr über `createElement()` wissen willst, findest du eine detaillierte Beschreibung in der [API Referenz](/docs/react-api.html#createelement), aber wir werden es in diesem Tutorial nicht verwenden. Anstelle dessen werden wir weiterhin JSX nutzen.
+Wenn du mehr über `createElement()` wissen willst, findest du eine detaillierte Beschreibung in der [API Referenz](/docs/react-api.html#createelement). Jedoch werden wir `createElement()` in diesem Tutorial nicht verwenden. Stattdessen werden wir weiterhin JSX nutzen.
 
-JSX hat den vollen Funktionsumfang von JavaScript. Du kannst jeden JavaScript-Ausdruck innerhalb von Klammern in JSX benutzen. Jedes React-Element ist ein JavaScript-Objekt, dass in eine Variable gespeichert werden oder innerhalb des Programms hin- und hergereicht werden kann.
+JSX hat den vollen Funktionsumfang von JavaScript. Du kannst *jeden* JavaScript-Ausdruck innerhalb von Klammern in JSX benutzen. Jedes React-Element ist ein JavaScript-Objekt, welches in eine Variable gespeichert oder innerhalb des Programms hin- und hergereicht werden kann.
 
-Die `ShoppingList`-Kompontente von oben stellt nur eingebaute DOM-Komponenten wie `<div />` und `<li />` dar. Dennoch kannst du auch jede Art von React-Komponente zusammenstellen und darstellen. Wir können jetzt zum Beispiel auf die Shopping-Liste immer referenzieren indem wir `<ShoppingList />` schreiben. Jede React-Komponente ist abgekapselt und kann unabhängig voneinander operieren; Das erlaubt es dir komplexe Benutzeroberflächen aus einzelnen Komponenten zu kreieren.
+Die `ShoppingList`-Kompontente von oben stellt nur native DOM-Komponenten wie `<div />` und `<li />` dar. Dennoch kannst du auch eigene  React-Komponenten zusammenstellen und darstellen. Wir können jetzt zum Beispiel immer auf die Shopping-Liste verweisen indem wir `<ShoppingList />` schreiben. Jede React-Komponente ist abgekapselt und kann eigenständig operieren; das erlaubt dir, komplexe Benutzeroberflächen aus einfachen Komponenten zu kreieren.
 
 ### Betrachten des Basiscodes {#inspecting-the-starter-code}
 
