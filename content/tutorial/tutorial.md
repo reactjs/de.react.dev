@@ -186,11 +186,11 @@ Die Square-Komponente visualisiert einen einzelnen `<button>` und das Board visu
 
 ### Daten über props weitergeben {#passing-data-through-props}
 
-Um einen ersten Schritt wagen zu können, werden wir erstmal probieren Daten von der "Board"-Komponente in die "Square"-Komponente weiterzugeben.
+Um einen ersten Schritt zu wagen, werden wir erstmal probieren Daten von der Board-Komponente in die Square-Komponente weiterzugeben.
 
-Wir empfehlen dir, während du das Tutorial durcharbeitesst, den Code von Hand einzutippen, statt ihn kopieren und einzufügen. Dies hilft dir, dein Gedächtnis zu trainieren und ein besseres Verständnis zu entwickeln.
+Wir empfehlen dir, während du das Tutorial durcharbeitest, den Code selbst zu tippen, statt ihn zu kopieren und einzufügen. Dies hilft dir, dein   Muskelgedächtnis (Muscle Memory) zu trainieren und ein besseres Verständnis zu entwickeln.
 
-In der `renderSquare`-Methode vom "Board", ändere den Code um einen prop namens `value` zum "Square" weiterzureichen:
+Ändere den Code in der `renderSquare`-Methode der Board-Komponente so, dass ein prop namens `value` an die Square-Komponente weitergereicht wird:
 
 ```js{3}
 class Board extends React.Component {
@@ -200,7 +200,7 @@ class Board extends React.Component {
 }
 ```
 
-Passe die `render`-Methode von "Square" an, indem du `{/* TODO */}` mit `{this.props.value}` ersetzt, sodass es den Wert anzeigen kann:
+Ersetze in der `render`-Methode der Square-Komponente das `{/* TODO */}` mit `{this.props.value}`, sodass der Wert angezeigt werden kann:
 
 ```js{5}
 class Square extends React.Component {
@@ -218,13 +218,13 @@ Vorher:
 
 ![React Devtools](../images/tutorial/tictac-empty.png)
 
-Danach: Du müsstest eine Nummer in jedem Quadrat sehen können.
+Nachher: Du solltest in jedem Quadrat eine Nummer sehen.
 
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
-**[Schau dir den vollständigen Code bis zu dieser Stelle an](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Glückwunsch! Du hast gerade von der "Board"-Komponente in das Kindelement "Square" "eine prop weitergegeben". Props weitergeben stellt den Informationsfluss in React dar, immer von einem übergeordneten in ein darunterliegendes Kindelement.
+Glückwunsch! Du hast gerade von der Eltern-Board-Komponente an die Kind-Square-Komponente "eine prop weitergegeben". Der Informationsfluss in React wird durch das Weitergeben von props der Eltern an Kinder realisiert.
 
 ### Erstellen einer interaktiven Komponente {#making-an-interactive-component}
 
