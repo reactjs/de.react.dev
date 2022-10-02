@@ -228,8 +228,8 @@ Glückwunsch! Du hast gerade von der Eltern-Board-Komponente an die Kind-Square-
 
 ### Erstellen einer interaktiven Komponente {#making-an-interactive-component}
 
-Nun werden wir ein Quadrat mit einem "X" füllen, sobald es geklickt wird.
-Zu erst werden wir den Button-Tag, der von der `render()`-Methode der "Square"-Komponente zurückgegeben wird, in folgendes ändern:
+Nun werden wir ein Quadrat mit einem "X" füllen, wenn es geklickt wird.
+Zuerst werden wir den Button-Tag, der von der `render()`-Methode der Square-Komponente zurückgegeben wird, in folgendes ändern:
 
 ```javascript{4}
 class Square extends React.Component {
@@ -243,11 +243,11 @@ class Square extends React.Component {
 }
 ```
 
-Wenn du jetzt auf ein Quadrat klickst, solltest du in der devtools-Konsole deinses Browsers 'click' sehen.
+Wenn du jetzt auf ein Quadrat klickst, solltest du in der devtools-Konsole deines Browsers 'click' sehen.
 
 >Hinweis
 >
->Um weniger zu schreiben und das [verwirrende Verhalten von `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) zu vermiden, verwenden wir die [Pfeilfunktion](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen) für Event-Handler hier und weiter unten:
+>Um weniger schreiben zu müssen und das [verwirrende Verhalten von `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) zu vermeiden, verwenden wir die [arrow-Funktion-Syntax](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen) für Event-Handler hier und weiter unten:
 >
 >```javascript{4}
 >class Square extends React.Component {
@@ -261,13 +261,13 @@ Wenn du jetzt auf ein Quadrat klickst, solltest du in der devtools-Konsole deins
 >}
 >```
 >
->Wenn du `onClick={() => alert('click')}` betrachtest, kannst du feststellen, dass wir *eine Funktion* im `onClick`-Prop mitgeben. React ruft diese Function nach einem Klick auf. `() =>` zu vergessen und stattdessen `onClick={alert('click')}` zu schreiben, ist ein häufiger Fehler und führt dazu, dass alert jedes Mal aufgerufen wird, wenn die Komponente neu rendert.
+>Wenn du `onClick={() => alert('click')}` betrachtest, kannst du feststellen, dass wir der `onClick`-Prop *eine Funktion* übergeben. React ruft diese Funktion nur nach einem Klick auf. Ein häufiger Fehler ist, `() =>` zu vergessen und stattdessen `onClick={alert('click')}` zu schreiben. Das führt dazu, dass alert jedes Mal aufgerufen wird, wenn die Komponente neu rendert.
 
-Als nächstes möchten wir, dass die "Square"-Kompontente sich daran "erinnern" kann, dass sie geklickt worden ist und schreiben ein X rein. Damit Komponenten sich an Dinge "erinnern" können, brauchen sie einen **state**.
+Als nächstes möchten wir, dass sich die Square-Kompontente daran "erinnern" kann, dass sie geklickt wurde und befüllen sie mit einem "X". Damit Komponenten sich an Dinge "erinnern" können, nutzen sie einen **state**.
 
-React-Komponente haben einen state indem man `this.state` im Konstruktor setzt. `this.state` sollte als private Eigenschaft einer React-Komponente verstanden werden. Nun werden wir den aktuellen Wert eines Quadrats in `this.state` speichern und ändern sobald das Quadrat geklickt wird.
+React-Komponenten können einen State haben, indem man `this.state` in ihren Konstruktoren setzt. `this.state` sollte als private Eigenschaft der React-Komponente verstanden werden, in der es definiert wurde. Nun speichern wir den aktuellen Wert des Quadrats in `this.state` und ändern ihn wenn das Quadrat geklickt wird.
 
-Zu erst fügen wir einen Konstruktor hinzu um den State zu initialisieren:
+Zuerst fügen wir einen Konstruktor zur Klasse hinzu um den State zu initialisieren:
 
 ```javascript{2-7}
 class Square extends React.Component {
@@ -290,15 +290,16 @@ class Square extends React.Component {
 
 >Hinweis
 >
->In [JavaScript-Klassen](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Klassen) musst du immer `super` aufrufen wenn du den Konstruktor einer Subklasse definierst. Alle React-Komponente, die einen `constructor` haben sollten mit einem `super(props)`-Aufruf starten.
+>In [JavaScript-Klassen](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Klassen) musst du immer `super` aufrufen wenn du den Konstruktor einer Subklasse definierst. Alle React-Komponenten-Klassen, die einen `constructor` haben, sollten mit einem `super(props)`-Aufruf starten.
 
-Jetzt werden wir die `render`-Methode von "Square" anpassen, um den aktuellen State darzustellen sobald es geklickt wird:
+Jetzt werden wir die `render`-Methode der Square-Komponente anpassen, um den aktuellen Wert von State darzustellen wenn sie geklickt wird:
 
-* Ersetze `this.props.value` mit `this.state.value` im `<button>`-Tag.
-* Ersetze den `onClick={...}` Event-Handler mit `() => this.setState({value: 'X'})`.
-* Füge`className` und `onClick` props auf zwei separate Zeilen um die Lesbarkeit zu verbessern.
+* Ersetze im `<button>`-Tag `this.props.value` mit `this.state.value`.
+* Ersetze den `onClick={...}` Event-Handler mit `onClick={() => this.setState({value: 'X'})}`.
+* Schreibe die props `className` und `onClick` in zwei separate Zeilen, um die Lesbarkeit zu verbessern.
 
-Nachdem wir diese Änderungen gemacht haben wird der `<button>`-Tag der von der `render`-Methode von "Square" zurückgegeben wird wie folgt aussehen:
+Nachdem wir diese Änderungen durchgeführt haben, wird der von Squares `render`-Methode zurückgegebene `<button>`-Tag wie folgt aussehen:
+
 
 ```javascript{12-13,15}
 class Square extends React.Component {
@@ -322,11 +323,11 @@ class Square extends React.Component {
 }
 ```
 
-Der Aufruf von `this.setState` durch einen `onClick`-Handler in der `render`-Methode von "Square" sagt React, dass es "Square" neurendern soll sobald sein `<button>` geklickt wird. Nach dem aktualisieren wird `this.state.value` vom "Square" ein `'X'` sein, somit werden wir ein `X` auf dem Spielbrett sehen. Klickst du auf irgendein Feld, sollte ein  `X` erscheinen.
+Der Aufruf von `this.setState` durch einen `onClick`-Handler in Squares `render`-Methode teilt React mit, dass es die Square-Komponente neu rendern soll, sobald ihr `<button>` geklickt wird. Nach der Aktualisierung der Square-Komponente ist `this.state.value` `'X'`. Dadurch sehen wir ein `X` auf dem Spielbrett. Wenn du auf irgendein Feld klickst, sollte ein `X` erscheinen.
 
-Wenn du `setState` in einer Komponente aufrufst wird React automatisch alle Kinderelemente mit aktualisieren.
+Wenn du `setState` in einer Komponente aufrufst, wird React automatisch alle Kindelemente aktualisieren.
 
-**[Schau dir den vollständigen Code bis zu dieser Stelle an](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
 
 ### Entwicklerwerkzeuge {#developer-tools}
 
