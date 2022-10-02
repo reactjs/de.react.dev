@@ -184,7 +184,7 @@ Beim Betrachten des Codes wirst du feststellen, dass wir drei React-Kompontenten
 
 Die Square-Komponente visualisiert einen einzelnen `<button>` und das Board visualisiert 9 Quadrate. Die Game-Komponente visualisiert ein Spielbrett mit Platzhalter-Werten, welche wir später modifizieren werden. Derzeit gibt es keine interaktiven Komponenten.
 
-### Daten über props weitergeben {#passing-data-through-props}
+### Daten über Props weitergeben {#passing-data-through-props}
 
 Um einen ersten Schritt zu wagen, werden wir erstmal probieren Daten von der Board-Komponente in die Square-Komponente weiterzugeben.
 
@@ -263,7 +263,7 @@ Wenn du jetzt auf ein Quadrat klickst, solltest du in der devtools-Konsole deine
 >
 >Wenn du `onClick={() => alert('click')}` betrachtest, kannst du feststellen, dass wir der `onClick`-Prop *eine Funktion* übergeben. React ruft diese Funktion nur nach einem Klick auf. Ein häufiger Fehler ist, `() =>` zu vergessen und stattdessen `onClick={alert('click')}` zu schreiben. Das führt dazu, dass alert jedes Mal aufgerufen wird, wenn die Komponente neu rendert.
 
-Als nächstes möchten wir, dass sich die Square-Kompontente daran "erinnern" kann, dass sie geklickt wurde und befüllen sie mit einem "X". Damit Komponenten sich an Dinge "erinnern" können, nutzen sie einen **state**.
+Als nächstes möchten wir, dass sich die Square-Kompontente daran "erinnern" kann, dass sie geklickt wurde und befüllen sie mit einem "X". Damit Komponenten sich an Dinge "erinnern" können, nutzen sie einen **State**.
 
 React-Komponenten können einen State haben, indem man `this.state` in ihren Konstruktoren setzt. `this.state` sollte als private Eigenschaft der React-Komponente verstanden werden, in der es definiert wurde. Nun speichern wir den aktuellen Wert des Quadrats in `this.state` und ändern ihn wenn das Quadrat geklickt wird.
 
@@ -331,20 +331,20 @@ Wenn du `setState` in einer Komponente aufrufst, wird React automatisch alle Kin
 
 ### Entwicklerwerkzeuge {#developer-tools}
 
-Die React Devtools Erweiterung für [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) und [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) erlauben es dir den Baum der React-Komponenten in den Entwicklerwerkzeugen anzusehen.
+Die React-DevTools-Erweiterung für [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) und [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) ermöglicht es dir, den Baum der React-Komponenten in den Entwicklerwerkzeugen deines Browsers anzusehen.
 
-<img src="../images/tutorial/devtools.png" alt="React Devtools" style="max-width: 100%">
+<img src="../images/tutorial/devtools.png" alt="React DevTools" style="max-width: 100%">
 
-Die React-DevTools ermöglichen es dir Props und State deiner React Komponente anzuschauen.
+Die React-DevTools ermöglichen es dir, Props und State deiner React-Komponente zu prüfen.
 
-Nach dem installieren der React DevTools kannst du mit Rechtsklick auf ein jedes Element der Seite im Kontextmenü mit "untersuchen" die Developer Tools öffnen. Ein React-Tab ("⚛️ Components" und "⚛️ Profiler") taucht dann als letztes ganz rechts auf. Verwende "⚛️ Components", um den Komponentenbaum zu untersuchen.
+Nach der Installation der React-DevTools kannst du mit Rechtsklick auf jedes Element der Seite im Kontextmenü mit "Untersuchen" die Entwicklerwerkzeuge öffnen. Die React-Tabs ("⚛️ Components" und "⚛️ Profiler") tauchen dann als letzte Tabs ganz rechts auf. Verwende "⚛️ Components", um den Komponentenbaum zu untersuchen.
 
-**Jedoch sind noch ein paar Zusatzschritte notwendig um es mit CodePen benutzen zu können:**
+**Jedoch sind noch ein paar Zusatzschritte notwendig, um sie mit CodePen nutzen zu können:**
 
-1. Logge dich ein/Registriere dich und bestätige deine E-Mail (Benötigt um Spam zu vermeiden).
+1. Logge dich ein oder registriere dich und bestätige deine E-Mail (Zur Vermeidung von Spam).
 2. Klicke auf "Fork".
 3. Klicke auf "Change View" und wähle dann "Debug mode".
-4. Im neuen Tab, der sich öffnet sollten die Devtools jetzt einen React-Tab haben.
+4. Im neuen Tab, der sich öffnet, sollten die Entwicklerwerkzeuge jetzt einen React-Tab anzeigen.
 
 ## Das Spiel fertigstellen {#completing-the-game}
 
