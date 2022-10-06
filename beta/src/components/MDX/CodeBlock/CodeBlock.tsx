@@ -169,6 +169,7 @@ const CodeBlock = function CodeBlock({
       buffer += code[i];
     }
   }
+
   if (currentDecorator) {
     lineOutput.push(
       <span key={'end/d'} className={currentDecorator}>
@@ -184,6 +185,7 @@ const CodeBlock = function CodeBlock({
   } else {
     lineOutput.push(buffer);
   }
+
   finalOutput.push(
     <div
       key={lineIndex}
