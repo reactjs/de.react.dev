@@ -348,16 +348,16 @@ Nach der Installation der React-DevTools kannst du mit Rechtsklick auf jedes Ele
 
 ## Das Spiel fertigstellen {#completing-the-game}
 
-Jetzt haben wir die Basis-Blöcke für unser Tic-Tac-Toe-Spiel. Um das Spiel zu vervollständigen, brauchen wir die abwechselnde Platzierung von 'X'en und '0'en auf dem Spielfeld und wir brauchen noch einen Weg um den Gewinner festzustellen.
+Jetzt verfügen wir über die Grundbausteine unseres Tic-Tac-Toe-Spiels. Um das Spiel zu vervollständigen, müssen wir abwechselnd die 'X'e und 'O's auf dem Spielfeld platzieren. Außerdem müssen wir noch eine Möglichkeit finden, um den Gewinner festzustellen.
 
 ### Den State hochholen {#lifting-state-up}
 
-Zurzeit verwaltet jede Quadrat-Komponente seinen eigenen Spiel-State. Um herauszufinden, ob es einen Gewinner gibt, werden wir die Werte jedes der 9 Quadrate an einem Ort verwalten.
+Zurzeit verwaltet jede Square-Komponente den Spiel-State. Um zu prüfen, ob es einen Gewinner gibt, werden wir den Wert jedes der 9 Quadrate an einem Ort verwalten.
 
-Man könnte denken, dass man jedes Quadrat zu seinem aktuellen State befragen sollte. Dieser Weg ist zwar eine mögliche Herangehensweise in React, wir raten jedoch davon ab, da dies zu unverständlichen Code führt, der mehr Bugs haben kann und  schwer überarbeitbar ist.
-Anstelle dessen ist die beste Herangehensweise den aktuellen State in die Board-Elternkomponente zu speichern statt in jedem Quadrat selbst. Die Board-Komponente kann jedem Quadrat durch props mitteilen, was sie anzeigen sollen, [genau wie wir Zahlen an die Quadrate mitgegeben haben](#passing-data-through-props).
+Man könnte denken, dass die Board-Komponente einfach jede Square-Komponente zu ihrem aktuellen State befragen sollte. Das ist zwar eine mögliche Herangehensweise in React, wir raten jedoch davon ab, da dies zu unverständlichem Code führt, der fehleranfällig und schwer zu überarbeiten ist.
+Anstelle dessen ist die beste Herangehensweise den aktuellen State in der Eltern-Board-Komponente zu speichern statt in jeder Square-Komponente selbst. Die Board-Komponente kann jeder Square-Komponente durch props mitteilen, was sie anzeigen soll. [Genauso haben wir es gemacht, als wir Zahlen an die Square-Komponente übergeben haben](#passing-data-through-props).
 
-**Um Daten in mehreren Kindelementen zu sammeln oder um zwei Komponente miteinader kommunizieren zu lassen, musst du einen geteilten State in einer Elternkomponente definieren. Die Elternkomponente kann den State zurück an die Kinder mittels props weiterreichen. So können Kindkomponente und ihre Elternkomponente miteinander in Synchronisation gehalten werden**
+**Um Daten von mehreren Kindern zu sammeln oder um zwei Kind-Komponenten miteinader kommunizieren zu lassen, musst du einen geteilten State in ihrer Elternkomponente deklarieren. Die Elternkomponente kann den State an die Kinder mittels props zurückreichen. So können Kindkomponenten untereinander und mit der Elternkomponente synchronisiert werden.**
 
 Das Anheben des States in eine übergeordnete Komponente ist üblich, wenn React-Komponenten refactored werden -- lassen uns diese Gelegenheit nutzen, um es auszuprobieren.
 
