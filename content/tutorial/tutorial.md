@@ -190,7 +190,7 @@ Um einen ersten Schritt zu wagen, werden wir erstmal probieren Daten von der Boa
 
 Wir empfehlen dir, während du das Tutorial durcharbeitest, den Code selbst zu tippen, statt ihn zu kopieren und einzufügen. Dies hilft dir, dein   Muskelgedächtnis (Muscle Memory) zu trainieren und ein besseres Verständnis zu entwickeln.
 
-Ändere den Code in der `renderSquare`-Methode der Board-Komponente so, dass ein prop namens `value` an die Square-Komponente weitergereicht wird:
+Ändere den Code in der `renderSquare`-Methode der Board-Komponente so, dass eine Prop namens `value` an die Square-Komponente weitergereicht wird:
 
 ```js{3}
 class Board extends React.Component {
@@ -224,7 +224,7 @@ Nachher: Du solltest in jedem Quadrat eine Nummer sehen.
 
 **[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Glückwunsch! Du hast gerade von der Eltern-Board-Komponente an die Kind-Square-Komponente "eine prop weitergegeben". Der Informationsfluss in React wird durch das Weitergeben von props der Eltern an Kinder realisiert.
+Glückwunsch! Du hast gerade von der Eltern-Board-Komponente an die Kind-Square-Komponente "eine Prop weitergegeben". Der Informationsfluss in React wird durch das Weitergeben von Props der Eltern an Kinder realisiert.
 
 ### Erstellen einer interaktiven Komponente {#making-an-interactive-component}
 
@@ -296,7 +296,7 @@ Jetzt werden wir die `render`-Methode der Square-Komponente anpassen, um den akt
 
 * Ersetze im `<button>`-Tag `this.props.value` mit `this.state.value`.
 * Ersetze den `onClick={...}` Event-Handler mit `onClick={() => this.setState({value: 'X'})}`.
-* Schreibe die props `className` und `onClick` in zwei separate Zeilen, um die Lesbarkeit zu verbessern.
+* Schreibe die Props `className` und `onClick` in zwei separate Zeilen, um die Lesbarkeit zu verbessern.
 
 Nachdem wir diese Änderungen durchgeführt haben, wird der von Squares `render`-Methode zurückgegebene `<button>`-Tag wie folgt aussehen:
 
@@ -357,11 +357,11 @@ Zurzeit verwaltet jede Square-Komponente den Spiel-State. Um zu prüfen, ob es e
 Man könnte denken, dass die Board-Komponente einfach jede Square-Komponente zu ihrem aktuellen State befragen sollte. Das ist zwar eine mögliche Herangehensweise in React, wir raten jedoch davon ab, da dies zu unverständlichem Code führt, der fehleranfällig und schwer zu überarbeiten ist.
 Anstelle dessen ist die beste Herangehensweise den aktuellen State in der Eltern-Board-Komponente zu speichern statt in jeder Square-Komponente selbst. Die Board-Komponente kann jeder Square-Komponente durch props mitteilen, was sie anzeigen soll. [Genauso haben wir es gemacht, als wir Zahlen an die Square-Komponente übergeben haben](#passing-data-through-props).
 
-**Um Daten von mehreren Kindern zu sammeln oder um zwei Kind-Komponenten miteinader kommunizieren zu lassen, musst du einen geteilten State in ihrer Elternkomponente deklarieren. Die Elternkomponente kann den State an die Kinder mittels props zurückreichen. So können Kindkomponenten untereinander und mit der Elternkomponente synchronisiert werden.**
+**Um Daten von mehreren Kindern zu sammeln oder um zwei Kind-Komponenten miteinader kommunizieren zu lassen, musst du einen geteilten State in ihrer Elternkomponente deklarieren. Die Elternkomponente kann den State an die Kinder mittels Props zurückreichen. So können Kindkomponenten untereinander und mit der Elternkomponente synchronisiert werden.**
 
-Das Anheben des States in eine übergeordnete Komponente ist üblich, wenn React-Komponenten refactored werden -- lassen uns diese Gelegenheit nutzen, um es auszuprobieren.
+Das Hochholen des States in eine Eltern-Komponente ist üblich, wenn React-Komponenten überarbeitet werden — nutzen wir diese Gelegenheit, um es auszuprobieren.
 
-Füge dem Board einen Konstruktor hinzu und setze den initialen State zu einem Array mit 9 null Einträgen, die den 9 Quadraten entsprechen:
+Füge der Board-Komponente einen Konstruktor hinzu und setze den initialen State auf ein Array mit 9 `null`-Einträgen, die den 9 Quadraten entsprechen:
 
 ```javascript{2-7}
 class Board extends React.Component {
@@ -387,7 +387,7 @@ Wenn wir das Spielfeld später ausfüllen, wird das Array `this.state.squares` i
 ]
 ```
 
-Die `renderSquare`-Methode sieht aktuell so aus:
+Die `renderSquare`-Methode der Board-Komponente sieht aktuell so aus:
 
 ```javascript
   renderSquare(i) {
@@ -395,9 +395,9 @@ Die `renderSquare`-Methode sieht aktuell so aus:
   }
 ```
 
-Am Anfang haben wir vom Board [`value` als Prop weitergegeben](#passing-data-through-props) um die Nummern 0 bis 8 in jedem Quadrat anzuzeigen. In einem weiteren vorherigen Schritt haben wir die Zahlen dann mit einem "X", [bestimmt durch den State der Quadrate](#making-an-interactive-component), ersetzt. Deshalb ignoriert das Quadrat gerade den als prop übermittelten `value`.
+Am Anfang haben wir aus der Board-Komponente [`value` als Prop weitergegeben](#passing-data-through-props), um die Nummern 0 bis 8 in jeder Square-Komponente anzuzeigen. In einem anderen vorherigen Schritt haben wir die Zahlen dann durch ein "X", [bestimmt durch den State der Square-Komponente](#making-an-interactive-component), ersetzt. Deshalb ignoriert die Square-Komponente gerade die Prop `value`, die ihr von der Board-Komponente übergeben wurde.
 
-Wir werden jetzt den Machanismus zur Weitergabe von Props wieder verwenden. Wir werden das Spielbrett so anpassen, dass es jedem einzelnen Quadrat seinem aktuellen State (`'X'`, `'O'`, oder `null`) mitteilt. Wir haben bereits das `squares` Array im Konstruktor des Boards definiert und werden nun die `renderSquare`-Methode anpassen, sodass diese davon liest:
+Wir werden jetzt den Mechanismus zur Weitergabe von Props wieder verwenden. Wir werden die Board-Komponente so anpassen, dass sie jeder einzelnen Square-Komponente ihren aktuellen Wert (`'X'`, `'O'`, oder `null`) mitteilt. Wir haben bereits das `squares`-Array im Konstruktor der Board-Komponente definiert und werden nun die `renderSquare`-Methode so anpassen, dass diese daraus liest:
 
 ```javascript{2}
   renderSquare(i) {
@@ -405,9 +405,9 @@ Wir werden jetzt den Machanismus zur Weitergabe von Props wieder verwenden. Wir 
   }
 ```
 
-**[Schau dir den vollständigen Code bis zu diesem Punkt an](https://codepen.io/gaearon/pen/gWWQPY?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/gWWQPY?editors=0010)**
 
-Jedes Quadrat erhält nun `value` als prop, welches entweder den Wert `'X'`, `'O'`, oder `null` für leere Quadrate enthält.
+Jede Square-Komponente erhält nun die Prop `value`, welche entweder den Wert `'X'`, `'O'`, oder `null` für leere Quadrate enthält.
 
 Als nächstes müssen wir das Verhalten ändern, wenn ein Quadrat geklickt wird. Die Board-Komponente verwaltet bereits welche Quadrate gefüllt sind. Wir brauchen jetzt einen Weg für die Quadrate den State im Board anzupassen. Da der State als private Variable in der Komponente definiert ist, können wir es nicht direkt vom Quadrat aktualisieren.
 
