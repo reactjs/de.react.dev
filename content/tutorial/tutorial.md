@@ -409,9 +409,9 @@ Wir werden jetzt den Mechanismus zur Weitergabe von Props wieder verwenden. Wir 
 
 Jede Square-Komponente erhält nun die Prop `value`, welche entweder den Wert `'X'`, `'O'`, oder `null` für leere Quadrate enthält.
 
-Als nächstes müssen wir das Verhalten ändern, wenn ein Quadrat geklickt wird. Die Board-Komponente verwaltet bereits welche Quadrate gefüllt sind. Wir brauchen jetzt einen Weg für die Quadrate den State im Board anzupassen. Da der State als private Variable in der Komponente definiert ist, können wir es nicht direkt vom Quadrat aktualisieren.
+Als nächstes müssen wir das Verhalten ändern, wenn ein Quadrat geklickt wird. Die Board-Komponente verwaltet nun, welche Quadrate gefüllt sind. Wir müssen jetzt eine Möglichkeit finden, damit die Square-Komponente den State in der Board-Komponente anpassen kann. Der State ist in der Komponente, in der er definiert wurde, eine private Variable. Somit können wir den State der Board-Komponente nicht direkt von der Square-Komponente aus aktualisieren.
 
-Stattdessen übergeben wir eine Funktion vom Board an das Quadrat und lassen Square diese aufrufen, wenn ein Quadrat angeklickt wird. Wir ändern die Methode "renderSquare" im Board in:
+Stattdessen übergeben wir eine Funktion von der Board-Komponente an die Square-Komponente und lassen die Square-Komponente diese aufrufen, wenn ein Quadrat geklickt wird. Wir ändern die "renderSquare"-Methode in der Board-Komponente folgendermaßen:
 
 ```javascript{5}
   renderSquare(i) {
@@ -426,13 +426,13 @@ Stattdessen übergeben wir eine Funktion vom Board an das Quadrat und lassen Squ
 
 >Hinweis
 >
->Wir haben das zurückgegebene Element aus Gründen der Lesbarkeit in mehrere Zeilen aufgeteilt und Klammern hinzugefügt, damit JavaScript kein Semikolon nach `return` einfügt und unseren Code kaputt macht
+>Wir haben das zurückgegebene Element aus Gründen der Lesbarkeit in mehrere Zeilen aufgeteilt. Außerdem haben wir Klammern hinzugefügt, damit JavaScript kein Semikolon nach `return` einfügt und unseren Code kaputt macht.
 
-Jetzt geben wir zwei Props von Board zu Square: `value` und `onClick`. Der `onClick`-Prop ist eine Funktion, die von Square immer aufgerufen wird, wenn es geklickt wird. Dafür machen wir folgende Änderungen in Square:
+Jetzt geben wir zwei Props von der Board-Komponente an die Square-Komponente weiter: `value` und `onClick`. Die `onClick`-Prop ist eine Funktion, die von der Square-Komponente immer aufgerufen wird, wenn sie geklickt wird. Dafür nehmen wir folgende Änderungen an der Square-Komponente vor:
 
-* Ersetzen von `this.state.value` mit `this.props.value` in der `render`-Methode vom Quadrat.
-* Ersetzen von `this.setState()` mit `this.props.onClick()` in der `render`-Methode vom Quadrat.
-* Löschen des `constructor` in Square, da Square nicht mehr den State des Spiels verfolgen muss
+* Ersetzen von `this.state.value` durch `this.props.value` in der `render`-Methode der Square-Komponente.
+* Ersetzen von `this.setState()` durch `this.props.onClick()` in der `render`-Methode der Square-Komponente.
+* Löschen des `constructor` in der Square-Komponente, da diese den State des Spiels nicht mehr verfolgt
 
 Nach diesen Änderungen sieht unsere Square-Komponente so aus:
 
