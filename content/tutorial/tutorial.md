@@ -451,19 +451,19 @@ class Square extends React.Component {
 }
 ```
 
-Wenn ein Quadrat geklickt wird, wird die vom Board bereitgestellte `onClick`-Funktion aufgerufen. Nachfolgend ist eine Zusammenfassung, wie das funktioniert:
+Wenn ein Quadrat geklickt wird, wird die von der Board-Komponente bereitgestellte `onClick`-Funktion aufgerufen. Nachfolgend befindet sich eine Zusammenfassung, wie das erreicht wird:
 
-1. Das `onClick`-Prop der eingebauten DOM `<button>`-Komponente weist React an, einen Click-Event-Listener einzurichten.
-2. Wenn ein Button geklickt wird, ruft React den `onClick`-Event-Handler auf, der in der `render()`-Methode des Quadrats definiert ist.
-3. Der Event-Handler ruft `this.props.onClick()` auf. Das `onClick`-Prop des Quadrats wurde vom Spielbrett festgelegt.
-4. Da das Spielbrett `onClick={() => this.handleClick(i)}` dem Quadrat übergeben hat, ruft das Quadrat `this.handleClick(i)` auf, wenn es geklickt wird.
-5. Wir haben die Methode `handleClick()` noch nicht definiert, daher stürzt unser Code ab. Wenn du jetzt auf ein Quadrat klickst, solltest du einen roten Fehlerbildschirm sehen, der etwas sagt wie "this.handleClick is not a function".
+1. Die `onClick`-Prop der nativen DOM-`<button>`-Komponente weist React an, einen Click-Event-Listener einzurichten.
+2. Wenn der Button geklickt wird, ruft React den `onClick`-Event-Handler auf, der in der `render()`-Methode der Square-Komponente definiert ist.
+3. Dieser Event-Handler ruft `this.props.onClick()` auf. Die `onClick`-Prop der Square-Komponente wurde von der Board-Komponente festgelegt.
+4. Da die Board-Komponente der Square-Komponente `onClick={() => this.handleClick(i)}` übergeben hat, ruft die Square-Komponente `this.handleClick(i)` der Board-Komponente auf, wenn sie geklickt wird.
+5. Wir haben die `handleClick()`-Methode noch nicht definiert, daher stürzt unser Code ab. Wenn du jetzt auf ein Quadrat klickst, solltest du einen roten Fehlerbildschirm sehen, der etwas sagt wie "this.handleClick is not a function".
 
 >Hinweis
 >
->Das DOM-`<button>`-Element `onClick`-Attribut hat eine besondere Bedeutung für React, weil es eine vor-eingebaute Komponente ist. Die Benamung bei eigenen Komponenten, wie Quadrat, ist dir überlassen. Wir könnten die `onClick`-prop vom Quadrat oder die `handleClick`-Methode des Spielbretts auch anders benennen. In React, jedoch, ist es eine Konvention `on[Event]` für props zu benutzen, die Events repräsentieren und `handle[Event]` für Methoden, die Events behandeln.
+>Das `onClick`-Attribut des DOM-`<button>`-Elements hat eine besondere Bedeutung für React, weil es eine native Komponente ist. Die Benennung eigener Komponenten, wie Square, ist dir überlassen. Wir könnten die `onClick`-Prop der Square-Komponente oder die `handleClick`-Methode der Board-Komponente auch anders benennen und der Code würde trotzdem funktionieren. In React ist es eine Konvention, `on[Event]`-Namen für Props zu benutzen, die Events repräsentieren und `handle[Event]` für Methoden, die Events behandeln.
 
-Wenn wir versuchen ein Quadrat anzuklicken, sollten wir noch eine Fehlermeldung bekommen, da wir `handleClick` bisher noch nicht definiert haben. Wir fügen `handleClick` nun zur Spielbrett-Klasse hinzu:
+Wenn wir versuchen ein Quadrat anzuklicken, sollten wir einen Fehler bekommen, da wir `handleClick` bisher noch nicht definiert haben. Wir fügen `handleClick` nun zur Board-Komponente hinzu:
 
 ```javascript{9-13}
 class Board extends React.Component {
@@ -516,13 +516,13 @@ class Board extends React.Component {
 }
 ```
 
-**[Schau dir den vollständigen Code bis zu dieser Stelle an](https://codepen.io/gaearon/pen/ybbQJX?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/ybbQJX?editors=0010)**
 
-Nach diesen Änderungen sind wir wieder in der Lage die Quadrate zu füllen, wenn wir diese klicken. Jedoch wird jetzt der State im Spielbrett anstelle jedes einzelnen Quadrats gespeichert. Wenn das Spielbrett seinen State ändert, wird automatisch die Quadrat-Komponente neu-gerendert. Den State aller Quadrate im Spielbrett zu speichern gibt uns auch die Möglichkeit den Gewinner zu bestimmen.
+Nach diesen Änderungen sind wir wieder in der Lage auf die Quadrate zu klicken, um diese zu befüllen. Jedoch wird der State jetzt in der Board-Komponente anstatt in jeder einzelnen Square-Komponente gespeichert. Wenn sich der State der Board-Komponente ändert, werden automatisch die Square-Komponenten neu gerendert. Das Speichern des States aller Quadrate in der Board-Komponente gibt ihr die Möglichkeit, später den Gewinner zu bestimmen.
 
-Dadurch, dass die Quadrate nicht mehr ihren eigenen state verwalten, erhalten die Quadrate die Werte vom Spielbrett und informieren die Spielbrett-Komponente, wenn sie geklickt wurden. Im React-Jargon, die Quadrate sind nun **kontrollierte Komponente** (engl. **controlled components**). Das Spielbrett hat volle Kontrolle über sie.
+Dadurch, dass die Square-Komponenten nicht mehr ihren eigenen State verwalten, erhalten sie die Werte von der Board-Komponente. Wenn die Square-Komponenten geklickt wurden, informieren sie die Board-Komponente. Im React-Jargon werden die Square-Komponenten nun als **kontrollierte Komponenten** (engl. **controlled components**) bezeichnet. Die Board-Komponente hat volle Kontrolle über sie.
 
-Ist dir aufgefallen, wie wir in `handleClick` die Methode `.slice()` aufgerufen haben, um jedes mal eine neue Kopie vom `squares`-Array zu erzeugen? Wir werden im nächsten Abschnitt erklären, warum wir eine Kopie vom `squares`-Array erzeugen.
+Beachte, wie wir in der `handleClick`-Methode die `.slice()`-Methode aufrufen, um eine neue Kopie des `squares`-Arrays zu erzeugen, die wir bearbeiten, anstatt das bestehende Array zu bearbeiten. Im nächsten Abschnitt werden wir erklären, warum wir eine Kopie des `squares`-Arrays erzeugen.
 
 ### Warum ist Unveränderlichkeit (engl. Immutability) wichtig {#why-immutability-is-important}
 
