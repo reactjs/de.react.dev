@@ -119,7 +119,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-Wir empfehlen dir nicht die Indizes für die Keys zu verwenden, da sich die Reihenfolge der Listeneinträge verändern kann. Dies kann sich negativ auf die Performance auswirken und zu Problemen mit dem Komponenten-State führen. Im Artikel von Robin Pokorny kannst du eine [ausführlichere Erklärung über die negativen Auswirkungen beim Verwenden des Index als Key](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) finden. Wenn du Listenelemente keinen expliziten Key zuweist, verwendet React standardmäßig die Indizes als Key.
+Wir empfehlen dir nicht die Indizes für die Keys zu verwenden, da sich die Reihenfolge der Listeneinträge verändern kann. Dies kann sich negativ auf die Performance auswirken und zu Problemen mit dem Komponenten-State führen. Im Artikel von Robin Pokorny kannst du eine [ausführlichere Erklärung über die negativen Auswirkungen beim Verwenden des Index als Key](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) finden. Wenn du Listenelemente keinen expliziten Key zuweist, verwendet React standardmäßig die Indizes als Key.
 
 Wenn du dich dafür interessiert mehr zu lernen, ist hier [eine ausführliche Erklärung, warum Keys nötig sind](/docs/reconciliation.html#recursing-on-children).
 

@@ -108,7 +108,7 @@ Wird ein optionaler Callback zur Verfügung gestellt, wird dieser ausgeführt na
 >
 > `render()` gibt aktuell eine Referenz zur Root `ReactComponent`-Instanz zurück. Nichtsdestotrotz ist der Gebrauch dieses Rückgabewerts historisch bedingt und sollte vermieden werden, da in zukünftigen Versionen von React das Rendern von Komponenten in einigen Fällen asynchron erfolgen kann. Solltest du eine Referenz zur Instanz der Wurzel `ReactComponent` benötigen, sieht die bevorzugte Lösung vor, ein [callback ref](/docs/refs-and-the-dom.html#callback-refs) des Wurzel-Elements hinzuzufügen.
 >
-> Die Nutzung von `render()` um eine auf dem Server gerenderte Komponente zu hydrieren ist veraltet. Nutze stattdessen [`hydrateRoot()`](#hydrateroot).
+> Die Nutzung von `render()` um eine auf dem Server gerenderte Komponente zu hydrieren ist veraltet. Nutze stattdessen [`hydrateRoot()`](/docs/react-dom-client.html#hydrateroot).
 
 * * *
 
