@@ -524,31 +524,31 @@ Dadurch, dass die Square-Komponenten nicht mehr ihren eigenen State verwalten, e
 
 Beachte, wie wir in der `handleClick`-Methode die `.slice()`-Methode aufrufen, um eine neue Kopie des `squares`-Arrays zu erzeugen, die wir bearbeiten, anstatt das bestehende Array zu bearbeiten. Im nächsten Abschnitt werden wir erklären, warum wir eine Kopie des `squares`-Arrays erzeugen.
 
-### Warum ist Unveränderlichkeit (engl. Immutability) wichtig {#why-immutability-is-important}
+### Warum Unveränderlichkeit (engl. Immutability) wichtig ist {#why-immutability-is-important}
 
-Im vorangegangenen Codebeispiel haben wir vorgeschlagen, eine Kopie des Arrays `squares` mit der Methode `slice()` zu erstellen, anstatt das bestehende Array zu verändern. Wir werden nun die Unveränderlichkeit (engl. Immutability) besprechen und warum es wichtig ist, Unveränderlichkeit zu lernen.
+Im vorherigen Codebeispiel haben wir vorgeschlagen, dass du eine Kopie des Arrays `squares` mit der `slice()`-Methode erstellst, anstatt das bestehende Array zu verändern. Wir werden nun die Unveränderlichkeit besprechen und warum es wichtig ist, diese zu lernen.
 
-Es gibt prinzipiell zwei Herangehensweisen Daten verändern. Die erste ist, die Daten *abzuändern* (engl. *mutate*) indem man den Wert direkt überschreibt. Der zweite Weg ist, den alten Datensatz durch eine neue Kopie zu ersetzen und die Änderungen der Kopie zuzuweisen.
+Prinzipiell gibt es zwei Ansätze, Daten zu verändern. Der erste Ansatz ist, die Daten *abzuändern* (engl. *mutate*) indem man die Werte der Daten direkt ändert. Der zweite Ansatz ist, die Daten durch eine neue Kopie zu ersetzen, welche die gewünschten Änderungen enthält.
 
-#### Verändern von Datensätzen durch direktes Abändern {#data-change-with-mutation}
+#### Datenänderung durch direktes Abändern {#data-change-with-mutation}
 ```javascript
 var player = {score: 1, name: 'Jeff'};
 player.score = 2;
 // player ist jetzt {score: 2, name: 'Jeff'}
 ```
 
-#### Verändern von Datensätzen ohne direktes Abändern {#data-change-without-mutation}
+#### Ändern von Daten auf Grundlage einer Kopie bestehender Daten {#data-change-without-mutation}
 ```javascript
 var player = {score: 1, name: 'Jeff'};
 
 var newPlayer = Object.assign({}, player, {score: 2});
 // player ist unverändert, aber newPlayer ist jetzt {score: 2, name: 'Jeff'}
 
-// Oder alternativ, wenn du den object spread syntax proposal verwendest:
+// Oder alternativ, wenn du die Object-Spread-Syntax verwendest:
 // var newPlayer = {...player, score: 2};
 ```
 
-Das Endresultat ist das gleiche, aber dadurch, dass du nicht direkt die Daten (oder die darunterliegenden Eigenschaften) abänderst, gewinnen wir einige Vorteile, die nachfolgend aufgelistet sind:
+Das Endergebnis ist das gleiche, aber dadurch, dass Daten nicht direkt abgeändert werden, gewinnen wir einige Vorteile, die nachfolgend beschrieben werden.
 
 #### Komplexe Funktionalitäten werden Einfach {#complex-features-become-simple}
 
