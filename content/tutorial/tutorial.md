@@ -550,34 +550,32 @@ var newPlayer = Object.assign({}, player, {score: 2});
 
 Das Endergebnis ist das gleiche, aber dadurch, dass Daten nicht direkt abgeändert werden, gewinnen wir einige Vorteile, die nachfolgend beschrieben werden.
 
-#### Komplexe Funktionalitäten werden Einfach {#complex-features-become-simple}
+#### Komplexe Funktionalitäten werden einfach {#complex-features-become-simple}
 
-Unveränderlichkeit macht komplexe Funktionalität einfacher zum Implementieren. Weiter unten in diesem Tutorial werden wir eine "Zeitreisen"- (engl. time travel) Funktionalität einbauen, die es uns erlaubt Einsicht in die Tic-Tac-Toe-Spielhistorie zu gewinnen und zu vorherigen Zügen zurückzuspringen. Diese Funktionalität ist nicht nur für Spiele geeignet -- die Möglichkeit bestimmte Aktionen rückgängig zu machen und wiederherzustellen ist eine häufige Anforderung für Anwendungen. Das Vermeiden vom direkten Abändern der Daten ermöglicht uns die alten Zustände intakt zu lassen und diese zu einem späteren Zeitpunkt wieder zu verwenden.
+Durch Unveränderlichkeit können komplexe Funktionalitäten einfacher implementiert werden. Später in diesem Tutorial werden wir eine "Zeitreise"-Funktionalität (engl. time travel) implementieren, die es uns erlaubt, Einsicht in die Tic-Tac-Toe-Spielhistorie zu gewinnen und zu vorherigen Zügen "zurückzuspringen". Diese Funktionalität ist nicht nur für Spiele geeignet — die Möglichkeit bestimmte Aktionen rückgängig zu machen und zu wiederholen ist eine häufige Anforderung für Anwendungen. Indem wir das direkte Abändern von Daten vermeiden, können wir  vorherige Versionen der Spielhistorie intakt lassen und diese zu einem späteren Zeitpunkt wiederverwenden.
 
-#### Veränderung erkennen {#detecting-changes}
+#### Veränderungen erkennen {#detecting-changes}
 
-Veränderungen in variablen Objekten zu erkennen ist schwierig, da sie direkt verändert werden.
- Zur Erkennung müsste das variable Objekt mit seinen alten Kopien verglichen werden --
-somit müsste der ganzen Objekt-Baum durchlaufen werden.
+Veränderungen in änderbaren Objekten zu erkennen ist schwierig, da diese direkt angepasst werden. Diese Erkennung erfordert, dass das änderbare Objekt mit seinen vorherigen Kopien verglichen wird. Außerdem müsste der gesamte Objekt-Baum durchlaufen werden.
 
-Veränderungen in unveränderlichen Objekten zu erkennen ist deutlich leichter. Falls das unveränderliche Objekt, auf das verwiesen wird, ein anderes ist als das vorhergehende, dann hat sich das Objekt verändert.
+Veränderungen in unveränderbaren Objekten zu erkennen ist erheblich leichter. Falls das unveränderbare Objekt, auf das verwiesen wird, anders ist als das vorhergehende, dann hat sich das Objekt verändert.
 
-#### Entscheiden, wann neu gerendert werden soll {#determining-when-to-re-render-in-react}
+#### Entscheiden, wann in React neu gerendert werden soll {#determining-when-to-re-render-in-react}
 
-Der Hauptvorteil von Unveränderlichkeit ist, dass es Dir hilft _pure components_ in React zu entwickeln. Durch unveränderbare Daten kann leicht ermittelt werden, ob Veränderungen gemacht worden sind, was hilft zu entscheiden, ob eine Komponente neu gerendert werden muss.
+Der Hauptvorteil von Unveränderlichkeit ist, dass es dir hilft *pure components* in React zu entwickeln. Anhand unveränderbarer Daten lässt sich leicht feststellen, ob Änderungen vorgenommen wurden. Dadurch lässt sich leichter ermitteln, wann eine Komponente neu gerendert werden muss.
 
-Du kannst mehr über `shouldComponentUpdate()` lernen und wie Du *pure components* entwickelst, wenn Du das hier liest [Optimizing Performance](/docs/optimizing-performance.html#examples).
+Du kannst mehr über `shouldComponentUpdate()` und das Entwickeln von *pure components* lernen, wenn du [Performance-Optimierung](/docs/optimizing-performance.html#examples) liest.
 
 ### Funktionskomponenten {#function-components}
 
-Wir verändern nun die Square-Komponente zu einer **Funktionskomponente**.
+Wir ändern nun die Square-Komponente in eine **Funktionskomponente**.
 
 In React sind **Funktionskomponenten** ein leichterer Weg, um Komponenten zu schreiben,
- welche nur eine `render`-Methode beinhalten und keinen eigenen State haben.
- Statt eine Klasse zu definieren, welche `React.Component` erweitert, können wir eine Funktion schreiben, welche `props` als Input nimmt und zurückgibt, was gerendert werden soll.
- Funktionskomponenten sind weniger ermüdend zu schreiben als normale Klassen und viele Komponenten können mittels diesen Weges geschrieben werden.
+welche nur eine `render`-Methode beinhalten und keinen eigenen State haben.
+Statt eine Klasse zu definieren, welche `React.Component` erweitert, können wir eine Funktion schreiben, welche `props` als Input nimmt und zurückgibt, was gerendert werden soll.
+Funktionskomponenten sind weniger mühsam zu schreiben als Klassen und viele Komponenten können auf diesem Weg formuliert werden.
 
-Ersetze die Square-Klasse mit diesem Code:
+Ersetze die Square-Klasse mit dieser Funktion:
 
 ```javascript
 function Square(props) {
@@ -589,13 +587,13 @@ function Square(props) {
 }
 ```
 
-Wir haben alle vorkommenden `this.props` mit `props` ersetzt.
+Wir haben beide vorkommenden `this.props` mit `props` ersetzt.
 
-**[Ganzen Quellcode bis zu diesem Punkt anschauen](https://codepen.io/gaearon/pen/QvvJOv?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/QvvJOv?editors=0010)**
 
 >Hinweis
 >
->Als wir die Square-Klasse zu einer Funktionskomponente verändert haben, haben wir auch `onClick={() => this.props.onClick()}` zu einem kürzeren `onClick={props.onClick}` geändert (bemerke, dass die Klammern auf *beiden* Seiten fehlen).
+>Als wir die Square-Komponente in eine Funktionskomponente geändert haben, haben wir auch `onClick={() => this.props.onClick()}` in ein kürzeres `onClick={props.onClick}` geändert (beachte, dass die Klammern auf *beiden* Seiten fehlen).
 
 ### Einen Zug machen {#taking-turns}
 
