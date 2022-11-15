@@ -595,12 +595,12 @@ Wir haben beide vorkommenden `this.props` mit `props` ersetzt.
 >
 >Als wir die Square-Komponente in eine Funktionskomponente geändert haben, haben wir auch `onClick={() => this.props.onClick()}` in ein kürzeres `onClick={props.onClick}` geändert (beachte, dass die Klammern auf *beiden* Seiten fehlen).
 
-### Einen Zug machen {#taking-turns}
+### Abwechselnd einen Zug machen {#taking-turns}
 
-Nun müssen wir einen offensichtlichen Fehler in unserer Tic-Tac-Toe Anwendung beheben: Die "O"s können nicht auf dem Spielfeld markiert werden.
+Nun müssen wir einen offensichtlichen Defekt in unserem Tic-Tac-Toe Spiel beheben: Die "O"s können nicht auf dem Spielfeld gesetzt werden.
 
-Wir setzen den ersten Zug standardmäßig auf "X" .
-Wir können diesen Zug standardmäßig setzen, indem wir den initialen State in unserem Board-Konstruktor verändern:
+Wir setzen den ersten Zug standardmäßig auf "X".
+Das können wir erreichen, indem wir den initialen State in unserem Board-Konstruktor verändern:
 
 ```javascript{6}
 class Board extends React.Component {
@@ -613,8 +613,8 @@ class Board extends React.Component {
   }
 ```
 
-Jedes Mal wenn ein Spieler einen Zug unternimmt, wird `xIsNext` (ein Boolean) geändert, um den nächsten Spieler zu bestimmen und den State des Spiels zu speichern.
-Wir aktualisieren die `handleClick`-Funktion des Boards, um den Wert von `xIsNext` umzudrehen:
+Jedes Mal wenn ein Spieler einen Zug macht, wird `xIsNext` (ein Boolean) geändert, um den nächsten Spieler zu bestimmen. Außerdem wird der Stand des Spiels gespeichert.
+Wir aktualisieren die `handleClick`-Funktion der Board-Komponente, um den Wert von `xIsNext` zu ändern:
 
 ```javascript{3,6}
   handleClick(i) {
@@ -627,19 +627,19 @@ Wir aktualisieren die `handleClick`-Funktion des Boards, um den Wert von `xIsNex
   }
 ```
 
-Durch diese Änderung wechseln sich "X"s und "O"s ab. Versuchs!
+Durch diese Änderung wechseln sich "X"e und "O"s ab. Probiere es aus!
 
-Lass uns ebenfalls den "status"-Text in Boards `render`-Funktion ändern, so dass sie anzeigt, welcher Spieler als nächstes an der Reihe ist:
+Lass uns ebenfalls den "status"-Text in der `render`-Funktion der Board-Komponente ändern, sodass sie anzeigt, welcher Spieler als nächstes an der Reihe ist:
 
 ```javascript{2}
   render() {
     const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
     return (
-      // the rest has not changed
+      // Der Rest hat sich nicht geändert
 ```
 
-Nachdem wir diese Veränderungen angewandt haben, sollte die Board-Komponente nun so aussehen:
+Nachdem wir diese Änderungen angewandt haben, sollte deine Board-Komponente so aussehen:
 
 ```javascript{6,11-16,29}
 class Board extends React.Component {
@@ -696,11 +696,11 @@ class Board extends React.Component {
 }
 ```
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/KmmrBy?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/KmmrBy?editors=0010)**
 
 ### Einen Gewinner verkünden {#declaring-a-winner}
 
-Da wir nun den nächsten Spieler anzeigen können, sollten wir ebenfalls anzeigen, wann das Spiel gewonnen ist und dass keine Züge mehr möglich sind. Wir können einen Gewinner bestimmen, indem wir diese Helfer-Funktion an das Ende der Datei schreiben:
+Da wir nun den nächsten Spieler anzeigen können, sollten wir ebenfalls anzeigen, wann das Spiel gewonnen ist und dass keine Züge mehr möglich sind. Kopiere diese Hilfsfunktion an das Ende der Datei:
 
 ```javascript
 function calculateWinner(squares) {
