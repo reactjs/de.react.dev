@@ -350,7 +350,7 @@ Nach der Installation der React-DevTools kannst du mit Rechtsklick auf jedes Ele
 
 Jetzt verfügen wir über die Grundbausteine unseres Tic-Tac-Toe-Spiels. Um das Spiel zu vervollständigen, müssen wir abwechselnd die 'X'e und 'O's auf dem Spielfeld platzieren. Außerdem müssen wir noch eine Möglichkeit finden, um den Gewinner festzustellen.
 
-### Den State hochholen {#lifting-state-up}
+### Den State hochziehen {#lifting-state-up}
 
 Zurzeit verwaltet jede Square-Komponente den Spiel-State. Um zu prüfen, ob es einen Gewinner gibt, werden wir den Wert jedes der 9 Quadrate an einem Ort verwalten.
 
@@ -359,7 +359,7 @@ Anstelle dessen ist die beste Herangehensweise den aktuellen State in der Eltern
 
 **Um Daten von mehreren Kindern zu sammeln oder um zwei Kind-Komponenten miteinader kommunizieren zu lassen, musst du einen geteilten State in ihrer Elternkomponente deklarieren. Die Elternkomponente kann den State an die Kinder mittels Props zurückreichen. So können Kindkomponenten untereinander und mit der Elternkomponente synchronisiert werden.**
 
-Das Hochholen des States in eine Eltern-Komponente ist üblich, wenn React-Komponenten überarbeitet werden — nutzen wir diese Gelegenheit, um es auszuprobieren.
+Das Hochziehen des States in eine Eltern-Komponente ist üblich, wenn React-Komponenten überarbeitet werden — nutzen wir diese Gelegenheit, um es auszuprobieren.
 
 Füge der Board-Komponente einen Konstruktor hinzu und setze den initialen State auf ein Array mit 9 `null`-Einträgen, die den 9 Quadraten entsprechen:
 
@@ -741,7 +741,7 @@ Wir werden `calculateWinner(squares)` in der `render`-Funktion des Boards aufruf
     return (
       // Der Rest hat sich nicht verändert
 ```
-Wir können nun die Funktion `handleClick` des Boards so ändern, dass sie vorzeitig zurückkehrt, indem wir einen Klick ignorieren, wenn jemand das Spiel gewonnen hat oder wenn ein Feld bereits gefüllt ist:
+Wir können nun die `handleClick`-Funktion der Board-Komponente so ändern, dass sie vorzeitig zurückkehrt, indem wir einen Klick ignorieren, wenn jemand das Spiel gewonnen hat oder wenn ein Feld bereits gefüllt ist:
 
 ```javascript{3-5}
   handleClick(i) {
@@ -757,27 +757,27 @@ Wir können nun die Funktion `handleClick` des Boards so ändern, dass sie vorze
   }
 ```
 
-**[Den ganzen Quellcode an diesem Punkt anschauen](https://codepen.io/gaearon/pen/LyyXgK?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/LyyXgK?editors=0010)**
 
-Herzlichen Glückwunsch! Du hast nun ein funktionierendes Tic-Tac-Toe Spiel. 
-Dazu hast du noch die grundlegenden Techniken von React gelernt. Demnach bist *Du* wahrscheinlich der echte Gewinner hier.
+Herzlichen Glückwunsch! Du hast nun ein funktionierendes Tic-Tac-Toe-Spiel. 
+Außerdem hast du noch die Grundlagen von React gelernt. Demnach bist *du* wahrscheinlich der echte Gewinner hier.
 
 ## Zeitreisen hinzufügen {#adding-time-travel}
 
-Lass uns als abschließende Übung eine "Versionsgeschichte" hinzufügen, um zu älteren Zügen im Spiel zurückzukommen.
+Lass uns als abschließende Übung eine "Versionsgeschichte" hinzufügen, um zu älteren Zügen im Spiel zurückzukehren.
 
-### Einen Zug-Verlauf speichern {#storing-a-history-of-moves}
+### Speichern einer Historie von Spielzügen {#storing-a-history-of-moves}
 
-Hätten wir das `squares`-Array veränderbar gemacht, wäre die Implementierung einer Versionsgeschichte sehr schwierig..
+Hätten wir das `squares`-Array direkt verändert, wäre die Implementierung einer "Zeitreise"-Funktionalität sehr schwierig.
 
-Wir verwendeten jedoch `slice()`, um eine neue Kopie des `squares`-Arrays nach jedem Zug zu erstellen und [behandelten den Array als unveränderbar](#why-immutability-is-important). 
-Dies erlaubt uns, jede ältere Version des `squares`-Array zu speichern, und zwischen den Zügen zu springen, welche schon stattfanden.
+Wir haben jedoch `slice()` verwendet, um nach jedem Zug eine neue Kopie des `squares`-Arrays zu erstellen und haben [das Array als unveränderbar behandelt](#why-immutability-is-important).
+Dies wird es uns erlauben, jede ältere Version des `squares`-Arrays zu speichern und zwischen den Zügen zu springen, welche schon stattgefunden haben.
 
-Wir werden die alten `squares`-Arrays in einem anderen Array mit dem Namen `history` speichern. Das `history`-Array repräsentiert alle Zustände des Spielfelds, vom ersten bis zum letzten Zug und hat folgende Form:
+Wir werden die früheren `squares`-Arrays in einem anderen Array namens `history` speichern. Das `history`-Array repräsentiert alle Zustände des Spielfelds, vom ersten bis zum letzten Zug und hat folgende Form:
 
 ```javascript
 history = [
-  // Before first move
+  // Vor dem ersten Zug
   {
     squares: [
       null, null, null,
@@ -785,7 +785,7 @@ history = [
       null, null, null,
     ]
   },
-  // After first move
+  // Nach dem ersten Zug
   {
     squares: [
       null, null, null,
@@ -793,7 +793,7 @@ history = [
       null, null, null,
     ]
   },
-  // After second move
+  // Nach dem zweiten Zug
   {
     squares: [
       null, null, null,
@@ -805,17 +805,17 @@ history = [
 ]
 ```
 
-Nun müssen wir entscheiden, welche Komponente den `history`-State beinhalten wird.
+Nun müssen wir entscheiden, welche Komponente den `history`-State beinhalten soll.
 
-### Den State nochmal hochholen {#lifting-state-up-again}
+### Den State nochmal hochziehen {#lifting-state-up-again}
 
-Wir möchten, dass die oberste Komponente, `Game`, eine Liste der bisherigen Züge anzeigt.
-Um dies zu tun, benötigt diese Liste Zugriff auf `history`.
-Deshalb platzieren wir den `history`-State in der obersten Komponente, `Game`.
+Wir möchten, dass die oberste Komponente, Game, eine Liste der bisherigen Züge anzeigt.
+Um dies zu tun, benötigt sie Zugriff auf `history`.
+Deshalb platzieren wir den `history`-State in der obersten Komponente, Game.
 
-Das Platzieren des `history`-States in der `Game`-Komponente erlaubt uns das Entfernen des `squares`-States von dessen Unterkomponente `Board`. So wie wir den State von der `Square`-Komponente in die `Board`-Komponente ["angehoben haben"](#lifting-state-up), so heben wir diesen nun von der `Board` in die `Game`-Komponente. Das gibt der `Game`-Komponente völlige Kontrolle über die Daten des Boards und lässt sie das Board anweisen, frühere Züge aus der `history` zu rendern.
+Das Platzieren des `history`-States in der Game-Komponente erlaubt es uns, den `squares`-States von dessen Kindkomponente, Board, zu entfernen. Genauso wie wir den State von der Square-Komponente in die Board-Komponente ["hochgezogen" haben](#lifting-state-up), so ziehen wir diesen nun von der Board- in die übergeordnete Game-Komponente. Das gibt der Game-Komponente uneingeschränkte Kontrolle über die Daten der Board-Komponente und ermöglicht ihr, die Board-Komponente anzuweisen, vorherige Züge aus der `history` zu rendern.
 
-Als erstes setzen wir den initialen State für die Game-Komponente in deren KonstruKtor:
+Als erstes setzen wir den initialen State für die Game-Komponente in deren Konstruktor:
 
 ```javascript{2-10}
 class Game extends React.Component {
@@ -845,12 +845,12 @@ class Game extends React.Component {
 }
 ```
 
-Als nächstes haben wir die Board-Komponente, welche die `squares` und `onClick`-Props von der Game-Komponente erhält.
-Da wir nun einen einzigen Klick-Handler im Board für viele Squares haben, müssen wir die Position von jedem Square in den `onClick`-Handler übergeben, um anzugeben, welches Square geklickt worden ist. Hier sind die benötigten Schritte, um die Board-Komponente zu verändern:
+Als nächstes erhält die Board-Komponente `squares`- und `onClick`-Props von der Game-Komponente.
+Da wir nun in der Board-Komponente einen einzigen Klick-Handler für viele Squares haben, müssen wir die Position jedes Squares in den `onClick`-Handler übergeben, um anzugeben, welches Square geklickt wurde. Hier sind die benötigten Schritte, um die Board-Komponente zu verändern:
 
-* Lösche den `constructor` im Board.
-* Ersetze `this.state.squares[i]` mit `this.props.squares[i]` in der Board `renderSquare`-Funktion.
-* Ersetze `this.handleClick(i)` mit `this.props.onClick(i)` in der Board `renderSquare`-Funktion.
+* Lösche den `constructor` in der Board-Komponente.
+* Ersetze `this.state.squares[i]` mit `this.props.squares[i]` in der `renderSquare`-Funktion der Board-Komponente.
+* Ersetze `this.handleClick(i)` mit `this.props.onClick(i)` in der `renderSquare`-Funktion der Board-Komponente.
 
 Die Board-Komponente sieht nun so aus:
 
