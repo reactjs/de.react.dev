@@ -766,7 +766,7 @@ Außerdem hast du noch die Grundlagen von React gelernt. Demnach bist *du* wahrs
 
 Lass uns als abschließende Übung eine "Versionsgeschichte" hinzufügen, um zu älteren Zügen im Spiel zurückzukehren.
 
-### Speichern einer Historie von Spielzügen {#storing-a-history-of-moves}
+### Speichern eines Verlaufs von Spielzügen {#storing-a-history-of-moves}
 
 Hätten wir das `squares`-Array direkt verändert, wäre die Implementierung einer "Zeitreise"-Funktionalität sehr schwierig.
 
@@ -910,7 +910,7 @@ class Board extends React.Component {
 }
 ```
 
-Wir aktualisieren die `render`-Funktion in der Game-Komponente, um den letzten Eintrag der Versionshistorie zu verwenden und den aktuellen Spielzustand anzuzeigen.
+Wir erweitern die `render`-Funktion der Game-Komponente, damit der letzte Eintrag der Versionshistorie zur Ermittlung und Anzeige des Spielstandes verwendet wird:
 
 ```javascript{2-11,16-19,22}
   render() {
@@ -942,7 +942,7 @@ Wir aktualisieren die `render`-Funktion in der Game-Komponente, um den letzten E
   }
 ```
 
-Da die Game-Komponente nun den Spielzustand rendert, können wir den dazugehörigen Code aus Boards `render`-Methode entfernen. Nach dem Veränderung sollte die `render`-Funktion im Board so aussehen:
+Da die Game-Komponente nun den Spielstand rendert, können wir den dazugehörigen Code aus der `render`-Methode der Board-Komponente entfernen. Nach der Überarbeitung sollte die `render`-Funktion der Board-Komponente so aussehen:
 
 ```js{1-4}
   render() {
@@ -968,15 +968,16 @@ Da die Game-Komponente nun den Spielzustand rendert, können wir den dazugehöri
   }
 ```
 
-Als letztes müssen wir nun die `handleClick`-Methode aus der Board-Komponente in die Game-Komponente verlagern.
-Wir müssen `handleClick` auch verändern, da der State der Game-Komponente eine andere Struktur hat.
-In der `handleClick`-Methode von Game fügen wir die neuen Einträge der Versionsgeschichte der bestehenden `history` hinzu.
+Als letztes müssen wir nun die `handleClick`-Methode aus der Board-Komponente in die Game-Komponente verschieben.
+Außerdem müssen wir `handleClick` verändern, da der State der Game-Komponente anders strukturiert ist.
+In der `handleClick`-Methode der Game-Komponente fügen wir die neuen Einträge der Versionsgeschichte zur bestehenden `history` hinzu.
 
 ```javascript{2-4,10-12}
   handleClick(i) {
     const history = this.state.history;
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -990,31 +991,31 @@ In der `handleClick`-Methode von Game fügen wir die neuen Einträge der Version
   }
 ```
 
->Note
+>Hinweis
 >
->Anders als die Array `push()`-Methode, welche Du vielleicht eher kennst, verändert die `concat()`-Methode den ursprünglichen Array nicht, weshalb wir diese bevorzugen.
+>Anders als die `push()`-Methode des Arrays, mit welcher du vielleicht vertrauter bist, verändert die `concat()`-Methode das ursprüngliche Array nicht, weshalb wir diese bevorzugen.
 
-An diesem Punkte benötigt die Board-Komponente nur noch die `renderSquare` und `render` -Methoden.
-Der Spielzustand und die `handleClick`-Methode sollten sich in der Game-Komponente befinden.
+An diesem Punkt benötigt die Board-Komponente nur noch die `renderSquare`- und `render` -Methode.
+Der Spielstand und die `handleClick`-Methode sollten sich in der Game-Komponente befinden.
 
-**[Den ganzen Quellcode an diesem Punkt anschauen](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/EmmOqJ?editors=0010)**
 
 ### Die letzten Züge anzeigen {#showing-the-past-moves}
 
-Seit wir den Verlauf des Tic-Tac-Toes Spiel speichern, können wir diesen dem Spieler als eine Liste der letzten Züge anzeigen.
+Seit wir den Verlauf des Tic-Tac-Toe-Spiels aufzeichnen, können wir diesen nun dem Spieler als eine Liste der letzten Züge anzeigen.
 
-Wir haben vorhin gelernt, dass React-Elemente erstklassige JavaScript-Objekte sind; wir können diese in unserer Anwendung herumbewegen. Um mehrere Elemente in React rendern zu können, können wir einen Array an React-Elementen verwenden.
+Wir haben vorhin gelernt, dass React-Elemente first-class JavaScript-Objekte sind; wir können diese in unserer Anwendung hin- und herreichen. Um mehrere Elemente in React zu rendern, können wir ein Array bestehend aus React-Elementen verwenden.
 
-Arrays haben in JavaScript eine [`map()`-Methode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), welche verwendet wird um Daten auf andere Daten zu mappen, wie zum Beispiel:
+Arrays haben in JavaScript eine [`map()`-Methode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), welche üblicherweise verwendet wird, um Daten auf andere Daten abzubilden, wie zum Beispiel:
 
 ```js
 const numbers = [1, 2, 3];
 const doubled = numbers.map(x => x * 2); // [2, 4, 6]
 ```
 
-Durch das Verwenden der `map`-Methode können wir den Verlauf unserer Züge auf React-Elemente abbilden, die Buttons auf dem Bildschirm darstellen und eine Liste von Buttons anzeigen, um zu vergangenen Zügen zu "springen".
+Durch die Verwendung der `map`-Methode können wir unseren Verlauf von Spielzügen auf React-Elemente abbilden, welche Buttons auf dem Bildschirm repräsentieren. Des Weiteren können wir eine Liste von Buttons anzeigen, um zu vergangenen Zügen zu "springen".
 
-Lass und über die `history` in Games `render`-Methode mappen.
+Lass uns in der `render`-Methode der Game-Komponente über die `history` mappen.
 
 ```javascript{6-15,34}
   render() {
