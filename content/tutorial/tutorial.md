@@ -1058,16 +1058,16 @@ Lass uns in der `render`-Methode der Game-Komponente über die `history` mappen.
   }
 ```
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/EmmGEa?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/EmmGEa?editors=0010)**
 
-As we iterate through `history` array, `step` variable refers to the current `history` element value, and `move` refers to the current `history` element index. We are only interested in `move` here, hence `step` is not getting assigned to anything.
+Während wir über das `history`-Array iterieren, verweist die `step`-Variable auf den aktuellen Wert des `history`-Elements und `move` auf den Index des aktuellen `history`-Elements. Wir sind hier nur an `move` interessiert, deshalb wird `step` nichts zugewiesen.
 
-For each move in the tic-tac-toe game's history, we create a list item `<li>` which contains a button `<button>`. The button has a `onClick` handler which calls a method called `this.jumpTo()`. We haven't implemented the `jumpTo()` method yet. For now, we should see a list of the moves that have occurred in the game and a warning in the developer tools console that says:
+Für jeden Spielzug in der Historie des Tic-Tac-Toe-Spiels erzeugen wir ein Listenelement `<li>`, welches einen Button `<button>` enthält. Der Button hat einen `onClick`-Handler, welcher eine Methode namens `this.jumpTo()` aufruft. Wir haben die `jumpTo()`-Methode bis jetzt noch nicht implementiert. Vorerst sollten wir eine Liste aller Spielzüge sehen, die während des Spiels getätigt wurden. Des Weiteren sollten wir in der Konsole des Entwicklerwerkzeugs folgende Warnung sehen:
 
->  Warning:
->  Each child in an array or iterator should have a unique "key" prop. Check the render method of "Game".
+>  Warnung:
+>  Jedes Kind in einem Array oder Iterator sollte eine eindeutige "key"-Prop haben. Überprüfe die render-Methode von "Game".
 
-Let's discuss what the above warning means.
+Lass uns herausfinden, was diese Warnung bedeutet.
 
 ### Einen Schlüssel (key) auswählen {#picking-a-key}
 
