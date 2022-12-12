@@ -1071,16 +1071,16 @@ Lass uns herausfinden, was diese Warnung bedeutet.
 
 ### Einen Schlüssel (key) auswählen {#picking-a-key}
 
-When we render a list, React stores some information about each rendered list item. When we update a list, React needs to determine what has changed. We could have added, removed, re-arranged, or updated the list's items.
+Wenn wir eine Liste rendern, speichert React einige Informationen über jedes gerenderte Listenelement. Wenn wir eine Liste aktualisieren, muss React herausfinden, was sich geändert hat. Wir könnten Elemente der Liste hinzugefügt, entfernt, neu angeordnet oder aktualisiert haben.
 
-Imagine transitioning from
+Stell dir eine Veränderung von
 
 ```html
 <li>Alexa: 7 tasks left</li>
 <li>Ben: 5 tasks left</li>
 ```
 
-to
+zu
 
 ```html
 <li>Ben: 9 tasks left</li>
@@ -1088,7 +1088,7 @@ to
 <li>Alexa: 5 tasks left</li>
 ```
 
-In addition to the updated counts, a human reading this would probably say that we swapped Alexa and Ben's ordering and inserted Claudia between Alexa and Ben. However, React is a computer program and does not know what we intended. Because React cannot know our intentions, we need to specify a *key* property for each list item to differentiate each list item from its siblings. One option would be to use the strings `alexa`, `ben`, `claudia`. If we were displaying data from a database, Alexa, Ben, and Claudia's database IDs could be used as keys.
+Zusätzlich zu den aktualisierten Zahlen, könnte ein Mensch, der das liest, wahrscheinlich erkennen, dass wir die Reihenfolge von Alexa und Ben vertauscht und wir Claudia zwischen Alexa und Ben eingefügt haben. React ist jedoch ein Computerprogramm und kennt unsere Absichten nicht. Da React unsere Absichten nicht kennen kann, müssen wir eine *key*-Eigenschaft für jedes Listenelement spezifizieren, um es von seinen Geschwistern unterscheiden zu können. Eine Option wäre, die Strings `alexa`, `ben` und `claudia` zu verwenden. Falls wir Daten aus einer Datenbank darstellen würden, könnten die Datenbank-IDs von Alexa, Ben und Claudia als Schlüssel verwendet werden.
 
 ```html
 <li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
