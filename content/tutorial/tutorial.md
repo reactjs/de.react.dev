@@ -1098,18 +1098,18 @@ Wenn eine Liste neu gerendert wird, nimmt React den Schlüssel von jedem Element
 
 `key` ist eine spezielle und reservierte Eigenschaft in React (zusammen mit `ref`, einer erweiterten Funktion). Wenn ein Element erzeugt wird, extrahiert React die `key`-Eigenschaft und speichert den Schlüssel direkt im zurückgegebenen Element. Auch wenn `key` so aussieht, als gehöre es in `props`, kann `key` nicht mit `this.props.key` referenziert werden. React verwendet automatisch `key`, um zu entscheiden, welche Komponenten aktualisiert werden sollen. Eine Komponente kann nicht nach ihrem `key` fragen.
 
-**It's strongly recommended that you assign proper keys whenever you build dynamic lists.** If you don't have an appropriate key, you may want to consider restructuring your data so that you do.
+**Es wird sehr empfohlen, dass du vernünftige Schlüssel zuweist, immer wenn du dynamische Listen baust.** Falls du keinen passenden Schlüssel hast, könntest du in Betracht ziehen deine Daten so zu restrukturieren, dass du einen solchen Schlüssel hast.
 
-If no key is specified, React will present a warning and use the array index as a key by default. Using the array index as a key is problematic when trying to re-order a list's items or inserting/removing list items. Explicitly passing `key={i}` silences the warning but has the same problems as array indices and is not recommended in most cases.
+Wenn kein Schlüssel spezifiziert ist, wird React eine Warnung anzeigen und den Index des Arrays standardmäßig als Schlüssel verwenden. Die Verwendung des Array-Index als Schlüssel ist problematisch, wenn man versucht, Elemente einer Liste neu anzuordnen oder Listenelemente hinzuzufügen oder zu entfernen. Die explizite Übergabe von `key={i}` schaltet die Warnung aus, es bestehen aber die gleichen Probleme wie bei Array-Indizies. Deshalb wird es in den meisten Fällen nicht empfohlen.
 
-Keys do not need to be globally unique; they only need to be unique between components and their siblings.
+Schlüssel müssen nicht global eindeutig sein; sie müssen nur zwischen Komponenten und deren Geschwistern eindeutig sein.
 
 
 ### Zeitreisen implementieren {#implementing-time-travel}
 
-In the tic-tac-toe game's history, each past move has a unique ID associated with it: it's the sequential number of the move. The moves are never re-ordered, deleted, or inserted in the middle, so it's safe to use the move index as a key.
+In der Historie des Tic-Tac-Toe-Spiels ist jedem vergangenen Zug eine eindeutige ID zugeordnet: die fortlaufende Nummer des Zuges. Die Züge werden nie neu geordnet, gelöscht oder in der Mitte eingefügt; es ist also sicher, den Index des Spielzugs als Schlüssel zu verwenden.
 
-In the Game component's `render` method, we can add the key as `<li key={move}>` and React's warning about keys should disappear:
+In der `render`-Methode der Game-Komponente können wir den Schlüssel als `<li key={move}>` hinzufügen und Reacts Warnung bezüglich der Schlüssel sollte verschwinden:
 
 ```js{6}
     const moves = history.map((step, move) => {
@@ -1124,7 +1124,7 @@ In the Game component's `render` method, we can add the key as `<li key={move}>`
     });
 ```
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/PmmXRE?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/PmmXRE?editors=0010)**
 
 Clicking any of the list item's buttons throws an error because the `jumpTo` method is undefined. Before we implement `jumpTo`, we'll add `stepNumber` to the Game component's state to indicate which step we're currently viewing.
 
