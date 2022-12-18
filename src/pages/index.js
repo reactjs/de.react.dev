@@ -56,11 +56,6 @@ class Home extends Component {
         <div
           css={{
             width: '100%',
-            marginTop: 'var(--banner-height-normal)',
-
-            [media.lessThan('small')]: {
-              marginTop: 'var(--banner-height-small)',
-            },
           }}>
           <header
             css={{
@@ -141,7 +136,8 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    Eine JavaScript Bibliothek zum Erstellen von Benutzeroberflächen
+                    Eine JavaScript Bibliothek zum Erstellen von
+                    Benutzeroberflächen
                   </p>
                   <Flex
                     valign="center"

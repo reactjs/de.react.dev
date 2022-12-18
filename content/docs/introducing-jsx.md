@@ -33,13 +33,8 @@ Soviel zum Warum, lass uns starten!
 In dem folgenden Beispiel deklarieren wir eine Variable `name` und nutzen diese dann in JSX zwischen geschweiften Klammern.
 
 ```js{1,2}
-const name = 'Thomas Schultz';
-const element = <h1>Hallo {name}</h1>;
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
 ```
 
 Jeder valide [JavaScript Ausdruck](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Ausdruecke_und_Operatoren#Expressions) ist zwischen den geschweiften Klammern in JSX erlaubt. Zum Beispiel, `2 + 2`, `user.firstName`, oder `formatName(user)` sind völlig valide JavaScript Ausdrücke.
@@ -52,8 +47,8 @@ function formatName(user) {
 }
 
 const user = {
-  firstName: 'Thomas',
-  lastName: 'Schultz'
+  firstName: 'Harper',
+  lastName: 'Perez'
 };
 
 const element = (
@@ -61,14 +56,9 @@ const element = (
     Hallo {formatName(user)}!
   </h1>
 );
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
-[](codepen://introducing-jsx)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
 
 Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist prinzipiell nicht notwendig und wenn man es macht, empfehlen wir, Klammern drumherum zu setzen, um etwaige Fehler durch das [automatische Einfügen von Semikolons](https://stackoverflow.com/q/2846283) zu vermeiden.
 

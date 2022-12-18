@@ -7,7 +7,7 @@ import cn from 'classnames';
 import {IconWarning} from '../Icon/IconWarning';
 import {IconError} from '../Icon/IconError';
 
-type LogLevel = 'info' | 'warning' | 'error';
+type LogLevel = 'warning' | 'error' | 'info';
 
 interface ConsoleBlockProps {
   level?: LogLevel;
@@ -29,14 +29,11 @@ const Box = ({
 );
 Box.displayName = 'Box';
 
-function ConsoleBlock({level = 'info', children}: ConsoleBlockProps) {
-  let message: string | undefined;
+function ConsoleBlock({level = 'error', children}: ConsoleBlockProps) {
+  let message: React.ReactNode | null;
   if (typeof children === 'string') {
     message = children;
-  } else if (
-    React.isValidElement(children) &&
-    typeof children.props.children === 'string'
-  ) {
+  } else if (React.isValidElement(children)) {
     message = children.props.children;
   }
 
@@ -61,7 +58,7 @@ function ConsoleBlock({level = 'info', children}: ConsoleBlockProps) {
         className={cn(
           'flex px-4 pt-4 pb-6 items-center content-center font-mono text-code rounded-b-md',
           {
-            'bg-red-30 text-red-40 bg-opacity-25': level === 'error',
+            'bg-red-30 text-red-40 bg-opacity-10': level === 'error',
             'bg-yellow-5 text-yellow-50': level === 'warning',
             'bg-gray-5 text-secondary dark:text-secondary-dark':
               level === 'info',

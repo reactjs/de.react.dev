@@ -37,11 +37,11 @@ Dieses Element nennen wir "root"-DOM-Knoten. Alles innerhalb dieses Elements wir
 
 Anwendungen, die mit React gebaut worden, haben normalerweise nur einen root-DOM-Knoten. Wenn du React in eine bestehende Anwendung einfügst, kannst du aber soviele DOM-Knoten haben, wie du möchtest.
 
-Um ein Element in den root-DOM-Knoten zu rendern, muss du nur beides an [`ReactDOM.render()`](/docs/react-dom.html#render) übergeben:
+Um ein Element in den root-DOM-Knoten zu rendern, muss du zuerst das DOM-Element an [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot) übergeben und danach an `root.render()`:
 
 `embed:rendering-elements/render-an-element.js`
 
-[Auf CodePen ausprobieren](codepen://rendering-elements/render-an-element)
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)
 
 Es wird "Hallo Welt" auf der Seite angezeigt.
 
@@ -50,19 +50,19 @@ Es wird "Hallo Welt" auf der Seite angezeigt.
 React-Elemente sind [immuntable](https://en.wikipedia.org/wiki/Immutable_object) (unveränderbar). Wenn du einmal ein Element erstellt hast, kannst du dessen
 Kind-Elemente oder Attribute nicht mehr verändern. Eine Element kannst du dir vorstellen wie ein einzelnes Bild eines Filmes: Es repräsentiert die Benutzeroberfläche (UI) zu einem bestimmten Zeitpunkt.
 
-Mit dem was wir bis jetzt erfahren haben, wissen wir nur, dass der einzige Weg um die Benutzeroberfläche zu Aktualisieren und neue Elemente zu erstellen, das Aufrufen von [`ReactDOM.render()`](/docs/react-dom.html#render) ist.
+Mit unserem bisherigen Wissen besteht die einzige Möglichkeit, die Benutzeroberfläche zu aktualisieren, darin, ein neues Element zu erstellen und es an `root.render()` zu übergeben.
 
 Wir nehmen uns einmal dieses Beispiel einer tickenden Uhr:
 
 `embed:rendering-elements/update-rendered-element.js`
 
-[Auf CodePen ausprobieren](codepen://rendering-elements/update-rendered-element)
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)
 
-Jede Sekunden wird [`ReactDOM.render()`](/docs/react-dom.html#render) mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
+Jede Sekunden wird [`root.render()`](/docs/react-dom.html#render) mit Hilfe einer Callback-Funktion von [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) aufgerufen.
 
 >**Hinweis:**
 >
->In der Praxis rufen die meisten React-Anwendungen [`ReactDOM.render()`](/docs/react-dom.html#render) nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt wird.
+>In der Praxis rufen die meisten React-Anwendungen `root.render()` nur einmal auf. Im nächsten Abschnitt lernen wir, wie solch ein Code in einzelne [Zustandskomponenten](/docs/state-and-lifecycle.html) gekapselt wird.
 >
 >Wir empfehlen dir, Abschnitte nicht zu überspringen, da sie aufeinander aufbauen.
 
@@ -71,7 +71,7 @@ Jede Sekunden wird [`ReactDOM.render()`](/docs/react-dom.html#render) mit Hilfe 
 React DOM vergleicht das vorherige und jetztige Element und dessen Kindelemente miteinander.
 Um das DOM in den gewünschten Zustand zu bringen, werden nur die Elemente im DOM aktualisiert, die wirklich eine Änderung beinhalten.
 
-Du kannst es nachprüfen, indem du das [letzte Beispiel](codepen://rendering-elements/update-rendered-element) mit den Browser-Werkzeugen aufrufst:
+Du kannst es nachprüfen, indem du das [letzte Beispiel](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) mit den Browser-Werkzeugen aufrufst:
 
 ![DOM-Inspektor mit detaillierten Updates](../images/docs/granular-dom-updates.gif)
 

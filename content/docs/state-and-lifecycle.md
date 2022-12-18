@@ -10,9 +10,11 @@ next: handling-events.html
 
 Diese Seite stellt das Konzept von States und Lifecycles in einer React-Komponente vor. Hier kannst du eine [detailiertere API Referenz für Komponenten](/docs/react-component.html) finden.
 
-Schauen wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. Im Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg kennengelernt, das UI zu aktualisieren. Wir rufen `ReactDOM.render()` auf, um die gerenderte Ausgabe zu ändern:
+Schauen wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. Im Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg kennengelernt, das UI zu aktualisieren. Wir rufen `root.render()` auf, um die gerenderte Ausgabe zu ändern:
 
-```js{8-11}
+```js{10}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+  
 function tick() {
   const element = (
     <div>
@@ -20,10 +22,7 @@ function tick() {
       <h2>Es ist {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  );
+  root.render(element);
 }
 
 setInterval(tick, 1000);
@@ -35,7 +34,9 @@ In diesem Abschnitt werden wir lernen, wie wir die `Clock` Komponente wirklich w
 
 Wir können mit der Kapselung des Erscheinungsbildes der Uhr anfangen:
 
-```js{3-6,12}
+```js{5-8,13}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 function Clock(props) {
   return (
     <div>
@@ -46,10 +47,7 @@ function Clock(props) {
 }
 
 function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  );
+  root.render(<Clock date={new Date()} />);
 }
 
 setInterval(tick, 1000);
@@ -62,10 +60,7 @@ Es fehlt jedoch eine entscheidende Anforderung: Die Tatsache, dass `Clock` einen
 Idealerweise wollen wir dies nur einmal schreiben und `Clock` die Aktualisierung selbständig durchführen lassen:
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 Um dies zu implementieren, müssen wir der `Clock` Komponente einen "State" hinzufügen.
@@ -159,10 +154,7 @@ Klassenkomponenten sollten den Basiskonstruktor immer mit `props` aufrufen.
 3) Entferne das `date` Prop vom `<Clock />` Element:
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 Wir werden später den Code des Timers zurück in die Komponente einfügen.
 
@@ -185,10 +177,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
@@ -294,10 +284,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
@@ -306,7 +294,7 @@ Jetzt tickt die Uhr jede Sekunde.
 
 Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge die Methoden aufgerufen werden:
 
-1) Wenn `Clock` an `ReactDOM.render()` gegeben wird, ruft React den Konstruktor der `Clock` Komponente auf. Da `Clock` die aktuelle Uhrzeit anzeigen muss, initialisiert es `this.state` mit einem Objekt, welches die aktuelle Uhrzeit enthält. Wir werden diesen State später aktualisieren.
+1) Wenn `<Clock />` an `root.render()` gegeben wird, ruft React den Konstruktor der `Clock` Komponente auf. Da `Clock` die aktuelle Uhrzeit anzeigen muss, initialisiert es `this.state` mit einem Objekt, welches die aktuelle Uhrzeit enthält. Wir werden diesen State später aktualisieren.
 
 2) React ruft dann die `render()` Methode der `Clock` Komponente auf. So weiß React, was auf dem Bildschirm angezeigt werden soll. Dann aktualisiert React das DOM entsprechend der gerenderten Ausgabe von `Clock`.
 
@@ -453,11 +441,6 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)

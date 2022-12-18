@@ -33,13 +33,10 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-Wir fügen das gesamte `listItems`-Array in ein `<ul>`-Element und [rendern es in das DOM](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+Dann können wir das gesamte `listItems`-Array in ein `<ul>`-Element schreiben:
 
 ```javascript{2}
-ReactDOM.render(
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
+<ul>{listItems}</ul>
 ```
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
@@ -64,10 +61,8 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<NumberList numbers={numbers} />);
 ```
 
 Wenn du diesen Code ausführst, dann wird dir eine Warnung angezeigt, die dir sagt, dass ein Key für jedes Element der Liste bereitgestellt werden soll. Ein `key` ist ein spezielles String-Attribut, das bei der Erstellung von Elementlisten berücksichtigt werden muss. Wir werden im nächsten Abschnitt sehen, warum es wichtig ist.
@@ -86,12 +81,6 @@ function NumberList(props) {
     <ul>{listItems}</ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
@@ -130,7 +119,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-Wir empfehlen dir nicht die Indizes für die Keys zu verwenden, da sich die Reihenfolge der Listeneinträge verändern kann. Dies kann sich negativ auf die Performance auswirken und zu Problemen mit dem Komponenten-State führen. Im Artikel von Robin Pokorny kannst du eine [ausführlichere Erklärung über die negativen Auswirkungen beim Verwenden des Index als Key](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) finden. Wenn du Listenelemente keinen expliziten Key zuweist, verwendet React standardmäßig die Indizes als Key.
+Wir empfehlen dir nicht die Indizes für die Keys zu verwenden, da sich die Reihenfolge der Listeneinträge verändern kann. Dies kann sich negativ auf die Performance auswirken und zu Problemen mit dem Komponenten-State führen. Im Artikel von Robin Pokorny kannst du eine [ausführlichere Erklärung über die negativen Auswirkungen beim Verwenden des Index als Key](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) finden. Wenn du Listenelemente keinen expliziten Key zuweist, verwendet React standardmäßig die Indizes als Key.
 
 Wenn du dich dafür interessiert mehr zu lernen, ist hier [eine ausführliche Erklärung, warum Keys nötig sind](/docs/reconciliation.html#recursing-on-children).
 
@@ -165,12 +154,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 **Beispiel: Richtige Schlüsselverwendung**
@@ -193,12 +176,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
@@ -207,11 +184,7 @@ Eine gute Faustregel ist, dass Elemente innerhalb von `map()` einen Key benötig
 
 ### Keys müssen nur bei Geschwistern eindeutig sein {#keys-must-only-be-unique-among-siblings}
 
-<<<<<<< HEAD
-Keys, die in einem Array verwendet werden, sollten eindeutig unter ihren Geschwistern sein. Global müssen sie dies jedoch nicht. Man kann somit die gleichen Keys in zwei verschiedenen Arrays verwenden:
-=======
-Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
->>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
+Keys, die in einem Array verwendet werden, sollten untereinander eindeutig sein. Global müssen sie es jedoch nicht. Man kann somit die gleichen Keys in zwei verschiedenen Arrays verwenden:
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {
@@ -243,10 +216,9 @@ const posts = [
   {id: 1, title: 'Hallo Welt', content: 'Willkommen beim Lernen von React!'},
   {id: 2, title: 'Installation', content: 'Du kannst React via npm installieren.'}
 ];
-ReactDOM.render(
-  <Blog posts={posts} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Blog posts={posts} />);
 ```
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)

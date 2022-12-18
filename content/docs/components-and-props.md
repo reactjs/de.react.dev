@@ -64,26 +64,24 @@ React übergibt, wenn es ein Element als benutzerdefinierte Komponente erkennt, 
 
 Zum Beispiel rendert dieser Code "Hallo Sarah" auf die Seite:
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Hallo {props.name}</h1>;
 }
 
-const element = <Welcome name="Sarah" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const element = <Welcome name="Sara" />;
+root.render(element);
 ```
 
-[Auf CodePen ausprobieren](codepen://components-and-props/rendering-a-component)
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)
 
 Fassen wir mal zusammen, was in diesem Beispiel passiert:
 
-1. Wir rufen `ReactDOM.render()` mit dem React-Element `<Welcome name="Sarah" />` auf.
-2. React ruft die `Welcome` Komponente mit den Eigenschaften (props) `{name: 'Sarah'}` auf.
-3. Unsere `Welcome`-Komponente gibt als Ergebnis `<h1>Hallo Sarah</h1>` zurück.
-4. React aktualsiert effizient das DOM um `<h1>Hallo Sarah</h1>` abzugleichen.
+1. Wir rufen `root.render()` mit dem React-Element `<Welcome name="Sara" />` auf.
+2. React ruft die `Welcome` Komponente mit den Props `{name: 'Sara'}` auf.
+3. Unsere `Welcome`-Komponente gibt als Ergebnis `<h1>Hallo Sara</h1>` zurück.
+4. React aktualsiert effizient das DOM um `<h1>Hallo Sara</h1>` abzugleichen.
 
 >**Hinweis:** Beginne den Namen von Komponenten immer mit einem Großbuchstaben.
 >
@@ -112,14 +110,9 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
-[Auf CodePen ausprobieren](codepen://components-and-props/composing-components)
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)
 
 Typischerweise haben neue React-Apps eine einzige `App` Komponente an erste Stelle. Wenn du aber React in ein bestehendes Projekt integrierst, fängst du wahrscheinlich von unten nach oben (bottom-up) an und erstellst Komponenten wie `Button`, dabei arbeitest dich Schritt für Schritt die View-Hierarchie nach oben.
 
@@ -153,7 +146,7 @@ function Comment(props) {
 }
 ```
 
-[Auf CodePen ausprobieren](codepen://components-and-props/extracting-components)
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)
 
 Diese Komponente nimmt `author` (ein Objekt), `text` (ein String), und `date` (ein date-Objekt) als Props entgegen und beschreibt einen Kommentar auf einer Social Media Webseite.
 
@@ -231,7 +224,7 @@ function Comment(props) {
 }
 ```
 
-[Auf CodePen ausprobieren](codepen://components-and-props/extracting-components-continued)
+[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)
 
 Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche (`Button`, `Panel`, `Avatar`) öfters verwendet wird oder es ist für sich allein komplex genug ist (`App`, `FeedStory`, `Comment`), dies gute Kandidaten für wiederverwendbare Komponenten sind.
 

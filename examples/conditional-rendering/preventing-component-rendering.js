@@ -3,23 +3,21 @@ function WarningBanner(props) {
     return null;
   }
 
-  return (
-    <div className="warning">
-      Warnung!
-    </div>
-  );
+  return <div className="warning">Warnung!</div>;
 }
 
 class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {showWarning: true};
-    this.handleToggleClick = this.handleToggleClick.bind(this);
+    this.handleToggleClick = this.handleToggleClick.bind(
+      this
+    );
   }
 
   handleToggleClick() {
     this.setState(state => ({
-      showWarning: !state.showWarning
+      showWarning: !state.showWarning,
     }));
   }
 
@@ -28,14 +26,13 @@ class Page extends React.Component {
       <div>
         <WarningBanner warn={this.state.showWarning} />
         <button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? 'Ausblenden' : 'Anzeigen'}
+          {this.state.showWarning
+            ? 'Ausblenden'
+            : 'Anzeigen'}
         </button>
       </div>
     );
   }
 }
 
-ReactDOM.render(
-  <Page />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Page />, document.getElementById('root'));
