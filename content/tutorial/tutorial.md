@@ -1126,9 +1126,9 @@ In der `render`-Methode der Game-Komponente können wir den Schlüssel als `<li 
 
 **[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/PmmXRE?editors=0010)**
 
-Clicking any of the list item's buttons throws an error because the `jumpTo` method is undefined. Before we implement `jumpTo`, we'll add `stepNumber` to the Game component's state to indicate which step we're currently viewing.
+Wenn man auf einen der Buttons der Listenelemente klickt, wird ein Fehler geworfen, da die `jumpTo`-Methode nicht definiert ist. Bevor wir `jumpTo` implementieren, fügen wir `stepNumber` zum State der Game-Komponente hinzu, um anzuzeigen, welchen Schritt wir aktuell sehen.
 
-First, add `stepNumber: 0` to the initial state in Game's `constructor`:
+Füge als erstes `stepNumber: 0` zum initialen State im `constructor` der Game-Komponente hinzu:
 
 ```js{8}
 class Game extends React.Component {
@@ -1144,11 +1144,11 @@ class Game extends React.Component {
   }
 ```
 
-Next, we'll define the `jumpTo` method in Game to update that `stepNumber`. We also set `xIsNext` to true if the number that we're changing `stepNumber` to is even:
+Als nächstes definieren wir die `jumpTo`-Methode in der Game-Komponente, um `stepNumber` zu aktualiseren. Außerdem setzen wir `xIsNext` auf true, wenn die Nummer, in die wir `stepNumber` ändern, gerade ist:
 
 ```javascript{5-10}
   handleClick(i) {
-    // this method has not changed
+    // Diese Methode hat sich nicht geändert
   }
 
   jumpTo(step) {
@@ -1159,17 +1159,18 @@ Next, we'll define the `jumpTo` method in Game to update that `stepNumber`. We a
   }
 
   render() {
-    // this method has not changed
+    // Diese Methode hat sich nicht geändert
   }
 ```
 
-Notice in `jumpTo` method, we haven't updated `history` property of the state. That is because state updates are merged or in more simple words React will update only the properties mentioned in `setState` method leaving the remaining state as is. For more info **[see the documentation](/docs/state-and-lifecycle.html#state-updates-are-merged)**.
+Beachte, dass wir in der `jumpTo`-Methode die `history`-Eigenschaft des States nicht aktualisert haben. Das ist deshalb so, weil State-Aktualisierungen zusammengeführt werden. In einfacheren Worten: React wird nur die Eigenschaften aktualisieren, die in der `setState`-Methode erwähnt werden und lässt den restlichen State unverändert.
+Schau dir für weitere Informationen **[die Dokumentation](/docs/state-and-lifecycle.html#state-updates-are-merged)** an.
 
-We will now make a few changes to the Game's `handleClick` method which fires when you click on a square.
+Wir werden jetzt einige Änderungen an der `handleClick`-Methode der Game-Komponente vornehmen. Diese wird aufgerufen, wenn du auf ein Quadrat klickst.
 
-The `stepNumber` state we've added reflects the move displayed to the user now. After we make a new move, we need to update `stepNumber` by adding `stepNumber: history.length` as part of the `this.setState` argument. This ensures we don't get stuck showing the same move after a new one has been made.
+Der State `stepNumber`, den wir hinzugefügt haben, stellt jetzt den Spielzug dar, der dem Benutzer angezeigt wird. Nachdem wir einen neuen Spielzug gemacht haben, müssen wir `stepNumber` aktualisieren, indem wir `stepNumber: history.length` als Teil des `this.setState`-Arguments hinzufügen. Das stellt sicher, dass wir nicht ständig den gleichen Spielzug anzeigen, nachdem ein neuer gemacht wurde.
 
-We will also replace reading `this.state.history` with `this.state.history.slice(0, this.state.stepNumber + 1)`. This ensures that if we "go back in time" and then make a new move from that point, we throw away all the "future" history that would now be incorrect.
+Außerdem werden wir `this.state.history` mit `this.state.history.slice(0, this.state.stepNumber + 1)` ersetzen. Das stellt sicher, dass wir, wenn wir "in der Zeit zurückgehen" und von diesem Punkt ausgehend einen neuen Spielzug machen, den gesamten "zukünftigen" Spielverlauf verwerfen, welcher nun nicht mehr stimmen würde.
 
 ```javascript{2,13}
   handleClick(i) {
@@ -1190,7 +1191,7 @@ We will also replace reading `this.state.history` with `this.state.history.slice
   }
 ```
 
-Finally, we will modify the Game component's `render` method from always rendering the last move to rendering the currently selected move according to `stepNumber`:
+Abschließend werden wir die `render`-Methode der Game-Komponente so ändern, dass sie anstatt immer den letzten Spielzug zu rendern, den aktuell ausgewählten Spielzug entsprechend der `stepNumber` rendert:
 
 ```javascript{3}
   render() {
@@ -1198,37 +1199,35 @@ Finally, we will modify the Game component's `render` method from always renderi
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
 
-    // the rest has not changed
+    // Der Rest hat sich nicht geändert
 ```
 
-If we click on any step in the game's history, the tic-tac-toe board should immediately update to show what the board looked like after that step occurred.
+Wenn wir auf einen beliebigen Schritt im Spielverlauf klicken, sollte das Tic-Tac-Toe-Spielbrett sofort aktualisiert werden und zeigen, wie das Spielbrett nach diesem Schritt aussah.
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**
+**[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**
 
 ### Zusammenfassung {#wrapping-up}
 
-Glückwunsch! Du hast ein Tic-Tac-Toe-Spiel entwickelt welches:
+Glückwunsch! Du hast ein Tic-Tac-Toe-Spiel entwickelt, welches:
 
-* Dir erlaubt Tic-Tac-Toe zu spielen,
-* Versteht, falls ein Spieler gewonnen hat,
-* Den Spielverlauf speichert,
-* Den Spielverlauf zu betrachten und alte Ansichten des Spielbretts aufzurufen.
+* dir erlaubt Tic-Tac-Toe zu spielen,
+* angibt, wenn ein Spieler das Spiel gewonnen hat,
+* den Spielverlauf speichert, während das Spiel noch läuft,
+* den Spielern erlaubt, einen Spielverlauf erneut anzusehen und vorherige Versionen eines Spielbretts anzuschauen.
 
-Gute Arbeit! Wir hoffen, dass Du nun einen guten Überblick hast wie React funktioniert.
+Gute Arbeit! Wir hoffen, dass du nun das Gefühl hast, die Funktionsweise von React gut zu verstehen.
 
-Sieh dir das finale Ergebnis hier an: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**.
+Sieh dir das Endergebnis hier an: **[Endergebnis](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**.
 
-Falls Du noch Zeit hast oder an deinen React-Fähigkeiten arbeiten möchtest -- Hier sind ein paar Ideen für Verbesserungen welche Du in das Tic-Tac-Toe-Spiel implementieren könntest.
-Die Liste ist aufsteigend nach Schwierigkeit sortiert.
+Falls du noch Zeit hast oder an deinen neuen React-Fähigkeiten arbeiten möchtest, findest du hier einige Ideen für Verbesserungen, welche du in das Tic-Tac-Toe-Spiel einbauen könntest.
+Die Elemente sind nach aufsteigendem Schwierigkeitsgrad sortiert.
 
-1. Zeige die Position für jeden Zug im Format (col, row) in der Zug-Verlaufs-Liste.
-2. Markiere das ausgewählte Element in der Zugliste fett.
-3. Schreibe Board so, dass Du zwei Schleifen verwendest um die Quadrate im Spielbrett zu erzeugen, anstatt sie zu hardcoden.
-4. Füge einen Umschalt-Button hinzu, welcher dir erlaubt die Züge in aufsteigender oder absteigender Ordnung zu sortieren.
-5. Falls jemand gewinnen sollte, markiere die 3 Gewinner-Kästchen.
-6. Falls keiner gewinnen sollte, soll eine Nachricht angezeigt werden, dass es ein Untentschieden ist.
+1. Zeige die Position für jeden Zug im Format (col, row) in der Liste des Spielverlaufs an.
+2. Formatiere das ausgewählte Element in der Zugliste fett.
+3. Schreibe Board so um, dass du zwei Schleifen verwendest um die Quadrate zu erzeugen, anstatt sie fest in den Quelltext zu schreiben.
+4. Füge einen Umschalt-Button hinzu, welcher dir erlaubt die Züge in aufsteigender oder absteigender Reihenfolge zu sortieren.
+5. Falls jemand gewinnt, markiere die 3 Quadrate, welche zum Gewinn führten.
+6. Falls keiner gewinnt, zeige eine Nachricht an, dass das Spiel unentschieden ist.
 
-Mit diesem Tutorial haben wir die Konzepte von React betrachtet, inkl. elements, components, props und state.
-Detailliertere Informationen zu diesen Themen findet man [im Rest der Dokumentation](/docs/hello-world.html)
-
-Um mehr über Komponenten herauszufinden, lohnt sich ein Blick in [`React.Component` API reference](/docs/react-component.html).
+Während dieses Tutorials haben wir die grundlegenden Konzepte von React betrachtet, inklusive Elemente, Komponenten, Props und State.
+Eine detailliertere Erklärung zu jedem dieser Themen findest du [im Rest der Dokumentation](/docs/hello-world.html). Um mehr darüber zu lernen, wie man Komponenten definiert, lohnt sich ein Blick in die [`React.Component` API-Referenz](/docs/react-component.html).
