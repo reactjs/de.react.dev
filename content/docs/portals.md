@@ -46,7 +46,11 @@ Ein typischer Use-Case für Portale ist, wenn Eltern-Komponenten Styles mit den 
 >
 > Wenn du mit Portalen arbeitest, denk daran, dass das [Verwalten des Tastaturfokus](/docs/accessibility.html#programmatically-managing-focus) sehr wichtig wird.
 >
+<<<<<<< HEAD
 > Versichere dich bei Modal-Dialogen, dass jeder mit diesen interagieren kann, indem er die [WAI-ARIA Modal Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal) befolgt. 
+=======
+> For modal dialogs, ensure that everyone can interact with them by following the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/).
+>>>>>>> e77ba1e90338ff18f965c9b94c733b034b3ac18f
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/yzMaBd)
 
