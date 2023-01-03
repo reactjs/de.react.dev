@@ -1,7 +1,7 @@
 - title: Tutorial
   items:
     - id: before-we-start-the-tutorial
-      title: Bevor wir mit dem Tutorial beginnen
+      title: Bevor wir mit dem Tutorial anfangen
       href: /tutorial/tutorial.html#before-we-start-the-tutorial
       forceInternal: true
       subitems:
@@ -10,7 +10,7 @@
           href: /tutorial/tutorial.html#what-are-we-building
           forceInternal: true
         - id: prerequisites
-          title: Vorraussetzungen
+          title: Voraussetzungen
           href: /tutorial/tutorial.html#prerequisites
           forceInternal: true
     - id: setup-for-the-tutorial
@@ -40,11 +40,11 @@
           href: /tutorial/tutorial.html#what-is-react
           forceInternal: true
         - id: inspecting-the-starter-code
-          title: Betrachten des ersten Codes
+          title: Untersuchen des Einstiegscodes
           href: /tutorial/tutorial.html#inspecting-the-starter-code
           forceInternal: true
         - id: passing-data-through-props
-          title: Daten über Properties weitergeben
+          title: Daten über Props weitergeben
           href: /tutorial/tutorial.html#passing-data-through-props
           forceInternal: true
         - id: making-an-interactive-component
@@ -52,7 +52,7 @@
           href: /tutorial/tutorial.html#making-an-interactive-component
           forceInternal: true
         - id: developer-tools
-          title: Developer Tools
+          title: Entwicklerwerkzeuge
           href: /tutorial/tutorial.html#developer-tools
           forceInternal: true
     - id: completing-the-game
@@ -61,23 +61,23 @@
       forceInternal: true
       subitems:
         - id: lifting-state-up
-          title: Den State hoch holen
+          title: Den State hochziehen
           href: /tutorial/tutorial.html#lifting-state-up
           forceInternal: true
         - id: why-immutability-is-important
-          title: Warum ist Immutability wichtig
+          title: Warum Unveränderlichkeit (engl. Immutability) wichtig ist
           href: /tutorial/tutorial.html#why-immutability-is-important
           forceInternal: true
         - id: function-components
-          title: Funktionskomponente
+          title: Funktionskomponenten
           href: /tutorial/tutorial.html#function-components
           forceInternal: true
         - id: taking-turns
-          title: Einen Zug machen
+          title: Abwechselnd einen Zug machen
           href: /tutorial/tutorial.html#taking-turns
           forceInternal: true
         - id: declaring-a-winner
-          title: Einen Gewinner verkünden
+          title: Einen Gewinner bekanntgeben
           href: /tutorial/tutorial.html#declaring-a-winner
           forceInternal: true
     - id: adding-time-travel
@@ -86,11 +86,11 @@
       forceInternal: true
       subitems:
         - id: storing-a-history-of-moves
-          title: Einen Zug-Verlauf speichern
+          title: Speichern eines Verlaufs von Spielzügen
           href: /tutorial/tutorial.html#storing-a-history-of-moves
           forceInternal: true
         - id: lifting-state-up-again
-          title: Den State nochmal hoch holen
+          title: Den State nochmal hochziehen
           href: /tutorial/tutorial.html#lifting-state-up-again
           forceInternal: true
         - id: showing-the-past-moves

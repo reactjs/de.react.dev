@@ -698,7 +698,7 @@ class Board extends React.Component {
 
 **[Schau dir den bis jetzt vorhandenen Code an](https://codepen.io/gaearon/pen/KmmrBy?editors=0010)**
 
-### Einen Gewinner verkünden {#declaring-a-winner}
+### Einen Gewinner bekanntgeben {#declaring-a-winner}
 
 Da wir nun den nächsten Spieler anzeigen können, sollten wir ebenfalls anzeigen, wann das Spiel gewonnen ist und dass keine Züge mehr möglich sind. Kopiere diese Hilfsfunktion an das Ende der Datei:
 
