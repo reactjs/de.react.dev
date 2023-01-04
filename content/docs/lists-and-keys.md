@@ -98,7 +98,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-Der beste Weg einen Key zu definieren, ist die Verwendung eines Strings, der das Listelemente eindeutig von seinen Geschwisterelementen unterscheiden lässt. Meistens würdest du IDs aus deinen Daten als Keys verwenden:
+Der beste Weg einen Key zu definieren, ist die Verwendung eines Strings, der das Listenelement eindeutig von seinen Geschwisterelementen unterscheiden lässt. Meistens würdest du IDs aus deinen Daten als Keys verwenden:
 
 ```js{2}
 const todoItems = todos.map((todo) =>
@@ -119,7 +119,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-Wir empfehlen dir nicht die Indizes für die Keys zu verwenden, da sich die Reihenfolge der Listeneinträge verändern kann. Dies kann sich negativ auf die Performance auswirken und zu Problemen mit dem Komponenten-State führen. Im Artikel von Robin Pokorny kannst du eine [ausführlichere Erklärung über die negativen Auswirkungen beim Verwenden des Index als Key](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) finden. Wenn du Listenelemente keinen expliziten Key zuweist, verwendet React standardmäßig die Indizes als Key.
+Wir empfehlen dir nicht die Indizes für die Keys zu verwenden, da sich die Reihenfolge der Listeneinträge verändern kann. Dies kann sich negativ auf die Performance auswirken und zu Problemen mit dem Komponenten-State führen. Im Artikel von Robin Pokorny kannst du eine [ausführlichere Erklärung über die negativen Auswirkungen beim Verwenden des Index als Key](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) finden. Wenn du Listenelementen keinen expliziten Key zuweist, verwendet React standardmäßig die Indizes als Key.
 
 Wenn du dich dafür interessiert mehr zu lernen, ist hier [eine ausführliche Erklärung, warum Keys nötig sind](/docs/reconciliation.html#recursing-on-children).
 
@@ -127,7 +127,7 @@ Wenn du dich dafür interessiert mehr zu lernen, ist hier [eine ausführliche Er
 
 Keys ergeben nur im Zusammenhang mit einem umgebenden Array Sinn.
 
-Wenn du beispielsweise eine `ListItem`-Komponente [extrahierst](/docs/components-and-props.html#extracting-components), solltest du den Key auf das `<ListItem />`-Element im Array setzen und nicht auf das `<li>`-Element im `ListItem` selbst.
+Wenn du beispielsweise eine `ListItem`-Komponente [auslagerst](/docs/components-and-props.html#extracting-components), solltest du den Key auf das `<ListItem />`-Element im Array setzen und nicht auf das `<li>`-Element im `ListItem` selbst.
 
 **Beispiel: Falsche Verwendung von Keys**
 
@@ -156,7 +156,7 @@ function NumberList(props) {
 }
 ```
 
-**Beispiel: Richtige Schlüsselverwendung**
+**Beispiel: Richtige Verwendung von Keys**
 
 ```javascript{2,3,9,10}
 function ListItem(props) {
@@ -223,7 +223,7 @@ root.render(<Blog posts={posts} />);
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
-Keys dienen React als Hinweise, aber werden nicht an die Komponente weitergegeben. Wenn du den gleichen Wert in deiner Komponente benötigst, dann übergib ihn explizit als Prop mit einem anderen Namen:
+Keys dienen React als Hinweise, werden aber nicht an die Komponente weitergegeben. Wenn du den gleichen Wert in deiner Komponente benötigst, dann übergib ihn explizit als Prop mit einem anderen Namen:
 
 ```js{3,4}
 const content = posts.map((post) =>

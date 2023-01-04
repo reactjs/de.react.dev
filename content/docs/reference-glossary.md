@@ -17,13 +17,13 @@ Obwohl du mit React komplette Single-Page-Anwendungen erstellen kannst, ist dies
 
 Diese Kürzel beziehen sich alle auf den neuesten Standard der ECMAScript Language Specification, von dem JavaScript eine Implementierung ist. Die ES6-Version (auch bekannt als ES2015) enthält viele Ergänzungen zu den Vorgängerversionen wie: Pfeilfunktionen, Klassen, Template Literale, `let` und `const` Anweisungen. Du kannst [hier](https://en.wikipedia.org/wiki/ECMAScript#Versions) mehr über bestimmte Versionen lernen.
 
-## Kompiler {#compilers}
+## Compiler {#compilers}
 
-Ein JavaScript-Kompiler nimmt JavaScript-Code, wandelt ihn um und gibt JavaScript-Code in einem anderen Format zurück. Der häufigste Anwendungsfall ist die Umwandlung von ES6-Syntax in eine Syntax, die ältere Browser interpretieren können. [Babel](https://babeljs.io/) ist der Kompiler, der am häufigsten mit React verwendet wird.
+Ein JavaScript-Compiler nimmt JavaScript-Code, wandelt ihn um und gibt JavaScript-Code in einem anderen Format zurück. Der häufigste Anwendungsfall ist die Umwandlung von ES6-Syntax in eine Syntax, die ältere Browser interpretieren können. [Babel](https://babeljs.io/) ist der Compiler, der am häufigsten mit React verwendet wird.
 
 ## Bundler {#bundlers}
 
-Bundler nehmen JavaScript und CSS-Code, geschrieben als seperate Module (oft hunderte von ihnen), und fügen diese zusammen in ein paar Dateien, die besser für den Browser optimiert sind. Häufig zusammen mit React-Anwendungen verwendete Bundler sind unter anderem [Webpack](https://webpack.js.org/) und [Browserify](http://browserify.org/).
+Bundler nehmen JavaScript und CSS-Code, geschrieben als separate Module (oft hunderte von ihnen), und fügen diese zusammen in ein paar Dateien, die besser für den Browser optimiert sind. Häufig zusammen mit React-Anwendungen verwendete Bundler sind unter anderem [Webpack](https://webpack.js.org/) und [Browserify](http://browserify.org/).
 
 ## Paketmanager {#package-managers}
 
@@ -35,7 +35,7 @@ CDN steht für Content Delivery Network. CDNs sind Netzwerke von Servern auf der
 
 ## JSX {#jsx}
 
-JSX ist eine Syntaxerweiterung für JavaScript. Es ist ähnlich einer Template-Sprache, hat aber den vollen Leistungsumfang von JavaScript. JSX wird bei `React.createElement()`-Aufrufen kompiliert, welche das reine JavaScript-Objekt namens "React elements" zurückgeben. Um ein grundlegendes Verständnis für JSX zu bekommen, [sieh dir diese Dokumentation an](/docs/introducing-jsx.html) und ein ausfürliches Tutorial zu JSX findest du [hier](/docs/jsx-in-depth.html).
+JSX ist eine Syntaxerweiterung für JavaScript. Es ist ähnlich einer Template-Sprache, hat aber den vollen Leistungsumfang von JavaScript. JSX wird bei `React.createElement()`-Aufrufen kompiliert, welche das reine JavaScript-Objekt namens "React elements" zurückgeben. Um ein grundlegendes Verständnis für JSX zu bekommen, [sieh dir diese Dokumentation an](/docs/introducing-jsx.html) und ein ausführliches Tutorial zu JSX findest du [hier](/docs/jsx-in-depth.html).
 
 React DOM benutzt die camelCase-Namenskonvention anstelle von HTML-Attributnamen. Zum Beispiel wird `tabindex` zu `tabIndex` in JSX. Das Attribut `class` wird zu `className`, da `class` ein reserviertes Wort in JavaScript ist:
 
@@ -63,7 +63,7 @@ Normalerweise werden Elemente nicht direkt verwendet, sondern von Komponenten zu
 
 ## [Komponenten](/docs/components-and-props.html) {#components}
 
-React-Komponenten sind kleine, wiederverwendebare Codestücke, die ein zu renderndes React-Element an die Seite zurückgeben. Die einfachste Version einer React-Komponente ist eine simple JavaScript-Funktion, die ein React-Element zurückgibt:
+React-Komponenten sind kleine, wiederverwendbare Codestücke, die ein zu renderndes React-Element an die Seite zurückgeben. Die einfachste Version einer React-Komponente ist eine simple JavaScript-Funktion, die ein React-Element zurückgibt:
 
 ```js
 function Welcome(props) {
@@ -81,7 +81,7 @@ class Welcome extends React.Component {
 }
 ```
 
-Komponenten können in mehrere kleinere Teile zerlegt und deren Funktionialität in anderen Komponenten wiederverwendet werden. Komponenten können andere Komponenten, Arrays, Strings und Nummern zurückgeben. Eine gute Faustregel ist, dass wenn ein Teil deiner Benutzeroberfläche mehrmals verwendet wird (Button, Panel, Avatar), oder komplex genug ist (App, FeedStory, Comment), sie ein guter Kandidat ist, eine wiederverwendebare Komponente zu sein. Kompomnentennamen sollten immer mit einem Großbuchstaben beginnen (`<Wrapper/>` **nicht** `<wrapper/>`). Weitere Informationen findest du in [dieser Dokumentation](/docs/components-and-props.html#rendering-a-component) zum Rendern von Komponenten.
+Komponenten können in mehrere kleinere Teile zerlegt und deren Funktionalität in anderen Komponenten wiederverwendet werden. Komponenten können andere Komponenten, Arrays, Strings und Nummern zurückgeben. Eine gute Faustregel ist, dass wenn ein Teil deiner Benutzeroberfläche mehrmals verwendet wird (Button, Panel, Avatar), oder komplex genug ist (App, FeedStory, Comment), sie ein guter Kandidat ist, eine wiederverwendbare Komponente zu sein. Komponentennamen sollten immer mit einem Großbuchstaben beginnen (`<Wrapper/>` **nicht** `<wrapper/>`). Weitere Informationen findest du in [dieser Dokumentation](/docs/components-and-props.html#rendering-a-component) zum Rendern von Komponenten.
 
 ### [`props`](/docs/components-and-props.html) {#props}
 
@@ -98,7 +98,7 @@ Wenn du einen Wert aufgrund von Nutzereingaben oder Netzwerkantworten verändern
 
 ### `props.children` {#propschildren}
 
-`props.children` ist in jeder Komponente verfügar. Es enthält den Inhalt, der zwischen dem öffnenden und schließenden Tag einer Komponente steht. Zum Beispiel:
+`props.children` ist in jeder Komponente verfügbar. Es enthält den Inhalt, der zwischen dem öffnenden und schließenden Tag einer Komponente steht. Zum Beispiel:
 
 ```js
 <Welcome>Hallo Welt!</Welcome>
@@ -124,15 +124,15 @@ class Welcome extends React.Component {
 
 ### [`state`](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) {#state}
 
-Eine Komponente benötigt `state`, wenn sich mit ihr vebundene Daten im Laufe der Zeit ändern. Zum Beispiel könnte eine `Checkbox`-Komponente ein `isChecked` in ihrem State benötigen und eine `NewsFeed`-Komponente könnte in ihrem State `fetchedPosts` verfolgen wollen.
+Eine Komponente benötigt `state`, wenn sich mit ihr verbundene Daten im Laufe der Zeit ändern. Zum Beispiel könnte eine `Checkbox`-Komponente ein `isChecked` in ihrem State benötigen und eine `NewsFeed`-Komponente könnte in ihrem State `fetchedPosts` verfolgen wollen.
 
 Der wichtigste Unterschied zwischen `state` und `props` ist, dass `props` von einer übergeordneten Komponente übergeben werden, aber `state` in einer Komponente selbst verwaltet wird. Eine Komponente kann nicht ihre `props` ändern, aber ihren `state`.
 
-Jeder Datensatz, der sich ändern kann, sollte nur zu einer Komponente zugeordnet sein, die ihren State "besitzt". Versuche nicht States von zwei verschiedenen Komponenten zu synchronisieren. Verschiebe stattdessen den State in die am nächsten höhergelegende gemeinsame Komponente ([lift it up](/docs/lifting-state-up.html)) und gebe sie als Props an beide von ihnen weiter.
+Jeder Datensatz, der sich ändern kann, sollte nur zu einer Komponente zugeordnet sein, die ihren State "besitzt". Versuche nicht States von zwei verschiedenen Komponenten zu synchronisieren. Verschiebe stattdessen den State in die am nächsten höhergelegene gemeinsame Komponente ([lift it up](/docs/lifting-state-up.html)) und gebe sie als Props an beide von ihnen weiter.
 
 ## [Lifecycle-Methoden](/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class) {#lifecycle-methods}
 
-Lifecycle-Methoden sind benutzerdefinierte Funktionen, die in den verschiedenen Phasen einer Komponente ausgeführt werden. Es stehen Methoden zur Verfügung, wenn die Komponenten erstellt und in das DOM ([eingefügt (mounting)](/docs/react-component.html#mounting)) wird, wenn die Komponente geupdatet wird und wenn die Komponente geunmountet oder entfernt wird vom DOM.
+Lifecycle-Methoden sind benutzerdefinierte Funktionen, die in den verschiedenen Phasen einer Komponente ausgeführt werden. Es stehen Methoden zur Verfügung, wenn die Komponenten erstellt und in das DOM ([eingefügt (mounting)](/docs/react-component.html#mounting)) wird, wenn die Komponente upgedatet wird und wenn die Komponente gemountet oder entfernt wird vom DOM.
 
  ## [Kontrollierte](/docs/forms.html#controlled-components) vs. [Unkontrollierte Komponenten](/docs/uncontrolled-components.html)
 
@@ -150,13 +150,13 @@ Ein "Key" ist ein spezielles String-Attribut, welches du bei der Erstellung von 
 
 Keys müssen nur in einem Array untereinander eindeutig sein. Sie müssen nicht über die gesamte Anwendung oder in einer einzelnen Komponente eindeutig sein.
 
-Übergebe nicht soetwas wie `Math.random` als Key. Es ist wichtig, dass Keys eine "stabile Identität" über mehrere Renderings hinweg aufweisen, damit React feststellen kann, wann Elemente hinzugefügt, gelöscht oder neu angeordnet werden. Im Idealfall sollten Keys eindeutigen und stabilen Identifikatoren aus ihren Daten entsprechen, wie z. B. `post.id`.
+Übergebe nicht so etwas wie `Math.random` als Key. Es ist wichtig, dass Keys eine "stabile Identität" über mehrere Renderings hinweg aufweisen, damit React feststellen kann, wann Elemente hinzugefügt, gelöscht oder neu angeordnet werden. Im Idealfall sollten Keys eindeutigen und stabilen Identifikatoren aus ihren Daten entsprechen, wie z. B. `post.id`.
 
 ## [Refs](/docs/refs-and-the-dom.html) {#refs}
 
 React unterstützt ein spezielles Attribut, das du an jede Komponente anhängen kannst. Das `ref`-Attribut kann ein Objekt sein, das mit der [`React.createRef()-Funktion`](/docs/react-api.html#reactcreateref), einer Callback-Funktion oder einem String (veraltete API) erstellt wurde. Wenn das `ref`-Attribut eine Callback-Funktion ist, erhält die Funktion das zugrundeliegende DOM-Element oder die Klassen-Instanz (je nach Elementtyp). Dadurch haben wir direkten Zugriff auf das DOM-Element oder die Komponenteninstanz.
 
-Benutze refs sparsam. Wenn du dich da bei erwischst, refs in deiner Anwendung zu benutzen um "Dinge möglich zu machen", solltest du dich ein bisschen mehr mit dem [top-down Datenfluss](/docs/lifting-state-up.html) auseinandersetzen.
+Benutze refs sparsam. Wenn du dich da bei erwischst, refs in deiner Anwendung zu benutzen um "Dinge möglich zu machen", solltest du dich ein bisschen mehr mit dem [Top-Down-Datenfluss](/docs/lifting-state-up.html) auseinandersetzen.
 
 ## [Events](/docs/handling-events.html) {#events}
 
@@ -167,4 +167,4 @@ Die Handhabung von Events in React-Elementen weist einige syntaktische Unterschi
 
 ## [Abgleich (reconciliation)](/docs/reconciliation.html) {#reconciliation}
 
-Wenn sich Props oder State einer Komponente ändern, entscheidet React ob ein tatsächliches DOM-Update erforderlich ist, in dem es das neue zurückgegebene Element mir dem zuvor grenderten vergleicht. Wenn diese nicht übereinstimmen, wird React das DOM aktualisieren. Dieser Vorgang wird "Abgleich (engl. reconciliation)" genannt.
+Wenn sich Props oder State einer Komponente ändern, entscheidet React ob ein tatsächliches DOM-Update erforderlich ist, in dem es das neue zurückgegebene Element mir dem zuvor gerenderten vergleicht. Wenn diese nicht übereinstimmen, wird React das DOM aktualisieren. Dieser Vorgang wird "Abgleich (engl. reconciliation)" genannt.

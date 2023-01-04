@@ -8,7 +8,7 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-Diese Seite stellt das Konzept von States und Lifecycles in einer React-Komponente vor. Hier kannst du eine [detailiertere API Referenz für Komponenten](/docs/react-component.html) finden.
+Diese Seite stellt das Konzept von States und Lifecycles in einer React-Komponente vor. Hier kannst du eine [detailliertere API Referenz für Komponenten](/docs/react-component.html) finden.
 
 Schauen wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. Im Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg kennengelernt, das UI zu aktualisieren. Wir rufen `root.render()` auf, um die gerenderte Ausgabe zu ändern:
 
@@ -55,7 +55,7 @@ setInterval(tick, 1000);
 
 [**Probier es auf CodePen aus**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
-Es fehlt jedoch eine entscheidende Anforderung: Die Tatsache, dass `Clock` einen Timer anlegt und das UI jede Sekunden aktualisiert sollte ein Detail der Implementierung von `Clock` sein.
+Es fehlt jedoch eine entscheidende Anforderung: Die Tatsache, dass `Clock` einen Timer anlegt und das UI jede Sekunde aktualisiert sollte ein Detail der Implementierung von `Clock` sein.
 
 Idealerweise wollen wir dies nur einmal schreiben und `Clock` die Aktualisierung selbständig durchführen lassen:
 
@@ -300,7 +300,7 @@ Lass uns kurz zusammenfassen, was hier vor sich geht und in welcher Reihenfolge 
 
 3) Wenn die Ausgabe von `Clock` in das DOM eingefügt wurde, ruft React die Lifecycle Methode `componentDidMount()` auf. In dieser fordert die `Clock` Komponente den Browser auf einen Timer anzulegen, der jede Sekunde die `tick()` Methode aufruft.
 
-4) Jede Sekunde ruft der Browser die `tick()` Methode auf. Innerhalb dieser plant die `Clock` Komponente das Aktualisieren der UI in dem `setState()` mit einem Objekt, welches die aktuelle Uhrzeit beinhaltet, aufruft. Dank des `setState()`-Aufrufs weiß React, dass sich der State geändert hat und ruft die `render()` Methode auf um erneut zu erfahren, was auf dem Bildschirm dargestellt werden soll. Diesmal wird `this.state.date` in der `render()` Methode anders sein und der gerenderte Inhalt die aktualsierte Zeit beinhalten. React aktualisiert dementsprechend das DOM.
+4) Jede Sekunde ruft der Browser die `tick()` Methode auf. Innerhalb dieser plant die `Clock` Komponente das Aktualisieren der UI in dem sie `setState()` aufruft mit einem Objekt, welches die aktuelle Uhrzeit beinhaltet. Dank des `setState()`-Aufrufs weiß React, dass sich der State geändert hat und ruft die `render()` Methode auf um erneut zu erfahren, was auf dem Bildschirm dargestellt werden soll. Diesmal wird `this.state.date` in der `render()` Methode anders sein und der gerenderte Inhalt die aktualisierte Zeit beinhalten. React aktualisiert dementsprechend das DOM.
 
 5) Wenn die `Clock` Komponente jemals aus dem DOM entfernt wird, ruft React die `componentWillUnmount()` Lifecycle Methode auf und der Timer stoppt.
 
@@ -310,7 +310,7 @@ Es gibt drei Dinge, die du über `setState()` wissen solltest.
 
 ### Bearbeite State nicht direkt {#do-not-modify-state-directly}
 
-Dies wird zum Beispiel kein neurendern der Komponente bewirken:
+Dadurch wird die Komponente nicht erneut gerendert, zum Beispiel:
 
 ```js
 // Wrong
@@ -326,9 +326,9 @@ this.setState({comment: 'Hello'});
 
 Der einzige Ort, an dem du `this.state` setzen kannst, ist der Konstruktor.
 
-### Stateaktualsierungen können asynchron sein {#state-updates-may-be-asynchronous}
+### Stateaktualisierungen können asynchron sein {#state-updates-may-be-asynchronous}
 
-React kann aus Preformancegründen mehrere `setState()` Aufrufe in einem Update zusammenfassen.
+React kann aus Performancegründen mehrere `setState()` Aufrufe in einem Update zusammenfassen.
 
 Da `this.props` und `this.state` asynchron aktualisiert werden können, solltest du dich nicht darauf verlassen, die Werte für Berechnungen des nächsten State verwenden zu können.
 
@@ -350,7 +350,7 @@ this.setState((state, props) => ({
 }));
 ```
 
-Wir haben oben eine [Lamda Funktion](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) verwendet, aber normale Funktionen funktionieren ebenso:
+Wir haben oben eine [Lambda Funktion](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) verwendet, aber normale Funktionen funktionieren ebenso:
 
 ```js
 // Correct
@@ -363,7 +363,7 @@ this.setState(function(state, props) {
 
 ### Stateaktualisierungen werden zusammengeführt {#state-updates-are-merged}
 
-Wenn du `setState()?` aufrufst, führt React das von dir bereitgestellte Objekt mit dem aktuellen State zusammen.
+Wenn du `setState()` aufrufst, führt React das von dir bereitgestellte Objekt mit dem aktuellen State zusammen.
 
 So kann dein State beispielsweise mehrere unabhängige Variablen beinhalten:
 
@@ -377,7 +377,7 @@ So kann dein State beispielsweise mehrere unabhängige Variablen beinhalten:
   }
 ```
 
-Dann kannst du sie unabhängig in verschiedenen `setState()` aufrufen aktualsieren.
+Dann kannst du sie unabhängig voneinander in verschiedenen `setState()`-Aufrufen aktualisieren.
 
 ```js{4,10}
   componentDidMount() {
@@ -397,7 +397,7 @@ Dann kannst du sie unabhängig in verschiedenen `setState()` aufrufen aktualsier
 
 Das Zusammenführen ist nur oberflächlich und `this.setState({comments})` lässt `this.state.posts` bestehen, aber ersetzt `this.state.comments`.
 
-## Der "top-down" Datenfluss {#the-data-flows-down}
+## Der Top-Down-Datenfluss {#the-data-flows-down}
 
 Weder Eltern- noch Kind-Komponenten können wissen ob eine bestimmte Komponente stateful oder stateless ist, und sollten sich auch nicht darum kümmern ob sie als Funktion oder Klasse definiert wurde.
 
@@ -415,7 +415,7 @@ Dies funktioniert auch für benutzerdefinierte Komponenten:
 <FormattedDate date={this.state.date} />
 ```
 
-Die `FormattedDate` Komponente nimmt `date` als Prop entgegen und wüsste nicht ob es aus dem State oder den Props von `Clock` stammt, oder von Hand eingegeben wurde:
+Die `FormattedDate` Komponente nimmt `date` als Prop entgegen und weiß nicht ob es aus dem State oder den Props von `Clock` stammt, oder von Hand eingegeben wurde:
 
 ```js
 function FormattedDate(props) {

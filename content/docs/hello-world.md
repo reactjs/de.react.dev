@@ -9,14 +9,8 @@ next: introducing-jsx.html
 Das wohl kleinste React-Beispiel sieht wie folgt aus:
 
 ```jsx
-<<<<<<< HEAD
-ReactDOM
-  .createRoot(document.getElementById('root'))
-  .render(<h1>Hallo, Welt!</h1>);
-=======
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<h1>Hello, world!</h1>);
->>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 ```
 
 Es wird eine Überschrift mit dem Text "Hallo, Welt!" auf der Seite dargestellt.
@@ -24,7 +18,7 @@ Es wird eine Überschrift mit dem Text "Hallo, Welt!" auf der Seite dargestellt.
 **[Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
 
 Klicke auf den Link um das obige Beispiel in einen Online-Editor zu öffnen.
-Mache soviele Änderungen wie du magst, spiel ein bisschen mit dem Code rum und schaue was es für Auswirkungen auf die Seite hat.
+Mache so viele Änderungen wie du magst, spiel ein bisschen mit dem Code rum und schaue was es für Auswirkungen auf die Seite hat.
 Die meisten Seiten in diesem Leitfaden besitzen änderbare Beispiele wie dieses.
 
 
@@ -35,7 +29,7 @@ Sobald du diese beherrschst, ist es dir möglich, komplexe Anwendungen aus viele
 
 >**Tipp:**
 >
->Dieser Leitfaden richtet sich an Personen, die es bevorzugen Konzepte **Schritt für Schritt** zu erlernen, wenn du es lieber bevozugst
+>Dieser Leitfaden richtet sich an Personen, die es bevorzugen Konzepte **Schritt für Schritt** zu erlernen, wenn du es lieber bevorzugst
 >mit Übungen zu lernen, dann ist vielleicht unser [praktisches Tutorial](/tutorial/tutorial.html) das Richtige für dich.
 >Vielleicht findest du auch, dass sich der Leitfaden und das Tutorial gegenseitig ergänzen.
 
@@ -47,7 +41,7 @@ Die Kapitel bauen aufeinander auf und greifen ggf. auf das Wissen des vorherigen
 ## Annahme zu deinem Wissensstand {#knowledge-level-assumptions}
 
 Da React eine JavaScript-Bibliothek ist, gehen wir davon aus, dass du ein gewisses Grundverständnis von JavaScript hast.
-**Wenn du dich noch ein wenig unsicher fühlst können wir dir dieses [JavaScript Tutorial](https://developer.mozilla.org/de/docs/Web/JavaScript/Eine_Wiedereinfuehrung_in_JavaScript) sehr empfehlen.**
+**Wenn du dich noch ein wenig unsicher fühlst können wir dir dieses [JavaScript Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics) sehr empfehlen.**
 Es dauert ca. zwischen 30 Minuten und einer Stunde, aber danach solltest du keine Probleme mehr haben dem Leitfaden zu folgen
 und nicht das Gefühl haben, React und JavaScript gleichzeitig zu lernen.
 
@@ -57,4 +51,4 @@ und nicht das Gefühl haben, React und JavaScript gleichzeitig zu lernen.
 
 ## Auf geht's! {#lets-get-started}
 
-Wenn du ein wenig hinuter scrollst findest du über dem Seitenende den Link [zum nächsten Kapitel](/docs/introducing-jsx.html) des Leitfadens.
+Wenn du ein wenig hinunter scrollst findest du über dem Seitenende den Link [zum nächsten Kapitel](/docs/introducing-jsx.html) des Leitfadens.

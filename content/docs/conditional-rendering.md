@@ -10,7 +10,7 @@ redirect_from:
 
 Mit React können verschiedene Komponenten erstellt werden, die ein gewünschtes Verhalten kapseln. In Abhängigkeit vom State der Anwendung können dann einige davon dargestellt werden.
 
-Die bedingte Darstellung (engl. conditional rendering) in React funktioniert genauso wie Bedingungen in JavaScript. Benutze JavaScript Operatoren wie [`if`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/if...else) oder den [Bedingten Operator](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) um Elemente zu erstellen, welche den aktuellen State widerspiegeln. React aktualisiert dementsprechend die aktuelle Benutzeroberfläche.
+Die bedingte Darstellung (engl. conditional rendering) in React funktioniert genauso wie Bedingungen in JavaScript. Benutze JavaScript Operatoren wie [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) oder den [Bedingten Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) um Elemente zu erstellen, welche den aktuellen State widerspiegeln. React aktualisiert dementsprechend die aktuelle Benutzeroberfläche.
 
 Stelle dir diese beiden Komponenten vor:
 
@@ -162,7 +162,7 @@ render() {
 
 ### In JSX eingebettetes If-Else mit Bedingungs-Operator {#inline-if-else-with-conditional-operator}
 
-Eine andere Methode wie man Elemente bedingt in JSX eingebettet darstellen kann, ist die Nutzung des bedingten Operators [`bedingung ? true : false`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) aus JavaScript.
+Eine andere Methode wie man Elemente bedingt in JSX eingebettet darstellen kann, ist die Nutzung des bedingten Operators [`bedingung ? true : false`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) aus JavaScript.
 
 Im folgenden Beispiel wird er genutzt um einen kurzen Text bedingt darzustellen.
 
@@ -193,7 +193,7 @@ render() {
 }
 ```
 
-Wie in JavaScript auch, ist es dir überlassen welche Methode du für passend hälst und was du und dein Team lesbarer findet. Bedenke: Wenn Bedingungen zu komplex werden, könnte ein guter Zeitpunkt sein um sie in eine eigene [Komponente auszulagern](/docs/components-and-props.html#extracting-components).
+Wie in JavaScript auch, ist es dir überlassen welche Methode du für passend hältst und was du und dein Team lesbarer findet. Bedenke: Wenn Bedingungen zu komplex werden, könnte ein guter Zeitpunkt sein um sie in eine eigene [Komponente auszulagern](/docs/components-and-props.html#extracting-components).
 
 ### Darstellung einer Komponente unterbinden {#preventing-component-from-rendering}
 

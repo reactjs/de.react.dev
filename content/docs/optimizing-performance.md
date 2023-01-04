@@ -182,7 +182,7 @@ Falls du die React DevTools noch nicht installiert hast, kannst du sie hier find
 
 Falls deine Anwendung lange Datenlisten (mit Hunderten oder Tausenden von Zeilen) rendert, empfehlen die Verwendung einer Technik, die als "Windowing" bekannt ist. Diese Technik rendert zu jedem Zeitpunkt nur eine kleine Teilmenge deiner Zeilen. Dadurch kannst du sowohl die Zeit, die benötigt wird, um die Komponenten erneut zu rendern, als auch die Anzahl der erstellten DOM-Knoten drastisch reduzieren.
 
-[react-window](https://react-window.now.sh/) und [react-virtualized](https://bvaughn.github.io/react-virtualized/) sind beliebte Windowing-Bibliotheken. Sie bieten eine Anzahl an wiederverwendbaren Komonenten, um Listen, Grids und Datentabellen anzuzeigen. Falls du etwas möchtest, das spezifischer auf deine Anwendung zugeschnitten ist, kannst du auch deine eigene Windowing-Komponente erstellen, wie [Twitter es getan hat](https://medium.com/@paularmstrong/twitter-lite-and-high-performance-react-progressive-web-apps-at-scale-d28a00e780a3).
+[react-window](https://react-window.now.sh/) und [react-virtualized](https://bvaughn.github.io/react-virtualized/) sind beliebte Windowing-Bibliotheken. Sie bieten eine Anzahl an wiederverwendbaren Komponenten, um Listen, Grids und Datentabellen anzuzeigen. Falls du etwas möchtest, das spezifischer auf deine Anwendung zugeschnitten ist, kannst du auch deine eigene Windowing-Komponente erstellen, wie [Twitter es getan hat](https://medium.com/@paularmstrong/twitter-lite-and-high-performance-react-progressive-web-apps-at-scale-d28a00e780a3).
 
 ## Abgleiche vermeiden {#avoid-reconciliation}
 
@@ -212,7 +212,7 @@ Da `shouldComponentUpdate` für den von C2 ausgehenden Teilbaum `false` zurückg
 
 Für C1 und C3 hat `shouldComponentUpdate` `true` zurückgegeben, wodurch React zu den Blättern weiterwandern musste, um diese zu überprüfen. Für C6 hat `shouldComponentUpdate` `true` zurückgegeben, und da die gerenderten Elemente nicht übereinstimmten, musste React das DOM updaten.
 
-Der letze interessante Fall ist C8. React musste diese Komponente rendern, aber da die zurückgegebenen React-Elemente keinen Unterschied zu den zuvor gerenderten hatte, musste es das DOM nicht updaten.
+Der letzte interessante Fall ist C8. React musste diese Komponente rendern, aber da die zurückgegebenen React-Elemente keinen Unterschied zu den zuvor gerenderten hatte, musste es das DOM nicht updaten.
 
 Beachte, dass React nur für C6 das DOM verändern musste, was unvermeidlich war. C8 war nach dem Vergleich der gerenderten React-Elemente abgehakt, und für C7 sowie den Teilbaum von C2 musste nicht einmal ein Vergleich stattfinden, da der Prozess hier schon nach `shouldComponentUpdate` abgehakt war und somit `render` nicht aufgerufen werden musste.
 
@@ -272,7 +272,7 @@ class CounterButton extends React.PureComponent {
 
 In den meisten Fällen kannst du `React.PureComponent` verwenden, statt dein eigenes `shouldComponentUpdate` zu schreiben. Es führt nur einen flachen Vergleich durch, also kannst du `React.PureComponent` nicht benutzen, wenn Props oder State sich auf eine Weise verändert haben, die ein flacher Vergleich übersehen würde.
 
-Das kann bei komplexen Datenstrukturen ein Problem sein. Lass uns z. B. sagen, du möchtest eine `ListOfWords`-Komponente, die eine komma-separierte Wörterliste rendert, mit einer Eltern-`WorldAdder`-Komponente, die dich einen Button klicken lässt, um ein Wort zur Liste zu addieren. Dieser Code funktioniert **nicht** korrekt:
+Das kann bei komplexen Datenstrukturen ein Problem sein. Lass uns z. B. sagen, du möchtest eine `ListOfWords`-Komponente, die eine Komma-separierte Wörterliste rendert, mit einer Eltern-`WorldAdder`-Komponente, die dich einen Button klicken lässt, um ein Wort zur Liste zu addieren. Dieser Code funktioniert **nicht** korrekt:
 
 ```javascript
 class ListOfWords extends React.PureComponent {

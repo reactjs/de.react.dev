@@ -35,7 +35,7 @@ Unsere JSON API gibt uns Daten zurück, die folgendermaßen aussehen:
 
 Zuerst solltest du um jede Komponente (und Unterkomponente) des Mock-Ups eine Box zeichnen und jeder einen Name geben. Falls du mit einem Designer zusammenarbeitest, hat er das vielleicht schon getan, also geh und frage ihn! Die Namen der Photoshop-Ebenen könnten letztendlich die Namen deiner React-Komponenten sein!
 
-Aber woher weißt du, was eine eigene Komponente sein sollte? Verwende einfach die gleichen Techniken, die du auch verwendest, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt anlegen möchtest. Eine dieser Techniken ist das[Single Responsibility Prinzip](https://en.wikipedia.org/wiki/Single_responsibility_principle), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erledigen. Sobald sie wächst, sollte sie in kleinere Teilkomponenten zerlegt werden.
+Aber woher weißt du, was eine eigene Komponente sein sollte? Verwende einfach die gleichen Techniken, die du auch verwendest, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt anlegen möchtest. Eine dieser Techniken ist das [Single-Responsibility-Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erledigen. Sobald sie wächst, sollte sie in kleinere Teilkomponenten zerlegt werden.
 
 Da du einem Benutzer häufig ein JSON Datenmodell präsentieren wirst, wirst du feststellen, dass, falls dein Datenmodell korrekt aufgebaut wurde, deine Benutzeroberfläche (und damit auch deine Komponentenstruktur) gut dazu zusammenpasst. Das liegt daran, dass Benutzeroberfläche und Datenmodell tendenziell der gleichen *Informationsarchitektur* folgen, was bedeutet, dass es oft trivial ist, deine Benutzeroberfläche in Komponenten aufzuteilen. Zerlege sie einfach in Komponenten, die genau ein Stück deines Datenmodells darstellen.
 
@@ -125,7 +125,7 @@ Lass uns diese Strategie für unsere Anwendung durchgehen:
   * Die gemeinsame Eigentümer-Komponente ist `FilterableProductTable`.
   * Es ist konzeptionell sinnvoll, dass der Filtertext und der Zustand des Auswahlfeldes in `FilterableProductTable` leben.
 
-Cool, wir haben uns also dazu entschieden, dass unser **state** in `FilterableProductTable` lebene wird. Füge zuerst `this.state = {filterText: '', inStockOnly: false}` zu `FilterableProductTable`'s `constructor` hinzu, um den initialen **state** (initial state) deiner Anwendung darzustellen. Sende dann `filterText` und `inStockOnly` zu `ProductTable` und `SearchBar` als **prop**. Verwende schließlich diese **props**, um die Zeilen in `ProductTable` zu filtern und die Werte der Formularfelder in `SearchBar` einzustellen.
+Cool, wir haben uns also dazu entschieden, dass unser **state** in `FilterableProductTable` leben wird. Füge zuerst `this.state = {filterText: '', inStockOnly: false}` zu `FilterableProductTable`'s `constructor` hinzu, um den initialen **state** (initial state) deiner Anwendung darzustellen. Sende dann `filterText` und `inStockOnly` zu `ProductTable` und `SearchBar` als **prop**. Verwende schließlich diese **props**, um die Zeilen in `ProductTable` zu filtern und die Werte der Formularfelder in `SearchBar` einzustellen.
 
 Du wirst sehen können, wie sich deine Anwendung verhalten wird: Setze `filterText` auf `"ball"` und aktualisiere deine Anwendung. Du wirst sehen, dass die Tabelle korrekt aktualisiert wurde.
 

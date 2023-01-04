@@ -97,7 +97,7 @@ Sieh dir die nächsten Abschnitte an, um mehr Tipps zu erhalten, wie du React in
 
 **[Das komplette Beispiel herunterladen (2KB gezippt)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
 
-### Tipp: Verwende Komponeten wieder {#tip-reuse-a-component}
+### Tipp: Verwende Komponenten wieder {#tip-reuse-a-component}
 
 Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anzeigen wollen. Hier ist ein Beispiel, welches den "Like" Button dreimal anzeigt und einige Daten hinzufügt.
 
@@ -111,7 +111,7 @@ Häufig wirst du React Komponenten an verschiedenen Stellen einer HTML Seite anz
 
 ### Tipp: Minifiziere JavaScript für die Produktionsumgebung {#tip-minify-javascript-for-production}
 
-Bevor du deine Webseite für die Produktionsumgebung deployst, denke daran, dass unminifiziertes JavaScript die Seite für deine User signifankt verlangsamen kann.
+Bevor du deine Webseite für die Produktionsumgebung deployst, denke daran, dass unminifiziertes JavaScript die Seite für deine User signifikant verlangsamen kann.
 
 Falls du bereits die Anwendungsscripts minifiziert hast, **ist deine Seite fertig für die Produktionsumgebung**, sobald du sichergestellt hast, dass das bereitgestellte HTML die Versionen von React lädt, die auf `production.min.js` enden:
 
@@ -160,7 +160,7 @@ Du kannst JSX in deinem Projekt am schnellsten ausprobieren, indem du diesen `<s
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
-Jetzt kannst JSX in jedem `<script>` Tag verwenden, indem du diesem ein `type="text/babel"` Attribut hinzufügst. Hier kannst du [eine Besipiel HTML Datei mit JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) herunterladen und mit ihr experimentieren.
+Jetzt kannst JSX in jedem `<script>` Tag verwenden, indem du diesem ein `type="text/babel"` Attribut hinzufügst. Hier kannst du [eine Beispiel HTML Datei mit JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) herunterladen und mit ihr experimentieren.
 
 Um zu lernen und einfache Demos zu bauen ist dieser Ansatz ausreichend. Allerdings macht er deine Webseite langsam und **ist nicht für die Produktionsumgebung geeignet**. Wenn du bereit bist weiter zu machen, entferne den neuen `<script>` Tag und das `type="text/babel"`, das du eben hinzugefügt hast. Im nächsten Abschnitt wirst du stattdessen einen JSX Präprozessor aufsetzen, der alle deine `<script>` Tags automatisch konvertiert.
 
@@ -170,7 +170,7 @@ Einem Projekt JSX hinzuzufügen benötigt keine komplizierten Werkzeuge wie eine
 
 Navigiere im Terminal zu deinem Projektordner und führe diese zwei Befehle aus:
 
-1. **Schritt 1:** Führe `npm init -y` aus (falls es fehlgeschlägt, [gibt es hier Hilfe](https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d))
+1. **Schritt 1:** Führe `npm init -y` aus (falls es fehlschlägt, [gibt es hier Hilfe](https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d))
 2. **Schritt 2:** Führe `npm install babel-cli@6 babel-preset-react-app@3` aus
 
 >Tipp

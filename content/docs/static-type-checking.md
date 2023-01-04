@@ -158,12 +158,12 @@ Jetzt bist du bereit! Wir empfehlen dir, die folgenden Quellen zu anzuschauen, u
 
 ## TypeScript {#typescript}
 
-[TypeScript](https://www.typescriptlang.org/) ist eine Programmiersprache, die von Microsoft entwickelt wurde. Sie ist eine Superset von JavaScript und beinhaltet ihren eigenen Kompiler. Da es sich bei TypeScript um eine typisierte Sprache handelt, kann sie Fehler und Bugs zur Build-Zeit abfangen. Lange bevor deine Anwendung in Betrieb geht.Du kannst mehr über die Verwerdnung von TypeScript mit React [hier](https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter) lernen.
+[TypeScript](https://www.typescriptlang.org/) ist eine Programmiersprache, die von Microsoft entwickelt wurde. Sie ist eine Superset von JavaScript und beinhaltet ihren eigenen Compiler. Da es sich bei TypeScript um eine typisierte Sprache handelt, kann sie Fehler und Bugs zur Build-Zeit abfangen. Lange bevor deine Anwendung in Betrieb geht.Du kannst mehr über die Verwendung von TypeScript mit React [hier](https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter) lernen.
 
 Um TypeScript zu benutzen, benötigst du folgendes:
 + Füge TypeScript als Abhängigkeit in deinem Projekt hinzu
-* Konfiguriere die Optionen des TypeScript-Kompilers
-* Benutze die rictige Dateiendung
+* Konfiguriere die Optionen des TypeScript-Compilers
+* Benutze die richtige Dateiendung
 * Füge Definitionen für die Bibliotheken hinzu, die du verwendest
 
 Lass uns diese im Detail durchgehen.
@@ -182,11 +182,11 @@ Du kannst es auch zu einem **bestehenden Create React App Projekt** hinzufügen,
 
 >Hinweis:
 >
->Wenn du Create React App benutzt, **kannst du den Rest dieser Seite überspringen**. Er beschreibt die manuelle Einrichtung, die nicht für Create React App benutzer gilt.
+>Wenn du Create React App benutzt, **kannst du den Rest dieser Seite überspringen**. Er beschreibt die manuelle Einrichtung, die nicht für Create React App Benutzer gilt.
 
 
 ### Typescript einem Projekt hinzufügen {#adding-typescript-to-a-project}
-Es beginnt alles mit dem Ausführem von einem Befehl im Terminal.
+Es beginnt alles mit dem Ausführen von einem Befehl im Terminal.
 
 Wenn du [Yarn](https://yarnpkg.com/) verwendest, führe folgendes aus:
 
@@ -213,7 +213,7 @@ Gratulation! Du hast die neueste Version von TypeScript in deinem Projekt. Das I
 }
 ```
 
-### Konfigurieren des TypeScript-Kompilers {#configuring-the-typescript-compiler}
+### Konfigurieren des TypeScript-Compilers {#configuring-the-typescript-compiler}
 The compiler is of no help to us until we tell it what to do. In TypeScript, these rules are defined in a special file called `tsconfig.json`. To generate this file:
 
 Wenn du [Yarn](https://yarnpkg.com/) verwendest, führe folgendes aus:
@@ -228,9 +228,9 @@ Wenn du [npm](https://yarnpkg.com/) verwendest, führe folgendes aus:
 npx tsc --init
 ```
 
-Wenn du dir die jetzt genrierte `tsconfig.json` anschaust, siehst du, dass es viele Optionen für die Konfiguration des Kompilers gibt. Eine detailierte Beschreibung aller Optionen findest du [hier](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+Wenn du dir die jetzt generierte `tsconfig.json` anschaust, siehst du, dass es viele Optionen für die Konfiguration des Compilers gibt. Eine detaillierte Beschreibung aller Optionen findest du [hier](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
-Von den vielen Optionen werden wir uns `rootDir` und `outDir` ansehen. Im Grunde nimmt der Kompiler TypeScript-Dateien und generiert daraus JavaScript-Dateien. Wir wollen jedoch nicht drucheinander kommen mit unseren Quelldateien und den generierten Dateien.
+Von den vielen Optionen werden wir uns `rootDir` und `outDir` ansehen. Im Grunde nimmt der Compiler TypeScript-Dateien und generiert daraus JavaScript-Dateien. Wir wollen jedoch nicht durcheinander kommen mit unseren Quelldateien und den generierten Dateien.
 
 Wir werden dies in zwei Schritten angehen:
 * Lass uns als erstes unsere Projektstruktur wie folgt anlegen. Wir platzieren unseren Quellcode im `src`-Ordner.
@@ -242,7 +242,7 @@ Wir werden dies in zwei Schritten angehen:
 └── tsconfig.json
 ```
 
-* Als nächstes werden wir dem Kompiler beibringen wo unsere Quelldateien liegen und er die genrierten Dateien ablegen soll.
+* Als nächstes werden wir dem Compiler beibringen wo unsere Quelldateien liegen und er die generierten Dateien ablegen soll.
 
 ```js{6,7}
 // tsconfig.json
@@ -256,7 +256,7 @@ Wir werden dies in zwei Schritten angehen:
   },
 }
 ```
-Großartig! Wen wir jetzt unser Build-Script ausführen, wird der Kompiler unser generiertes JavaScipt im `build`-Ordner ablegen. [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json) bietet eine `tsconfig.json` mit einer Menge guten Optionen zum Starten an.
+Großartig! Wen wir jetzt unser Build-Script ausführen, wird der Compiler unser generiertes JavaScript im `build`-Ordner ablegen. [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter/blob/master/tsconfig.json) bietet eine `tsconfig.json` mit einer Menge guten Optionen zum Starten an.
 
 Generell möchtest du das generierte JavaScript nicht in deiner Versionskontrolle haben, stelle also sicher, dass du den Build-Ordner deiner `.gitignore` hinzugefügt hast.
 
@@ -283,13 +283,13 @@ Wenn du keine Ausgabe sieht, bedeutet das, dass alles erfolgreich verlaufen ist.
 
 
 ### Typ-Definitionen {#type-definitions}
-Um Fehler un Hinweise von anderen Paketen anzuzeigen, ist der Kompiler auf Deklarationsdateien angewiesen. Eine Deklarationsdatei liefert alle Typ-Informationen einer Bibliothek. Dies ermöglicht uns JavaScript-Bibliotheken, wie solche auf npm in unserem Projekt zu verwenden.
+Um Fehler un Hinweise von anderen Paketen anzuzeigen, ist der Compiler auf Deklarationsdateien angewiesen. Eine Deklarationsdatei liefert alle Typ-Informationen einer Bibliothek. Dies ermöglicht uns JavaScript-Bibliotheken, wie solche auf npm in unserem Projekt zu verwenden.
 
 Es gibt im Wesentlichen zwei Möglichkeiten Deklarationen für eine Bibliothek zu erhalten:
 
-__Bundled__ - Die Bibliothek beinhaltet ihre eigene Deklarationedatei. Das ist super für uns, da wir nur die Bibliothek installieren müssen und wir sie direkt benutzen können. Um zu prüfen ob eine Bibliothek Typen beinhaltet, halte im Projekt Ausschau nach einer `index.d.ts`-Datei. Manche Bibliotheken haben diese auch in ihrer `package.json` unter `typings` or `types` angegeben.
+__Bundled__ - Die Bibliothek bündelt ihre eigene Deklarationsdatei. Das ist super für uns, da wir nur die Bibliothek installieren müssen und wir sie direkt benutzen können. Um zu prüfen ob eine Bibliothek Typen beinhaltet, halte im Projekt Ausschau nach einer `index.d.ts`-Datei. Manche Bibliotheken haben diese auch in ihrer `package.json` unter `typings` or `types` angegeben.
 
-__[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)__ - DefinitelyTyped ist ein großes Repository für Bibliotheken, die keine eigene Deklarationsdatei haben. Die Deklarationen sind crowd-sourced und werden von Microsoft und Open-Source-Mitwirkenden verwaltet. React zum Beipsiel hat keine eigene Deklarationsdatei. Stattdessen können wir sie von DefinitelyTyped bekommen. gib dazu diesen Befehl im Terminal ein.
+__[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)__ - DefinitelyTyped ist ein großes Repository für Bibliotheken, die keine eigene Deklarationsdatei haben. Die Deklarationen sind crowd-sourced und werden von Microsoft und Open-Source-Mitwirkenden verwaltet. React zum Beispiel hat keine eigene Deklarationsdatei. Stattdessen können wir sie von DefinitelyTyped bekommen. gib dazu diesen Befehl im Terminal ein.
 
 ```bash
 # yarn
@@ -309,7 +309,7 @@ declare module 'querystring' {
 }
 ```
 
-Du bist jetzt bereit zu Coden! Wir empfehelen dir die folgenden Quellen zu besuchen um mehr über TypeScript zu lernen:
+Du bist jetzt bereit zu Programmieren! Wir empfehlen dir die folgenden Quellen zu besuchen um mehr über TypeScript zu lernen:
 
 * [TypeScript Documentation: Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
 * [TypeScript Documentation: Migrating from JavaScript](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)
@@ -317,7 +317,7 @@ Du bist jetzt bereit zu Coden! Wir empfehelen dir die folgenden Quellen zu besuc
 
 ## ReScript {#rescript}
 
-[ReScript](https://rescript-lang.org/) ist eine typisierte Sprache, welche zu zu JavaScript kompliliert. Einige der Kernfunktionen sind eine garantierte 100%ige Typabdeckung, erstklassige JSX-Unterstützung und [dedizierte React-Bindings](https://rescript-lang.org/docs/react/latest/introduction), um die Integration in bestehende JS / TS React-Codebases zu ermöglichen.
+[ReScript](https://rescript-lang.org/) ist eine typisierte Sprache, welche zu zu JavaScript kompiliert. Einige der Kernfunktionen sind eine garantierte 100%ige Typabdeckung, erstklassige JSX-Unterstützung und [dedizierte React-Bindings](https://rescript-lang.org/docs/react/latest/introduction), um die Integration in bestehende JS / TS React-Codebasen zu ermöglichen.
 
 Mehr Infos zur Integration von ReScript in deine bestehende JS / React Codebasis findest du [hier](https://rescript-lang.org/docs/manual/latest/installation#integrate-into-an-existing-js-project).
 
