@@ -581,7 +581,7 @@ startTransition(() => {
 })
 ```
 
-`isPending` markiert, wenn ein Übergang aktiv ist, um einen schwebenden Zustand anzuzeigen:
+`isPending` markiert, wenn eine Transition aktiv ist, um einen ausstehenden State anzuzeigen:
 
 ```js
 function App() {
