@@ -469,7 +469,7 @@ function FancyInput(props, ref) {
 FancyInput = forwardRef(FancyInput);
 ```
 
-In diesem Beispiel wäre eine übergeordnete Komponente, die `<FancyInput ref={inputRef} />` rendert, in der Lage, `inputRef.current.focus()` aufzurufen.
+In diesem Beispiel wäre eine übergeordnete Komponente, die `<FancyInput ref={inputRef} />` rendert, in der Lage `inputRef.current.focus()` aufzurufen.
 
 ### `useLayoutEffect` {#uselayouteffect}
 
