@@ -52,7 +52,7 @@ Bei nachfolgenden Re-Renderings ist der erste Wert, der von `useState` zurückge
 
 > Hinweis
 >
->React garantiert, dass die Identität der `setState`-Funktion stabil ist und sie sich auch bei erneutem Rendern nicht ändert. Deshalb kann die Funktion problemlos aus der Liste der Abhängigkeiten des `useEffect` oder `useCallback` auslassen werden.
+>React garantiert, dass die Identität der `setState`-Funktion stabil ist und sie sich auch bei erneutem Rendern nicht ändert. Deshalb kann die Funktion problemlos aus der Liste der Abhängigkeiten des `useEffect` oder `useCallback` ausgelassen werden.
 
 #### Aktualisieren mithilfe einer Funktion {#functional-updates}
 
