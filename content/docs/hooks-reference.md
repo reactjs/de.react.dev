@@ -89,7 +89,7 @@ Wenn die Aktualisierungsfunktion exakt denselben Wert wie der aktuelle State zur
 >
 > Eine andere Option ist `useReducer`, was sich aber eher eignet, wenn man State-Objekte verwaltet, die mehrere Teilwerte enthalten.
 
-#### Fauler initialer State {#lazy-initial-state}
+#### Lazy initialer State {#lazy-initial-state}
 
 Das `initialState`-Argument ist derjenige State, der während des initialen Renderns benutzt wird. Bei nachfolgendem Rendern wird er nicht beachtet. Wenn der initiale State das Ergebnis einer aufwendigen Berechnung ist, kannst Du stattdessen auch eine Funktion angeben, die nur beim ersten Rendern ausgeführt wird:
 
