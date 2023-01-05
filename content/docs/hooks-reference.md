@@ -446,7 +446,7 @@ Du kennst Refs vielleicht in erster Linie als eine Möglichkeit [auf das DOM zuz
 
 Das funktioniert, weil `useRef()` ein einfaches JavaScript-Objekt erzeugt. Der einzige Unterschied zwischen `useRef()` und der Erstellung eines `{current: ...}`-Objekts ist, dass `useRef` bei jedem Rendering das gleiche ref-Objekt erzeugt.
 
-Beachte, dass `useRef` dich *nicht* benachrichtigt, wenn sich sein Inhalt ändert. Die Änderung der `.current`-Eigenschaft führt nicht zu einem erneuten Rendern. Wenn du einen Code ausführen möchtest, sobald React einen ref an einen DOM-Knoten anhängt oder abnimmt, solltest du stattdessen einen [callback ref](/docs/hooks-faq.html#how-can-i-measure-a-dom-node) verwenden.
+Beachte, dass `useRef` dich *nicht* benachrichtigt, wenn sich sein Inhalt ändert. Die Änderung der `.current`-Eigenschaft führt nicht zu einem erneuten Rendern. Wenn du einen Code ausführen möchtest, sobald React eine Ref an einen DOM-Knoten anhängt oder abnimmt, solltest du stattdessen einen [callback ref](/docs/hooks-faq.html#how-can-i-measure-a-dom-node) verwenden.
 
 
 ### `useImperativeHandle` {#useimperativehandle}
