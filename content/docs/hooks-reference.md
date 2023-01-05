@@ -673,7 +673,7 @@ Die folgenden Hooks sind für Autoren von Libraries vorgesehen, um diese tief in
 const state = useSyncExternalStore(subscribe, getSnapshot[, getServerSnapshot]);
 ```
 
-`useSyncExternalStore` ist ein Hook, der für das Lesen und Abonnieren von externen Datenquellen empfohlen wird, und zwar in einer Weise, die mit gleichzeitigen Rendering-Funktionen wie selektiver Hydration und Time-Slicing kompatibel ist.
+`useSyncExternalStore` ist ein Hook, der für das Lesen und Subscriben von externen Datenquellen empfohlen wird, und zwar in einer Weise, die mit gleichzeitigen Rendering-Funktionen wie selektiver Hydration und Time-Slicing kompatibel ist.
 
 Diese Methode gibt den Wert des Speichers (engl. store) zurück und nimmt drei Argumente entgegen:
 - `subscribe`: Funktion, um einen Callback zu registrieren, der immer dann aufgerufen wird, wenn sich der Speicher ändert.
