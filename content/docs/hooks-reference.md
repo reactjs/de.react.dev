@@ -129,7 +129,7 @@ Standardmäßig werden die Effekte nach jedem abgeschlossenen Rendern ausgeführ
 
 #### Bereinigung eines Effekts {#cleaning-up-an-effect}
 
-Effekte erzeugen häufig Ressourcen, die bereinigt werden müssen, bevor die Komponente den Bildschirm verlässt, wie etwa ein Abonnement oder eine Timer-ID. Zu diesem Zweck kann die an `useEffect` übergebene Funktion eine Aufräumfunktion zurückgeben. Zum Beispiel, um ein Abonnement zu erstellen:
+Effekte erzeugen häufig Ressourcen, die bereinigt werden müssen, bevor die Komponente den Bildschirm verlässt, wie etwa ein Abonnement oder eine Timer-ID. Zu diesem Zweck kann die an `useEffect` übergebene Funktion eine Aufräumfunktion zurückgeben. Zum Beispiel, um eine Subscription zu erstellen:
 
 
 ```js
