@@ -48,7 +48,7 @@ Die Funktion `setState` wird verwendet, um den State zu aktualisieren. Sie akzep
 setState(newState);
 ```
 
-Bei jedem folgenden erneuten Rendern ist der erste Wert, der von `useState` zurückgegeben wird, immer derjenige Wert, auf den als letztes aktualisiert wurde.
+Bei nachfolgenden Re-Renderings ist der erste Wert, der von `useState` zurückgegeben wird, immer der letzte State nach der Anwendung von Updates.
 
 > Hinweis
 >
