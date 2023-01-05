@@ -77,7 +77,7 @@ Wenn die Aktualisierungsfunktion exakt denselben Wert wie der aktuelle State zur
 
 > Hinweis
 >
-> Anders als die `setState`-Methode in Klassenkomponenten führt `useState` aktualisierte Objekte nicht automatisch zusammen. Du kannst dieses Verhalten nachahmen, indem du die Aktualisierung mithilfe einer Funktion mit der spread-Syntax für Objekte verbindest:
+> Anders als die `setState`-Methode in Klassenkomponenten führt `useState` aktualisierte Objekte nicht automatisch zusammen. Du kannst dieses Verhalten nachahmen, indem du die spread-Syntax für Objekte mit einer Aktualisierungsfunktion verbindest:
 >
 > ```js
 > const [state, setState] = useState({});
