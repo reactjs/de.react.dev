@@ -440,7 +440,7 @@ function TextInputWithFocusButton() {
 
 Im Wesentlichen ist `useRef` wie eine "Box", die einen veränderbaren Wert in ihrer Eigenschaft `.current` enthalten kann.
 
-Du kennst refs vielleicht in erster Linie als eine Möglichkeit, [auf das DOM zuzugreifen](/docs/refs-and-the-dom.html). Wenn du ein ref-Objekt an React mit `<div ref={myRef} />` übergibst, wird React dessen Eigenschaft `.current` auf den entsprechenden DOM-Knoten setzen, sobald sich dieser ändert.
+Du kennst Refs vielleicht in erster Linie als eine Möglichkeit [auf das DOM zuzugreifen](/docs/refs-and-the-dom.html). Wenn du ein Ref-Objekt an React mit `<div ref={myRef} />` übergibst, wird React dessen Eigenschaft `.current` auf den entsprechenden DOM-Knoten setzen, sobald sich dieser ändert.
 
 `useRef()` ist jedoch nicht nur für das `ref`-Attribut nützlich. Es ist [praktisch, um einen veränderlichen Wert zu behalten](/docs/hooks-faq.html#is-there-something-like-instance-variables), ähnlich wie man Instanzfelder in Klassen verwenden würde.
 
