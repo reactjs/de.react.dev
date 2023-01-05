@@ -570,7 +570,7 @@ Die Kinder zu memoisieren sagt React, dass sie nur neu gerendert werden müssen,
 const [isPending, startTransition] = useTransition();
 ```
 
-Gibt einen zustandsbezogenen Wert für den anstehenden Zustand des Übergangs und eine Funktion zum Starten des Übergangs zurück.
+Gibt einen zustandsbezogenen Wert für den anstehenden State der Transition und eine Funktion zum Starten dieser zurück.
 
 Mit `startTransition` können Aktualisierungen in dem angegebenen Callback als Übergänge markiert werden:
 
