@@ -56,7 +56,7 @@ Bei nachfolgenden Re-Renderings ist der erste Wert, der von `useState` zurückge
 
 #### Aktualisieren mithilfe einer Funktion {#functional-updates}
 
-Wenn der neue State mithilfe des vorherigen States ermittelt werden soll, kannst du eine Funktion an `setState` übergeben. Diese Funktion erhält den vorherigen Wert und gibt den aktualisierten Wert zurück. Das folgende Beispiel einer Counter-Komponente nutzt beide Formen von `setState`:
+Wenn der neue State mit Hilfe des vorherigen States ermittelt werden soll, kannst du eine Funktion an `setState` übergeben. Diese Funktion nimmt den vorherigen Wert entgegen und gibt den aktualisierten Wert zurück. Das folgende Beispiel einer Counter-Komponente nutzt beide Formen von `setState`:
 
 ```js
 function Counter({initialCount}) {
