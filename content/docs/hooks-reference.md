@@ -605,7 +605,7 @@ function App() {
 
 > Hinweis:
 >
-> Aktualisierungen in einer Übergangsphase führen zu dringlicheren Aktualisierungen wie etwa Klicks.
+> Aktualisierungen in einer Transitions-Phase führen zu dringlicheren Aktualisierungen wie etwa Klicks.
 >
 > Bei Aktualisierungen in Übergängen wird kein Fallback für wieder ausgesetzte Inhalte angezeigt. Dadurch kann der Benutzer weiterhin mit dem aktuellen Inhalt interagieren, während die Aktualisierung gerendert wird.
 
