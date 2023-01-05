@@ -199,7 +199,7 @@ Das Array der Abhängigkeiten wird nicht als Argument an die Effektfunktion übe
 const value = useContext(MyContext);
 ```
 
-Akzeptiert ein Kontextobjekt (den von `React.createContext` zurückgegebenen Wert) und gibt den aktuellen Kontextwert für diesen Kontext zurück. Der aktuelle Kontextwert wird durch die `value`-prop des nächstgelegenen `<MyContext.Provider>` oberhalb der aufrufenden Komponente im Baum bestimmt.
+Akzeptiert ein Kontextobjekt (den von `React.createContext` zurückgegebenen Wert) und gibt den aktuellen Kontextwert für diesen Kontext zurück. Der aktuelle Kontextwert wird durch die `value`-Prop des nächstgelegenen `<MyContext.Provider>` oberhalb der aufrufenden Komponente im Baum bestimmt.
 
 Sobald sich der nächstgelegene `<MyContext.Provider>` oberhalb der Komponente aktualisiert, löst dieser Hook ein erneutes Rendering mit dem neuesten Kontext-`value` aus, der an den `MyContext`-Provider übergeben worden ist. Auch, wenn ein Vorfahre [`React.memo`](/docs/react-api.html#reactmemo) benutzt oder [`shouldComponentUpdate`](/docs/react-component.html#shouldcomponentupdate), wird ein erneutes Rendering immer noch von der Komponente selbst ausgehend unter Verwendung von `useContext` erfolgen.
 
