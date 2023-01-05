@@ -146,7 +146,7 @@ Die Aufräumfunktion wird ausgeführt, bevor die Komponente aus der Benutzerober
 
 #### Zeitlicher Ablauf der Effekte {#timing-of-effects}
 
-Im Gegensatz zu `componentDidMount` und `componentDidUpdate` wird die Funktion, die an `useEffect` übergeben wird, **nach** dem Layouten und Malen (engl. paint), während eines verzögerten Ereignisses, ausgelöst. Deshalb ist `useEffect` geeignet für die vielen häufigen Nebeneffekte, wie die Einrichtung von Abonnements und Event Handlern, weil die meisten dieser Arbeiten den Browser nicht dabei blockieren sollten, den Bildschirm zu aktualisieren.
+Im Gegensatz zu `componentDidMount` und `componentDidUpdate` wird die Funktion, die an `useEffect` übergeben wird, **nach** dem Layouten und Malen (engl. paint), während eines verzögerten Ereignisses, ausgelöst. Deshalb ist `useEffect` geeignet für die vielen häufigen Nebeneffekte, wie die Einrichtung von Subscriptions und Event Handlern, weil die meisten dieser Arbeiten den Browser nicht dabei blockieren sollten, den Bildschirm zu aktualisieren.
 
 Allerdings können nicht alle Auswirkungen aufgeschoben werden. So muss beispielsweise eine DOM-Mutation, die für den Benutzer sichtbar ist, synchron vor dem nächsten Malvorgang erfolgen, damit der Benutzer keine visuelle Inkonsistenz wahrnimmt. (Die Unterscheidung ist konzeptionell ähnlich wie die zwischen passiven und aktiven Event Listenern).  Für diese Arten von Effekten bietet React einen zusätzlichen Hook namens [`useLayoutEffect`](#uselayouteffect). Er hat die gleiche Signatur wie `useEffect` und unterscheidet sich nur darin, wann er ausgelöst wird.
 
