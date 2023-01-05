@@ -178,7 +178,7 @@ useEffect(
 );
 ```
 
-Jetzt wird das Abonnement nur neu erstellt, wenn sich `props.source` ändert.
+Jetzt wird die Subscription nur neu erstellt, wenn sich `props.source` ändert.
 
 >Hinweis
 >
