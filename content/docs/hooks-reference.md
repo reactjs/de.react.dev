@@ -305,7 +305,7 @@ function Counter() {
 
 >Hinweis
 >
->React garantiert, dass die Identität der Funktion `dispatch` stabil ist und sich bei erneuten Renderings nicht ändert.  Deshalb kann die Funktion problemlos aus der Liste der Abhängigkeiten des useEffect oder useCallback auslassen werden.
+>React garantiert, dass die Identität der Funktion `dispatch` stabil ist und sich bei erneuten Renderings nicht ändert.  Deshalb kann die Funktion problemlos aus der Liste der Abhängigkeiten von `useEffect` oder `useCallback` ausgelassen werden.
 
 #### Festlegen des initialen States {#specifying-the-initial-state}
 
