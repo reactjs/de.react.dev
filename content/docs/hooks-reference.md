@@ -108,7 +108,7 @@ Beachte, dass React diese spezielle Komponente möglicherweise noch einmal rende
 
 #### Bündeln von State-Aktualisierungen {#batching-of-state-updates}
 
-React kann mehrere State-Aktualisierungen in einem einzigen erneuten Rendern zusammenfassen, um die Leistung zu verbessern. Normalerweise verbessert dies die Leistung und sollte keine Auswirkungen auf das Verhalten der Anwendung haben.
+React kann mehrere State-Aktualisierungen in einem einzigen erneuten Rendern zusammenfassen, um die Performance zu verbessern. Normalerweise verbessert dies die Performance und sollte keine Auswirkungen auf das Verhalten der Anwendung haben.
 
 Vor React 18 wurden nur Aktualisierungen innerhalb von React-Event-Handlern gebündelt. Seit React 18 [ist die gebündelte Verarbeitung für alle Aktualisierungen standardmäßig aktiviert](/blog/2022/03/08/react-18-upgrade-guide.html#automatic-batching). Beachte, dass React sicherstellt, dass Aktualisierungen von mehreren *verschiedenen* benutzerinitiierten Ereignissen - z.B. zweimaliges Klicken auf eine Schaltfläche - immer separat verarbeitet und nicht zusammengeführt werden. Dies verhindert logische Fehler.
 
