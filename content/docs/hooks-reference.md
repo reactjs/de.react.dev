@@ -209,7 +209,7 @@ Das Argument für `useContext` muss dabei das *Kontextobjekt selbst* sein:
  * **Inkorrekt:** `useContext(MyContext.Consumer)`
  * **Inkorrekt:** `useContext(MyContext.Provider)`
 
-Eine Komponente, die `useContext` aufruft, wird immer neu gerendert, wenn sich der Kontextwert ändert. Wenn ein erneutes Rendering aufwendig is, kann man es [mithilfe von Memoisierung optimieren](https://github.com/facebook/react/issues/15156#issuecomment-474590693).
+Eine Komponente, die `useContext` aufruft, wird immer neu gerendert, wenn sich der Kontextwert ändert. Wenn ein erneutes Rendering aufwendig ist, kann man es [mit Hilfe von Memoisierung optimieren](https://github.com/facebook/react/issues/15156#issuecomment-474590693).
 
 >Tipp
 >
