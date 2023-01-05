@@ -253,7 +253,7 @@ function ThemedButton() {
 
   return (
     <button style={{ background: theme.background, color: theme.foreground }}>
-      Ich bin gestylt mithilfe des theme-Kontextes!
+      Ich bin gestylt mit Hilfe des theme-Kontextes!
     </button>
   );
 }
