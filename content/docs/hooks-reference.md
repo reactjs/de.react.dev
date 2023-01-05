@@ -162,7 +162,7 @@ Sogar in Fällen, in denen `useEffect` aufgeschoben wird, bis der Browser gezeic
 
 Standardmäßig wird der Effekt nach jedem abgeschlossenen Rendering ausgelöst. Auf diese Weise wird ein Effekt immer neu erstellt, wenn sich eine seiner Abhängigkeiten ändert.
 
-In manchen Fällen kann dies jedoch zu viel sein, wie im Beispiel des Abonnements aus dem vorherigen Abschnitt. Wir müssen nicht bei jeder Aktualisierung ein neues Abonnement erstellen, sondern nur dann, wenn sich die `source` prop geändert hat.
+In manchen Fällen kann dies jedoch zu viel sein, wie im Beispiel der Subscription aus dem vorherigen Abschnitt. Wir müssen nicht bei jeder Aktualisierung eine neue Subscription erstellen, sondern nur dann, wenn sich die `source` Prop geändert hat.
 
 Um dies zu implementieren, kannst du ein zweites Argument an `useEffect` übergeben, welches das Array derjenigen Werte ist, von denen der Effekt abhängt. Unser aktualisiertes Beispiel sieht nun wie folgt aus:
 
