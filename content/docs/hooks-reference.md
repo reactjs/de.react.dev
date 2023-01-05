@@ -121,7 +121,7 @@ useEffect(didUpdate);
 ```
 Akzeptiert eine Funktion, die imperativen Code enthält, der möglicherweise auch einen Effekt hat.
 
-Innerhalb des Hauptteils von funktionalen Komponenten (in React als _render phase_ bezeichnet) sind Mutationen, Abonnements, Timer, das Loggen (engl. logging) und andere Nebeneffekte nicht erlaubt. Dies hätte nämlich verwirrende Fehler und Ungereimtheiten in der UI zur Folge.
+Innerhalb des Hauptteils von funktionalen Komponenten (in React als _render phase_ bezeichnet) sind Mutationen, Subscriptions, Timer, das Loggen und andere Nebeneffekte (engl. side effects) nicht erlaubt. Dies hätte nämlich verwirrende Fehler und Ungereimtheiten in der UI zur Folge.
 
 Benutze stattdessen `useEffect`. Die Funktion, die an `useEffect` übergeben wird, wird ausgeführt, nachdem das Rendern an den Bildschirm übertragen worden ist. Effekte sind also die Möglichkeit, aus der rein funktionalen Welt von React in die imperative Welt zu entfliehen.
 
