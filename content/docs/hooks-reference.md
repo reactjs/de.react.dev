@@ -401,7 +401,7 @@ Gibt einen [memoisierten](https://en.wikipedia.org/wiki/Memoization) Wert zurüc
 
 Übergib eine "create"-Funktion und ein Array von Abhängigkeiten. `useMemo` wird den memoisierten Wert nur dann neu berechnen, wenn sich eine der Abhängigkeiten geändert hat. Diese Optimierung hilft dabei, aufwendige Berechnungen bei jedem Rendern zu vermeiden.
 
-Beachte, dass die Funktion, die an `useMemo` übergeben wird, während des Renderns abläuft. Vermeide es, dort irgendetwas zu tun, was du normalerweise während des Renderns tun würdest. Seiteneffekte zum Beispiel gehören in einen `useEffect`, nicht in `useMemo`.
+Beachte, dass die Funktion, die an `useMemo` übergeben wird, während des Renderns abläuft. Vermeide es, dort irgendetwas zu tun, was du normalerweise während des Renderns tun würdest. Seiteneffekte zum Beispiel gehören in `useEffect`, nicht in `useMemo`.
 
 Wenn kein Array angegeben wird, wird der Wert bei jedem Rendern berechnet.
 
