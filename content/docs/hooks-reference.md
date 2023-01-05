@@ -364,7 +364,7 @@ function Counter({initialCount}) {
 
 #### Abbruch des Dispatch {#bailing-out-of-a-dispatch}
 
-Wenn du vom Reducer-Hook denselben Wert zurückgibst wie der aktuelle State, wird React den Vorgang abbrechen, ohne die Kinder zu rendern oder Effekte auszulösen. (React benutzt den [`Object.is` Vergleichsalgorithmus](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
+Wenn du vom Reducer-Hook denselben Wert zurückgibst wie der aktuelle State, wird React den Vorgang abbrechen, ohne die Kind-Elemente zu rendern oder Effekte auszulösen. (React benutzt den [`Object.is` Vergleichsalgorithmus](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
 
 Beachte, dass React diese spezielle Komponente möglicherweise noch einmal rendern muss, bevor es den Vorgang abbricht. Das sollte kein Problem sein, da React nicht unnötig "tiefer" in den Baum eindringt. Wenn du während des Renderns umfangreiche Berechnungen durchführst, kannst du diese mit `useMemo` optimieren.
 
