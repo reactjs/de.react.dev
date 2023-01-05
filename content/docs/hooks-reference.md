@@ -102,7 +102,7 @@ const [state, setState] = useState(() => {
 
 #### Abbruch der State-Aktualisierung {#bailing-out-of-a-state-update}
 
-Wenn du einen State Hook auf den gleichen Wert wie den aktuellen aktualisierst, wird React den Vorgang abbrechen, ohne die Kinder zu rendern oder Effekte auszulösen. (React benutzt den [`Object.is`-Vergleichsalgorithmus](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
+Wenn du eine State-Hook auf den gleichen Wert wie den aktuellen aktualisierst, wird React den Vorgang abbrechen, ohne die Kindelemente zu rendern oder Effekte auszulösen. (React benutzt den [`Object.is`-Vergleichsalgorithmus](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).)
 
 Beachte, dass React diese spezielle Komponente möglicherweise noch einmal rendern muss, bevor es den Vorgang abbricht. Das sollte kein Problem sein, da React nicht unnötig "tiefer" in den Baum eindringt. Wenn du während des Renderns umfangreiche Berechnungen durchführst, kannst du diese mit `useMemo` optimieren.
 
