@@ -73,7 +73,7 @@ function Counter({initialCount}) {
 ```
 Die Buttons "+" und "-" nutzen eine Funktion, weil der aktualisierte Wert auf dem vorherigen beruht. Der "Zurücksetzen"-Button dagegen benutzt die normale Form, weil er den Zähler immer auf den initialen Wert zurücksetzt.
 
-Wenn die Aktualisierungsfunktion exakt denselben Wert wie der aktuelle State zurückgibt, wird das folgende erneute Rendern vollständig übersprungen.
+Wenn die Aktualisierungsfunktion exakt denselben Wert wie der aktuelle State zurückgibt, wird das darauf folgende erneute Rendern vollständig übersprungen.
 
 > Hinweis
 >
