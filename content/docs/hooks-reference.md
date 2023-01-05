@@ -142,7 +142,7 @@ useEffect(() => {
 });
 ```
 
-Die Aufräumfunktion wird ausgeführt, bevor die Komponente aus der Benutzeroberfläche entfernt wird, um Speicherprobleme zu vermeiden. Wenn eine Komponente mehrfach gerendert wird (was in der Regel der Fall ist), wird außerdem der **vorherige Effekt bereinigt, bevor der nächste Effekt ausgeführt wird**. In unserem Beispiel bedeutet dies, dass bei jeder Aktualisierung ein neues Abonnement erstellt wird. Um zu vermeiden, dass bei jeder Aktualisierung ein Effekt ausgelöst wird, schau Dir den nächsten Abschnitt an.
+Die Aufräumfunktion wird ausgeführt, bevor die Komponente aus der Benutzeroberfläche entfernt wird, um Speicherprobleme zu vermeiden. Wenn eine Komponente mehrfach gerendert wird (was in der Regel der Fall ist), wird außerdem der **vorherige Effekt bereinigt, bevor der nächste Effekt ausgeführt wird**. In unserem Beispiel bedeutet dies, dass bei jeder Aktualisierung eine neue Subscription erstellt wird. Um zu vermeiden, dass bei jeder Aktualisierung ein Effekt ausgelöst wird, schau Dir den nächsten Abschnitt an.
 
 #### Zeitlicher Ablauf der Effekte {#timing-of-effects}
 
