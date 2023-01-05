@@ -680,7 +680,7 @@ Diese Methode gibt den Wert des Speichers (engl. store) zurück und nimmt drei A
 - `getSnapshot`: Funktion, die den aktuellen Wert des Speichers zurückgibt.
 - `getServerSnapshot`: Funktion, die den beim Server-Rendering verwendeten Snapshot zurückgibt.
 
-Das einfachste Beispiel ist das Abonnement des gesamten Speichers:
+Das einfachste Beispiel ist das Subscriben des gesamten Speichers:
 
 ```js
 const state = useSyncExternalStore(store.subscribe, store.getSnapshot);
