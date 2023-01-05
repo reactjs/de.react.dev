@@ -412,7 +412,6 @@ Wenn kein Array angegeben wird, wird der Wert bei jedem Rendern berechnet.
 > Das Array der Abhängigkeiten wird nicht als Argument an die Funktion übergeben. Konzeptionell ist es jedoch genau das: Jeder Wert, auf den innerhalb der Funktion verwiesen wird, sollte auch im Array der Abhängigkeiten erscheinen. In Zukunft könnte ein ausreichend fortgeschrittener Compiler dieses Array automatisch erstellen.
 >
 > Wir empfehlen, die [`exhaustive-deps`](https://github.com/facebook/react/issues/14920)-Regel als Teil unseres [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation)-Packages zu benutzen. Es warnt, wenn Abhängigkeiten falsch angegeben sind, und schlägt eine Korrektur vor.
->
 
 ### `useRef` {#useref}
 
