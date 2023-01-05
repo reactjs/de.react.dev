@@ -91,7 +91,7 @@ Wenn die Aktualisierungsfunktion exakt denselben Wert wie der aktuelle State zur
 
 #### Lazy initialer State {#lazy-initial-state}
 
-Das `initialState`-Argument ist derjenige State, der während des initialen Renderns benutzt wird. Bei nachfolgendem Rendern wird er nicht beachtet. Wenn der initiale State das Ergebnis einer aufwendigen Berechnung ist, kannst Du stattdessen auch eine Funktion angeben, die nur beim ersten Rendern ausgeführt wird:
+Das `initialState`-Argument ist der State, der während des initialen Renderns benutzt wird. Bei nachfolgendem Rendern wird er nicht beachtet. Wenn der initiale State das Ergebnis einer aufwendigen Berechnung ist, kannst Du stattdessen auch eine Funktion angeben, die nur beim ersten Rendern ausgeführt wird:
 
 ```js
 const [state, setState] = useState(() => {
