@@ -29,7 +29,7 @@ Formelemente wie `<input>`, `<textarea>` und `<select>` behalten in HTML typisch
 
 Wir können beides kombinieren, indem wir den React-State zur alleinigen "source of truth" machen. Die React-Komponente rendert dann das Formular und steuert ebenso die nachfolgenden Benutzereingaben. Ein Eingabeformular-Element, dessen Wert auf diese Art und Weise von React kontrolliert wird, wird "kontrollierte Komponente" genannt.
 
-Wenn wir zum Beispiel das vorherige Formular-Beispiel nehmen und den eingegbenen Namen, wenn er abgeschickt wird, loggen, dann können wir das Formular als kontrollierte Komponente schreiben:
+Wenn wir zum Beispiel das vorherige Formular-Beispiel nehmen und den eingegebenen Namen, wenn er abgeschickt wird, loggen, dann können wir das Formular als kontrollierte Komponente schreiben:
 
 ```javascript{4,10-12,21,24}
 class NameForm extends React.Component {
@@ -68,7 +68,7 @@ class NameForm extends React.Component {
 
 Da das `value`-Attribut unseres Formular-Elementes gesetzt wurde, entspricht der angezeigte Wert immer `this.state.value` und macht somit den React-State zur "source of truth". Da `handleChange` bei jedem Tastendruck ausgeführt wird, um den React-State zu aktualisieren, wird der Wert es ebenso, sobald Benutzereingaben stattfinden.
 
-Bei einer kontrollierten Komponente wird jede Änderung durch de React-State gesteuert. Während dies bedeutet, dass du immer etwas mehr Code schreiben musst, kannst du den Wert nun auch an andere UI-Elemente übergeben oder ihn von anderen Event-Handlern zurücksetzen lassen.
+Bei einer kontrollierten Komponente wird jede Änderung durch den React-State gesteuert. Während dies bedeutet, dass du immer etwas mehr Code schreiben musst, kannst du den Wert nun auch an andere UI-Elemente übergeben oder ihn von anderen Event-Handlern zurücksetzen lassen.
 
 ## Der textarea-Tag {#the-textarea-tag}
 
@@ -117,7 +117,7 @@ class EssayForm extends React.Component {
 }
 ```
 
-Merke dir, dass `this.state.value` im Konstruktor initialisert wird, so dass das Textfeld mit etwas Text gefüllt wird.
+Beachte, dass `this.state.value` im Konstruktor initialisiert wird, so dass das Textfeld mit etwas Text gefüllt wird.
 
 ## Der select-Tag {#the-select-tag}
 
@@ -184,9 +184,9 @@ Zusammenfassend ist es so, dass `<input type="text">`, `<textarea>` und `<select
 ><select multiple={true} value={['B', 'C']}>
 >```
 
-## Der file input-Tag {#the-file-input-tag}
+## Das Datei input Element {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+In HTML ermöglicht ein `<input type="file">` dem Benutzer, eine oder mehrere Dateien aus seinem Gerätespeicher auszuwählen, die auf einen Server hochgeladen oder mit JavaScript über die [Datei-API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications) bearbeitet werden sollen.
 
 ```html
 <input type="file" />
@@ -250,7 +250,7 @@ class Reservation extends React.Component {
 
 [**Auf CodePen ausprobieren**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
-Beachte, dass wir die ES6-Syntax für [berechnete Bezeichnernamen](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Objekt_Initialisierer#Berechnete_Bezeichnernamen) verwenden, um den State ensprechend dem gegebenem Namen zu ändern:
+Beachte, dass wir die ES6-Syntax für [Berechnete Eigenschaftsnamen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) verwenden, um den State entsprechend dem gegebenem Namen zu ändern:
 
 ```js{2}
 this.setState({
@@ -266,7 +266,7 @@ partialState[name] = value;
 this.setState(partialState);
 ```
 
-Da `setState()` automatisch [die einzelne Teile in den aktuellen State überführt](/docs/state-and-lifecycle.html#state-updates-are-merged), benötigen wir nur den Aufruf der geänderten Teile:
+Da `setState()` automatisch [die einzelne Teile in den aktuellen State überführt](/docs/state-and-lifecycle.html#state-updates-are-merged), benötigen wir nur den Aufruf der geänderten Teile.
 
 ## Gesteuerte Null-Wert-Eingaben {#controlled-input-null-value}
 
@@ -289,4 +289,4 @@ Es kann manchmal mühsam sein kontrollierte Komponenten zu verwenden, da du für
 
 ## Vollumfassende Lösungen {#fully-fledged-solutions}
 
-Wenn du nach einer Komplettlösung mit Validierung, dem Im-Blick-Behalten von besuchten Feldern und der Handhabung von Formularverarbeitung suchst, ist [Formik](https://jaredpalmer.com/formik) eine der beliebtesten Entscheidungen. Es basiert jedoch auf den selben Pinzipien von kontrollierten Komponenten und der Verwaltung des States - also vernachlässige es nicht, darüber etwas zu lernen.
+Wenn du nach einer Komplettlösung mit Validierung, dem Im-Blick-Behalten von besuchten Feldern und der Handhabung von Formularverarbeitung suchst, ist [Formik](https://jaredpalmer.com/formik) eine der beliebtesten Entscheidungen. Es basiert jedoch auf den selben Prinzipien von kontrollierten Komponenten und der Verwaltung des States - also vernachlässige es nicht, darüber etwas zu lernen.

@@ -5,7 +5,7 @@
     - id: add-react-to-a-website
       title: React einer Webseite hinzufügen
     - id: create-a-new-react-app
-      title: Erstelle eine React-App
+      title: Erstelle eine neue React Anwendung
     - id: cdn-links
       title: CDN Links
     - id: release-channels
@@ -20,13 +20,13 @@
     - id: rendering-elements
       title: Elemente rendern
     - id: components-and-props
-      title: Komponenten and Props
+      title: Komponenten und Props
     - id: state-and-lifecycle
       title: State und Lifecycle
     - id: handling-events
       title: Handhabung von Events
     - id: conditional-rendering
-      title: Conditional Rendering
+      title: Bedingte Darstellung
     - id: lists-and-keys
       title: Listen und Keys
     - id: forms
@@ -36,13 +36,13 @@
     - id: composition-vs-inheritance
       title: Komposition vs. Vererbung
     - id: thinking-in-react
-      title: Thinking In React
+      title: In React denken
 - title: Fortgeschrittene Anleitungen
   items:
     - id: accessibility
-      title: Zugänglichkeit
+      title: Barrierefreiheit
     - id: code-splitting
-      title: Code-Splitting
+      title: Code-Aufteilung
     - id: context
       title: Context
     - id: error-boundaries
@@ -58,9 +58,9 @@
     - id: jsx-in-depth
       title: JSX im Detail
     - id: optimizing-performance
-      title: Performance optimieren
+      title: Performance-Optimierung
     - id: portals
-      title: Portals
+      title: Portale
     - id: profiler
       title: Profiler
     - id: react-without-es6
@@ -68,19 +68,19 @@
     - id: react-without-jsx
       title: React ohne JSX
     - id: reconciliation
-      title: Reconciliation
+      title: Abgleich
     - id: refs-and-the-dom
       title: Refs und das DOM
     - id: render-props
       title: Render Props
     - id: static-type-checking
-      title: Statische Typisierung
+      title: Statische Typprüfung
     - id: strict-mode
       title: Strict Mode
     - id: typechecking-with-proptypes
       title: Typisierung mit PropTypes
     - id: uncontrolled-components
-      title: Ungesteuerte Komponenten
+      title: Unkontrollierte Komponenten
     - id: web-components
       title: Web Components
 - title: API Referenz
@@ -130,11 +130,11 @@
 - title: Testing
   items:
     - id: testing
-      title: Testing Overview
+      title: Test-Übersicht
     - id: testing-recipes
-      title: Testing Recipes
+      title: Test-Rezepte
     - id: testing-environments
-      title: Testing Environments
+      title: Test-Umgebungen
 - title: Concurrent Mode (Experimental)
   isOrdered: true
   items:
@@ -155,19 +155,19 @@
     - id: codebase-overview
       title: Codebasis Übersicht
     - id: implementation-notes
-      title: Implementierungs Hinweise
+      title: Implementierungshinweise
     - id: design-principles
       title: Design Prinzipien
 - title: FAQ
   items:
     - id: faq-ajax
-      title: AJAX and APIs
+      title: AJAX und APIs
     - id: faq-build
-      title: Babel, JSX und Build Steps
+      title: Babel, JSX und Build-Prozess
     - id: faq-functions
       title: Funktionen an Komponenten weitergeben
     - id: faq-state
-      title: Komponent State
+      title: State in Komponenten
     - id: faq-styling
       title: Styling und CSS
     - id: faq-structure
@@ -175,4 +175,4 @@
     - id: faq-versioning
       title: Versionierungsrichtlinie
     - id: faq-internals
-      title: Virtuelles DOM und Internes
+      title: Virtuelles DOM und Interna

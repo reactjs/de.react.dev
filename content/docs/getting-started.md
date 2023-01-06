@@ -75,13 +75,13 @@ Wenn du einen Designhintergrund hast, könnte [diese Sammlung](https://reactford
 
 ### JavaScript Resources {#javascript-resources}
 
-Die React Dokumentation setzt fundierte JavaScript Sprachkentnisse voraus. Du musst keine Experte sein, aber es wird dir viel schwerer fallen, React und JavaScript gleichzeitig zu lernen.
+Die React Dokumentation setzt fundierte JavaScript Sprachkenntnisse voraus. Du musst keine Experte sein, aber es wird dir viel schwerer fallen, React und JavaScript gleichzeitig zu lernen.
 
 Wir empfehlen dir diesen [JavaScript-Überblick](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) durchzugehen und deinen Wissensstand zu überprüfen. Es wird dich zwischen 30 Minuten und einer Stunde deiner Zeit kosten, aber danach solltest du dich sicherer fühlen, React zu lernen.
 
 >**Tipp:**
 >
-> Wenn dich manche JavaScript Funktionweisen verwirren sollten, können wir dir zum nachschlagen, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) und [javascript.info](https://javascript.info/) empfehlen. Außerdem gibt es auch noch unser [Community Forum](/community/support.html), in dem du nach Hilfe fragen kannst.
+> Wenn dich manche JavaScript Funktionsweisen verwirren sollten, können wir dir zum nachschlagen, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) und [javascript.info](https://javascript.info/) empfehlen. Außerdem gibt es auch noch unser [Community Forum](/community/support.html), in dem du nach Hilfe fragen kannst.
 
 ### Praktisches Tutorial {#practical-tutorial}
 
@@ -110,7 +110,7 @@ Wenn du einmal mit den [Hauptkonzepten](/docs/hello-world.html) vertraut bist un
 ### API Referenz {#api-reference}
 
 Dieser Abschnitt der Dokumentation ist nützlich, wenn du mehr über die React API erfahren möchtest.
-Zum Beispiel die [API Referenz zu `React.Component`](/docs/react-component.html) beschreibt detailiert wie `setState()` funktioniert und für welchen Einsatz die unterschiedlichen Lifecycle-Methoden nützlich sind.
+Zum Beispiel die [API Referenz zu `React.Component`](/docs/react-component.html) beschreibt detailliert wie `setState()` funktioniert und für welchen Einsatz die unterschiedlichen Lifecycle-Methoden nützlich sind.
 
 ### Glossar and FAQ {#glossary-and-faq}
 
@@ -119,19 +119,19 @@ Es gibt außerdem ein FAQ, in welchem wir kleine Fragen zu allgemeinen Themen wi
 
 ## Bleib aktuell {#staying-informed}
 
-Der [React Blog](/blog/) ist die offizielle Quelle für Neuigkeiten des React-Teams. Alle wichtigen Informationen, einschließlich Versionshinweise oder nicht mehr weitergeführte Funktionaltäten, werden dort zuerst veröffentlicht.
+Der [React Blog](/blog/) ist die offizielle Quelle für Neuigkeiten des React-Teams. Alle wichtigen Informationen, einschließlich Versionshinweise oder nicht mehr weitergeführte Funktionalitäten, werden dort zuerst veröffentlicht.
 
 Du kannst auch unserem Account, [@reactjs](https://twitter.com/reactjs), auf Twitter folgen. Du würdest aber nichts wichtiges verpassen, wenn du nur den Blog liest.
 
-Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst aber eine detailierte Liste aller Änderungen in der [`CHANGELOG.md`, im React Repository finden](https://github.com/facebook/react/blob/main/CHANGELOG.md), genauso wie auf der [Releases-Seite](https://github.com/facebook/react/releases).
+Nicht jede React Version bekommt einen eigenen Blogpost spendiert. Du kannst aber eine detaillierte Liste aller Änderungen in der [`CHANGELOG.md`, im React Repository finden](https://github.com/facebook/react/blob/main/CHANGELOG.md), genauso wie auf der [Releases-Seite](https://github.com/facebook/react/releases).
 
 ## Versionierte Dokumentation {#versioned-documentation}
 
 Diese Dokumentation entspricht immer der neuesten "stable" Version von React.
-Seit React 16, können alle älteren Dokumentation [auf einer seperaten Seite](/versions) gefunden werden.
-Bitte beachte, dass die Dokumentation vergangener Versionen am Releasedatum zwischengespeichert wurde und nicht mehr kontinuierlich aktualsiert wird.
+Seit React 16, können alle älteren Dokumentation [auf einer separaten Seite](/versions) gefunden werden.
+Bitte beachte, dass die Dokumentation vergangener Versionen am Releasedatum zwischengespeichert wurde und nicht mehr kontinuierlich aktualisiert wird.
 
 ## Fehlt etwas? {#something-missing}
 
-Wenn etwas in der Dokumentation fehlt oder du Dinge verwirrend findest, schreib uns deinen Vorschlag oder deine Verbesserung und mache ein [Issue in unserem Dokumentation Repository](https://github.com/reactjs/reactjs.org/issues/new) auf. Du kannst uns natürlich auch über unseren Twitteraccount [@reactjs](https://twitter.com/reactjs) erreichen.
+Wenn etwas in der Dokumentation fehlt oder du Dinge verwirrend findest, schreib uns deinen Vorschlag oder deine Verbesserung und mache ein [Issue in unserem Dokumentation Repository](https://github.com/reactjs/reactjs.org/issues/new) auf. Du kannst uns natürlich auch über unseren Twitter Account [@reactjs](https://twitter.com/reactjs) erreichen.
 Wir freuen uns von dir zu hören!

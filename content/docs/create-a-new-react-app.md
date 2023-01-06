@@ -59,7 +59,7 @@ Wenn du bereit bist auf die Produktionsumgebung zu deployen, führe `npm run bui
 
 [Next.js](https://nextjs.org/) ist ein beliebtes und leichtgewichtiges Framework für mit React gebaute, **statische und vom Server gerenderte Anwendungen**. Es beinhaltet **Styling- und Routinglösungen** out of the box und nimmt an, dass du als Serverumgebung [Node.js](https://nodejs.org/) verwendest.
 
-Lerne Next.js durch den [offizielen Leitfaden](https://nextjs.org/learn/).
+Lerne Next.js durch den [offiziellen Leitfaden](https://nextjs.org/learn/).
 
 ### Gatsby {#gatsby}
 
@@ -75,7 +75,7 @@ Die folgenden Werkzeuge bieten mehr Flexibilität und Freiheiten. Wir empfehlen 
 
 - **[Nx](https://nx.dev/react)** ist ein Toolkit für Full-Stack Monorepo Entwicklung, mit integrierter Unterstützung für React, Next.js, [Express](https://expressjs.com/) und mehr.
 
-- **[Parcel](https://parceljs.org/)** ist ein schneller konfigurationsloser Bundler für Webanwendungen, der [mit React funktioniert](https://parceljs.org/recipes/react/).
+- **[Parcel](https://parceljs.org/)** ist ein schneller konfigurationsfreier Bundler für Webanwendungen, der [mit React funktioniert](https://parceljs.org/recipes/react/).
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** ist ein Framework für Server-Rendering. Es benötigt keine Konfiguration, bietet aber mehr Flexibilität als Next.js.
 

@@ -16,9 +16,9 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Komponenten erlauben dir deine Benutzeroberfläche in unabhängige, wiederverwendbare Teile aufzubrechen und jeden als isoliert zu betrachten. Diese Seite bietet dir eine Einführung in die Idee hinter Komponenten. Du kannst eine [detailierte Komponentenbeschreibung in der API Referenz](/docs/react-component.html) finden.
+Komponenten erlauben dir deine Benutzeroberfläche in unabhängige, wiederverwendbare Teile aufzubrechen und jeden als isoliert zu betrachten. Diese Seite bietet dir eine Einführung in die Idee hinter Komponenten. Du kannst eine [detaillierte Komponentenbeschreibung in der API Referenz](/docs/react-component.html) finden.
 
-Vom Konzept her sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren beliebige Eingaben ("props" genannnt) und geben React-Elemente zurück, welche beschreiben was auf dem Bildschirm angezeigt werden soll.
+Vom Konzept her sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren beliebige Eingaben ("props" genannt) und geben React-Elemente zurück, welche beschreiben was auf dem Bildschirm angezeigt werden soll.
 
 ## Funktions- und Klassenkomponenten {#function-and-class-components}
 
@@ -30,7 +30,7 @@ function Welcome(props) {
 }
 ```
 
-Diese Funktion ist eine gültige React-Komponente, da sie ein einziges "props"- (engl. kurz für properties) Objekt mit Daten akzeptiert und ein React-Element zurückgibt. Wir nennen dies "Funktionskomponenten", weil es buchstäblich  JavaScript-Funktionen sind.
+Diese Funktion ist eine gültige React-Komponente, da sie ein einziges "props"- (englische Abkürzung für properties) Objekt mit Daten akzeptiert und ein React-Element zurückgibt. Wir nennen solche Komponenten "Funktionskomponenten", weil es buchstäblich JavaScript-Funktionen sind.
 
 Du kannst ebenfalls [ES6-Klassen](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) benutzen um Komponenten zu definieren:
 
@@ -81,7 +81,7 @@ Fassen wir mal zusammen, was in diesem Beispiel passiert:
 1. Wir rufen `root.render()` mit dem React-Element `<Welcome name="Sara" />` auf.
 2. React ruft die `Welcome` Komponente mit den Props `{name: 'Sara'}` auf.
 3. Unsere `Welcome`-Komponente gibt als Ergebnis `<h1>Hallo Sara</h1>` zurück.
-4. React aktualsiert effizient das DOM um `<h1>Hallo Sara</h1>` abzugleichen.
+4. React aktualisiert effizient das DOM um `<h1>Hallo Sara</h1>` abzugleichen.
 
 >**Hinweis:** Beginne den Namen von Komponenten immer mit einem Großbuchstaben.
 >
@@ -114,7 +114,7 @@ function App() {
 
 [Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)
 
-Typischerweise haben neue React-Apps eine einzige `App` Komponente an erste Stelle. Wenn du aber React in ein bestehendes Projekt integrierst, fängst du wahrscheinlich von unten nach oben (bottom-up) an und erstellst Komponenten wie `Button`, dabei arbeitest dich Schritt für Schritt die View-Hierarchie nach oben.
+Typischerweise haben neue React-Apps eine einzige `App` Komponente an erster Stelle. Wenn du aber React in ein bestehendes Projekt integrierst, fängst du wahrscheinlich von unten nach oben (bottom-up) an und erstellst Komponenten wie `Button`, dabei arbeitest dich Schritt für Schritt die View-Hierarchie nach oben.
 
 ## Komponenten auslagern {#extracting-components}
 
@@ -150,7 +150,7 @@ function Comment(props) {
 
 Diese Komponente nimmt `author` (ein Objekt), `text` (ein String), und `date` (ein date-Objekt) als Props entgegen und beschreibt einen Kommentar auf einer Social Media Webseite.
 
-Aufgrund der Verschachtelung könnte diese Komponente schwer abänderbar sein, außerdem ist es auch schwierig einzelne Teile davon wiederzuverwenden. Lass uns doch mal ein paar Komponenten daraus ziehen.
+Aufgrund der Verschachtlung könnte diese Komponente schwer abänderbar sein, außerdem ist es auch schwierig einzelne Teile davon wiederzuverwenden. Lass uns doch mal ein paar Komponenten daraus ziehen.
 
 Als erstes werden wir `Avatar` auslagern:
 
@@ -165,9 +165,9 @@ function Avatar(props) {
 }
 ```
 
-Der `Avatar` muss nicht wissen, dass er in innerhalb von `Comment` gerendert wird. Darum geben wir dem prop einen gebräuchlicheren namen als: `author` und nennen es `user`.
+Der `Avatar` muss nicht wissen, dass er in innerhalb von `Comment` gerendert wird. Darum geben wir dem prop einen gebräuchlicheren Namen als: `author` und nennen es `user`.
 
-Wir empfehlen props nicht nach dem Kontext in dem sie verwenden werden, sondern aus dem sie kommen zu benennen.
+Wir empfehlen props nicht nach dem Kontext in dem sie verwendet werden, sondern aus dem sie kommen zu benennen.
 
 Wir können nun `Comment` ein bisschen vereinfachen:
 
@@ -226,7 +226,7 @@ function Comment(props) {
 
 [Auf CodePen ausprobieren](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)
 
-Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendebaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche (`Button`, `Panel`, `Avatar`) öfters verwendet wird oder es ist für sich allein komplex genug ist (`App`, `FeedStory`, `Comment`), dies gute Kandidaten für wiederverwendbare Komponenten sind.
+Komponenten zu extrahieren mag sich wie Routinearbeit anfühlen, aber am Ende zahlt es sich für größere Apps aus, eine Palette an wiederverwendbaren Komponenten zu haben. Eine gute Faustregel ist es, dass wenn ein Teil der Benutzeroberfläche (`Button`, `Panel`, `Avatar`) öfters verwendet wird oder für sich allein komplex genug ist (`App`, `FeedStory`, `Comment`), dies gute Kandidaten für wiederverwendbare Komponenten sind.
 
 ## Props sind Read-Only {#props-are-read-only}
 
@@ -238,7 +238,7 @@ function sum(a, b) {
 }
 ```
 
-Solch eine Funktion wird als ["pure"](https://en.wikipedia.org/wiki/Pure_function) bezeichnet, da sie nicht ihre Eingaben ändert und immer das gleiche Ergbenis für die gleichen Eingaben zurückgibt.
+Solch eine Funktion wird als ["pure"](https://en.wikipedia.org/wiki/Pure_function) bezeichnet, da sie nicht ihre Eingaben ändert und immer das gleiche Ergebnis für die gleichen Eingaben zurückgibt.
 
 Im Umkehrschluss ist diese Funktion keine "pure function", sondern "impure", da sie ihre eigenen Eingaben ändert:
 
@@ -248,7 +248,7 @@ function withdraw(account, amount) {
 }
 ```
 
-React ist sehr flexibel, es gibt aber eine strikte Regeln:
+React ist sehr flexibel, es gibt aber eine strikte Regel:
 
 **Alle React-Komponenten müssen sich im Bezug auf ihre Props, als sogenannte "pure functions" verhalten.**
 

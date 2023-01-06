@@ -37,9 +37,9 @@ const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
 ```
 
-Jeder valide [JavaScript Ausdruck](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Ausdruecke_und_Operatoren#Expressions) ist zwischen den geschweiften Klammern in JSX erlaubt. Zum Beispiel, `2 + 2`, `user.firstName`, oder `formatName(user)` sind völlig valide JavaScript Ausdrücke.
+Jeder valide [JavaScript Ausdruck](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) ist zwischen den geschweiften Klammern in JSX erlaubt. Zum Beispiel, `2 + 2`, `user.firstName`, oder `formatName(user)` sind völlig valide JavaScript Ausdrücke.
 
-Im folgenden Beispiel geben wir das Ergebnis des JavaScript-Funktionsaufrufes `formatName(user)` direkt in das `<h1>` Element.
+Im folgenden Beispiel geben wir das Ergebnis des JavaScript-Funktionsaufrufs `formatName(user)` direkt in das `<h1>` Element.
 
 ```js{12}
 function formatName(user) {
@@ -64,7 +64,7 @@ Aus gründen der Lesbarkeit haben wir JSX auf mehrere Zeilen verteilt. Dies ist 
 
 ### JSX ist auch ein Ausdruck {#jsx-is-an-expression-too}
 
-Nach dem Kompilieren werden JSX Ausdrücke als normale JavaScript-Funktionssaufrufe und als JavaScript-Objekte ausgewertet.
+Nach dem Kompilieren werden JSX Ausdrücke als normale JavaScript-Funktionsaufrufe und als JavaScript-Objekte ausgewertet.
 
 Das bedeutet, dass du JSX innerhalb von `if`-Blöcken und `for`-Schleifen verwenden, Variablen zuweisen, als Argument entgegennehmen oder aus einer Funktion zurückgeben kannst:
 

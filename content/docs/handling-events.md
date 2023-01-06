@@ -58,7 +58,7 @@ Hier ist `e` ein synthetisches Event. React definiert diese synthetischen Events
 
 Mit React solltest du im Normalfall `addEventListener` nicht aufrufen müssen, um Events an DOM Elemente zu binden, nachdem sie erstellt wurden. Stattdessen stellst du einfach einen Listener zur Verfügung, wenn das Element initial gerendert wurde.
 
-Wenn du eine Komponente als [ES6 Klassse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definierst, ist es ein gängiges Pattern, dass der Eventhandler eine Methode der Klasse ist. Zum Beispiel rendert diese `Toggle` Komponente einen Button, der zwischen den States "AN" und "AUS" wechselt:
+Wenn du eine Komponente als [ES6 Klasse](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) definierst, ist es ein gängiges Pattern, dass der Eventhandler eine Methode der Klasse ist. Zum Beispiel rendert diese `Toggle` Komponente einen Button, der zwischen den States "ON" und "OFF" wechselt:
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
@@ -132,7 +132,7 @@ class LoggingButton extends React.Component {
 }
 ```
 
-Das Problem mit dieser Syntax ist, dass jedes Rendern des `LoggingButton` einen anderen Callback erzeugt. In den meisten Fällen, ist das ok. Wenn jedoch dieser Callback an tiefer gelegene Komoponenten als Prop weitergegeben wird, könnten diese sich ein weiteres Mal neu rendern. Generell empfehlen wir die Events im Konstruktor zu binden oder die class field Syntax zu verwenden, um diese Art von Performance Problemen zu vermeiden.
+Das Problem mit dieser Syntax ist, dass jedes Rendern des `LoggingButton` einen anderen Callback erzeugt. In den meisten Fällen ist das in Ordnung. Wenn jedoch dieser Callback an tiefer gelegene Komponenten als Prop weitergegeben wird, könnten diese sich ein weiteres Mal neu rendern. Generell empfehlen wir die Events im Konstruktor zu binden oder die class field Syntax zu verwenden, um diese Art von Performance Problemen zu vermeiden.
 
 ## Argumente an Eventhandler übergeben {#passing-arguments-to-event-handlers}
 

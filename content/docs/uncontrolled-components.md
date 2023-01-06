@@ -68,7 +68,7 @@ Ebenso unterstützen `<input type="checkbox">` und `<input type="radio">` `defau
 
 ## Das Datei input Element {#the-file-input-tag}
 
-In HTML kann der Benutzer mit `<input type="file">` eine oder mehrere Dateien aus dem Gerätespeicher auswählen, die auf einen Server hochgeladen oder von JavaScript über die [File API](https://developer.mozilla.org/de/docs/Web/API/File/Zugriff_auf_Dateien_von_Webapplikationen) bearbeitet werden können.
+In HTML kann der Benutzer mit `<input type="file">` eine oder mehrere Dateien aus dem Gerätespeicher auswählen, die auf einen Server hochgeladen oder von JavaScript über die [File API](https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications) bearbeitet werden können.
 
 ```html
 <input type="file" />
