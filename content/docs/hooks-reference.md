@@ -473,7 +473,7 @@ In diesem Beispiel wäre eine übergeordnete Komponente, die `<FancyInput ref={i
 
 ### `useLayoutEffect` {#uselayouteffect}
 
-Die Signatur dieses Hooks ist identisch mit `useEffect`, aber er wird synchron nach allen DOM-Mutationen ausgelöst. Verwende ihn, um das Layout aus dem DOM zu lesen und synchron neu zu rendern. Aktualisierungen, die innerhalb von `useLayoutEffect` geplant sind, werden synchron vorgenommen, bevor der Browser die Chance hat zu malen.
+Die Signatur dieser Hook ist identisch mit `useEffect`, aber er wird synchron nach allen DOM-Mutationen ausgelöst. Verwende ihn, um das Layout aus dem DOM zu lesen und synchron neu zu rendern. Aktualisierungen, die innerhalb von `useLayoutEffect` geplant sind, werden synchron vorgenommen, bevor der Browser die Chance hat zu malen.
 
 Bevorzuge, wenn möglich, den Standard `useEffect`, um zu vermeiden, dass visuelle Aktualisierungen blockiert werden.
 
