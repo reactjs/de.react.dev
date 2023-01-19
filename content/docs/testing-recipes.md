@@ -415,7 +415,7 @@ it("changes value when clicked", () => {
 });
 ```
 
-Verschiedene DOM-Ereignisse und ihre Eigenschaften werden in [MDN](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) beschrieben. Beachten Sie, dass Sie `{ bubbles: true }` in jedem von Ihnen erstellten Ereignis übergeben müssen, damit es den React-Listener erreicht, da React Ereignisse automatisch an den Stamm delegiert.
+Verschiedene DOM-Events und ihre Eigenschaften werden in [MDN](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) beschrieben. Beachte, dass Du `{ bubbles: true }` in jedem von deinen erstellten Events übergeben musst, damit es den React-Listener erreicht, da React-Events automatisch an den Stamm (engl. root) delegiert werden.
 
 > Hinweis:
 >
