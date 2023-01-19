@@ -425,7 +425,7 @@ Verschiedene DOM-Events und ihre Eigenschaften werden in [MDN](https://developer
 
 ### Timer {#timers}
 
-Ihr Code könnte zeitgeberbasierte Funktionen wie `setTimeout` verwenden, um mehr Arbeit in der Zukunft zu planen. In diesem Beispiel wartet ein Multiple-Choice-Feld auf eine Auswahl und rückt vor, wobei eine Zeitüberschreitung eintritt, wenn innerhalb von 5 Sekunden keine Auswahl getroffen wird:
+Dein Code könnte zeitgeberbasierte Funktionen wie `setTimeout` verwenden, um mehr Arbeit in der Zukunft zu planen. In diesem Beispiel wartet ein Multiple-Choice-Feld auf eine Auswahl und rückt vor, wobei eine Zeitüberschreitung eintritt, wenn innerhalb von 5 Sekunden keine Auswahl getroffen wird:
 
 ```jsx
 // card.js
