@@ -121,7 +121,7 @@ afterEach(() => {
 
 it("Rendert mit oder ohne Namen", () => {
   act(() => {
-    render(<Hallo />, container);
+    render(<Hello />, container);
   });
   expect(container.textContent).toBe("Hallo Fremder!");
 
