@@ -538,7 +538,7 @@ it("should accept selections", () => {
 });
 ```
 
-Sie können gefälschte Timer nur in einigen Tests verwenden. Oben haben wir sie aktiviert, indem wir `jest.useFakeTimers()` aufgerufen haben. Der Hauptvorteil, den sie bieten, besteht darin, dass Ihr Test nicht wirklich fünf Sekunden auf die Ausführung warten muss, und Sie mussten den Komponentencode auch nicht nur zum Testen komplizierter machen.
+Du kannst Fake-Timer nur in einigen Tests verwenden. Oben haben wir sie aktiviert, indem wir `jest.useFakeTimers()` aufgerufen haben. Der Hauptvorteil, den sie bieten, besteht darin, dass dein Test nicht wirklich fünf Sekunden auf die Ausführung warten  und du den Komponentencode auch nicht nur zum Testen komplizierter machen musst.
 
 ---
 
