@@ -544,7 +544,7 @@ Du kannst Fake-Timer nur in einigen Tests verwenden. Oben haben wir sie aktivier
 
 ### Snapshot-Testen {#snapshot-testing}
 
-Mit Frameworks wie Jest können Sie mit [`toMatchSnapshot` / `toMatchInlineSnapshot`](https://jestjs.io/docs/en/snapshot-testing) auch "Schnappschüsse" von Daten speichern. Mit diesen können wir die gerenderte Komponentenausgabe "speichern" und sicherstellen, dass eine Änderung daran explizit als Änderung am Snapshot festgeschrieben werden muss.
+Mit Frameworks wie Jest kannst Du mit [`toMatchSnapshot` / `toMatchInlineSnapshot`](https://jestjs.io/docs/en/snapshot-testing) auch "Schnappschüsse" von Daten speichern. Mit diesen können wir die gerenderte Komponentenausgabe "speichern" und sicherstellen, dass eine Änderung daran explizit als Änderung am Snapshot festgeschrieben werden muss.
 In diesem Beispiel rendern wir eine Komponente und formatieren den gerenderten HTML-Code mit dem [`pretty`](https://www.npmjs.com/package/pretty) Paket, bevor wir ihn als Inline-Snapshot speichern:
 
 ```jsx{29-31}
