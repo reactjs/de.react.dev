@@ -604,7 +604,7 @@ Es ist in der Regel besser, spezifischere Behauptungen aufzustellen, als Snapsho
 
 ### Mehrere Renderer {#multiple-renderers}
 
-In seltenen Fällen führen Sie möglicherweise einen Test für eine Komponente aus, die mehrere Renderer verwendet. Beispielsweise können Sie Snapshot-Tests auf einer Komponente mit `react-test-renderer` ausführen, die intern `render` von `react-dom` innerhalb einer untergeordneten Komponente verwendet, um einige Inhalte zu rendern. In diesem Szenario können Sie Aktualisierungen mit `act()`s umschließen, die ihren Renderern entsprechen.
+In seltenen Fällen führen Sie möglicherweise einen Test für eine Komponente aus, die mehrere Renderer verwendet. Beispielsweise kannst du Snapshot-Tests auf einer Komponente mit `react-test-renderer` ausführen, die intern `render` von `react-dom` innerhalb einer untergeordneten Komponente verwendet, um einige Inhalte zu rendern. In diesem Szenario können Sie Aktualisierungen mit `act()`s umschließen, die ihren Renderern entsprechen.
 
 ```jsx
 import { act as domAct } from "react-dom/test-utils";
