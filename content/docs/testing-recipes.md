@@ -623,4 +623,4 @@ expect(root).toMatchSnapshot();
 
 ### Etwas fehlt? {#something-missing}
 
-Wenn ein gängiges Szenario nicht abgedeckt ist, teilen Sie uns dies bitte auf der [Problemverfolgungswebsite](https://github.com/reactjs/reactjs.org/issues) für die Dokumentation mit.
+Wenn ein gängiges Szenario nicht abgedeckt ist, teile uns dies bitte im [Issue-Tracker](https://github.com/reactjs/reactjs.org/issues) für die Dokumentation mit.
