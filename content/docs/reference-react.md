@@ -66,7 +66,7 @@ Mit Suspense können Komponenten vor dem Rendern auf etwas "warten". Momentan un
 
 ### Transitions {#transitions}
 
-*Transitions* are a new concurrent feature introduced in React 18. They allow you to mark updates as transitions, which tells React that they can be interrupted and avoid going back to Suspense fallbacks for already visible content.
+*Transitions* ist ein neues nebenläufiges Feature, welches in React 18 eingeführt wurde. Sie ermöglichen es Dir, Aktualisierungen als Transition zu markieren, was React mitteilt, dass sie unterbrochen werden können und vermeiden, für bereits sichtbare Inhalte zu Suspense-Fallbacks zurückzukehren.
 
 - [`React.startTransition`](#starttransition)
 - [`React.useTransition`](/docs/hooks-reference.html#usetransition)
@@ -345,7 +345,6 @@ const SomeComponent = React.lazy(() => import('./SomeComponent'));
 
 Beachte, dass das Rendern von `lazy`-Komponenten ein `<React.Suspense>` weiter oben im Rendering-Baum benötigt. Damit wird ein Lade-Indikator bestimmt.
 
-<<<<<<< HEAD
 > **Hinweis**
 >
 > Die Verwendung von `React.lazy` mit dynamischen Imports setzt voraus, dass in der JS-Umgebung `Promises` verfügbar sind. Hierzu braucht man ein Polyfill für IE11 und darunter.
@@ -354,7 +353,7 @@ Beachte, dass das Rendern von `lazy`-Komponenten ein `<React.Suspense>` weiter o
 
 ### `React.Suspense` {#reactsuspense}
 
-`React.Suspense` lässt dich den Lade-Indikator bestimmen, der angezeigt wird, falls einige Komponenten weiter unten im Rendering-Baum noch nicht render-bereit sind. In the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](/blog/2018/11/27/react-16-roadmap.html).
+`React.Suspense` lässt dich den Lade-Indikator bestimmen, der angezeigt wird, falls einige Komponenten weiter unten im Rendering-Baum noch nicht render-bereit sind. In Zukunft planen wir, `Suspense` weitere Szenarien wie das Abrufen von Daten handhaben zu lassen. Dies kannst Du in [unserer Roadmap](/blog/2018/11/27/react-16-roadmap.html) nachlesen.
 
 Momentan ist das Laden von `lazy`-Komponenten der **einzige** Anwendungsfall, den `<React.Suspense>` unterstützt:
 
@@ -376,28 +375,27 @@ function MyComponent() {
 
 Das ist in unserem [Code-Splitting-Guide](/docs/code-splitting.html#reactlazy) dokumentiert. Beachte, dass sich `lazy`-Komponenten tief im `Suspense`-Baum befinden können -- es muss nicht jede einzelne davon ummantelt werden. Es wird empfohlen, `<Suspense>` dort zu verwenden, wo ein Lade-Indikator angezeigt werden soll, und `lazy(`) dort zu verwenden, wo Code-Splitting stattfinden soll.
 
-> Note
+> Hinweis
 >
-> For content that is already shown to the user, switching back to a loading indicator can be disorienting. It is sometimes better to show the "old" UI while the new UI is being prepared. To do this, you can use the new transition APIs [`startTransition`](#starttransition) and [`useTransition`](/docs/hooks-reference.html#usetransition) to mark updates as transitions and avoid unexpected fallbacks.
+> Bei Inhalten, die dem Benutzer bereits angezeigt werden, kann das Zurückschalten auf eine Ladeanzeige verwirrend sein. Manchmal ist es besser, die "alte" Benutzeroberfläche zu zeigen, während die neue Benutzeroberfläche vorbereitet wird. Dazu kannst Du die neuen Transition-APIs [`startTransition`](#starttransition) und [`useTransition`](/docs/hooks-reference.html#usetransition) verwenden, um Aktualisierungen als Transitions zu markieren und unerwartete Fallbacks zu vermeiden.
 
 #### `React.Suspense` in Server Side Rendering {#reactsuspense-in-server-side-rendering}
-During server side rendering Suspense Boundaries allow you to flush your application in smaller chunks by suspending.
-When a component suspends we schedule a low priority task to render the closest Suspense boundary's fallback. If the component unsuspends before we flush the fallback then we send down the actual content and throw away the fallback.
+Während des serverseitigen Renderns kannst Du mit Suspense Boundaries Ihre Anwendung in kleineren Teilen leeren, indem Sie sie anhalten. Wenn eine Komponente ausgesetzt wird, planen wir eine Aufgabe mit niedriger Priorität, um den Fallback der nächstgelegenen Suspense-Grenze zu rendern. Wenn die Suspendierung der Komponente aufgehoben wird, bevor wir den Fallback leeren, senden wir den eigentlichen Inhalt und verwerfen den Fallback.
 
-#### `React.Suspense` during hydration {#reactsuspense-during-hydration}
-Suspense boundaries depend on their parent boundaries being hydrated before they can hydrate, but they can hydrate independently from sibling boundaries. Events on a boundary before it is hydrated will cause the boundary to hydrate at a higher priority than neighboring boundaries. [Read more](https://github.com/reactwg/react-18/discussions/130)
+#### `React.Suspense` während der Hydratation {#reactsuspense-during-hydration}
+Suspense-Grenzen hängen davon ab, dass ihre übergeordneten Grenzen hydratisiert werden, bevor sie hydratisiert werden können, aber sie können unabhängig von Geschwistergrenzen hydratisiert werden. Ereignisse an einer Grenze, bevor sie hydratisiert wird, bewirken, dass die Grenze mit einer höheren Priorität als benachbarte Grenzen hydratisiert wird. [Weiterlesen](https://github.com/reactwg/react-18/discussions/130)
 
 ### `React.startTransition` {#starttransition}
 
 ```js
 React.startTransition(callback)
 ```
-`React.startTransition` lets you mark updates inside the provided callback as transitions. This method is designed to be used when [`React.useTransition`](/docs/hooks-reference.html#usetransition) is not available.
+Mit `React.startTransition` können Sie Aktualisierungen innerhalb des bereitgestellten Callbacks als Transition markieren. Diese Methode wurde entwickelt, um verwendet zu werden, wenn [`React.useTransition`](/docs/hooks-reference.html#usetransition) nicht verfügbar ist.
 
-> Note:
+> Hinweis:
 >
-> Updates in a transition yield to more urgent updates such as clicks.
->
-> Updates in a transition will not show a fallback for re-suspended content, allowing the user to continue interacting while rendering the update.
->
-> `React.startTransition` does not provide an `isPending` flag. To track the pending status of a transition see [`React.useTransition`](/docs/hooks-reference.html#usetransition).
+> Aktualisierungen innerhalb einer Transition führen zu dringenderen Aktualisierungen als Klicks. 
+> 
+> Aktualisierungen innerhalb einer Transition bewirken keinen Fallback für erneut suspendete Inhalte, sodass der Benutzer weiterhin interagieren kann, während die Aktualisierung gerendert wird.
+> 
+`React.startTransition` stellt kein `isPending`-Flag bereit. Um den ausstehenden Status einer Transition zu verfolgen, siehe [`React.useTransition`](/docs/hooks-reference.html#usetransition).
