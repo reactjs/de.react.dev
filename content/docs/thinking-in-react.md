@@ -8,17 +8,13 @@ redirect_from:
 prev: composition-vs-inheritance.html
 ---
 
-<<<<<<< HEAD
-React ist unserer Meinung nach der beste Weg, um große, schnelle Web-Anwendungen mit JavaScript zu erstellen. Es hat sich für uns bei Facebook und Instagram sehr gelohnt.
-=======
 > Try the new React documentation.
 > 
 > The updated [Thinking in React](https://beta.reactjs.org/learn/thinking-in-react) guide teaches modern React and includes live examples.
 >
 > The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
-React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.
->>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
+React ist unserer Meinung nach der beste Weg, um große, schnelle Web-Anwendungen mit JavaScript zu erstellen. Es hat sich für uns bei Facebook und Instagram sehr gelohnt.
 
 Einer der vielen großartigen Teile von React ist, wie es dich zum Nachdenken über die Anwendungen bringt, während du sie erstellst. In diesem Dokument führen wir dich durch den Denkprozess, wie man eine durchsuchbare Produktdatentabelle mit React erstellt.
 
