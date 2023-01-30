@@ -8,6 +8,15 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Conditional Rendering](https://beta.reactjs.org/learn/conditional-rendering)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
 Mit React können verschiedene Komponenten erstellt werden, die ein gewünschtes Verhalten kapseln. In Abhängigkeit vom State der Anwendung können dann einige davon dargestellt werden.
 
 Die bedingte Darstellung (engl. conditional rendering) in React funktioniert genauso wie Bedingungen in JavaScript. Benutze JavaScript Operatoren wie [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) oder den [Bedingten Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) um Elemente zu erstellen, welche den aktuellen State widerspiegeln. React aktualisiert dementsprechend die aktuelle Benutzeroberfläche.

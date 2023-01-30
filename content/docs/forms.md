@@ -9,6 +9,16 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`<input>`](https://beta.reactjs.org/reference/react-dom/components/input)
+> - [`<select>`](https://beta.reactjs.org/reference/react-dom/components/select)
+> - [`<textarea>`](https://beta.reactjs.org/reference/react-dom/components/textarea)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
 HTML-Formularelemente funktionieren in React ein bisschen anders als DOM-Elemente, weil Formularelemente einen natürlichen internen State besitzen. Beispielsweise akzeptiert dieses HTML-Formular einen einzelnen Namen:
 
 ```html
