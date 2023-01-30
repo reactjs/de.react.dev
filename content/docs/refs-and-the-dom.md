@@ -11,9 +11,6 @@ redirect_from:
   - "tips/children-undefined.html"
 ---
 
-<<<<<<< HEAD
-Refs bieten eine Möglichkeit, auf DOM-Knoten oder React-Elemente zuzugreifen, die mit der Rendermethode erstellt wurden.
-=======
 > Try the new React documentation.
 > 
 > These new documentation pages teach modern React and include live examples:
@@ -25,8 +22,7 @@ Refs bieten eine Möglichkeit, auf DOM-Knoten oder React-Elemente zuzugreifen, d
 >
 > The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
-Refs provide a way to access DOM nodes or React elements created in the render method.
->>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
+Refs bieten eine Möglichkeit, auf DOM-Knoten oder React-Elemente zuzugreifen, die mit der Rendermethode erstellt wurden.
 
 Im normalen React-Datenfluss stellen [Props](/docs/components-and-props.html) die einzige Möglichkeit dar, um übergeordnete Komponenten mit ihren untergeordneten Komponenten interagieren zu lassen. Um ein untergeordnetes Element zu verändern, muss es mit neuen Props erneut gerendert werden. Es gibt jedoch einige Fälle, in denen du ein untergeordnetes Element unbedingt außerhalb des typischen Datenflusses ändern musst. Das zu ändernde untergeordnete Element kann eine Instanz einer React-Komponente oder ein DOM-Element sein. In beiden Fällen bietet React einen Ausweg.
 
