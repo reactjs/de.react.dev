@@ -4,9 +4,6 @@ title: Portale
 permalink: docs/portals.html
 ---
 
-<<<<<<< HEAD
-Portale bieten eine erstklassige Möglichkeit, Kinder in einen DOM-Knoten zu rendern, der außerhalb der DOM-Hierarchie der Eltern-Komponente existiert.
-=======
 > Try the new React documentation.
 > 
 > These new documentation pages teach modern React and include live examples:
@@ -15,8 +12,7 @@ Portale bieten eine erstklassige Möglichkeit, Kinder in einen DOM-Knoten zu ren
 >
 > The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
-Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
->>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
+Portale bieten eine erstklassige Möglichkeit, Kinder in einen DOM-Knoten zu rendern, der außerhalb der DOM-Hierarchie der Eltern-Komponente existiert.
 
 ```js
 ReactDOM.createPortal(child, container)
