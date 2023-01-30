@@ -4,9 +4,6 @@ title: Context
 permalink: docs/context.html
 ---
 
-<<<<<<< HEAD
-Context ermöglicht es, Daten durch den Komponentenbaum zu leiten, ohne die Props in jeder Schicht manuell zu übergeben.
-=======
 > Try the new React documentation.
 > 
 > These new documentation pages teach modern React and include live examples:
@@ -16,8 +13,7 @@ Context ermöglicht es, Daten durch den Komponentenbaum zu leiten, ohne die Prop
 >
 > The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
-Context provides a way to pass data through the component tree without having to pass props down manually at every level.
->>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
+Context ermöglicht es, Daten durch den Komponentenbaum zu leiten, ohne die Props in jeder Schicht manuell zu übergeben.
 
 In einer typischen React-Anwendung werden Daten top-down (Elternkomponente zur Kindkomponente) durch Props übergeben. Für bestimmte Arten von Props (z.B. lokale Einstellungen, UI Theme), welche von vielen Komponenten innerhalb der Anwendung benötigt werden kann dies sehr umständlich werden. Mit Hilfe von Context ist es möglich, solche Werte zwischen Komponenten zu teilen, ohne diese explizit als Prop durch alle Schichten des Baumes zu geben. 
 
