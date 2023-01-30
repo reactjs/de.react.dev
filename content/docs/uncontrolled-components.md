@@ -4,9 +4,6 @@ title: Unkontrollierte Komponenten
 permalink: docs/uncontrolled-components.html
 ---
 
-<<<<<<< HEAD
-In den meisten Fällen empfehlen wir die Verwendung von [kontrollierten Komponenten](/docs/forms.html#controlled-components) zur Implementierung von Formularen. In einer kontrollierten Komponente werden Formulardaten von einer React Komponente verarbeitet. Die Alternative sind unkontrollierte Komponenten, bei denen die Formulardaten vom DOM selbst verarbeitet werden.
-=======
 > Try the new React documentation.
 > 
 > These new documentation pages teach modern React and include live examples:
@@ -17,8 +14,7 @@ In den meisten Fällen empfehlen wir die Verwendung von [kontrollierten Komponen
 >
 > The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
-In most cases, we recommend using [controlled components](/docs/forms.html#controlled-components) to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
->>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
+In den meisten Fällen empfehlen wir die Verwendung von [kontrollierten Komponenten](/docs/forms.html#controlled-components) zur Implementierung von Formularen. In einer kontrollierten Komponente werden Formulardaten von einer React Komponente verarbeitet. Die Alternative sind unkontrollierte Komponenten, bei denen die Formulardaten vom DOM selbst verarbeitet werden.
 
 Um eine unkontrollierte Komponente zu erstellen, kannst du anstelle eines Event-Handlers für jede Aktualisierung des States [ein ref](/docs/refs-and-the-dom.html) verwenden, um Formularwerte aus dem DOM abzurufen.
 
