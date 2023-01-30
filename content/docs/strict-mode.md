@@ -4,7 +4,20 @@ title: Strict Mode
 permalink: docs/strict-mode.html
 ---
 
+<<<<<<< HEAD
 `StrictMode` ist ein Werkzeug zum Aufzeigen potenzieller Probleme in einer Anwendung. `StrictMode` rendert wie `Fragment` keine sichtbare Benutzeroberfläche. Es aktiviert zusätzliche Prüfungen und Warnungen für seine Nachkommen.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`StrictMode`](https://beta.reactjs.org/reference/react/StrictMode)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+`StrictMode` is a tool for highlighting potential problems in an application. Like `Fragment`, `StrictMode` does not render any visible UI. It activates additional checks and warnings for its descendants.
+>>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
 
 > Hinweis:
 >

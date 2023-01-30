@@ -14,7 +14,24 @@ redirect_from:
   - "tips/dangerously-set-inner-html.html"
 ---
 
+<<<<<<< HEAD
 React implementiert ein browserunabhängiges DOM-System für Performance und browser-übergreifende Kompatibilität. Wir haben die Gelegenheit genutzt, um ein paar Ecken und Kanten in der DOM-Implementation der Browser zu bereinigen.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Common components (e.g. `<div>`)](https://beta.reactjs.org/reference/react-dom/components/common)
+> - [`<input>`](https://beta.reactjs.org/reference/react-dom/components/input)
+> - [`<option>`](https://beta.reactjs.org/reference/react-dom/components/option)
+> - [`<progress>`](https://beta.reactjs.org/reference/react-dom/components/progress)
+> - [`<select>`](https://beta.reactjs.org/reference/react-dom/components/select)
+> - [`<textarea>`](https://beta.reactjs.org/reference/react-dom/components/textarea)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+React implements a browser-independent DOM system for performance and cross-browser compatibility. We took the opportunity to clean up a few rough edges in browser DOM implementations.
+>>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
 
 In React sollen alle DOM Eigenschaften und Attribute (einschließlich Event-Handler) in camelCase geschrieben sein. Das HTML-Attribut `tabindex` entspricht zum Beispiel dem Attribut `tabIndex` in React. Ausnahmen sind die `aria-*` und `data-*` Attribute, welche kleingeschrieben werden sollen. Beispielsweise kannst du in React weiterhin `aria-label` für das HTML-Attribut `aria-label` verwenden.
 

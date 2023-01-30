@@ -4,7 +4,19 @@ title: Abgleich
 permalink: docs/reconciliation.html
 ---
 
+<<<<<<< HEAD
 React bietet eine deklarative API, sodass du dich nicht bei jeder Aktualisierung um die genauen Änderungen kümmern musst. Dies erleichtert das Erstellen von Anwendungen erheblich. Es ist jedoch möglicherweise nicht offensichtlich, wie dies in React implementiert ist. Dieser Artikel erklärt welche Entscheidungen wir in Reacts Vergleichsalgorithmus getroffen haben, damit Komponentenaktualisierungen vorhersehbar und gleichzeitig schnell genug für leistungsstarke Apps sind.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Preserving and Resetting State](https://beta.reactjs.org/learn/preserving-and-resetting-state)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+React provides a declarative API so that you don't have to worry about exactly what changes on every update. This makes writing applications a lot easier, but it might not be obvious how this is implemented within React. This article explains the choices we made in React's "diffing" algorithm so that component updates are predictable while being fast enough for high-performance apps.
+>>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
 
 ## Motivation {#motivation}
 

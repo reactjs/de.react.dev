@@ -9,7 +9,19 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
+<<<<<<< HEAD
 Häufig müssen mehrere Komponenten dieselben sich ändernden Daten widerspiegeln. Wir empfehlen, den gemeinsamen State bis zum nächsten gemeinsamen Vorfahren anzuheben. Schauen wir uns anhand eines Beispiels an, wie das funktioniert.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Sharing State Between Components](https://beta.reactjs.org/learn/sharing-state-between-components)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let's see how this works in action.
+>>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
 
 In diesem Abschnitt erstellen wir einen Temperaturrechner, der berechnet, ob das Wasser bei einer bestimmten Temperatur kocht.
 
