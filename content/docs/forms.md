@@ -9,9 +9,6 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-<<<<<<< HEAD
-HTML-Formularelemente funktionieren in React ein bisschen anders als DOM-Elemente, weil Formularelemente einen natürlichen internen State besitzen. Beispielsweise akzeptiert dieses HTML-Formular einen einzelnen Namen:
-=======
 > Try the new React documentation.
 > 
 > These new documentation pages teach modern React and include live examples:
@@ -22,8 +19,7 @@ HTML-Formularelemente funktionieren in React ein bisschen anders als DOM-Element
 >
 > The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
-HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
->>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
+HTML-Formularelemente funktionieren in React ein bisschen anders als DOM-Elemente, weil Formularelemente einen natürlichen internen State besitzen. Beispielsweise akzeptiert dieses HTML-Formular einen einzelnen Namen:
 
 ```html
 <form>
