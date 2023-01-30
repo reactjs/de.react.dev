@@ -8,9 +8,6 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-<<<<<<< HEAD
-Diese Seite stellt das Konzept von States und Lifecycles in einer React-Komponente vor. Hier kannst du eine [detailliertere API Referenz für Komponenten](/docs/react-component.html) finden.
-=======
 > Try the new React documentation.
 > 
 > These new documentation pages teach modern React and include live examples:
@@ -20,8 +17,7 @@ Diese Seite stellt das Konzept von States und Lifecycles in einer React-Komponen
 >
 > The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
-This page introduces the concept of state and lifecycle in a React component. You can find a [detailed component API reference here](/docs/react-component.html).
->>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
+Diese Seite stellt das Konzept von States und Lifecycles in einer React-Komponente vor. Hier kannst du eine [detailliertere API Referenz für Komponenten](/docs/react-component.html) finden.
 
 Schauen wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. Im Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg kennengelernt, das UI zu aktualisieren. Wir rufen `root.render()` auf, um die gerenderte Ausgabe zu ändern:
 
