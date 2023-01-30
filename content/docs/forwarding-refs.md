@@ -5,9 +5,6 @@ permalink: docs/forwarding-refs.html
 ---
 Weiterleiten von Refs ist eine Technik für die automatische Übergabe einer [Ref](/docs/refs-and-the-dom.html) durch eine Komponente an eines seiner Kinder. Normalerweise besteht für die meisten Komponenten innerhalb einer Anwendung kein Bedarf dafür. Nichtsdestotrotz, kann es für gewisse Arten von Komponenten nützlich sein, vor allem wenn es sich dabei um wiederverwendbare Komponenten-Bibliotheken handelt. Die gängigsten Szenarien werden unterhalb beschrieben.
 
-<<<<<<< HEAD
-## Weiterleiten von Refs zu DOM-Komponenten {#forwarding-refs-to-dom-components}
-=======
 > Try the new React documentation.
 > 
 > These new documentation pages teach modern React and include live examples:
@@ -17,8 +14,9 @@ Weiterleiten von Refs ist eine Technik für die automatische Übergabe einer [Re
 >
 > The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
+## Weiterleiten von Refs zu DOM-Komponenten {#forwarding-refs-to-dom-components}
+
 Ref forwarding is a technique for automatically passing a [ref](/docs/refs-and-the-dom.html) through a component to one of its children. This is typically not necessary for most components in the application. However, it can be useful for some kinds of components, especially in reusable component libraries. The most common scenarios are described below.
->>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
 
 Stelle dir eine `FancyButton` Komponente vor, welche das native `button` DOM-Element rendert:
 `embed:forwarding-refs/fancy-button-simple.js`
