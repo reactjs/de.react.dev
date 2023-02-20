@@ -285,7 +285,7 @@ If you have an existing codebase, you might have some Effects that suppress the 
 useEffect(() => {
   // ...
   // 🔴 Avoid suppressing the linter like this:
-  // eslint-ignore-next-line react-hooks/exhaustive-dependencies
+  // eslint-ignore-next-line react-hooks/exhaustive-deps
 }, []);
 ```
 
@@ -1507,7 +1507,7 @@ Effect Events like `onAppear` are not reactive, so you can read `duration` insid
 
 #### Fix a reconnecting chat {/*fix-a-reconnecting-chat*/}
 
-In this example, every time you press "Toggle theme", the chat re-connects. Why does this happen? Fix the mistake so that the chat re-connects only when you edit Server URL or choose a different the chat room.
+In this example, every time you press "Toggle theme", the chat re-connects. Why does this happen? Fix the mistake so that the chat re-connects only when you edit the Server URL or choose a different chat room.
 
 Treat `chat.js` as an external third-party library: you can consult it to check its API, but don't edit it.
 
@@ -2027,7 +2027,7 @@ label, button { display: block; margin-bottom: 5px; }
 
 <Solution>
 
-There's more than one correct way to solve this, but the here is one possible solution.
+There's more than one correct way to solve this, but here is one possible solution.
 
 In the original example, toggling the theme caused different `onMessage` and `createConnection` functions to be created and passed down. Since the Effect depended on these functions, the chat would re-connect every time you toggle the theme.
 

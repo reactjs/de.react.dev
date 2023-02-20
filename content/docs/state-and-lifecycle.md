@@ -8,6 +8,15 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [State: A Component's Memory](https://beta.reactjs.org/learn/state-a-components-memory)
+> - [Synchronizing with Effects](https://beta.reactjs.org/learn/synchronizing-with-effects)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
 Diese Seite stellt das Konzept von States und Lifecycles in einer React-Komponente vor. Hier kannst du eine [detailliertere API Referenz für Komponenten](/docs/react-component.html) finden.
 
 Schauen wir uns das Beispiel der tickenden Uhr aus dem [vorherigen Abschnitt](/docs/rendering-elements.html#updating-the-rendered-element) an. Im Kapitel [Elemente rendern](/docs/rendering-elements.html#rendering-an-element-into-the-dom), haben wir nur einen Weg kennengelernt, das UI zu aktualisieren. Wir rufen `root.render()` auf, um die gerenderte Ausgabe zu ändern:

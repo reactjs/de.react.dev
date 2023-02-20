@@ -16,6 +16,15 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Your First Component](https://beta.reactjs.org/learn/your-first-component)
+> - [Passing Props to a Component](https://beta.reactjs.org/learn/passing-props-to-a-component)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
 Komponenten erlauben dir deine Benutzeroberfläche in unabhängige, wiederverwendbare Teile aufzubrechen und jeden als isoliert zu betrachten. Diese Seite bietet dir eine Einführung in die Idee hinter Komponenten. Du kannst eine [detaillierte Komponentenbeschreibung in der API Referenz](/docs/react-component.html) finden.
 
 Vom Konzept her sind Komponenten wie JavaScript-Funktionen. Sie akzeptieren beliebige Eingaben ("props" genannt) und geben React-Elemente zurück, welche beschreiben was auf dem Bildschirm angezeigt werden soll.

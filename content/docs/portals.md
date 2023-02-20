@@ -4,6 +4,14 @@ title: Portale
 permalink: docs/portals.html
 ---
 
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`createPortal`](https://beta.reactjs.org/reference/react-dom/createPortal)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
 Portale bieten eine erstklassige Möglichkeit, Kinder in einen DOM-Knoten zu rendern, der außerhalb der DOM-Hierarchie der Eltern-Komponente existiert.
 
 ```js

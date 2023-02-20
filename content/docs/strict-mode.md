@@ -4,6 +4,15 @@ title: Strict Mode
 permalink: docs/strict-mode.html
 ---
 
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`StrictMode`](https://beta.reactjs.org/reference/react/StrictMode)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
 `StrictMode` ist ein Werkzeug zum Aufzeigen potenzieller Probleme in einer Anwendung. `StrictMode` rendert wie `Fragment` keine sichtbare Benutzeroberfläche. Es aktiviert zusätzliche Prüfungen und Warnungen für seine Nachkommen.
 
 > Hinweis:
@@ -161,7 +170,7 @@ With Strict Mode starting in React 18, whenever a component mounts in developmen
 ```
 * React mounts the component.
     * Layout effects are created.
-    * Effect effects are created.
+    * Effects are created.
 * React simulates effects being destroyed on a mounted component.
     * Layout effects are destroyed.
     * Effects are destroyed.
@@ -177,7 +186,7 @@ When the component unmounts, effects are destroyed as normal:
 ```
 * React unmounts the component.
   * Layout effects are destroyed.
-  * Effect effects are destroyed.
+  * Effects are destroyed.
 ```
 
 Unmounting and remounting includes:

@@ -9,6 +9,14 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Sharing State Between Components](https://beta.reactjs.org/learn/sharing-state-between-components)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
 Häufig müssen mehrere Komponenten dieselben sich ändernden Daten widerspiegeln. Wir empfehlen, den gemeinsamen State bis zum nächsten gemeinsamen Vorfahren anzuheben. Schauen wir uns anhand eines Beispiels an, wie das funktioniert.
 
 In diesem Abschnitt erstellen wir einen Temperaturrechner, der berechnet, ob das Wasser bei einer bestimmten Temperatur kocht.
