@@ -17,7 +17,8 @@ Sein Zweck besteht darin, Teile einer Anwendung zu identifizieren, die langsam s
 
 ## Verwendung {#usage}
 
-Ein `Profiler` kann überall in einem Reactbaum hinzugefügt werden, um die Kosten für das Rendern dieses Teils des Baums zu messen. Es erfordert zwei Props: eine `id` (String) und einen `onRender`-Callback (Funktion), die React jedes Mal aufruft, wenn eine Komponente innerhalb des Baums ein Update "committet".
+Ein `Profiler` kann überall in einem Reactbaum hinzugefügt werden, um die Kosten für das Rendern dieses Teils des Baums zu messen. 
+Es erfordert zwei Props: eine `id` (String) und einen `onRender`-Callback (Funktion), die React jedes Mal aufruft, wenn eine Komponente innerhalb des Baums ein Update "committet".
 
 Um beispielsweise eine `Navigation`-Komponente und ihre Nachkommen zu profilieren:
 
