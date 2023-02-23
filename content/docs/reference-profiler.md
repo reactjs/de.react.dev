@@ -7,7 +7,7 @@ permalink: docs/profiler.html
 ---
 
 Der `Profiler` misst, wie oft eine React-Anwendung rendert und wie hoch die "Kosten" des Renderns sind. 
-Sein Zweck besteht darin, Teile einer Anwendung zu identifizieren, die langsam sind und von [Optimierungen wie der Speicherung](/docs/hooks-faq.html#how-to-memoize-calculations) profitieren könnten.
+Sein Zweck besteht darin, Teile einer Anwendung zu identifizieren, die langsam sind und von [Optimierungen wie Memoisierung](/docs/hooks-faq.html#how-to-memoize-calculations) profitieren könnten.
 
 > Hinweis:
 >
