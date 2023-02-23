@@ -93,7 +93,7 @@ function onRenderCallback(
 
 Schauen wir uns die einzelnen Props genauer an:
 
-* **`ID: Zeichenkette`** -
+* **`id: string`** -
 Die 'id'-Prop des `Profiler`-Baums, der gerade übergeben wurde.
 Dies kann verwendet werden, um zu identifizieren, welcher Teil des Baums festgeschrieben wurde, wenn Sie mehrere Profiler verwenden.
 * **`phase: "mount" | "update"`** -
