@@ -94,7 +94,7 @@ function onRenderCallback(
 Schauen wir uns die einzelnen Props genauer an:
 
 * **`id: string`** -
-Die 'id'-Prop des `Profiler`-Baums, der gerade übergeben wurde.
+Das 'id'-Prop des `Profiler`-Baums, der gerade übergeben wurde.
 Dies kann verwendet werden, um zu identifizieren, welcher Teil des Baums festgeschrieben wurde, wenn Sie mehrere Profiler verwenden.
 * **`phase: "mount" | "update"`** -
 Gibt an, ob der Baum gerade zum ersten Mal gemountet oder aufgrund einer Änderung der Props, des Status oder der Hooks neu gerendert wurde.
