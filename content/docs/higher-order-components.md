@@ -4,6 +4,14 @@ title: Higher-Order Components
 permalink: docs/higher-order-components.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> Higher-order components are not commonly used in modern React code.
+
+</div>
+
 Ein Higher-Order-Component (HOC) ist eine moderne Technologie zur Wiederverwendung von Komponentenlogik in React. HOCs sind kein Teil der React API an sich, sondern ein Schema welches sich aus der Kompositionstechnik von React ergibt.
 
 Konkret ist **ein Higher-Order Component eine Funktion, die eine Komponente übernimmt und eine neue Komponente zurückgibt.**

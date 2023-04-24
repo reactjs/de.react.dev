@@ -6,6 +6,16 @@ category: Reference
 permalink: docs/profiler.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React:
+>
+> - [`<Profiler>`](https://react.dev/reference/react/Profiler)
+
+</div>
+
 Der `Profiler` misst, wie oft eine React-Anwendung rendert und wie hoch die "Kosten" des Renderns sind. 
 Sein Zweck besteht darin, Teile einer Anwendung zu identifizieren, die langsam sind und von [Optimierungen wie Memoisierung](/docs/hooks-faq.html#how-to-memoize-calculations) profitieren könnten.
 

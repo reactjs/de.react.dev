@@ -4,6 +4,16 @@ title: Fragments
 permalink: docs/fragments.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React:
+>
+> - [`<Fragment>`](https://react.dev/reference/react/Fragment)
+
+</div>
+
 Es kommt häufig vor, dass eine Komponente mehrere Elemente umfasst. Mit Fragments kannst du eine Liste von Kindelementen gruppieren, ohne dem DOM einen zusätzlichen Knoten hinzuzufügen.
 
 ```js

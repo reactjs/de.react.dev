@@ -4,13 +4,15 @@ title: Abgleich
 permalink: docs/reconciliation.html
 ---
 
-> Try the new React documentation.
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
 > 
 > These new documentation pages teach modern React and include live examples:
 >
-> - [Preserving and Resetting State](https://beta.reactjs.org/learn/preserving-and-resetting-state)
->
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> - [Preserving and Resetting State](https://react.dev/learn/preserving-and-resetting-state)
+
+</div>
 
 React bietet eine deklarative API, sodass du dich nicht bei jeder Aktualisierung um die genauen Änderungen kümmern musst. Dies erleichtert das Erstellen von Anwendungen erheblich. Es ist jedoch möglicherweise nicht offensichtlich, wie dies in React implementiert ist. Dieser Artikel erklärt welche Entscheidungen wir in Reacts Vergleichsalgorithmus getroffen haben, damit Komponentenaktualisierungen vorhersehbar und gleichzeitig schnell genug für leistungsstarke Apps sind.
 

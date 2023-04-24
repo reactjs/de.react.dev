@@ -6,11 +6,13 @@ redirect_from:
   - "docs/react-api.html#typechecking-with-proptypes"
 ---
 
-> Hinweis:
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
 >
-> `React.PropTypes` ist seit React v15.5 in ein anderes Paket umgezogen. Bitte benutze stattdessen [die `prop-types`-Bibliothek](https://www.npmjs.com/package/prop-types).
->
->Wir stellen [ein Codemod-Skript](/blog/2017/04/07/react-v15.5.0.html#migrating-from-reactproptypes) zur Verfügung, um die Konvertierung zu automatisieren.
+> PropTypes aren't commonly used in modern React. Use TypeScript for static type checking.
+
+</div>
 
 Wenn deine Anwendung wächst, kannst du viele Bugs mit einer Typprüfung abfangen. Für einige Anwendungen lassen sich JavaScript-Erweiterungen wie [Flow](https://flow.org/) oder [TypeScript](https://www.typescriptlang.org/) verwenden, um die gesamte Anwendung zu überprüfen. Aber selbst wenn du diese nicht verwendest, hat React einige eingebaute Fähigkeiten zur Überprüfung von Typen. Um die Typprüfung an den Props für eine Komponente durchzuführen, kannst du die spezielle Eigenschaft `propTypes` zuweisen:
 

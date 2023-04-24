@@ -4,6 +4,15 @@ title: Render Props
 permalink: docs/render-props.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+>
+> Render props are used in modern React, but aren't very common.  
+> For many cases, they have been replaced by [custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks).
+
+</div>
+
 Der Begriff ["render prop"](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) bezieht sich bezieht sich auf eine Technik um Code zwischen React-Komponenten auszutauschen. Hierzu nutzt man ein Prop dessen Wert eine Funktion ist.
 
 Eine Komponente mit einem "render prop" nimmt eine Funktion, die ein React Element zurückgibt und ruft sie auf, anstatt eine eigene zu Render-Logik zu implementieren.

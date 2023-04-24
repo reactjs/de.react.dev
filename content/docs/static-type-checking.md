@@ -4,6 +4,14 @@ title: Statische Typprüfung
 permalink: docs/static-type-checking.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+>
+> Check out [React TypeScript cheatsheet](https://react-typescript-cheatsheet.netlify.app/) for how to use React with TypeScript.
+
+</div>
+
 Statische Typprüfer, wie [Flow](https://flow.org/) und [TypeScript](https://www.typescriptlang.org/) erkennen bestimmte Arten von Problemen, bevor der Code ausgeführt wird. Der Workflow bei der Entwicklung wird zum Beispiel durch Autovervollständigung verbessert. Daher empfehlen wir Flow oder Typescript für größere Codebasen, anstelle von `PropTypes`.
 
 ## Flow {#flow}

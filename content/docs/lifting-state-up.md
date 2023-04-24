@@ -9,13 +9,15 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
-> Try the new React documentation.
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
 > 
 > These new documentation pages teach modern React and include live examples:
 >
-> - [Sharing State Between Components](https://beta.reactjs.org/learn/sharing-state-between-components)
->
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> - [Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)
+
+</div>
 
 Häufig müssen mehrere Komponenten dieselben sich ändernden Daten widerspiegeln. Wir empfehlen, den gemeinsamen State bis zum nächsten gemeinsamen Vorfahren anzuheben. Schauen wir uns anhand eines Beispiels an, wie das funktioniert.
 
