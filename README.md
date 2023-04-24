@@ -1,6 +1,6 @@
-# react.dev
+# de.react.dev
 
-This repo contains the source code and documentation powering [react.dev](https://react.dev/).
+This repo contains the source code and documentation powering [de.react.dev](https://de.react.dev/).
 
 ## Getting started
 
@@ -10,7 +10,7 @@ This repo contains the source code and documentation powering [react.dev](https:
 1. Node: any 12.x version starting with v12.0.0 or greater
 1. Yarn: See [Yarn website for installation instructions](https://yarnpkg.com/lang/en/docs/install/)
 1. A fork of the repo (for any contributions)
-1. A clone of the [react.dev repo](https://github.com/reactjs/react.dev) on your local machine
+1. A clone of the [de.react.dev repo](https://github.com/reactjs/de.react.dev) on your local machine
 
 ### Installation
 
@@ -51,7 +51,7 @@ The documentation is divided into several sections with a different tone and pur
 
 1. `git add -A && git commit -m "My message"` (replacing `My message` with a commit message, such as `Fix header logo on Android`) to stage and commit your changes
 1. `git push my-fork-name the-name-of-my-branch`
-1. Go to the [react.dev repo](https://github.com/reactjs/react.dev) and you should see recently pushed branches.
+1. Go to the [de,react.dev repo](https://github.com/reactjs/de,react.dev) and you should see recently pushed branches.
 1. Follow GitHub's instructions.
 1. If possible, include screenshots of visual changes. A preview build is triggered after your changes are pushed to GitHub.
 
@@ -60,4 +60,4 @@ The documentation is divided into several sections with a different tone and pur
 If you are interested in translating `react.dev`, please see the current translation efforts [here](https://github.com/reactjs/react.dev/issues/4135).
 
 ## License
-Content submitted to [react.dev](https://react.dev/) is CC-BY-4.0 licensed, as found in the [LICENSE-DOCS.md](https://github.com/reactjs/react.dev/blob/main/LICENSE-DOCS.md) file.
+Content submitted to [de.react.dev](https://de.react.dev/) is CC-BY-4.0 licensed, as found in the [LICENSE-DOCS.md](https://github.com/reactjs/react.dev/blob/main/LICENSE-DOCS.md) file.
