@@ -8,6 +8,15 @@ prev: getting-started.html
 next: create-a-new-react-app.html
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> See [Add React to an Existing Project](https://react.dev/learn/add-react-to-an-existing-project) for the recommended ways to add React.
+
+</div>
+
 Verwende so wenig oder so viel React wie du möchtest.
 
 React wurde von Beginn an für eine schrittweise Benutzung konzipiert und du kannst so wenig oder so viel React benutzen, wie du möchtest. Vielleicht möchtest du zu einer existierenden Seite nur an wenigen Stellen ein paar kleine "Spritzer von Interaktivität" hinzufügen. React Komponenten sind perfekt dafür geeignet.

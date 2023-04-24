@@ -4,6 +4,16 @@ title: Fehlergrenzen
 permalink: docs/error-boundaries.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React:
+>
+> - [`React.Component`: Catching rendering errors with an error boundary](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary)
+
+</div>
+
 In der Vergangenheit, führten JavaScript-Fehler in Komponenten zu einem fehlerhaften Zustand innerhalb von React, welcher ein [Auftreten](https://github.com/facebook/react/issues/4026) [kryptischer](https://github.com/facebook/react/issues/6895) [Fehlermeldungen](https://github.com/facebook/react/issues/8579) in den folgenden Render-Vorgängen verursachte. Diese Fehler wurden immer von einem zuvor aufgetretenen Fehler in der Anwendung verursacht, jedoch war seitens React keine Möglichkeit bereitgestellt, um mit Fehlern in Komponenten elegant umzugehen.
 
 

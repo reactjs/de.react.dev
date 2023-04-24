@@ -4,15 +4,17 @@ title: Unkontrollierte Komponenten
 permalink: docs/uncontrolled-components.html
 ---
 
-> Try the new React documentation.
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
 > 
 > These new documentation pages teach modern React and include live examples:
 >
-> - [`<input>`](https://beta.reactjs.org/reference/react-dom/components/input)
-> - [`<select>`](https://beta.reactjs.org/reference/react-dom/components/select)
-> - [`<textarea>`](https://beta.reactjs.org/reference/react-dom/components/textarea)
->
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> - [`<input>`](https://react.dev/reference/react-dom/components/input)
+> - [`<select>`](https://react.dev/reference/react-dom/components/select)
+> - [`<textarea>`](https://react.dev/reference/react-dom/components/textarea)
+
+</div>
 
 In den meisten Fällen empfehlen wir die Verwendung von [kontrollierten Komponenten](/docs/forms.html#controlled-components) zur Implementierung von Formularen. In einer kontrollierten Komponente werden Formulardaten von einer React Komponente verarbeitet. Die Alternative sind unkontrollierte Komponenten, bei denen die Formulardaten vom DOM selbst verarbeitet werden.
 

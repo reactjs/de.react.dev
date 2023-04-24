@@ -13,6 +13,12 @@ redirect_from:
   - "docs/jsx-in-depth-ko-KR.html"
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+
+</div>
+
 Im Grunde stellt JSX nur eine schönere Syntax für die `React.createElement(component, props, ...children)`-Funktion zur Verfügung. Der JSX-Code:
 
 ```js

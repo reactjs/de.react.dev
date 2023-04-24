@@ -4,6 +4,17 @@ title: Code-Aufteilung
 permalink: docs/code-splitting.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`lazy`](https://react.dev/reference/react/lazy)
+> - [`<Suspense>`](https://react.dev/reference/react/Suspense)
+
+</div>
+
 ## Bundling {#bundling}
 
 Die meisten React Anwendungen werden ihre Dateien durch Tools wie [Webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org/) oder [Browserify](http://browserify.org/) zusammengeführt haben. Bundling nennt sich der Prozess, in dem importierte Dateien zu einer Datei zusammengefügt werden: ein "Bündel (engl. bundle)". Dieses Bundle kann dann in eine Webseite eingebettet werden um eine komplette Anwendung auf einmal zu laden.

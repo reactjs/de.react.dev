@@ -6,6 +6,16 @@ prev: hooks-custom.html
 next: hooks-faq.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+>
+> These new documentation pages teach modern React:
+>
+> - [`react`: Hooks](https://react.dev/reference/react)
+
+</div>
+
 *Hooks* sind ein neues Feature in React 16.8. Damit lassen sich State und andere React Features nutzen, ohne dass eine Klasse geschrieben werden muss.
 
 Diese Seite beschreibt die APIs für die bereits in React implementierten Hooks.
@@ -35,9 +45,13 @@ Wenn Hooks neu für dich sind, schau dir zuerst [den Überblick](/docs/hooks-ove
 
 ### `useState` {#usestate}
 
-> Try the new React documentation for [`useState`](https://beta.reactjs.org/reference/react/useState).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useState`](https://react.dev/reference/react/useState).
+
+</div>
 
 ```js
 const [state, setState] = useState(initialState);
@@ -120,9 +134,13 @@ In dem seltenen Fall, dass du die synchrone Anwendung der DOM-Aktualisierung erz
 
 ### `useEffect` {#useeffect}
 
-> Try the new React documentation for [`useEffect`](https://beta.reactjs.org/reference/react/useEffect).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useEffect`](https://react.dev/reference/react/useEffect).
+
+</div>
 
 ```js
 useEffect(didUpdate);
@@ -203,9 +221,13 @@ Das Array der Abhängigkeiten wird nicht als Argument an die Effektfunktion übe
 
 ### `useContext` {#usecontext}
 
-> Try the new React documentation for [`useContext`](https://beta.reactjs.org/reference/react/useContext).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useContext`](https://react.dev/reference/react/useContext).
+
+</div>
 
 
 ```js
@@ -280,9 +302,13 @@ Die folgenden Hooks sind entweder Varianten der grundlegenden Hooks aus dem vori
 
 ### `useReducer` {#usereducer}
 
-> Try the new React documentation for [`useReducer`](https://beta.reactjs.org/reference/react/useReducer).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useReducer`](https://react.dev/reference/react/useReducer).
+
+</div>
 
 
 ```js
@@ -388,9 +414,13 @@ Beachte, dass React diese spezielle Komponente möglicherweise noch einmal rende
 
 ### `useCallback` {#usecallback}
 
-> Try the new React documentation for [`useCallback`](https://beta.reactjs.org/reference/react/useCallback).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useCallback`](https://react.dev/reference/react/useCallback).
+
+</div>
 
 ```js
 const memoizedCallback = useCallback(
@@ -415,9 +445,13 @@ Gibt einen [memoisierten](https://en.wikipedia.org/wiki/Memoization) Callback zu
 
 ### `useMemo` {#usememo}
 
-> Try the new React documentation for [`useMemo`](https://beta.reactjs.org/reference/react/useMemo).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useMemo`](https://react.dev/reference/react/useMemo).
+
+</div>
 
 
 ```js
@@ -442,9 +476,13 @@ Wenn kein Array angegeben wird, wird der Wert bei jedem Rendern berechnet.
 
 ### `useRef` {#useref}
 
-> Try the new React documentation for [`useRef`](https://beta.reactjs.org/reference/react/useRef).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useRef`](https://react.dev/reference/react/useRef).
+
+</div>
 
 
 ```js
@@ -483,9 +521,13 @@ Beachte, dass `useRef` dich *nicht* benachrichtigt, wenn sich sein Inhalt änder
 
 ### `useImperativeHandle` {#useimperativehandle}
 
-> Try the new React documentation for [`useImperativeHandle`](https://beta.reactjs.org/reference/react/useImperativeHandle).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useImperativeHandle`](https://react.dev/reference/react/useImperativeHandle).
+
+</div>
 
 
 ```js
@@ -510,9 +552,13 @@ In diesem Beispiel wäre eine übergeordnete Komponente, die `<FancyInput ref={i
 
 ### `useLayoutEffect` {#uselayouteffect}
 
-> Try the new React documentation for [`useLayoutEffect`](https://beta.reactjs.org/reference/react/useLayoutEffect).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useLayoutEffect`](https://react.dev/reference/react/useLayoutEffect).
+
+</div>
 
 
 Die Signatur dieser Hook ist identisch mit `useEffect`, aber er wird synchron nach allen DOM-Mutationen ausgelöst. Verwende ihn, um das Layout aus dem DOM zu lesen und synchron neu zu rendern. Aktualisierungen, die innerhalb von `useLayoutEffect` geplant sind, werden synchron vorgenommen, bevor der Browser die Chance hat zu malen.
@@ -530,9 +576,13 @@ Bevorzuge, wenn möglich, den Standard `useEffect`, um zu vermeiden, dass visuel
 
 ### `useDebugValue` {#usedebugvalue}
 
-> Try the new React documentation for [`useDebugValue`](https://beta.reactjs.org/reference/react/useDebugValue).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useDebugValue`](https://react.dev/reference/react/useDebugValue).
+
+</div>
 
 
 ```js
@@ -575,9 +625,13 @@ useDebugValue(date, date => date.toDateString());
 
 ### `useDeferredValue` {#usedeferredvalue}
 
-> Try the new React documentation for [`useDeferredValue`](https://beta.reactjs.org/reference/react/useDeferredValue).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useDeferredValue`](https://react.dev/reference/react/useDeferredValue).
+
+</div>
 
 
 ```js
@@ -618,9 +672,13 @@ Die Kinder zu memoisieren sagt React, dass sie nur neu gerendert werden müssen,
 
 ### `useTransition` {#usetransition}
 
-> Try the new React documentation for [`useTransition`](https://beta.reactjs.org/reference/react/useTransition).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useTransition`](https://react.dev/reference/react/useTransition).
+
+</div>
 
 
 ```js
@@ -668,9 +726,13 @@ function App() {
 
 ### `useId` {#useid}
 
-> Try the new React documentation for [`useId`](https://beta.reactjs.org/reference/react/useId).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useId`](https://react.dev/reference/react/useId).
+
+</div>
 
 
 ```js
@@ -730,9 +792,13 @@ Die folgenden Hooks sind für Autoren von Libraries vorgesehen, um diese tief in
 
 ### `useSyncExternalStore` {#usesyncexternalstore}
 
-> Try the new React documentation for [`useSyncExternalStore`](https://beta.reactjs.org/reference/react/useSyncExternalStore).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useSyncExternalStore`](https://react.dev/reference/react/useSyncExternalStore).
+
+</div>
 
 
 ```js
@@ -781,9 +847,13 @@ const selectedField = useSyncExternalStore(
 
 ### `useInsertionEffect` {#useinsertioneffect}
 
-> Try the new React documentation for [`useInsertionEffect`](https://beta.reactjs.org/reference/react/useInsertionEffect).
+<div class="scary">
+
+> This content is out of date.
 >
-> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+> Read the new React documentation for [`useInsertionEffect`](https://react.dev/reference/react/useInsertionEffect).
+
+</div>
 
 ```js
 useInsertionEffect(didUpdate);

@@ -4,6 +4,19 @@ title: Integration mit anderen Bibliotheken
 permalink: docs/integrating-with-other-libraries.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React:
+>
+> - [`useSyncExternalStore`: Subscribing to an external store 
+](https://react.dev/reference/react/useSyncExternalStore#subscribing-to-an-external-store)
+> - [`createPortal`: Rendering React components into non-React DOM nodes 
+](https://react.dev/reference/react-dom/createPortal#rendering-react-components-into-non-react-dom-nodes)
+
+</div>
+
 React kann in jeder Webanwendung verwendet werden. Es kann in andere Anwendungen eingebettet werden, und mit ein wenig Sorgfalt können andere Anwendungen in React eingebettet werden. In diesem Handbuch werden einige der gebräuchlichsten Anwendungsfälle untersucht, wobei der Schwerpunkt auf der Integration mit [jQuery](https://jquery.com/) und [Backbone](https://backbonejs.org/) liegt der gleiche Ansatz kann jedoch angewandt werden, um Komponenten in bereits vorhandenen Code zu integrieren.
 
 ## Integration mit DOM-Manipulations-Plugins {#integrating-with-dom-manipulation-plugins}

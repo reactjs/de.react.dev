@@ -8,6 +8,12 @@ prev: lifting-state-up.html
 next: thinking-in-react.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+
+</div>
+
 React verfügt über ein leistungsfähiges Kompositions-Modell, und wir empfehlen die Verwendung von Komposition anstelle von Vererbung um Code zwischen Komponenten wiederzuverwenden.
 
 In diesem Abschnitt werden wir einige Problemstellungen betrachten, bei denen Entwickler für die React neu ist oftmals zu Vererbung greifen, und zeigen wie diese mit Hilfe von Komposition gelöst werden können.

@@ -6,6 +6,17 @@ redirect_from:
   - "docs/advanced-performance.html"
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React:
+>
+> - [`memo`: Skipping re-rendering when props are unchanged
+](https://react.dev/reference/react/memo#skipping-re-rendering-when-props-are-unchanged)
+
+</div>
+
 Intern verwendet React mehrere clevere Techniken, um die Anzahl kostspieliger DOM-Vorgänge zu minimieren, die nötig sind, um die Benutzeroberfläche zu aktualisieren. Für viele Anwendungen führt React zu einer schnellen Benutzeroberfläche, ohne dass die Performance mit viel Aufwand optimiert werden muss. Trotzdem gibt es mehrere Möglichkeiten, wie du deine React-Anwendung noch schneller machen kannst.
 
 ## Benutze den Produktions-Build {#use-the-production-build}
