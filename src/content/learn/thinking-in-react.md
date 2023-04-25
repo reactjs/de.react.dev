@@ -4,13 +4,13 @@ title: Denken in React
 
 <Intro>
 
-React kann die Art und Weise verändern, wie Sie über die Designs, die Sie betrachten und die Anwendungen, die Sie erstellen, denken. Wenn Sie eine Benutzeroberfläche mit React erstellen, werden Sie sie zunächst in Teile zerlegen, die *Komponenten* genannt werden. Dann werden Sie die verschiedenen visuellen Zustände für jede Ihrer Komponenten beschreiben. Schließlich werden Sie Ihre Komponenten miteinander verbinden, damit die Daten durch sie fließen. In diesem Tutorial führen wir Sie durch den Gedankenprozess der Erstellung einer durchsuchbaren Produktdatentabelle mit React.
+React kann die Art und Weise verändern, wie du über die Designs, die du betrachtest und die Anwendungen, die du erstellst, denken. Wenn du eine Benutzeroberfläche mit React erstellen, wirst du sie zunächst in Teile zerlegen, die *Komponenten* genannt werden. Dann wirst du die verschiedenen visuellen Zustände für jede Ihrer Komponenten beschreiben. Schließlich wirst du Ihre Komponenten miteinander verbinden, damit die Daten durch sie fließen. In diesem Tutorial führen wir dich durch den Gedankenprozess der Erstellung einer durchsuchbaren Produktdatentabelle mit React.
 
 </Intro>
 
-## Beginnen Sie mit dem Mockup {/*start-with-the-mockup*/}
+## Beginne mit dem Mockup {/*start-with-the-mockup*/}
 
-Stellen Sie sich vor, Sie haben bereits eine JSON-API und ein Mockup von einem Designer.
+Stelle dir vor, du hast bereits eine JSON-API und ein Mockup von einem Designer.
 
 Die JSON-API gibt einige Daten zurück, die wie folgt aussehen:
 
@@ -29,19 +29,19 @@ Das Mockup sieht folgendermaßen aus:
 
 <img src="/images/docs/s_thinking-in-react_ui.png" width="300" style={{margin: '0 auto'}} />
 
-Um eine Benutzeroberfläche in React zu implementieren, folgen Sie normalerweise denselben fünf Schritten.
+Um eine Benutzeroberfläche in React zu implementieren, folgst du normalerweise denselben fünf Schritten.
 
-## Schritt 1: Zerlegen Sie die Benutzeroberfläche in eine Komponentenhierarchie {/*Schritt-1-break-the-ui-into-a-component-hierarchy*/}
+## Schritt 1: Zerlege die Benutzeroberfläche in eine Komponentenhierarchie {/*step-1-break-the-ui-into-a-component-hierarchy*/}
 
-Beginnen Sie damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zeichnen und sie zu benennen. Wenn Sie mit einem Designer zusammenarbeiten, hat er diese Komponenten vielleicht schon in seinem Designtool benannt. Fragen Sie sie!
+Beginne damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zeichnen und sie zu benennen. Wenn du mit einem Designer zusammenarbeitest, hat er diese Komponenten vielleicht schon in seinem Designtool benannt. Frage ihn oder sie!
 
-Je nach Ihrem Hintergrund können Sie darüber nachdenken, ein Design auf verschiedene Weise in Komponenten aufzuteilen:
+Je nach Ihrem Hintergrund kannst du darüber nachdenken, ein Design auf verschiedene Weise in Komponenten aufzuteilen:
 
-* **Programmierung** - Verwenden Sie dieselben Techniken, um zu entscheiden, ob Sie eine neue Funktion oder ein neues Objekt erstellen sollten. Eine dieser Techniken ist das [Prinzip der einzigen Verantwortung] (https://en.wikipedia.org/wiki/Single_responsibility_principle), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
-  **CSS**--Überlegen Sie, wofür Sie Klassenselektoren erstellen würden. (Komponenten sind jedoch etwas weniger granular.)
-* **Design**-überlegen Sie, wie Sie die Ebenen des Designs organisieren würden.
+* **Programmierung** - Verwende dieselben Techniken, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt erstellen sollten. Eine dieser Techniken ist das [Prinzip der einzigen Verantwortung](https://en.wikipedia.org/wiki/Single_responsibility_principle), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
+* **CSS**--Du solltest überlegen, wofür Klassenselektoren erstellt werden können. (Komponenten sind jedoch etwas weniger granular.)
+* **Design**-überlege, wie die Ebenen des Designs organisiert werden können.
 
-Wenn Ihr JSON gut strukturiert ist, werden Sie oft feststellen, dass es sich auf natürliche Weise der Komponentenstruktur Ihrer Benutzeroberfläche anpasst. Das liegt daran, dass UI- und Datenmodelle oft dieselbe Informationsarchitektur haben, d. h. dieselbe Form. Unterteilen Sie Ihre Benutzeroberfläche in Komponenten, wobei jede Komponente einem Teil Ihres Datenmodells entspricht.
+Wenn Ihr JSON gut strukturiert ist, wirst du oft feststellen, dass es sich auf natürliche Weise der Komponentenstruktur Ihrer Benutzeroberfläche anpasst. Das liegt daran, dass UI- und Datenmodelle oft dieselbe Informationsarchitektur haben, d. h. dieselbe Form. Unterteile die Benutzeroberfläche in Komponenten, wobei jede Komponente einem Teil Ihres Datenmodells entspricht.
 
 Auf diesem Bildschirm gibt es fünf Komponenten:
 
@@ -61,9 +61,9 @@ Auf diesem Bildschirm gibt es fünf Komponenten:
 
 </FullWidth>
 
-If you look at `ProductTable` (lavender), you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and you could go either way. For this example, it is a part of `ProductTable` because it appears inside the `ProductTable`'s list. However, if this header grows to be complex (e.g., if you add sorting), you can move it into its own `ProductTableHeader` component.
+Wenn du dir `ProductTable` (lavender) ansehen, wirst du feststellen, dass der Tabellenkopf (der die Bezeichnungen "Name" und "Preis" enthält) keine eigene Komponente ist. Dies ist eine Frage der Vorliebe, du kannst so oder so vorgehen. In diesem Beispiel ist sie ein Teil von "ProductTable", weil sie innerhalb der Liste von `ProductTable` erscheint. Wenn diese Kopfzeile jedoch zu komplex wird (z.B. wenn du eine Sortierung hinzufügst), kannst du sie in eine eigene Komponente `ProductTableHeader` verschieben.
 
-Now that you've identified the components in the mockup, arrange them into a hierarchy. Components that appear within another component in the mockup should appear as a child in the hierarchy:
+Nachdem du nun die Komponenten im Mockup identifiziert hast, ordnen sie in einer Hierarchie an. Komponenten, die innerhalb einer anderen Komponente im Mockup erscheinen, sollten in der Hierarchie als untergeordnete Komponenten erscheinen:
 
 * `FilterableProductTable`
     * `SearchBar`
@@ -71,13 +71,13 @@ Now that you've identified the components in the mockup, arrange them into a hie
         * `ProductCategoryRow`
         * `ProductRow`
 
-## Step 2: Build a static version in React {/*step-2-build-a-static-version-in-react*/}
+## Schritt 2: Erstellen einer statischen Version in React {/*step-2-build-a-static-version-in-react*/}
 
-Now that you have your component hierarchy, it's time to implement your app. The most straightforward approach is to build a version that renders the UI from your data model without adding any interactivity... yet! It's often easier to build the static version first and add interactivity later. Building a static version requires a lot of typing and no thinking, but adding interactivity requires a lot of thinking and not a lot of typing.
+Nun, da du Ihre Komponentenhierarchie haben, ist es an der Zeit, Ihre Anwendung zu implementieren. Der einfachste Ansatz besteht darin, eine Version zu erstellen, die die Benutzeroberfläche aus Ihrem Datenmodell wiedergibt, ohne Interaktivität hinzuzufügen... noch nicht! Oft ist es einfacher, zuerst die statische Version zu erstellen und die Interaktivität später hinzuzufügen. Die Erstellung einer statischen Version erfordert viel Tipparbeit und kein Nachdenken, aber das Hinzufügen von Interaktivität erfordert viel Nachdenken und nicht viel Tipparbeit.
 
-To build a static version of your app that renders your data model, you'll want to build [components](/learn/your-first-component) that reuse other components and pass data using [props.](/learn/passing-props-to-a-component) Props are a way of passing data from parent to child. (If you're familiar with the concept of [state](/learn/state-a-components-memory), don't use state at all to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.)
+Um eine statische Version Ihrer Anwendung zu erstellen, die Ihr Datenmodell wiedergibt, solltest du [Komponenten](/learn/your-first-component) erstellen, die andere Komponenten wiederverwenden und Daten mithilfe von [props.](/learn/passing-props-to-a-component) weitergeben. (Wenn du mit dem Konzept von [state](/learn/state-a-components-memory) vertraut bist, verwende es für die Erstellung dieser statischen Version überhaupt keinen Zustand. State ist nur für Interaktivität reserviert, d.h. für Daten, die sich mit der Zeit ändern. Da es sich um eine statische Version der Anwendung handelt, brauchst du es nicht).
 
-You can either build "top down" by starting with building the components higher up in the hierarchy (like `FilterableProductTable`) or "bottom up" by working from components lower down (like `ProductRow`). In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up.
+Man kann entweder "von oben nach unten" bauen, indem man mit den Komponenten beginnt, die in der Hierarchie weiter oben stehen (wie `FilterableProductTable`), oder "von unten nach oben", indem man mit Komponenten arbeitet, die weiter unten stehen (wie `ProductRow`). Bei einfacheren Beispielen ist es in der Regel einfacher, von oben nach unten vorzugehen, und bei größeren Projekten ist es einfacher, von unten nach oben vorzugehen.
 
 <Sandpack>
 
