@@ -4,34 +4,34 @@ title: Denken in React
 
 <Intro>
 
-React can change how you think about the designs you look at and the apps you build. When you build a user interface with React, you will first break it apart into pieces called *components*. Then, you will describe the different visual states for each of your components. Finally, you will connect your components together so that the data flows through them. In this tutorial, we’ll guide you through the thought process of building a searchable product data table with React.
+React kann die Art und Weise verändern, wie Sie über die Designs, die Sie betrachten und die Anwendungen, die Sie erstellen, denken. Wenn Sie eine Benutzeroberfläche mit React erstellen, werden Sie sie zunächst in Teile zerlegen, die *Komponenten* genannt werden. Dann werden Sie die verschiedenen visuellen Zustände für jede Ihrer Komponenten beschreiben. Schließlich werden Sie Ihre Komponenten miteinander verbinden, damit die Daten durch sie fließen. In diesem Tutorial führen wir Sie durch den Gedankenprozess der Erstellung einer durchsuchbaren Produktdatentabelle mit React.
 
 </Intro>
 
-## Start with the mockup {/*start-with-the-mockup*/}
+## Beginnen Sie mit dem Mockup {/*start-with-the-mockup*/}
 
-Imagine that you already have a JSON API and a mockup from a designer.
+Stellen Sie sich vor, Sie haben bereits eine JSON-API und ein Mockup von einem Designer.
 
-The JSON API returns some data that looks like this:
+Die JSON-API gibt einige Daten zurück, die wie folgt aussehen:
 
 ```json
 [
-  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
-  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
-  { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
-  { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
-  { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
-  { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
+  { category: "Fruits", price: "€1", stocked: true, name: "Äpfel" },
+  { category: "Fruits", price: "€1", stocked: true, name: "Drachenfrucht" },
+  { category: "Fruits", price: "€2", stocked: false, name: "Passionsfrucht" },
+  { category: "Vegetables", price: "€2", stocked: true, name: "Spinat" },
+  { category: "Vegetables", price: "€4", stocked: false, name: "Kürbis" },
+  { category: "Vegetables", price: "€1", stocked: true, name: "Erbsen" }
 ]
 ```
 
-The mockup looks like this:
+Das Mockup sieht folgendermaßen aus:
 
 <img src="/images/docs/s_thinking-in-react_ui.png" width="300" style={{margin: '0 auto'}} />
 
-To implement a UI in React, you will usually follow the same five steps.
+Um eine Benutzeroberfläche in React zu implementieren, folgen Sie normalerweise denselben fünf Schritten.
 
-## Step 1: Break the UI into a component hierarchy {/*step-1-break-the-ui-into-a-component-hierarchy*/}
+## Schritt 1: Zerlegen Sie die Benutzeroberfläche in eine Komponentenhierarchie {/*Schritt-1-break-the-ui-into-a-component-hierarchy*/}
 
 Start by drawing boxes around every component and subcomponent in the mockup and naming them. If you work with a designer, they may have already named these components in their design tool. Ask them!
 
@@ -278,7 +278,8 @@ Add state to the component with the [`useState()` Hook.](/reference/react/useSta
 ```js
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
-  const [inStockOnly, setInStockOnly] = useState(false);  
+  const [inStockOnly, setInStockOnly] = useState(false);
+}  
 ```
 
 Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as props:
@@ -455,6 +456,8 @@ function SearchBar({ filterText, inStockOnly }) {
         type="text" 
         value={filterText} 
         placeholder="Search..."/>
+    </form>
+  )}
 ```
 
 However, you haven't added any code to respond to the user actions like typing yet. This will be your final step.
@@ -480,6 +483,8 @@ function FilterableProductTable({ products }) {
         inStockOnly={inStockOnly}
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
+    </div>
+        )}
 ```
 
 Inside the `SearchBar`, you will add the `onChange` event handlers and set the parent state from them:
