@@ -1,5 +1,5 @@
 ---
-title: Denken in React
+title: Die React-Denkweise
 ---
 
 <Intro>
@@ -73,9 +73,9 @@ Nachdem du nun die Komponenten im Mockup identifiziert hast, ordnen sie in einer
 
 ## Schritt 2: Erstellen einer statischen Version in React {/*step-2-build-a-static-version-in-react*/}
 
-Nun, da du Ihre Komponentenhierarchie haben, ist es an der Zeit, Ihre Anwendung zu implementieren. Der einfachste Ansatz besteht darin, eine Version zu erstellen, die die Benutzeroberfläche aus Ihrem Datenmodell wiedergibt, ohne Interaktivität hinzuzufügen... noch nicht! Oft ist es einfacher, zuerst die statische Version zu erstellen und die Interaktivität später hinzuzufügen. Die Erstellung einer statischen Version erfordert viel Tipparbeit und kein Nachdenken, aber das Hinzufügen von Interaktivität erfordert viel Nachdenken und nicht viel Tipparbeit.
+Nun, da du deine Komponentenhierarchie hast, ist es an der Zeit, Ihre Anwendung zu implementieren. Der einfachste Ansatz besteht darin, eine Version zu erstellen, die die Benutzeroberfläche aus Ihrem Datenmodell wiedergibt, ohne Interaktivität hinzuzufügen... noch nicht! Oft ist es einfacher, zuerst die statische Version zu erstellen und die Interaktivität später hinzuzufügen. Die Erstellung einer statischen Version erfordert viel Tipparbeit und kein Nachdenken, aber das Hinzufügen von Interaktivität erfordert viel Nachdenken und nicht viel Tipparbeit.
 
-Um eine statische Version Ihrer Anwendung zu erstellen, die Ihr Datenmodell wiedergibt, solltest du [Komponenten](/learn/your-first-component) erstellen, die andere Komponenten wiederverwenden und Daten mithilfe von [props.](/learn/passing-props-to-a-component) weitergeben. (Wenn du mit dem Konzept von [state](/learn/state-a-components-memory) vertraut bist, verwende es für die Erstellung dieser statischen Version überhaupt keinen Zustand. State ist nur für Interaktivität reserviert, d.h. für Daten, die sich mit der Zeit ändern. Da es sich um eine statische Version der Anwendung handelt, brauchst du es nicht).
+Um eine statische Version Ihrer Anwendung zu erstellen, die Ihr Datenmodell wiedergibt, solltest du [Komponenten](/learn/your-first-component) erstellen, die andere Komponenten wiederverwenden und Daten mithilfe von [props.](/learn/passing-props-to-a-component) weitergeben. (Wenn du mit dem Konzept von [state](/learn/state-a-components-memory) vertraut bist, verwende es für die Erstellung dieser statischen Version überhaupt keinen State. State ist nur für Interaktivität reserviert, d.h. für Daten, die sich mit der Zeit ändern. Da es sich um eine statische Version der Anwendung handelt, brauchst du es nicht).
 
 Man kann entweder "von oben nach unten" bauen, indem man mit den Komponenten beginnt, die in der Hierarchie weiter oben stehen (wie `FilterableProductTable`), oder "von unten nach oben", indem man mit Komponenten arbeitet, die weiter unten stehen (wie `ProductRow`). Bei einfacheren Beispielen ist es in der Regel einfacher, von oben nach unten vorzugehen, und bei größeren Projekten ist es einfacher, von unten nach oben vorzugehen.
 
@@ -195,85 +195,85 @@ td {
 
 </Sandpack>
 
-(If this code looks intimidating, go through the [Quick Start](/learn/) first!)
+(Wenn dieser Code einschüchternd wirkt, solltest du zuerst den [Schnellstart](/learn/) durchgehen!)
 
-After building your components, you'll have a library of reusable components that render your data model. Because this is a static app, the components will only return JSX. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. This is called _one-way data flow_ because the data flows down from the top-level component to the ones at the bottom of the tree.
+Nachdem du deine Komponenten erstellt hast, hast du eine Bibliothek mit wiederverwendbaren Komponenten, die dein Datenmodell darstellen. Da es sich um eine statische App handelt, geben die Komponenten nur JSX zurück. Die Komponente an der Spitze der Hierarchie (`FilterableProductTable`) nimmt dein Datenmodell als Props. Das nennt man _Einweg-Datenfluss_, weil die Daten von der obersten Komponente zu den Komponenten am unteren Ende des Baums fließen.
 
 <Pitfall>
 
-At this point, you should not be using any state values. That’s for the next step!
+Zu diesem Zeitpunkt solltest du noch keine State-Werte verwenden. Das ist für den nächsten Schritt!
 
 </Pitfall>
 
-## Step 3: Find the minimal but complete representation of UI state {/*step-3-find-the-minimal-but-complete-representation-of-ui-state*/}
+## Schritt 3: Finde die minimale, aber vollständige Darstellung des UI-State {/*step-3-find-the-minimal-but-complete-representation-of-ui-state*/}
 
-To make the UI interactive, you need to let users change your underlying data model. You will use *state* for this.
+Um die Benutzeroberfläche interaktiv zu gestalten, musst du den Benutzern die Möglichkeit geben, das zugrunde liegende Datenmodell zu ändern. Dafür verwendest du den *State*.
 
-Think of state as the minimal set of changing data that your app needs to remember. The most important principle for structuring state is to keep it [DRY (Don't Repeat Yourself).](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) Figure out the absolute minimal representation of the state your application needs and compute everything else on-demand. For example, if you're building a shopping list, you can store the items as an array in state. If you want to also display the number of items in the list, don't store the number of items as another state value--instead, read the length of your array.
+Der State ist die minimale Menge an sich ändernden Daten, die sich deine App merken muss. Das wichtigste Prinzip für die Strukturierung des States ist [DRY (Don't Repeat Yourself)] (https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Überlege dir die absolut minimale Darstellung des States, den deine Anwendung braucht, und berechne alles andere nach Bedarf. Wenn du zum Beispiel eine Einkaufsliste erstellst, kannst du die Artikel als Array in state speichern. Wenn du auch die Anzahl der Artikel in der Liste anzeigen willst, speicherst du die Anzahl der Artikel nicht als weiteren Statewert, sondern liest die Länge deines Arrays.
 
-Now think of all of the pieces of data in this example application:
+Denke jetzt an alle Daten in dieser Beispielanwendung:
 
-1. The original list of products
-2. The search text the user has entered
-3. The value of the checkbox
-4. The filtered list of products
+1. Die ursprüngliche Liste der Produkte
+2. Der Suchtext, den der Benutzer eingegeben hat
+3. Der Wert des Kontrollkästchens
+4. Die gefilterte Liste der Produkte
 
-Which of these are state? Identify the ones that are not:
+Welche davon sind State? Identifiziere die Produkte, die es nicht sind:
 
-* Does it **remain unchanged** over time? If so, it isn't state.
-* Is it **passed in from a parent** via props? If so, it isn't state.
-* **Can you compute it** based on existing state or props in your component? If so, it *definitely* isn't state!
+* Bleiben sie im Laufe der Zeit **unverändert**? Wenn ja, handelt es sich nicht um einen State.
+* Wird es **von einem Parent** über Props übergeben? Wenn ja, handelt es sich nicht um einen State.
+* **Kannst du ihn** auf der Grundlage von bestehenden States oder Props in deiner Komponente berechnen? Wenn ja, handelt es sich *definitiv* nicht um einen State!
 
-What's left is probably state.
+Was noch übrig ist, ist wahrscheinlich ein State.
 
-Let's go through them one by one again:
+Gehen wir sie noch einmal der Reihe nach durch:
 
-1. The original list of products is **passed in as props, so it's not state.** 
-2. The search text seems to be state since it changes over time and can't be computed from anything.
-3. The value of the checkbox seems to be state since it changes over time and can't be computed from anything.
-4. The filtered list of products **isn't state because it can be computed** by taking the original list of products and filtering it according to the search text and value of the checkbox.
+1. Die ursprüngliche Liste der Produkte wird **als Props übergeben, also ist es kein State**.
+2. Der Suchtext scheint ein State zu sein, da er sich im Laufe der Zeit ändert und nicht aus irgendetwas errechnet werden kann.
+3. Der Wert des Kontrollkästchens scheint ein State zu sein, da er sich im Laufe der Zeit ändert und nicht aus einem Wert berechnet werden kann.
+4. Die gefilterte Produktliste **ist kein State, denn sie kann berechnet werden**, indem man die ursprüngliche Produktliste nimmt und sie nach dem Suchtext und dem Wert des Kontrollkästchens filtert.
 
-This means only the search text and the value of the checkbox are state! Nicely done!
+Das bedeutet, dass nur der Suchtext und der Wert des Kontrollkästchens State sind! Sehr gut gemacht!
 
 <DeepDive>
 
-#### Props vs State {/*props-vs-state*/}
+#### Props vs. State {/*props-vs-state*/}
 
-There are two types of "model" data in React: props and state. The two are very different:
+Es gibt zwei Arten von "Modell"-Daten in React: props und state. Die beiden sind sehr unterschiedlich:
 
-* [**Props** are like arguments you pass](/learn/passing-props-to-a-component) to a function. They let a parent component pass data to a child component and customize its appearance. For example, a `Form` can pass a `color` prop to a `Button`.
-* [**State** is like a component’s memory.](/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
+* [**Props** sind wie Argumente, die du](/learn/passing-props-to-a-component) an eine Funktion übergibst. Mit ihnen kann eine übergeordnete Komponente Daten an eine untergeordnete Komponente weitergeben und ihr Aussehen anpassen. Zum Beispiel kann ein "Formular" die Eigenschaft "Farbe" an einen "Button" weitergeben.
+* [**State** ist so etwas wie das Gedächtnis einer Komponente.](/learn/state-a-components-memory) Mit ihm kann eine Komponente bestimmte Informationen speichern und sie als Reaktion auf Interaktionen ändern. Ein "Button" kann zum Beispiel den State "isHovered" speichern.
 
-Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and *pass it down* to child components as their props. It's okay if the difference still feels fuzzy on the first read. It takes a bit of practice for it to really stick!
+Props und States sind unterschiedlich, aber sie arbeiten zusammen. Eine übergeordnete Komponente speichert oft einige Informationen als State (damit sie sie ändern kann) und *gibt sie als Props an die untergeordneten Komponenten weiter*. Es ist in Ordnung, wenn dir der Unterschied beim ersten Lesen noch unklar ist. Es braucht ein bisschen Übung, um es wirklich zu verstehen!
 
 </DeepDive>
 
-## Step 4: Identify where your state should live {/*step-4-identify-where-your-state-should-live*/}
+## Schritt 4: Bestimme, wo dein State leben soll {/*step-4-identify-where-your-state-should-live*/}
 
-After identifying your app’s minimal state data, you need to identify which component is responsible for changing this state, or *owns* the state. Remember: React uses one-way data flow, passing data down the component hierarchy from parent to child component. It may not be immediately clear which component should own what state. This can be challenging if you’re new to this concept, but you can figure it out by following these steps!
+Nachdem du die minimalen State-Daten deiner App identifiziert hast, musst du herausfinden, welche Komponente für die Änderung dieses States verantwortlich ist oder den State *besitzt*. Denke daran: React verwendet einen einseitigen Datenfluss, bei dem die Daten in der Komponentenhierarchie von der Eltern- zur Kindkomponente weitergegeben werden. Es ist vielleicht nicht sofort klar, welche Komponente für welchen State zuständig ist. Das kann eine Herausforderung sein, wenn du dich mit diesem Konzept nicht auskennst, aber du kannst es herausfinden, wenn du diese Schritte befolgst!
 
-For each piece of state in your application:
+Für jeden State in deiner Anwendung:
 
-1. Identify *every* component that renders something based on that state.
-2. Find their closest common parent component--a component above them all in the hierarchy.
-3. Decide where the state should live:
-    1. Often, you can put the state directly into their common parent.
-    2. You can also put the state into some component above their common parent.
-    3. If you can't find a component where it makes sense to own the state, create a new component solely for holding the state and add it somewhere in the hierarchy above the common parent component.
+1. Identifiziere *jede* Komponente, die etwas auf der Grundlage dieses States rendert.
+2. Finde die nächstgelegene gemeinsame Elternkomponente - eine Komponente, die in der Hierarchie über allen steht.
+3. Entscheide, wo der State gespeichert werden soll:
+    1. Oft kannst du den State direkt in die gemeinsame übergeordnete Komponente einfügen.
+    2. Du kannst den Staat auch in eine Komponente über dem gemeinsamen Elternteil einfügen.
+    3. Wenn du keine Komponente findest, in der es sinnvoll ist, den State zu speichern, erstelle eine neue Komponente, die nur den State enthält, und füge sie irgendwo in der Hierarchie über der gemeinsamen übergeordneten Komponente ein.
 
-In the previous step, you found two pieces of state in this application: the search input text, and the value of the checkbox. In this example, they always appear together, so it makes sense to put them into the same place.
+Im vorigen Schritt hast du zwei Zustände in dieser Anwendung gefunden: den Sucheingabetext und den Wert des Kontrollkästchens. Da sie in diesem Beispiel immer zusammen vorkommen, ist es sinnvoll, sie an der gleichen Stelle einzufügen.
 
-Now let's run through our strategy for them:
+Gehen wir jetzt unsere Strategie für sie durch:
 
-1. **Identify components that use state:**
-    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value). 
-    * `SearchBar` needs to display that state (search text and checkbox value).
-1. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
-2. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
+1. **Identifiziere Komponenten, die einen State verwenden:**
+    * Die "Produkttabelle" muss die Produktliste nach diesem State filtern (Suchtext und Wert des Kontrollkästchens).
+    * Die "SearchBar" muss diesen State anzeigen (Suchtext und Wert des Kontrollkästchens).
+1. **Finde ihre gemeinsame übergeordnete Komponente:** Die erste übergeordnete Komponente, die beide Komponenten gemeinsam haben, ist `FilterableProductTable`.
+2. **Entscheide, wo der State bleibt**: Wir behalten den Filtertext und die geprüften Statewerte in "FilterableProductTable".
 
-So the state values will live in `FilterableProductTable`. 
+Die Statewerte werden also in "FilterableProductTable" gespeichert.
 
-Add state to the component with the [`useState()` Hook.](/reference/react/useState) Hooks are special functions that let you "hook into" React. Add two state variables at the top of `FilterableProductTable` and specify their initial state:
+Füge der Komponente mit dem [`useState()` Hook](/reference/react/useState) Hooks sind spezielle Funktionen, mit denen du dich in React "einhaken" kannst. Füge zwei Statesvariablen am Anfang von "FilterableProductTable" hinzu und gib ihren Anfangs-State an:
 
 ```js
 function FilterableProductTable({ products }) {
@@ -282,7 +282,7 @@ function FilterableProductTable({ products }) {
 }  
 ```
 
-Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as props:
+Dann übergibst du `filterText` und `inStockOnly` an `ProductTable` und `SearchBar` als Props:
 
 ```js
 <div>
@@ -296,7 +296,7 @@ Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as p
 </div>
 ```
 
-You can start seeing how your application will behave. Edit the `filterText` initial value from `useState('')` to `useState('fruit')` in the sandbox code below. You'll see both the search input text and the table update:
+Jetzt kannst du sehen, wie sich deine Anwendung verhalten wird. Ändere den Ausgangswert von "filterText" im Sandbox-Code unten von `useState("")` auf `useState("fruit")`. Du wirst sehen, dass sowohl der Sucheingabetext als auch die Tabelle aktualisiert werden:
 
 <Sandpack>
 
@@ -438,7 +438,7 @@ td {
 
 </Sandpack>
 
-Notice that editing the form doesn't work yet. There is a console error in the sandbox above explaining why:
+Beachte, dass das Bearbeiten des Formulars noch nicht funktioniert. In der Sandbox oben gibt es einen Konsolenfehler, der erklärt, warum das so ist:
 
 <ConsoleBlock level="error">
 
@@ -446,7 +446,7 @@ You provided a \`value\` prop to a form field without an \`onChange\` handler. T
 
 </ConsoleBlock>
 
-In the sandbox above, `ProductTable` and `SearchBar` read the `filterText` and `inStockOnly` props to render the table, the input, and the checkbox. For example, here is how `SearchBar` populates the input value:
+In der obigen Sandbox lesen `ProductTable` und `SearchBar` die Props `filterText` und `inStockOnly`, um die Tabelle, die Eingabe und das Kontrollkästchen darzustellen. So füllt zum Beispiel die "SearchBar" den Eingabewert auf:
 
 ```js {1,6}
 function SearchBar({ filterText, inStockOnly }) {
@@ -460,16 +460,15 @@ function SearchBar({ filterText, inStockOnly }) {
   )}
 ```
 
-However, you haven't added any code to respond to the user actions like typing yet. This will be your final step.
+Du hast jedoch noch keinen Code hinzugefügt, um auf die Benutzeraktionen wie das Tippen zu reagieren. Das wird dein letzter Schritt sein.
 
+## Step 5: Inversen Datenfluss hinzufügen {/*step-5-add-inverse-data-flow*/}
 
-## Step 5: Add inverse data flow {/*step-5-add-inverse-data-flow*/}
+Derzeit wird deine App korrekt dargestellt, wenn Props und State in der Hierarchie nach unten fließen. Aber um den State entsprechend der Benutzereingabe zu ändern, musst du den Datenfluss in die andere Richtung unterstützen: Die Formularkomponenten tief in der Hierarchie müssen den State in `FilterableProductTable` aktualisieren.
 
-Currently your app renders correctly with props and state flowing down the hierarchy. But to change the state according to user input, you will need to support data flowing the other way: the form components deep in the hierarchy need to update the state in `FilterableProductTable`. 
+React macht diesen Datenfluss explizit, aber er erfordert ein wenig mehr Tipparbeit als die Zwei-Wege-Datenbindung. Wenn du versuchst, das Kästchen im obigen Beispiel einzugeben oder anzukreuzen, wirst du feststellen, dass React deine Eingabe ignoriert. Das ist gewollt. Indem du `<input value={filterText} />` schreibst, hast du festgelegt, dass der "Wert" der Eingabe immer gleich dem "FilterText"-State ist, der von "FilterableProductTable" übergeben wird. Da der "filterText"-State nie gesetzt wird, ändert sich auch die Eingabe nicht.
 
-React makes this data flow explicit, but it requires a little more typing than two-way data binding. If you try to type or check the box in the example above, you'll see that React ignores your input. This is intentional. By writing `<input value={filterText} />`, you've set the `value` prop of the `input` to always be equal to the `filterText` state passed in from `FilterableProductTable`. Since `filterText` state is never set, the input never changes.
-
-You want to make it so whenever the user changes the form inputs, the state updates to reflect those changes. The state is owned by `FilterableProductTable`, so only it can call `setFilterText` and `setInStockOnly`. To let `SearchBar` update the `FilterableProductTable`'s state, you need to pass these functions down to `SearchBar`:
+Du möchtest, dass der State immer dann aktualisiert wird, wenn der Benutzer die Eingaben des Formulars ändert, um diese Änderungen widerzuspiegeln. Der State gehört zu `FilterableProductTable`, also kann nur sie `setFilterText` und `setInStockOnly` aufrufen. Damit die `SearchBar` den State der `FilterableProductTable` aktualisieren kann, musst du diese Funktionen an die `SearchBar` weitergeben:
 
 ```js {2,3,10,11}
 function FilterableProductTable({ products }) {
@@ -487,7 +486,7 @@ function FilterableProductTable({ products }) {
         )}
 ```
 
-Inside the `SearchBar`, you will add the `onChange` event handlers and set the parent state from them:
+Innerhalb der `SearchBar` kannst du den `onChange`-Event-Handler hinzufügen and set the parent state from them:
 
 ```js {5}
 <input 
@@ -497,7 +496,7 @@ Inside the `SearchBar`, you will add the `onChange` event handlers and set the p
   onChange={(e) => onFilterTextChange(e.target.value)} />
 ```
 
-Now the application fully works!
+Jetzt funktioniert die Anwendung vollständig!
 
 <Sandpack>
 
@@ -647,8 +646,8 @@ td {
 
 </Sandpack>
 
-You can learn all about handling events and updating state in the [Adding Interactivity](/learn/adding-interactivity) section.
+Alles über den Umgang mit Ereignissen und die Aktualisierung des States erfährst du im Abschnitt [Interaktivität hinzufügen](/learn/adding-interactivity).
 
-## Where to go from here {/*where-to-go-from-here*/}
+## Wo gehts weiter? {/*where-to-go-from-here*/}
 
-This was a very brief introduction to how to think about building components and applications with React. You can [start a React project](/learn/installation) right now or [dive deeper on all the syntax](/learn/describing-the-ui) used in this tutorial.
+Dies war eine sehr kurze Einführung in die Erstellung von Komponenten und Anwendungen mit React. Du kannst [gleich ein React-Projekt starten](/learn/installation) oder [tiefer in den Syntax eintauchen](/learn/describing-the-ui), die in diesem Tutorial verwendet wurde.
