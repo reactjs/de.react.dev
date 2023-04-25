@@ -16,12 +16,12 @@ Die JSON-API gibt einige Daten zurück, die wie folgt aussehen:
 
 ```json
 [
-  { category: "Fruits", price: "€1", stocked: true, name: "Äpfel" },
-  { category: "Fruits", price: "€1", stocked: true, name: "Drachenfrucht" },
-  { category: "Fruits", price: "€2", stocked: false, name: "Passionsfrucht" },
-  { category: "Vegetables", price: "€2", stocked: true, name: "Spinat" },
-  { category: "Vegetables", price: "€4", stocked: false, name: "Kürbis" },
-  { category: "Vegetables", price: "€1", stocked: true, name: "Erbsen" }
+  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
+  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
+  { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
+  { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
+  { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
 ]
 ```
 
@@ -33,17 +33,17 @@ Um eine Benutzeroberfläche in React zu implementieren, folgen Sie normalerweise
 
 ## Schritt 1: Zerlegen Sie die Benutzeroberfläche in eine Komponentenhierarchie {/*Schritt-1-break-the-ui-into-a-component-hierarchy*/}
 
-Start by drawing boxes around every component and subcomponent in the mockup and naming them. If you work with a designer, they may have already named these components in their design tool. Ask them!
+Beginnen Sie damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zeichnen und sie zu benennen. Wenn Sie mit einem Designer zusammenarbeiten, hat er diese Komponenten vielleicht schon in seinem Designtool benannt. Fragen Sie sie!
 
-Depending on your background, you can think about splitting up a design into components in different ways:
+Je nach Ihrem Hintergrund können Sie darüber nachdenken, ein Design auf verschiedene Weise in Komponenten aufzuteilen:
 
-* **Programming**--use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents. 
-* **CSS**--consider what you would make class selectors for. (However, components are a bit less granular.)
-* **Design**--consider how you would organize the design's layers.
+* **Programmierung** - Verwenden Sie dieselben Techniken, um zu entscheiden, ob Sie eine neue Funktion oder ein neues Objekt erstellen sollten. Eine dieser Techniken ist das [Prinzip der einzigen Verantwortung] (https://en.wikipedia.org/wiki/Single_responsibility_principle), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
+  **CSS**--Überlegen Sie, wofür Sie Klassenselektoren erstellen würden. (Komponenten sind jedoch etwas weniger granular.)
+* **Design**-überlegen Sie, wie Sie die Ebenen des Designs organisieren würden.
 
-If your JSON is well-structured, you'll often find that it naturally maps to the component structure of your UI. That's because UI and data models often have the same information architecture--that is, the same shape. Separate your UI into components, where each component matches one piece of your data model.
+Wenn Ihr JSON gut strukturiert ist, werden Sie oft feststellen, dass es sich auf natürliche Weise der Komponentenstruktur Ihrer Benutzeroberfläche anpasst. Das liegt daran, dass UI- und Datenmodelle oft dieselbe Informationsarchitektur haben, d. h. dieselbe Form. Unterteilen Sie Ihre Benutzeroberfläche in Komponenten, wobei jede Komponente einem Teil Ihres Datenmodells entspricht.
 
-There are five components on this screen:
+Auf diesem Bildschirm gibt es fünf Komponenten:
 
 <FullWidth>
 
@@ -51,11 +51,11 @@ There are five components on this screen:
 
 <img src="/images/docs/s_thinking-in-react_ui_outline.png" width="500" style={{margin: '0 auto'}} />
 
-1. `FilterableProductTable` (grey) contains the entire app.
-2. `SearchBar` (blue) receives the user input.
-3. `ProductTable` (lavender) displays and filters the list according to the user input.
-4. `ProductCategoryRow` (green) displays a heading for each category.
-5. `ProductRow`	(yellow) displays a row for each product.
+1. `FilterableProductTable` (grau) enthält die gesamte Anwendung.
+2. `SearchBar` (blau) empfängt die Benutzereingaben.
+3. `ProductTable` (lavendel) zeigt die Liste an und filtert sie entsprechend der Benutzereingabe.
+4. `ProductCategoryRow` (grün) zeigt eine Überschrift für jede Kategorie an.
+5. `ProductRow` (gelb) zeigt eine Zeile für jedes Produkt an.
 
 </CodeDiagram>
 
