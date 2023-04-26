@@ -4,7 +4,7 @@ title: Die React-Denkweise
 
 <Intro>
 
-React kann die Art und Weise verändern, wie du über die Designs, die du betrachtest und die Anwendungen, die du erstellst, denken. Wenn du eine Benutzeroberfläche mit React erstellen, wirst du sie zunächst in Teile zerlegen, die *Komponenten* genannt werden. Dann wirst du die verschiedenen visuellen Zustände für jede Ihrer Komponenten beschreiben. Schließlich wirst du Ihre Komponenten miteinander verbinden, damit die Daten durch sie fließen. In diesem Tutorial führen wir dich durch den Gedankenprozess der Erstellung einer durchsuchbaren Produktdatentabelle mit React.
+React kann die Art und Weise verändern, wie du über die Designs, die du betrachtest, und die Anwendungen, die du erstellst, denkst. Wenn du eine Benutzeroberfläche mit React erstellst, wirst du sie zunächst in Teile zerlegen, die *Komponenten* genannt werden. Dann wirst du die verschiedenen visuellen Zustände für jede ihrer Komponenten beschreiben. Schließlich wirst du ihre Komponenten miteinander verbinden, damit die Daten durch sie fließen. In diesem Tutorial führen wir dich durch den Gedankenprozess der Erstellung einer durchsuchbaren Produktdatentabelle mit React.
 
 </Intro>
 
