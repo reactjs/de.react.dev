@@ -218,7 +218,7 @@ Denke jetzt an alle Daten in dieser Beispielanwendung:
 3. Der Wert des Kontrollkästchens
 4. Die gefilterte Liste der Produkte
 
-Welche davon sind State? Identifiziere die Produkte, die es nicht sind:
+Welche davon sind State? Identifiziere die, die es nicht sind:
 
 * Bleiben sie im Laufe der Zeit **unverändert**? Wenn ja, handelt es sich nicht um einen State.
 * Wird es **von einem Parent** über Props übergeben? Wenn ja, handelt es sich nicht um einen State.
