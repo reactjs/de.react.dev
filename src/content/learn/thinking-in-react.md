@@ -35,7 +35,7 @@ Um eine Benutzeroberfläche in React zu implementieren, folgst du normalerweise 
 
 Beginne damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zeichnen und sie zu benennen. Wenn du mit einem Designer zusammenarbeitest, hat er diese Komponenten vielleicht schon in seinem Designtool benannt. Frage ihn oder sie!
 
-Je nach Ihrem Hintergrund kannst du darüber nachdenken, ein Design auf verschiedene Weise in Komponenten aufzuteilen:
+Je nach deinem Hintergrund kannst du darüber nachdenken, ein Design auf verschiedene Weisen in Komponenten aufzuteilen:
 
 * **Programmierung** - Verwende dieselben Techniken, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt erstellen sollten. Eine dieser Techniken ist das [Prinzip der einzigen Verantwortung](https://en.wikipedia.org/wiki/Single_responsibility_principle), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
 * **CSS**--Du solltest überlegen, wofür Klassenselektoren erstellt werden können. (Komponenten sind jedoch etwas weniger granular.)
