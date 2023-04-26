@@ -209,7 +209,7 @@ Zu diesem Zeitpunkt solltest du noch keine State-Werte verwenden. Das ist für d
 
 Um die Benutzeroberfläche interaktiv zu gestalten, musst du den Benutzern die Möglichkeit geben, das zugrunde liegende Datenmodell zu ändern. Dafür verwendest du den *State*.
 
-Der State ist die minimale Menge an sich ändernden Daten, die sich deine App merken muss. Das wichtigste Prinzip für die Strukturierung des States ist [DRY (Don't Repeat Yourself)] (https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Überlege dir die absolut minimale Darstellung des States, den deine Anwendung braucht, und berechne alles andere nach Bedarf. Wenn du zum Beispiel eine Einkaufsliste erstellst, kannst du die Artikel als Array in state speichern. Wenn du auch die Anzahl der Artikel in der Liste anzeigen willst, speicherst du die Anzahl der Artikel nicht als weiteren Statewert, sondern liest die Länge deines Arrays.
+Der State ist die minimale Menge an sich ändernden Daten, die sich deine App merken muss. Das wichtigste Prinzip für die Strukturierung des States ist [DRY (Don't Repeat Yourself)] (https://de.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself). Überlege dir die absolut minimale Darstellung des States, den deine Anwendung braucht, und berechne alles andere nach Bedarf. Wenn du zum Beispiel eine Einkaufsliste erstellst, kannst du die Artikel als Array in state speichern. Wenn du auch die Anzahl der Artikel in der Liste anzeigen willst, speicherst du die Anzahl der Artikel nicht als weiteren Statewert, sondern liest die Länge deines Arrays.
 
 Denke jetzt an alle Daten in dieser Beispielanwendung:
 
