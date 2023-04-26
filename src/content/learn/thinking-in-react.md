@@ -41,7 +41,7 @@ Je nach deinem Hintergrund kannst du darüber nachdenken, ein Design auf verschi
 * **CSS**--Du solltest überlegen, wofür Klassenselektoren erstellt werden können. (Komponenten sind jedoch etwas weniger granular.)
 * **Design**-überlege, wie die Ebenen des Designs organisiert werden können.
 
-Wenn Ihr JSON gut strukturiert ist, wirst du oft feststellen, dass es sich auf natürliche Weise der Komponentenstruktur Ihrer Benutzeroberfläche anpasst. Das liegt daran, dass UI- und Datenmodelle oft dieselbe Informationsarchitektur haben, d. h. dieselbe Form. Unterteile die Benutzeroberfläche in Komponenten, wobei jede Komponente einem Teil Ihres Datenmodells entspricht.
+Wenn dein JSON gut strukturiert ist, wirst du oft feststellen, dass es sich auf natürliche Weise der Komponentenstruktur deiner Benutzeroberfläche anpasst. Das liegt daran, dass UI- und Datenmodelle oft dieselbe Informationsarchitektur haben, d. h. dieselbe Form. Unterteile die Benutzeroberfläche in Komponenten, wobei jede Komponente einem Teil deines Datenmodells entspricht.
 
 Auf diesem Bildschirm gibt es fünf Komponenten:
 
