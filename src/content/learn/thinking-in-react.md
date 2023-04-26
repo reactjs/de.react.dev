@@ -33,7 +33,7 @@ Um eine Benutzeroberfläche in React zu implementieren, folgst du normalerweise 
 
 ## Schritt 1: Zerlege die Benutzeroberfläche in eine Komponentenhierarchie {/*step-1-break-the-ui-into-a-component-hierarchy*/}
 
-Beginne damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zeichnen und sie zu benennen. Wenn du mit einem Designer zusammenarbeitest, hat er diese Komponenten vielleicht schon in seinem Designtool benannt. Frage ihn oder sie!
+Beginne damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zeichnen und sie zu benennen. Wenn du mit Designern zusammenarbeitest, haben sie diese Komponenten vielleicht schon in ihrem Designtool benannt. Frage sie!
 
 Je nach deinem Hintergrund kannst du darüber nachdenken, ein Design auf verschiedene Weisen in Komponenten aufzuteilen:
 
