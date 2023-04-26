@@ -222,7 +222,7 @@ Welche davon sind State? Identifiziere die Produkte, die es nicht sind:
 
 * Bleiben sie im Laufe der Zeit **unverändert**? Wenn ja, handelt es sich nicht um einen State.
 * Wird es **von einem Parent** über Props übergeben? Wenn ja, handelt es sich nicht um einen State.
-* **Kannst du ihn** auf der Grundlage von bestehenden States oder Props in deiner Komponente berechnen? Wenn ja, handelt es sich *definitiv* nicht um einen State!
+* **Berechnest du ihn** auf der Grundlage von bestehenden States oder Props in deiner Komponente? Wenn ja, handelt es sich *definitiv* nicht um einen State!
 
 Was noch übrig ist, ist wahrscheinlich ein State.
 
