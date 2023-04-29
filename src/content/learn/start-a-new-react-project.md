@@ -1,68 +1,75 @@
 ---
-title: Start a New React Project
+title: Ein neues React Projekt starten
 ---
 
 <Intro>
 
-If you want to build a new app or a new website fully with React, we recommend picking one of the React-powered frameworks popular in the community. Frameworks provide features that most apps and sites eventually need, including routing, data fetching, and generating HTML.
+Wenn du ine neue Anwendung oder eine neue Webseite vollständig mit React erstellen willst, empfehlen wir eines der auf React aufbauenden Frameworks zu benutzen die in der Community sehr populär sind.  
+Frameworks stellen Features bereit die man vermutlich in den meisten Webseiten benötigt, darunter Routing, Data Fetching und HTML rendern  
 
 </Intro>
 
 <Note>
 
-**You need to install [Node.js](https://nodejs.org/en/) for local development.** You can *also* choose to use Node.js in production, but you don't have to. Many React frameworks support export to a static HTML/CSS/JS folder.
+**Um ein Projekt lokal zu entwickeln musst du [Node.js](https://nodejs.org/en/) installieren**. Du kannst dich *optional* auch dazu entscheiden Node.js im Produktivbetrieb zu nutzen, musst aber nicht, denn viele React Frameworks unterstützen den export in statische HTML/CSS/JS Verzeichnisse
+( für statische Ihalte benötigt man in der Regel keine NodeJs Umgebung )
 
 </Note>
 
-## Production-grade React frameworks {/*production-grade-react-frameworks*/}
+## Für den produktiven Betrieb geeignete React frameworks {/*production-grade-react-frameworks*/}
 
 ### Next.js {/*nextjs*/}
 
-**[Next.js](https://nextjs.org/) is a full-stack React framework.** It's versatile and lets you create React apps of any size--from a mostly static blog to a complex dynamic application. To create a new Next.js project, run in your terminal:
+**[Next.js](https://nextjs.org/) ist ein FullStack React Framework.** Next.js ist sehr vielseitig und ermöglicht es React Apps jeder Größe zu erstellen - von einem überwiegend statischen Blog bis zu einer sehr komplexen und dynamischen Anwendung. Um ein neues Next.js Projekt zu starten führe folgenden Code in deinem Terminal aus:
 
 <TerminalBlock>
 npx create-next-app
 </TerminalBlock>
 
-If you're new to Next.js, check out the [Next.js tutorial.](https://nextjs.org/learn/foundations/about-nextjs)
+Falls du Next.js noch nicht kennst sieh dir das [Next.js Tutorial.](https://nextjs.org/learn/foundations/about-nextjs) an
 
-Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/deployment) to any Node.js or serverless hosting, or to your own server. [Fully static Next.js apps](https://nextjs.org/docs/advanced-features/static-html-export) can be deployed to any static hosting.
+Next.js wird von [Vercel](https://vercel.com/) betrieben. Du kannst deine Next.js Anwendung auf jedem Node.js oder serverless Hosting [veröffentlichen](https://nextjs.org/docs/deployment) oder selbst hosten. [Vollständig statische Next.js Anwendungen](https://nextjs.org/docs/advanced-features/static-html-export) können auf jedem statischen Hosting veröffentlicht werden.
 
 ### Remix {/*remix*/}
 
-**[Remix](https://remix.run/) is a full-stack React framework with nested routing.** It lets you break your app into nested parts that can load data in parallel and refresh in response to the user actions. To create a new Remix project, run:
+**[Remix](https://remix.run/) ist ein Fullstack React Framework mit verschachteltem Routing.** Mit Remix lässt sich die Anwendung in verschachtelte Einheiten aufteilen, die Daten parallel laden und aktualisieren können um auf eine Benutzeraktion zu antworten.  
+Um ein neues Remix Projekt zu erstellen führe folgenden Befehl im Terminal aus:
 
 <TerminalBlock>
 npx create-remix
 </TerminalBlock>
 
-If you're new to Remix, check out the Remix [blog tutorial](https://remix.run/docs/en/main/tutorials/blog) (short) and [app tutorial](https://remix.run/docs/en/main/tutorials/jokes) (long).
+Falls du Remix noch nicht kennst, sieh dir das Remix [Blog Tutorial](https://remix.run/docs/en/main/tutorials/blog) (kurz) und das [App Tutorial](https://remix.run/docs/en/main/tutorials/jokes) (lang) an.
 
-Remix is maintained by [Shopify](https://www.shopify.com/). When you create a Remix project, you need to [pick your deployment target](https://remix.run/docs/en/main/guides/deployment). You can deploy a Remix app to any Node.js or serverless hosting by using or writing an [adapter](https://remix.run/docs/en/main/other-api/adapter).
+Remix wird von [Shopify](https://www.shopify.com/) bereitgestellt. Wenn man ein Remix Projekt erstellt, muss man ein [Ziel für die veröffentlichung auswählen](https://remix.run/docs/en/main/guides/deployment). 
+Man kann eine Remix Anwendung auf jedem Node.js oder serverless Hostng veröffentlichen indem man [Adapter](https://remix.run/docs/en/main/other-api/adapter) benutzt oder selbst erstellt.
 
 ### Gatsby {/*gatsby*/}
 
-**[Gatsby](https://www.gatsbyjs.com/) is a React framework for fast CMS-backed websites.** Its rich plugin ecosystem and its GraphQL data layer simplify integrating content, APIs, and services into one website. To create a new Gatsby project, run:
+**[Gatsby](https://www.gatsbyjs.com/) ist ein React Framework für schnelle CMS-backed Webseiten.** Sein umfangreiches Plugin Ökosystem und sein GraphQL Datenlayer erleichtern es, Inhalte, API's und Sevices in eine Webseite zu integrieren.  
+Um ein neues Gatsby Projekt zu erstellen führe foldenden befehl im Terminal aus:
 
 <TerminalBlock>
 npx create-gatsby
 </TerminalBlock>
 
-If you're new to Gatsby, check out the [Gatsby tutorial.](https://www.gatsbyjs.com/docs/tutorial/)
+Falls du Gatsby noch nicht kennst, sieh dir das [Gatsby Tutorial.](https://www.gatsbyjs.com/docs/tutorial/) an.
 
-Gatsby is maintained by [Netlify](https://www.netlify.com/). You can [deploy a fully static Gatsby site](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting) to any static hosting. If you opt into using server-only features, make sure your hosting provider supports them for Gatsby.
+Gatsby wird von [Netlify](https://www.netlify.com/) bereitgestellt. Eine [vollständig statische Gatsby Webseite](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting) kann man auf jedem statischen Hostingdienst veröffentlichen. Wenn du dich dazu entscheidest Funktionen zu verwenden, die nur auf dem Server laufen solltest du sicherstellen, dass diese vom Hosting Provider für Gatsby unterstützt werden
 
 ### Expo (for native apps) {/*expo*/}
 
-**[Expo](https://expo.dev/) is a React framework that lets you create universal Android, iOS, and web apps with truly native UIs.** It provides an SDK for [React Native](https://reactnative.dev/) that makes the native parts easier to use. To create a new Expo project, run:
+**[Expo](https://expo.dev/) ist ein React Framework das es ermöglicht universelle Android, iOS, oder Web Apps mit native UIs zu erstellen.** 
+Es stellt ein SDK für [React Native](https://reactnative.dev/) bereit das die Nutzung der nativen Bestandteile leicht zu benutzen.  
+Um ein neues Expo Projekt zu erstellen führe folgenden Befehl im Terminal aus:
 
 <TerminalBlock>
 npx create-expo-app
 </TerminalBlock>
 
-If you're new to Expo, check out the [Expo tutorial](https://docs.expo.dev/tutorial/introduction/).
+Falls du Expo noch nicht kennst, sieh dir das[Expo Tutorial](https://docs.expo.dev/tutorial/introduction/) an.
 
-Expo is maintained by [Expo (the company)](https://expo.dev/about). Building apps with Expo is free, and you can submit them to the Google and Apple app stores without restrictions. Expo additionally provides opt-in paid cloud services.
+Expo wird von [Expo (dem Unternehmen)](https://expo.dev/about) bereitgestellt. Das erstellen von Anwendungen mit Expo ist kostenlos und man kann diese ohne Beschränkungen an den Google oder den Apple Store übermitteln. Expo bietet optional einen kostenpflichtigen Clouddienst an
 
 <DeepDive>
 
@@ -81,20 +88,26 @@ Even if you don't need routing or data fetching at first, you'll likely want to 
 If you're still not convinced, or your app has unusual constraints not served well by these frameworks and you'd like to roll your own custom setup, we can't stop you--go for it! Grab `react` and `react-dom` from npm, set up your custom build process with a bundler like [Vite](https://vitejs.dev/) or [Parcel](https://parceljs.org/), and add other tools as you need them for routing, static generation or server-side rendering, and more.
 </DeepDive>
 
-## Bleeding-edge React frameworks {/*bleeding-edge-react-frameworks*/}
+## Bleeding-Edge React Frameworks {/*bleeding-edge-react-frameworks*/}
 
-As we've explored how to continue improving React, we realized that integrating React more closely with frameworks (specifically, with routing, bundling, and server technologies) is our biggest opportunity to help React users build better apps. The Next.js team has agreed to collaborate with us in researching, developing, integrating, and testing framework-agnostic bleeding-edge React features like [React Server Components.](/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
+Als wir untersucht haben, wie wir React weiter verbessern können, haben wir erkannt, dass eine engere integration von React mit Frameworks ( insbedondere mit Routing-, Bundling-, und Server-Technologien) unsere größte Chance ist. React-Benutzern dabei zu helfen, bessere Anwendungen zu erstellen. Das Next.js Team hat zugestimmt, mit uns bei der Erfoschrung, Entwicklung, Integration und dem testen von Frameworkunabhängigen, bleeding-edge Features von React wie [React Server Components.](/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
+zusammenzuarbeiten.
 
-These features are getting closer to being production-ready every day, and we've been in talks with other bundler and framework developers about integrating them. Our hope is that in a year or two, all frameworks listed on this page will have full support for these features. (If you're a framework author interested in partnering with us to experiment with these features, please let us know!)
+Diese Features nähern sich täglich um dem Punk, an dem sie für den produktiven Einsatz geeignet sind. Wir haben zudem Gespräche mit anderen Enwicklern von  Bundlern und Frameworks über deren Integration geführt. 
+Wir hoffen, dass in ein bis zwei Jahren alle auf dieser Seite aufgeführten Frameworks vollständige Unterstützung für diese Funktionen beiten werden
+
+(Wenn du ein Framework-Autor bist und Intersse an einer Kooperation mit uns hast, um diese Funktionen auszuprobieren, melde dich bei uns!)
 
 ### Next.js (App Router) {/*nextjs-app-router*/}
 
-**[Next.js's App Router](https://beta.nextjs.org/docs/getting-started) is a redesign of the Next.js APIs aiming to fulfill the React team’s full-stack architecture vision.** It lets you fetch data in asynchronous components that run on the server or even during the build.
+**[Next.js's App Router](https://beta.nextjs.org/docs/getting-started) ist ein redesign der Next.js APIs und hat das Ziel die Vision einer Fullstack Architektur des React Team’s zu erfüllen.** Es ermöglicht das fetchen von Daten in asynchronen Komponenten, die auf dem Server laufen oder sogar bereits während des Build Vorgangs.
 
-Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/deployment) to any Node.js or serverless hosting, or to your own server. Next.js also supports [static export](https://beta.nextjs.org/docs/configuring/static-export) which doesn't require a server.
+Next.js wird von [Vercel](https://vercel.com/) betrieben. Du kannst deine Next.js Anwendung auf jedem Node.js oder serverless Hosting [veröffentlichen](https://nextjs.org/docs/deployment) oder selbst hosten. [Vollständig statische Next.js Anwendungen](https://nextjs.org/docs/advanced-features/static-html-export) können auf jedem statischen Hosting veröffentlicht werden, da sie keinen Server benötigen.
+
 <Pitfall>
 
-Next.js's App Router is **currently in beta and is not yet recommended for production** (as of Mar 2023). To experiment with it in an existing Next.js project, [follow this incremental migration guide](https://beta.nextjs.org/docs/upgrade-guide#migrating-from-pages-to-app).
+Next.js's App Router ist **derzeit in Beta und wird noch nicht für den produktiven Betrieb empfohlen** (Stand März 2023). 
+Um damit in einem bestehenden Next.js Projekt zu experimentieren [folge dieser schrittweisen Migrationsanleitung](https://beta.nextjs.org/docs/upgrade-guide#migrating-from-pages-to-app).
 
 </Pitfall>
 
