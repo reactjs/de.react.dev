@@ -4,15 +4,15 @@ title: Ein neues React Projekt starten
 
 <Intro>
 
-Wenn du ine neue Anwendung oder eine neue Webseite vollständig mit React erstellen willst, empfehlen wir eines der auf React aufbauenden Frameworks zu benutzen die in der Community sehr populär sind.  
-Frameworks stellen Features bereit die man vermutlich in den meisten Webseiten benötigt, darunter Routing, Data Fetching und HTML rendern  
+Wenn du eine neue Anwendung oder eine neue Webseite vollständig mit React erstellen willst, empfehlen wir eines der auf React aufbauenden Frameworks zu benutzen die in der Community sehr populär sind.  
+Frameworks stellen Features bereit, die man vermutlich in den meisten Webseiten benötigt, darunter Routing, Data Fetching und HTML rendern  
 
 </Intro>
 
 <Note>
 
 **Um ein Projekt lokal zu entwickeln musst du [Node.js](https://nodejs.org/en/) installieren**. Du kannst dich *optional* auch dazu entscheiden Node.js im Produktivbetrieb zu nutzen, musst aber nicht, denn viele React Frameworks unterstützen den export in statische HTML/CSS/JS Verzeichnisse
-( für statische Ihalte benötigt man in der Regel keine NodeJs Umgebung )
+( für statische Inhalte benötigt man in der Regel keine NodeJs Umgebung )
 
 </Note>
 
@@ -32,14 +32,14 @@ Next.js wird von [Vercel](https://vercel.com/) betrieben. Du kannst deine Next.j
 
 ### Remix {/*remix*/}
 
-**[Remix](https://remix.run/) ist ein Fullstack React Framework mit verschachteltem Routing.** Mit Remix lässt sich die Anwendung in verschachtelte Einheiten aufteilen, die Daten parallel laden und aktualisieren können um auf eine Benutzeraktion zu antworten.  
+**[Remix](https://remix.run/) ist ein Fullstack React Framework mit verschachteltem Routing.** Mit Remix lässt sich die Anwendung in verschachtelte Einheiten aufteilen, die Daten parallel laden und aktualisieren können, um auf eine Benutzeraktion zu antworten.  
 Um ein neues Remix Projekt zu erstellen führe folgenden Befehl im Terminal aus:
 
 <TerminalBlock>
 npx create-remix
 </TerminalBlock>
 
-Falls du Remix noch nicht kennst, sieh dir das Remix [Blog Tutorial](https://remix.run/docs/en/main/tutorials/blog) (kurz) und das [App Tutorial](https://remix.run/docs/en/main/tutorials/jokes) (lang) an.
+Falls du Remix noch nicht kennst, sieh dir das Remix-[Blog-Tutorial](https://remix.run/docs/en/main/tutorials/blog) (kurz) und das [App-Tutorial](https://remix.run/docs/en/main/tutorials/jokes) (lang) an.
 
 Remix wird von [Shopify](https://www.shopify.com/) bereitgestellt. Wenn man ein Remix Projekt erstellt, muss man ein [Ziel für die veröffentlichung auswählen](https://remix.run/docs/en/main/guides/deployment). 
 Man kann eine Remix Anwendung auf jedem Node.js oder serverless Hostng veröffentlichen indem man [Adapter](https://remix.run/docs/en/main/other-api/adapter) benutzt oder selbst erstellt.
@@ -53,7 +53,7 @@ Um ein neues Gatsby Projekt zu erstellen führe foldenden befehl im Terminal aus
 npx create-gatsby
 </TerminalBlock>
 
-Falls du Gatsby noch nicht kennst, sieh dir das [Gatsby Tutorial.](https://www.gatsbyjs.com/docs/tutorial/) an.
+Falls du Gatsby noch nicht kennst, sieh dir das [Gatsby-Tutorial.](https://www.gatsbyjs.com/docs/tutorial/) an.
 
 Gatsby wird von [Netlify](https://www.netlify.com/) bereitgestellt. Eine [vollständig statische Gatsby Webseite](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting) kann man auf jedem statischen Hostingdienst veröffentlichen. Wenn du dich dazu entscheidest Funktionen zu verwenden, die nur auf dem Server laufen solltest du sicherstellen, dass diese vom Hosting Provider für Gatsby unterstützt werden
 
@@ -67,7 +67,7 @@ Um ein neues Expo Projekt zu erstellen führe folgenden Befehl im Terminal aus:
 npx create-expo-app
 </TerminalBlock>
 
-Falls du Expo noch nicht kennst, sieh dir das[Expo Tutorial](https://docs.expo.dev/tutorial/introduction/) an.
+Falls du Expo noch nicht kennst, sieh dir das[Expo-Tutorial](https://docs.expo.dev/tutorial/introduction/) an.
 
 Expo wird von [Expo (dem Unternehmen)](https://expo.dev/about) bereitgestellt. Das erstellen von Anwendungen mit Expo ist kostenlos und man kann diese ohne Beschränkungen an den Google oder den Apple Store übermitteln. Expo bietet optional einen kostenpflichtigen Clouddienst an
 
