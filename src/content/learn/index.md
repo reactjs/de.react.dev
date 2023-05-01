@@ -46,7 +46,7 @@ export default function MyApp() {
 }
 ```
 
-Beachte, dass `<MyButton />` mit einem Großbuchstaben beginnt. So weißt du, dass es sich um eine React Komponente handelt. React Komponentennamen müssen immer mit einem Großbuchstaben beginnen, während HTML-Tags klein geschrieben werden müssen.
+Beachte, dass `<MyButton />` mit einem Großbuchstaben beginnt. So weißt du, dass es sich um eine React Komponente handelt. React Komponentennamen müssen immer mit einem Großbuchstaben beginnen, während HTML-Tags kleingeschrieben werden müssen.
 
 Schau dir das Ergebnis an:
 
@@ -115,7 +115,7 @@ React schreibt dir nicht vor, wie du deine CSS Dateien hinzufügst. Im einfachst
 
 ## Daten anzeigen {/*daten-anzeigen*/}
 
-Mit JSX kannst du deinem JavaScript Markup hinzufügen. Geschweifte Klammern lassen dich "zurück nach JavaScript" entkommen, so dass du eine Variable aus deinem Code einbetten und sie dem Benutzer anzeigen kannst. Zum Beispiel wird `user.name` angezeigt:
+Mit JSX kannst du deinem JavaScript Markup hinzufügen. Geschweifte Klammern lassen dich zu JavaScript "zurückkehren", so dass du eine Variable aus deinem Code einbetten und sie dem Benutzer anzeigen kannst. Zum Beispiel wird `user.name` angezeigt:
 
 ```js {3}
 return (
@@ -125,7 +125,7 @@ return (
 );
 ```
 
-Du kannst auch von JSX Attributen "nach JavaScript" entkommen, aber du musst geschweifte Klammern *anstatt von* Anführungszeichen verwenden. Zum Beispiel übergibt `className="avatar"` den String `"avatar"` als CSS Klasse, aber `src={user.imageUrl}` liest die JavaScript Variable `user.imageUrl` aus und übergibt dann diesen Wert als `src` Attribut:
+Du kannst auch von JSX Attributen zu JavaScript "zurückkehren", aber du musst geschweifte Klammern *anstatt von* Anführungszeichen verwenden. Zum Beispiel übergibt `className="avatar"` den String `"avatar"` als CSS Klasse, aber `src={user.imageUrl}` liest die JavaScript Variable `user.imageUrl` aus und übergibt dann diesen Wert als `src` Attribut:
 
 ```js {3,4}
 return (
@@ -220,7 +220,7 @@ Die selben Ansätze funktionieren auch, wenn du Attribute bedingt verwenden möc
 
 ## Listen rendern {/*listen-rendern*/}
 
-Um Listen von Komponenten zu rendern kannst du eine [`for` Schleife](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) oder die [Array `map()` Funktion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) verwenden.
+Um Listen von Komponenten zu rendern, kannst du eine [`for` Schleife](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) oder die [Array `map()` Funktion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) verwenden.
 
 Nehmen wir an, dass du ein Array von Produkten hast:
 
@@ -246,7 +246,7 @@ return (
 );
 ```
 
-Beachte, wie jedes `<li>` ein `key` Attribut hat. Für jedes Element in einer Liste solltest du einen String oder eine Zahl übergeben, die dieses Element eindeutig unter seinen Geschwister Elementen identifiziert. Normalerweise sollte ein key aus deinen Daten stammen, wie z.B. eine Datenbank ID. React verwendet deine keys, um zu wissen, was passiert ist, wenn du später Elemente einfügst, löschst oder neu anordnest.
+Beachte, wie jedes `<li>` ein `key` Attribut hat. Für jedes Element in einer Liste solltest du einen String oder eine Zahl übergeben, das dieses Element eindeutig unter seinen Geschwister Elementen identifiziert. Normalerweise sollte ein key aus deinen Daten stammen, wie z.B. eine Datenbank ID. React verwendet deine keys, um zu wissen, was passiert ist, wenn du später Elemente einfügst, löschst oder neu anordnest.
 
 <Sandpack>
 
@@ -301,7 +301,7 @@ Beachte, wie `onClick={handleClick}` keine Klammern am Ende hat! Rufe die Event 
 
 Oft möchtest du, dass deine Komponente sich an Informationen erinnert und sie anzeigt. Zum Beispiel möchtest du vielleicht die Anzahl der Klicks auf einen Button zählen. Um dies zu tun, füge *state* zu deiner Komponente hinzu.
 
-Zuerst importiere [`useState`](/reference/react/useState) von React:
+Als Erstes musst du [`useState`](/reference/react/useState) aus React importieren:
 
 ```js
 import { useState } from 'react';
@@ -347,7 +347,7 @@ import { useState } from 'react';
 export default function MyApp() {
   return (
     <div>
-      <h1>Counters, die seperaten state haben</h1>
+      <h1>Counter, die seperaten state haben</h1>
       <MyButton />
       <MyButton />
     </div>
@@ -408,7 +408,7 @@ Die erste `MyButton` Komponente aktualisiert ihren `count` auf `1`
 
 Oft benötigst du jedoch Komponenten, die *Daten teilen und immer zusammen aktualisiert werden*.
 
-Um beide `MyButton` Komponenten den selben `count` anzeigen zu lassen und zusammen zu aktualisieren, musst du den state von den einzelnen Buttons "nach oben" zur nächsten Komponente verschieben, die alle enthält.
+Um beide `MyButton` Komponenten den selben `count` anzeigen zu lassen und zusammen zu aktualisieren, musst du den state von den einzelnen Buttons "nach oben" zur nächsten Komponente, die alle enthält, verschieben.
 
 In diesem Beispiel ist es `MyApp`:
 
@@ -430,7 +430,7 @@ Beim Drücken eines Buttons aktualisiert `MyApp` seinen `count` state auf `1` un
 
 Wenn du jetzt auf einen der Buttons klickst, wird der `count` in `MyApp` geändert, was beide `MyButton` Komponenten ändert. So kannst du das in Code ausdrücken.
 
-Zuerst *verschiebe den state* von `MyButton` *nach oben zu* `MyApp`:
+Zuerst *verschiebe den state* von `MyButton` *nach oben* zu `MyApp`:
 
 ```js {2-6,18}
 export default function MyApp() {
@@ -442,7 +442,7 @@ export default function MyApp() {
 
   return (
     <div>
-      <h1>Counters die sich zusammen ändern</h1>
+      <h1>Counter, die sich zusammen ändern</h1>
       <MyButton />
       <MyButton />
     </div>
@@ -467,7 +467,7 @@ export default function MyApp() {
 
   return (
     <div>
-      <h1>Counters die sich zusammen ändern</h1>
+      <h1>Counter, die sich zusammen ändern</h1>
       <MyButton count={count} onClick={handleClick} />
       <MyButton count={count} onClick={handleClick} />
     </div>
