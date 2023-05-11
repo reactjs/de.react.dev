@@ -1,10 +1,10 @@
 ---
-title: "Eingebaute React Hooks"
+title: "Integrierte React Hooks"
 ---
 
 <Intro>
 
-*Hooks* ermöglichen dir verschiedene React-Funktionen in deinen Komponenten zu verwenden. Du kannst entweder die eingebauten Hooks verwenden oder sie kombinieren, um eigene zu erstellen. Diese Seite listet alle eingebauten Hooks in React auf.
+*Hooks* ermöglichen dir verschiedene React-Funktionen in deinen Komponenten zu verwenden. Du kannst entweder die integrierten Hooks verwenden oder sie kombinieren, um eigene zu erstellen. Diese Seite listet alle integrierten Hooks in React auf.
 
 </Intro>
 
