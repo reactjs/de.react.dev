@@ -57,20 +57,7 @@ The documentation is divided into several sections with a different tone and pur
 
 ## Translation
 
-<<<<<<< HEAD
-If you are interested in translating `reactjs.org`, please see the current translation efforts at [translations.reactjs.org](https://translations.reactjs.org/).
-
-
-If your language does not have a translation and you would like to create one, please follow the instructions at [reactjs.org Translations](https://github.com/reactjs/reactjs.org-translation#translating-reactjsorg).
-
-Do you have a question about the german translation or just want to get in touch, join us [on Slack](https://rt-slack-invite.herokuapp.com/) in the #de channel.
-
-## Troubleshooting
-
-- `yarn reset` to clear the local cache
-=======
 If you are interested in translating `react.dev`, please see the current translation efforts [here](https://github.com/reactjs/react.dev/issues/4135).
->>>>>>> 920f32eca6fee820fc22b528c564cf9c65eb786c
 
 ## License
 Content submitted to [react.dev](https://react.dev/) is CC-BY-4.0 licensed, as found in the [LICENSE-DOCS.md](https://github.com/reactjs/react.dev/blob/main/LICENSE-DOCS.md) file.
