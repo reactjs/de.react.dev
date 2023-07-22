@@ -15,15 +15,15 @@ Ein richtig konfigurierter Editor kann den Code klarer lesbar machen und das Sch
 
 </YouWillLearn>
 
-## Dein editor {/*your-editor*/}
+## Dein Editor {/*your-editor*/}
 
-[VS Code](https://code.visualstudio.com/) ist einer der beliebtesten Editoren, die heute verwendet werden. Er verfügt über einen großen Marktplatz an Erweiterungen und lässt sich gut mit beliebten Diensten wie GitHub integrieren. Die meisten der unten aufgelisteten Funktionen können auch als Erweiterungen zu VS Code hinzugefügt werden, was ihn sehr konfigurierbar macht!
+[VS Code](https://code.visualstudio.com/) ist einer der beliebtesten Editoren, die heute verwendet werden. Er verfügt über eine große Auswahl an Erweiterungen und lässt sich gut mit beliebten Diensten wie GitHub integrieren. Die meisten der unten aufgelisteten Funktionen können auch als Erweiterungen zu VS Code hinzugefügt werden, was ihn sehr konfigurierbar macht!
 
 Andere beliebte Texteditoren, die in der React-Community verwendet werden, sind:
 
 * [WebStorm](https://www.jetbrains.com/webstorm/) ist eine integrierte Entwicklungsumgebung, die speziell für JavaScript entwickelt wurde.
 * [Sublime Text](https://www.sublimetext.com/) bietet bereits integrierte Unterstützung für JSX und TypeScript, [Syntaxhervorhebung](https://stackoverflow.com/a/70960574/458193) und automatische Vervollständigung.
-* [Vim](https://www.vim.org/) ist ein hochgradig konfigurierbarer Texteditor, mit dem sich jede Art von Text sehr effizient erstellen und ändern lässt. Er ist als "vi" in den meisten UNIX-Systemen und in Apple OS X enthalten.
+* [Vim](https://www.vim.org/) ist ein sehr konfigurierbarer Texteditor, mit dem sich jede Art von Text sehr effizient erstellen und ändern lässt. Er ist in den meisten UNIX-Systemen und in Apple OS X als "vi" enthalten.
 
 ## Empfohlene Texteditor-Funktionen {/*recommended-text-editor-features*/}
 
@@ -59,4 +59,4 @@ Idealerweise solltest du deinen Code bei jedem Speichern formatieren. VS Code ha
 4. Gib in der Suchleiste "format on save" ein
 5. Gehe sicher, dass die "format on save" Option angekreuzt ist!
 
-> Wenn deine ESLint-Voreinstellung Formatierungsregeln enthält, können diese mit Prettier in Konflikt geraten. Wir empfehlen, alle Formatierungsregeln in deine ESLint-Voreinstellung zu deaktivieren, indem du [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) benutzt, so dass ESLint *nur* zum Aufspüren logischer Fehler verwendet wird. Wenn du erzwingen willst, dass Dateien formatiert werden, bevor eine Pull Request zusammengeführt wird, verwende [`prettier --check`](https://prettier.io/docs/en/cli.html#--check) für eine kontinuierliche Integration.
+> Wenn deine ESLint-Voreinstellung Formatierungsregeln enthält, können diese mit Prettier in Konflikt geraten. Wir empfehlen, alle Formatierungsregeln in deiner ESLint-Voreinstellung zu deaktivieren, indem du [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) benutzt, so dass ESLint *nur* zum Aufspüren logischer Fehler verwendet wird. Wenn du erzwingen willst, dass Dateien formatiert werden, bevor eine Pull Request zusammengeführt wird, verwende [`prettier --check`](https://prettier.io/docs/en/cli.html#--check) für eine kontinuierliche Integration.
