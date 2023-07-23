@@ -4,7 +4,7 @@ title: Editor Setup
 
 <Intro>
 
-Ein richtig konfigurierter Editor kann den Code klarer lesbar machen und das Schreiben von Code beschleunigen. Er kann sogar dabei helfen, Fehler zu entdecken, während du sie schreibst! Wenn du zum ersten Mal einen Editor einrichtest oder deinen aktuellen Editor optimieren möchtes, haben wir ein paar Empfehlungen für dich.
+Ein richtig konfigurierter Editor kann den Code klarer lesbar machen und das Schreiben von Code beschleunigen. Er kann sogar dabei helfen, Fehler zu entdecken, während du sie schreibst! Wenn du zum ersten Mal einen Editor einrichtest oder deinen aktuellen Editor optimieren möchtest, haben wir ein paar Empfehlungen für dich.
 
 </Intro>
 
