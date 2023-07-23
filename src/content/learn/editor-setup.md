@@ -31,7 +31,7 @@ Bei einigen Editoren sind diese Funktionen bereits integriert, bei anderen muss 
 
 ### Linting {/*linting*/}
 
-Code-Linters finden Probleme in deinem Code, während du ihn schreibst, und helfen dir, sie frühzeitig zu beheben. [ESLint](https://eslint.org/) ist ein beliebter, Open-Source Linter für JavaScript.
+Code-Linter finden Probleme in deinem Code, während du ihn schreibst, und helfen dir, sie frühzeitig zu beheben. [ESLint](https://eslint.org/) ist ein beliebter, Open-Source Linter für JavaScript.
 
 * [Installiere ESLint mit der empfohlenen Konfiguration für React](https://www.npmjs.com/package/eslint-config-react-app) (Gehe sicher, dass du [Node installiert hast!](https://nodejs.org/en/download/current/))
 * [Integriere ESLint in VSCode mit der offiziellen Erweiterung](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
