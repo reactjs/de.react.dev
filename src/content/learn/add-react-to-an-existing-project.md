@@ -1,32 +1,33 @@
 ---
-title: Add React to an Existing Project
+title: React zu einem bestehenden Projekt hinzufügen
 ---
 
 <Intro>
 
-If you want to add some interactivity to your existing project, you don't have to rewrite it in React. Add React to your existing stack, and render interactive React components anywhere.
+Wenn du zustäzliche Interaktivität zu deinem bestehenden Projekt hinzufügen möchtest, musst du es nicht komplett neu in React schreiben. Integriere React in dein vorhandenes Projekt und render überall interaktive React-Komponente.
 
 </Intro>
 
 <Note>
 
-**You need to install [Node.js](https://nodejs.org/en/) for local development.** Although you can [try React](/learn/installation#try-react) online or with a simple HTML page, realistically most JavaScript tooling you'll want to use for development requires Node.js.
+**Für die lokale Entwicklung muss [Node.js](https://nodejs.org/en/) installiert sein.** Obwohl du online oder mit einer einfachen HTML-Seite [React testen](/learn/installation#try-react) kannst, benötigt man für die meisten JavaScript-Tools, die man zum Entwickeln verwendet, Node.js.
 
 </Note>
 
-## Using React for an entire subroute of your existing website {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
+## React für eine ganze Subroute einer bestehenden Webseite verwenden {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
 
-Let's say you have an existing web app at `example.com` built with another server technology (like Rails), and you want to implement all routes starting with `example.com/some-app/` fully with React.
+Lass uns annehmen, du hast eine bestehende Webseite auf `example.com`, die mit einer anderen Servertechnologie (z.B. Rails) erstellt wurde und du willst nun alle 
+Routen, die mit `example.com/deine-app/` beginnen vollständig mit React implementieren.
 
-Here's how we recommend to set it up:
+In diesem Fall empfehlen wir dir folgende Schritte:
 
-1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
-2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+1. **Erstelle den Teil der App, die mit React umgesetzt weren soll**, indem du eines der [auf React basierenden Frameworks](/learn/start-a-new-react-project) verwendest.
+2. **Definiere `/deine-app` als *base path*** in der Konfiguration deines Framework's ( [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **Konfiguriere deinen Server oder Proxy** so, dass alle Anfragen an `/deine-app/` von der React-Anwendung verarbeitet werden.
 
-This ensures the React part of your app can [benefit from the best practices](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) baked into those frameworks.
+Damit ist sichergestellt, dass der React Teil der Anwendung von den [bewährten Praktiken](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) profitieren kann, die in diese Frameworks eingebaut sind.
 
-Many React-based frameworks are full-stack and let your React app take advantage of the server. However, you can use the same approach even if you can't or don't want to run JavaScript on the server. In that case, serve the HTML/CSS/JS export ([`next export` output](https://nextjs.org/docs/advanced-features/static-html-export) for Next.js, default for Gatsby) at `/some-app/` instead.
+Viele der auf React basierenden Frameworks sind Fullstack und ermöglichen es deiner Anwendung den Server zu verwenden. Man kann den gleichen Ansatz aber auch verwenden, wenn man auf dem Server kein JavaScript ausführen kann oder will. In diesem Fall stellt man den HTML/CSS/JS export ([`next export`](https://nextjs.org/docs/advanced-features/static-html-export) für Next.js, default für Gatsby) unter `/deine-app/` bereit.
 
 ## Using React for a part of your existing page {/*using-react-for-a-part-of-your-existing-page*/}
 
