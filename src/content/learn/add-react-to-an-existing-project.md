@@ -10,7 +10,7 @@ Wenn du zusätzliche Interaktivität zu deinem bestehenden Projekt hinzufügen m
 
 <Note>
 
-**Für die lokale Entwicklung muss [Node.js](https://nodejs.org/en/) installiert sein.** Obwohl du online oder mit einer einfachen HTML-Seite [React testen](/learn/installation#try-react) kannst, benötigt man für die meisten JavaScript-Tools, die man zum Entwickeln verwendet, Node.js.
+**Für die lokale Entwicklung muss [Node.js](https://nodejs.org/en/) installiert sein.** Obwohl du online oder mit einer einfachen HTML-Seite [React testen](/learn/installation#try-react) kannst, ist Node.js für die meisten JavaScript-Tools, die zur Entwicklung benötigt werden, eine Voraussetzung.
 
 </Note>
 
@@ -27,7 +27,7 @@ In diesem Fall empfehlen wir dir folgende Schritte:
 
 Damit ist sichergestellt, dass der React Teil der Anwendung von den [bewährten Praktiken](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) profitieren kann, die in diese Frameworks eingebaut sind.
 
-Viele der auf React basierenden Frameworks sind Fullstack und ermöglichen es deiner Anwendung den Server zu verwenden. Man kann den gleichen Ansatz aber auch verwenden, wenn man auf dem Server kein JavaScript ausführen kann oder will. In diesem Fall stellt man den HTML/CSS/JS export ([`next export`](https://nextjs.org/docs/advanced-features/static-html-export) für Next.js, default für Gatsby) unter `/deine-app/` bereit.
+Viele der auf React basierenden Frameworks sind Fullstack und ermöglichen es deiner Anwendung den Server zu verwenden. Der gleiche Ansatzu kann aaber auch verwendet werden, wenn man auf dem Server kein JavaScript ausführen kann oder will. In diesem Fall stellt man den HTML/CSS/JS export ([`next export`](https://nextjs.org/docs/advanced-features/static-html-export) für Next.js, default für Gatsby) unter `/deine-app/` bereit.
 
 ## React für einen Teil deiner bestehenden Seite verwenden {/*using-react-for-a-part-of-your-existing-page*/}
 
@@ -35,7 +35,7 @@ Nehmen wir an, du hast eine bestehende Seite, die mit einer anderen Technologie 
 
 Du kannst das in zwei Schritten tun:
 
-1. **JavaScript Umgebung einrichten**, damit man die [JSX-Syntax](/learn/writing-markup-with-jsx) verwenden kann, um Code mit der [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) Syntax in Module aufzuteilen und um Pakete (wie z.B. React) aus der [npm](https://www.npmjs.com/) Registry zu nutzen.
+1. **JavaScript Umgebung einrichten**, damit du die [JSX-Syntax](/learn/writing-markup-with-jsx) verwenden kannst, um Code mit der [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) Syntax in Module aufzuteilen und um Pakete (wie z.B. React) aus der [npm](https://www.npmjs.com/) Registry zu nutzen.
 2. **Rendere deine React-Komponente** dort, wo du sie sehen möchtest.
 
 Die konkrete Vorgehensweise hängt von deiner bestehenden Konfiguration ab, deshalb lass uns ein paar Details durchgehen.
