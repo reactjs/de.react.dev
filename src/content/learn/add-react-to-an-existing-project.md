@@ -46,7 +46,7 @@ Eine modulare JavaScript-Umgebung ermöglicht es dir, deine React-Komponenten in
 
 * **Wenn die Anwendung bereits in Dateien aufgeteilt ist, die `import` Statements benutzen**, versuche deine bestehende Konfiguration zu verwenden. Schreibe in deinen JS Code ein `<div/>` und prüfe, ob das einen Syntaxfehler verursacht. Sollte dabei ein Syntaxfehler auftreten, musst du [deinen Code vermutlich mit Babel umwandeln](https://babeljs.io/setup) und zudem die [Babel React Voreinstellung](https://babeljs.io/docs/babel-preset-react) aktivieren, um JSX nutzen zu können.
 
-* **Wenn die Anwendung noch nicht für das Kompilieren von JavaScript-Modulen eingerichtet ist**, richte es mit [Vite](https://vitejs.dev/) ein. Die Vite Community pflegt [viele Integrationen mit Backend Frmeworks](https://github.com/vitejs/awesome-vite#integrations-with-backends), einschließlich Rails, Django und Laravel. [Folge dieser Anleitung](https://vitejs.dev/guide/backend-integration.html), falls dein Backend Framework nicht aufgelistet ist, um Vite manuell in dein Backend einzubinden.
+* **Wenn die Anwendung noch nicht für das Kompilieren von JavaScript-Modulen eingerichtet ist**, richte es mit [Vite](https://vitejs.dev/) ein. Die Vite Community pflegt [viele Integrationen mit Backend Frameworks](https://github.com/vitejs/awesome-vite#integrations-with-backends), einschließlich Rails, Django und Laravel. [Folge dieser Anleitung](https://vitejs.dev/guide/backend-integration.html), falls dein Backend Framework nicht aufgelistet ist, um Vite manuell in dein Backend einzubinden.
 
 Um zu prüfen, ob die Einrichtung erfolgreich war, führe im Projektordner folgenden Befehl aus:
 
