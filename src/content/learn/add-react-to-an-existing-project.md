@@ -90,45 +90,46 @@ Eine modulare JavaScript-Umgebung zum ersten Mal in ein bestehendes Projekt zu i
 
 </Note>
 
-### Step 2: Render React components anywhere on the page {/*step-2-render-react-components-anywhere-on-the-page*/}
+### Step 2: Rendern Sie React-Komponenten überall auf der Seite. {/*step-2-render-react-components-anywhere-on-the-page*/}
 
-In the previous step, you put this code at the top of your main file:
+Im vorherigen Schritt, haben wir diesen Code am Anfang unser primären Datei hinzugefügt:
 
 ```js
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// Beseitige deinen existierent HTML-Inhalt
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// Render stattdessen deine React-Komponente
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
 
-Of course, you don't actually want to clear the existing HTML content!
+Natürlich willst du den existierenten HTML nicht wirklich löschen!
 
-Delete this code.
+Lösche den Code!
 
-Instead, you probably want to render your React components in specific places in your HTML. Open your HTML page (or the server templates that generate it) and add a unique [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) attribute to any tag, for example:
+Stattdessen möchtest du wahrscheinlich die React-Komponente an spezifischen Stellen in deinem HTML rendern. Öffne deine HTML-Seite (oder die Servervorlagen, die sie generieren), und füge einen beliebigen Tag ein eindeutiges `id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id)-Attribut hinzu, zum Beispiel:
+
 
 ```html
-<!-- ... somewhere in your html ... -->
+<!-- ... irgendwo in deinem html ... -->
 <nav id="navigation"></nav>
-<!-- ... more html ... -->
+<!-- ... mehr html ... -->
 ```
 
-This lets you find that HTML element with [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) and pass it to [`createRoot`](/reference/react-dom/client/createRoot) so that you can render your own React component inside:
+Das ermöglicht dir das HTML-Element mit [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) zu finden und es an [`createRoot`](/reference/react-dom/client/createRoot) zu übergeben, damit du darin deine eigene React-Komponente rendern kannst:
 
 <Sandpack>
 
 ```html index.html
 <!DOCTYPE html>
 <html>
-  <head><title>My app</title></head>
+  <head><title>Meine App</title></head>
   <body>
-    <p>This paragraph is a part of HTML.</p>
+    <p>Dieser Paragraph ist Teil des HTMLs.</p>
     <nav id="navigation"></nav>
-    <p>This paragraph is also a part of HTML.</p>
+    <p>Dieser Paragraph ist auch Teil des HTMLs.</p>
   </body>
 </html>
 ```
@@ -137,8 +138,8 @@ This lets you find that HTML element with [`document.getElementById`](https://de
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
-  // TODO: Actually implement a navigation bar
-  return <h1>Hello from React!</h1>;
+  // TODO: Implementiere die Navigationsleite
+  return <h1>Hallo von React!</h1>;
 }
 
 const domNode = document.getElementById('navigation');
@@ -148,10 +149,10 @@ root.render(<NavigationBar />);
 
 </Sandpack>
 
-Notice how the original HTML content from `index.html` is preserved, but your own `NavigationBar` React component now appears inside the `<nav id="navigation">` from your HTML. Read the [`createRoot` usage documentation](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) to learn more about rendering React components inside an existing HTML page.
+Beachte, wie der ursprüngliche HTML-Inhalt aus `index.html` erhalten bleibt, aber deine eigene React-Komponente `NavigationBar` nun innerhalb des `<nav id="navigation">` in deinem HTML erscheint. Lies die Dokumentation von [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react), um mehr darüber zu erfahren, wie man React-Komponenten in einer vorhandenen HTML-Seite rendert.
 
-When you adopt React in an existing project, it's common to start with small interactive components (like buttons), and then gradually keep "moving upwards" until eventually your entire page is built with React. If you ever reach that point, we recommend migrating to [a React framework](/learn/start-a-new-react-project) right after to get the most out of React.
+Wenn du React in ein bestehendes Projekt integrierst, ist es üblich, mit kleinen interaktiven Komponenten (wie Buttons) zu beginnen und dich dann schrittweise "nach oben zu arbeiten", bis schließlich deine gesamte Seite mit React erstellt ist. Wenn du diesen Punkt einmal erreichst, empfehlen wir, kurz danach auf [ein React-Framework](/learn/start-a-new-react-project) umzusteigen, um das Beste aus React herauszuholen.
 
-## Using React Native in an existing native mobile app {/*using-react-native-in-an-existing-native-mobile-app*/}
+## React Native für eine bestehende mobile App verwenden {/*using-react-native-in-an-existing-native-mobile-app*/}
 
-[React Native](https://reactnative.dev/) can also be integrated into existing native apps incrementally. If you have an existing native app for Android (Java or Kotlin) or iOS (Objective-C or Swift), [follow this guide](https://reactnative.dev/docs/integration-with-existing-apps) to add a React Native screen to it.
+[React Native](https://reactnative.dev/) kann auch inkrementell in eine bestehende native App integriert werden. Wenn du bereits eine native App für Android (Java oder Kotlin) oder iOS (Objective-C or Swift) hast, [folge dieser Anleitung](https://reactnative.dev/docs/integration-with-existing-apps), um eine React Native Ansicht hinzuzufügen.
