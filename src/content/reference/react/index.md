@@ -106,6 +106,24 @@ Verwende eine dieser Hooks, um Renderings zu priorisieren:
 
 ---
 
+## Resource Hooks {/*resource-hooks*/}
+
+Auf *Ressourcen* kann eine Komponente zugreifen, ohne dass sie Teil ihres States sind. Zum Beispiel kann eine Komponente eine Nachricht aus einem Promise oder Styling-Informationen aus einem Context lesen.
+
+Um einen Wert aus einer Ressource zu lesen, verwende diesen Hook:
+
+- [`use`](/reference/react/use) lässt dich den Wert einer Ressource wie [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) oder [context](/learn/passing-data-deeply-with-context) lesen.
+
+```js
+function MessageComponent({ messagePromise }) {
+  const message = use(messagePromise);
+  const theme = use(ThemeContext);
+  // ...
+}
+```
+
+---
+
 ## Andere Hooks {/*other-hooks*/}
 
 Diese Hooks sind vor allem für Bibliotheksautoren nützlich und werden in der Regel nicht in Anwendungscode verwendet.
