@@ -70,7 +70,6 @@ npm install -g react-devtools
 react-devtools
 ```
 
-It should connect to any local React Native app that's running.
 Es sollte sich mit jeder lokal laufenden React Native App verbinden.
 
 > Versuche die App neuzuladen, falls die developer tools sich nicht nach einigen Sekunden verbinden.
