@@ -137,7 +137,7 @@ Das ermöglicht dir das HTML-Element mit [`document.getElementById`](https://dev
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
-  // TODO: Implementiere die Navigationsleite
+  // TODO: Implementiere die Navigationsleiste
   return <h1>Hallo von React!</h1>;
 }
 
