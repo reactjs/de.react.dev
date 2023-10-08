@@ -1,68 +1,69 @@
 ---
-title: Add React to an Existing Project
+title: React zu einem bestehenden Projekt hinzufügen
 ---
 
 <Intro>
 
-If you want to add some interactivity to your existing project, you don't have to rewrite it in React. Add React to your existing stack, and render interactive React components anywhere.
+Wenn du zusätzliche Interaktivität zu deinem bestehenden Projekt hinzufügen möchtest, musst du es nicht komplett neu in React schreiben. Integriere React in dein vorhandenes Projekt und render überall interaktive React-Komponente.
 
 </Intro>
 
 <Note>
 
-**You need to install [Node.js](https://nodejs.org/en/) for local development.** Although you can [try React](/learn/installation#try-react) online or with a simple HTML page, realistically most JavaScript tooling you'll want to use for development requires Node.js.
+**Für die lokale Entwicklung muss [Node.js](https://nodejs.org/en/) installiert sein.** Obwohl du online oder mit einer einfachen HTML-Seite [React testen](/learn/installation#try-react) kannst, ist Node.js für die meisten JavaScript-Tools, die zur Entwicklung benötigt werden, eine Voraussetzung.
 
 </Note>
 
-## Using React for an entire subroute of your existing website {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
+## React für eine ganze Subroute einer bestehenden Webseite verwenden {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
 
-Let's say you have an existing web app at `example.com` built with another server technology (like Rails), and you want to implement all routes starting with `example.com/some-app/` fully with React.
+Lass uns annehmen, du hast eine bestehende Webseite auf `example.com`, die mit einer anderen Server-Technologie (z.B. Rails) erstellt wurde und du willst nun alle 
+Routen, die mit `example.com/deine-app/` beginnen, vollständig mit React implementieren.
 
-Here's how we recommend to set it up:
+In diesem Fall empfehlen wir dir folgende Schritte:
 
-1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
-2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+1. **Erstelle den Teil der App, die mit React umgesetzt werden soll**, indem du eines der [auf React basierenden Frameworks](/learn/start-a-new-react-project) verwendest.
+2. **Definiere `/deine-app` als *base path*** in der Konfiguration deines Frameworks ( [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **Konfiguriere deinen Server oder Proxy** so, dass alle Anfragen an `/deine-app/` von der React-Anwendung verarbeitet werden.
 
-This ensures the React part of your app can [benefit from the best practices](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) baked into those frameworks.
+Damit ist sichergestellt, dass der React Teil der Anwendung von den [bewährten Praktiken](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) profitieren kann, die in diese Frameworks eingebaut sind.
 
-Many React-based frameworks are full-stack and let your React app take advantage of the server. However, you can use the same approach even if you can't or don't want to run JavaScript on the server. In that case, serve the HTML/CSS/JS export ([`next export` output](https://nextjs.org/docs/advanced-features/static-html-export) for Next.js, default for Gatsby) at `/some-app/` instead.
+Viele der auf React basierenden Frameworks sind Fullstack und ermöglichen es deiner Anwendung den Server zu verwenden. Der gleiche Ansatzu kann aaber auch verwendet werden, wenn man auf dem Server kein JavaScript ausführen kann oder will. In diesem Fall stellt man den HTML/CSS/JS export ([`next export`](https://nextjs.org/docs/advanced-features/static-html-export) für Next.js, default für Gatsby) unter `/deine-app/` bereit.
 
-## Using React for a part of your existing page {/*using-react-for-a-part-of-your-existing-page*/}
+## React für einen Teil deiner bestehenden Seite verwenden {/*using-react-for-a-part-of-your-existing-page*/}
 
-Let's say you have an existing page built with another technology (either a server one like Rails, or a client one like Backbone), and you want to render interactive React components somewhere on that page. That's a common way to integrate React--in fact, it's how most React usage looked at Meta for many years!
+Nehmen wir an, du hast eine bestehende Seite, die mit einer anderen Technologie erstellt wurde (entweder mit einer Server-Technologie wie Rails oder einer Client-Technologie wie Backbone), und du möchtest interaktive React-Komponenten irgendwo auf dieser Seite darstellen. Das ist ein weit verbreiteter Weg, um React zu integrieren - tatsächlich war dies über viele Jahre die am häufigsten verwendete Art React bei Meta einzusetzen!
 
-You can do this in two steps:
+Du kannst das in zwei Schritten tun:
 
-1. **Set up a JavaScript environment** that lets you use the [JSX syntax](/learn/writing-markup-with-jsx), split your code into modules with the [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) syntax, and use packages (for example, React) from the [npm](https://www.npmjs.com/) package registry.
-2. **Render your React components** where you want to see them on the page.
+1. **JavaScript Umgebung einrichten**, damit du die [JSX-Syntax](/learn/writing-markup-with-jsx) verwenden kannst, um Code mit der [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) Syntax in Module aufzuteilen und um Pakete (wie z.B. React) aus der [npm](https://www.npmjs.com/) Registry zu nutzen.
+2. **Rendere deine React-Komponente** dort, wo du sie sehen möchtest.
 
-The exact approach depends on your existing page setup, so let's walk through some details.
+Die konkrete Vorgehensweise hängt von deiner bestehenden Konfiguration ab, deshalb lass uns ein paar Details durchgehen.
 
-### Step 1: Set up a modular JavaScript environment {/*step-1-set-up-a-modular-javascript-environment*/}
+### Schritt 1: Setze eine modulare JavaScript-Umgebung auf {/*step-1-set-up-a-modular-javascript-environment*/}
 
-A modular JavaScript environment lets you write your React components in individual files, as opposed to writing all of your code in a single file. It also lets you use all the wonderful packages published by other developers on the [npm](https://www.npmjs.com/) registry--including React itself! How you do this depends on your existing setup:
+Eine modulare JavaScript-Umgebung ermöglicht es dir, deine React-Komponenten in einzelnen Dateien zu definieren, anstatt deinen gesamten Code in eine einzige Datei zu schreiben. Außerdem kannst du all die wunderbaren Pakete verwenden, die von anderen Entwicklern in der [npm](https://www.npmjs.com/) Registry veröffentlicht wurden - einschließlich React selbst! Wie du das machen kannst, ist abhängig von deiner bestehenden Konfiguration:
 
-* **If your app is already split into files that use `import` statements,** try to use the setup you already have. Check whether writing `<div />` in your JS code causes a syntax error. If it causes a syntax error, you might need to [transform your JavaScript code with Babel](https://babeljs.io/setup), and enable the [Babel React preset](https://babeljs.io/docs/babel-preset-react) to use JSX.
+* **Wenn die Anwendung bereits in Dateien aufgeteilt ist, die `import` Statements benutzen**, versuche deine bestehende Konfiguration zu verwenden. Schreibe in deinen JS Code ein `<div/>` und prüfe, ob das einen Syntaxfehler verursacht. Sollte dabei ein Syntaxfehler auftreten, musst du [deinen Code vermutlich mit Babel umwandeln](https://babeljs.io/setup) und zudem die [Babel React Voreinstellung](https://babeljs.io/docs/babel-preset-react) aktivieren, um JSX nutzen zu können.
 
-* **If your app doesn't have an existing setup for compiling JavaScript modules,** set it up with [Vite](https://vitejs.dev/). The Vite community maintains [many integrations with backend frameworks](https://github.com/vitejs/awesome-vite#integrations-with-backends), including Rails, Django, and Laravel. If your backend framework is not listed, [follow this guide](https://vitejs.dev/guide/backend-integration.html) to manually integrate Vite builds with your backend.
+* **Wenn die Anwendung noch nicht für das Kompilieren von JavaScript-Modulen eingerichtet ist**, richte es mit [Vite](https://vitejs.dev/) ein. Die Vite Community pflegt [viele Integrationen mit Backend Frameworks](https://github.com/vitejs/awesome-vite#integrations-with-backends), einschließlich Rails, Django und Laravel. [Folge dieser Anleitung](https://vitejs.dev/guide/backend-integration.html), falls dein Backend Framework nicht aufgelistet ist, um Vite manuell in dein Backend einzubinden.
 
-To check whether your setup works, run this command in your project folder:
+Um zu prüfen, ob die Einrichtung erfolgreich war, führe im Projektordner folgenden Befehl aus:
 
 <TerminalBlock>
 npm install react react-dom
 </TerminalBlock>
 
-Then add these lines of code at the top of your main JavaScript file (it might be called `index.js` or `main.js`):
+Füge danach diese Zeilen am Anfang deiner primären JavaScript-Datei (vermutlich `index.js` oder `main.js`) ein:
 
 <Sandpack>
 
 ```html index.html hidden
 <!DOCTYPE html>
 <html>
-  <head><title>My app</title></head>
+  <head><title>Meine App</title></head>
   <body>
-    <!-- Your existing page content (in this example, it gets replaced) -->
+    <!-- Dein bestehender Seiteninhalt (in diesem Beispiel wird er ersetzt) -->
   </body>
 </html>
 ```
@@ -70,63 +71,64 @@ Then add these lines of code at the top of your main JavaScript file (it might b
 ```js index.js active
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// Beseitige deinen existierenden HTML-Inhalt
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// Render stattdessen deine React-Komponente
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
 
 </Sandpack>
 
-If the entire content of your page was replaced by a "Hello, world!", everything worked! Keep reading.
+Wenn der gesamte Inhalt deiner Seite mit "Hello, world!" ersetzt wurde, hat alles funktioniert! Lies weiter.
 
 <Note>
 
-Integrating a modular JavaScript environment into an existing project for the first time can feel intimidating, but it's worth it! If you get stuck, try our [community resources](/community) or the [Vite Chat](https://chat.vitejs.dev/).
+Eine modulare JavaScript-Umgebung zum ersten Mal in ein bestehendes Projekt zu integrieren, kann sich beängstigend anfühlen, aber es ist es wert! Wenn du nicht weiterkommst, versuche es mit unseren [Community-Ressourcen](/community) oder dem [Vite Chat](https://chat.vitejs.dev/).
 
 </Note>
 
-### Step 2: Render React components anywhere on the page {/*step-2-render-react-components-anywhere-on-the-page*/}
+### Schritt 2: Rendern Sie React-Komponenten überall auf der Seite. {/*step-2-render-react-components-anywhere-on-the-page*/}
 
-In the previous step, you put this code at the top of your main file:
+Im vorherigen Schritt haben wir diesen Code am Anfang unserer primären Datei hinzugefügt:
 
 ```js
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// Beseitige deinen existierenden HTML-Inhalt
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// Render stattdessen deine React-Komponente
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
 
-Of course, you don't actually want to clear the existing HTML content!
+Natürlich willst du das existierende HTML nicht wirklich beseitigen!
 
-Delete this code.
+Lösche den Code!
 
-Instead, you probably want to render your React components in specific places in your HTML. Open your HTML page (or the server templates that generate it) and add a unique [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) attribute to any tag, for example:
+Stattdessen möchtest du wahrscheinlich die React-Komponente an spezifischen Stellen in deinem HTML rendern. Öffne deine HTML-Seite (oder die Servervorlagen, die sie generieren), und füge einem beliebigen Tag ein eindeutiges [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id)-Attribut hinzu, zum Beispiel:
+
 
 ```html
-<!-- ... somewhere in your html ... -->
+<!-- ... irgendwo in deinem html ... -->
 <nav id="navigation"></nav>
-<!-- ... more html ... -->
+<!-- ... mehr html ... -->
 ```
 
-This lets you find that HTML element with [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) and pass it to [`createRoot`](/reference/react-dom/client/createRoot) so that you can render your own React component inside:
+Das ermöglicht dir das HTML-Element mit [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) zu finden und es an [`createRoot`](/reference/react-dom/client/createRoot) zu übergeben, damit du darin deine eigene React-Komponente rendern kannst:
 
 <Sandpack>
 
 ```html index.html
 <!DOCTYPE html>
 <html>
-  <head><title>My app</title></head>
+  <head><title>Meine App</title></head>
   <body>
-    <p>This paragraph is a part of HTML.</p>
+    <p>Dieser Paragraph ist Teil des HTMLs.</p>
     <nav id="navigation"></nav>
-    <p>This paragraph is also a part of HTML.</p>
+    <p>Dieser Paragraph ist auch Teil des HTMLs.</p>
   </body>
 </html>
 ```
@@ -135,8 +137,8 @@ This lets you find that HTML element with [`document.getElementById`](https://de
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
-  // TODO: Actually implement a navigation bar
-  return <h1>Hello from React!</h1>;
+  // TODO: Implementiere die Navigationsleiste
+  return <h1>Hallo von React!</h1>;
 }
 
 const domNode = document.getElementById('navigation');
@@ -146,10 +148,10 @@ root.render(<NavigationBar />);
 
 </Sandpack>
 
-Notice how the original HTML content from `index.html` is preserved, but your own `NavigationBar` React component now appears inside the `<nav id="navigation">` from your HTML. Read the [`createRoot` usage documentation](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) to learn more about rendering React components inside an existing HTML page.
+Beachte, wie der ursprüngliche HTML-Inhalt aus `index.html` erhalten bleibt, aber deine eigene React-Komponente `NavigationBar` nun innerhalb des `<nav id="navigation">` in deinem HTML erscheint. Lies die Dokumentation von [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react), um mehr darüber zu erfahren, wie man React-Komponenten in einer vorhandenen HTML-Seite rendert.
 
-When you adopt React in an existing project, it's common to start with small interactive components (like buttons), and then gradually keep "moving upwards" until eventually your entire page is built with React. If you ever reach that point, we recommend migrating to [a React framework](/learn/start-a-new-react-project) right after to get the most out of React.
+Wenn du React in ein bestehendes Projekt integrierst, ist es üblich, mit kleinen interaktiven Komponenten (wie Buttons) zu beginnen und dich dann schrittweise "nach oben zu arbeiten", bis schließlich deine gesamte Seite mit React erstellt ist. Wenn du diesen Punkt einmal erreichst, empfehlen wir, kurz danach auf [ein React-Framework](/learn/start-a-new-react-project) umzusteigen, um das Beste aus React herauszuholen.
 
-## Using React Native in an existing native mobile app {/*using-react-native-in-an-existing-native-mobile-app*/}
+## React Native für eine bestehende mobile App verwenden {/*using-react-native-in-an-existing-native-mobile-app*/}
 
-[React Native](https://reactnative.dev/) can also be integrated into existing native apps incrementally. If you have an existing native app for Android (Java or Kotlin) or iOS (Objective-C or Swift), [follow this guide](https://reactnative.dev/docs/integration-with-existing-apps) to add a React Native screen to it.
+[React Native](https://reactnative.dev/) kann auch inkrementell in eine bestehende native App integriert werden. Wenn du bereits eine native App für Android (Java oder Kotlin) oder iOS (Objective-C oder Swift) hast, [folge dieser Anleitung](https://reactnative.dev/docs/integration-with-existing-apps), um eine React Native Ansicht hinzuzufügen.
