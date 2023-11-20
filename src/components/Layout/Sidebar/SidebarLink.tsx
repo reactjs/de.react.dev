@@ -77,8 +77,13 @@ export function SidebarLink({
         {title}{' '}
         {canary && (
           <IconCanary
+<<<<<<< HEAD
             title="This feature is available in the latest Canary"
             className="ml-2 text-gray-30 dark:text-gray-60 inline-block w-4 h-4 align-[-3px]"
+=======
+            title=" - This feature is available in the latest Canary"
+            className="ms-2 text-gray-30 dark:text-gray-60 inline-block w-4 h-4 align-[-3px]"
+>>>>>>> 4f9e9a56611c7a56b9506cf0a7ca84ab409824bc
           />
         )}
       </div>
