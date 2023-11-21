@@ -48,7 +48,7 @@ Verbinde dann deine Webseite, indem du das folgende `<script>` Tag zum Anfang de
     <script src="http://localhost:8097"></script>
 ```
 
-Lade deine Webseite jetzt im Browser neu um die developer tools zu sehen.
+Lade deine Webseite jetzt im Browser neu, um die Developer-Tools zu sehen.
 
 ![Eigenständige React Developer Tools](/images/docs/react-devtools-standalone.png)
 
