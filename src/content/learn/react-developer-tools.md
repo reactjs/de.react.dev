@@ -55,7 +55,6 @@ Lade deine Webseite jetzt im Browser neu, um die Developer-Tools zu sehen.
 ## Mobile (React Native) {/*mobile-react-native*/}
 React Developer Tools kann ebenfalls genutzt werden um Apps, die mit [React Native](https://reactnative.dev/) erstellt wurden, zu inspizieren.
 
-The easiest way to use React Developer Tools is to install it globally:
 Der leichteste Weg ist React Developer Tools global zu installieren:
 ```bash
 # Yarn
