@@ -16,7 +16,7 @@ Nutze die React Developer Tools, um React [Komponenten](/learn/your-first-compon
 
 ## Browser-Erweiterung {/*browser-extension*/}
 
-Der leichteste Weg Fehler in einer Webseite, die mit React erstellt wurde, zu beheben ist es die React Developer Tools Browser Erweiterung zu installieren. Sie ist für mehrere beliebte browser verfügbar:
+Der leichteste Weg Fehler in einer Webseite, die mit React erstellt wurde, zu beheben ist es die React Developer Tools Browser Erweiterung zu installieren. Sie ist für mehrere beliebte Browser verfügbar:
 
 * [Für **Chrome** installieren](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 * [Für **Firefox** installieren](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
