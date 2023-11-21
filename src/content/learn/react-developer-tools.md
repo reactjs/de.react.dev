@@ -41,7 +41,7 @@ npm install -g react-devtools
 react-devtools
 ```
 
-Verbinde dann deine Webseite indem du das folgende `<script>` Tag zum Anfang des `<head>` deiner Webseite hinzufügst:
+Verbinde dann deine Webseite, indem du das folgende `<script>` Tag zum Anfang des `<head>` deiner Webseite hinzufügst:
 ```html {3}
 <html>
   <head>
