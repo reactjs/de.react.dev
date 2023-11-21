@@ -4,7 +4,7 @@ title: React Developer Tools
 
 <Intro>
 
-Nutze die React Developer Tools um React [Komponenten](/learn/your-first-component) zu inspizieren, [Parameter](/learn/passing-props-to-a-component) und [Zustand](/learn/state-a-components-memory) zu bearbeiten, und Performance Probleme zu identifizieren.
+Nutze die React Developer Tools, um React [Komponenten](/learn/your-first-component) zu inspizieren, [Parameter](/learn/passing-props-to-a-component) und [Zustand](/learn/state-a-components-memory) zu bearbeiten, und Performance Probleme zu identifizieren.
 
 </Intro>
 
