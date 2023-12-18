@@ -68,7 +68,7 @@ Füge danach diese Zeilen am Anfang deiner primären JavaScript-Datei (vermutlic
 </html>
 ```
 
-```js index.js active
+```js src/index.js active
 import { createRoot } from 'react-dom/client';
 
 // Beseitige deinen existierenden HTML-Inhalt
@@ -133,7 +133,7 @@ Das ermöglicht dir das HTML-Element mit [`document.getElementById`](https://dev
 </html>
 ```
 
-```js index.js active
+```js src/index.js active
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
