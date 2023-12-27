@@ -71,6 +71,6 @@ react-devtools
 
 Es sollte sich mit jeder lokal laufenden React Native App verbinden.
 
-> Versuche die App neuzuladen, falls die developer tools sich nicht nach einigen Sekunden verbinden.
+> Versuche die App neu zuladen, falls die Developer-Tools sich nicht nach einigen Sekunden verbinden.
 
 [Erfahre mehr über die Fehlerbehebung in React Native](https://reactnative.dev/docs/debugging)
