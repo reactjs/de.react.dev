@@ -64,7 +64,7 @@ yarn global add react-devtools
 npm install -g react-devtools
 ```
 
-Öffne als nächstes die developer tools aus dem Terminal:
+Öffne als Nächstes die Developer Tools aus dem Terminal:
 ```bash
 react-devtools
 ```
