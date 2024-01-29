@@ -488,12 +488,26 @@ function FilterableProductTable({ products }) {
 
 Innerhalb der `SearchBar` kannst du den `onChange`-Event-Handler hinzufügen and set the parent state from them:
 
-```js {5}
-<input 
-  type="text" 
-  value={filterText} 
-  placeholder="Search..." 
-  onChange={(e) => onFilterTextChange(e.target.value)} />
+```js {4,5,13,19}
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange
+}) {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
 ```
 
 Jetzt funktioniert die Anwendung vollständig!
