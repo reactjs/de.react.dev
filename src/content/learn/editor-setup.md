@@ -40,7 +40,11 @@ Code-Linter finden Probleme in deinem Code, während du ihn schreibst, und helfe
 
 ### Formatierung {/*formatting*/}
 
+<<<<<<< HEAD
 Das Letzte, was du tun möchtest, wenn du deinen Code mit jemand anderem teilst, ist eine Diskussion über [Tabs vs Leerzeichen](https://www.google.com/search?q=tabs+oder+spaces) zu führen! Glücklicherweise räumt [Prettier](https://prettier.io/) deinen Code auf, indem es ihn so umformatiert, dass er den voreingestellten, konfigurierbaren Regeln entspricht. Starte Prettier, und alle Tabs werden in Leerzeichen umgewandelt - und auch die Einrückung, Anführungszeichen usw. werden entsprechend der Konfiguration geändert. Im Idealfall wird Prettier ausgeführt, wenn du deine Datei speicherst, und führt diese Änderungen schnell für dich durch.
+=======
+The last thing you want to do when sharing your code with another contributor is get into a discussion about [tabs vs spaces](https://www.google.com/search?q=tabs+vs+spaces)! Fortunately, [Prettier](https://prettier.io/) will clean up your code by reformatting it to conform to preset, configurable rules. Run Prettier, and all your tabs will be converted to spaces—and your indentation, quotes, etc will also all be changed to conform to the configuration. In the ideal setup, Prettier will run when you save your file, quickly making these edits for you.
+>>>>>>> 97489434323b0c4cce78588cd0f48e3808e0eba4
 
 Du kannst die [Prettier Erweiterung in VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) installieren, indem du folgende Schritte befolgst:
 
