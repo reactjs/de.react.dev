@@ -35,7 +35,7 @@ export default function App() {
 
 Du kannst den Code direkt editieren oder dazu ein neues Browserfenster öffnen, indem du den "Fork"-Button in der oberen rechten Ecke verwendest.
 
-Die meisten Seiten in der React-Dokumentation haben Sandboxen wie diese. Außerhalb davon gibt es viele Online-Sandboxen, die React unterstützen, zum Beispiel: [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), oder [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
+Die meisten Seiten in der React-Dokumentation haben Sandboxen wie diese. Außerhalb davon gibt es viele Online-Sandboxen, die React unterstützen, zum Beispiel: [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), oder [CodePen.](https://codepen.io/pen?template=QWYVwWN)
 
 ### Probiere React lokal aus {/*try-react-locally*/}
 
