@@ -160,13 +160,13 @@ export function HomeContent() {
 
         <Section background="left-card">
           <Center>
-            <Header>Erstelle Benutzeroberflächen von Komponenten.</Header>
+            <Header>Erstellen von Benutzeroberflächen aus Komponenten.</Header>
             <Para>
               React lässt dich Benutzeroberflächen aus einzelnen Komponenten
               erstellen. Erstelle deine eigenen React-Komponenten wie zum
               Beispiel <Code>Thumbnail</Code>, <Code>LikeButton</Code> und{' '}
-              <Code>Video</Code>. Kombiniere sie dann zu ganzen Bildschirmen,
-              Seiten und Apps.
+              <Code>Video</Code>. Dann kombinieren Sie sie zu ganzen Screens,
+              Seiten, und Anwendungen.
             </Para>
           </Center>
           <FullBleed>
@@ -189,8 +189,7 @@ export function HomeContent() {
               React-Komponenten sind JavaScript-Funktionen. Möchtest du Inhalte
               bedingt anzeigen? Verwende eine <Code>if</Code>-Anweisung.
               Möchtest du eine Liste anzeigen? Probiere es mit{' '}
-              <Code>map()</Code>. Das Erlernen von React ist das Erlernen von
-              programmieren.
+              <Code>map()</Code>. React lernen ist Programmieren lernen.
             </Para>
           </Center>
           <FullBleed>
@@ -198,10 +197,11 @@ export function HomeContent() {
           </FullBleed>
           <Center>
             <Para>
-              Die Syntax von JSX ist eine JavaScript-Syntaxerweiterung, die von
-              React populär gemacht wurde. Das Platzieren von JSX-Markup in der
-              Nähe der zugehörigen Rendering-Logik macht React-Komponenten
-              einfach zu erstellen, zu pflegen und zu löschen.
+              Diese Syntax wird JSX genannt. Sie ist eine
+              JavaScript-Syntax-Erweiterung, die durch React populär wurde.
+              Durch die Nähe von JSX-Markup zur zugehörigen Rendering-Logik
+              lassen sich React-Komponenten einfach erstellen, pflegen und
+              löschen.
             </Para>
           </Center>
         </Section>
@@ -211,11 +211,11 @@ export function HomeContent() {
             <Header>Füge Interaktivität hinzu, wo immer du sie brauchst</Header>
             <Para>
               React-Komponenten empfangen Daten und geben zurück, was auf dem
-              Bildschirm erscheinen soll. Du kannst ihnen neue Daten übergeben
-              als Reaktion auf eine Interaktion wie wenn der Benutzer in ein
-              Eingabefeld tippt. React wird den Bildschirm aktualisieren, um den
-              neuen Daten zu entsprechen.
-            </Para>
+              Bildschirm erscheinen soll. Du kannst ihnen neue Daten als
+              Reaktion auf eine Interaktion übergeben, zum Beispiel, wenn der
+              Benutzer etwas eingibt. React wird den Bildschirm aktualisieren,
+              um die neuen Daten anzupassen.
+            </Para>{' '}
           </Center>
           <FullBleed>
             <Example3 />
@@ -239,14 +239,18 @@ export function HomeContent() {
 
         <Section background="right-card">
           <Center>
-            <Header>Full-Stack Frameworks erhältlich</Header>
+            <Header>
+              Mache Full-Stack <br className="hidden lg:inline" />
+              Mit einem Framework
+            </Header>
             <Para>
               React ist eine Bibliothek. Sie ermöglicht es, Komponenten
-              zusammenzufügen, schreibt aber nicht vor, wie Routing und
-              Datenabruf implementiert werden sollen. Um eine gesamte App mit
-              React zu erstellen, empfehlen wir ein Full-Stack React-Framework
-              wie zum Beispiel <Link href="https://nextjs.org">Next.js</Link>{' '}
-              oder <Link href="https://remix.run">Remix</Link>.
+              zusammenzufügen, schreibt aber nicht vor, wie Routing und das
+              Abrufen von Daten implementiert werden sollen. Um eine gesamte App
+              mit React zu erstellen, empfehlen wir ein Full-Stack
+              React-Framework wie zum Beispiel{' '}
+              <Link href="https://nextjs.org">Next.js</Link> oder oder{' '}
+              <Link href="https://remix.run">Remix</Link>.
             </Para>
           </Center>
           <FullBleed>
@@ -265,7 +269,7 @@ export function HomeContent() {
                 color="gray"
                 icon="framework"
                 href="/learn/start-a-new-react-project">
-                Steige mit einem Framework ein
+                Starte mit einem Framework
               </CTA>
             </div>
           </Center>
@@ -296,13 +300,14 @@ export function HomeContent() {
                         Bleibe dem Web treu
                       </h4>
                       <p className="lg:text-xl leading-normal text-secondary">
-                        Benutzer erwarten, dass Web-App-Seiten schnell laden.
-                        Mit React kannst du auf dem Server HTML streamen,
-                        während noch Daten abgerufen werden, und allmählich den
-                        restlichen Inhalt laden, bevor JavaScript-Code geladen
-                        wird. Auf dem Client kann React Standard-Web-APIs
-                        verwenden, um Benutzeroberfläche auch mitten im Rendern
-                        reaktionsschnell zu halten.
+                        Menschen erwarten, dass die Seiten von Webanwendungen
+                        schnell geladen werden. Auf dem Server kannst du mit
+                        React mit dem Streaming von HTML beginnen, während du
+                        noch Daten abrufen, und den verbleibenden Inhalt nach
+                        und nach auffüllen, bevor JavaScript-Code geladen wird.
+                        Auf dem Client kann React Standard-Web-APIs verwenden,
+                        um Ihre Benutzeroberfläche auch während des Renderings
+                        reaktionsfähig zu halten.
                       </p>
                     </div>
                   </div>
@@ -380,14 +385,13 @@ export function HomeContent() {
                       </div>
                       <div className="flex flex-col items-start justify-center pt-0 gap-3 px-2.5 lg:pt-8 lg:px-8">
                         <h4 className="leading-tight text-primary dark:text-primary-dark font-semibold text-3xl lg:text-4xl">
-                          Erlebe das wahre Nativ
+                          Wirklich nativ werden
                         </h4>
                         <p className="h-full lg:text-xl text-secondary dark:text-secondary-dark leading-normal">
                           Benutzer erwarten, dass native Apps wie ihre Plattform
                           aussehen und sich anfühlen.{' '}
                           <Link href="https://reactnative.dev">
-                            {' '}
-                            React Native{' '}
+                            React Native
                           </Link>{' '}
                           und{' '}
                           <Link href="https://github.com/expo/expo">
@@ -396,9 +400,11 @@ export function HomeContent() {
                           </Link>
                           ermöglichen es, Apps in React für Android, iOS und
                           mehr zu erstellen. Sie sehen und fühlen sich nativ an,
-                          weil ihre Benutzeroberflächen wirklich nativ sind. Es
-                          ist kein Web-View - Ihre React-Komponenten rendern
-                          echte Android- und iOS-Ansichten, die von der
+                          weil ihre Benutzeroberflächen <i>
+                            wirklich nativ
+                          </i>{' '}
+                          sind. Es ist keine Web-View - Deine React-Komponenten
+                          rendern echte Android- und iOS-Ansichten, die von der
                           Plattform bereitgestellt werden.
                         </p>
                       </div>
@@ -415,7 +421,7 @@ export function HomeContent() {
               </Para>
               <div className="flex justify-start w-full lg:justify-center">
                 <CTA color="gray" icon="native" href="https://reactnative.dev/">
-                  Erstelle native Plattformen
+                  Erstellen für native Plattformen
                 </CTA>
               </div>
             </div>
@@ -426,19 +432,19 @@ export function HomeContent() {
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
             <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
               <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
-                <Header>Aktualisiere wenn die Zukunft bereit ist</Header>
+                <Header>Upgrade, wenn die Zukunft bereit ist</Header>
                 <Para>
                   React geht sorgfältig mit Änderungen um. Jeder React-Commit
                   wird auf geschäftskritischen Oberflächen mit über einer
                   Milliarde Benutzern getestet. Über 100.000 React-Komponenten
-                  bei Meta sorgen dafür dass jede Migrationsstrategie validiert
+                  bei Meta sorgen dafür, dass jede Migrationsstrategie validiert
                   wird.
                 </Para>
                 <div className="order-last pt-5">
                   <Para>
                     Das React Team forscht immer daran, wie React verbessert
                     werden kann. Einige Forschungen dauern Jahre, um sich
-                    auszuzahlen. React hat eine hohe Hürde, um eine
+                    auszuzahlen. React hat eine hohe Messlatte, um eine
                     Forschungsidee in die Produktion zu übernehmen. Nur bewährte
                     Ansätze werden Teil von React.
                   </Para>
