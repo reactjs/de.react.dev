@@ -265,11 +265,19 @@ Im vorigen Schritt hast du zwei Zustände in dieser Anwendung gefunden: den Such
 
 Gehen wir jetzt unsere Strategie für sie durch:
 
+<<<<<<< HEAD
 1. **Identifiziere Komponenten, die einen State verwenden:**
     * Die "Produkttabelle" muss die Produktliste nach diesem State filtern (Suchtext und Wert des Kontrollkästchens).
     * Die "SearchBar" muss diesen State anzeigen (Suchtext und Wert des Kontrollkästchens).
 1. **Finde ihre gemeinsame übergeordnete Komponente:** Die erste übergeordnete Komponente, die beide Komponenten gemeinsam haben, ist `FilterableProductTable`.
 2. **Entscheide, wo der State bleibt**: Wir behalten den Filtertext und die geprüften Statewerte in "FilterableProductTable".
+=======
+1. **Identify components that use state:**
+    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value). 
+    * `SearchBar` needs to display that state (search text and checkbox value).
+2. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
+3. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
+>>>>>>> 9467bc58868e66c53ca9385c8531dcf7b02178c2
 
 Die Statewerte werden also in "FilterableProductTable" gespeichert.
 
