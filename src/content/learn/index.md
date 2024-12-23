@@ -4,7 +4,11 @@ title: Schnelleinstieg
 
 <Intro>
 
+<<<<<<< HEAD
 Willkommen bei der React Dokumentation! Diese Seite gibt dir eine Einführung in die wichtigsten React-Konzepte, die du täglich verwenden wirst.
+=======
+Welcome to the React documentation! This page will give you an introduction to 80% of the React concepts that you will use on a daily basis.
+>>>>>>> 6ae99dddc3b503233291da96e8fd4b118ed6d682
 
 </Intro>
 
