@@ -21,9 +21,15 @@ Routen, die mit `example.com/deine-app/` beginnen, vollständig mit React implem
 
 In diesem Fall empfehlen wir dir folgende Schritte:
 
+<<<<<<< HEAD
 1. **Erstelle den Teil der App, die mit React umgesetzt werden soll**, indem du eines der [auf React basierenden Frameworks](/learn/start-a-new-react-project) verwendest.
 2. **Definiere `/deine-app` als *base path*** in der Konfiguration deines Frameworks ( [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. **Konfiguriere deinen Server oder Proxy** so, dass alle Anfragen an `/deine-app/` von der React-Anwendung verarbeitet werden.
+=======
+1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
+2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+>>>>>>> 9000e6e003854846c4ce5027703b5ce6f81aad80
 
 Damit ist sichergestellt, dass der React Teil der Anwendung von den [bewährten Praktiken](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) profitieren kann, die in diese Frameworks eingebaut sind.
 
