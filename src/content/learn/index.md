@@ -4,7 +4,7 @@ title: Schnelleinstieg
 
 <Intro>
 
-Willkommen bei der React Dokumentation! Diese Seite gibt dir eine Einführung in die wichtigsten React-Konzepte, die du täglich verwenden wirst.
+Willkommen bei der React-Dokumentation! Diese Seite gibt dir eine Einführung in 80% der React-Konzepte, die du täglich verwenden wirst.
 
 </Intro>
 

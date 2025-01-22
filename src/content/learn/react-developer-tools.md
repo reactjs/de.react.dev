@@ -54,7 +54,7 @@ Lade deine Webseite jetzt im Browser neu, um die Developer-Tools zu sehen.
 
 ## Mobile (React Native) {/*mobile-react-native*/}
 
-Um mit [React Native](https://reactnative.dev/) erstellte Anwendungen zu überprüfen, kannst du [React Native DevTools](https://reactnative.dev/docs/debugging/react-native-devtools) verwenden, der eingebaute Debugger, der die React Developer Tools tief integriert. Alle Funktionen sind identisch mit denen der Browser-Erweiterung, einschließlich der Hervorhebung und Auswahl nativer Elemente.
+Um mit [React Native](https://reactnative.dev/) erstellte Anwendungen zu überprüfen, kannst du [React Native DevTools](https://reactnative.dev/docs/react-native-devtools) verwenden, der eingebaute Debugger, der die React Developer Tools tief integriert. Alle Funktionen sind identisch mit denen der Browser-Erweiterung, einschließlich der Hervorhebung und Auswahl nativer Elemente.
 
 [Erfahren Sie mehr über Debugging in React Native](https://reactnative.dev/docs/debugging)
 

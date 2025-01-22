@@ -291,7 +291,7 @@ function getSyntaxHighlight(theme: any): HighlightStyle {
 
 function getLineDecorators(
   code: string,
-  meta: string
+  meta?: string
 ): Array<{
   line: number;
   className: string;
@@ -311,7 +311,7 @@ function getLineDecorators(
 
 function getInlineDecorators(
   code: string,
-  meta: string
+  meta?: string
 ): Array<{
   step: number;
   line: number;

@@ -22,7 +22,7 @@ Server Functions allow Client Components to call async functions executed on the
 
 #### How do I build support for Server Functions? {/*how-do-i-build-support-for-server-functions*/}
 
-While Server Functions in React 19 are stable and will not break between major versions, the underlying APIs used to implement Server Functions in a React Server Components bundler or framework do not follow semver and may break between minors in React 19.x. 
+While Server Functions in React 19 are stable and will not break between minor versions, the underlying APIs used to implement Server Functions in a React Server Components bundler or framework do not follow semver and may break between minors in React 19.x. 
 
 To support Server Functions as a bundler or framework, we recommend pinning to a specific React version, or using the Canary release. We will continue working with bundlers and frameworks to stabilize the APIs used to implement Server Functions in the future.
 
@@ -82,7 +82,7 @@ export async function createNote() {
 
 ```
 
-When the bundler builds the `EmptyNote` Client Component, it will create a reference to the `createNoteAction` function in the bundle. When the `button` is clicked, React will send a request to the server to execute the `createNoteAction` function using the reference provided:
+When the bundler builds the `EmptyNote` Client Component, it will create a reference to the `createNote` function in the bundle. When the `button` is clicked, React will send a request to the server to execute the `createNote` function using the reference provided:
 
 ```js [[1, 2, "createNote"], [1, 5, "createNote"], [1, 7, "createNote"]]
 "use client";
@@ -90,7 +90,7 @@ import {createNote} from './actions';
 
 function EmptyNote() {
   console.log(createNote);
-  // {$$typeof: Symbol.for("react.server.reference"), $$id: 'createNoteAction'}
+  // {$$typeof: Symbol.for("react.server.reference"), $$id: 'createNote'}
   <button onClick={() => createNote()} />
 }
 ```
