@@ -51,7 +51,7 @@ The documentation is divided into several sections with a different tone and pur
 
 1. `git add -A && git commit -m "My message"` (replacing `My message` with a commit message, such as `Fix header logo on Android`) to stage and commit your changes
 1. `git push my-fork-name the-name-of-my-branch`
-1. Go to the [de,react.dev repo](https://github.com/reactjs/de,react.dev) and you should see recently pushed branches.
+1. Go to the [de.react.dev repo](https://github.com/reactjs/de.react.dev) and you should see recently pushed branches.
 1. Follow GitHub's instructions.
 1. If possible, include screenshots of visual changes. A preview build is triggered after your changes are pushed to GitHub.
 
