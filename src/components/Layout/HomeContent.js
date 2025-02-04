@@ -160,12 +160,12 @@ export function HomeContent() {
 
         <Section background="left-card">
           <Center>
-            <Header>Erstellen von Benutzeroberflächen aus Komponenten.</Header>
+            <Header>Erstellen von Benutzeroberflächen aus Komponenten</Header>
             <Para>
               React lässt dich Benutzeroberflächen aus einzelnen Komponenten
               erstellen. Erstelle deine eigenen React-Komponenten wie zum
               Beispiel <Code>Thumbnail</Code>, <Code>LikeButton</Code> und{' '}
-              <Code>Video</Code>. Dann kombinieren Sie sie zu ganzen Screens,
+              <Code>Video</Code>. Dann kombiniere sie zu ganzen Screens,
               Seiten, und Anwendungen.
             </Para>
           </Center>
@@ -258,7 +258,7 @@ export function HomeContent() {
           </FullBleed>
           <Center>
             <Para>
-              React ist auch eine Architektur. Frameworks, die es
+              React ist auch eine Architektur. Frameworks, die sie
               implementieren, ermöglichen es, Daten in asynchronen Komponenten
               abzurufen, die auf dem Server oder sogar während des Builds
               ausgeführt werden. Lese Daten aus einer Datei oder einer Datenbank
@@ -415,7 +415,7 @@ export function HomeContent() {
             </div>
             <div className="px-5 lg:px-0 max-w-4xl mx-auto lg:text-center text-secondary dark:text-secondary-dark">
               <Para>
-                Mit React kannst du ein Web- und ein Native-Entwickler sein.
+                Mit React kannst du ein Web- und ein Nativer-Entwickler sein.
                 Dein Team kann auf viele Plattformen ausliefern, ohne die
                 Benutzererfahrung zu beeinträchtigen.
               </Para>
