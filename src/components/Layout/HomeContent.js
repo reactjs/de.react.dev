@@ -165,8 +165,8 @@ export function HomeContent() {
               React lässt dich Benutzeroberflächen aus einzelnen Komponenten
               erstellen. Erstelle deine eigenen React-Komponenten wie zum
               Beispiel <Code>Thumbnail</Code>, <Code>LikeButton</Code> und{' '}
-              <Code>Video</Code>. Dann kombiniere sie zu ganzen Screens,
-              Seiten, und Anwendungen.
+              <Code>Video</Code>. Dann kombiniere sie zu ganzen Screens, Seiten,
+              und Anwendungen.
             </Para>
           </Center>
           <FullBleed>
@@ -394,15 +394,10 @@ export function HomeContent() {
                             React Native
                           </Link>{' '}
                           und{' '}
-                          <Link href="https://github.com/expo/expo">
-                            {' '}
-                            Expo{' '}
-                          </Link>
+                          <Link href="https://github.com/expo/expo">Expo</Link>{' '}
                           ermöglichen es, Apps in React für Android, iOS und
                           mehr zu erstellen. Sie sehen und fühlen sich nativ an,
-                          weil ihre Benutzeroberflächen <i>
-                            wirklich nativ
-                          </i>{' '}
+                          weil ihre Benutzeroberflächen <i>wirklich nativ</i>{' '}
                           sind. Es ist keine Web-View - Deine React-Komponenten
                           rendern echte Android- und iOS-Ansichten, die von der
                           Plattform bereitgestellt werden.
