@@ -301,12 +301,12 @@ export function HomeContent() {
                       </h4>
                       <p className="lg:text-xl leading-normal text-secondary">
                         Menschen erwarten, dass die Seiten von Webanwendungen
-                        schnell geladen werden. Auf dem Server kannst du mit
-                        React mit dem Streaming von HTML beginnen, während du
-                        noch Daten abrufen, und den verbleibenden Inhalt nach
+                        schnell geladen werden. Auf dem Server kannst du mit React
+                        mit dem Streaming von HTML beginnen, währendessen 
+                        Daten abrufen, und den verbleibenden Inhalt nach
                         und nach auffüllen, bevor JavaScript-Code geladen wird.
                         Auf dem Client kann React Standard-Web-APIs verwenden,
-                        um Ihre Benutzeroberfläche auch während des Renderings
+                        um deine Benutzeroberfläche auch während des Renderings
                         reaktionsfähig zu halten.
                       </p>
                     </div>
