@@ -28,7 +28,6 @@ Du kannst den Code direkt editieren oder dazu ein neues Browserfenster öffnen, 
 
 Die meisten Seiten in der React-Dokumentation haben Sandboxen wie diese. Außerhalb davon gibt es viele Online-Sandboxen, die React unterstützen, zum Beispiel: [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), oder [CodePen.](https://codepen.io/pen?template=QWYVwWN)
 
-<<<<<<< HEAD
 ### Probiere React lokal aus {/*try-react-locally*/}
 
 Um React lokal auf dem eigenen Computer auszuprobieren, [lade diese HTML-Seite herunter](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html). Öffne sie sowohl in deinem Code-Editor als auch in deinem Browser.
