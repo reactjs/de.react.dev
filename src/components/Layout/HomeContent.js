@@ -215,7 +215,7 @@ export function HomeContent() {
               Reaktion auf eine Interaktion übergeben, zum Beispiel, wenn der
               Benutzer etwas eingibt. React wird den Bildschirm aktualisieren,
               um die neuen Daten anzupassen.
-            </Para>{' '}
+            </Para>
           </Center>
           <FullBleed>
             <Example3 />
