@@ -249,7 +249,7 @@ export function HomeContent() {
               Abrufen von Daten implementiert werden sollen. Um eine gesamte App
               mit React zu erstellen, empfehlen wir ein Full-Stack
               React-Framework wie zum Beispiel{' '}
-              <Link href="https://nextjs.org">Next.js</Link> oder oder{' '}
+              <Link href="https://nextjs.org">Next.js</Link> oder {' '}
               <Link href="https://remix.run">Remix</Link>.
             </Para>
           </Center>
