@@ -188,7 +188,7 @@ export function HomeContent() {
             <Para>
               React-Komponenten sind JavaScript-Funktionen. Möchtest du Inhalte
               bedingt anzeigen? Verwende eine <Code>if</Code>-Anweisung.
-              Möchtest du eine Liste anzeigen? Probiere es mit{' '}
+              Möchtest du eine Liste anzeigen? Probiere es mit 
               <Code>map()</Code>. React lernen ist Programmieren lernen.
             </Para>
           </Center>
