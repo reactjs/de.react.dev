@@ -21,11 +21,11 @@ Routen, die mit `example.com/deine-app/` beginnen, vollständig mit React implem
 
 In diesem Fall empfehlen wir dir folgende Schritte:
 
-1. **Erstelle den Teil der App, die mit React umgesetzt werden soll**, indem du eines der [auf React basierenden Frameworks](/learn/start-a-new-react-project) verwendest.
+1. **Erstelle den Teil der App, die mit React umgesetzt werden soll**, indem du eines der [auf React basierenden Frameworks](/learn/creating-a-react-app) verwendest.
 2. **Definiere `/deine-app` als *base path*** in der Konfiguration deines Frameworks ( [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. **Konfiguriere deinen Server oder Proxy** so, dass alle Anfragen an `/deine-app/` von der React-Anwendung verarbeitet werden.
 
-Damit ist sichergestellt, dass der React Teil der Anwendung von den [bewährten Praktiken](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) profitieren kann, die in diese Frameworks eingebaut sind.
+Damit ist sichergestellt, dass der React Teil der Anwendung von den [bewährten Praktiken](/learn/creating-a-react-app#full-stack-frameworks) profitieren kann, die in diese Frameworks eingebaut sind.
 
 Viele der auf React basierenden Frameworks sind Fullstack und ermöglichen es deiner Anwendung den Server zu verwenden. Der gleiche Ansatzu kann aaber auch verwendet werden, wenn man auf dem Server kein JavaScript ausführen kann oder will. In diesem Fall stellt man den HTML/CSS/JS export ([`next export`](https://nextjs.org/docs/advanced-features/static-html-export) für Next.js, default für Gatsby) unter `/deine-app/` bereit.
 
@@ -151,7 +151,7 @@ root.render(<NavigationBar />);
 
 Beachte, wie der ursprüngliche HTML-Inhalt aus `index.html` erhalten bleibt, aber deine eigene React-Komponente `NavigationBar` nun innerhalb des `<nav id="navigation">` in deinem HTML erscheint. Lies die Dokumentation von [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react), um mehr darüber zu erfahren, wie man React-Komponenten in einer vorhandenen HTML-Seite rendert.
 
-Wenn du React in ein bestehendes Projekt integrierst, ist es üblich, mit kleinen interaktiven Komponenten (wie Buttons) zu beginnen und dich dann schrittweise "nach oben zu arbeiten", bis schließlich deine gesamte Seite mit React erstellt ist. Wenn du diesen Punkt einmal erreichst, empfehlen wir, kurz danach auf [ein React-Framework](/learn/start-a-new-react-project) umzusteigen, um das Beste aus React herauszuholen.
+Wenn du React in ein bestehendes Projekt integrierst, ist es üblich, mit kleinen interaktiven Komponenten (wie Buttons) zu beginnen und dich dann schrittweise "nach oben zu arbeiten", bis schließlich deine gesamte Seite mit React erstellt ist. Wenn du diesen Punkt einmal erreichst, empfehlen wir, kurz danach auf [ein React-Framework](/learn/creating-a-react-app) umzusteigen, um das Beste aus React herauszuholen.
 
 ## React Native für eine bestehende mobile App verwenden {/*using-react-native-in-an-existing-native-mobile-app*/}
 

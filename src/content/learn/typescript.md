@@ -13,14 +13,14 @@ TypeScript is a popular way to add type definitions to JavaScript codebases. Out
 
 * [TypeScript with React Components](/learn/typescript#typescript-with-react-components)
 * [Examples of typing with Hooks](/learn/typescript#example-hooks)
-* [Common types from `@types/react`](/learn/typescript/#useful-types)
-* [Further learning locations](/learn/typescript/#further-learning)
+* [Common types from `@types/react`](/learn/typescript#useful-types)
+* [Further learning locations](/learn/typescript#further-learning)
 
 </YouWillLearn>
 
 ## Installation {/*installation*/}
 
-All [production-grade React frameworks](/learn/start-a-new-react-project#production-grade-react-frameworks) offer support for using TypeScript. Follow the framework specific guide for installation:
+All [production-grade React frameworks](/learn/creating-a-react-app#full-stack-frameworks) offer support for using TypeScript. Follow the framework specific guide for installation:
 
 - [Next.js](https://nextjs.org/docs/app/building-your-application/configuring/typescript)
 - [Remix](https://remix.run/docs/en/1.19.2/guides/typescript)
@@ -51,7 +51,7 @@ Every file containing JSX must use the `.tsx` file extension. This is a TypeScri
 
 Writing TypeScript with React is very similar to writing JavaScript with React. The key difference when working with a component is that you can provide types for your component's props. These types can be used for correctness checking and providing inline documentation in editors.
 
-Taking the [`MyButton` component](/learn#components) from the [Quick Start](/learn) guide, we can add a type describing the `title` for the button:
+Taking the [`MyButton` component](/learn#komponenten) from the [Quick Start](/learn) guide, we can add a type describing the `title` for the button:
 
 <Sandpack>
 
@@ -124,7 +124,7 @@ The type describing your component's props can be as simple or as complex as you
 
 ## Example Hooks {/*example-hooks*/}
 
-The type definitions from `@types/react` include types for the built-in Hooks, so you can use them in your components without any additional setup. They are built to take into account the code you write in your component, so you will get [inferred types](https://www.typescriptlang.org/docs/handbook/type-inference.html) a lot of the time and ideally do not need to handle the minutiae of providing the types. 
+The type definitions from `@types/react` include types for the built-in Hooks, so you can use them in your components without any additional setup. They are built to take into account the code you write in your component, so you will get [inferred types](https://www.typescriptlang.org/docs/handbook/type-inference.html) a lot of the time and ideally do not need to handle the minutiae of providing the types.
 
 However, we can look at a few examples of how to provide types for Hooks.
 
@@ -139,7 +139,7 @@ const [enabled, setEnabled] = useState(false);
 
 This will assign the type of `boolean` to `enabled`, and `setEnabled` will be a function accepting either a `boolean` argument, or a function that returns a `boolean`. If you want to explicitly provide a type for the state, you can do so by providing a type argument to the `useState` call:
 
-```ts 
+```ts
 // Explicitly set the type to "boolean"
 const [enabled, setEnabled] = useState<boolean>(false);
 ```
@@ -174,7 +174,7 @@ The [`useReducer` Hook](/reference/react/useReducer) is a more complex Hook that
 import {useReducer} from 'react';
 
 interface State {
-   count: number 
+   count: number
 };
 
 type CounterAction =
@@ -284,7 +284,7 @@ export default App = AppTSX;
 
 </Sandpack>
 
-This technique works when you have a default value which makes sense - but there are occasionally cases when you do not, and in those cases `null` can feel reasonable as a default value. However, to allow the type-system to understand your code, you need to explicitly set `ContextShape | null` on the `createContext`. 
+This technique works when you have a default value which makes sense - but there are occasionally cases when you do not, and in those cases `null` can feel reasonable as a default value. However, to allow the type-system to understand your code, you need to explicitly set `ContextShape | null` on the `createContext`.
 
 This causes the issue that you need to eliminate the `| null` in the type for context consumers. Our recommendation is to have the Hook do a runtime check for it's existence and throw an error when not present:
 
@@ -350,7 +350,7 @@ const handleClick = useCallback(() => {
 
 When working in TypeScript strict mode `useCallback` requires adding types for the parameters in your callback. This is because the type of the callback is inferred from the return value of the function, and without parameters the type cannot be fully understood.
 
-Depending on your code-style preferences, you could use the `*EventHandler` functions from the React types to provide the type for the event handler at the same time as defining the callback: 
+Depending on your code-style preferences, you could use the `*EventHandler` functions from the React types to provide the type for the event handler at the same time as defining the callback:
 
 ```ts
 import { useState, useCallback } from 'react';
@@ -361,7 +361,7 @@ export default function Form() {
   const handleChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>((event) => {
     setValue(event.currentTarget.value);
   }, [setValue])
-  
+
   return (
     <>
       <input value={value} onChange={handleChange} />
@@ -433,7 +433,7 @@ interface ModalRendererProps {
 }
 ```
 
-Note, that you cannot use TypeScript to describe that the children are a certain type of JSX elements, so you cannot use the type-system to describe a component which only accepts `<li>` children. 
+Note, that you cannot use TypeScript to describe that the children are a certain type of JSX elements, so you cannot use the type-system to describe a component which only accepts `<li>` children.
 
 You can see an example of both `React.ReactNode` and `React.ReactElement` with the type-checker in [this TypeScript playground](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDG8BmUIjgIilQ3wChSB6CxYmAOmXRgDkIATJOdNJMGAZzgwAFpxAR+8YADswAVwGkZMJFEzpOjDKw4AFHGEEBvUnDhphwADZsi0gFw0mDWjqQBuUgF9yaCNMlENzgAXjgACjADfkctFnYkfQhDAEpQgD44AB42YAA3dKMo5P46C2tbJGkvLIpcgt9-QLi3AEEwMFCItJDMrPTTbIQ3dKywdIB5aU4kKyQQKpha8drhhIGzLLWODbNs3b3s8YAxKBQAcwXpAThMaGWDvbH0gFloGbmrgQfBzYpd1YjQZbEYARkB6zMwO2SHSAAlZlYIBCdtCRkZpHIrFYahQYQD8UYYFA5EhcfjyGYqHAXnJAsIUHlOOUbHYhMIIHJzsI0Qk4P9SLUBuRqXEXEwAKKfRZcNA8PiCfxWACecAAUgBlAAacFm80W-CU11U6h4TgwUv11yShjgJjMLMqDnN9Dilq+nh8pD8AXgCHdMrCkWisVoAet0R6fXqhWKhjKllZVVxMcavpd4Zg7U6Qaj+2hmdG4zeRF10uu-Aeq0LBfLMEe-V+T2L7zLVu+FBWLdLeq+lc7DYFf39deFVOotMCACNOCh1dq219a+30uC8YWoZsRyuEdjkevR8uvoVMdjyTWt4WiSSydXD4NqZP4AymeZE072ZzuUeZQKheQgA).
 
