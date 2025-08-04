@@ -188,7 +188,7 @@ export function HomeContent() {
             <Para>
               React-Komponenten sind JavaScript-Funktionen. Möchtest du Inhalte
               bedingt anzeigen? Verwende eine <Code>if</Code>-Anweisung.
-              Möchtest du eine Liste anzeigen? Probiere es mit 
+              Möchtest du eine Liste anzeigen? Probiere es mit
               <Code>map()</Code>. React lernen ist Programmieren lernen.
             </Para>
           </Center>
@@ -249,7 +249,7 @@ export function HomeContent() {
               Abrufen von Daten implementiert werden sollen. Um eine gesamte App
               mit React zu erstellen, empfehlen wir ein Full-Stack
               React-Framework wie zum Beispiel{' '}
-              <Link href="https://nextjs.org">Next.js</Link> oder {' '}
+              <Link href="https://nextjs.org">Next.js</Link> oder{' '}
               <Link href="https://remix.run">Remix</Link>.
             </Para>
           </Center>
@@ -301,12 +301,12 @@ export function HomeContent() {
                       </h4>
                       <p className="lg:text-xl leading-normal text-secondary">
                         Menschen erwarten, dass die Seiten von Webanwendungen
-                        schnell geladen werden. Auf dem Server kannst du mit React
-                        mit dem Streaming von HTML beginnen, währendessen 
-                        Daten abrufen, und den verbleibenden Inhalt nach
-                        und nach auffüllen, bevor JavaScript-Code geladen wird.
-                        Auf dem Client kann React Standard-Web-APIs verwenden,
-                        um deine Benutzeroberfläche auch während des Renderings
+                        schnell geladen werden. Auf dem Server kannst du mit
+                        React mit dem Streaming von HTML beginnen, währendessen
+                        Daten abrufen, und den verbleibenden Inhalt nach und
+                        nach auffüllen, bevor JavaScript-Code geladen wird. Auf
+                        dem Client kann React Standard-Web-APIs verwenden, um
+                        deine Benutzeroberfläche auch während des Renderings
                         reaktionsfähig zu halten.
                       </p>
                     </div>
