@@ -151,11 +151,7 @@ root.render(<NavigationBar />);
 
 Beachte, wie der ursprüngliche HTML-Inhalt aus `index.html` erhalten bleibt, aber deine eigene React-Komponente `NavigationBar` nun innerhalb des `<nav id="navigation">` in deinem HTML erscheint. Lies die Dokumentation von [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react), um mehr darüber zu erfahren, wie man React-Komponenten in einer vorhandenen HTML-Seite rendert.
 
-<<<<<<< HEAD
-Wenn du React in ein bestehendes Projekt integrierst, ist es üblich, mit kleinen interaktiven Komponenten (wie Buttons) zu beginnen und dich dann schrittweise "nach oben zu arbeiten", bis schließlich deine gesamte Seite mit React erstellt ist. Wenn du diesen Punkt einmal erreichst, empfehlen wir, kurz danach auf [ein React-Framework](/learn/creating-a-react-app) umzusteigen, um das Beste aus React herauszuholen.
-=======
-When you adopt React in an existing project, it's common to start with small interactive components (like buttons), and then gradually keep "moving upwards" until eventually your entire page is built with React. If you ever reach that point, we recommend migrating to [a React framework](/learn/start-a-new-react-project) right after to get the most out of React.
->>>>>>> e9a7cb1b6ca1659b42d81555ecef0cd554b7a983
+Wenn du React in ein bestehendes Projekt integrierst, ist es üblich, mit kleinen interaktiven Komponenten (wie Buttons) zu beginnen und dich dann schrittweise "nach oben zu arbeiten", bis schließlich deine gesamte Seite mit React erstellt ist. Wenn du diesen Punkt einmal erreichst, empfehlen wir kurz danach auf [ein React-Framework](/learn/start-a-new-react-project) umzusteigen, um das Beste aus React herauszuholen.
 
 ## React Native für eine bestehende mobile App verwenden {/*using-react-native-in-an-existing-native-mobile-app*/}
 
