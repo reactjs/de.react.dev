@@ -37,9 +37,15 @@ Beginne damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zei
 
 Je nach deinem Hintergrund kannst du darüber nachdenken, ein Design auf verschiedene Weisen in Komponenten aufzuteilen:
 
+<<<<<<< HEAD
 * **Programmierung** - Verwende dieselben Techniken, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt erstellen solltest. Eine dieser Techniken ist das [Single-Responsibility-Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
 * **CSS**--Du solltest überlegen, wofür Klassenselektoren erstellt werden können. (Komponenten sind jedoch etwas weniger granular.)
 * **Design**-überlege, wie die Ebenen des Designs organisiert werden können.
+=======
+* **Programming**--use the same techniques for deciding if you should create a new function or object. One such technique is the [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns), that is, a component should ideally only be concerned with one thing. If it ends up growing, it should be decomposed into smaller subcomponents. 
+* **CSS**--consider what you would make class selectors for. (However, components are a bit less granular.)
+* **Design**--consider how you would organize the design's layers.
+>>>>>>> 2c7798dcc51fbd07ebe41f49e5ded4839a029f72
 
 Wenn dein JSON gut strukturiert ist, wirst du oft feststellen, dass es sich auf natürliche Weise der Komponentenstruktur deiner Benutzeroberfläche anpasst. Das liegt daran, dass UI- und Datenmodelle oft dieselbe Informationsarchitektur haben, d. h. dieselbe Form. Unterteile die Benutzeroberfläche in Komponenten, wobei jede Komponente einem Teil deines Datenmodells entspricht.
 
