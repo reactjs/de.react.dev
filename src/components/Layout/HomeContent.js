@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -244,6 +251,7 @@ export function HomeContent() {
               Mit einem Framework
             </Header>
             <Para>
+<<<<<<< HEAD
               React ist eine Bibliothek. Sie ermöglicht es, Komponenten
               zusammenzufügen, schreibt aber nicht vor, wie Routing und das
               Abrufen von Daten implementiert werden sollen. Um eine gesamte App
@@ -251,6 +259,13 @@ export function HomeContent() {
               React-Framework wie zum Beispiel{' '}
               <Link href="https://nextjs.org">Next.js</Link> oder{' '}
               <Link href="https://remix.run">Remix</Link>.
+=======
+              React is a library. It lets you put components together, but it
+              doesn’t prescribe how to do routing and data fetching. To build an
+              entire app with React, we recommend a full-stack React framework
+              like <Link href="https://nextjs.org">Next.js</Link> or{' '}
+              <Link href="https://reactrouter.com">React Router</Link>.
+>>>>>>> 2c7798dcc51fbd07ebe41f49e5ded4839a029f72
             </Para>
           </Center>
           <FullBleed>
