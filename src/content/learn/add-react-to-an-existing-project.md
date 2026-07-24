@@ -16,12 +16,12 @@ Wenn du zusätzliche Interaktivität zu deinem bestehenden Projekt hinzufügen m
 
 ## React für eine ganze Subroute einer bestehenden Webseite verwenden {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
 
-Lass uns annehmen, du hast eine bestehende Webseite auf `example.com`, die mit einer anderen Server-Technologie (z.B. Rails) erstellt wurde und du willst nun alle 
+Lass uns annehmen, du hast eine bestehende Webseite auf `example.com`, die mit einer anderen Server-Technologie (z.B. Rails) erstellt wurde und du willst nun alle
 Routen, die mit `example.com/deine-app/` beginnen, vollständig mit React implementieren.
 
 In diesem Fall empfehlen wir dir folgende Schritte:
 
-1. **Erstelle den Teil der App, die mit React umgesetzt werden soll**, indem du eines der [auf React basierenden Frameworks](/learn/creating-a-react-ap) verwendest.
+1. **Erstelle den Teil der App, die mit React umgesetzt werden soll**, indem du eines der [auf React basierenden Frameworks](/learn/creating-a-react-app) verwendest.
 2. **Definiere `/deine-app` als *base path*** in der Konfiguration deines Frameworks ( [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. **Konfiguriere deinen Server oder Proxy** so, dass alle Anfragen an `/deine-app/` von der React-Anwendung verarbeitet werden.
 

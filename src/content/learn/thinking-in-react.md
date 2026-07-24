@@ -279,7 +279,7 @@ Füge der Komponente mit dem [`useState()` Hook](/reference/react/useState) Hook
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
-}  
+}
 ```
 
 Dann übergibst du `filterText` und `inStockOnly` an `ProductTable` und `SearchBar` als Props:
