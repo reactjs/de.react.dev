@@ -37,7 +37,7 @@ Beginne damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zei
 
 Je nach deinem Hintergrund kannst du darüber nachdenken, ein Design auf verschiedene Weisen in Komponenten aufzuteilen:
 
-* **Programmierung** - Verwende dieselben Techniken, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt erstellen solltest. Eine dieser Techniken ist das [Single-Responsibility-Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
+* **Programmierung** - Verwende dieselben Techniken, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt erstellen solltest. Eine dieser Techniken ist das [Single-Responsibility-Prinzip](https://en.wikipedia.org/wiki/Separation_of_concerns), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
 * **CSS**--Du solltest überlegen, wofür Klassenselektoren erstellt werden können. (Komponenten sind jedoch etwas weniger granular.)
 * **Design**-überlege, wie die Ebenen des Designs organisiert werden können.
 
@@ -268,10 +268,10 @@ Gehen wir jetzt unsere Strategie für sie durch:
 1. **Identifiziere Komponenten, die einen State verwenden:**
     * `ProductTable` muss die Produktliste nach diesem State filtern (Suchtext und Wert des Kontrollkästchens).
     * `SearchBar` muss diesen State anzeigen (Suchtext und Wert des Kontrollkästchens).
-1. **Finde ihre gemeinsame übergeordnete Komponente:** Die erste übergeordnete Komponente, die beide Komponenten gemeinsam haben, ist `FilterableProductTable`.
-2. **Entscheide, wo der State bleibt**: Wir behalten den Filtertext und die geprüften Statewerte in `FilterableProductTable`.
+2. **Finde ihre gemeinsame übergeordnete Komponente:** Die erste übergeordnete Komponente, die beide Komponenten gemeinsam haben, ist `FilterableProductTable`.
+3. **Entscheide, wo der State bleibt**: Wir behalten den Filtertext und die geprüften Statewerte in `FilterableProductTable`.
 
-Die Statewerte werden also in "FilterableProductTable" gespeichert.
+Die Statewerte werden also in `FilterableProductTable` gespeichert.
 
 Füge der Komponente mit dem [`useState()` Hook](/reference/react/useState) Hooks sind spezielle Funktionen, mit denen du dich in React "einhaken" kannst. Füge zwei Statesvariablen am Anfang von "FilterableProductTable" hinzu und gib ihren Anfangs-State an:
 
@@ -279,17 +279,17 @@ Füge der Komponente mit dem [`useState()` Hook](/reference/react/useState) Hook
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
-}  
+}
 ```
 
 Dann übergibst du `filterText` und `inStockOnly` an `ProductTable` und `SearchBar` als Props:
 
 ```js
 <div>
-  <SearchBar 
-    filterText={filterText} 
+  <SearchBar
+    filterText={filterText}
     inStockOnly={inStockOnly} />
-  <ProductTable 
+  <ProductTable
     products={products}
     filterText={filterText}
     inStockOnly={inStockOnly} />
@@ -309,10 +309,10 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly} />
-      <ProductTable 
+      <ProductTable
         products={products}
         filterText={filterText}
         inStockOnly={inStockOnly} />
@@ -390,13 +390,13 @@ function ProductTable({ products, filterText, inStockOnly }) {
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Search..."/>
       <label>
-        <input 
-          type="checkbox" 
+        <input
+          type="checkbox"
           checked={inStockOnly} />
         {' '}
         Only show products in stock
@@ -452,9 +452,9 @@ In der obigen Sandbox lesen `ProductTable` und `SearchBar` die Props `filterText
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Search..."/>
     </form>
   )}
@@ -477,8 +477,8 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly}
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
@@ -523,13 +523,13 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
-        inStockOnly={inStockOnly} 
-        onFilterTextChange={setFilterText} 
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
-      <ProductTable 
-        products={products} 
+      <ProductTable
+        products={products}
         filterText={filterText}
         inStockOnly={inStockOnly} />
     </div>
@@ -611,14 +611,14 @@ function SearchBar({
 }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} placeholder="Search..." 
+      <input
+        type="text"
+        value={filterText} placeholder="Search..."
         onChange={(e) => onFilterTextChange(e.target.value)} />
       <label>
-        <input 
-          type="checkbox" 
-          checked={inStockOnly} 
+        <input
+          type="checkbox"
+          checked={inStockOnly}
           onChange={(e) => onInStockOnlyChange(e.target.checked)} />
         {' '}
         Only show products in stock

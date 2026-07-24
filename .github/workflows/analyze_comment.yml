@@ -19,24 +19,36 @@ jobs:
       github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Download base branch bundle stats
-        uses: dawidd6/action-download-artifact@268677152d06ba59fcec7a7f0b5d961b6ccd7e1e
+        uses: dawidd6/action-download-artifact@ac66b43f0e6a346234dd65d4d0c8fbb31cb316e5 # v11
         with:
           workflow: analyze.yml
           run_id: ${{ github.event.workflow_run.id }}
           name: analysis_comment.txt
           path: analysis_comment.txt
+          if_no_artifact_found: warn
 
       - name: Download PR number
-        uses: dawidd6/action-download-artifact@268677152d06ba59fcec7a7f0b5d961b6ccd7e1e
+        uses: dawidd6/action-download-artifact@ac66b43f0e6a346234dd65d4d0c8fbb31cb316e5 # v11
         with:
           workflow: analyze.yml
           run_id: ${{ github.event.workflow_run.id }}
           name: pr_number
           path: pr_number
+          if_no_artifact_found: warn
+
+      - name: Check comment artifact exists
+        id: comment-artifact
+        run: |
+          if [ -f analysis_comment.txt/__bundle_analysis_comment.txt ] && [ -f pr_number/pr_number ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "No bundle analysis comment artifact (comparison was skipped); nothing to post."
+          fi
 
       - name: Get comment body
         id: get-comment-body
-        if: success()
+        if: success() && steps.comment-artifact.outputs.exists == 'true'
         run: |
           echo 'body<<EOF' >> $GITHUB_OUTPUT
           echo '' >>  $GITHUB_OUTPUT
@@ -53,6 +65,7 @@ jobs:
           echo "pr-number=$pr_number" >> $GITHUB_OUTPUT
 
       - name: Comment
+        if: success() && steps.comment-artifact.outputs.exists == 'true'
         uses: marocchino/sticky-pull-request-comment@52423e01640425a022ef5fd42c6fb5f633a02728
         with:
           header: next-bundle-analysis

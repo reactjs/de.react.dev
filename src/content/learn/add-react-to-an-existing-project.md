@@ -16,12 +16,12 @@ Wenn du zusätzliche Interaktivität zu deinem bestehenden Projekt hinzufügen m
 
 ## React für eine ganze Subroute einer bestehenden Webseite verwenden {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
 
-Lass uns annehmen, du hast eine bestehende Webseite auf `example.com`, die mit einer anderen Server-Technologie (z.B. Rails) erstellt wurde und du willst nun alle 
+Lass uns annehmen, du hast eine bestehende Webseite auf `example.com`, die mit einer anderen Server-Technologie (z.B. Rails) erstellt wurde und du willst nun alle
 Routen, die mit `example.com/deine-app/` beginnen, vollständig mit React implementieren.
 
 In diesem Fall empfehlen wir dir folgende Schritte:
 
-1. **Erstelle den Teil der App, die mit React umgesetzt werden soll**, indem du eines der [auf React basierenden Frameworks](/learn/start-a-new-react-project) verwendest.
+1. **Erstelle den Teil der App, die mit React umgesetzt werden soll**, indem du eines der [auf React basierenden Frameworks](/learn/creating-a-react-app) verwendest.
 2. **Definiere `/deine-app` als *base path*** in der Konfiguration deines Frameworks ( [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. **Konfiguriere deinen Server oder Proxy** so, dass alle Anfragen an `/deine-app/` von der React-Anwendung verarbeitet werden.
 
@@ -151,7 +151,7 @@ root.render(<NavigationBar />);
 
 Beachte, wie der ursprüngliche HTML-Inhalt aus `index.html` erhalten bleibt, aber deine eigene React-Komponente `NavigationBar` nun innerhalb des `<nav id="navigation">` in deinem HTML erscheint. Lies die Dokumentation von [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react), um mehr darüber zu erfahren, wie man React-Komponenten in einer vorhandenen HTML-Seite rendert.
 
-Wenn du React in ein bestehendes Projekt integrierst, ist es üblich, mit kleinen interaktiven Komponenten (wie Buttons) zu beginnen und dich dann schrittweise "nach oben zu arbeiten", bis schließlich deine gesamte Seite mit React erstellt ist. Wenn du diesen Punkt einmal erreichst, empfehlen wir kurz danach auf [ein React-Framework](/learn/start-a-new-react-project) umzusteigen, um das Beste aus React herauszuholen.
+Wenn du React in ein bestehendes Projekt integrierst, ist es üblich, mit kleinen interaktiven Komponenten (wie Buttons) zu beginnen und dich dann schrittweise "nach oben zu arbeiten", bis schließlich deine gesamte Seite mit React erstellt ist. Wenn du diesen Punkt einmal erreichst, empfehlen wir kurz danach auf [ein React-Framework](/learn/creating-a-react-app) umzusteigen, um das Beste aus React herauszuholen.
 
 ## React Native für eine bestehende mobile App verwenden {/*using-react-native-in-an-existing-native-mobile-app*/}
 
