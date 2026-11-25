@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -26,6 +33,8 @@ import Link from 'components/MDX/Link';
 import CodeBlock from 'components/MDX/CodeBlock';
 import {ExternalLink} from 'components/ExternalLink';
 import sidebarBlog from '../../sidebarBlog.json';
+import * as React from 'react';
+import Image from 'next/image';
 
 function Section({children, background = null}) {
   return (
@@ -115,12 +124,22 @@ export function HomeContent() {
     <>
       <div className="ps-0">
         <div className="mx-5 mt-12 lg:mt-24 mb-20 lg:mb-32 flex flex-col justify-center">
+          <div className="uwu-visible flex justify-center">
+            <Image
+              alt="logo by @sawaratsuki1004"
+              title="logo by @sawaratsuki1004"
+              loading="eager"
+              width={313}
+              height={160}
+              src="/images/uwu.png"
+            />
+          </div>
           <Logo
             className={cn(
-              'mt-4 mb-3 text-link dark:text-link-dark w-24 lg:w-28 self-center text-sm me-0 flex origin-center transition-all ease-in-out'
+              'uwu-hidden mt-4 mb-3 text-brand dark:text-brand-dark w-24 lg:w-28 self-center text-sm me-0 flex origin-center transition-all ease-in-out'
             )}
           />
-          <h1 className="text-5xl font-display lg:text-6xl self-center flex font-semibold leading-snug text-primary dark:text-primary-dark">
+          <h1 className="uwu-hidden text-5xl font-display lg:text-6xl self-center flex font-semibold leading-snug text-primary dark:text-primary-dark">
             React
           </h1>
           <p className="text-4xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
@@ -148,13 +167,13 @@ export function HomeContent() {
 
         <Section background="left-card">
           <Center>
-            <Header>Create user interfaces from components</Header>
+            <Header>Erstellen von Benutzeroberflächen aus Komponenten</Header>
             <Para>
-              React lets you build user interfaces out of individual pieces
-              called components. Create your own React components like{' '}
-              <Code>Thumbnail</Code>, <Code>LikeButton</Code>, and{' '}
-              <Code>Video</Code>. Then combine them into entire screens, pages,
-              and apps.
+              React lässt dich Benutzeroberflächen aus einzelnen Komponenten
+              erstellen. Erstelle deine eigenen React-Komponenten wie zum
+              Beispiel <Code>Thumbnail</Code>, <Code>LikeButton</Code> und{' '}
+              <Code>Video</Code>. Dann kombiniere sie zu ganzen Screens, Seiten,
+              und Anwendungen.
             </Para>
           </Center>
           <FullBleed>
@@ -162,22 +181,22 @@ export function HomeContent() {
           </FullBleed>
           <Center>
             <Para>
-              Whether you work on your own or with thousands of other
-              developers, using React feels the same. It is designed to let you
-              seamlessly combine components written by independent people,
-              teams, and organizations.
+              Ob du alleine arbeitest oder mit tausenden anderen Entwicklern,
+              das Arbeiten mit React fühlt sich gleich an. Es ist so konzipiert,
+              dass du Komponenten, die von unabhängigen Personen, Teams und
+              Organisationen geschrieben wurden, nahtlos kombinieren kannst.
             </Para>
           </Center>
         </Section>
 
         <Section background="right-card">
           <Center>
-            <Header>Write components with code and markup</Header>
+            <Header>Schreibe Komponenten mit Code und Markup</Header>
             <Para>
-              React components are JavaScript functions. Want to show some
-              content conditionally? Use an <Code>if</Code> statement.
-              Displaying a list? Try array <Code>map()</Code>. Learning React is
-              learning programming.
+              React-Komponenten sind JavaScript-Funktionen. Möchtest du Inhalte
+              bedingt anzeigen? Verwende eine <Code>if</Code>-Anweisung.
+              Möchtest du eine Liste anzeigen? Probiere es mit
+              <Code>map()</Code>. React lernen ist Programmieren lernen.
             </Para>
           </Center>
           <FullBleed>
@@ -185,22 +204,24 @@ export function HomeContent() {
           </FullBleed>
           <Center>
             <Para>
-              This markup syntax is called JSX. It is a JavaScript syntax
-              extension popularized by React. Putting JSX markup close to
-              related rendering logic makes React components easy to create,
-              maintain, and delete.
+              Diese Syntax wird JSX genannt. Sie ist eine
+              JavaScript-Syntax-Erweiterung, die durch React populär wurde.
+              Durch die Nähe von JSX-Markup zur zugehörigen Rendering-Logik
+              lassen sich React-Komponenten einfach erstellen, pflegen und
+              löschen.
             </Para>
           </Center>
         </Section>
 
         <Section background="left-card">
           <Center>
-            <Header>Add interactivity wherever you need it</Header>
+            <Header>Füge Interaktivität hinzu, wo immer du sie brauchst</Header>
             <Para>
-              React components receive data and return what should appear on the
-              screen. You can pass them new data in response to an interaction,
-              like when the user types into an input. React will then update the
-              screen to match the new data.
+              React-Komponenten empfangen Daten und geben zurück, was auf dem
+              Bildschirm erscheinen soll. Du kannst ihnen neue Daten als
+              Reaktion auf eine Interaktion übergeben, zum Beispiel, wenn der
+              Benutzer etwas eingibt. React wird den Bildschirm aktualisieren,
+              um die neuen Daten anzupassen.
             </Para>
           </Center>
           <FullBleed>
@@ -208,16 +229,16 @@ export function HomeContent() {
           </FullBleed>
           <Center>
             <Para>
-              You don’t have to build your whole page in React. Add React to
-              your existing HTML page, and render interactive React components
-              anywhere on it.
+              Du musst nicht deine ganze Seite in React erstellen. Füge React zu
+              deiner vorhandenen HTML-Seite hinzu und rendere interaktive
+              React-Komponenten überall darauf.
             </Para>
             <div className="flex justify-start w-full lg:justify-center">
               <CTA
                 color="gray"
                 icon="code"
                 href="/learn/add-react-to-an-existing-project">
-                Add React to your page
+                Füge React zu deiner Seite hinzu
               </CTA>
             </div>
           </Center>
@@ -226,15 +247,17 @@ export function HomeContent() {
         <Section background="right-card">
           <Center>
             <Header>
-              Go full-stack <br className="hidden lg:inline" />
-              with a framework
+              Mache Full-Stack <br className="hidden lg:inline" />
+              Mit einem Framework
             </Header>
             <Para>
-              React is a library. It lets you put components together, but it
-              doesn’t prescribe how to do routing and data fetching. To build an
-              entire app with React, we recommend a full-stack React framework
-              like <Link href="https://nextjs.org">Next.js</Link> or{' '}
-              <Link href="https://remix.run">Remix</Link>.
+              React ist eine Bibliothek. Sie ermöglicht es, Komponenten
+              zusammenzufügen, schreibt aber nicht vor, wie Routing und das
+              Abrufen von Daten implementiert werden sollen. Um eine gesamte App
+              mit React zu erstellen, empfehlen wir ein Full-Stack
+              React-Framework wie zum Beispiel{' '}
+              <Link href="https://nextjs.org">Next.js</Link> oder{' '}
+              <Link href="https://reactrouter.com">React Router</Link>.
             </Para>
           </Center>
           <FullBleed>
@@ -242,17 +265,18 @@ export function HomeContent() {
           </FullBleed>
           <Center>
             <Para>
-              React is also an architecture. Frameworks that implement it let
-              you fetch data in asynchronous components that run on the server
-              or even during the build. Read data from a file or a database, and
-              pass it down to your interactive components.
+              React ist auch eine Architektur. Frameworks, die sie
+              implementieren, ermöglichen es, Daten in asynchronen Komponenten
+              abzurufen, die auf dem Server oder sogar während des Builds
+              ausgeführt werden. Lese Daten aus einer Datei oder einer Datenbank
+              und gib sie an deine interaktiven Komponenten weiter.
             </Para>
             <div className="flex justify-start w-full lg:justify-center">
               <CTA
                 color="gray"
                 icon="framework"
-                href="/learn/start-a-new-react-project">
-                Get started with a framework
+                href="/learn/creating-a-react-app">
+                Starte mit einem Framework
               </CTA>
             </div>
           </Center>
@@ -260,12 +284,13 @@ export function HomeContent() {
         <Section background="left-card">
           <div className="mx-auto flex flex-col w-full">
             <div className="mx-auto max-w-4xl lg:text-center items-center px-5 flex flex-col">
-              <Header>Use the best from every platform</Header>
+              <Header>Benutze das Beste von jeder Plattform</Header>
               <Para>
-                People love web and native apps for different reasons. React
-                lets you build both web apps and native apps using the same
-                skills. It leans upon each platform’s unique strengths to let
-                your interfaces feel just right on every platform.
+                Benutzer lieben Web- und Native-Apps aus unterschiedlichen
+                Gründen. React ermöglicht es, sowohl Web-Apps als auch
+                Native-Apps mit den gleichen Fähigkeiten zu erstellen. Es stützt
+                sich auf die einzigartigen Stärken jeder Plattform, um ein
+                natives Gefühl auf jeder Plattform zu erzeugen.
               </Para>
             </div>
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row mt-16 mb-20 lg:mb-28 px-5 gap-20 lg:gap-5">
@@ -279,15 +304,17 @@ export function HomeContent() {
                     <div className="bg-wash relative h-14 w-full" />
                     <div className="relative flex items-start justify-center flex-col flex-1 pb-16 pt-5 gap-3 px-5 lg:px-10 lg:pt-8">
                       <h4 className="leading-tight text-primary font-semibold text-3xl lg:text-4xl">
-                        Stay true to the web
+                        Bleibe dem Web treu
                       </h4>
                       <p className="lg:text-xl leading-normal text-secondary">
-                        People expect web app pages to load fast. On the server,
-                        React lets you start streaming HTML while you’re still
-                        fetching data, progressively filling in the remaining
-                        content before any JavaScript code loads. On the client,
-                        React can use standard web APIs to keep your UI
-                        responsive even in the middle of rendering.
+                        Menschen erwarten, dass die Seiten von Webanwendungen
+                        schnell geladen werden. Auf dem Server kannst du mit
+                        React mit dem Streaming von HTML beginnen, währendessen
+                        Daten abrufen, und den verbleibenden Inhalt nach und
+                        nach auffüllen, bevor JavaScript-Code geladen wird. Auf
+                        dem Client kann React Standard-Web-APIs verwenden, um
+                        deine Benutzeroberfläche auch während des Renderings
+                        reaktionsfähig zu halten.
                       </p>
                     </div>
                   </div>
@@ -365,21 +392,22 @@ export function HomeContent() {
                       </div>
                       <div className="flex flex-col items-start justify-center pt-0 gap-3 px-2.5 lg:pt-8 lg:px-8">
                         <h4 className="leading-tight text-primary dark:text-primary-dark font-semibold text-3xl lg:text-4xl">
-                          Go truly native
+                          Wirklich nativ werden
                         </h4>
                         <p className="h-full lg:text-xl text-secondary dark:text-secondary-dark leading-normal">
-                          People expect native apps to look and feel like their
-                          platform.{' '}
+                          Benutzer erwarten, dass native Apps wie ihre Plattform
+                          aussehen und sich anfühlen.{' '}
                           <Link href="https://reactnative.dev">
                             React Native
                           </Link>{' '}
-                          and{' '}
+                          und{' '}
                           <Link href="https://github.com/expo/expo">Expo</Link>{' '}
-                          let you build apps in React for Android, iOS, and
-                          more. They look and feel native because their UIs{' '}
-                          <i>are</i> truly native. It’s not a web view—your
-                          React components render real Android and iOS views
-                          provided by the platform.
+                          ermöglichen es, Apps in React für Android, iOS und
+                          mehr zu erstellen. Sie sehen und fühlen sich nativ an,
+                          weil ihre Benutzeroberflächen <i>wirklich nativ</i>{' '}
+                          sind. Es ist keine Web-View - Deine React-Komponenten
+                          rendern echte Android- und iOS-Ansichten, die von der
+                          Plattform bereitgestellt werden.
                         </p>
                       </div>
                     </div>
@@ -389,14 +417,13 @@ export function HomeContent() {
             </div>
             <div className="px-5 lg:px-0 max-w-4xl mx-auto lg:text-center text-secondary dark:text-secondary-dark">
               <Para>
-                With React, you can be a web <i>and</i> a native developer. Your
-                team can ship to many platforms without sacrificing the user
-                experience. Your organization can bridge the platform silos, and
-                form teams that own entire features end-to-end.
+                Mit React kannst du ein Web- und ein Nativer-Entwickler sein.
+                Dein Team kann auf viele Plattformen ausliefern, ohne die
+                Benutzererfahrung zu beeinträchtigen.
               </Para>
               <div className="flex justify-start w-full lg:justify-center">
                 <CTA color="gray" icon="native" href="https://reactnative.dev/">
-                  Build for native platforms
+                  Erstellen für native Plattformen
                 </CTA>
               </div>
             </div>
@@ -407,23 +434,25 @@ export function HomeContent() {
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
             <div className="max-w-3xl lg:max-w-7xl gap-5 flex flex-col lg:flex-row lg:px-5">
               <div className="w-full lg:w-6/12 max-w-3xl flex flex-col items-start justify-start lg:ps-5 lg:pe-10">
-                <Header>Upgrade when the future is ready</Header>
+                <Header>Upgrade, wenn die Zukunft bereit ist</Header>
                 <Para>
-                  React approaches changes with care. Every React commit is
-                  tested on business-critical surfaces with over a billion
-                  users. Over 100,000 React components at Meta help validate
-                  every migration strategy.
+                  React geht sorgfältig mit Änderungen um. Jeder React-Commit
+                  wird auf geschäftskritischen Oberflächen mit über einer
+                  Milliarde Benutzern getestet. Über 100.000 React-Komponenten
+                  bei Meta sorgen dafür, dass jede Migrationsstrategie validiert
+                  wird.
                 </Para>
                 <div className="order-last pt-5">
                   <Para>
-                    The React team is always researching how to improve React.
-                    Some research takes years to pay off. React has a high bar
-                    for taking a research idea into production. Only proven
-                    approaches become a part of React.
+                    Das React Team forscht immer daran, wie React verbessert
+                    werden kann. Einige Forschungen dauern Jahre, um sich
+                    auszuzahlen. React hat eine hohe Messlatte, um eine
+                    Forschungsidee in die Produktion zu übernehmen. Nur bewährte
+                    Ansätze werden Teil von React.
                   </Para>
                   <div className="hidden lg:flex justify-start w-full">
                     <CTA color="gray" icon="news" href="/blog">
-                      Read more React news
+                      Mehr React-Neuigkeiten
                     </CTA>
                   </div>
                 </div>
@@ -431,7 +460,7 @@ export function HomeContent() {
               <div className="w-full lg:w-6/12">
                 <p className="uppercase tracking-wide font-bold text-sm text-tertiary dark:text-tertiary-dark flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full">
                   <IconChevron />
-                  Latest React News
+                  Aktuelle React-Neuigkeiten
                 </p>
                 <div className="flex-col sm:flex-row flex-wrap flex gap-5 text-start my-5">
                   <div className="flex-1 min-w-[40%] text-start">
@@ -449,7 +478,7 @@ export function HomeContent() {
                 </div>
                 <div className="flex lg:hidden justify-start w-full">
                   <CTA color="gray" icon="news" href="/blog">
-                    Read more React news
+                    Mehr React-Neuigkeiten
                   </CTA>
                 </div>
               </div>
@@ -462,13 +491,14 @@ export function HomeContent() {
             <div className="mx-auto flex flex-col max-w-4xl">
               <Center>
                 <Header>
-                  Join a community <br className="hidden lg:inline" />
-                  of millions
+                  Trete einer Community <br className="hidden lg:inline" />
+                  von Millionen bei
                 </Header>
                 <Para>
-                  You’re not alone. Two million developers from all over the
-                  world visit the React docs every month. React is something
-                  that people and teams can agree on.
+                  Du bist nicht alleine. Zwei Millionen Entwickler aus der
+                  ganzen Welt besuchen jeden Monat die React-Dokumentation.
+                  React ist etwas, auf das sich Menschen und Teams einigen und
+                  verlassen können.
                 </Para>
               </Center>
             </div>
@@ -476,30 +506,40 @@ export function HomeContent() {
             <div className="mx-auto flex flex-col max-w-4xl">
               <Center>
                 <Para>
-                  This is why React is more than a library, an architecture, or
-                  even an ecosystem. React is a community. It’s a place where
-                  you can ask for help, find opportunities, and meet new
-                  friends. You will meet both developers and designers,
-                  beginners and experts, researchers and artists, teachers and
-                  students. Our backgrounds may be very different, but React
-                  lets us all create user interfaces together.
+                  Das ist der Grund, warum React mehr als eine Bibliothek, eine
+                  Architektur oder sogar ein Ökosystem ist. React ist eine
+                  Community. Es ist ein Ort, an dem du um Hilfe bitten,
+                  Möglichkeiten finden und neue Freunde treffen kannst. Du wirst
+                  sowohl Entwickler als auch Designer, Anfänger und Experten,
+                  Forscher und Künstler, Lehrer und Schüler treffen. Unsere
+                  Hintergründe können sehr unterschiedlich sein, aber React
+                  ermöglicht es uns allen, gemeinsam Benutzeroberflächen zu
+                  erstellen.
                 </Para>
               </Center>
             </div>
           </div>
 
           <div className="mt-20 px-5 lg:px-0 mb-6 max-w-4xl text-center text-opacity-80">
-            <Logo className="text-link dark:text-link-dark w-24 lg:w-28 mb-10 lg:mb-8 mt-12 h-auto mx-auto self-start" />
+            <div className="uwu-visible flex justify-center">
+              <img
+                alt="logo by @sawaratsuki1004"
+                title="logo by @sawaratsuki1004"
+                className="uwu-visible mb-10 lg:mb-8 h-24 lg:h-32"
+                src="/images/uwu.png"
+              />
+            </div>
+            <Logo className="uwu-hidden text-brand dark:text-brand-dark w-24 lg:w-28 mb-10 lg:mb-8 mt-12 h-auto mx-auto self-start" />
             <Header>
-              Welcome to the <br className="hidden lg:inline" />
-              React community
+              Willkommen in der <br className="hidden lg:inline" />
+              React-Community
             </Header>
             <ButtonLink
               href={'/learn'}
               type="primary"
               size="lg"
               label="Take the Tutorial">
-              Get Started
+              Lege los
             </ButtonLink>
           </div>
         </Section>
@@ -735,9 +775,7 @@ function CommunityGallery() {
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className="relative flex overflow-x-hidden overflow-y-visible w-auto">
+    <div ref={ref} className="relative flex overflow-x-clip w-auto">
       <div
         className="w-full py-12 lg:py-20 whitespace-nowrap flex flex-row animate-marquee lg:animate-large-marquee"
         style={{
@@ -764,21 +802,26 @@ const CommunityImages = memo(function CommunityImages({isLazy}) {
         <div
           key={i}
           className={cn(
-            `group flex justify-center px-5 min-w-[50%] lg:min-w-[25%] rounded-2xl relative`
+            `group flex justify-center px-5 min-w-[50%] lg:min-w-[25%] rounded-2xl`
           )}>
           <div
             className={cn(
-              'h-auto relative rounded-2xl overflow-hidden before:-skew-x-12 before:absolute before:inset-0 before:-translate-x-full group-hover:before:animate-[shimmer_1s_forwards] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent transition-all ease-in-out duration-300',
+              'h-auto rounded-2xl before:rounded-2xl before:absolute before:pointer-events-none before:inset-0 before:transition-opacity before:-z-1 before:shadow-lg lg:before:shadow-2xl before:opacity-0 before:group-hover:opacity-100  transition-transform ease-in-out duration-300',
               i % 2 === 0
-                ? 'rotate-2 group-hover:rotate-[-1deg] group-hover:scale-110 group-hover:shadow-lg lg:group-hover:shadow-2xl'
-                : 'group-hover:rotate-1 group-hover:scale-110 group-hover:shadow-lg lg:group-hover:shadow-2xl rotate-[-2deg]'
+                ? 'rotate-2 group-hover:rotate-[-1deg] group-hover:scale-110'
+                : 'group-hover:rotate-1 group-hover:scale-110 rotate-[-2deg]'
             )}>
-            <img
-              loading={isLazy ? 'lazy' : 'eager'}
-              src={src}
-              alt={alt}
-              className="aspect-[4/3] h-full w-full flex object-cover rounded-2xl bg-gray-10 dark:bg-gray-80"
-            />
+            <div
+              className={cn(
+                'overflow-clip relative before:absolute before:inset-0 before:pointer-events-none before:-translate-x-full group-hover:before:animate-[shimmer_1s_forwards] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent transition-transform ease-in-out duration-300'
+              )}>
+              <img
+                loading={isLazy ? 'lazy' : 'eager'}
+                src={src}
+                alt={alt}
+                className="aspect-[4/3] h-full w-full flex object-cover rounded-2xl bg-gray-10 dark:bg-gray-80"
+              />
+            </div>
           </div>
         </div>
       ))}
@@ -839,7 +882,8 @@ function ExampleLayout({
           </div>
           <div
             ref={contentRef}
-            className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
+            className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center"
+            dir="ltr">
             {right}
             <div
               className={cn(
@@ -1151,7 +1195,7 @@ async function Talks({ confId }) {
         </CodeBlock>
       }
       right={
-        <NavContext.Provider value={{slug, navigate}}>
+        <NavContext value={{slug, navigate}}>
           <BrowserChrome
             domain="example.com"
             path={'confs/' + slug}
@@ -1171,7 +1215,7 @@ async function Talks({ confId }) {
               </Suspense>
             </ExamplePanel>
           </BrowserChrome>
-        </NavContext.Provider>
+        </NavContext>
       }
     />
   );
@@ -1499,7 +1543,7 @@ function ConferenceLayout({conf, children}) {
               navigate(e.target.value);
             });
           }}
-          className="appearance-none pe-8 bg-transparent text-primary-dark text-2xl font-bold mb-0.5"
+          className="appearance-none pe-8 ps-2 bg-transparent text-primary-dark text-2xl font-bold mb-0.5"
           style={{
             backgroundSize: '4px 4px, 4px 4px',
             backgroundRepeat: 'no-repeat',
@@ -1508,8 +1552,16 @@ function ConferenceLayout({conf, children}) {
             backgroundImage:
               'linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%)',
           }}>
-          <option value="react-conf-2021">React Conf 2021</option>
-          <option value="react-conf-2019">React Conf 2019</option>
+          <option
+            className="bg-wash dark:bg-wash-dark text-primary dark:text-primary-dark"
+            value="react-conf-2021">
+            React Conf 2021
+          </option>
+          <option
+            className="bg-wash dark:bg-wash-dark text-primary dark:text-primary-dark"
+            value="react-conf-2019">
+            React Conf 2019
+          </option>
         </select>
       </Cover>
       <div className="px-4 pb-4" key={conf.id}>
@@ -1612,7 +1664,7 @@ function Thumbnail({video}) {
           </div>
           <div className="mt-1">
             <span className="inline-flex text-xs font-normal items-center text-primary-dark py-1 whitespace-nowrap outline-link px-1.5 rounded-lg">
-              <Logo className="text-xs me-1 w-4 h-4 text-link-dark" />
+              <Logo className="text-xs me-1 w-4 h-4 text-brand text-brand-dark" />
               React Conf
             </span>
           </div>

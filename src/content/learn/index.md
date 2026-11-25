@@ -4,7 +4,7 @@ title: Schnelleinstieg
 
 <Intro>
 
-Willkommen bei der React Dokumentation! Diese Seite gibt dir eine Einführung in die wichtigsten React-Konzepte, die du täglich verwenden wirst.
+Willkommen bei der React-Dokumentation! Diese Seite gibt dir eine Einführung in 80% der React-Konzepte, die du täglich verwenden wirst.
 
 </Intro>
 
@@ -143,7 +143,7 @@ Du kannst auch komplexere Ausdrücke innerhalb von JSX geschweiften Klammern ver
 ```js
 const user = {
   name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageUrl: 'https://react.dev/images/docs/scientists/yXOvdOSs.jpg',
   imageSize: 90,
 };
 
@@ -335,7 +335,7 @@ function MyButton() {
 }
 ```
 
-React wird deine Komponenten Funktion erneut aufrufen. Dieses Mal wird `count` `1` sein. Danach wird es `2` sein. Und so weiter.
+Der Aufruf von `setCount` sagt React, dass es deine Komponenten-Funktion erneut aufrufen soll. Das nennt man ein *Re-Render*. Dieses Mal wird `count` `1` sein. Danach wird es `2` sein. Und so weiter.
 
 Wenn du die selbe Komponente mehrmals renderst, wird jede ihren eigenen state haben. Klicke jeden Button einzeln:
 

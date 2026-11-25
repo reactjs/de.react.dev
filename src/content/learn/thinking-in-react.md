@@ -37,7 +37,7 @@ Beginne damit, Kästchen um jede Komponente und Unterkomponente im Mockup zu zei
 
 Je nach deinem Hintergrund kannst du darüber nachdenken, ein Design auf verschiedene Weisen in Komponenten aufzuteilen:
 
-* **Programmierung** - Verwende dieselben Techniken, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt erstellen solltest. Eine dieser Techniken ist das [Single-Responsibility-Prinzip](https://de.wikipedia.org/wiki/Single-Responsibility-Prinzip), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
+* **Programmierung** - Verwende dieselben Techniken, um zu entscheiden, ob du eine neue Funktion oder ein neues Objekt erstellen solltest. Eine dieser Techniken ist das [Single-Responsibility-Prinzip](https://en.wikipedia.org/wiki/Separation_of_concerns), d.h. eine Komponente sollte idealerweise nur eine Aufgabe erfüllen. Wenn sie größer wird, sollte sie in kleinere Unterkomponenten zerlegt werden.
 * **CSS**--Du solltest überlegen, wofür Klassenselektoren erstellt werden können. (Komponenten sind jedoch etwas weniger granular.)
 * **Design**-überlege, wie die Ebenen des Designs organisiert werden können.
 
@@ -61,9 +61,9 @@ Auf diesem Bildschirm gibt es fünf Komponenten:
 
 </FullWidth>
 
-Wenn du dir `ProductTable` (lavender) ansehen, wirst du feststellen, dass der Tabellenkopf (der die Bezeichnungen "Name" und "Preis" enthält) keine eigene Komponente ist. Dies ist eine Frage der Vorliebe, du kannst so oder so vorgehen. In diesem Beispiel ist sie ein Teil von "ProductTable", weil sie innerhalb der Liste von `ProductTable` erscheint. Wenn diese Kopfzeile jedoch zu komplex wird (z.B. wenn du eine Sortierung hinzufügst), kannst du sie in eine eigene Komponente `ProductTableHeader` verschieben.
+Wenn du dir `ProductTable` (lavender) ansiehst, wirst du feststellen, dass der Tabellenkopf (der die Bezeichnungen "Name" und "Preis" enthält) keine eigene Komponente ist. Dies ist eine Frage der Vorliebe, du kannst so oder so vorgehen. In diesem Beispiel ist sie ein Teil von "ProductTable", weil sie innerhalb der Liste von `ProductTable` erscheint. Wenn diese Kopfzeile jedoch zu komplex wird (z.B. wenn du eine Sortierung hinzufügst), kannst du sie in eine eigene Komponente `ProductTableHeader` verschieben.
 
-Nachdem du nun die Komponenten im Mockup identifiziert hast, ordnen sie in einer Hierarchie an. Komponenten, die innerhalb einer anderen Komponente im Mockup erscheinen, sollten in der Hierarchie als untergeordnete Komponenten erscheinen:
+Nachdem du die Komponenten im Mockup identifiziert hast, ordne sie nun in einer Hierarchie an. Komponenten, die innerhalb einer anderen Komponente im Mockup erscheinen, sollten in der Hierarchie als untergeordnete Komponenten erscheinen:
 
 * `FilterableProductTable`
     * `SearchBar`
@@ -73,15 +73,15 @@ Nachdem du nun die Komponenten im Mockup identifiziert hast, ordnen sie in einer
 
 ## Schritt 2: Erstellen einer statischen Version in React {/*step-2-build-a-static-version-in-react*/}
 
-Nun, da du deine Komponentenhierarchie hast, ist es an der Zeit, deine Anwendung zu implementieren. Der einfachste Ansatz besteht darin, eine Version zu erstellen, die die Benutzeroberfläche aus deinem Datenmodell wiedergibt, ohne Interaktivität hinzuzufügen... noch nicht! Oft ist es einfacher, zuerst die statische Version zu erstellen und die Interaktivität später hinzuzufügen. Die Erstellung einer statischen Version erfordert viel Tipparbeit und kein Nachdenken, aber das Hinzufügen von Interaktivität erfordert viel Nachdenken und nicht viel Tipparbeit.
+Nun, da du deine Komponentenhierarchie hast, ist es an der Zeit deine Anwendung zu implementieren. Der einfachste Ansatz besteht darin eine Version zu erstellen, die die Benutzeroberfläche aus deinem Datenmodell wiedergibt ohne Interaktivität hinzuzufügen... noch nicht! Oft ist es einfacher zuerst die statische Version zu erstellen und die Interaktivität später hinzuzufügen. Die Erstellung einer statischen Version erfordert viel Tipparbeit und kein Nachdenken, aber das Hinzufügen von Interaktivität erfordert viel Nachdenken und nicht viel Tipparbeit.
 
 Um eine statische Version deiner Anwendung zu erstellen, die dein Datenmodell wiedergibt, solltest du [Komponenten](/learn/your-first-component) erstellen, die andere Komponenten wiederverwenden und Daten mithilfe von [props.](/learn/passing-props-to-a-component) weitergeben. (Wenn du mit dem Konzept von [state](/learn/state-a-components-memory) vertraut bist, verwende für die Erstellung dieser statischen Version überhaupt keinen State. State ist nur für Interaktivität reserviert, d.h. für Daten, die sich mit der Zeit ändern. Da es sich um eine statische Version der Anwendung handelt, brauchst du es nicht).
 
-Man kann entweder "von oben nach unten" bauen, indem man mit den Komponenten beginnt, die in der Hierarchie weiter oben stehen (wie `FilterableProductTable`), oder "von unten nach oben", indem man mit Komponenten arbeitet, die weiter unten stehen (wie `ProductRow`). Bei einfacheren Beispielen ist es in der Regel einfacher, von oben nach unten vorzugehen, und bei größeren Projekten ist es einfacher, von unten nach oben vorzugehen.
+Man kann entweder "von oben nach unten" bauen, indem man mit den Komponenten beginnt, die in der Hierarchie weiter oben stehen (wie `FilterableProductTable`), oder "von unten nach oben", indem man mit Komponenten arbeitet, die weiter unten stehen (wie `ProductRow`). Bei einfacheren Beispielen ist es in der Regel einfacher von oben nach unten vorzugehen, und bei größeren Projekten ist es einfacher von unten nach oben vorzugehen.
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 function ProductCategoryRow({ category }) {
   return (
     <tr>
@@ -266,12 +266,12 @@ Im vorigen Schritt hast du zwei Zustände in dieser Anwendung gefunden: den Such
 Gehen wir jetzt unsere Strategie für sie durch:
 
 1. **Identifiziere Komponenten, die einen State verwenden:**
-    * Die "Produkttabelle" muss die Produktliste nach diesem State filtern (Suchtext und Wert des Kontrollkästchens).
-    * Die "SearchBar" muss diesen State anzeigen (Suchtext und Wert des Kontrollkästchens).
-1. **Finde ihre gemeinsame übergeordnete Komponente:** Die erste übergeordnete Komponente, die beide Komponenten gemeinsam haben, ist `FilterableProductTable`.
-2. **Entscheide, wo der State bleibt**: Wir behalten den Filtertext und die geprüften Statewerte in "FilterableProductTable".
+    * `ProductTable` muss die Produktliste nach diesem State filtern (Suchtext und Wert des Kontrollkästchens).
+    * `SearchBar` muss diesen State anzeigen (Suchtext und Wert des Kontrollkästchens).
+2. **Finde ihre gemeinsame übergeordnete Komponente:** Die erste übergeordnete Komponente, die beide Komponenten gemeinsam haben, ist `FilterableProductTable`.
+3. **Entscheide, wo der State bleibt**: Wir behalten den Filtertext und die geprüften Statewerte in `FilterableProductTable`.
 
-Die Statewerte werden also in "FilterableProductTable" gespeichert.
+Die Statewerte werden also in `FilterableProductTable` gespeichert.
 
 Füge der Komponente mit dem [`useState()` Hook](/reference/react/useState) Hooks sind spezielle Funktionen, mit denen du dich in React "einhaken" kannst. Füge zwei Statesvariablen am Anfang von "FilterableProductTable" hinzu und gib ihren Anfangs-State an:
 
@@ -279,17 +279,17 @@ Füge der Komponente mit dem [`useState()` Hook](/reference/react/useState) Hook
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
-}  
+}
 ```
 
 Dann übergibst du `filterText` und `inStockOnly` an `ProductTable` und `SearchBar` als Props:
 
 ```js
 <div>
-  <SearchBar 
-    filterText={filterText} 
+  <SearchBar
+    filterText={filterText}
     inStockOnly={inStockOnly} />
-  <ProductTable 
+  <ProductTable
     products={products}
     filterText={filterText}
     inStockOnly={inStockOnly} />
@@ -300,7 +300,7 @@ Jetzt kannst du sehen, wie sich deine Anwendung verhalten wird. Ändere den Ausg
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -309,10 +309,10 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly} />
-      <ProductTable 
+      <ProductTable
         products={products}
         filterText={filterText}
         inStockOnly={inStockOnly} />
@@ -390,13 +390,13 @@ function ProductTable({ products, filterText, inStockOnly }) {
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Search..."/>
       <label>
-        <input 
-          type="checkbox" 
+        <input
+          type="checkbox"
           checked={inStockOnly} />
         {' '}
         Only show products in stock
@@ -452,9 +452,9 @@ In der obigen Sandbox lesen `ProductTable` und `SearchBar` die Props `filterText
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Search..."/>
     </form>
   )}
@@ -477,8 +477,8 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly}
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
@@ -488,19 +488,33 @@ function FilterableProductTable({ products }) {
 
 Innerhalb der `SearchBar` kannst du den `onChange`-Event-Handler hinzufügen and set the parent state from them:
 
-```js {5}
-<input 
-  type="text" 
-  value={filterText} 
-  placeholder="Search..." 
-  onChange={(e) => onFilterTextChange(e.target.value)} />
+```js {4,5,13,19}
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange
+}) {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
 ```
 
 Jetzt funktioniert die Anwendung vollständig!
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -509,13 +523,13 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
-        inStockOnly={inStockOnly} 
-        onFilterTextChange={setFilterText} 
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
-      <ProductTable 
-        products={products} 
+      <ProductTable
+        products={products}
         filterText={filterText}
         inStockOnly={inStockOnly} />
     </div>
@@ -597,14 +611,14 @@ function SearchBar({
 }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} placeholder="Search..." 
+      <input
+        type="text"
+        value={filterText} placeholder="Search..."
         onChange={(e) => onFilterTextChange(e.target.value)} />
       <label>
-        <input 
-          type="checkbox" 
-          checked={inStockOnly} 
+        <input
+          type="checkbox"
+          checked={inStockOnly}
           onChange={(e) => onInStockOnlyChange(e.target.checked)} />
         {' '}
         Only show products in stock
@@ -650,4 +664,4 @@ Alles über den Umgang mit Ereignissen und die Aktualisierung des States erfähr
 
 ## Wo gehts weiter? {/*where-to-go-from-here*/}
 
-Dies war eine sehr kurze Einführung in die Erstellung von Komponenten und Anwendungen mit React. Du kannst [gleich ein React-Projekt starten](/learn/installation) oder [tiefer in den Syntax eintauchen](/learn/describing-the-ui), die in diesem Tutorial verwendet wurde.
+Dies war eine sehr kurze Einführung in die Erstellung von Komponenten und Anwendungen mit React. Du kannst [gleich ein React-Projekt starten](/learn/installation) oder [tiefer in die Syntax eintauchen](/learn/describing-the-ui), die in diesem Tutorial verwendet wurde.

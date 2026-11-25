@@ -1,5 +1,5 @@
 ---
-title: Deine Erste Komponente
+title: Deine erste Komponente
 ---
 
 <Intro>
@@ -18,24 +18,24 @@ title: Deine Erste Komponente
 
 ## Komponenten: UI Bausteine {/*components-ui-building-blocks*/}
 
-Im Web erlaubt HTML uns strukturierte Dokumente mit den eingebauten Tags wie `<h1>` und `<li>` zu erstellen:
+Im Web erlaubt HTML uns, strukturierte Dokumente mit den eingebauten Tags wie `<h1>` und `<li>` zu erstellen:
 
 ```html
 <article>
-  <h1>Meine Erste Komponente</h1>
+  <h1>Meine erste Komponente</h1>
   <ol>
     <li>Komponenten: UI Bausteine</li>
-    <li>Eine Komponente Definieren</li>
-    <li>Eine Komponente Nutzen</li>
+    <li>Eine Komponente definieren</li>
+    <li>Eine Komponente nutzen</li>
   </ol>
 </article>
 ```
 
 Dieses Markup repräsentiert diesen Artikel `<article>`, seine Überschrift `<h1>`, und ein (abgekürztes) Inhaltsverzeichnis als eine geordnete Liste `<ol>`. Kombiniert mit CSS für das Styling und JavaScript für die Interaktivität, liegt Markup wie dieses hinter jeder Sidebar, jedem Avatar, jedes Modals, jedes Dropdown - jedes Stück UI, das du im Web siehst.
 
-React lässt dich Markup, CSS, und JavaScript in benutzerdefinierte "Komponenten", **wiederverwendbare UI Elemente für deine Anwendung** kombinieren. Der Code für das Inhaltsverzeichnis, das du oben gesehen hast, könnte in eine `<TableOfContents />` Komponente umgewandelt werden, die du auf jeder Seite rendern könntest. Unter der Haube werden immer noch die gleichen HTML Tags wie `<article>`, `<h1>`, etc. verwendet.
+React lässt dich Markup, CSS, und JavaScript in benutzerdefinierte "Komponenten", **wiederverwendbare UI Elemente für deine Anwendung** kombinieren. Der Code für das Inhaltsverzeichnis, das du oben gesehen hast, könnte in eine `<TableOfContents />` Komponente umgewandelt werden, die du auf jeder Seite rendern könntest. Unter der Haube werden immer noch die gleichen HTML-Tags wie `<article>`, `<h1>`, etc. verwendet.
 
-Genau wie mit HTML Tags, kannst du Komponenten kombinieren, ordnen und verschachteln um ganze Seiten zu designen. Zum Beispiel ist die Dokumentationsseite, die du gerade liest, aus React Komponenten aufgebaut:
+Genau wie mit HTML-Tags kannst du Komponenten kombinieren, ordnen und verschachteln, um ganze Seiten zu designen. Zum Beispiel ist die Dokumentationsseite, die du gerade liest, aus React-Komponenten aufgebaut:
 
 
 ```js
@@ -52,19 +52,19 @@ Genau wie mit HTML Tags, kannst du Komponenten kombinieren, ordnen und verschach
 </PageLayout>
 ```
 
-Wenn den Projekt wächst, wirst du meken, dass viele deiner Designs durch das Wiederverwenden von Komponenten, die du bereits geschrieben hast, zusammengesetzt werden können was deinen Entwicklungsprozess beschleunigt. Unser Inhaltsverzeichnis oben könnte zu jeder Seite mit `<TableOfContents />` hinzugefügt werden! Du kannst deinem Projekt sogar mit tausenden Komponenten, die von der React Open Source Community geteilt werden, auf die Sprünge helfen, wie [Chakra UI](https://chakra-ui.com/) und [Material UI](https://material-ui.com/).
+Wenn das Projekt wächst, wirst du merken, dass viele deiner Designs durch das Wiederverwenden von Komponenten, die du bereits geschrieben hast, zusammengesetzt werden können, was deinen Entwicklungsprozess beschleunigt. Unser Inhaltsverzeichnis oben könnte zu jeder Seite mit `<TableOfContents />` hinzugefügt werden! Du kannst deinem Projekt sogar mit tausenden Komponenten, die von der React Open Source Community geteilt werden, auf die Sprünge helfen, wie [Chakra UI](https://chakra-ui.com/) und [Material UI](https://material-ui.com/).
 
 ## Eine Komponente definieren {/*defining-a-component*/}
 
-Traditionell haben Webentwickler ihre Inhalte strukturiert und haben dann Interaktivität hinzugefügt, indem sie etwas JavaScript "drüber gestreut" haben. Das hat gut funktioniert, als Interaktionen eine nette Ergänzung im Web waren. Jetzt wird es von vielen Seiten und allen Apps erwartet. React stellt Interaktivität an erste Stelle, während es immer noch die gleiche Technologie verwendet: **eine React Komponente ist eine JavaScript Funktion, die du mit Markup _bestreuen kannst_.** So sieht das aus (du kannst das Beispiel unten bearbeiten):
+Traditionell haben Webentwickler ihre Inhalte strukturiert und haben dann Interaktivität hinzugefügt, indem sie etwas JavaScript "darüber gestreut" haben. Das hat gut funktioniert, als Interaktionen eine nette Ergänzung im Web waren. Jetzt wird es von vielen Seiten und allen Apps erwartet. React stellt Interaktivität an erste Stelle, während es immer noch die gleiche Technologie verwendet: **Eine React Komponente ist eine JavaScript-Funktion, die du mit Markup _bestreuen kannst_.** So sieht das aus (du kannst das Beispiel unten bearbeiten):
 
 <Sandpack>
 
 ```js
-export default function Profil() {
+export default function Profile() {
   return (
     <img
-      src="https://i.imgur.com/MK3eW3Am.jpg"
+      src="https://react.dev/images/docs/scientists/MK3eW3Am.jpg"
       alt="Katherine Johnson"
     />
   )
@@ -86,31 +86,31 @@ Das `export default` Präfix ist eine [Standard JavaScript Syntax](https://devel
 
 ### Schritt 2: Definiere die Funktion {/*step-2-define-the-function*/}
 
-Mit `function Profil() { }` definierst du eine JavaScript Funktion mit dem Namen `Profil`.
+Mit `function Profile() { }` definierst du eine JavaScript-Funktion mit dem Namen `Profile`.
 
 <Pitfall>
 
-React Komponenten sind normale JavaScript Funktionen, aber **ihre Namen müssen mit einem Großbuchstaben beginnen** oder sie funktionieren nicht!
+React-Komponenten sind normale JavaScript-Funktionen, aber **ihre Namen müssen mit einem Großbuchstaben beginnen** oder sie funktionieren nicht!
 
 </Pitfall>
 
 ### Schritt 3: Markup hinzufügen {/*step-3-add-markup*/}
 
-Die Komponente gibt ein `<img />` Tag mit `src` und `alt` Attributen zurück. `<img />` ist wie HTML geschrieben, aber unter der Haube handelt es sich eigentlich um JavaScript. Diese Syntax wird [JSX](/learn/writing-markup-with-jsx) genannt und sie erlaubt es dir Markup in JavaScript einzubetten.
+Die Komponente gibt ein `<img />` Tag mit `src` und `alt` Attributen zurück. `<img />` ist wie HTML geschrieben, aber unter der Haube handelt es sich eigentlich um JavaScript. Diese Syntax wird [JSX](/learn/writing-markup-with-jsx) genannt und sie erlaubt es dir, Markup in JavaScript einzubetten.
 
 Return Statements können in einer Zeile geschrieben werden, wie in dieser Komponente:
 
 
 ```js
-return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
+return <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />;
 ```
 
-Aber falls nicht dein gesamtes Markup in der gleichen Zeile wie das `return` keyword ist, musst du das Markup in ein Paar Klammern einschließen:
+Aber wenn dein Markup nicht in der gleichen Zeile wie das `return`-Keyword steht, musst du es mit Klammern umschließen:
 
 ```js
 return (
   <div>
-    <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+    <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />
   </div>
 );
 ```
@@ -123,27 +123,27 @@ Ohne Klammern wird jeglicher Code nach dem `return` [ignoriert](https://stackove
 
 ## Eine Komponente nutzen {/*using-a-component*/}
 
-Da du nun deine `Profil` Komponente definiert hast, kannst du sie in anderen Komponenten nutzen. Zum Beispiel kannst du eine `Galerie` Komponente exportieren, die mehrere `Profil` Komponenten nutzt:
+Da du nun deine `Profile`-Komponente definiert hast, kannst du sie in anderen Komponenten nutzen. Zum Beispiel kannst du eine `Gallery`-Komponente exportieren, die mehrere `Profile`-Komponenten nutzt:
 
 <Sandpack>
 
 ```js
-function Profil() {
+function Profile() {
   return (
     <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
+      src="https://react.dev/images/docs/scientists/MK3eW3As.jpg"
       alt="Katherine Johnson"
     />
   );
 }
 
-export default function Galerie() {
+export default function Gallery() {
   return (
     <section>
-      <h1>Großartige Wissenschaftlerinnen</h1>
-      <Profil />
-      <Profil />
-      <Profil />
+      <h1>Großartige Wissenschaftler und Wissenschaftlerinnen</h1>
+      <Profile />
+      <Profile />
+      <Profile />
     </section>
   );
 }
@@ -160,33 +160,33 @@ img { margin: 0 10px 10px 0; height: 90px; }
 Beachte den Unterschied in der Groß- und Kleinschreibung:
 
 * `<section>` wird klein geschrieben, damit React weiß, dass wir uns auf einen HTML Tag beziehen.
-* `<Profil />` beginnt mit einem Großbuchstaben `P`, damit React weiß, dass wir unsere Komponente `Profil` nutzen wollen.
+* `<Profile />` beginnt mit einem Großbuchstaben `P`, damit React weiß, dass wir unsere Komponente `Profile` nutzen wollen.
 
-Und `Profil` enthält sogar noch mehr HTML: `<img />`. Am Ende sieht der Browser das:
+Und `Profile` enthält sogar noch mehr HTML: `<img />`. Am Ende sieht der Browser das:
 
 ```html
 <section>
   <h1>Großartige Wissenschaftlerinnen</h1>
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
-  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://react.dev/images/docs/scientists/MK3eW3As.jpg" alt="Katherine Johnson" />
 </section>
 ```
 
 ### Verschachteln und Organisieren von Komponenten {/*nesting-and-organizing-components*/}
 
-Komponenten sind normale JavaScript Funktionen, also kannst du mehrere Komponenten in der gleicen Datei haben. Das ist praktisch, wenn Komponenten relativ klein sind oder eng miteinander verbunden sind. Falls diese Datei zu voll wird, kannst du `Profil` immer in eine separate Datei verschieben. Du wirst gleich auf [der Seite über das Importieren](/learn/importing-and-exporting-components) lernen wie das geht.
+Komponenten sind normale JavaScript Funktionen, also kannst du mehrere Komponenten in der gleichen Datei haben. Das ist praktisch, wenn Komponenten relativ klein sind oder eng miteinander verbunden sind. Falls diese Datei zu voll wird, kannst du `Profile` immer in eine separate Datei verschieben. Du wirst gleich auf [der Seite über das Importieren](/learn/importing-and-exporting-components) lernen, wie das geht.
 
-Weil die `Profil` Komponenten - sogar mehrmals! - innerhalb der `Galerie` Komponente gerendert werden, können wir sagen, dass `Galerie` eine **Übergeordnete Komponente** ist, die jede `Profil` Komponente als "untergeordnete Komponente" rendert. Das ist ein Teil der Magie von React: du kannst eine Komponente einmal definieren und sie dann so oft und an so vielen Stellen nutzen wie du möchtest.
+Da die `Profile`-Komponenten innerhalb der `Gallery` gerendert werden - sogar mehrmals - können wir sagen, dass die `Gallery` eine **übergeordnete Komponente ist,** die jedes `Profile` als `Kind` rendert. Dies ist ein Teil der Magie von React: du kannst eine Komponente einmal definieren und sie dann an so vielen Stellen und so oft du willst verwenden.
 
 <Pitfall>
 
-Komponten können andere Komponenten rendern, aber **du darfst ihre Definitionen niemals verschachteln:**
+Komponenten können andere Komponenten rendern, aber **du darfst ihre Definitionen niemals verschachteln:**
 
 ```js {2-5}
-export default function Galerie() {
+export default function Gallery() {
   // 🔴 Definiere niemals eine Komponente innerhalb einer anderen!
-  function Profil() {
+  function Profile() {
     // ...
   }
   // ...
@@ -196,12 +196,12 @@ export default function Galerie() {
 Der Code-Schnipsel oben ist [sehr langsam und verursacht Fehler.](/learn/preserving-and-resetting-state#different-components-at-the-same-position-reset-state) Definiere stattdessen jede Komponente in der obersten Ebene:
 
 ```js {5-8}
-export default function Galerie() {
+export default function Gallery() {
   // ...
 }
 
 // ✅ Definiere Komponenten in der obersten Ebene
-function Profil() {
+function Profile() {
   // ...
 }
 ```
@@ -214,13 +214,13 @@ Wenn eine untergeordnete Komponente Daten von einer übergeordneten Komponente b
 
 #### Komponenten bis zum Ende {/*components-all-the-way-down*/}
 
-Deine React Anwendung startet bei einer "root" Komponente. Normalerweise wird sie automatisch erstellt, wenn du ein neues Projekt startest. Zum Beispiel, wenn du [CodeSandbox](https://codesandbox.io/) nutzt oder das Framework [Next.js](https://nextjs.org/), wird die root Komponente in `pages/index.js` definiert. In diesen Beispielen hast du root Komponenten exportiert.
+Deine React-Anwendung startet bei einer "root" Komponente. Normalerweise wird sie automatisch erstellt, wenn du ein neues Projekt startest. Zum Beispiel, wenn du [CodeSandbox](https://codesandbox.io/) nutzt oder das Framework [Next.js](https://nextjs.org/), wird die root Komponente in `pages/index.js` definiert. In diesen Beispielen hast du Root-Komponenten exportiert.
 
-Die meisten React Anwendungn nutzen Komponenten bis zum Ende. Das bedeutet, dass du nicht nur Komponenten für wiederverwendbare Teile wie Buttons nutzt, sondern auch für größere Teile wie Sidebars, Listen und letztendlich komplette Seiten! Komponenten sind ein praktischer Weg um UI Code und Markup zu organisieren, selbst wenn einige von ihnen nur einmal genutzt werden.
+Die meisten React-Anwendungn nutzen Komponenten bis zum Ende. Das bedeutet, dass du nicht nur Komponenten für wiederverwendbare Teile wie Buttons nutzt, sondern auch für größere Teile wie Sidebars, Listen und letztendlich komplette Seiten! Komponenten sind ein praktischer Weg, um UI Code und Markup zu organisieren, selbst wenn einige von ihnen nur einmal genutzt werden.
 
-[React basierte frameworks](/learn/start-a-new-react-project) gehen noch einen Schritt weiter. Anstatt eine leere HTML Datei zu nutzen und React "übernehmen" zu lassen, generieren sie *auch* das HTML automatisch aus deinen React Komponenten. Das erlaubt deiner Anwendung etwas Inhalt anzuzeigen bevor der JavaScript Code geladen wird.
+[React basierte Frameworks](/learn/creating-a-react-app) gehen noch einen Schritt weiter. Anstatt eine leere HTML-Datei zu nutzen und React "übernehmen" zu lassen, generieren sie *auch* das HTML automatisch aus deinen React-Komponenten. Das erlaubt deiner Anwendung, etwas Inhalt anzuzeigen, bevor der JavaScript-Code geladen wird.
 
-Weiterhin nutzen viele Webseiten nur React um [Interaktivität zu bestehenden HTML Seiten hinzuzufügen.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) Sie haben viele root Komponenten anstatt einer einzigen für die gesamte Seite. Du kannst so viel - oder so wenig - React nutzen wie du brauchst.
+Weiterhin nutzen viele Webseiten nur React, um [Interaktivität zu bestehenden HTML-Seiten hinzuzufügen.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) Sie haben viele Root-Komponenten anstatt einer einzigen für die gesamte Seite. Du kannst so viel - oder so wenig - React nutzen, wie du brauchst.
 
 </DeepDive>
 
@@ -228,9 +228,9 @@ Weiterhin nutzen viele Webseiten nur React um [Interaktivität zu bestehenden HT
 
 Du hast gerade deine erste Komponente erstellt! Lass uns nochmal die wichtigsten Punkte zusammenfassen.
 
-* React lässt dich Komponenten erstellen, **wiederverwendbare UI Elemente für deine Anwendung.**
-* In einer React Anwendung ist jedes Stück UI eine Komponente.
-* React Komponenten sind normale JavaScript Funktionen, abgesehen davon:
+* React lässt dich Komponenten erstellen, **wiederverwendbare UI-Elemente für deine Anwendung.**
+* In einer React-Anwendung ist jeder Teil der UI eine Komponente.
+* React-Komponenten sind normale JavaScript-Funktionen, mit folgenden Ausnahmen:
 
   1. Sie müssen mit einem Großbuchstaben beginnen.
   2. Sie geben JSX-Markup zurück
@@ -243,15 +243,15 @@ Du hast gerade deine erste Komponente erstellt! Lass uns nochmal die wichtigsten
 
 #### Exportiere die Komponente {/*export-the-component*/}
 
-Dieser Sandkasten funktioniert nicht, weil die root Komponente nicht exportiert ist:
+Dieser Sandbox funktioniert nicht, weil die Root-Komponente nicht exportiert ist:
 
 <Sandpack>
 
 ```js
-function Profil() {
+function Profile() {
   return (
     <img
-      src="https://i.imgur.com/lICfvbD.jpg"
+      src="https://react.dev/images/docs/scientists/lICfvbD.jpg"
       alt="Aklilu Lemma"
     />
   );
@@ -273,10 +273,10 @@ Füge `export default` vor der Funktionsdefinition hinzu:
 <Sandpack>
 
 ```js
-export default function Profil() {
+export default function Profile() {
   return (
     <img
-      src="https://i.imgur.com/lICfvbD.jpg"
+      src="https://react.dev/images/docs/scientists/lICfvbD.jpg"
       alt="Aklilu Lemma"
     />
   );
@@ -289,7 +289,7 @@ img { height: 181px; }
 
 </Sandpack>
 
-Vielleicht fragst du dich, warum es nicht reicht nur `export` zu schreiben. Den Unterschied zwischen `export` und `export default` lernst du in [Importieren und Exportieren von Komponenten.](/learn/importing-and-exporting-components)
+Vielleicht fragst du dich, warum es nicht reicht, nur `export` zu schreiben. Den Unterschied zwischen `export` und `export default` lernst du im [Importieren und Exportieren von Komponenten.](/learn/importing-and-exporting-components)
 
 </Solution>
 
@@ -299,7 +299,7 @@ Irgendetwas stimmt mit diesem `return` Statement nicht. Kannst du es korrigieren
 
 <Hint>
 
-Eventuell bekommst du einen "Unexpected token" Fehler während du versuchst das zu korrigieren. In diesem Fall, überprüfe, dass das Semikolon *nach* der schließenden Klammer steht. Ein Semikolon innerhalb von `return ( )` zu lassen wird einen Fehler verursachen.
+Eventuell bekommst du einen "Unexpected token" Fehler, während du versuchst, das zu korrigieren. In diesem Fall überprüfe, dass das Semikolon *nach* der schließenden Klammer steht. Ein Semikolon innerhalb von `return ( )` zu lassen, wird einen Fehler verursachen.
 
 </Hint>
 
@@ -307,9 +307,9 @@ Eventuell bekommst du einen "Unexpected token" Fehler während du versuchst das 
 <Sandpack>
 
 ```js
-export default function Profil() {
+export default function Profile() {
   return
-    <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Katsuko Saruhashi" />;
+    <img src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg" alt="Katsuko Saruhashi" />;
 }
 ```
 
@@ -326,8 +326,8 @@ Korrigiere diese Komponente, indem du das return Statement in eine Zeile schreib
 <Sandpack>
 
 ```js
-export default function Profil() {
-  return <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Katsuko Saruhashi" />;
+export default function Profile() {
+  return <img src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg" alt="Katsuko Saruhashi" />;
 }
 ```
 
@@ -342,11 +342,11 @@ Oder indem du das zurückgegebene JSX markup in KLaammern einschließt, die dire
 <Sandpack>
 
 ```js
-export default function Profil() {
+export default function Profile() {
   return (
-    <img 
-      src="https://i.imgur.com/jA8hHMpm.jpg" 
-      alt="Katsuko Saruhashi" 
+    <img
+      src="https://react.dev/images/docs/scientists/jA8hHMpm.jpg"
+      alt="Katsuko Saruhashi"
     />
   );
 }
@@ -362,15 +362,15 @@ img { height: 180px; }
 
 #### Finde den Fehler {/*spot-the-mistake*/}
 
-Irgendetwas stimmt mit der Deklaration und Nutzung der `Profil` Komponente nicht. Kannst du den Fehler finden? (Versuche dich daran zu erinnern, wie sich React Komponenten von regulären HTML Tags unterscheidet!)
+Irgendetwas stimmt mit der Deklaration und Nutzung der `Profile` Komponente nicht. Kannst du den Fehler finden? (Versuche dich daran zu erinnern, wie sich React Komponenten von regulären HTML-Tags unterscheiden!)
 
 <Sandpack>
 
 ```js
-function profil() {
+function profile() {
   return (
     <img
-      src="https://i.imgur.com/QIrZWGIs.jpg"
+      src="https://react.dev/images/docs/scientists/QIrZWGIs.jpg"
       alt="Alan L. Hart"
     />
   );
@@ -380,9 +380,9 @@ export default function Gallery() {
   return (
     <section>
       <h1>Großartige Wissenschaftler</h1>
-      <profil />
-      <profil />
-      <profil />
+      <profile />
+      <profile />
+      <profile />
     </section>
   );
 }
@@ -396,17 +396,17 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 <Solution>
 
-React Komponenten müssen mit einem Großbuchstaben beginnen.
+React-Komponenten müssen mit einem Großbuchstaben beginnen.
 
-Ändere `function profil()` zu `function Profil()`, und ändere dann jedes `<profil />` zu `<Profil />`:
+Ändere `function profile()` zu `function Profile()`, und ändere dann jedes `<profile />` zu `<Profile />`:
 
 <Sandpack>
 
 ```js
-function profil() {
+function Profile() {
   return (
     <img
-      src="https://i.imgur.com/QIrZWGIs.jpg"
+      src="https://react.dev/images/docs/scientists/QIrZWGIs.jpg"
       alt="Alan L. Hart"
     />
   );
@@ -416,9 +416,9 @@ export default function Gallery() {
   return (
     <section>
       <h1>Großartige Wissenschaftler</h1>
-      <profil />
-      <profil />
-      <profil />
+      <Profile />
+      <Profile />
+      <Profile />
     </section>
   );
 }
@@ -434,7 +434,7 @@ img { margin: 0 10px 10px 0; }
 
 #### Deine eigene Komponente {/*your-own-component*/}
 
-Schreibe deine eigene Komponente von Grund auf. Du kannst ihr irgendeinen zulässigen Namen geben und irgendwelches Markup zurückgeben. Wenn du keine Idee hast, kannst du eine `Gratulation` Kompontente schreiben, die `<h1>Gute Arbeit!</h1>` anzeigt. Vergiss nicht sie zu exportieren!
+Schreibe deine eigene Komponente von Grund auf. Du kannst ihr irgendeinen zulässigen Namen geben und irgendwelches Markup zurückgeben. Wenn du keine Idee hast, kannst du eine `Gratulation` Komponente schreiben, die `<h1>Gute Arbeit!</h1>` anzeigt. Vergiss nicht, sie zu exportieren!
 
 <Sandpack>
 
@@ -450,7 +450,7 @@ Schreibe deine eigene Komponente von Grund auf. Du kannst ihr irgendeinen zuläs
 <Sandpack>
 
 ```js
-export default function Gratulation() {
+export default function Congratulations() {
   return (
     <h1>Gute Arbeit!</h1>
   );
